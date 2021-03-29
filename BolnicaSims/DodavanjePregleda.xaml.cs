@@ -25,11 +25,18 @@ namespace BolnicaSims
             InitializeComponent();
         }
 
+
+
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
             Termin tempTermin = new Termin();
-           // tempTermin.VremeTermina = txtBox1.Text;
+            tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
             tempTermin.ImePrezimeDoktora = txtBox2.Text;
+
+
+            TerminStorage storage = new TerminStorage();
+            storage.Read().Add(tempTermin);
+            storage.Save();
 
            
         }

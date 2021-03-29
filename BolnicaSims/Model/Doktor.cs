@@ -8,7 +8,8 @@ using System;
 
 namespace Model
 {
-   public class Doktor
+    [Serializable]
+    public class Doktor
    {
       public Korisnik korisnik;
       public System.Collections.ArrayList termin;

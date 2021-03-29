@@ -8,8 +8,19 @@ using System;
 
 namespace Model
 {
+
+    [Serializable]
     public class Termin
     {
+
+        public DateTime VremeTermina
+        {
+            get
+            ;
+            set
+            ;
+        }
+
         /*public Doktor[] get_doktor()
         ;
 
@@ -30,7 +41,7 @@ namespace Model
 
         // public Pacijent[] pacijent;
         //  public Doktor[] doktor;
-         public Prostorija prostorija;
+        public Prostorija prostorija;
         public String ImePrezimeDoktora
         {
             get;
@@ -64,13 +75,7 @@ namespace Model
          }
       }
    
-      public DateTime VremeTermina
-      {
-         get
-         ;
-         set
-         ;
-      }
+   
       
       private TipTermina TipTermina
       {

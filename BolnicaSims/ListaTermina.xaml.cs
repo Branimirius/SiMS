@@ -20,20 +20,14 @@ namespace BolnicaSims
     public partial class ListaTermina : Window
     {
         private int colNum = 0;
-        public ObservableCollection<Termin> Termini
-        {
-            get;
-            set;
-        }
+        TerminStorage storage = new TerminStorage();
+       
         public ListaTermina()
         {
             InitializeComponent();
-            this.DataContext = this;
+            // this.DataContext = this;
+            dataGridTermini.ItemsSource = storage.Load();
             
-            Termini = new ObservableCollection<Termin>();
-            Termini.Add(new Termin() { IdTermina = "1", VremeTermina = new DateTime(2021, 3, 1, 7, 0, 0), ImePrezimeDoktora="Petar Petrovic" });
-            Termini.Add(new Termin() { IdTermina = "5", VremeTermina = new DateTime(2021, 3, 25, 9, 0, 0), ImePrezimeDoktora = "Petar Petrovic" });
-            Termini.Add(new Termin() { IdTermina = "21", VremeTermina = new DateTime(2021, 4, 28, 11, 0, 0), ImePrezimeDoktora = "Nikola Nikolic" });
 
         }
 

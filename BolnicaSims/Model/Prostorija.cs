@@ -8,7 +8,8 @@ using System;
 
 namespace Model
 {
-   public class Prostorija
+    [Serializable]
+    public class Prostorija
    {
       public void rezervisiProstoriju(Prostorija p)
       {
