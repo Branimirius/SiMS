@@ -8,7 +8,8 @@ using System;
 
 namespace Model
 {
-   public class Inventar
+    [Serializable]
+    public class Inventar
    {
       private String IdInventara
       {

@@ -48,19 +48,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Korisnik\\.nuget\\packages\\": {}
+    "C:\\Users\\Maricic\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+      "projectUniqueName": "C:\\Users\\Maricic\\Documents\\GitHub\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
       "projectName": "BolnicaSims",
-      "projectPath": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
-      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\obj\\",
+      "projectPath": "C:\\Users\\Maricic\\Documents\\GitHub\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+      "packagesPath": "C:\\Users\\Maricic\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Maricic\\Documents\\GitHub\\SiMS\\BolnicaSims\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Maricic\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
