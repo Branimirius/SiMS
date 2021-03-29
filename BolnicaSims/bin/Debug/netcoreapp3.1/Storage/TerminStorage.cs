@@ -15,7 +15,19 @@ namespace Model
     [Serializable]
     public class TerminStorage
    {
-           
+        private static TerminStorage instance = null;
+        public static TerminStorage Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new TerminStorage();
+                }
+                return instance;
+            }
+        }
+
         public List<Termin> termini = new List<Termin>();
         private String fileLocation = "terminStorage.txt";
 

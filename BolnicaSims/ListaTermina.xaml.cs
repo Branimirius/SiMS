@@ -20,13 +20,13 @@ namespace BolnicaSims
     public partial class ListaTermina : Window
     {
         private int colNum = 0;
-        TerminStorage storage = new TerminStorage();
+        //TerminStorage storage = new TerminStorage();
        
         public ListaTermina()
         {
             InitializeComponent();
             // this.DataContext = this;
-            dataGridTermini.ItemsSource = storage.Load();
+            dataGridTermini.ItemsSource = TerminStorage.Instance.Load();
             
 
         }

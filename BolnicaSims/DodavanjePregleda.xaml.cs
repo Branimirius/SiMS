@@ -34,9 +34,9 @@ namespace BolnicaSims
             tempTermin.ImePrezimeDoktora = txtBox2.Text;
 
 
-            TerminStorage storage = new TerminStorage();
-            storage.Read().Add(tempTermin);
-            storage.Save();
+           // TerminStorage storage = new TerminStorage();
+            TerminStorage.Instance.Read().Add(tempTermin);
+            TerminStorage.Instance.Save();
 
            
         }

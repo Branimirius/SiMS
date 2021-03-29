@@ -13,6 +13,7 @@ namespace Model
     public class Termin
     {
 
+        
         public DateTime VremeTermina
         {
             get
