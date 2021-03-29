@@ -1,34 +1,35 @@
 /***********************************************************************
- * Module:  StoragePacijenti.cs
- * Author:  brani
- * Purpose: Definition of the Class StoragePacijenti
+ * Module:  PregledStorage.cs
+ * Author:  temerin
+ * Purpose: Definition of the Class PregledStorage
  ***********************************************************************/
 
 using System;
 
 namespace Model
 {
-   public class PacijentiStorage
+   public class TerminStorage
    {
+      
       public bool Save()
       {
          // TODO: implement
          return false;
       }
       
-      public bool Delete(Pacijent pacijent)
+      public bool Delete(Termin termin)
       {
          // TODO: implement
          return false;
       }
       
-      public bool Update(String BrojKartona, Pacijent pacijent)
+      public bool Update(String idTermina, Termin termin)
       {
          // TODO: implement
          return false;
       }
       
-      public Pacijent Create(Pacijent noviPacijent)
+      public Termin Create(Termin noviTermin)
       {
          // TODO: implement
          return null;
@@ -39,7 +40,7 @@ namespace Model
          // TODO: implement
       }
       
-      public Pacijent Find(String BrojKartona)
+      public Termin Find(String idTermina)
       {
          // TODO: implement
          return null;
@@ -47,5 +48,6 @@ namespace Model
    
       private String FilePath;
    
-   }
+
+    }
 }

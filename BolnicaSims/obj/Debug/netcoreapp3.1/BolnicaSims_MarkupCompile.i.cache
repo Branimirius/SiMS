@@ -1,19 +1,19 @@
 ﻿BolnicaSims
-
+1.0.0.0
 
 winexe
 C#
 .cs
-C:\Users\brani\source\repos\BolnicaSims\obj\Debug\netcoreapp3.1\
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
 BolnicaSims
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
-C:\Users\brani\source\repos\BolnicaSims\App.xaml
-11151548125
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
+D:\OISISI - github rep\SiMS\BolnicaSims\App.xaml
+11407045341
 
-202057593201
-1921654412462
+211007640400
+193-712639422
 MainWindow.xaml;
 
 False
