@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
-BolnicaSims_wvlmezxy_wpftmp
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
+BolnicaSims
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-D:\OISISI - github rep\SiMS\BolnicaSims\App.xaml
-11407045341
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\App.xaml
+2909561315
 
-211939772862
-192-1533232326
-MainWindow.xaml;
+20-151430104
+193-12156069
+ListaTermina.xaml;MainWindow.xaml;
 
-True
+False
 

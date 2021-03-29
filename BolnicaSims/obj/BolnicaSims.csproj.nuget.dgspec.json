@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj": {}
+    "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj": {}
   },
   "projects": {
-    "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj": {
+    "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+        "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
         "projectName": "BolnicaSims",
-        "projectPath": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
-        "packagesPath": "C:\\Users\\markovenom\\.nuget\\packages\\",
-        "outputPath": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\obj\\",
+        "projectPath": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+        "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\markovenom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

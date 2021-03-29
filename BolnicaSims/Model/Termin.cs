@@ -8,29 +8,35 @@ using System;
 
 namespace Model
 {
-   public class Termin
-   {
-      /*public Doktor[] get_doktor()
-      ;
-      
-      public void set_doktor(Doktor[] value)
-      ;
-      
-      public Pacijent[] get_pacijent()
-      ;
-      
-      public void set_pacijent(Pacijent[] value)
-      ;
-      
-      public Prostorija get_MestoTermina()
-      ;
-      
-      public void set_MestoTermina(Prostorija value)
-      ;*/
-   
-      public Pacijent[] pacijent;
-      public Doktor[] doktor;
-      public Prostorija prostorija;
+    public class Termin
+    {
+        /*public Doktor[] get_doktor()
+        ;
+
+        public void set_doktor(Doktor[] value)
+        ;
+
+        public Pacijent[] get_pacijent()
+        ;
+
+        public void set_pacijent(Pacijent[] value)
+        ;
+
+        public Prostorija get_MestoTermina()
+        ;
+
+        public void set_MestoTermina(Prostorija value)
+        ;*/
+
+        // public Pacijent[] pacijent;
+        //  public Doktor[] doktor;
+         public Prostorija prostorija;
+        public String ImePrezimeDoktora
+        {
+            get;
+            set;
+        }
+
       
       /// <pdGenerated>default parent getter</pdGenerated>
       public Prostorija GetProstorija()
@@ -58,7 +64,7 @@ namespace Model
          }
       }
    
-      private DateTime VremeTermina
+      public DateTime VremeTermina
       {
          get
          ;
@@ -81,8 +87,8 @@ namespace Model
          set
          ;
       }
-      
-      private String IdTermina
+
+        public String IdTermina
       {
          get
          ;

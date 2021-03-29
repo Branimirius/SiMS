@@ -24,5 +24,13 @@ namespace BolnicaSims
         {
             InitializeComponent();
         }
+   
+
+        private void ManualColumns_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new ListaTermina();
+            s.Show();
+        }
+
     }
 }

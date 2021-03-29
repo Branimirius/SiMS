@@ -6,7 +6,13 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <Menu DockPanel.Dock ="Top" Height="38">
 
-    </Grid>
+            <MenuItem x:Name="dataGridTermini" Header="Prikaz liste termina" Click="ManualColumns_Click"/>
+          
+        </Menu>
+        <Grid DockPanel.Dock="Bottom" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        </Grid>
+    </DockPanel>
 </Window>
