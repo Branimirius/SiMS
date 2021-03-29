@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\App.xaml
-2909561315
+4-576360792
 
-22-1465134530
+24-846279033
 193-12156069
-ListaTermina.xaml;MainWindow.xaml;
+DodavanjePregleda.xaml;IzmenaPregleda.xaml;ListaTermina.xaml;MainWindow.xaml;
 
-False
+True
 

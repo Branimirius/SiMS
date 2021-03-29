@@ -7,11 +7,23 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="DodavanjePregleda.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="IzmenaPregleda.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ListaTermina.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="DodavanjePregleda.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="IzmenaPregleda.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ListaTermina.xaml">
       <SubType>Designer</SubType>
     </Page>
