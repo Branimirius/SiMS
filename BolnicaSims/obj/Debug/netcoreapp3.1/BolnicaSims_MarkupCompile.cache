@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
 BolnicaSims
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\App.xaml
-13645557894
+D:\OISISI - github rep\SiMS\BolnicaSims\App.xaml
+15-1568627823
 
-31-2084545616
+33660789890
 192-1533232326
-DodavanjePacijenta.xaml;DodavanjePregleda.xaml;DodavanjeProstorije.xaml;IzmenaPacijenta.xaml;IzmenaPregleda.xaml;IzmenaProstorije.xaml;ListaPacijenata.xaml;ListaProstorija.xaml;ListaTermina.xaml;MainWindow.xaml;PacijentView.xaml;SekretarView.xaml;UpravnikView.xaml;
+DodavanjePacijenta.xaml;DodavanjePregleda.xaml;DodavanjeProstorije.xaml;DoktorView.xaml;IzmenaPacijenta.xaml;IzmenaPregleda.xaml;IzmenaProstorije.xaml;ListaPacijenata.xaml;ListaProstorija.xaml;ListaSopstvenihTermina.xaml;ListaTermina.xaml;MainWindow.xaml;PacijentView.xaml;SekretarView.xaml;UpravnikView.xaml;
 
 False
 

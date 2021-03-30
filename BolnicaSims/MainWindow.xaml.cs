@@ -39,7 +39,7 @@ namespace BolnicaSims
         }
         private void ManualColumnsLekar_Click(object sender, RoutedEventArgs e)
         {
-            var s = new SekretarView();
+            var s = new DoktorView();
             s.Show();
         }
         private void ManualColumnsUpravnik_Click(object sender, RoutedEventArgs e)
