@@ -140,3 +140,13 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjeProstor
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaProstorije.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjeProstorije.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaProstorije.baml
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjeProstorije.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPacijenta.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaProstorije.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaProstorija.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\UpravnikView.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjeProstorije.baml
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPacijenta.baml
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaProstorije.baml
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaProstorija.baml
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\UpravnikView.baml

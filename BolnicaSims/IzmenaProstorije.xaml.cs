@@ -21,5 +21,10 @@ namespace BolnicaSims
         {
             InitializeComponent();
         }
+
+        private void buttonIzmena_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

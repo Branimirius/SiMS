@@ -33,6 +33,11 @@ namespace BolnicaSims
         }
 
         public ObservableCollection<Pacijent> pacijenti = PacijentiStorage.Instance.Read();
+        public Pacijent getSelektovanPacijent()
+        {
+            Pacijent selektovan = (Pacijent)dataGridPacijenti.SelectedItem;
+            return selektovan;
+        }
         public ListaPacijenata()
         {
             InitializeComponent();
@@ -53,6 +58,46 @@ namespace BolnicaSims
                 var s = new DodavanjePacijenta();
                 s.Show();
             }
+        }
+
+        private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
+        {
+            {             
+                var s = new IzmenaPacijenta();
+                s.Show();               
+            }
+        }
+        public void izmeniPacijenta(Pacijent pacijent)
+        {
+            for (int i = 0; i < pacijenti.Count; i++)
+            {
+                
+                if (pacijent.zdravstveniKarton.BrojKartona == pacijenti[i].zdravstveniKarton.BrojKartona)
+                
+                    {
+                    if (pacijent.korisnik.Ime != "")
+                    {
+                        pacijenti[i].korisnik.Ime = pacijent.korisnik.Ime;
+                    }
+                    if (pacijent.korisnik.Prezime != "")
+                    {
+                        pacijenti[i].korisnik.Prezime = pacijent.korisnik.Prezime;
+                    }
+                    if (pacijent.zdravstveniKarton.ImeRoditelja != "")
+                    {
+                        pacijenti[i].zdravstveniKarton.ImeRoditelja = pacijent.zdravstveniKarton.ImeRoditelja;
+                    }
+                    if (pacijent.zdravstveniKarton.BrojKartona != "")
+                    {
+                        pacijenti[i].zdravstveniKarton.BrojKartona = pacijent.zdravstveniKarton.BrojKartona;
+                    }
+                }
+
+            }
+            PacijentiStorage.Instance.Save();
+            dataGridPacijenti.Items.Refresh();
+
+
         }
     }
 }

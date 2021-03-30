@@ -49,10 +49,54 @@ namespace BolnicaSims
             dataGridProstorije.Items.Refresh();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void buttonDodaj_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeProstorije();
             s.Show();
+        }
+        private void buttonObrisi_Click(object sender, RoutedEventArgs e)
+        {
+            Prostorija selektovana = (Prostorija)dataGridProstorije.SelectedItem;
+            prostorije.Remove(selektovana);
+            ProstorijeStorage.Instance.Save();
+        }
+        private void buttonIzmeni_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new IzmenaProstorije();
+            s.Show();
+        }
+
+        public void izmeniProstoriju(Prostorija prostorija)
+        {
+            for (int i = 0; i < prostorije.Count; i++)
+            {
+
+                if (prostorija.IdProstorije == prostorije[i].IdProstorije)
+
+                {
+                    if (prostorija.IdProstorije != "")
+                    {
+                        prostorije[i].IdProstorije = prostorija.IdProstorije;
+                    }
+                    /* if (prostorija.Sprat != null)
+                     {
+                         prostorije[i].IdProstorije = prostorija.korisnik.Prezime;
+                     }
+                     if (prostorija.BrojProstorije != null)
+                     {
+                         prostorije[i].IdProstorije = prostorija.zdravstveniKarton.ImeRoditelja;
+                     }
+                     if (prostorija.RezervisanaOd != "")
+                     {
+                         prostorije[i].IdProstorije = prostorija.zdravstveniKarton.BrojKartona;
+                     }*/
+                }
+
+            }
+            ProstorijeStorage.Instance.Save();
+            dataGridProstorije.Items.Refresh();
+
+
         }
     }
 }
