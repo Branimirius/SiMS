@@ -68,7 +68,9 @@ namespace BolnicaSims
 
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
-
+            Termin selektovan = (Termin)dataGridTermini.SelectedItem;
+            termini.Remove(selektovan);
+            TerminStorage.Instance.Save();
         }
     }
 }
