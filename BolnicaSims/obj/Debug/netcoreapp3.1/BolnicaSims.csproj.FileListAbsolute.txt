@@ -38,7 +38,6 @@ C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Bolni
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.runtimeconfig.dev.json
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.dll
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.pdb
-C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csprojAssemblyReference.cache
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePregleda.g.cs
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPregleda.g.cs
@@ -55,7 +54,6 @@ C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Bolni
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfoInputs.cache
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfo.cs
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CoreCompileInputs.cache
-C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.dll
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.pdb
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.genruntimeconfig.cache

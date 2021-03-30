@@ -1,10 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BqKhR+Nm9G2tGb67yyjN3EwUpBi+vQ2bBp9fLKVF9PrZVypkgHisJHeJQ8NmttUbPPtoY7tHq18eHWoa2I+4iw==",
+  "dgSpecHash": "IoxVRoraw9Azx1BkUH+c+jth+++2ciRasQ1tY6lsAAPjRmfJG7sXaHRcaNhmzuhF5cOYfTPBtW+yICeek8U1uQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\Maricic\\Documents\\GitHub\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
-  "expectedPackageFiles": [
-    "C:\\Users\\Maricic\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
-  ],
+  "expectedPackageFiles": [],
   "logs": []
 }
