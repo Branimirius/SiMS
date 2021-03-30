@@ -13,10 +13,19 @@
     <Compile Update="DodavanjePregleda.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="DodavanjeProstorije.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="IzmenaPregleda.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="IzmenaProstorije.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="ListaPacijenata.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="ListaProstorija.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="ListaTermina.xaml.cs">
@@ -28,6 +37,9 @@
     <Compile Update="SekretarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UpravnikView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="DodavanjePacijenta.xaml">
@@ -36,10 +48,19 @@
     <Page Update="DodavanjePregleda.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="DodavanjeProstorije.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="IzmenaPregleda.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="IzmenaProstorije.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ListaPacijenata.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ListaProstorija.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ListaTermina.xaml">
@@ -52,6 +73,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SekretarView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UpravnikView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

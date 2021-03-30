@@ -1,0 +1,17 @@
+﻿<Window x:Class="BolnicaSims.UpravnikView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims"
+        mc:Ignorable="d"
+        Title="UpravnikView" Height="450" Width="800">
+    <Grid>
+        <Menu DockPanel.Dock ="Top" Height="434" Background="#FF1FCCD4" Margin="0,0,699,0">
+
+            <MenuItem x:Name="dataGridProstorije" Header="Prostorije" Click="ManualColumnsPacijenti_Click" Width="68" Height="66" />
+        </Menu>
+
+
+    </Grid>
+</Window>

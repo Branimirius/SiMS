@@ -99,8 +99,5 @@ namespace Model
          return null;
       }
    
-      private String FilePath;
-   
-
     }
 }

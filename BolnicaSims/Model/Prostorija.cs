@@ -131,40 +131,40 @@ namespace Model
             tmpTermin.Clear();
          }
       }
-   
-      private String IdProstorije
+
+        public String IdProstorije
       {
          get
          ;
          set
          ;
       }
-      
-      private int Sprat
+
+        public int Sprat
       {
          get
          ;
          set
          ;
       }
-      
-      private int BrojProstorije
+
+        public int BrojProstorije
       {
          get
          ;
          set
          ;
       }
-      
-      private DateTime RezervisanaOd
+
+        public DateTime RezervisanaOd
       {
          get
          ;
          set
          ;
       }
-      
-      private DateTime RezervisanaDo
+
+        public DateTime RezervisanaDo
       {
          get
          ;

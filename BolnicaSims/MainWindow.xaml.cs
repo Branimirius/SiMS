@@ -44,7 +44,7 @@ namespace BolnicaSims
         }
         private void ManualColumnsUpravnik_Click(object sender, RoutedEventArgs e)
         {
-            var s = new SekretarView();
+            var s = new UpravnikView();
             s.Show();
         }
     }

@@ -33,8 +33,7 @@ namespace BolnicaSims
             }
         }
 
-        private int colNum = 0;
-        //TerminStorage storage = new TerminStorage();
+
         public ObservableCollection<Termin> termini = TerminStorage.Instance.Read();
         public ListaTermina()
         {
@@ -67,12 +66,6 @@ namespace BolnicaSims
 
             var s = new IzmenaPregleda();
             s.Show();
-        }
-
-        public void update(Termin selectovaniTermin)
-        {
-
-
         }
 
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)

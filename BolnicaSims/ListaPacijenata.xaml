@@ -19,9 +19,9 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Ukloni" Margin="220,27,480,376" Click="ButtonUkloni_Click" />
-        <Button Content="Dodaj" Margin="10,27,690,376" Click="ButtonDodaj_Click"/>
-        <Button Content="Izmeni" Margin="115,27,585,376" Click="ButtonUkloni_Click" />
+        <Button Content="Ukloni" Background="#FFFFFDFD" Margin="220,27,480,376" Click="ButtonUkloni_Click" />
+        <Button Content="Dodaj" Background="#FFFFFDFD" Margin="10,27,690,376" Click="ButtonDodaj_Click"/>
+        <Button Content="Izmeni" Background="#FFFFFDFD" Margin="115,27,585,376" Click="ButtonUkloni_Click" />
         <Label Content="Tabela pacijenata" HorizontalAlignment="Left" Margin="575,12,0,0" VerticalAlignment="Top" Width="349" Height="51" FontSize="24" FontWeight="Bold"/>
     </Grid>
 </Window>

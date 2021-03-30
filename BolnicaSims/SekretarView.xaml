@@ -8,7 +8,7 @@
         Title="Sekretar" Height="450" Width="800">
     <Grid>
         <Canvas>
-            <Menu DockPanel.Dock ="Top" Height="434" Width="88" Background="#FF1FCCD4">
+            <Menu DockPanel.Dock ="Top" Height="434" Width="71" Background="#FF1FCCD4">
 
                 <MenuItem x:Name="dataGridPacijenti" Header="Pacijenti" Click="ManualColumnsPacijenti_Click" Width="66" Height="66" />
             </Menu>

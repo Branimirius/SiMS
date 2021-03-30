@@ -5,18 +5,53 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.ObjectModel;
+using System.IO;
+using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace Model
 {
    public class ProstorijeStorage
    {
-      public bool Save()
+
+        private static ProstorijeStorage instance = null; 
+        public static ProstorijeStorage Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ProstorijeStorage();
+                }
+                return instance;
+            }
+        }
+
+        public ObservableCollection<Prostorija> prostorije = new ObservableCollection<Prostorija>();
+        private String fileLocation = "prostorijeStorage.txt";
+
+        public ProstorijeStorage()
+        {
+            prostorije = this.Load();
+            /*Prostorija p1 = new Prostorija() { IdProstorije = "33C", Sprat = 3, BrojProstorije = 15 };
+            prostorije.Add(p1);
+            this.Save();*/
+        }
+
+        public void Save()
       {
-         // TODO: implement
-         return false;
-      }
-      
-      public bool Delete(Prostorija prostorija)
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(fileLocation, FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, prostorije);
+            stream.Close();
+        }
+
+        public ObservableCollection<Prostorija> Read()
+        {
+            return prostorije;
+        }
+        public bool Delete(Prostorija prostorija)
       {
          // TODO: implement
          return false;
@@ -34,18 +69,20 @@ namespace Model
          return null;
       }
       
-      public void Load()
+      public ObservableCollection<Prostorija> Load()
       {
-         // TODO: implement
-      }
-      
-      public Prostorija Find(String IdProstorije)
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
+            prostorije = (ObservableCollection<Prostorija>)formatter.Deserialize(stream);
+            return prostorije;
+
+        }
+
+        public Prostorija Find(String IdProstorije)
       {
          // TODO: implement
          return null;
       }
-   
-      private String FilePath;
    
    }
 }
