@@ -29,7 +29,8 @@ namespace BolnicaSims
             tempProstorija.IdProstorije = txtBox1.Text;
             tempProstorija.Sprat = int.Parse(txtBox2.Text);
             tempProstorija.BrojProstorije = int.Parse(txtBox3.Text);
-
+            tempProstorija.RezervisanaOd = DateTime.Parse(txtBox4.Text);
+            tempProstorija.RezervisanaDo = DateTime.Parse(txtBox5.Text);
             ProstorijeStorage.Instance.Read().Add(tempProstorija);
             ProstorijeStorage.Instance.Save();
 

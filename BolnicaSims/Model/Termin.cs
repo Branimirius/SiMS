@@ -109,6 +109,20 @@ namespace Model
          set
          ;
       }
-   
-   }
+        public Termin(String idTermina, String datum, String doktor)
+        {
+            IdTermina = idTermina;
+            if (datum != "")
+            {
+                VremeTermina = DateTime.Parse(datum);
+            }
+            else
+            {
+                VremeTermina = default;
+            }
+            ImePrezimeDoktora = doktor;
+        }
+        public Termin() { }
+
+    }
 }

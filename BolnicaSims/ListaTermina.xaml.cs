@@ -58,11 +58,9 @@ namespace BolnicaSims
             var s = new DodavanjePregleda();
             s.Show();
         }
-
-        public Termin selectovaniTermin = new Termin();
+     
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
-        {
-            selectovaniTermin = (Termin)dataGridTermini.SelectedItem;
+        {         
 
             var s = new IzmenaPregleda();
             s.Show();
@@ -73,6 +71,34 @@ namespace BolnicaSims
             Termin selektovan = (Termin)dataGridTermini.SelectedItem;
             termini.Remove(selektovan);
             TerminStorage.Instance.Save();
+        }
+
+        public void izmeniPregled(Termin termin, String vreme)
+        {
+            for (int i = 0; i < termini.Count; i++)
+            {
+                if (termini[i].IdTermina == termin.IdTermina)
+                {
+                    if (termin.IdTermina != "" && termin.IdTermina != " ")
+                    {
+                        termini[i].IdTermina = termin.IdTermina;
+                    }
+                    if (vreme != "")
+                    {
+                        termini[i].VremeTermina = termin.VremeTermina;
+                    }
+                    if (termin.ImePrezimeDoktora != "")
+                    {
+                        termini[i].ImePrezimeDoktora = termin.ImePrezimeDoktora;
+                    }
+
+                }
+
+            }
+            TerminStorage.Instance.Save();
+            dataGridTermini.Items.Refresh();
+
+
         }
     }
 }

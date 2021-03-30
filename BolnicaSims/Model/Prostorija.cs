@@ -11,7 +11,48 @@ namespace Model
     [Serializable]
     public class Prostorija
    {
-      public void rezervisiProstoriju(Prostorija p)
+
+        public Prostorija(String idProstorije, String sprat, String brojProstorije, String rezervisanaOd, String rezervisanaDo)
+        {
+            IdProstorije = idProstorije;
+            if (sprat != "")
+            {
+                Sprat = int.Parse(sprat);
+            }
+            else
+            {
+                Sprat = 0;
+            }
+
+            if (brojProstorije != "")
+            {
+                BrojProstorije = int.Parse(brojProstorije);
+            }
+            else
+            {
+                BrojProstorije = 0;
+            }
+            if (rezervisanaOd != "")
+            {
+                RezervisanaOd = DateTime.Parse(rezervisanaOd);
+            }
+            else
+            {
+                RezervisanaOd = default;
+            }
+            if (rezervisanaOd != "")
+            {
+                RezervisanaDo = DateTime.Parse(rezervisanaDo);
+            }
+            else
+            {
+                RezervisanaDo = default;
+            }
+
+        }
+
+        public Prostorija() { }
+        public void rezervisiProstoriju(Prostorija p)
       {
          // TODO: implement
       }

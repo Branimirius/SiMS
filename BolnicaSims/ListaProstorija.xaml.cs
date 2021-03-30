@@ -66,7 +66,7 @@ namespace BolnicaSims
             s.Show();
         }
 
-        public void izmeniProstoriju(Prostorija prostorija)
+        public void izmeniProstoriju(Prostorija prostorija, String sprat, String broj, String Od, String Do)
         {
             for (int i = 0; i < prostorije.Count; i++)
             {
@@ -78,18 +78,22 @@ namespace BolnicaSims
                     {
                         prostorije[i].IdProstorije = prostorija.IdProstorije;
                     }
-                    /* if (prostorija.Sprat != null)
-                     {
-                         prostorije[i].IdProstorije = prostorija.korisnik.Prezime;
-                     }
-                     if (prostorija.BrojProstorije != null)
-                     {
-                         prostorije[i].IdProstorije = prostorija.zdravstveniKarton.ImeRoditelja;
-                     }
-                     if (prostorija.RezervisanaOd != "")
-                     {
-                         prostorije[i].IdProstorije = prostorija.zdravstveniKarton.BrojKartona;
-                     }*/
+                    if (sprat != "")
+                    {
+                        prostorije[i].Sprat = prostorija.Sprat;
+                    }
+                    if (broj != "")
+                    {
+                        prostorije[i].BrojProstorije = prostorija.BrojProstorije;
+                    }
+                    if (Od != "")
+                    {
+                        prostorije[i].RezervisanaOd = prostorija.RezervisanaOd;
+                    }
+                    if (Do != "")
+                    {
+                        prostorije[i].RezervisanaDo = prostorija.RezervisanaDo;
+                    }
                 }
 
             }

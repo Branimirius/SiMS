@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -24,9 +25,9 @@ namespace BolnicaSims
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-
-            var s = new IzmenaPregleda();
-            s.Show();
+            Termin terminTemp = new Termin(txtBox3.Text, txtBox1.Text, txtBox2.Text);
+            ListaTermina.Instance.izmeniPregled(terminTemp, txtBox1.Text);
+            this.Close();
         }
 
     }
