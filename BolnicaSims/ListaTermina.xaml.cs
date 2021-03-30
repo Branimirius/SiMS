@@ -60,10 +60,19 @@ namespace BolnicaSims
             s.Show();
         }
 
+        public Termin selectovaniTermin = new Termin();
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
+            selectovaniTermin = (Termin)dataGridTermini.SelectedItem;
+
             var s = new IzmenaPregleda();
             s.Show();
+        }
+
+        public void update(Termin selectovaniTermin)
+        {
+
+
         }
 
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)

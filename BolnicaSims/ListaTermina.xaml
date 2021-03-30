@@ -8,8 +8,8 @@
         Title="Lista Pregleda" Height="450" Width="1000">
     <Grid Background="#FF278FBF" >
         <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
-                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
-                  Height="250" Margin="280,113,0,0" VerticalAlignment="Top" Width="500">
+                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                  Height="352" Margin="0,72,0,0" VerticalAlignment="Top" Width="980">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}"  />
                 <DataGridTextColumn Header="Datum" Binding="{Binding VremeTermina}" />
@@ -18,10 +18,10 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Zakazi pregled" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="93" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
-        <Button Content="Izmeni pregled" HorizontalAlignment="Left" Height="31" Margin="108,21,0,0" VerticalAlignment="Top" Width="82" Click="ButtonIzmeni_Click" Background="#FFFFFDFD"/>
-        <Button Content="Otkazi pregled" HorizontalAlignment="Left" Height="31" Margin="195,21,0,0" VerticalAlignment="Top" Width="83" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
-        <Label Content="Tabela predstojecih pregleda" HorizontalAlignment="Left" Margin="362,21,0,0" VerticalAlignment="Top" Width="349" Height="51" FontSize="24" FontWeight="Bold"/>
+        <Button Content="Zakazi pregled" HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="100" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
+        <Button Content="Izmeni pregled" HorizontalAlignment="Left" Height="31" Margin="115,21,0,0" VerticalAlignment="Top" Width="100" Click="ButtonIzmeni_Click" Background="#FFFFFDFD"/>
+        <Button Content="Otkazi pregled" HorizontalAlignment="Left" Height="31" Margin="220,21,0,0" VerticalAlignment="Top" Width="100" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
+        <Label Content="Tabela predstojecih pregleda" HorizontalAlignment="Left" Margin="641,11,0,0" VerticalAlignment="Top" Width="349" Height="51" FontSize="24" FontWeight="Bold"/>
 
 
     </Grid>

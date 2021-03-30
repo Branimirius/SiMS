@@ -7,12 +7,12 @@
         mc:Ignorable="d"
         Title="Sekretar" Height="450" Width="800">
     <Grid>
-        <DockPanel Margin="10,109,574,271">
-            <Menu DockPanel.Dock ="Top" Height="296" Width="770" Background="#FF1FCCD4">
+        <Canvas>
+            <Menu DockPanel.Dock ="Top" Height="434" Width="88" Background="#FF1FCCD4">
 
-                <MenuItem x:Name="dataGridPacijenti" Header="Pacijenti" Click="ManualColumnsPacijenti_Click" Width="250" />
+                <MenuItem x:Name="dataGridPacijenti" Header="Pacijenti" Click="ManualColumnsPacijenti_Click" Width="66" Height="66" />
             </Menu>
             <Grid DockPanel.Dock="Bottom" Height="24"/>
-        </DockPanel>
+        </Canvas>
     </Grid>
 </Window>

@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="ListaPacijenata" Height="450" Width="800">
-    <Grid>
+    <Grid Background="#FF278FBF">
         <DataGrid x:Name="dataGridPacijenti" ItemsSource="{Binding Pacijenti}" IsReadOnly="True"
-                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
-                  Height="211" Margin="166,98,0,0" VerticalAlignment="Top" Width="523">
+                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                  Height="352" Margin="0,72,0,0" VerticalAlignment="Top" Width="780">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime" Binding="{Binding korisnik.Ime}" Width="100" />
                 <DataGridTextColumn Header="Prezime" Binding="{Binding korisnik.Prezime}" Width="100" />
@@ -19,7 +19,9 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <Button Content="Ukloni" Margin="10,98,686,274" Click="ButtonUkloni_Click" />
-        <Button Content="Dodaj" Margin="10,247,686,125" Click="ButtonDodaj_Click"/>
+        <Button Content="Ukloni" Margin="220,27,480,376" Click="ButtonUkloni_Click" />
+        <Button Content="Dodaj" Margin="10,27,690,376" Click="ButtonDodaj_Click"/>
+        <Button Content="Izmeni" Margin="115,27,585,376" Click="ButtonUkloni_Click" />
+        <Label Content="Tabela pacijenata" HorizontalAlignment="Left" Margin="575,12,0,0" VerticalAlignment="Top" Width="349" Height="51" FontSize="24" FontWeight="Bold"/>
     </Grid>
 </Window>

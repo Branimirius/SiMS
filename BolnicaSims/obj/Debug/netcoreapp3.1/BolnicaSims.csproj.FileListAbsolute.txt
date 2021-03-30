@@ -103,3 +103,32 @@ C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePaci
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaPacijenata.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePregleda.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPregleda.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaPacijenata.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaTermina.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.pdb
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.exe
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Storage\TerminStorage.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.deps.json
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.runtimeconfig.json
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.runtimeconfig.dev.json
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.pdb
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePregleda.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPregleda.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaPacijenata.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaTermina.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MainWindow.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.g.resources
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfoInputs.cache
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfo.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CoreCompileInputs.cache
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.genruntimeconfig.cache

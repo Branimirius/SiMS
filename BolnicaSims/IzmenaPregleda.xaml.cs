@@ -21,5 +21,14 @@ namespace BolnicaSims
         {
             InitializeComponent();
         }
+
+        private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
+        {
+
+            var s = new IzmenaPregleda();
+            s.Show();
+        }
+
     }
+
 }
