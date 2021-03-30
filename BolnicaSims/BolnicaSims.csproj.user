@@ -19,6 +19,9 @@
     <Compile Update="ListaTermina.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="PacijentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="SekretarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,6 +40,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="PacijentView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="SekretarView.xaml">

@@ -26,13 +26,23 @@ namespace BolnicaSims
         }
    
 
-        private void ManualColumns_Click(object sender, RoutedEventArgs e)
+        private void ManualColumnsPacijent_Click(object sender, RoutedEventArgs e)
         {
-            var s = new ListaTermina();
+            var s = new PacijentView();
             s.Show();
         }
 
         private void ManualColumnsSekretar_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new SekretarView();
+            s.Show();
+        }
+        private void ManualColumnsLekar_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new SekretarView();
+            s.Show();
+        }
+        private void ManualColumnsUpravnik_Click(object sender, RoutedEventArgs e)
         {
             var s = new SekretarView();
             s.Show();

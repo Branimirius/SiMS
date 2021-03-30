@@ -63,3 +63,5 @@ C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Lista
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.g.cs
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaPacijenata.baml
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.baml
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.baml
