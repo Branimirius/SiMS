@@ -19,16 +19,39 @@ namespace BolnicaSims
     /// </summary>
     public partial class ListaTermina : Window
     {
+
+        private static ListaTermina instance = null;
+        public static ListaTermina Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ListaTermina();
+                }
+                return instance;
+            }
+        }
+
         private int colNum = 0;
         //TerminStorage storage = new TerminStorage();
-       
+        public ObservableCollection<Termin> termini = TerminStorage.Instance.Read();
         public ListaTermina()
         {
             InitializeComponent();
             // this.DataContext = this;
-            dataGridTermini.ItemsSource = TerminStorage.Instance.Load();
-            
+           
+            dataGridTermini.ItemsSource = termini;
+           
 
+        }
+        public void refreshListaTermina()
+        {
+            this.Close();
+            this.InitializeComponent();
+            dataGridTermini.ItemsSource = null;
+            dataGridTermini.ItemsSource = termini;
+            dataGridTermini.Items.Refresh();
         }
 
         private void ButtonZakazi_Click(object sender, RoutedEventArgs e)

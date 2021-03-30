@@ -11,11 +11,12 @@ namespace Model
     [Serializable]
     public class Pacijent
    {
-      public Korisnik korisnik;
+      public Korisnik korisnik { get; set; }
       public System.Collections.ArrayList termin;
-      
-      /// <pdGenerated>default getter</pdGenerated>
-      public System.Collections.ArrayList GetTermin()
+      public ZdravstveniKarton zdravstveniKarton { get; set; }
+
+        /// <pdGenerated>default getter</pdGenerated>
+        public System.Collections.ArrayList GetTermin()
       {
          if (termin == null)
             termin = new System.Collections.ArrayList();
@@ -57,7 +58,20 @@ namespace Model
          if (termin != null)
             termin.Clear();
       }
-      public ZdravstveniKarton zdravstveniKarton;
-   
-   }
+      
+
+        public Pacijent(Korisnik korisnik, ZdravstveniKarton zdravstveniKarton)
+      {
+            this.korisnik = korisnik;
+            this.zdravstveniKarton = zdravstveniKarton;
+            termin = null;
+      }
+
+      public Pacijent()
+      {
+            korisnik = null;
+            zdravstveniKarton = null;
+            termin = null;
+      }
+    }
 }

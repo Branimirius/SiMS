@@ -6,6 +6,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -28,7 +29,7 @@ namespace Model
             }
         }
 
-        public List<Termin> termini = new List<Termin>();
+        public ObservableCollection<Termin> termini = new ObservableCollection<Termin>();
         private String fileLocation = "terminStorage.txt";
 
         public TerminStorage()
@@ -46,7 +47,9 @@ namespace Model
             this.Save();*/
         }
 
-      public void Save()
+       
+
+        public void Save()
       {
             // TODO: implement
             IFormatter formatter = new BinaryFormatter();
@@ -57,7 +60,7 @@ namespace Model
 
       }
 
-        public List<Termin> Read()
+        public ObservableCollection<Termin> Read()
         {
             return termini;
         }
@@ -79,13 +82,13 @@ namespace Model
          // TODO: implement
          return null;
       }
-      
-      public List<Termin> Load()
+
+        public ObservableCollection<Termin> Load()
       {
             // TODO: implement
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
-            termini = (List<Termin>)formatter.Deserialize(stream);
+            termini = (ObservableCollection<Termin>)formatter.Deserialize(stream);
             return termini;
 
       }

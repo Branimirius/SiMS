@@ -8,15 +8,30 @@ using System;
 
 namespace Model
 {
-   public class ZdravstveniKarton
+    [Serializable]
+    public class ZdravstveniKarton
    {
-      private String ImeRoditelja { get; set; }
-      
-      private String BrojKartona { get; set; }
-   
-      private String BrojZdravstveneKnjizice { get; set; }
-   
+      public String ImeRoditelja { get; set; }
+
+      public String BrojKartona { get; set; }
+
+      public String BrojZdravstveneKnjizice { get; set; }
+
       private TipPola Pol { get; set; }
-    
-   }
+
+        public ZdravstveniKarton(String imeRoditelja, String brojKartona, String brojknjizice, String pol)
+        {
+            ImeRoditelja = imeRoditelja;
+            BrojKartona = brojKartona;
+            BrojZdravstveneKnjizice = BrojZdravstveneKnjizice;
+            if (pol == "M" || pol == "muski" || pol == "Muski")
+            {
+                Pol = TipPola.M;
+            }
+            else
+            {
+                Pol = TipPola.Z;
+            }
+        }
+    }
 }

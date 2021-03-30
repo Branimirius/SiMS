@@ -11,7 +11,7 @@
                   SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
                   Height="250" Margin="280,113,0,0" VerticalAlignment="Top" Width="500">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}"  />
                 <DataGridTextColumn Header="Datum" Binding="{Binding VremeTermina}" />
                 <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
 

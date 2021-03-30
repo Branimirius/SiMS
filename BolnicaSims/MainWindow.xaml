@@ -6,11 +6,11 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel Margin="10,109,574,286">
+    <DockPanel Margin="10,109,284,262">
         <Menu DockPanel.Dock ="Top" Height="296" Width="770" Background="#FF1FCCD4">
 
             <MenuItem x:Name="dataGridTermini" Header="Zakazivanje Pregleda" Click="ManualColumns_Click" Width="250" />
-
+            <MenuItem x:Name="sekretarView" Header="Sekretar" Click="ManualColumnsSekretar_Click" Width="250" RenderTransformOrigin="0.561,1.579" Height="38" />
         </Menu>
         <Grid DockPanel.Dock="Bottom" Height="24"/>
     </DockPanel>

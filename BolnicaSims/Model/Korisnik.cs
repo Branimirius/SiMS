@@ -8,26 +8,38 @@ using System;
 
 namespace Model
 {
+    [Serializable]
     public class Korisnik
     {
-        private String Username { get; set; }
+        public String Username { get; set; }
 
-        private String Password { get; set; }
+        public String Password { get; set; }
 
-        private String Ime { get; set; }
+        public String Ime { get; set; }
 
-        private String Prezime { get; set; }
+        public String Prezime { get; set; }
 
-        private String Jmbg { get; set; }
+        public String Jmbg { get; set; }
 
-        private DateTime DatumRodjenja { get; set; }
+        public DateTime DatumRodjenja { get; set; }
 
-        private String Adresa { get; set; }
+        public String Adresa { get; set; }
 
-        private String KontaktTelefon { get; set; }
+        public String KontaktTelefon { get; set; }
 
-        private String Email { get; set; }
+        public String Email { get; set; }
 
+        public Korisnik(String username, String password, String ime, String prezime, String jmbg, DateTime datumRodnjenja, String adresa, String kontaktTelefon, String email)
+        {
+            Username = username;
+            Password = password;
+            Ime = ime;
+            Prezime = prezime;
+            Jmbg = jmbg;
+            DatumRodjenja = datumRodnjenja;
+            Adresa = adresa;
+            Email = email;
+        }
 
     }
 

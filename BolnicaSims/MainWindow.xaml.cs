@@ -32,5 +32,10 @@ namespace BolnicaSims
             s.Show();
         }
 
+        private void ManualColumnsSekretar_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new SekretarView();
+            s.Show();
+        }
     }
 }
