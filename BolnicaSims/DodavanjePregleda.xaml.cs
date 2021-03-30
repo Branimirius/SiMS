@@ -30,6 +30,7 @@ namespace BolnicaSims
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
             Termin tempTermin = new Termin();
+            tempTermin.IdTermina = txtBox3.Text;
             tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
             tempTermin.ImePrezimeDoktora = txtBox2.Text;
 
@@ -44,6 +45,11 @@ namespace BolnicaSims
             this.Close();
             
             
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }

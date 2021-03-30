@@ -11,8 +11,7 @@
             <Menu DockPanel.Dock ="Top" Height="434" Width="125" Background="#FF1FCCD4">
 
                 <MenuItem x:Name="dataGridTermini" Header="Zakazivanje Pregleda" Click="ManualColumns_Click" Width="269" Height="66" >
-                    <Border BorderThickness="2" BorderBrush="Black"/>
-                    <Border BorderThickness="2" BorderBrush="Black"/>
+                   
                 </MenuItem>
             </Menu>
             <Grid DockPanel.Dock="Bottom" Height="24"/>
