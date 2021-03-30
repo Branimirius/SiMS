@@ -49,7 +49,10 @@ namespace BolnicaSims
         }
         private void ButtonDodaj_Click(object sender, RoutedEventArgs e)
         {
-            
+            {
+                var s = new DodavanjePacijenta();
+                s.Show();
+            }
         }
     }
 }

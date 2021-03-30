@@ -95,3 +95,5 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfoInputs.cache
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfo.cs
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.g.cs
+C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.baml
