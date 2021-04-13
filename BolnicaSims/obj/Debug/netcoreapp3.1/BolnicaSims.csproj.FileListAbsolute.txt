@@ -70,7 +70,6 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.runtimeconfig.dev.json
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.dll
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.pdb
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csprojAssemblyReference.cache
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePregleda.g.cs
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPregleda.g.cs
@@ -92,7 +91,6 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.g.resources
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfoInputs.cache
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.AssemblyInfo.cs
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.g.cs
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.g.cs
@@ -170,3 +168,19 @@ C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Dokto
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaSopstvenihTermina.g.cs
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DoktorView.baml
 C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaSopstvenihTermina.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjeProstorije.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DoktorView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPacijenta.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaProstorije.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaProstorija.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaSopstvenihTermina.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\UpravnikView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjeProstorije.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DoktorView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPacijenta.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaProstorije.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaProstorija.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaSopstvenihTermina.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\UpravnikView.baml

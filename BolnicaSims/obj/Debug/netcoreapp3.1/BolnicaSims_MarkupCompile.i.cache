@@ -1,20 +1,20 @@
 ﻿BolnicaSims
-1.0.0.0
+
 
 winexe
 C#
 .cs
-C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
 BolnicaSims
 none
 false
-TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Maricic\Documents\GitHub\SiMS\BolnicaSims\App.xaml
-15-1568627823
+TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\App.xaml
+15610398405
 
-35-652914536
-192-1533232326
+34233511952
+1921654412462
 DodavanjePacijenta.xaml;DodavanjePregleda.xaml;DodavanjeProstorije.xaml;DoktorView.xaml;IzmenaPacijenta.xaml;IzmenaPregleda.xaml;IzmenaProstorije.xaml;ListaPacijenata.xaml;ListaProstorija.xaml;ListaSopstvenihTermina.xaml;ListaTermina.xaml;MainWindow.xaml;PacijentView.xaml;SekretarView.xaml;UpravnikView.xaml;
 
-False
+True
 
