@@ -40,7 +40,7 @@ namespace BolnicaSims
             InitializeComponent();
             // this.DataContext = this;
            
-            dataGridTermini.ItemsSource = termini;
+            dataGridTermini.ItemsSource = TerminStorage.Instance.Read(); 
            
 
         }
@@ -49,7 +49,7 @@ namespace BolnicaSims
             this.Close();
             this.InitializeComponent();
             dataGridTermini.ItemsSource = null;
-            dataGridTermini.ItemsSource = termini;
+            dataGridTermini.ItemsSource = TerminStorage.Instance.Read(); ;
             dataGridTermini.Items.Refresh();
         }
 
@@ -69,13 +69,13 @@ namespace BolnicaSims
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
             Termin selektovan = (Termin)dataGridTermini.SelectedItem;
-            termini.Remove(selektovan);
+            TerminStorage.Instance.Read().Remove(selektovan);
             TerminStorage.Instance.Save();
         }
 
-        public void izmeniPregled(Termin termin, String vreme)
+        /*public void izmeniPregled(Termin termin, String vreme)
         {
-            for (int i = 0; i < termini.Count; i++)
+            for (int i = 0; i < TerminStorage.Instance.Read().Count; i++)
             {
                 if (termini[i].IdTermina == termin.IdTermina)
                 {
@@ -99,6 +99,6 @@ namespace BolnicaSims
             dataGridTermini.Items.Refresh();
 
 
-        }
+        }*/
     }
 }

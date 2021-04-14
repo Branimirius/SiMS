@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\App.xaml
-15610398405
+14-1624486603
 
-34233511952
+37-1428304632
 1921654412462
-DodavanjePacijenta.xaml;DodavanjePregleda.xaml;DodavanjeProstorije.xaml;DoktorView.xaml;IzmenaPacijenta.xaml;IzmenaPregleda.xaml;IzmenaProstorije.xaml;ListaPacijenata.xaml;ListaProstorija.xaml;ListaSopstvenihTermina.xaml;ListaTermina.xaml;MainWindow.xaml;PacijentView.xaml;SekretarView.xaml;UpravnikView.xaml;
+DodavanjePacijenta.xaml;DodavanjePregleda.xaml;DodavanjeProstorije.xaml;DoktorView.xaml;IzmenaPacijenta.xaml;IzmenaPregleda.xaml;IzmenaProstorije.xaml;ListaProstorija.xaml;ListaSopstvenihTermina.xaml;ListaTermina.xaml;MainWindow.xaml;PacijentView.xaml;SekretarView.xaml;UpravnikView.xaml;
 
-True
+False
 

@@ -31,12 +31,14 @@ namespace Model
         }
 
         private String FilePath = "pacijentStorage.txt";
-        private ObservableCollection<Pacijent> pacijenti = new ObservableCollection<Pacijent>();
-
+        public ObservableCollection<Pacijent> pacijenti = new ObservableCollection<Pacijent>();
+        
+        
         public PacijentiStorage()
         {
 
            pacijenti = this.Load();
+           
              /*Korisnik k1 = new Korisnik("baki99", "asdfghj", "Bogdan", "Mahua", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
 
              ZdravstveniKarton zk1 = new ZdravstveniKarton("Cale", "234", "1234", "M");

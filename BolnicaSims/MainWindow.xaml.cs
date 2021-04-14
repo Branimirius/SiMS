@@ -34,7 +34,7 @@ namespace BolnicaSims
 
         private void ManualColumnsSekretar_Click(object sender, RoutedEventArgs e)
         {
-            var s = new ListaPacijenata();
+            var s = new SekretarView();
             s.Show();
         }
         private void ManualColumnsLekar_Click(object sender, RoutedEventArgs e)

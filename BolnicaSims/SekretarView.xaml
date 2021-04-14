@@ -5,14 +5,54 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="Sekretar" Height="450" Width="800">
-    <Grid>
-        <Canvas>
-            <Menu DockPanel.Dock ="Top" Height="434" Width="71" Background="#FF1FCCD4">
+        Title="ListaPacijenata" Height="450" Width="800">
+    <Grid Background="#FF278FBF" Height="450" Margin="0,0,10,0">
+        <TabControl TabStripPlacement="Left" Margin="0,103,0,65">
+            <TabItem Name="pacijentiTab" Header="Pacijenti">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridPacijenti" ItemsSource="{Binding Pacijenti}" IsReadOnly="True"
+                      SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                     Height="205" Margin="0,45,0,0" VerticalAlignment="Top" Width="708">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Ime" Binding="{Binding korisnik.Ime}" Width="*" />
+                            <DataGridTextColumn Header="Prezime" Binding="{Binding korisnik.Prezime}" Width="*" />
+                            <DataGridTextColumn Header="Ime Roditelja" Binding="{Binding zdravstveniKarton.ImeRoditelja}" Width="*" />
+                            <DataGridTextColumn Header="br Kartona" Binding="{Binding zdravstveniKarton.BrojKartona}" Width="*" />
 
-                <MenuItem x:Name="dataGridPacijenti" Header="Pacijenti" Click="ManualColumnsPacijenti_Click" Width="66" Height="66" />
-            </Menu>
-            <Grid DockPanel.Dock="Bottom" Height="24"/>
-        </Canvas>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Button Content="Ukloni" Background="#FFFFFDFD" Margin="73,3,595,237" Click="ButtonUkloni_Click"/>
+
+                    <Button Content="Dodaj" Background="#FFFFFDFD" Margin="9,3,659,237" Click="ButtonDodaj_Click"/>
+                    <Button Content="Izmeni" Background="#FFFFFDFD" Margin="136,3,533,237" Click="ButtonIzmeni_Click" />
+                    <Label Content="Tabela pacijenata" HorizontalAlignment="Left" Margin="485,0,0,0" VerticalAlignment="Top" Width="215" Height="51" FontSize="24" FontWeight="Bold"/>
+                </Grid>
+            </TabItem>
+            <TabItem Name="lekariTab" Header="Lekari">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Name="TerminiTab" Header="Termini">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
+                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                  Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="706">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}"  />
+                            <DataGridTextColumn Header="Datum" Binding="{Binding VremeTermina}" />
+                            <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Button Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
+                    <Button Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click" Background="#FFFFFDFD"/>
+                    <Button Content="Otkazi" HorizontalAlignment="Left" Height="35" Margin="136,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
+                    <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Controller;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,8 +33,9 @@ namespace BolnicaSims
             ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, txtBox4.Text, "1243", "M");
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
-            ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);
-
+            // ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);
+            PacijentController.Instance.izmeniPacijenta(tempPacijent);
+            SekretarView.Instance.dataGridPacijenti.Items.Refresh();
             this.Close();
 
         }
