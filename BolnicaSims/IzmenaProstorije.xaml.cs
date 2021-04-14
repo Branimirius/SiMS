@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Service;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,7 +26,7 @@ namespace BolnicaSims
 
         private void buttonIzmena_Click(object sender, RoutedEventArgs e)
         {
-            Prostorija tempProstorija = new Prostorija(txtBox1.Text, txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
+            Prostorija tempProstorija = new Prostorija(TerminService.Instance.GenID(), txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
             ListaProstorija.Instance.izmeniProstoriju(tempProstorija, txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
             this.Close();
         }

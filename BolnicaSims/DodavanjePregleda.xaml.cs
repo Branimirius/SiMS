@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Service;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,7 +31,7 @@ namespace BolnicaSims
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
             Termin tempTermin = new Termin();
-            tempTermin.IdTermina = txtBox3.Text;
+            tempTermin.IdTermina = TerminService.Instance.GenID();
             tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
             tempTermin.ImePrezimeDoktora = txtBox2.Text;
 

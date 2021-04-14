@@ -26,7 +26,7 @@ namespace BolnicaSims
         private void button_Click(object sender, RoutedEventArgs e)
         {
             Prostorija tempProstorija = new Prostorija();
-            tempProstorija.IdProstorije = txtBox1.Text;
+            tempProstorija.IdProstorije = ProstorijeStorage.Instance.GenID();
             tempProstorija.Sprat = int.Parse(txtBox2.Text);
             tempProstorija.BrojProstorije = int.Parse(txtBox3.Text);
             tempProstorija.RezervisanaOd = DateTime.Parse(txtBox4.Text);

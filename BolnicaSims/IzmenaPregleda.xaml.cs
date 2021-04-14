@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace BolnicaSims
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            Termin terminTemp = new Termin(txtBox3.Text, txtBox1.Text, txtBox2.Text);
+            Termin terminTemp = new Termin(TerminService.Instance.GenID(), txtBox1.Text, txtBox2.Text);
             TerminController.Instance.izmeniTermin(terminTemp, txtBox1.Text);
             this.Close();
         }

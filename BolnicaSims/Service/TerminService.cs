@@ -44,5 +44,11 @@ namespace BolnicaSims.Service
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
         }
+
+        public String GenID()
+        {
+            int a = int.Parse(TerminStorage.Instance.termini[TerminStorage.Instance.termini.Count - 1].IdTermina) + 1;
+            return a.ToString();
+        }
     }
 }

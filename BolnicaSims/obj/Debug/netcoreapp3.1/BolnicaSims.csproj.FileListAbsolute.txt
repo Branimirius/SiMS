@@ -102,7 +102,6 @@ C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePregleda.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPregleda.g.cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaPacijenata.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaTermina.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\SekretarView.g.cs
@@ -118,7 +117,6 @@ D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\BolnicaSims.pdb
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePacijenta.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\DodavanjePregleda.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\IzmenaPregleda.baml
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaPacijenata.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaTermina.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MainWindow.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\PacijentView.baml

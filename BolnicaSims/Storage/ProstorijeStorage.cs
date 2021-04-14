@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Linq;
 
 namespace Model
 {
@@ -76,6 +77,12 @@ namespace Model
             prostorije = (ObservableCollection<Prostorija>)formatter.Deserialize(stream);
             return prostorije;
 
+        }
+
+      public String GenID()
+        {
+            int a = int.Parse(prostorije[prostorije.Count - 1].IdProstorije) + 1;
+            return a.ToString();
         }
 
         public Prostorija Find(String IdProstorije)

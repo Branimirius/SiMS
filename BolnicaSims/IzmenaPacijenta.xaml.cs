@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace BolnicaSims
 
             Pacijent tempPacijent = new Pacijent();
             Korisnik tempKorisnik = new Korisnik(null, null, txtBox1.Text, txtBox2.Text, "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
-            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, txtBox4.Text, "1243", "M");
+            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, TerminService.Instance.GenID(), "1243", "M");
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
             // ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);
