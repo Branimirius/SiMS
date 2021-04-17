@@ -180,3 +180,5 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaProstorija.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\ListaSopstvenihTermina.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\UpravnikView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CoreCompileInputs.cache
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.genruntimeconfig.cache

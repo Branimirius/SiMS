@@ -32,8 +32,8 @@ namespace Model
 
         private String FilePath = "pacijentStorage.txt";
         public ObservableCollection<Pacijent> pacijenti = new ObservableCollection<Pacijent>();
-        
-        
+       
+
         public PacijentiStorage()
         {
 
@@ -105,6 +105,15 @@ namespace Model
          // TODO: implement
          return null;
       }
+
+        public List<String> findLogInfo()
+        {
+            List<String> ret = new List<String>();
+            foreach (Pacijent p in this.pacijenti){
+                ret.Add(p.korisnik.Username + p.korisnik.Password);
+            }
+            return ret;
+        }
    
      
 

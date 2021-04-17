@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BolnicaSims.Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -46,6 +47,33 @@ namespace BolnicaSims
         {
             var s = new UpravnikView();
             s.Show();
+        }
+        private void login()
+        {
+
+        }
+
+        private void checkUser(string username, string password)
+        {
+
+        }
+
+        private void Button_ClickLogin(object sender, RoutedEventArgs e)
+        {
+            switch (KorisnikController.Instance.Login(txtKorisnickoIme.Text, txtLozinka.Password))
+            {
+                case 1:
+                    var s = new SekretarView();
+                    s.Show();
+                    break;
+                case 2:
+                    var p = new PacijentView();
+                    p.Show();
+                    break;
+
+                default:
+                    break;
+            }
         }
     }
 }
