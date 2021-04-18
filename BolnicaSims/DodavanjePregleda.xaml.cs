@@ -33,7 +33,8 @@ namespace BolnicaSims
             Termin tempTermin = new Termin();
             tempTermin.IdTermina = TerminService.Instance.GenID();
             tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
-            tempTermin.ImePrezimeDoktora = txtBox2.Text;
+            tempTermin.doktori = (System.Collections.ObjectModel.ObservableCollection<Doktor>)comboBox1.SelectedItem;
+            tempTermin.termini = (System.Collections.ObjectModel.ObservableCollection<Termin>)comboBox2.ItemsSource;
 
 
            // TerminStorage storage = new TerminStorage();
@@ -48,9 +49,33 @@ namespace BolnicaSims
             
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void comboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void RadioDoktor_Checked(object sender, RoutedEventArgs e)
+        {
+            comboBox1.IsEnabled = true;
+            txtBox1.IsEnabled = false;
+            comboBox2.IsEnabled = false;
+        }
+
+        private void RadioDatum_Checked(object sender, RoutedEventArgs e)
+        {
+            comboBox1.IsEnabled = false;
+            txtBox1.IsEnabled = true;
         }
     }
 }

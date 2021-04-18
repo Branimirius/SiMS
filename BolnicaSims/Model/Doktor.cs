@@ -57,10 +57,18 @@ namespace Model
          if (termin != null)
             termin.Clear();
       }
+
+      public Doktor(Korisnik korisnik)
+        {
+            this.korisnik = korisnik;
+        }
    
       private Boolean Specijalista;
       private Boolean Hirurg;
       private Prostorija Ordinacija;
-   
-   }
+
+
+
+      
+    }
 }

@@ -6,12 +6,22 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="DodavanjePregleda" Height="260" Width="405">
-    <Grid Background="#FF69E2EE">
-        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="57,69,0,0" Text="Datum i vreme" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
-        <TextBlock x:Name="txtBlock2" HorizontalAlignment="Left" Margin="57,115,0,0" Text="Doktor" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"  />
-        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="254,69,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
-        <TextBox x:Name="txtBox2" HorizontalAlignment="Left" Margin="254,115,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
-        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="149,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="25" Width="73" Background="White" Click="dodavanjeBtn_Click"/>
+    <Grid Background="#FF69E2EE" Margin="0,0,0,-1">
+        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="47,68,0,0" Text="Datum" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="118" />
+        <TextBlock x:Name="txtBlock2" HorizontalAlignment="Left" Margin="47,106,0,0" Text="Doktor" TextWrapping="Wrap" VerticalAlignment="Top"  />
+        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="254,70,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Height="16"/>
+        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="135,205,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="19" Width="53" Background="White" Click="dodavanjeBtn_Click" FontSize="10"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="254,107,0,0" VerticalAlignment="Top" Width="102" Height="17" SelectionChanged="ComboBox1_SelectionChanged"/>
+        <Button Content="Odustani" HorizontalAlignment="Left" Margin="236,204,0,0" VerticalAlignment="Top" FontSize="10" Width="53" Height="19" Click="Button_Click">
+            <Button.Background>
+                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="47,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Termin"/><LineBreak/><Run/></TextBlock>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="254,147,0,0" VerticalAlignment="Top" Width="102" Height="17" SelectionChanged="comboBox2_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Margin="47,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Prioritet"/><LineBreak/><Run/></TextBlock>
+        <RadioButton x:Name="radioDoktor" Content="Doktor&#xD;&#xA;" HorizontalAlignment="Left" Margin="151,32,0,0" VerticalAlignment="Top" Checked="RadioDoktor_Checked"/>
+        <RadioButton x:Name="radioDatum" Content="Datum&#xD;&#xA;" HorizontalAlignment="Left" Margin="254,31,0,0" VerticalAlignment="Top" Checked="RadioDatum_Checked"/>
 
     </Grid>
 </Window>

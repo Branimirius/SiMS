@@ -5,6 +5,7 @@
  ***********************************************************************/
 
 using System;
+using System.Collections.ObjectModel;
 
 namespace Model
 {
@@ -122,6 +123,11 @@ namespace Model
             }
             ImePrezimeDoktora = doktor;
         }
+
+        public ObservableCollection<Termin> termini = new ObservableCollection<Termin>();
+        public ObservableCollection<Doktor> doktori = new ObservableCollection<Doktor>();
+
+
         public Termin() { }
 
     }
