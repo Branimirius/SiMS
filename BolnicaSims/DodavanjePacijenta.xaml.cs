@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -31,11 +32,11 @@ namespace BolnicaSims
             ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, PacijentService.Instance.GenID(), "1243", "M");
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
-
+            PacijentController.Instance.dodajPacijenta(tempPacijent);
 
             // TerminStorage storage = new TerminStorage();
-            PacijentiStorage.Instance.Read().Add(tempPacijent);
-            PacijentiStorage.Instance.Save();
+           // PacijentiStorage.Instance.Read().Add(tempPacijent);
+           // PacijentiStorage.Instance.Save();
 
            // ListaPacijenata.Instance.refreshListaPacijenata();
 

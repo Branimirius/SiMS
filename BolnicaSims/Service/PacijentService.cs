@@ -50,6 +50,12 @@ namespace BolnicaSims.Service
             SekretarView.Instance.refreshPacijenti();
            
         }
+        public void dodajPacijenta(Pacijent pacijent)
+        {
+            PacijentiStorage.Instance.Read().Add(pacijent);
+            PacijentiStorage.Instance.Save();
+        }
+
         public String GenID()
         {
             int a = int.Parse(PacijentiStorage.Instance.pacijenti[PacijentiStorage.Instance.pacijenti.Count - 1].zdravstveniKarton.BrojKartona) + 1;
