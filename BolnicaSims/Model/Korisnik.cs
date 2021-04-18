@@ -41,6 +41,12 @@ namespace Model
             Email = email;
         }
 
+        public Korisnik()
+        {
+        }
+
+        public String Zvanje { get; set; }
+
     }
 
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BolnicaSims.Storage;
 using Model;
 
 namespace BolnicaSims.Service
@@ -38,6 +39,19 @@ namespace BolnicaSims.Service
             {
                 return 3;
             }
+        }
+
+        public Korisnik Login2(string username, string password)
+        {
+            Korisnik tempKorisnik = new Korisnik();
+            foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+            {
+                if(k.Username == username && k.Password == password){
+                    tempKorisnik = k;
+                }
+            }
+
+            return tempKorisnik;
         }
     }
 }

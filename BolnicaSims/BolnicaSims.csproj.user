@@ -7,87 +7,87 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="DodavanjePacijenta.xaml.cs">
+    <Compile Update="View\AddView\DodavanjePacijenta.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DodavanjePregleda.xaml.cs">
+    <Compile Update="View\AddView\DodavanjePregleda.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DodavanjeProstorije.xaml.cs">
+    <Compile Update="View\AddView\DodavanjeProstorije.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DoktorView.xaml.cs">
+    <Compile Update="View\MainView\DoktorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="IzmenaPacijenta.xaml.cs">
+    <Compile Update="View\EditView\IzmenaPacijenta.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="IzmenaPregleda.xaml.cs">
+    <Compile Update="View\EditView\IzmenaPregleda.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="IzmenaProstorije.xaml.cs">
+    <Compile Update="View\EditView\IzmenaProstorije.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="SekretarView.xaml.cs">
+    <Compile Update="View\MainView\SekretarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ListaProstorija.xaml.cs">
+    <Compile Update="View\MainView\ListaProstorija.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ListaSopstvenihTermina.xaml.cs">
+    <Compile Update="View\MainView\ListaSopstvenihTermina.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ListaTermina.xaml.cs">
+    <Compile Update="View\MainView\ListaTermina.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="PacijentView.xaml.cs">
+    <Compile Update="View\MainView\PacijentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UpravnikView.xaml.cs">
+    <Compile Update="View\MainView\UpravnikView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="DodavanjePacijenta.xaml">
+    <Page Update="View\AddView\DodavanjePacijenta.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DodavanjePregleda.xaml">
+    <Page Update="View\AddView\DodavanjePregleda.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DodavanjeProstorije.xaml">
+    <Page Update="View\AddView\DodavanjeProstorije.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="DoktorView.xaml">
+    <Page Update="View\MainView\DoktorView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="IzmenaPacijenta.xaml">
+    <Page Update="View\EditView\IzmenaPacijenta.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="IzmenaPregleda.xaml">
+    <Page Update="View\EditView\IzmenaPregleda.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="IzmenaProstorije.xaml">
+    <Page Update="View\EditView\IzmenaProstorije.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="SekretarView.xaml">
+    <Page Update="View\MainView\SekretarView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ListaProstorija.xaml">
+    <Page Update="View\MainView\ListaProstorija.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ListaSopstvenihTermina.xaml">
+    <Page Update="View\MainView\ListaSopstvenihTermina.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ListaTermina.xaml">
+    <Page Update="View\MainView\ListaTermina.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="PacijentView.xaml">
+    <Page Update="View\MainView\PacijentView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UpravnikView.xaml">
+    <Page Update="View\MainView\UpravnikView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

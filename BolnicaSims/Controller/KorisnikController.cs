@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BolnicaSims.Service;
-
+using Model;
 
 namespace BolnicaSims.Controller
 {
@@ -23,6 +23,11 @@ namespace BolnicaSims.Controller
          public int Login(string username, string password)
         {
             return KorisnikService.Instance.Login(username, password);
+        }
+
+        public Korisnik Login2(string username, string password)
+        {
+            return KorisnikService.Instance.Login2(username, password);
         }
     }
 }

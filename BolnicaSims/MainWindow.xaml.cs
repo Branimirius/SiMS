@@ -60,20 +60,30 @@ namespace BolnicaSims
 
         private void Button_ClickLogin(object sender, RoutedEventArgs e)
         {
-            switch (KorisnikController.Instance.Login(txtKorisnickoIme.Text, txtLozinka.Password))
+            switch (KorisnikController.Instance.Login2(txtKorisnickoIme.Text, txtLozinka.Password).Zvanje)
             {
-                case 1:
+                case "Sekretar":
                     var s = new SekretarView();
                     s.Show();
                     break;
-                case 2:
+                case "Pacijent":
                     var p = new PacijentView();
                     p.Show();
+                    break;
+                case "Upravnik":
+                    var d = new PacijentView();
+                    d.Show();
+                    break;
+                case "Doktor":
+                    var r = new PacijentView();
+                    r.Show();
                     break;
 
                 default:
                     break;
             }
+
+
         }
     }
 }

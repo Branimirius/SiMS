@@ -39,29 +39,10 @@ namespace Model
 
            pacijenti = this.Load();
            
-             /*Korisnik k1 = new Korisnik("baki99", "asdfghj", "Bogdan", "Mahua", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
 
-             ZdravstveniKarton zk1 = new ZdravstveniKarton("Cale", "234", "1234", "M");
-             Pacijent p1 = new Pacijent(k1, zk1);
-
-             Korisnik k2 = new Korisnik("zeks", "asdfghj", "Zeljkon", "Mahua", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
-
-             ZdravstveniKarton zk2 = new ZdravstveniKarton("Rale", "254", "1243", "M");
-             Pacijent p2 = new Pacijent(k2, zk2);
-
-             Pacijent p3 = new Pacijent();
-             p3.korisnik = k1;
-             p3.zdravstveniKarton = zk1;
-
-
-             pacijenti.Add(p1);
-             pacijenti.Add(p2);
-             pacijenti.Add(p3);
-
-             this.Save();*/
         }
         public void Save()
-      {
+        {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, pacijenti);
@@ -90,33 +71,29 @@ namespace Model
          return null;
       }
 
-        public ObservableCollection<Pacijent> Load()
-      {
-            // TODO: implement
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
-            pacijenti = (ObservableCollection<Pacijent>)formatter.Deserialize(stream);
-            return pacijenti;
+    public ObservableCollection<Pacijent> Load()
+    {
+        // TODO: implement
+        IFormatter formatter = new BinaryFormatter();
+        Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
+        pacijenti = (ObservableCollection<Pacijent>)formatter.Deserialize(stream);
+        return pacijenti;
 
-        }
-
-        public Pacijent Find(String BrojKartona)
-      {
-         // TODO: implement
-         return null;
-      }
-
-        public List<String> findLogInfo()
-        {
-            List<String> ret = new List<String>();
-            foreach (Pacijent p in this.pacijenti){
-                ret.Add(p.korisnik.Username + p.korisnik.Password);
-            }
-            return ret;
-        }
-   
-     
-
-     
     }
+
+    public Pacijent Find(String BrojKartona)
+    {
+        // TODO: implement
+        return null;
+    }
+
+    public List<String> findLogInfo()
+    {
+        List<String> ret = new List<String>();
+        foreach (Pacijent p in this.pacijenti){
+            ret.Add(p.korisnik.Username + p.korisnik.Password);
+        }
+        return ret;
+    } 
+}
 }

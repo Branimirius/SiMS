@@ -1,17 +1,17 @@
 ﻿
 
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\DodavanjePacijenta.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\DodavanjePregleda.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\DodavanjeProstorije.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\DoktorView.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\IzmenaPacijenta.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\IzmenaPregleda.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\IzmenaProstorije.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\ListaProstorija.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\ListaSopstvenihTermina.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\ListaTermina.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\MainWindow.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\PacijentView.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\SekretarView.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\UpravnikView.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\MainWindow.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\AddView\DodavanjePacijenta.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\AddView\DodavanjePregleda.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\AddView\DodavanjeProstorije.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\EditView\IzmenaPacijenta.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\EditView\IzmenaPregleda.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\EditView\IzmenaProstorije.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\DoktorView.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\ListaProstorija.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\ListaSopstvenihTermina.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\ListaTermina.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\PacijentView.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\SekretarView.xaml;;
+FD:\OISISI - github rep\SiMS\BolnicaSims\View\MainView\UpravnikView.xaml;;
 
