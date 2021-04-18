@@ -22,7 +22,6 @@ namespace BolnicaSims.Service
         }
         public List<String> pacijentiLogInfo = PacijentiStorage.Instance.findLogInfo();
 
-
         public int Login(string username, string password)
         {
             switch(username, password)
@@ -51,6 +50,7 @@ namespace BolnicaSims.Service
                 }
             }
 
+            KorisniciStorage.Instance.ulogovaniKorisnik = tempKorisnik;
             return tempKorisnik;
         }
     }
