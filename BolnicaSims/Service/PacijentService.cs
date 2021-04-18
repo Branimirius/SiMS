@@ -52,7 +52,8 @@ namespace BolnicaSims.Service
         }
         public void dodajPacijenta(Pacijent pacijent)
         {
-
+            PacijentiStorage.Instance.Read().Add(pacijent);
+            PacijentiStorage.Instance.Save();
         }
 
         public String GenID()
