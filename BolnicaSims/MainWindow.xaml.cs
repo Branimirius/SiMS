@@ -71,11 +71,11 @@ namespace BolnicaSims
                     p.Show();
                     break;
                 case "Upravnik":
-                    var d = new PacijentView();
+                    var d = new UpravnikView();
                     d.Show();
                     break;
                 case "Doktor":
-                    var r = new PacijentView();
+                    var r = new DoktorView();
                     r.Show();
                     break;
 
