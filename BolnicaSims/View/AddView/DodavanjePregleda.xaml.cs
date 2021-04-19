@@ -39,7 +39,7 @@ namespace BolnicaSims
       
            foreach(Doktor d in DoktoriStorage.Instance.doktori)
             {
-                if((d.korisnik.Ime + " " + d.korisnik.Prezime) == comboBox1.SelectedItem)
+                if((d.korisnik.Ime + " " + d.korisnik.Prezime) == ((String)comboBox1.SelectedItem))
                 {
                     tempTermin.doktori.Add(d);
                     tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;

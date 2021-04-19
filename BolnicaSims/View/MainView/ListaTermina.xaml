@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Lista Pregleda" Height="450" Width="1000">
     <Grid Background="#FF278FBF" >
-        <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Source=Termini}" IsReadOnly="True"
+        <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
                   SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                   Height="352" Margin="0,72,0,0" VerticalAlignment="Top" Width="980">
             <DataGrid.Columns>
