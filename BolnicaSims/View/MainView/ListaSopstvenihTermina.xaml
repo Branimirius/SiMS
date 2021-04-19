@@ -12,6 +12,6 @@
         <Button x:Name="button" Content="Dodaj" Background="#FFFFFDFD" HorizontalAlignment="Left" Margin="10,21,0,0" VerticalAlignment="Top" Width="100" Height="31" Click="button_Click"/>
         <Button x:Name="button_Copy" Content="Izmeni" Background="#FFFFFDFD" HorizontalAlignment="Left" Margin="115,21,0,0" VerticalAlignment="Top" Width="100" Height="31" Click="button_Copy_Click"/>
         <Button x:Name="button_Copy1" Content="Ukloni" Background="#FFFFFDFD" HorizontalAlignment="Left" Margin="220,21,0,0" VerticalAlignment="Top" Width="100" Height="31" Click="button_Copy1_Click"/>
-
+        <Button x:Name="button_karton" Content="Karton&#xD;&#xA;" HorizontalAlignment="Left" Margin="360,20,0,0" VerticalAlignment="Top" Height="32" Width="40" Click="button_karton_Click"/>
     </Grid>
 </Window>

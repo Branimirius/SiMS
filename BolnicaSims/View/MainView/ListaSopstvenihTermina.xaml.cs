@@ -1,4 +1,6 @@
 ﻿using BolnicaSims.Storage;
+using BolnicaSims.View.AddView;
+using BolnicaSims.View.MainView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -55,13 +57,13 @@ namespace BolnicaSims
             this.Close();
             this.InitializeComponent();
             dataGridSopstveniTermini.ItemsSource = null;
-            dataGridSopstveniTermini.ItemsSource = termini;
+            dataGridSopstveniTermini.ItemsSource = TerminStorage.Instance.Read();
             dataGridSopstveniTermini.Items.Refresh();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            var s = new DodavanjePregleda();
+            var s = new DodavanjeTerminaDoktor();
             s.Show();
         }
 
@@ -74,8 +76,18 @@ namespace BolnicaSims
         private void button_Copy1_Click(object sender, RoutedEventArgs e)
         {
             Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
-            termini.Remove(selektovan);
+            TerminStorage.Instance.Read().Remove(selektovan);
             TerminStorage.Instance.Save();
+        }
+
+        private void button_karton_Click(object sender, RoutedEventArgs e)
+        {
+            Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
+            Pacijent selektovanPacijent = selektovan.pacijent;
+            PacijentiStorage.Instance.selektovanPacijent = selektovanPacijent;
+
+            var s = new PregledKartona();
+            s.Show();
         }
     }
 }

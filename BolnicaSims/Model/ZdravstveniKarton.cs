@@ -16,6 +16,10 @@ namespace Model
       public String BrojKartona { get; set; }
 
       public String BrojZdravstveneKnjizice { get; set; }
+       
+      public String Anamneza { get; set; }
+
+      public String Alergije { get; set; }
 
       private TipPola Pol { get; set; }
 

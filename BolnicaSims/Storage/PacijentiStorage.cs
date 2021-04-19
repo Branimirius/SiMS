@@ -33,6 +33,7 @@ namespace Model
         private String FilePath = "pacijentStorage.txt";
         public ObservableCollection<Pacijent> pacijenti = new ObservableCollection<Pacijent>();
         public ObservableCollection<String> pacijentiImena = new ObservableCollection<String>();
+        public Pacijent selektovanPacijent = new Pacijent();
 
 
         public PacijentiStorage()
