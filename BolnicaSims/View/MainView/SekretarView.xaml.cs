@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BolnicaSims.Service;
 using BolnicaSims.Controller;
+using BolnicaSims.View.AddView;
 
 namespace BolnicaSims
 {
@@ -83,7 +84,7 @@ namespace BolnicaSims
         private void ButtonZakazi_Click(object sender, RoutedEventArgs e)
         {
             
-            var s = new DodavanjePregleda();
+            var s = new DodavanjeTerminaSekretar();
             s.Show();
             
         }

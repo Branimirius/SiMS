@@ -41,18 +41,24 @@ namespace Model
         public void set_MestoTermina(Prostorija value)
         ;*/
 
-        // public Pacijent[] pacijent;
+        
         public Doktor doktor;
         public Prostorija prostorija;
+        public Pacijent pacijent;
         public String ImePrezimeDoktora
         {
             get;
             set;
         }
+        public String ImePrezimePacijenta
+        {
+            get;
+            set;
+        }
 
-      
-      /// <pdGenerated>default parent getter</pdGenerated>
-      public Prostorija GetProstorija()
+
+        /// <pdGenerated>default parent getter</pdGenerated>
+        public Prostorija GetProstorija()
       {
          return prostorija;
       }

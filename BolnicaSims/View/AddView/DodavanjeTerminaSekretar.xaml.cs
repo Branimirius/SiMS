@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Storage;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -19,7 +22,36 @@ namespace BolnicaSims.View.AddView
     {
         public DodavanjeTerminaSekretar()
         {
-            InitializeComponent();
+            InitializeComponent(); comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
+            comboBox2.ItemsSource = PacijentiStorage.Instance.pacijentiImena;
+        }
+
+        private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+            TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (String)comboBox2.SelectedItem);
+
+            ListaTermina.Instance.refreshListaTermina();
+
+
+            this.Close();
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Doktori_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void Pacijenti_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

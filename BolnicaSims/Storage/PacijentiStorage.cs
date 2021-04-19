@@ -32,13 +32,17 @@ namespace Model
 
         private String FilePath = "pacijentStorage.txt";
         public ObservableCollection<Pacijent> pacijenti = new ObservableCollection<Pacijent>();
-       
+        public ObservableCollection<String> pacijentiImena = new ObservableCollection<String>();
+
 
         public PacijentiStorage()
         {
 
            pacijenti = this.Load();
-           
+            foreach (Pacijent p in pacijenti)
+            {
+                pacijentiImena.Add(p.korisnik.Ime + " " + p.korisnik.Prezime);
+            }
 
         }
         public void Save()
