@@ -32,6 +32,13 @@ namespace BolnicaSims.Storage
         public KorisniciStorage()
         {
             korisnici = this.Load();
+            //DateTime date1 = new DateTime(1985, 12, 25);
+            //DateTime date2 = new DateTime(1974, 11, 25);
+            //Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231231231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
+            //korisnici.Add(k1);
+            //Korisnik k2 = new Korisnik("marko123", "markovic123", "Marko", "Markovic", "Doktor", "1231231231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
+            //korisnici.Add(k2);
+            //this.Save();
         }
         public ObservableCollection<Korisnik> Read()
         {

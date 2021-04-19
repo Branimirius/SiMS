@@ -31,6 +31,9 @@ namespace Model
         public String KontaktTelefon { get; set; }
 
         public String Email { get; set; }
+       
+        public String Zvanje { get; set; }
+
 
         public System.Collections.ArrayList notifikacije;
         public System.Collections.ArrayList GetNotifikacije()
@@ -48,12 +51,16 @@ namespace Model
                notifikacije.Add(oTermin);
         }
 
-        public Korisnik(String username, String password, String ime, String prezime, String jmbg, DateTime datumRodnjenja, String adresa, String kontaktTelefon, String email)
+        
+
+        public Korisnik(String username, String password, String ime, String prezime, String zvanje, String jmbg, DateTime datumRodnjenja, String adresa, String kontaktTelefon, String email)
+
         {
             Username = username;
             Password = password;
             Ime = ime;
             Prezime = prezime;
+            Zvanje = zvanje;
             Jmbg = jmbg;
             DatumRodjenja = datumRodnjenja;
             Adresa = adresa;
@@ -63,8 +70,6 @@ namespace Model
         public Korisnik()
         {
         }
-
-        public String Zvanje { get; set; }
 
     }
 

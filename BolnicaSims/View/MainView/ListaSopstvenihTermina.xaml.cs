@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Storage;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,7 +41,7 @@ namespace BolnicaSims
 
             foreach(Termin t in termini)
             {
-                if (t.ImePrezimeDoktora == "Petar Petrovic")
+                if (t.ImePrezimeDoktora == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
                 {
                     dokTermini.Add(t);
                 }    

@@ -35,12 +35,12 @@ namespace BolnicaSims.Storage
             doktori = this.Load();
             DateTime date1 = new DateTime(1985, 12, 25);
             DateTime date2 = new DateTime(1974, 11, 25);
-            Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "1231231231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
+            Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231231231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
             Doktor d1 = new Doktor(k1);
             doktori.Add(d1);
             doktoriImena.Add(k1.Ime + " " + k1.Prezime);
 
-            Korisnik k2 = new Korisnik("marko123", "markovic123", "Marko", "Markovic", "1231231231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
+            Korisnik k2 = new Korisnik("marko123", "markovic123", "Marko", "Markovic", "Doktor", "1231231231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
             Doktor d2 = new Doktor(k2);
             doktori.Add(d2);
             doktoriImena.Add(k2.Ime + " " + k2.Prezime);
