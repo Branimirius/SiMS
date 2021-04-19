@@ -4,7 +4,10 @@
  * Purpose: Definition of the Class Class6
  ***********************************************************************/
 
+using BolnicaSims.Model;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Model
 {
@@ -28,6 +31,22 @@ namespace Model
         public String KontaktTelefon { get; set; }
 
         public String Email { get; set; }
+
+        public System.Collections.ArrayList notifikacije;
+        public System.Collections.ArrayList GetNotifikacije()
+        {
+            if (notifikacije == null)
+                notifikacije = new System.Collections.ArrayList();
+            return notifikacije;
+        }
+
+        /// <pdGenerated>default setter</pdGenerated>
+        public void SetTermin(System.Collections.ArrayList newNotifikacije)
+        {
+            notifikacije.Clear();
+            foreach(Notifikacija oTermin in newNotifikacije)
+               notifikacije.Add(oTermin);
+        }
 
         public Korisnik(String username, String password, String ime, String prezime, String jmbg, DateTime datumRodnjenja, String adresa, String kontaktTelefon, String email)
         {

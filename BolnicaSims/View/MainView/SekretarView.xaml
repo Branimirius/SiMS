@@ -54,5 +54,6 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Button Content="Obavestenja" Click="ButtonObavestenja_Click" Margin="540,10,176,412"/>
     </Grid>
 </Window>
