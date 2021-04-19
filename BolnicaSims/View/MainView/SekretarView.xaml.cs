@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using BolnicaSims.Service;
 using BolnicaSims.Controller;
 using BolnicaSims.View.AddView;
+using BolnicaSims.View.NotificationsView;
 
 namespace BolnicaSims
 {
@@ -101,38 +102,44 @@ namespace BolnicaSims
             s.Show();
             
         }
+
+        private void ButtonObavestenja_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new NotifikacijeSekretar();
+            s.Show();
+        }
         /* public void izmeniPacijenta(Pacijent pacijent)
-         {
-             for (int i = 0; i < pacijenti.Count; i++)
-             {
+{
+    for (int i = 0; i < pacijenti.Count; i++)
+    {
 
-                 if (pacijent.zdravstveniKarton.BrojKartona == pacijenti[i].zdravstveniKarton.BrojKartona)
+        if (pacijent.zdravstveniKarton.BrojKartona == pacijenti[i].zdravstveniKarton.BrojKartona)
 
-                     {
-                     if (pacijent.korisnik.Ime != "")
-                     {
-                         pacijenti[i].korisnik.Ime = pacijent.korisnik.Ime;
-                     }
-                     if (pacijent.korisnik.Prezime != "")
-                     {
-                         pacijenti[i].korisnik.Prezime = pacijent.korisnik.Prezime;
-                     }
-                     if (pacijent.zdravstveniKarton.ImeRoditelja != "")
-                     {
-                         pacijenti[i].zdravstveniKarton.ImeRoditelja = pacijent.zdravstveniKarton.ImeRoditelja;
-                     }
-                     if (pacijent.zdravstveniKarton.BrojKartona != "")
-                     {
-                         pacijenti[i].zdravstveniKarton.BrojKartona = pacijent.zdravstveniKarton.BrojKartona;
-                     }
-                 }
+            {
+            if (pacijent.korisnik.Ime != "")
+            {
+                pacijenti[i].korisnik.Ime = pacijent.korisnik.Ime;
+            }
+            if (pacijent.korisnik.Prezime != "")
+            {
+                pacijenti[i].korisnik.Prezime = pacijent.korisnik.Prezime;
+            }
+            if (pacijent.zdravstveniKarton.ImeRoditelja != "")
+            {
+                pacijenti[i].zdravstveniKarton.ImeRoditelja = pacijent.zdravstveniKarton.ImeRoditelja;
+            }
+            if (pacijent.zdravstveniKarton.BrojKartona != "")
+            {
+                pacijenti[i].zdravstveniKarton.BrojKartona = pacijent.zdravstveniKarton.BrojKartona;
+            }
+        }
 
-             }
-        PacijentController.Instance.izmeniPacijenta(pacijent);
-            PacijentiStorage.Instance.Save();
-            dataGridPacijenti.Items.Refresh();
+    }
+PacijentController.Instance.izmeniPacijenta(pacijent);
+   PacijentiStorage.Instance.Save();
+   dataGridPacijenti.Items.Refresh();
 
 
-        }*/
+}*/
     }
 }
