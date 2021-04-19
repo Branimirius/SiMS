@@ -20,7 +20,8 @@ namespace BolnicaSims
     /// </summary>
     public partial class DodavanjePregleda : Window
     {
-      
+
+        public Termin tempTermin = new Termin();
 
         public DodavanjePregleda()
         {
@@ -33,7 +34,7 @@ namespace BolnicaSims
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
-            Termin tempTermin = new Termin();
+            
             tempTermin.IdTermina = TerminService.Instance.GenID();
             tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
       
@@ -58,21 +59,19 @@ namespace BolnicaSims
             
         }
 
+      
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void RadioDoktor_Checked(object sender, RoutedEventArgs e)
         {
             comboBox1.IsEnabled = true;
             txtBox1.IsEnabled = false;
+            txtBox1.Text = "02/02/2021 12:15:00AM";
        
         }
 
@@ -80,7 +79,16 @@ namespace BolnicaSims
         {
             comboBox1.IsEnabled = false;
             txtBox1.IsEnabled = true;
+            comboBox1.SelectedItem = DoktoriStorage.Instance.doktoriImena[1];
         }
 
+        private void txtBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           
+        }
+        private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+           
+        }
     }
 }
