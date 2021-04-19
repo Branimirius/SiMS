@@ -42,7 +42,7 @@ namespace Model
         ;*/
 
         // public Pacijent[] pacijent;
-        //  public Doktor[] doktor;
+        public Doktor doktor;
         public Prostorija prostorija;
         public String ImePrezimeDoktora
         {

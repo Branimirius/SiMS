@@ -28,10 +28,18 @@ namespace BolnicaSims.Storage
         private String FilePath = "doktorStorage.txt";
 
         public ObservableCollection<Doktor> doktori = new ObservableCollection<Doktor>();
+        public ObservableCollection<String> doktoriImena = new ObservableCollection<String>();
 
         public DoktoriStorage()
         {
             doktori = this.Load();
+            DateTime date1 = new DateTime(1985, 12, 25);
+            Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "1231231231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
+            Doktor d1 = new Doktor(k1);
+            doktori.Add(d1);
+            doktoriImena.Add(k1.Ime + " " + k1.Prezime);
+            //this.Save();
+           
         }
         public ObservableCollection<Doktor> Read()
         {

@@ -5,23 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DodavanjePregleda" Height="260" Width="405">
+        Title="DodavanjePregleda" Height="345" Width="446">
     <Grid Background="#FF69E2EE" Margin="0,0,0,-1">
-        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="47,68,0,0" Text="Datum" TextWrapping="Wrap" VerticalAlignment="Top" Height="21" Width="118" />
-        <TextBlock x:Name="txtBlock2" HorizontalAlignment="Left" Margin="47,106,0,0" Text="Doktor" TextWrapping="Wrap" VerticalAlignment="Top"  />
-        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="254,70,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="102" Height="16"/>
-        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="135,205,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="19" Width="53" Background="White" Click="dodavanjeBtn_Click" FontSize="10"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="254,107,0,0" VerticalAlignment="Top" Width="102" Height="17" SelectionChanged="ComboBox1_SelectionChanged"/>
-        <Button Content="Odustani" HorizontalAlignment="Left" Margin="236,204,0,0" VerticalAlignment="Top" FontSize="10" Width="53" Height="19" Click="Button_Click">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="56,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="118" FontSize="16" ><Run Text="Datum i vreme"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="txtBlock2" HorizontalAlignment="Left" Margin="56,167,0,0" Text="Doktor" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="16"  />
+        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="269,108,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="117" Height="30"/>
+        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="115,264,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="26" Width="82" Background="White" Click="dodavanjeBtn_Click" FontSize="16"/>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="269,163,0,0" VerticalAlignment="Top" Width="117" Height="30" SelectionChanged="ComboBox1_SelectionChanged"/>
+        <Button Content="Odustani" HorizontalAlignment="Left" Margin="262,264,0,0" VerticalAlignment="Top" FontSize="16" Width="84" Height="26" Click="Button_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Margin="47,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Termin"/><LineBreak/><Run/></TextBlock>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="254,147,0,0" VerticalAlignment="Top" Width="102" Height="17" SelectionChanged="comboBox2_SelectionChanged"/>
-        <TextBlock HorizontalAlignment="Left" Margin="47,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top"><Run Text="Prioritet"/><LineBreak/><Run/></TextBlock>
-        <RadioButton x:Name="radioDoktor" Content="Doktor&#xD;&#xA;" HorizontalAlignment="Left" Margin="151,32,0,0" VerticalAlignment="Top" Checked="RadioDoktor_Checked"/>
-        <RadioButton x:Name="radioDatum" Content="Datum&#xD;&#xA;" HorizontalAlignment="Left" Margin="254,31,0,0" VerticalAlignment="Top" Checked="RadioDatum_Checked"/>
+        <TextBlock HorizontalAlignment="Left" Margin="56,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="74" FontSize="16"><Run Text="Prioritet"/><LineBreak/><Run/></TextBlock>
+        <RadioButton x:Name="radioDoktor" Content="Doktor&#xD;&#xA;" HorizontalAlignment="Left" Margin="195,61,0,0" VerticalAlignment="Top" Checked="RadioDoktor_Checked" Height="38" Width="63"/>
+        <RadioButton x:Name="radioDatum" Content="Datum&#xD;&#xA;" HorizontalAlignment="Left" Margin="318,62,0,0" VerticalAlignment="Top" Checked="RadioDatum_Checked" Height="31" Width="55"/>
 
     </Grid>
 </Window>

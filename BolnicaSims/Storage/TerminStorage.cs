@@ -39,15 +39,7 @@ namespace Model
              termini = this.Load();
  
           
-            /*Termin t1 = new Termin() { IdTermina = "1", VremeTermina = new DateTime(2021, 3, 1, 7, 0, 0), ImePrezimeDoktora = "Petar Petrovic" };
-            Termin t2 = new Termin() { IdTermina = "5", VremeTermina = new DateTime(2021, 3, 25, 9, 0, 0), ImePrezimeDoktora = "Kosta Petrovic" };
-            Termin t3 = new Termin() { IdTermina = "21", VremeTermina = new DateTime(2021, 4, 28, 11, 0, 0), ImePrezimeDoktora = "Nikola Nikolic" };
-
-            termini.Add(t1);
-            termini.Add(t2);
-            termini.Add(t3);
-
-           this.Save();*/
+         
 
         }
 

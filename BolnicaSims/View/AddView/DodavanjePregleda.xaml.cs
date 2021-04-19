@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace BolnicaSims
         public DodavanjePregleda()
         {
             InitializeComponent();
+            comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
+          
         }
 
 
@@ -33,11 +36,17 @@ namespace BolnicaSims
             Termin tempTermin = new Termin();
             tempTermin.IdTermina = TerminService.Instance.GenID();
             tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
-            tempTermin.doktori = (System.Collections.ObjectModel.ObservableCollection<Doktor>)comboBox1.SelectedItem;
-            tempTermin.termini = (System.Collections.ObjectModel.ObservableCollection<Termin>)comboBox2.ItemsSource;
+      
+           foreach(Doktor d in DoktoriStorage.Instance.doktori)
+            {
+                if((d.korisnik.Ime + " " + d.korisnik.Prezime) == comboBox1.SelectedItem)
+                {
+                    tempTermin.doktori.Add(d);
+                    tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
+                }
+            }
 
 
-           // TerminStorage storage = new TerminStorage();
             TerminStorage.Instance.Read().Add(tempTermin);
             TerminStorage.Instance.Save();
 
@@ -60,16 +69,11 @@ namespace BolnicaSims
 
         }
 
-        private void comboBox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
         private void RadioDoktor_Checked(object sender, RoutedEventArgs e)
         {
             comboBox1.IsEnabled = true;
             txtBox1.IsEnabled = false;
-            comboBox2.IsEnabled = false;
+       
         }
 
         private void RadioDatum_Checked(object sender, RoutedEventArgs e)
@@ -77,5 +81,6 @@ namespace BolnicaSims
             comboBox1.IsEnabled = false;
             txtBox1.IsEnabled = true;
         }
+
     }
 }
