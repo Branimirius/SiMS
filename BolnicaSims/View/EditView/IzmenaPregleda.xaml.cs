@@ -30,17 +30,24 @@ namespace BolnicaSims
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
             Termin tempTermin = new Termin();
-            tempTermin.IdTermina = TerminService.Instance.GenID();
+             
+            tempTermin = TerminStorage.Instance.selektovanTermin;
+            int i = 0;
+            int m = 0;
             tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
 
             foreach (Doktor d in DoktoriStorage.Instance.doktori)
             {
+                i++;
                 if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == ((String)comboBox1.SelectedItem))
                 {
                     tempTermin.doktori.Add(d);
                     tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
+                    m = i - 1;
                 }
             }
+            DoktoriStorage.Instance.Read()[m] = tempTermin.doktor;
+            DoktoriStorage.Instance.Save();
 
             TerminController.Instance.izmeniTermin(tempTermin);
             ListaTermina.Instance.dataGridTermini.Items.Refresh();

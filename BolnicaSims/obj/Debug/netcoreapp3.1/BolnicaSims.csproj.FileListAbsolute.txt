@@ -194,3 +194,9 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Dod
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaDoktor.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledKartona.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledKartona.baml
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaDoktor.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledKartona.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeSekretar.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaDoktor.baml
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledKartona.baml
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeSekretar.baml

@@ -30,6 +30,7 @@ namespace Model
         }
 
         public ObservableCollection<Termin> termini = new ObservableCollection<Termin>();
+        public Termin selektovanTermin;
 
         private String fileLocation = "terminStorage.txt";
 
@@ -37,11 +38,10 @@ namespace Model
         {
 
              termini = this.Load();
- 
-          
-         
+
 
         }
+
 
        
 
