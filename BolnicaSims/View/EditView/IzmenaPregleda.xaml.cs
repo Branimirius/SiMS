@@ -1,5 +1,6 @@
 ﻿using BolnicaSims.Controller;
 using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,34 @@ namespace BolnicaSims
         public IzmenaPregleda()
         {
             InitializeComponent();
+            comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            Termin terminTemp = new Termin(TerminService.Instance.GenID(), txtBox1.Text, txtBox2.Text);
-            TerminController.Instance.izmeniTermin(terminTemp, txtBox1.Text);
+            Termin tempTermin = new Termin();
+            tempTermin.IdTermina = TerminService.Instance.GenID();
+            tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+
+            foreach (Doktor d in DoktoriStorage.Instance.doktori)
+            {
+                if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == ((String)comboBox1.SelectedItem))
+                {
+                    tempTermin.doktori.Add(d);
+                    tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
+                }
+            }
+
+            TerminController.Instance.izmeniTermin(tempTermin);
+            ListaTermina.Instance.dataGridTermini.Items.Refresh();
+            
             this.Close();
         }
 
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 
 }
