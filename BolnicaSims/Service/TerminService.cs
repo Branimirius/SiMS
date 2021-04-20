@@ -3,6 +3,7 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Windows;
 
 namespace BolnicaSims.Service
 {
@@ -48,33 +49,56 @@ namespace BolnicaSims.Service
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
         {
-            Termin tempTermin = new Termin();
-            tempTermin.IdTermina = GenID();
-            tempTermin.VremeTermina = DateTime.Parse(vreme);
-
-            foreach (Doktor d in DoktoriStorage.Instance.doktori)
+            if (slobodanTermin(vreme, doktor) == true)
             {
-                if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == (doktor))
+
+                Termin tempTermin = new Termin();
+                tempTermin.IdTermina = GenID();
+                tempTermin.VremeTermina = DateTime.Parse(vreme);
+
+                foreach (Doktor d in DoktoriStorage.Instance.doktori)
                 {
+                    if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == (doktor))
+                    {
 
-                    tempTermin.doktori.Add(d);
-                    tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
+                        tempTermin.doktori.Add(d);
+                        tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
+                    }
                 }
-            }
-            foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
-            {
-                if ((p.korisnik.Ime + " " + p.korisnik.Prezime) == (pacijent))
+                foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
                 {
+                    if ((p.korisnik.Ime + " " + p.korisnik.Prezime) == (pacijent))
+                    {
 
-                    tempTermin.pacijent = p;
-                    tempTermin.ImePrezimePacijenta = p.korisnik.Ime + " " + p.korisnik.Prezime;
+                        tempTermin.pacijent = p;
+                        tempTermin.ImePrezimePacijenta = p.korisnik.Ime + " " + p.korisnik.Prezime;
+                    }
                 }
+
+
+                TerminStorage.Instance.Read().Add(tempTermin);
+                TerminStorage.Instance.Save();
             }
-
-
-            TerminStorage.Instance.Read().Add(tempTermin);
-            TerminStorage.Instance.Save();
+            else
+                MessageBox.Show("Termin je vec zauzet");
         }
+
+        public Boolean slobodanTermin(String vreme,String doktor)
+        {
+            foreach(Termin t in TerminStorage.Instance.termini)
+            {
+                if (doktor == t.ImePrezimeDoktora)
+         
+                {
+                    if (DateTime.Parse(vreme) == (t.VremeTermina))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+
 
         public String GenID()
         {
