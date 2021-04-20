@@ -15,6 +15,7 @@ using BolnicaSims.Service;
 using BolnicaSims.Controller;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.NotificationsView;
+using BolnicaSims.Storage;
 
 namespace BolnicaSims
 {
@@ -61,10 +62,11 @@ namespace BolnicaSims
 
         private void ButtonUkloni_Click(object sender, RoutedEventArgs e)
         {
+            //KorisniciStorage.Instance.ubaciNotifikacije();
             Pacijent selektovan = (Pacijent)dataGridPacijenti.SelectedItem;
             PacijentiStorage.Instance.Read().Remove(selektovan);
             PacijentiStorage.Instance.Save();
-
+            //KorisniciStorage.Instance.Save();
 
         }
         private void ButtonDodaj_Click(object sender, RoutedEventArgs e)

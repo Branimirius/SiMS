@@ -5,11 +5,12 @@ using System.Text;
 
 namespace BolnicaSims.Model
 {
+    [Serializable]
     public class Notifikacija
     {
-        public String Tekst;
-        public String Posiljalac;
-        public String Naslov;
+        public String Tekst { get; set; }
+        public String Posiljalac { get; set; }
+        public String Naslov { get; set; }
         public Notifikacija(String naslov, String posiljalac, String tekst)
         {
             Naslov = naslov;

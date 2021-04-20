@@ -55,6 +55,8 @@ namespace BolnicaSims.Service
         }
         public void registrujKorisnika(Korisnik korisnik)
         {
+
+
             KorisniciStorage.Instance.Read().Add(korisnik);
             KorisniciStorage.Instance.Save();
         }

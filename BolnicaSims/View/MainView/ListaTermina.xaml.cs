@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -83,6 +84,14 @@ namespace BolnicaSims
             Termin selektovan = (Termin)dataGridTermini.SelectedItem;
             TerminStorage.Instance.Read().Remove(selektovan);
             TerminStorage.Instance.Save();
+            Notifikacija n = new Notifikacija("Otkazan termin", selektovan.ImePrezimePacijenta, "Otkazan je termin kod doktora " + selektovan.ImePrezimeDoktora);
+            foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+            {
+                if (k.Zvanje == "Sekretar")
+                {
+                    k.Notifikacije.Add(n);
+                }
+            }
         }
     }
 }

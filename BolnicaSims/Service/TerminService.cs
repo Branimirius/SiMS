@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -45,13 +46,20 @@ namespace BolnicaSims.Service
             }
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
+            Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
+            foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+            {
+                if (k.Zvanje == "Sekretar")
+                {
+                    k.Notifikacije.Add(n1);
+                }
+            }
         }
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
         {
             if (slobodanTermin(vreme, doktor) == true)
-            {
-
+            {              
                 Termin tempTermin = new Termin();
                 tempTermin.IdTermina = GenID();
                 tempTermin.VremeTermina = DateTime.Parse(vreme);
@@ -60,7 +68,7 @@ namespace BolnicaSims.Service
                 {
                     if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == (doktor))
                     {
-
+                        
                         tempTermin.doktori.Add(d);
                         tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
                     }
@@ -75,7 +83,14 @@ namespace BolnicaSims.Service
                     }
                 }
 
-
+                Notifikacija n = new Notifikacija("Novi termin", doktor, "Kreiran je novi Termin za pacijenta " + pacijent);
+                foreach(Korisnik k in KorisniciStorage.Instance.korisnici)
+                {
+                    if(k.Zvanje == "Sekretar")
+                    {
+                        k.Notifikacije.Add(n);
+                    }
+                }
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
             }

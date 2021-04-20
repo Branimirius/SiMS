@@ -51,6 +51,7 @@ namespace Model
             DatumRodjenja = datumRodnjenja;
             Adresa = adresa;
             Email = email;
+            Notifikacije = new ObservableCollection<Notifikacija>();
         }
 
         public Korisnik()

@@ -82,5 +82,15 @@ namespace BolnicaSims.Storage
             return korisnici;
 
         }
+       /* public void ubaciNotifikacije()
+        {
+            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
+            foreach (Korisnik k in korisnici)
+            {
+                k.Notifikacije = new ObservableCollection<Notifikacija>();
+                k.Notifikacije.Add(n1);
+            }
+            
+        }*/
     }
 }
