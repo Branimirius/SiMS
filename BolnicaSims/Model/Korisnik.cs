@@ -35,7 +35,7 @@ namespace Model
         public String Zvanje { get; set; }
 
 
-        public ObservableCollection<Notifikacija> Notifikacije;
+        public ObservableCollection<Notifikacija> Notifikacije { get; set; }
         
         
 

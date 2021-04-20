@@ -1,5 +1,8 @@
-﻿using System;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -17,9 +20,12 @@ namespace BolnicaSims.View.NotificationsView
     /// </summary>
     public partial class NotifikacijeSekretar : Window
     {
+        public ObservableCollection<Notifikacija> Notifikacije = KorisniciStorage.Instance.ulogovaniKorisnik.Notifikacije;
         public NotifikacijeSekretar()
         {
             InitializeComponent();
+           
+            listBoxNotifikacije.ItemsSource = KorisniciStorage.Instance.ulogovaniKorisnik.Notifikacije;
         }
     }
 }

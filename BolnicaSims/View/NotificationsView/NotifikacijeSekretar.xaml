@@ -8,7 +8,18 @@
         Title="NotificationsSekretar" Height="359" Width="297">
     <Grid Margin="0,0,10,0">
         <Label Content="NOTIFIKACIJE&#xD;&#xA;" HorizontalAlignment ="Center" FontStyle="Normal" Margin="0,0,0,320"/>
-        <ListBox  Margin="0,28,0,49"/>
+        <ListBox x:Name="listBoxNotifikacije" Margin="10,28,0,49">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Naslov: "/>
+                        <TextBlock Text="{Binding Naslov}" FontWeight="Bold"/>
+                        <TextBlock Text="Posiljalac: "/>
+                        <TextBlock Text="{Binding Posiljalac}" FontWeight="Bold"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>    
 
     </Grid>
 </Window>
