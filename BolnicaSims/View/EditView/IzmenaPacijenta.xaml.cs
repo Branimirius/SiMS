@@ -23,6 +23,12 @@ namespace BolnicaSims
         public IzmenaPacijenta()
         {
             InitializeComponent();
+            labelGod.Content = (DateTime.Today.Year - PacijentiStorage.Instance.selektovanPacijent.korisnik.DatumRodjenja.Year).ToString();
+            labelPol.Content = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.getPol();
+            txtBox1.Text = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime;
+            txtBox2.Text = PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
+            textBoxAlergija.Text = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije;
+
         }
         private void izmenaPacijentaBtn_Click(object sender, RoutedEventArgs e)
         {
@@ -32,7 +38,7 @@ namespace BolnicaSims
             Pacijent selected = PacijentiStorage.Instance.selektovanPacijent;
             Pacijent tempPacijent = new Pacijent();
             Korisnik tempKorisnik = new Korisnik(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, "Pacijent", selected.korisnik.Jmbg, new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
-            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, selected.zdravstveniKarton.BrojKartona, "1243", "M");
+            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, selected.zdravstveniKarton.BrojKartona, "1243", "M","", textBoxAlergija.Text);
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
             // ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);
@@ -41,6 +47,10 @@ namespace BolnicaSims
             SekretarView.Instance.dataGridPacijenti.Items.Refresh();
             this.Close();
 
+        }
+        private void odustaniBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

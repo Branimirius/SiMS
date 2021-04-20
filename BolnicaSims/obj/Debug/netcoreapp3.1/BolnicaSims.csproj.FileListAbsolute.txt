@@ -210,3 +210,5 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Izd
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeSekretar.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\IzdajRecept.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeSekretar.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\IzdajRecept.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\IzdajRecept.baml

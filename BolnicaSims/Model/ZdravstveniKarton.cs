@@ -23,8 +23,8 @@ namespace Model
 
       private TipPola Pol { get; set; }
 
-        public ZdravstveniKarton(String imeRoditelja, String brojKartona, String brojknjizice, String pol)
-        {
+      public ZdravstveniKarton(String imeRoditelja, String brojKartona, String brojknjizice, String pol, String anamneza, String alergije)
+      {
             ImeRoditelja = imeRoditelja;
             BrojKartona = brojKartona;
             BrojZdravstveneKnjizice = BrojZdravstveneKnjizice;
@@ -36,6 +36,17 @@ namespace Model
             {
                 Pol = TipPola.Z;
             }
+            Anamneza = anamneza;
+            Alergije = alergije;
+      }
+      
+      public String getPol()
+        {
+            if(this.Pol == TipPola.M)
+            {
+                return "M";
+            }
+            return "Z";
         }
     }
 }
