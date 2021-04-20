@@ -28,17 +28,25 @@ namespace BolnicaSims.View.AddView
             labelPacijent.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime + ' ' + PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
         }
 
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            Recept tempRecept = new Recept(labelPacijent.Content.ToString(), labelDoktor.Content.ToString(), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text);
-            ReceptiStorage.Instance.Read().Add(tempRecept);
-            ReceptiStorage.Instance.Save();
-            this.Close();
-        }
-
         private void button_Click(object sender, RoutedEventArgs e)
         {
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Datum nije unet");
+            }
+            else
+            {
+                Recept tempRecept = new Recept(labelPacijent.Content.ToString(), labelDoktor.Content.ToString(), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text);
+                ReceptiStorage.Instance.Read().Add(tempRecept);
+                ReceptiStorage.Instance.Save();
+                this.Close();
+                MessageBox.Show("Recept je izdat");
+            }
+        }
 
+        private void button1_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)

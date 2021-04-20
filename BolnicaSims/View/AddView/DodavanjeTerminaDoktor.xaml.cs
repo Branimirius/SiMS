@@ -30,7 +30,6 @@ namespace BolnicaSims.View.AddView
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
             TerminController.Instance.dodajTermin(txtBox1.Text, KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime, (string)comboBox2.SelectedItem);
-            ListaSopstvenihTermina.Instance.dokTermini.Add(new Termin(TerminService.Instance.GenID(), txtBox1.Text, KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
             ListaSopstvenihTermina.Instance.refreshListaSopstvenihTermina();
             this.Close();
         }
