@@ -10,9 +10,9 @@
         <Canvas>
             <Menu DockPanel.Dock ="Top" Height="434" Width="125" Background="#FF1FCCD4">
 
-                <MenuItem x:Name="dataGridTermini" Header="Zakazivanje Pregleda" Click="ManualColumns_Click" Width="269" Height="66" >
-                   
-                </MenuItem>
+                <MenuItem x:Name="dataGridTermini" Header="Zakazivanje Pregleda" Click="ManualColumns_Click" Width="269" Height="66" >  </MenuItem>
+                <MenuItem x:Name="dataGridRecepti" Header="Recepti" Click="ManualColumns_Click2" Width="269" Height="50"></MenuItem>
+             
             </Menu>
             <Grid DockPanel.Dock="Bottom" Height="24"/>
         </Canvas>

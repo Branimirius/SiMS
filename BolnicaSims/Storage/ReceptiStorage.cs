@@ -10,7 +10,7 @@ using System.Text;
 namespace BolnicaSims.Storage
 {
     [Serializable]
-    class ReceptiStorage
+    public class ReceptiStorage
     {
         private static ReceptiStorage instance = null;
         public static ReceptiStorage Instance
