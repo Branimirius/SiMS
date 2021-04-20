@@ -1,0 +1,6 @@
+Sequence (upravnik premestanje opreme)
+  -Nije dovoljno ispitao uslove za prebacivanje opreme.
+  -Nije poslao obavestenje (poruku) odgovarajucim rolama koje je trebalo da 
+budu obavestene o prebacivanju opreme.
+##########
+Ocenio: Filip
