@@ -55,6 +55,7 @@ namespace BolnicaSims.View.MainView
                     p.zdravstveniKarton.Alergije = textBoxAlergija.Text;
                 }
             }
+            MessageBox.Show("Anamneza je sacuvana");
         }
 
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)

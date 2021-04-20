@@ -79,8 +79,8 @@ namespace BolnicaSims.Service
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
             }
-            else
-                MessageBox.Show("Termin je vec zauzet");
+            else MessageBox.Show("Termin je vec zauzet");
+
         }
 
         public Boolean slobodanTermin(String vreme,String doktor)
