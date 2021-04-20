@@ -24,7 +24,6 @@ namespace BolnicaSims
         public IzmenaPregleda()
         {
             InitializeComponent();
-            comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
@@ -32,33 +31,28 @@ namespace BolnicaSims
             Termin tempTermin = new Termin();
              
             tempTermin = TerminStorage.Instance.selektovanTermin;
-            int i = 0;
-            //int m = 0;
-            //tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+            DateTime stariTermin = tempTermin.VremeTermina;
+            DateTime noviTermin = tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+            DateTime noviTermin2 = tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+            noviTermin = noviTermin.AddDays(2);
+            noviTermin2 = noviTermin2.AddDays(-2);
 
-            foreach (Doktor d in DoktoriStorage.Instance.doktori)
+            if (stariTermin > noviTermin || stariTermin < noviTermin2)
             {
-                //i++;
-                if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == ((String)comboBox1.SelectedItem))
-                {
-                    tempTermin.doktori.Add(d);
-                    tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
-                    i++;
-                }
+                if (stariTermin > noviTermin)
+                    MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
+                if (stariTermin < noviTermin2)
+                    MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                return;
             }
-            DoktoriStorage.Instance.Read()[i].AddTermin(tempTermin);
-            DoktoriStorage.Instance.Save();
 
-            TerminController.Instance.izmeniTermin(tempTermin, txtBox1.Text);
+            TerminController.Instance.izmeniTermin(tempTermin);
             ListaTermina.Instance.dataGridTermini.Items.Refresh();
             
             this.Close();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+     
     }
 
 }
