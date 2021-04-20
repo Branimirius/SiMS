@@ -5,13 +5,91 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="UpravnikView" Height="450" Width="800">
-    <Grid>
+        Title="UpravnikView" Height="450" Width="904">
+    <Grid Margin="0,0,83,0">
         <Menu DockPanel.Dock ="Top" Height="434" Background="#FF1FCCD4" Margin="0,0,699,0">
 
-            <MenuItem x:Name="dataGridProstorije" Header="Prostorije" Click="ManualColumnsPacijenti_Click" Width="68" Height="66" />
+            <MenuItem x:Name="menuProstorije" Header="Prostorije" Click="ManualColumnsPacijenti_Click" Width="68" Height="66" />
         </Menu>
+        <TabControl TabStripPlacement="Top" Margin="200,84,120,84">
+            <TabItem Name="prostorijeTab" Header="Prostorije">
+                <Grid Background="#FFE5E5E5" Margin="0,0,71,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="132*"/>
+                        <ColumnDefinition Width="683*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="dataGridProstorije" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
+                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
+                  Height="193" Margin="10,35,0,0" VerticalAlignment="Top" Width="405" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tip" Binding="{Binding  }" Width="*" />
+                            <DataGridTextColumn Header="Broj" Binding="{Binding VremeTermina}" Width="*"/>
+                            <DataGridTextColumn Header="Sprat" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="Trenutno Stanje" Binding="{Binding ImePrezimeDoktora}" Width="*" />
 
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                    <Label Content="U IZGRADNJI" HorizontalAlignment="Left" Margin="143,0,0,0" VerticalAlignment="Top" Width="203" Height="35" FontSize="24" FontWeight="Bold" Grid.Column="1"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="osobljeTab" Header="Osoblje">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridOsoblje" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
+                    SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
+                    Height="193" Margin="10,35,0,0" VerticalAlignment="Top" Width="405" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tip" Binding="{Binding  }" Width="*" />
+                            <DataGridTextColumn Header="Broj" Binding="{Binding VremeTermina}" Width="*"/>
+                            <DataGridTextColumn Header="Sprat" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="Trenutno Stanje" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Name="InventarTab" Header="Inventar">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridInventar" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
+                    SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
+                    Height="193" Margin="10,35,0,0" VerticalAlignment="Top" Width="405" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tip" Binding="{Binding  }" Width="*" />
+                            <DataGridTextColumn Header="Broj" Binding="{Binding VremeTermina}" Width="*"/>
+                            <DataGridTextColumn Header="Sprat" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="Trenutno Stanje" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="lekoviTab" Header="Lekovi">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
+                    SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
+                    Height="193" Margin="10,35,0,0" VerticalAlignment="Top" Width="405" Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tip" Binding="{Binding  }" Width="*" />
+                            <DataGridTextColumn Header="Broj" Binding="{Binding VremeTermina}" Width="*"/>
+                            <DataGridTextColumn Header="Sprat" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="Trenutno Stanje" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+
+
+                </Grid>
+            </TabItem>    
+        </TabControl>
 
     </Grid>
 </Window>
