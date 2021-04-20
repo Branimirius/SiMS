@@ -56,6 +56,14 @@ namespace BolnicaSims.Service
         public void registrujKorisnika(Korisnik korisnik)
         {
             KorisniciStorage.Instance.korisnici.Add(korisnik);
+
+            /*DateTime date1 = new DateTime(1988, 12, 25);
+            DateTime date2 = new DateTime(1974, 11, 25);
+            Korisnik k1 = new Korisnik("gorana123", "ivanovic123", "Gorana", "Ivanovic", "Sekretar", "1231245631231", date1, "Kupusinca 5", "06325221", "goranaivanovic@gmail.com");
+            KorisniciStorage.Instance.korisnici.Add(k1);
+            Korisnik k2 = new Korisnik("ivan123", "ivanovic123", "Ivan", "Ivanovic", "Upravnik", "1231456789232", date2, "Resavska 15", "06434441", "ivanivanovic@gmail.com");
+            KorisniciStorage.Instance.korisnici.Add(k2);*/
+
             KorisniciStorage.Instance.Save();
         }
 
