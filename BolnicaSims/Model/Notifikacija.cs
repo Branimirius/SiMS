@@ -5,14 +5,16 @@ using System.Text;
 
 namespace BolnicaSims.Model
 {
-    class Notifikacija
+    public class Notifikacija
     {
-        public String tekst;
-        public Korisnik posiljalac;
-        
-        public Notifikacija()
+        public String Tekst;
+        public String Posiljalac;
+        public String Naslov;
+        public Notifikacija(String naslov, String posiljalac, String tekst)
         {
-       
+            Naslov = naslov;
+            Posiljalac = posiljalac;
+            Tekst = tekst;
         }
     }
 }

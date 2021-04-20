@@ -35,22 +35,8 @@ namespace Model
         public String Zvanje { get; set; }
 
 
-        public System.Collections.ArrayList notifikacije;
-        public System.Collections.ArrayList GetNotifikacije()
-        {
-            if (notifikacije == null)
-                notifikacije = new System.Collections.ArrayList();
-            return notifikacije;
-        }
-
-        /// <pdGenerated>default setter</pdGenerated>
-        public void SetTermin(System.Collections.ArrayList newNotifikacije)
-        {
-            notifikacije.Clear();
-            foreach(Notifikacija oTermin in newNotifikacije)
-               notifikacije.Add(oTermin);
-        }
-
+        public ObservableCollection<Notifikacija> Notifikacije;
+        
         
 
         public Korisnik(String username, String password, String ime, String prezime, String zvanje, String jmbg, DateTime datumRodnjenja, String adresa, String kontaktTelefon, String email)

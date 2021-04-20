@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ using System.Text;
 namespace BolnicaSims.Storage
 {
     [Serializable]
-    class KorisniciStorage
+    public class KorisniciStorage
     {
         private static KorisniciStorage instance = null;
         public static KorisniciStorage Instance
@@ -32,6 +33,13 @@ namespace BolnicaSims.Storage
         public KorisniciStorage()
         {
             korisnici = this.Load();
+
+            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
+            foreach(Korisnik k in korisnici)
+            {
+                k.Notifikacije.Add(n1);
+            }
+
             /*DateTime date1 = new DateTime(1985, 12, 25);
             DateTime date2 = new DateTime(1974, 11, 25);
             Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231237771231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
