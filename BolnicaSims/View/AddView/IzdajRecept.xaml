@@ -1,0 +1,34 @@
+﻿<Window x:Class="BolnicaSims.View.AddView.IzdajRecept"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.AddView"
+        mc:Ignorable="d"
+        Title="IzdajRecept" Height="450" Width="800">
+    <Grid>
+        <Button x:Name="button" Content="Izdaj" HorizontalAlignment="Left" Margin="247,348,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="79" Height="33" Click="button_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-359.986"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="button1" Content="Odustani" HorizontalAlignment="Left" Margin="487,348,0,0" VerticalAlignment="Top" Click="button1_Click" Height="31" Width="100" RenderTransformOrigin="0.848,0.235"/>
+        <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="265,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.561"/>
+        <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="487,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.601"/>
+        <Label x:Name="label" Content="Kreni uzimanje: " HorizontalAlignment="Left" Margin="160,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,-0.55"/>
+        <Label x:Name="label1" Content="Na svakih sati:" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="148,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Center" Margin="0,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="537,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label2" Content="Koliko puta:" HorizontalAlignment="Left" Margin="561,191,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label3" Content="LEK:" HorizontalAlignment="Left" Margin="282,139,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
+        <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="105,139,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

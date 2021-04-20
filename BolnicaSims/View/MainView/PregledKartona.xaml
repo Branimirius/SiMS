@@ -19,6 +19,8 @@
         <Button x:Name="button_recept" Content="Izdaj Recept" HorizontalAlignment="Left" Margin="609,104,0,0" VerticalAlignment="Top" Width="89" Height="54" Click="button_recept_Click"/>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="137,300,0,0" Text="Unesite anamnezu..." TextWrapping="Wrap" VerticalAlignment="Top" Width="422" Height="103"/>
         <Button x:Name="button_sacuvaj" Content="SACUVAJ ANAMNEZU" HorizontalAlignment="Left" Margin="609,326,0,0" VerticalAlignment="Top" Height="51" Width="144" Click="button_sacuvaj_Click"/>
+        <Label x:Name="label5" Content="Alergije:" HorizontalAlignment="Left" Margin="178,217,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBoxAlergija" HorizontalAlignment="Left" Margin="381,230,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextChanged="textBox1_TextChanged"/>
 
     </Grid>
 </Window>

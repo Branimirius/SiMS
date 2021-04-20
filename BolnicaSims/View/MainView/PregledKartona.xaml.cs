@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.View.AddView;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,13 +39,27 @@ namespace BolnicaSims.View.MainView
 
         private void button_recept_Click(object sender, RoutedEventArgs e)
         {
-            
+            var s = new IzdajRecept();
+            s.Show();
         }
 
         public static string anam = "prazno";
         private void button_sacuvaj_Click(object sender, RoutedEventArgs e)
         {
-            anam = textBox.Text; 
+            anam = textBox.Text;
+            foreach(Pacijent p in PacijentiStorage.Instance.Read()) 
+            {
+                if (p == PacijentiStorage.Instance.selektovanPacijent)
+                {
+                    p.zdravstveniKarton.Anamneza = textBox.Text;
+                    p.zdravstveniKarton.Alergije = textBoxAlergija.Text;
+                }
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 }
