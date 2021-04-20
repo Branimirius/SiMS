@@ -54,6 +54,14 @@ namespace BolnicaSims.Service
                     {
                         PacijentiStorage.Instance.pacijenti[i].korisnik.Password = pacijent.korisnik.Password;
                     }
+                    if (pacijent.zdravstveniKarton.Anamneza != "")
+                    {
+                        PacijentiStorage.Instance.pacijenti[i].zdravstveniKarton.Anamneza = pacijent.zdravstveniKarton.Anamneza;
+                    }
+                    if (pacijent.zdravstveniKarton.Alergije != "")
+                    {
+                        PacijentiStorage.Instance.pacijenti[i].zdravstveniKarton.Alergije = pacijent.zdravstveniKarton.Alergije;
+                    }
                 }
 
             }
