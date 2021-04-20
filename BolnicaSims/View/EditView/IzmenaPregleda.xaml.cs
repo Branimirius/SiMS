@@ -33,23 +33,23 @@ namespace BolnicaSims
              
             tempTermin = TerminStorage.Instance.selektovanTermin;
             int i = 0;
-            int m = 0;
-            tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+            //int m = 0;
+            //tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
 
             foreach (Doktor d in DoktoriStorage.Instance.doktori)
             {
-                i++;
+                //i++;
                 if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == ((String)comboBox1.SelectedItem))
                 {
                     tempTermin.doktori.Add(d);
                     tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
-                    m = i - 1;
+                    i++;
                 }
             }
-            DoktoriStorage.Instance.Read()[m] = tempTermin.doktor;
+            DoktoriStorage.Instance.Read()[i].AddTermin(tempTermin);
             DoktoriStorage.Instance.Save();
 
-            TerminController.Instance.izmeniTermin(tempTermin);
+            TerminController.Instance.izmeniTermin(tempTermin, txtBox1.Text);
             ListaTermina.Instance.dataGridTermini.Items.Refresh();
             
             this.Close();

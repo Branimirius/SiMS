@@ -29,9 +29,10 @@ namespace BolnicaSims
             // Termin selected = (Termin)ListaTermina.Instance.dataGridTermini.SelectedItem;
             //txtBox1.Text = selected.VremeTermina.ToString();
 
+            Pacijent selected = PacijentiStorage.Instance.selektovanPacijent;
             Pacijent tempPacijent = new Pacijent();
-            Korisnik tempKorisnik = new Korisnik(null, null, txtBox1.Text, txtBox2.Text, "Pacijent", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
-            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, TerminService.Instance.GenID(), "1243", "M");
+            Korisnik tempKorisnik = new Korisnik(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, "Pacijent", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
+            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, selected.zdravstveniKarton.BrojKartona, "1243", "M");
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
             // ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);

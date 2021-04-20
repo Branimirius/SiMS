@@ -28,11 +28,12 @@ namespace BolnicaSims
         public void dodavanjePacijentaBtn_Click(object sender, RoutedEventArgs e)
         {
             Pacijent tempPacijent = new Pacijent();
-            Korisnik tempKorisnik = new Korisnik(null, null, txtBox1.Text, txtBox2.Text, "Pacijent", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
+            Korisnik tempKorisnik = new Korisnik(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, "Pacijent", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
             ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, PacijentService.Instance.GenID(), "1243", "M");
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
             PacijentController.Instance.dodajPacijenta(tempPacijent);
+            KorisnikController.Instance.registrujKorisnika(tempKorisnik);
             this.Close();
         }
     }

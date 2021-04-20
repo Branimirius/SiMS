@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BolnicaSims.Storage;
 using Model;
 
 namespace BolnicaSims.Service
@@ -43,12 +44,28 @@ namespace BolnicaSims.Service
                     {
                         PacijentiStorage.Instance.pacijenti[i].zdravstveniKarton.BrojKartona = pacijent.zdravstveniKarton.BrojKartona;
                     }
+                    if (pacijent.korisnik.Username != "")
+                    {
+                        PacijentiStorage.Instance.pacijenti[i].korisnik.Username = pacijent.korisnik.Username;
+                    }
+                    if (pacijent.korisnik.Password != "")
+                    {
+                        PacijentiStorage.Instance.pacijenti[i].korisnik.Password = pacijent.korisnik.Password;
+                    }
                 }
 
             }
             PacijentiStorage.Instance.Save();
             SekretarView.Instance.refreshPacijenti();
-           
+
+            for (int i = 0; i < KorisniciStorage.Instance.korisnici.Count; i++)
+            {
+                if ((pacijent.korisnik.Ime + " " + pacijent.korisnik.Prezime) == (PacijentiStorage.Instance.pacijenti[i].korisnik.Ime + " " + PacijentiStorage.Instance.pacijenti[i].korisnik.Prezime))
+                {
+                    KorisniciStorage.Instance.korisnici[i] = pacijent.korisnik;
+                }
+
+            }
         }
         public void dodajPacijenta(Pacijent pacijent)
         {

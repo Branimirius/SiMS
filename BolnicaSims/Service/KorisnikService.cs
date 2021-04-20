@@ -7,7 +7,7 @@ using Model;
 namespace BolnicaSims.Service
 {
     class KorisnikService
-    { 
+    {
         private static KorisnikService instance = null;
         public static KorisnikService Instance
         {
@@ -24,14 +24,14 @@ namespace BolnicaSims.Service
 
         public int Login(string username, string password)
         {
-            switch(username, password)
+            switch (username, password)
             {
                 case ("Gorana88", "12345"):
                     return 1;
                 default:
                     break;
             }
-            if(pacijentiLogInfo.Contains(username + password)){
+            if (pacijentiLogInfo.Contains(username + password)) {
                 return 2;
             }
             else
@@ -45,7 +45,7 @@ namespace BolnicaSims.Service
             Korisnik tempKorisnik = new Korisnik();
             foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
             {
-                if(k.Username == username && k.Password == password){
+                if (k.Username == username && k.Password == password) {
                     tempKorisnik = k;
                 }
             }
@@ -53,5 +53,13 @@ namespace BolnicaSims.Service
             KorisniciStorage.Instance.ulogovaniKorisnik = tempKorisnik;
             return tempKorisnik;
         }
+        public void registrujKorisnika(Korisnik korisnik)
+        {
+            KorisniciStorage.Instance.korisnici.Add(korisnik);
+            KorisniciStorage.Instance.Save();
+        }
+
+
+
     }
 }

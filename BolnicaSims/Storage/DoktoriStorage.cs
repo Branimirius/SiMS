@@ -33,7 +33,13 @@ namespace BolnicaSims.Storage
         public DoktoriStorage()
         {
             doktori = this.Load();
-            DateTime date1 = new DateTime(1985, 12, 25);
+            foreach (Doktor d in doktori)
+            {
+                doktoriImena.Add(d.korisnik.Ime + " " + d.korisnik.Prezime);
+            }
+
+            Console.Write(doktori[0].korisnik.Ime);
+            /*DateTime date1 = new DateTime(1985, 12, 25);
             DateTime date2 = new DateTime(1974, 11, 25);
             Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231231231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
             Doktor d1 = new Doktor(k1);
@@ -44,7 +50,7 @@ namespace BolnicaSims.Storage
             Doktor d2 = new Doktor(k2);
             doktori.Add(d2);
             doktoriImena.Add(k2.Ime + " " + k2.Prezime);
-             //this.Save();
+            this.Save();*/
 
         }
         public ObservableCollection<Doktor> Read()

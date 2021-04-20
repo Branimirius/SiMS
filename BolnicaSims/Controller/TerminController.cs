@@ -20,9 +20,9 @@ namespace BolnicaSims.Controller
                 return instance;
             }
         }
-        public void izmeniTermin(Termin termin)
+        public void izmeniTermin(Termin termin, String vreme)
         {
-            TerminService.Instance.izmeniTermin(termin);
+            TerminService.Instance.izmeniTermin(termin, vreme);
         }
         public void dodajTermin(String vreme, String doktor, String pacijent)
         {

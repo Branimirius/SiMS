@@ -20,7 +20,7 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
-        public void izmeniTermin(Termin termin)
+        public void izmeniTermin(Termin termin, String vreme)
         {
             for (int i = 0; i < TerminStorage.Instance.termini.Count; i++)
             {
@@ -30,9 +30,9 @@ namespace BolnicaSims.Service
                     {
                         TerminStorage.Instance.termini[i].IdTermina = termin.IdTermina;
                     }
-                    if (termin.VremeTermina.ToString() != "")
+                    if (vreme != "")
                     {
-                        TerminStorage.Instance.termini[i].VremeTermina = termin.VremeTermina;
+                        TerminStorage.Instance.termini[i].VremeTermina = DateTime.Parse(vreme);
                     }
                     if (termin.ImePrezimeDoktora != "")
                     {

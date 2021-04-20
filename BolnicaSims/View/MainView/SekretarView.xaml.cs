@@ -77,7 +77,10 @@ namespace BolnicaSims
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-                         
+
+            Pacijent selektovan = (Pacijent)dataGridPacijenti.SelectedItem;
+            PacijentiStorage.Instance.selektovanPacijent = selektovan;
+
             var s = new IzmenaPacijenta();
             s.Show();               
             
