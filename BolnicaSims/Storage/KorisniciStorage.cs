@@ -32,13 +32,25 @@ namespace BolnicaSims.Storage
         public KorisniciStorage()
         {
             korisnici = this.Load();
-            //DateTime date1 = new DateTime(1985, 12, 25);
-            //DateTime date2 = new DateTime(1974, 11, 25);
-            //Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231231231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
-            //korisnici.Add(k1);
-            //Korisnik k2 = new Korisnik("marko123", "markovic123", "Marko", "Markovic", "Doktor", "1231231231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
-            //korisnici.Add(k2);
-            //this.Save();
+            /*DateTime date1 = new DateTime(1985, 12, 25);
+            DateTime date2 = new DateTime(1974, 11, 25);
+            Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231237771231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
+            korisnici.Add(k1);
+            Korisnik k2 = new Korisnik("marko123", "markovic123", "Marko", "Markovic", "Doktor", "1231245631232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
+            korisnici.Add(k2);
+           
+            Korisnik k3 = new Korisnik("bogdan123", "mahua123", "Bogdan", "Mahua", "Pacijent", "123144441231", date1, "Kosovska 5", "06354421", "nikola.petrovic@gmail.com");
+            korisnici.Add(k3);
+            Korisnik k4 = new Korisnik("zeljko123", "mahua123", "Zeljko", "Mahua", "Pacijent", "123155661232", date2, "Resavska 5", "06435521", "marko.markovic@gmail.com");
+            korisnici.Add(k4);
+
+            Korisnik k5 = new Korisnik("ivan123", "ivanovic123", "Ivan", "Ivanovic", "Upravnik", "1231341231231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
+            korisnici.Add(k5);
+            Korisnik k6 = new Korisnik("gorana123", "ivanovic123", "Gorana", "Ivanovic", "Sekretar", "1231991231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
+            korisnici.Add(k6);
+
+
+            this.Save();*/
         }
         public ObservableCollection<Korisnik> Read()
         {

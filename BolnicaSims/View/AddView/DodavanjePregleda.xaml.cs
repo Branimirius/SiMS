@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -35,21 +36,22 @@ namespace BolnicaSims
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
             
-            tempTermin.IdTermina = TerminService.Instance.GenID();
-            tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
+            //tempTermin.IdTermina = TerminService.Instance.GenID();
+           // tempTermin.VremeTermina= DateTime.Parse(txtBox1.Text);
       
-           foreach(Doktor d in DoktoriStorage.Instance.doktori)
+           /*foreach(Doktor d in DoktoriStorage.Instance.doktori)
             {
                 if((d.korisnik.Ime + " " + d.korisnik.Prezime) == ((String)comboBox1.SelectedItem))
                 {
                     tempTermin.doktori.Add(d);
                     tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
+                    tempTermin.pacijent = 
                 }
-            }
+            }*/
+           TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
 
-
-            TerminStorage.Instance.Read().Add(tempTermin);
-            TerminStorage.Instance.Save();
+            //TerminStorage.Instance.Read().Add(tempTermin);
+            //TerminStorage.Instance.Save();
 
             ListaTermina.Instance.refreshListaTermina();
             

@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Storage;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -32,14 +33,23 @@ namespace BolnicaSims
                 return instance;
             }
         }
-
-
+        public ObservableCollection<Termin> termini = TerminStorage.Instance.Read();
+        public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
         public ListaTermina()
         {
             InitializeComponent();
             // this.DataContext = this;
-           
-            dataGridTermini.ItemsSource = TerminStorage.Instance.Read(); 
+
+            foreach (Termin t in termini)
+            {
+                if (t.ImePrezimePacijenta == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
+                {
+                    pacTermini.Add(t);
+                }
+            }
+
+
+            dataGridTermini.ItemsSource = pacTermini; 
            
 
         }

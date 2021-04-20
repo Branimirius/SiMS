@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BolnicaSims.Controller;
 using BolnicaSims.Storage;
 using Model;
 
@@ -20,8 +21,9 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
-        public void izmeniPacijenta(Pacijent pacijent)
+        public void izmeniPacijenta(Pacijent pacijent, Pacijent selected)
         {
+            Pacijent temp;
             for (int i = 0; i < PacijentiStorage.Instance.pacijenti.Count; i++)
             {
 
@@ -55,24 +57,56 @@ namespace BolnicaSims.Service
                 }
 
             }
-            PacijentiStorage.Instance.Save();
-            SekretarView.Instance.refreshPacijenti();
 
             for (int i = 0; i < KorisniciStorage.Instance.korisnici.Count; i++)
             {
-                if ((pacijent.korisnik.Ime + " " + pacijent.korisnik.Prezime) == (PacijentiStorage.Instance.pacijenti[i].korisnik.Ime + " " + PacijentiStorage.Instance.pacijenti[i].korisnik.Prezime))
+                if ((selected.korisnik.Jmbg) == (KorisniciStorage.Instance.korisnici[i].Jmbg))
                 {
-                    KorisniciStorage.Instance.korisnici[i] = pacijent.korisnik;
+                    if (selected.korisnik.Ime != "")
+                    {
+                        KorisniciStorage.Instance.korisnici[i].Ime = selected.korisnik.Ime;
+                    }
+                    if (selected.korisnik.Prezime != "")
+                    {
+                        KorisniciStorage.Instance.korisnici[i].Prezime = selected.korisnik.Prezime;
+                    }
+                    if (selected.korisnik.Username != "")
+                    {
+                        KorisniciStorage.Instance.korisnici[i].Username = selected.korisnik.Username;
+                    }
+                    if (selected.korisnik.Password != "")
+                    {
+                        KorisniciStorage.Instance.korisnici[i].Password = selected.korisnik.Password;
+                    }
                 }
 
             }
+            //KorisniciStorage.Instance.Save();       
+
+            PacijentiStorage.Instance.Save();
+
+            SekretarView.Instance.refreshPacijenti();
+
+            
+            
         }
         public void dodajPacijenta(Pacijent pacijent)
         {
             PacijentiStorage.Instance.Read().Add(pacijent);
             PacijentiStorage.Instance.Save();
         }
+        public Pacijent getUlogovaniPacijent(Korisnik ulogovaniKorisnik)
+        {
+            foreach(Pacijent p in PacijentiStorage.Instance.pacijenti)
+            {
+                if(p.korisnik == ulogovaniKorisnik)
+                {
+                    return p;
+                }
+            }
+            return null;
 
+        }
         public String GenID()
         {
             int a = int.Parse(PacijentiStorage.Instance.pacijenti[PacijentiStorage.Instance.pacijenti.Count - 1].zdravstveniKarton.BrojKartona) + 1;

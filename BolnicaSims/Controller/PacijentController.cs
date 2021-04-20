@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 
 namespace BolnicaSims.Controller
@@ -20,13 +21,18 @@ namespace BolnicaSims.Controller
                 return instance;
             }
         }
-        public void izmeniPacijenta(Pacijent pacijent)
+        public void izmeniPacijenta(Pacijent pacijent, Pacijent selected)
         {
-            PacijentService.Instance.izmeniPacijenta(pacijent);
+            PacijentService.Instance.izmeniPacijenta(pacijent, selected);
         }
         public void dodajPacijenta(Pacijent pacijent)
         {
             PacijentService.Instance.dodajPacijenta(pacijent);
+        }
+
+        public Pacijent getUlogovaniPacijent()
+        {
+            return PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik);
         }
            
     }

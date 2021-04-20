@@ -57,7 +57,7 @@ namespace BolnicaSims
             this.Close();
             this.InitializeComponent();
             dataGridSopstveniTermini.ItemsSource = null;
-            dataGridSopstveniTermini.ItemsSource = TerminStorage.Instance.Read();
+            dataGridSopstveniTermini.ItemsSource = dokTermini;
             dataGridSopstveniTermini.Items.Refresh();
         }
 
