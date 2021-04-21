@@ -58,6 +58,9 @@
     <Compile Update="View\MainView\UpravnikView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\NotificationsView\NotifikacijePacijent.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\NotificationsView\NotifikacijeSekretar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -115,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\UpravnikView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\NotificationsView\NotifikacijePacijent.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\NotificationsView\NotifikacijeSekretar.xaml">

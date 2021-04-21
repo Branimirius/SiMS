@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.View.MainView;
+using BolnicaSims.View.NotificationsView;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -45,6 +46,12 @@ namespace BolnicaSims
         private void ManualColumns_Click2(object sender, RoutedEventArgs e)
         {
             var s = new ListaRecepata();
+            s.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new NotifikacijePacijent();
             s.Show();
         }
     }

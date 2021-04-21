@@ -46,13 +46,30 @@ namespace BolnicaSims.Service
             }
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
-            Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-            foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+            //Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
+            if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
             {
-                if (k.Zvanje == "Sekretar")
+                Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
+
+                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
                 {
-                    k.Notifikacije.Add(n1);
+                    if (k.Zvanje == "Sekretar")
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
                 }
+            }
+            else if(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
+            {
+                Notifikacija n1 = new Notifikacija("Pomeren termin", "Sekretar", "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
+
+                termin.pacijent.korisnik.Notifikacije.Add(n1);
+            }
+            else
+            {
+                Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimeDoktora, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
+
+                termin.doktor.korisnik.Notifikacije.Add(n1);
             }
         }
 
@@ -83,12 +100,40 @@ namespace BolnicaSims.Service
                     }
                 }
 
-                Notifikacija n = new Notifikacija("Novi termin", doktor, "Kreiran je novi Termin za pacijenta " + pacijent);
-                foreach(Korisnik k in KorisniciStorage.Instance.korisnici)
+                if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
                 {
-                    if(k.Zvanje == "Sekretar")
+                    Notifikacija n1 = new Notifikacija("Zakazan termin", pacijent, "Zakazan je termin kod doktora:  " + doktor);
+
+                    foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
                     {
-                        k.Notifikacije.Add(n);
+                        if (k.Zvanje == "Sekretar")
+                        {
+                            k.Notifikacije.Add(n1);
+                        }
+                    }
+                }
+                else if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
+                {
+                    Notifikacija n1 = new Notifikacija("Zakazan termin", "Sekretar", "Pomeren je termin kod doktora:  " + doktor);
+
+                    foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+                    {
+                        if ((k.Ime + " " + k.Prezime) == pacijent)
+                        {
+                            k.Notifikacije.Add(n1);
+                        }
+                    }
+                }
+                else
+                {
+                    Notifikacija n1 = new Notifikacija("Zakazan termin", "Sekretar", "Pomeren je termin kod doktora:  " + doktor);
+
+                    foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+                    {
+                        if ((k.Ime + " " + k.Prezime) == doktor)
+                        {
+                            k.Notifikacije.Add(n1);
+                        }
                     }
                 }
                 TerminStorage.Instance.Read().Add(tempTermin);

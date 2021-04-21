@@ -16,5 +16,6 @@
             </Menu>
             <Grid DockPanel.Dock="Bottom" Height="24"/>
         </Canvas>
+        <Button Content="Obavestenja" Click ="Button_Click" Margin="574,0,149,398"/>
     </Grid>
 </Window>

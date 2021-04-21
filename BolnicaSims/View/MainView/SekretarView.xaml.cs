@@ -16,6 +16,7 @@ using BolnicaSims.Controller;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.Storage;
+using BolnicaSims.Model;
 
 namespace BolnicaSims
 {
@@ -99,6 +100,9 @@ namespace BolnicaSims
             Termin selektovan = (Termin)dataGridTermini.SelectedItem;
             TerminStorage.Instance.Read().Remove(selektovan);
             TerminStorage.Instance.Save();
+            //Notifikacija n1 = new Notifikacija("Otkazan termin", "Sekretar", "Otkazan je termin kod doktora:  " + selektovan.ImePrezimeDoktora);
+
+            //selektovan.pacijent.korisnik.Notifikacije.Add(n1);
         }
         private void ButtonIzmeniTermin_Click(object sender, RoutedEventArgs e)
         {
