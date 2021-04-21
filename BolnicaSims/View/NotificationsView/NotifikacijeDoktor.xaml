@@ -1,0 +1,24 @@
+﻿<Window x:Class="BolnicaSims.View.NotificationsView.NotifikacijeDoktor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.NotificationsView"
+        mc:Ignorable="d"
+        Title="NotifikacijeDoktor" Height="450" Width="362">
+    <Grid Margin="0,0,10,0">
+        <Label Content="NOTIFIKACIJE&#xD;&#xA;" HorizontalAlignment ="Center" FontStyle="Normal" Margin="0,10,0,310"/>
+        <ListBox x:Name="listBoxNotifikacije" Margin="10,40,10,49">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <WrapPanel>
+                        <TextBlock Text="Naslov: "/>
+                        <TextBlock Text="{Binding Naslov}" FontWeight="Bold"/>
+                        <TextBlock Text="Posiljalac: "/>
+                        <TextBlock Text="{Binding Posiljalac}" FontWeight="Bold"/>
+                    </WrapPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</Window>

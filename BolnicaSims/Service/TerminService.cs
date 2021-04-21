@@ -122,7 +122,12 @@ namespace BolnicaSims.Service
                         {
                             k.Notifikacije.Add(n1);
                         }
+                        if ((k.Ime + " " + k.Prezime) == doktor)
+                        {
+                            k.Notifikacije.Add(n1);
+                        }
                     }
+                    
                 }
                 else
                 {
@@ -130,11 +135,16 @@ namespace BolnicaSims.Service
 
                     foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
                     {
-                        if ((k.Ime + " " + k.Prezime) == doktor)
+                        if ((k.Ime + " " + k.Prezime) == pacijent)
+                        {
+                            k.Notifikacije.Add(n1);
+                        }
+                        if (k.Zvanje == "Sekretar")
                         {
                             k.Notifikacije.Add(n1);
                         }
                     }
+                    
                 }
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\App.xaml
-21-1323629382
+22-74022007
 
-55992604112
+56566432406
 192-1533232326
-MainWindow.xaml;View\AddView\DodavanjePacijenta.xaml;View\AddView\DodavanjePregleda.xaml;View\AddView\DodavanjeProstorije.xaml;View\AddView\DodavanjeTerminaDoktor.xaml;View\AddView\DodavanjeTerminaSekretar.xaml;View\AddView\IzdajRecept.xaml;View\EditView\IzmenaPacijenta.xaml;View\EditView\IzmenaPregleda.xaml;View\EditView\IzmenaProstorije.xaml;View\MainView\DoktorView.xaml;View\MainView\ListaProstorija.xaml;View\MainView\ListaRecepata.xaml;View\MainView\ListaSopstvenihTermina.xaml;View\MainView\ListaTermina.xaml;View\MainView\PacijentView.xaml;View\MainView\PregledKartona.xaml;View\MainView\SekretarView.xaml;View\MainView\UpravnikView.xaml;View\NotificationsView\NotifikacijePacijent.xaml;View\NotificationsView\NotifikacijeSekretar.xaml;
+MainWindow.xaml;View\AddView\DodavanjePacijenta.xaml;View\AddView\DodavanjePregleda.xaml;View\AddView\DodavanjeProstorije.xaml;View\AddView\DodavanjeTerminaDoktor.xaml;View\AddView\DodavanjeTerminaSekretar.xaml;View\AddView\IzdajRecept.xaml;View\EditView\IzmenaPacijenta.xaml;View\EditView\IzmenaPregleda.xaml;View\EditView\IzmenaProstorije.xaml;View\MainView\DoktorView.xaml;View\MainView\ListaProstorija.xaml;View\MainView\ListaRecepata.xaml;View\MainView\ListaSopstvenihTermina.xaml;View\MainView\ListaTermina.xaml;View\MainView\PacijentView.xaml;View\MainView\PregledKartona.xaml;View\MainView\SekretarView.xaml;View\MainView\UpravnikView.xaml;View\NotificationsView\NotifikacijeDoktor.xaml;View\NotificationsView\NotifikacijePacijent.xaml;View\NotificationsView\NotifikacijeSekretar.xaml;
 
 False
 

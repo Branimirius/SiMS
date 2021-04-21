@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BolnicaSims.View.NotificationsView;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -25,6 +26,12 @@ namespace BolnicaSims
         private void ManualColumns_Click(object sender, RoutedEventArgs e)
         {
             var s = new ListaSopstvenihTermina();
+            s.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new NotifikacijeDoktor();
             s.Show();
         }
     }

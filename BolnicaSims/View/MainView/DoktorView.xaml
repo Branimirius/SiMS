@@ -11,6 +11,7 @@
             <MenuItem x:Name="dataGridDoktor" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Width="269" Height="66" >
             </MenuItem>
         </Menu>
+        <Button Content="Obavestenja" Click ="Button_Click" Margin="584,10,130,374"/>
 
     </Grid>
 </Window>
