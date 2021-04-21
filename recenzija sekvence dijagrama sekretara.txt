@@ -1,0 +1,4 @@
+Dijagram sekvenci: Sekretar - Zakazivanje termina	
+	Trebalo bi poslati doktoru obavestenje da mu je zakazan temrin.
+	Trebalo bi objektu klase doktor poslati termin u listu termina. 
+Napisao: Marko
