@@ -8,7 +8,7 @@ using System;
 
 namespace Model
 {
-   enum StatusTermina
+   public enum StatusTermina
    {
       UTOKU,
       OTKAZAN,

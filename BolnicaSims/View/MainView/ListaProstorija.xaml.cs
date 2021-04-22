@@ -66,7 +66,7 @@ namespace BolnicaSims
             s.Show();
         }
 
-        public void izmeniProstoriju(Prostorija prostorija, String sprat, String broj, String Od, String Do)
+       /* public void izmeniProstoriju(Prostorija prostorija, String sprat, String broj, String Od, String Do)
         {
             for (int i = 0; i < prostorije.Count; i++)
             {
@@ -101,6 +101,6 @@ namespace BolnicaSims
             dataGridProstorije.Items.Refresh();
 
 
-        }
+        }*/
     }
 }

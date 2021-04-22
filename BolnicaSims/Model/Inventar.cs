@@ -11,37 +11,51 @@ namespace Model
     [Serializable]
     public class Inventar
    {
-      private String IdInventara
-      {
-         get
-         ;
-         set
-         ;
-      }
-      
-      private String Naziv
-      {
-         get
-         ;
-         set
-         ;
-      }
-      
-      private String Proizvodjac
-      {
-         get
-         ;
-         set
-         ;
-      }
-      
-      private int Kolicina
-      {
-         get
-         ;
-         set
-         ;
-      }
+         public Inventar(String id, String naziv, String proizvodjac, String kolicina)
+         {
+               IdInventara = id;
+               Naziv = naziv;
+               Proizvodjac = proizvodjac;
+               if((kolicina == "0") || (kolicina == ""))
+               {
+                   Kolicina = 0;
+               }
+               else
+               {
+                   Kolicina = int.Parse(kolicina);
+               }
+         }
+          public String IdInventara
+          {
+             get
+             ;
+             set
+             ;
+          }
+
+        public String Naziv
+        {
+            get
+            ;
+            set
+            ;
+         }
+
+        public String Proizvodjac
+        {
+           get
+           ;
+           set
+           ;
+        }
+
+        public int Kolicina
+        {
+           get
+           ;
+           set
+           ;
+        }
    
    }
 }

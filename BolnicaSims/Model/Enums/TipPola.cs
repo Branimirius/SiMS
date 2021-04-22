@@ -8,7 +8,7 @@ using System;
 
 namespace Model
 {
-   enum TipPola
+   public enum TipPola
    {
        M,
        Z,

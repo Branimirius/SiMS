@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BolnicaSims.Storage;
+using Model;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
@@ -20,12 +22,102 @@ namespace BolnicaSims
         public UpravnikView()
         {
             InitializeComponent();
+            dataGridProstorije.ItemsSource = ProstorijeStorage.Instance.Read();
+            dataGridOsoblje.ItemsSource = KorisniciStorage.Instance.zaposleni;
+            dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+            dataGridLekovi.ItemsSource = LekoviStorage.Instance.Read();
         }
 
         private void ManualColumnsPacijenti_Click(object sender, RoutedEventArgs e)
         {
             var s = new ListaProstorija();
             s.Show();
+        }
+        //prostorije
+        private void DodajProstorija_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void UkloniProstorija_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DetaljiProstorija_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void IzvestajProstorija_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //Osoblje
+        private void DodajOsoblje_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void UkloniOsoblje_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DetaljiOsoblje_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void TransferOsoblje_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void IzvestajOsoblje_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //Inventar
+        private void DodajInventar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void UkloniInventar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DetaljiInventar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void TransferInventar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void IzvestajInventar_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        //Lekovi
+        private void DodajLekovi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void UkloniLekovi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void DetaljiLekovi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void TransferLekovi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void IzvestajLekovi_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ButtonOdjavi_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 

@@ -65,7 +65,7 @@ namespace Model
       
       /// <pdGenerated>default parent setter</pdGenerated>
       /// <param>newProstorija</param>
-      public void SetProstorija(Prostorija newProstorija)
+      /*public void SetProstorija(Prostorija newProstorija)
       {
          if (this.prostorija != newProstorija)
          {
@@ -81,7 +81,7 @@ namespace Model
                this.prostorija.AddTermin(this);
             }
          }
-      }
+      }*/
    
    
       

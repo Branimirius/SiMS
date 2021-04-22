@@ -15,12 +15,25 @@ namespace BolnicaSims.Model
 
         public String Alergija { get; set; }
 
-        public Lek (String a, String b, String c, String aa)
+        public int Kolicina { get; set; }
+
+        public String IdLeka { get; set; }
+
+        public Lek (String a, String b, String c, String aa, String d, String Id)
         {
             ImeLeka = a;
             Proizvodjac = b;
             Doza = c;
-            Alergija = a;
+            Alergija = aa;
+            if(d == "0" || d == "")
+            {
+                Kolicina = 0;
+            }
+            else
+            {
+                Kolicina = int.Parse(d);
+            }
+            IdLeka = Id;
         }
 
     }

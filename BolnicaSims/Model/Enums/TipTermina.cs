@@ -8,7 +8,7 @@ using System;
 
 namespace Model
 {
-   enum TipTermina
+   public enum TipTermina
    {
       PREGLED,
       OPERACIJA,

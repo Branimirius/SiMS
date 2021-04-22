@@ -31,12 +31,12 @@ namespace BolnicaSims.Storage
 
         public LekoviStorage()
         {
-            Lek l1 = new Lek("Brufen", "Medica", "500mg", "Penicilin");
-            Lek l2 = new Lek("Berodual", "Medica", "100mg", "");
+            /*Lek l1 = new Lek("Brufen", "Medica", "500mg", "Penicilin", "10", "30");
+            Lek l2 = new Lek("Berodual", "Medica", "100mg", "", "20", "31");
             lekovi.Add(l1);
             lekovi.Add(l2);
-            this.Save();
-            //this.Load();
+            this.Save();*/
+            this.Load();
             foreach(Lek l in lekovi)
             {
                 lekoviImena.Add(l.ImeLeka + " " + l.Doza);

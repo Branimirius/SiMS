@@ -28,6 +28,7 @@ namespace BolnicaSims.Storage
 
         private String FilePath = "korisniciStorage.txt";
         public ObservableCollection<Korisnik> korisnici = new ObservableCollection<Korisnik>();
+        public ObservableCollection<Korisnik> zaposleni = new ObservableCollection<Korisnik>();
         public Korisnik ulogovaniKorisnik = new Korisnik();
 
         public KorisniciStorage()
@@ -39,7 +40,12 @@ namespace BolnicaSims.Storage
             {
                 k.Notifikacije = new ObservableCollection<Notifikacija>();
                 k.Notifikacije.Add(n1);
+                if(k.Zvanje != "Pacijent")
+                {
+                    zaposleni.Add(k);
+                }
             }
+
 
             /*DateTime date1 = new DateTime(1985, 12, 25);
             DateTime date2 = new DateTime(1974, 11, 25);

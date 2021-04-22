@@ -8,11 +8,12 @@ using System;
 
 namespace Model
 {
-   enum TipProstorije
+   public enum TipProstorije
    {
       OPERACIONA_SALA,
       ORDINACIJA,
       SOBA,
+      MAGACIN
    
    }
 }
