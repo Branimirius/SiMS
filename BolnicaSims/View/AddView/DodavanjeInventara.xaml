@@ -1,0 +1,21 @@
+﻿<Window x:Class="BolnicaSims.View.AddView.DodavanjeInventara"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.AddView"
+        mc:Ignorable="d"
+        Title="DodavanjeInventara" Height="353" Width="304" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,0">
+
+        <Label Content="DODAVANJE INVENTARA" Margin="72,10,52,260" FontSize="13"/>
+        <TextBlock Text="Naziv" Margin="31,83,180,186" Height="25" Width="80" FontSize="13" />
+        <TextBlock Text="Kolicina" Margin="31,157,177,112" Height="25" Width="80" FontSize="13" />
+        <TextBlock Text="Proizvodjac" Margin="31,120,180,149" Height="25" Width="80" FontSize="13" />
+        <TextBox x:Name="txtBox1" Height="25" Width="80" Margin="152,83,28,191"/>
+        <TextBox x:Name="txtBox2" Height="25" Width="80" Margin="152,123,28,152"/>
+        <TextBox x:Name="txtBox3" Height="25" Width="80" Margin="152,160,28,115"/>
+        <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" Height="30" Width="60" Margin="38,225,185,42" />
+        <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Height="30" Width="60" Margin="171,225,52,42" />
+    </Grid>
+</Window>

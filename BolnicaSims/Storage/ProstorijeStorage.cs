@@ -31,7 +31,7 @@ namespace Model
 
         public ObservableCollection<Prostorija> prostorije = new ObservableCollection<Prostorija>();
         private String fileLocation = "prostorijeStorage.txt";
-
+        public Prostorija selektovanaProstorija;
         public ProstorijeStorage()
         {
             prostorije = this.Load();

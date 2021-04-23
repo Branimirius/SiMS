@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class Inventar
  ***********************************************************************/
 
+using BolnicaSims.Controller;
 using System;
 
 namespace Model
@@ -24,6 +25,7 @@ namespace Model
                {
                    Kolicina = int.Parse(kolicina);
                }
+               prostorija = ProstorijaController.Instance.getProstorija(1, 1); 
          }
           public String IdInventara
           {
@@ -56,6 +58,7 @@ namespace Model
            set
            ;
         }
+        public Prostorija prostorija { get; set; }
    
    }
 }

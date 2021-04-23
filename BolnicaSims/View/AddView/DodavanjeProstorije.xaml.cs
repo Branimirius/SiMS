@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Controller;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,22 +22,18 @@ namespace BolnicaSims
         public DodavanjeProstorije()
         {
             InitializeComponent();
+            comboTip.ItemsSource = Enum.GetValues(typeof(TipProstorije));
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void buttonPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-           /* Prostorija tempProstorija = new Prostorija();
-            tempProstorija.IdProstorije = ProstorijeStorage.Instance.GenID();
-            tempProstorija.Sprat = int.Parse(txtBox2.Text);
-            tempProstorija.BrojProstorije = int.Parse(txtBox3.Text);
-            tempProstorija.RezervisanaOd = DateTime.Parse(txtBox4.Text);
-            tempProstorija.RezervisanaDo = DateTime.Parse(txtBox5.Text);
-            ProstorijeStorage.Instance.Read().Add(tempProstorija);
-            ProstorijeStorage.Instance.Save();
-
-            ListaProstorija.Instance.refreshListaProstorija();
-
-            this.Close();*/
+            ProstorijaController.Instance.dodajProstoriju((TipProstorije)comboTip.SelectedItem ,txtBox1.Text, txtBox2.Text);
+            this.Close();
+        }
+        private void buttonOdustani_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            
         }
     }
 }

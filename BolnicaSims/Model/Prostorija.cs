@@ -13,9 +13,9 @@ namespace Model
     public class Prostorija
    {
 
-        public Prostorija(String tip, String sprat, String brojProstorije)
+        public Prostorija(TipProstorije tip, String sprat, String brojProstorije)
         {
-            switch (tip)
+            /*switch (tip)
             {
                 case "Soba":
                     TipProstorije = TipProstorije.SOBA;
@@ -31,8 +31,8 @@ namespace Model
                     break;
 
                 
-            }
-            
+            }*/
+            TipProstorije = tip;
 
             if (sprat != "")
             {
@@ -59,7 +59,8 @@ namespace Model
             {
                 Stanje = "Slobodna";
             }
-
+            inventar = new ObservableCollection<Inventar>();
+            termini = new ObservableCollection<Termin>();
         }
 
         public Prostorija() { }
@@ -79,7 +80,7 @@ namespace Model
       }
    
       public ObservableCollection<Inventar> inventar { get; set; }     
-      public ObservableCollection<Inventar> termini { get; set; }
+      public ObservableCollection<Termin> termini { get; set; }
         public int Sprat
       {
          get

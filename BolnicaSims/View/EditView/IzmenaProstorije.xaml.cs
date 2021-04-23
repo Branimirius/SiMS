@@ -22,6 +22,7 @@ namespace BolnicaSims
         public IzmenaProstorije()
         {
             InitializeComponent();
+            prostorijaInventarDataGrid.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.inventar;
         }
 
         private void buttonIzmena_Click(object sender, RoutedEventArgs e)

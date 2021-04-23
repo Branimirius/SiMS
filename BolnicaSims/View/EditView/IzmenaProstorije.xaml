@@ -5,17 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="IzmenaProstorije" Height="450" Width="800">
-    <Grid>
-        <TextBlock x:Name="Id"  HorizontalAlignment="Left" Margin="129,128,0,0" Text="Sprat" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Text="Broj Prostorije" TextWrapping="Wrap" VerticalAlignment="Top" Margin="129,180,0,0"/>
-        <TextBlock x:Name="textBlock2" HorizontalAlignment="Left" Margin="129,236,0,0" Text="Rezervisana Od" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBlock x:Name="textBlock3" HorizontalAlignment="Left" Margin="129,288,0,0" Text="Rezervisana Do" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtBox5" HorizontalAlignment="Left" Margin="259,285,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="21"/>
-        <TextBox x:Name="txtBox4" HorizontalAlignment="Left" Margin="259,236,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="21"/>
-        <TextBox x:Name="txtBox3" HorizontalAlignment="Left" Margin="259,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="21"/>
-        <TextBox x:Name="txtBox2" HorizontalAlignment="Left" Margin="259,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="21"/>
-        <Button x:Name="button" Background="White" Content="Izmeni" HorizontalAlignment="Left" Margin="204,348,0,0" VerticalAlignment="Top" Width="73" Height="25" Click="buttonIzmena_Click"/>
+        Title="IzmenaProstorije" Height="311" Width="285" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-6">
+        <Label Content="DETALJI PROSTORIJE" Margin="76,0,76,258"/>
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0,33,0,0">
+            <StackPanel>
+                <Grid Height="63">
+                    <TextBlock x:Name="textBlock1" Text="Broj Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="88" Margin="12,0,0,0"/>
+                    <TextBlock x:Name="textBlock2" Text="Sprat" HorizontalAlignment="Left" TextWrapping="Wrap" Width="91" Margin="11,21,0,-21"/>
+                    <TextBlock x:Name="textBlock3" Text="Tip Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="92" Margin="12,42,0,-42"/>
+                    <TextBox x:Name="txtBox1" Text="broj" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Margin="0,0,10,43"/>
+                    <TextBox x:Name="txtBox2" Text="sprat" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Margin="0,20,10,23"/>
+                    <TextBox x:Name="txtBox3" Text="tip" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Margin="0,40,10,3"/>
+                </Grid>
+                <Grid Height="190">
+                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Right" Width="50" Margin="0,0,10,165"/>
+                    <RadioButton x:Name="radioIzmeni"  Margin="179,2,65,168" RenderTransformOrigin="2.956,0.556"/>
+                    <Label Content="Inventar:" Margin="10,0,185,165"/>
+                    <DataGrid x:Name="prostorijaInventarDataGrid" Margin="0,25,0,0" FontSize="9">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="*" />
+                            <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
+                            <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
+                            <DataGridTextColumn Header="ID" Binding="{Binding IdInventara}" Width="30" />
+
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </Grid>
+            </StackPanel>
+        </ScrollViewer>
 
     </Grid>
 </Window>
