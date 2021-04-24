@@ -1,4 +1,6 @@
 ﻿using BolnicaSims.Storage;
+using BolnicaSims.View.AddView;
+using BolnicaSims.View.DeleteView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,29 +21,43 @@ namespace BolnicaSims
     /// </summary>
     public partial class UpravnikView : Window
     {
+        private static UpravnikView instance = null;
+        public static UpravnikView Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new UpravnikView();
+                }
+                return instance;
+            }
+        }
+        //UpravnikMainView
         public UpravnikView()
         {
             InitializeComponent();
+           
             dataGridProstorije.ItemsSource = ProstorijeStorage.Instance.Read();
             dataGridOsoblje.ItemsSource = KorisniciStorage.Instance.zaposleni;
             dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
             dataGridLekovi.ItemsSource = LekoviStorage.Instance.Read();
         }
-
-        private void ManualColumnsPacijenti_Click(object sender, RoutedEventArgs e)
-        {
-            var s = new ListaProstorija();
-            s.Show();
-        }
+       
+       
+       
         //prostorije
         private void DodajProstorija_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new DodavanjeProstorije();
+            s.Show();
         }
 
         private void UkloniProstorija_Click(object sender, RoutedEventArgs e)
         {
-
+            ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
+            var s = new BrisanjeProstorija();
+            s.Show();
         }
         private void DetaljiProstorija_Click(object sender, RoutedEventArgs e)
         {
@@ -75,7 +91,8 @@ namespace BolnicaSims
         //Inventar
         private void DodajInventar_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new DodavanjeInventara();
+            s.Show();
         }
         private void UkloniInventar_Click(object sender, RoutedEventArgs e)
         {
@@ -114,6 +131,7 @@ namespace BolnicaSims
         {
 
         }
+        
 
         private void ButtonOdjavi_Click(object sender, RoutedEventArgs e)
         {

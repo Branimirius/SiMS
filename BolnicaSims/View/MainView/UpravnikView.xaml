@@ -5,108 +5,112 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="UpravnikView" Height="450" Width="242">
+        Title="UpravnikView" Height="573" Width="295" ResizeMode="NoResize">
 
     <Grid>
-        <TabControl TabStripPlacement="Top" Margin="0,69,0,0" FontSize="13">
-                <TabItem Name="prostorijeTab" Header="Prostorije">
-                    <Grid Background="#FFE5E5E5">
-
-                        <DataGrid x:Name="dataGridProstorije" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
+        <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Margin="0,134,0,0">
+            <TabItem Name="prostorijeTab" Header="Prostorije">
+                <Grid Background="#FFE5E5E5" Height="395">
+                    <DataGrid x:Name="dataGridProstorije" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
                       SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                      Height="273" Margin="0,24,0,0" VerticalAlignment="Top" Width="236" FontSize="9">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Tip" Binding="{Binding TipProstorije }" Width="*" />
-                                <DataGridTextColumn Header="Broj" Binding="{Binding BrojProstorije}" Width="30"/>
-                                <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="35" />
-                                <DataGridTextColumn Header="Stanje" Binding="{Binding Stanje}" Width="*" />
+                      Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="290" FontSize="9">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tip" Binding="{Binding TipProstorije }" Width="*" />
+                            <DataGridTextColumn Header="Broj" Binding="{Binding BrojProstorije}" Width="30"/>
+                            <DataGridTextColumn Header="Sprat" Binding="{Binding Sprat}" Width="35" />
+                            <DataGridTextColumn Header="Stanje" Binding="{Binding Stanje}" Width="*" />
 
-                            </DataGrid.Columns>
+                        </DataGrid.Columns>
 
-                        </DataGrid>
-                        <Button Content="Dodaj" Click="DodajProstorija_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniProstorija_Click" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiProstorija_Click" HorizontalAlignment="Left" Margin="176,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Izvestaj" Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="46"/>
-                        <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Margin="140,0,0,314"/>
-                    </Grid>
-                </TabItem>
-                <TabItem Name="osobljeTab" Header="Osoblje">
-                    <Grid Background="#FFE5E5E5">
+                    </DataGrid>
+                    <Button Content="Dodaj" Click="DodajProstorija_Click" HorizontalAlignment="Left" Margin="23,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Ukloni" Click="UkloniProstorija_Click" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Width="50" Height="26" Grid.RowSpan="2"/>
+                    <Button Content="Detalji" Click="DetaljiProstorija_Click" HorizontalAlignment="Left" Margin="211,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Izvestaj" Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2"/>
+                    <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="140,0,-1,365"/>
 
-                        <DataGrid x:Name="dataGridOsoblje" ItemsSource="{Binding Korisnici}" IsReadOnly="True"
-                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
-                        Height="273" Margin="0,24,0,0" VerticalAlignment="Top" Width="236" Grid.ColumnSpan="2" FontSize="9">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Ime" Binding="{Binding Ime }" Width="50" />
-                                <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="50"/>
-                                <DataGridTextColumn Header="Posao" Binding="{Binding Zvanje}" Width="45" />
-                                <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}" Width="*" />
+                </Grid>
+            </TabItem>
+            <TabItem Name="osobljeTab" Header="Osoblje">
+                <Grid Background="#FFE5E5E5" Height="405">
 
-                            </DataGrid.Columns>
+                    <DataGrid x:Name="dataGridOsoblje" ItemsSource="{Binding Korisnici}" IsReadOnly="True"
+                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                        Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Ime" Binding="{Binding Ime }" Width="50" />
+                            <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="50"/>
+                            <DataGridTextColumn Header="Posao" Binding="{Binding Zvanje}" Width="45" />
+                            <DataGridTextColumn Header="JMBG" Binding="{Binding Jmbg}" Width="*" />
 
-                        </DataGrid>
+                        </DataGrid.Columns>
+
+                    </DataGrid>
                     <Button Content="Dodaj" Click="DodajOsoblje_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="65,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiOsoblje_Click" HorizontalAlignment="Left" Margin="120,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Transfer" Click="TransferOsoblje_Click" HorizontalAlignment="Left" Margin="175,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Izvestaj" Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="46"/>
+                    <Button Content="Ukloni" Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="84,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiOsoblje_Click" HorizontalAlignment="Left" Margin="156,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Transfer" Click="TransferOsoblje_Click" HorizontalAlignment="Left" Margin="229,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Izvestaj" Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
+                    <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,375"/>
 
-                    </Grid>
-                </TabItem>
-                <TabItem Name="InventarTab" Header="Inventar">
-                    <Grid Background="#FFE5E5E5">
+                </Grid>
+            </TabItem>
+            <TabItem Name="InventarTab" Header="Inventar">
+                <Grid Background="#FFE5E5E5">
 
-                        <DataGrid x:Name="dataGridInventar" ItemsSource="{Binding Inventar}" IsReadOnly="True"
-                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
-                        Height="273" Margin="0,24,0,0" VerticalAlignment="Top" Width="236" Grid.ColumnSpan="2" FontSize="9">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="*" />
-                                <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
-                                <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
-                                <DataGridTextColumn Header="ID" Binding="{Binding IdInventara}" Width="30" />
+                    <DataGrid x:Name="dataGridInventar" ItemsSource="{Binding Inventar}" IsReadOnly="True"
+                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                        Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="*" />
+                            <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
+                            <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
+                            <DataGridTextColumn Header="ID" Binding="{Binding IdInventara}" Width="30" />
 
-                            </DataGrid.Columns>
+                        </DataGrid.Columns>
 
-                        </DataGrid>
+                    </DataGrid>
                     <Button Content="Dodaj" Click="DodajInventar_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="65,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Left" Margin="120,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Left" Margin="175,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Izvestaj" Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="46"/>
+                    <Button Content="Ukloni" Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="84,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Left" Margin="156,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Left" Margin="229,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Izvestaj" Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
+                    <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,364"/>
 
-                    </Grid>
-                </TabItem>
-                <TabItem Name="lekoviTab" Header="Lekovi">
-                    <Grid Background="#FFE5E5E5">
+                </Grid>
+            </TabItem>
+            <TabItem Name="lekoviTab" Header="Lekovi">
+                <Grid Background="#FFE5E5E5">
 
-                        <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
-                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
-                        Height="273" Margin="0,24,0,0" VerticalAlignment="Top" Width="236" Grid.ColumnSpan="2" FontSize="9">
-                            <DataGrid.Columns>
-                                <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*" />
-                                <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
-                                <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
-                                <DataGridTextColumn Header="ID" Binding="{Binding IdLeka}" Width="30" />
+                    <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
+                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                        Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*" />
+                            <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
+                            <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
+                            <DataGridTextColumn Header="ID" Binding="{Binding IdLeka}" Width="30" />
 
-                            </DataGrid.Columns>
+                        </DataGrid.Columns>
 
-                        </DataGrid>
+                    </DataGrid>
                     <Button Content="Dodaj" Click="DodajLekovi_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="65,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiLekovi_Click" HorizontalAlignment="Left" Margin="120,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Transfer" Click="TransferLekovi_Click" HorizontalAlignment="Left" Margin="175,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Izvestaj" Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="24" Width="46"/>
+                    <Button Content="Ukloni" Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="84,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiLekovi_Click" HorizontalAlignment="Left" Margin="156,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Transfer" Click="TransferLekovi_Click" HorizontalAlignment="Left" Margin="229,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Izvestaj" Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
+                    <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,364"/>
 
-                    </Grid>
-                </TabItem>
+                </Grid>
+            </TabItem>
         </TabControl>
+        <Label Content="Ivan Ivanovic" FontSize="11" Margin="0,90,192,423"/>
+        <Button Content="Odjavi se" Click ="ButtonOdjavi_Click" FontSize="9" Margin="10,23,217,494"/>
 
-        <Label Content="Ivan Ivanovic" FontSize="11" Margin="10,45,158,365"/>
-        <Button Content="Odjavi se" FontSize="9" Margin="0,0,193,409"/>
     </Grid>
-    
-    
+
+
+
 
 
 </Window>
