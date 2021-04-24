@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Service;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -24,6 +25,10 @@ namespace BolnicaSims.Controller
         public void dodajInventar(String naziv, String proizvodjac, String kolicina)
         {
             InventarService.Instance.dodajInventar(naziv, proizvodjac, kolicina);
+        }
+        public void transferujInventar(int kolicina, Prostorija odrediste)
+        {
+            InventarService.Instance.transferujInventar(kolicina, odrediste);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
+using BolnicaSims.View.TransferView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -61,7 +62,9 @@ namespace BolnicaSims
         }
         private void DetaljiProstorija_Click(object sender, RoutedEventArgs e)
         {
-
+            ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
+            var s = new IzmenaProstorije();
+            s.Show();
         }
         private void IzvestajProstorija_Click(object sender, RoutedEventArgs e)
         {
@@ -104,7 +107,16 @@ namespace BolnicaSims
         }
         private void TransferInventar_Click(object sender, RoutedEventArgs e)
         {
-
+            InventarStorage.Instance.selektovaniInventar = (Inventar)dataGridInventar.SelectedItem;
+            if (InventarStorage.Instance.selektovaniInventar == null)
+            {
+                MessageBox.Show("Nije izabran inventar za transfer");
+            }
+            else
+            {                
+                var s = new TransferInventar();
+                s.Show();
+            }
         }
         private void IzvestajInventar_Click(object sender, RoutedEventArgs e)
         {

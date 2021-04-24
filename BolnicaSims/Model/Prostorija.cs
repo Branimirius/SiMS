@@ -112,7 +112,7 @@ namespace Model
           ;
       }
       public String IdProstorije { get; set; }
-        
+      public String Naziv { get; set; }
 
 
 

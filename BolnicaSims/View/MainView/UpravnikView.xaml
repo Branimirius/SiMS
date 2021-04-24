@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="UpravnikView" Height="573" Width="295" ResizeMode="NoResize">
+        Title="UpravnikView" Height="573" Width="315" ResizeMode="NoResize">
 
     <Grid>
         <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Margin="0,134,0,0">
@@ -25,7 +25,7 @@
                     </DataGrid>
                     <Button Content="Dodaj" Click="DodajProstorija_Click" HorizontalAlignment="Left" Margin="23,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
                     <Button Content="Ukloni" Click="UkloniProstorija_Click" HorizontalAlignment="Center" Margin="0,302,0,0" VerticalAlignment="Top" Width="50" Height="26" Grid.RowSpan="2"/>
-                    <Button Content="Detalji" Click="DetaljiProstorija_Click" HorizontalAlignment="Left" Margin="211,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiProstorija_Click" HorizontalAlignment="Right" Margin="0,302,24,0" VerticalAlignment="Top" Width="50" Height="26"/>
                     <Button Content="Izvestaj" Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2"/>
                     <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="140,0,-1,365"/>
 
@@ -47,9 +47,9 @@
 
                     </DataGrid>
                     <Button Content="Dodaj" Click="DodajOsoblje_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="84,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiOsoblje_Click" HorizontalAlignment="Left" Margin="156,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Transfer" Click="TransferOsoblje_Click" HorizontalAlignment="Left" Margin="229,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Ukloni" Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Transfer" Click="TransferOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26"/>
                     <Button Content="Izvestaj" Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
                     <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,375"/>
 
@@ -62,18 +62,18 @@
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                         Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="*" />
-                            <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="70" />
+                            <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="60"/>
                             <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
-                            <DataGridTextColumn Header="ID" Binding="{Binding IdInventara}" Width="30" />
+                            <DataGridTextColumn Header="Prostorija" Binding="{Binding prostorija.Naziv}" Width="*" />
 
                         </DataGrid.Columns>
 
                     </DataGrid>
                     <Button Content="Dodaj" Click="DodajInventar_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="84,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Left" Margin="156,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Left" Margin="229,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Ukloni" Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26"/>
                     <Button Content="Izvestaj" Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
                     <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,364"/>
 
@@ -95,9 +95,9 @@
 
                     </DataGrid>
                     <Button Content="Dodaj" Click="DodajLekovi_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Ukloni" Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="84,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Detalji" Click="DetaljiLekovi_Click" HorizontalAlignment="Left" Margin="156,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
-                    <Button Content="Transfer" Click="TransferLekovi_Click" HorizontalAlignment="Left" Margin="229,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Ukloni" Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Detalji" Click="DetaljiLekovi_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26"/>
+                    <Button Content="Transfer" Click="TransferLekovi_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26"/>
                     <Button Content="Izvestaj" Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
                     <TextBox Text="Pretraga" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,364"/>
 

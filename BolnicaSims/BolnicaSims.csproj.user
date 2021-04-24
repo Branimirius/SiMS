@@ -67,6 +67,9 @@
     <Compile Update="View\NotificationsView\NotifikacijeSekretar.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\TransferView\TransferInventar.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\AddView\DodavanjePacijenta.xaml">
@@ -130,6 +133,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\NotificationsView\NotifikacijeSekretar.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TransferView\TransferInventar.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

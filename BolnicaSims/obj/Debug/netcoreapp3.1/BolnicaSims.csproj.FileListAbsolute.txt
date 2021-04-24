@@ -228,3 +228,5 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeInventara.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeProstorijePage.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeProstorija.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TransferView\TransferInventar.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TransferView\TransferInventar.baml

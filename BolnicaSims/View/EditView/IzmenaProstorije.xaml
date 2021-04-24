@@ -11,18 +11,19 @@
         <ScrollViewer VerticalScrollBarVisibility="Visible" Margin="0,33,0,0">
             <StackPanel>
                 <Grid Height="63">
-                    <TextBlock x:Name="textBlock1" Text="Broj Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="88" Margin="12,0,0,0"/>
-                    <TextBlock x:Name="textBlock2" Text="Sprat" HorizontalAlignment="Left" TextWrapping="Wrap" Width="91" Margin="11,21,0,-21"/>
-                    <TextBlock x:Name="textBlock3" Text="Tip Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="92" Margin="12,42,0,-42"/>
-                    <TextBox x:Name="txtBox1" Text="broj" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Margin="0,0,10,43"/>
-                    <TextBox x:Name="txtBox2" Text="sprat" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Margin="0,20,10,23"/>
-                    <TextBox x:Name="txtBox3" Text="tip" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Margin="0,40,10,3"/>
+                    <TextBlock x:Name="textBlock1" Text="Broj Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="88" Height="20" Margin="12,0,0,42"/>
+                    <TextBlock x:Name="textBlock2" Text="Sprat" HorizontalAlignment="Left" TextWrapping="Wrap" Width="91" Height="20" Margin="11,20,0,21"/>
+                    <TextBlock x:Name="textBlock3" Text="Tip Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="92" Height="20" Margin="12,42,0,0"/>
+                    <TextBox x:Name="txtBox1" Text="broj" IsEnabled="False" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Height="20" Margin="0,0,10,43"/>
+                    <TextBox x:Name="txtBox2" Text="sprat" IsEnabled="False" HorizontalAlignment="Right" TextWrapping="Wrap" Width="94" Height="20" Margin="0,20,10,23"/>
+                    <ComboBox Name="comboTip"  Width ="94" Height="20"  Margin="164,40,10,3" />
                 </Grid>
                 <Grid Height="190">
-                    <Button x:Name="btnIzmeni" Content="Izmeni" HorizontalAlignment="Right" Width="50" Margin="0,0,10,165"/>
-                    <RadioButton x:Name="radioIzmeni"  Margin="179,2,65,168" RenderTransformOrigin="2.956,0.556"/>
+                    <Button x:Name="btnIzmeni" Content="Izmeni" Click="buttonIzmena_Click" IsEnabled="False" HorizontalAlignment="Right" Height="25" Width="57" Margin="0,0,10,165"/>
+                    <CheckBox x:Name="checkIzmeni" Content="otkljucaj" IsChecked="False" Checked="checkIzmeni_Checked" Unchecked="checkIzmeni_Unchecked" Margin="134,5,72,165" FontSize="8" RenderTransformOrigin="1.134,0.541"/>
                     <Label Content="Inventar:" Margin="10,0,185,165"/>
-                    <DataGrid x:Name="prostorijaInventarDataGrid" Margin="0,25,0,0" FontSize="9">
+                    <DataGrid x:Name="prostorijaInventarDataGrid" ItemsSource="{Binding Inventar}" IsReadOnly="True"
+                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center" Margin="0,25,0,0" FontSize="9">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="*" />
                             <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>

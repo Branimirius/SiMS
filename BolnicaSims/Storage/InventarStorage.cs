@@ -28,7 +28,7 @@ namespace BolnicaSims.Storage
         private String FilePath = "inventarStorage.txt";
         public ObservableCollection<Inventar> inventar = new ObservableCollection<Inventar>();
         public ObservableCollection<String> inventarImena = new ObservableCollection<String>();
-
+        public Inventar selektovaniInventar = new Inventar();
         public InventarStorage()
         {
             Inventar l1 = new Inventar("20","Respirator","Tehnion","5");

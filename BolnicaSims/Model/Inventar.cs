@@ -27,6 +27,16 @@ namespace Model
                }
                prostorija = ProstorijaController.Instance.getProstorija(1, 1); 
          }
+        public Inventar() { }
+
+        public Inventar(Inventar i)
+        {
+            IdInventara = i.IdInventara;
+            Naziv = i.Naziv;
+            Proizvodjac = i.Proizvodjac;
+            Kolicina = i.Kolicina;
+            prostorija = i.prostorija;
+        }
           public String IdInventara
           {
              get

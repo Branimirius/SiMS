@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DodavanjeProstorije" Height="296" Width="274" ResizeMode="NoResize">
-    <Grid Background="#FF1FCCD4" Margin="0,0,0,-6">
+        Title="DodavanjeProstorije" Height="296" Width="321" ResizeMode="CanResize">
+    <Grid Margin="0,0,0,2" RenderTransformOrigin="0.493,0.497">
         <Label Content="DODAVANJE PROSTORIJE" Margin="51,0,51,223"/>
         <TextBlock x:Name="textBlockSprat"  HorizontalAlignment="Left" Margin="8,89,0,0" Text="Sprat" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.484,0.572" Height="20"/>
-        <TextBlock x:Name="textBlockBroj" HorizontalAlignment="Left" Text="Tip Prostorije" TextWrapping="Wrap" VerticalAlignment="Top" Margin="8,124,0,0" Height="20"/>
+        <TextBlock x:Name="textBlockBroj" HorizontalAlignment="Left" Text="Tip Prostorije" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10,0,0,0" Height="20"/>
         <TextBlock x:Name="textBlockTip" HorizontalAlignment="Left" Text="Broj Prostorije" TextWrapping="Wrap" VerticalAlignment="Top" Margin="8,53,0,0" Height="17"/>
-        <TextBox x:Name="txtBox2" HorizontalAlignment="Left" Margin="96,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="20"/>
-        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="96,53,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="146" Height="20"/>
-        <ComboBox Name="comboTip"  Margin="96,124,26,114"  Width="146" Height="20" />
+        <TextBox x:Name="txtBox2"  Margin="142,89,79,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="20"/>
+        <TextBox x:Name="txtBox1"  Margin="142,53,79,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="20"/>
+        <ComboBox Name="comboTip"  Margin="142,0,79,0" VerticalAlignment="Center" Width="100" Height="20"/>
         <Button x:Name="buttonPotvrdi" Background="White" Content="Potvrdi" HorizontalAlignment="Left" Margin="22,212,0,0" VerticalAlignment="Top" Width="73" Height="40" Click="buttonPotvrdi_Click"/>
         <Button x:Name="buttonOdustani" Background="White" Content="Odustani" HorizontalAlignment="Left" Margin="169,212,0,0" VerticalAlignment="Top" Width="73" Height="40" Click="buttonOdustani_Click"/>
 

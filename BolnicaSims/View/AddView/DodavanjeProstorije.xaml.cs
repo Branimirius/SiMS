@@ -27,7 +27,7 @@ namespace BolnicaSims
 
         private void buttonPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            ProstorijaController.Instance.dodajProstoriju((TipProstorije)comboTip.SelectedItem ,txtBox1.Text, txtBox2.Text);
+            ProstorijaController.Instance.dodajProstoriju((TipProstorije)comboTip.SelectedItem ,txtBox2.Text, txtBox1.Text);
             this.Close();
         }
         private void buttonOdustani_Click(object sender, RoutedEventArgs e)

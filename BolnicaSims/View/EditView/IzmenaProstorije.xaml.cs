@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,8 @@ namespace BolnicaSims
         {
             InitializeComponent();
             prostorijaInventarDataGrid.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.inventar;
+            comboTip.ItemsSource = Enum.GetValues(typeof(TipProstorije));
+
         }
 
         private void buttonIzmena_Click(object sender, RoutedEventArgs e)
@@ -30,8 +33,42 @@ namespace BolnicaSims
             /*
             Prostorija tempProstorija = new Prostorija(TerminService.Instance.GenID(), txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
             ListaProstorija.Instance.izmeniProstoriju(tempProstorija, txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
-            this.Close();
-        */
+            */
+            if (comboTip.SelectedItem == null)
+            {
+                MessageBox.Show("nije izabran tip");
+                return;
+            }
+            else
+            {
+                ProstorijaController.Instance.izmeniProstoriju((TipProstorije)comboTip.SelectedItem, txtBox2.Text, txtBox1.Text);
+                this.Close();
+            }
+            
+        
+        }
+
+        private void radioIzmeni_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBox1.IsEnabled = true;
+            txtBox2.IsEnabled = true;
+            btnIzmeni.IsEnabled = true;
+        }
+
+        
+
+        private void checkIzmeni_Checked(object sender, RoutedEventArgs e)
+        {
+            txtBox1.IsEnabled = true;
+            txtBox2.IsEnabled = true;
+            btnIzmeni.IsEnabled = true;
+        }
+
+        private void checkIzmeni_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBox1.IsEnabled = false;
+            txtBox2.IsEnabled = false;
+            btnIzmeni.IsEnabled = false;
         }
     }
 }

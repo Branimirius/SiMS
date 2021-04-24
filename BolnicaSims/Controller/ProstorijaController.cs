@@ -28,6 +28,10 @@ namespace BolnicaSims.Controller
         {
             ProstorijaService.Instance.ukloniProstoriju(p);
         }
+        public void izmeniProstoriju(TipProstorije tip, String sprat, String broj)
+        {
+            ProstorijaService.Instance.izmeniProstoriju(tip, sprat, broj);
+        }
         public Prostorija getProstorija(int sprat, int broj)
         {
             return ProstorijaService.Instance.getProstorija(sprat, broj);
