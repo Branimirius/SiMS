@@ -60,6 +60,7 @@ namespace BolnicaSims.Service
             KorisniciStorage.Instance.Read().Add(korisnik);
             KorisniciStorage.Instance.Save();
         }
+        
         /*public void izmeniKorisnika(Korisnik korisnik)
         {
             for (int i = 0; i < KorisniciStorage.Instance.korisnici.Count; i++)

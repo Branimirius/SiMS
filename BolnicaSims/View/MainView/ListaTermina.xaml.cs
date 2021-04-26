@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Model;
+using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -45,12 +46,12 @@ namespace BolnicaSims
             {
                 if (t.ImePrezimePacijenta == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
                 {
-                    pacTermini.Add(t);
+                    PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini.Add(t);
                 }
             }
 
 
-            dataGridTermini.ItemsSource = pacTermini; 
+            dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini; 
            
 
         }

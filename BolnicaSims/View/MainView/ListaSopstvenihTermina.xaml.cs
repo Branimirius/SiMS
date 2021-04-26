@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.MainView;
 using Model;
@@ -45,11 +46,11 @@ namespace BolnicaSims
             {
                 if (t.ImePrezimeDoktora == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
                 {
-                    dokTermini.Add(t);
+                    DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini.Add(t);
                 }    
             }
-            
-            dataGridSopstveniTermini.ItemsSource = dokTermini;
+
+            dataGridSopstveniTermini.ItemsSource = DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
         }
 
         public void refreshListaSopstvenihTermina()

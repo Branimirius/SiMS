@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -25,8 +26,8 @@ namespace BolnicaSims.Controller
             TerminService.Instance.izmeniTermin(termin);
         }
         public void dodajTermin(String vreme, String doktor, String pacijent)
-        {
-            TerminService.Instance.dodajTermin(vreme, doktor, pacijent);
+        {           
+            TerminService.Instance.dodajTermin(vreme, doktor, pacijent);               
         }
     }
 }

@@ -30,7 +30,7 @@ namespace BolnicaSims.Service
                 {
                     if (termin.IdTermina != "" && termin.IdTermina != " ")
                     {
-                        TerminStorage.Instance.termini[i].IdTermina = termin.IdTermina;
+                        TerminStorage.Instance.termini[i].IdTermina = termin.IdTermina;                      
                     }
                     if (termin.VremeTermina.ToString() != "")
                     {
@@ -42,8 +42,41 @@ namespace BolnicaSims.Service
                     }
 
                 }
+                if(DoktorService.Instance.getDoktor(termin.doktor).termini[i].IdTermina == termin.IdTermina)
+                {
+                    if (termin.IdTermina != "" && termin.IdTermina != " ")
+                    {
+                        DoktorService.Instance.getDoktor(termin.doktor).termini[i].IdTermina = termin.IdTermina;
+                    }
+                    if (termin.VremeTermina.ToString() != "")
+                    {
+                        DoktorService.Instance.getDoktor(termin.doktor).termini[i].VremeTermina = termin.VremeTermina;
+                    }
+                    if (termin.ImePrezimeDoktora != "")
+                    {
+                        DoktorService.Instance.getDoktor(termin.doktor).termini[i].ImePrezimeDoktora = termin.ImePrezimeDoktora;
+                    }
 
+                }
+                if (PacijentService.Instance.getPacijent(termin.pacijent).termini[i].IdTermina == termin.IdTermina)
+                {
+                    if (termin.IdTermina != "" && termin.IdTermina != " ")
+                    {
+                        PacijentService.Instance.getPacijent(termin.pacijent).termini[i].IdTermina = termin.IdTermina;
+                    }
+                    if (termin.VremeTermina.ToString() != "")
+                    {
+                        PacijentService.Instance.getPacijent(termin.pacijent).termini[i].VremeTermina = termin.VremeTermina;
+                    }
+                    if (termin.ImePrezimeDoktora != "")
+                    {
+                        PacijentService.Instance.getPacijent(termin.pacijent).termini[i].ImePrezimeDoktora = termin.ImePrezimeDoktora;
+                    }
+
+                }
+ 
             }
+            
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
             //Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
@@ -78,6 +111,9 @@ namespace BolnicaSims.Service
                     }
                 }
             }
+            DoktoriStorage.Instance.Save();
+            PacijentiStorage.Instance.Save();
+            KorisniciStorage.Instance.Save();
         }
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
@@ -92,7 +128,8 @@ namespace BolnicaSims.Service
                 {
                     if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == (doktor))
                     {
-                        
+                        d.termini.Add(tempTermin);
+                        tempTermin.doktor = d;
                         tempTermin.doktori.Add(d);
                         tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
                     }
@@ -101,7 +138,7 @@ namespace BolnicaSims.Service
                 {
                     if ((p.korisnik.Ime + " " + p.korisnik.Prezime) == (pacijent))
                     {
-
+                        p.termini.Add(tempTermin);
                         tempTermin.pacijent = p;
                         tempTermin.ImePrezimePacijenta = p.korisnik.Ime + " " + p.korisnik.Prezime;
                     }
@@ -153,8 +190,11 @@ namespace BolnicaSims.Service
                     }
                     
                 }
+                
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
+                DoktoriStorage.Instance.Save();
+                PacijentiStorage.Instance.Save();
             }
             else MessageBox.Show("Termin je vec zauzet");
 

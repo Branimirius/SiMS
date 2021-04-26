@@ -115,6 +115,17 @@ namespace BolnicaSims.Service
             return null;
 
         }
+        public Pacijent getPacijent(Pacijent pacijent)
+        {
+            foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
+            {
+                if (p == pacijent)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
         public String GenID()
         {
             int a = int.Parse(PacijentiStorage.Instance.pacijenti[PacijentiStorage.Instance.pacijenti.Count - 1].zdravstveniKarton.BrojKartona) + 1;
