@@ -51,6 +51,7 @@ namespace BolnicaSims.Storage
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             recepti = (ObservableCollection<Recept>)formatter.Deserialize(stream);
+            stream.Close();
             return recepti;
 
         }

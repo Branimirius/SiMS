@@ -75,6 +75,7 @@ namespace Model
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             prostorije = (ObservableCollection<Prostorija>)formatter.Deserialize(stream);
+            stream.Close();
             return prostorije;
 
         }

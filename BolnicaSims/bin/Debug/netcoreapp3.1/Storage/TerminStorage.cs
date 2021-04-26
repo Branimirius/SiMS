@@ -85,6 +85,7 @@ namespace Model
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
             termini = (ObservableCollection<Termin>)formatter.Deserialize(stream);
+            stream.Close();
             return termini;
 
       }

@@ -64,9 +64,9 @@ namespace BolnicaSims
             }
 
             //ListaTermina.Instance.dataGridTermini.Items.Refresh();
-            DoktoriStorage.Instance.Save();
-            PacijentiStorage.Instance.Save();
-            KorisniciStorage.Instance.Save();
+            //DoktoriStorage.Instance.Save();
+            //PacijentiStorage.Instance.Save();
+            //KorisniciStorage.Instance.Save();
             this.Close();
         }
 

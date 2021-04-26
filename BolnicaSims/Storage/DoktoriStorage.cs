@@ -76,7 +76,9 @@ namespace BolnicaSims.Storage
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             doktori = (ObservableCollection<Doktor>)formatter.Deserialize(stream);
+            stream.Close();
             return doktori;
+            
 
         }
     }

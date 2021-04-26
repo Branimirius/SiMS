@@ -61,6 +61,7 @@ namespace BolnicaSims.Storage
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             lekovi = (ObservableCollection<Lek>)formatter.Deserialize(stream);
+            stream.Close();
             return lekovi;
 
         }

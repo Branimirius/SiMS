@@ -63,6 +63,7 @@ namespace BolnicaSims.Storage
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             inventar = (ObservableCollection<Inventar>)formatter.Deserialize(stream);
+            stream.Close();
             return inventar;
 
         }

@@ -59,11 +59,12 @@ namespace BolnicaSims.Service
         {
             Korisnik k = new Korisnik(username, password, ime, prezime, "Doktor", jmbg, datumRodjenja, adresa, telefon, email);
             Doktor tempDoktor = new Doktor(k, specijalista, hirurg);
-            DoktoriStorage.Instance.doktori.Add(tempDoktor);
+            DoktoriStorage.Instance.Read().Add(tempDoktor);
             DoktoriStorage.Instance.doktoriImena.Add(ime + " " + prezime);
-            KorisniciStorage.Instance.korisnici.Add(k);
-            //DoktoriStorage.Instance.Save();
-            //KorisniciStorage.Instance.Save();
+            KorisniciStorage.Instance.Read().Add(k);
+            
+            KorisniciStorage.Instance.Save();
+            DoktoriStorage.Instance.Save();
         }
         public void ukloniDoktora(Korisnik selektovani)
         {

@@ -101,6 +101,7 @@ namespace Model
         IFormatter formatter = new BinaryFormatter();
         Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
         pacijenti = (ObservableCollection<Pacijent>)formatter.Deserialize(stream);
+        stream.Close();
         return pacijenti;
 
     }

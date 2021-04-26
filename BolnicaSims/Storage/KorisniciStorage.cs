@@ -86,6 +86,7 @@ namespace BolnicaSims.Storage
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
             korisnici = (ObservableCollection<Korisnik>)formatter.Deserialize(stream);
+            stream.Close();
             return korisnici;
 
         }

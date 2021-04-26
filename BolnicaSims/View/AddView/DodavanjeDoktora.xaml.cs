@@ -37,9 +37,9 @@ namespace BolnicaSims.View.AddView
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             DoktorController.Instance.dodajDoktora(txtUsername.Text, txtPassword.Text, txtName.Text, txtPrezime.Text, txtJmbg.Text, txtAdresa.Text, txtTelefon.Text, (Boolean)checkSpec.IsChecked, (Boolean)checkHirurg.IsChecked, (DateTime)dateDoktor.SelectedDate, txtEmail.Text);
-            CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridOsoblje.ItemsSource).Refresh();
-            DoktoriStorage.Instance.Save();
-            KorisniciStorage.Instance.Save();
+            //CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridOsoblje.ItemsSource).Refresh();
+            //DoktoriStorage.Instance.Save();
+            //KorisniciStorage.Instance.Save();
             this.Close();
         }
 
