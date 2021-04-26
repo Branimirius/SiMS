@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="View\AddView\DodavanjeDoktora.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AddView\DodavanjeOsoblja.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddView\DodavanjePacijenta.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -20,6 +26,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\AddView\IzdajRecept.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\DeleteView\BrisanjeOsoblja.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\DoktorView.xaml.cs">
@@ -72,6 +81,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="View\AddView\DodavanjeDoktora.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddView\DodavanjeOsoblja.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddView\DodavanjePacijenta.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -85,6 +100,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AddView\IzdajRecept.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\DeleteView\BrisanjeOsoblja.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\DoktorView.xaml">

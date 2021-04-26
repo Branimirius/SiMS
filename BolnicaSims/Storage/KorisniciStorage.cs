@@ -30,7 +30,7 @@ namespace BolnicaSims.Storage
         public ObservableCollection<Korisnik> korisnici = new ObservableCollection<Korisnik>();
         public ObservableCollection<Korisnik> zaposleni = new ObservableCollection<Korisnik>();
         public Korisnik ulogovaniKorisnik = new Korisnik();
-
+        public Korisnik selektovaniKorisnik = new Korisnik();
         public KorisniciStorage()
         {
             korisnici = this.Load();

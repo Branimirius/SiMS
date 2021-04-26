@@ -73,11 +73,14 @@ namespace BolnicaSims
         //Osoblje
         private void DodajOsoblje_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new DodavanjeOsoblja();
+            s.Show();
         }
         private void UkloniOsoblje_Click(object sender, RoutedEventArgs e)
         {
-
+            KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
+            var s = new BrisanjeOsoblja();
+            s.Show();
         }
         private void DetaljiOsoblje_Click(object sender, RoutedEventArgs e)
         {

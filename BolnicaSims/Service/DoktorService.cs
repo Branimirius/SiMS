@@ -55,6 +55,33 @@ namespace BolnicaSims.Service
             }
             return null;
         }
+        public void dodajDoktora(String username, String password, String ime, String prezime, String jmbg, String adresa, String telefon, Boolean specijalista, Boolean hirurg, DateTime datumRodjenja, String email)
+        {
+            Korisnik k = new Korisnik(username, password, ime, prezime, "Doktor", jmbg, datumRodjenja, adresa, telefon, email);
+            Doktor tempDoktor = new Doktor(k, specijalista, hirurg);
+            DoktoriStorage.Instance.doktori.Add(tempDoktor);
+            DoktoriStorage.Instance.doktoriImena.Add(ime + " " + prezime);
+            KorisniciStorage.Instance.korisnici.Add(k);
+            DoktoriStorage.Instance.Save();
+            KorisniciStorage.Instance.Save();
+        }
+        public void ukloniDoktora(Korisnik selektovani)
+        {
+            foreach(Doktor d in DoktoriStorage.Instance.doktori)
+            {
+                if(selektovani == d.korisnik)
+                {
+                    DoktoriStorage.Instance.doktori.Remove(d);
+                    DoktoriStorage.Instance.doktoriImena.Remove(d.korisnik.Ime + " " + d.korisnik.Prezime);
+                    DoktoriStorage.Instance.Save();
+                }
+            }
+        }
+        public void ukloniDoktora(Doktor selektovani)
+        {
+            DoktoriStorage.Instance.doktori.Remove(selektovani);
+            DoktoriStorage.Instance.Save();
+        }
 
     }
 }

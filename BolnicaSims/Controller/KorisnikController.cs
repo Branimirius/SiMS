@@ -33,6 +33,10 @@ namespace BolnicaSims.Controller
         {
             KorisnikService.Instance.registrujKorisnika(korisnik);
         }
+        public void ukloniZaposlenog(Korisnik selektovani)
+        {
+            KorisnikService.Instance.ukloniZaposlenog(selektovani);
+        }
         /*public void izmeniKorisnika(Korisnik korisnik)
         {
             KorisnikService.Instance.izmeniKorisnika(korisnik);

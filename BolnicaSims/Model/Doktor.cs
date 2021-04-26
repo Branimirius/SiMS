@@ -20,12 +20,20 @@ namespace Model
             this.korisnik = korisnik;
             this.termini = new ObservableCollection<Termin>();
         }
-      public Doktor() { }
+      public Doktor(Korisnik k, Boolean specijalista, Boolean hirurg) 
+        {
+            korisnik = k;
+            Specijalista = specijalista;
+            Hirurg = hirurg;
+            termini = new ObservableCollection<Termin>();
+        }
         
    
-      private Boolean Specijalista { get; set; }
-      private Boolean Hirurg { get; set; }
-      private Prostorija Ordinacija { get; set; }
+      public Boolean Specijalista { get; set; }
+      public Boolean Hirurg { get; set; }
+      
+        
+      
 
 
 

@@ -60,7 +60,14 @@ namespace BolnicaSims.Service
             KorisniciStorage.Instance.Read().Add(korisnik);
             KorisniciStorage.Instance.Save();
         }
-        
+        public void ukloniZaposlenog(Korisnik selektovani)
+        {
+            KorisniciStorage.Instance.korisnici.Remove(selektovani);
+            KorisniciStorage.Instance.zaposleni.Remove(selektovani);
+            DoktorService.Instance.ukloniDoktora(selektovani);
+            KorisniciStorage.Instance.Save();
+    
+        }
         /*public void izmeniKorisnika(Korisnik korisnik)
         {
             for (int i = 0; i < KorisniciStorage.Instance.korisnici.Count; i++)
