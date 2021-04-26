@@ -69,7 +69,14 @@ namespace BolnicaSims.Service
             {
                 Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimeDoktora, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
 
-                termin.doktor.korisnik.Notifikacije.Add(n1);
+                termin.pacijent.korisnik.Notifikacije.Add(n1);
+                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+                {
+                    if (k.Zvanje == "Sekretar")
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
+                }
             }
         }
 

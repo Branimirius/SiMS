@@ -1,4 +1,5 @@
-﻿using Model;
+﻿using BolnicaSims.Model;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -33,9 +34,12 @@ namespace BolnicaSims.Storage
         public DoktoriStorage()
         {
             doktori = this.Load();
+            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Doktor d in doktori)
             {
                 doktoriImena.Add(d.korisnik.Ime + " " + d.korisnik.Prezime);
+                d.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
+                d.korisnik.Notifikacije.Add(n1);
             }
 
             Console.Write(doktori[0].korisnik.Ime);

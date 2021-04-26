@@ -44,7 +44,8 @@ namespace BolnicaSims
             // ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);
             PacijentController.Instance.izmeniPacijenta(tempPacijent, selected);
             //KorisnikController.Instance.izmeniKorisnika(tempKorisnik);
-            SekretarView.Instance.dataGridPacijenti.Items.Refresh();
+            CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridPacijenti.ItemsSource).Refresh();
+            //SekretarView.Instance.dataGridPacijenti.Items.Refresh();
             this.Close();
 
         }

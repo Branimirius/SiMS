@@ -75,6 +75,7 @@ namespace BolnicaSims
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
+            TerminStorage.Instance.selektovanTermin = (Termin)dataGridSopstveniTermini.SelectedItem;
             var s = new IzmenaPregleda();
             s.Show();
         }

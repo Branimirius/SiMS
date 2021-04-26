@@ -47,6 +47,10 @@ namespace BolnicaSims
             }
 
             TerminController.Instance.izmeniTermin(tempTermin);
+            //CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridProstorije.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(ListaTermina.Instance.dataGridTermini.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(ListaSopstvenihTermina.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();
+            CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridTermini.ItemsSource).Refresh();
             ListaTermina.Instance.dataGridTermini.Items.Refresh();
             
             this.Close();

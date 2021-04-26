@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class StoragePacijenti
  ***********************************************************************/
 
+using BolnicaSims.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,10 +41,14 @@ namespace Model
         {
 
            pacijenti = this.Load();
+            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Pacijent p in pacijenti)
             {
                 pacijentiImena.Add(p.korisnik.Ime + " " + p.korisnik.Prezime);
+                p.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
+                p.korisnik.Notifikacije.Add(n1);
             }
+                      
 
         }
         public void Save()

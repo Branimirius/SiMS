@@ -42,6 +42,7 @@ namespace BolnicaSims
             else
             {
                 ProstorijaController.Instance.izmeniProstoriju((TipProstorije)comboTip.SelectedItem, txtBox2.Text, txtBox1.Text);
+                CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).Refresh();
                 this.Close();
             }
             

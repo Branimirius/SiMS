@@ -106,7 +106,7 @@ namespace BolnicaSims
         }
         private void ButtonIzmeniTermin_Click(object sender, RoutedEventArgs e)
         {
-            
+            TerminStorage.Instance.selektovanTermin = (Termin)dataGridTermini.SelectedItem;
             var s = new IzmenaPregleda();
             s.Show();
             

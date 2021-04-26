@@ -39,6 +39,7 @@ namespace BolnicaSims.View.TransferView
             else
             {
                 InventarController.Instance.transferujInventar(int.Parse(txtBoxKolicina.Text), (Prostorija)listOdrediste.SelectedItem);
+                CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridInventar.ItemsSource).Refresh();
                 this.Close();
             }
         }
