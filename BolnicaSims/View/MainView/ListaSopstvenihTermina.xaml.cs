@@ -41,18 +41,19 @@ namespace BolnicaSims
         public ListaSopstvenihTermina()
         {
             InitializeComponent();
-            /*
-            foreach(Termin t in termini)
-            {
-                if (t.ImePrezimeDoktora == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
-                {
-                    DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini.Add(t);
-                }    
-            }
+            /* 
+             foreach(Termin t in termini)
+             {
+                 if (t.ImePrezimeDoktora == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
+                 {
+                     dokTermini.Add(t);
+                 }    
+             }
             */
             dataGridSopstveniTermini.ItemsSource = DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
+            //dataGridSopstveniTermini.ItemsSource = dokTermini;
         }
-
+        
         public void refreshListaSopstvenihTermina()
         {
             termini = TerminStorage.Instance.Read();

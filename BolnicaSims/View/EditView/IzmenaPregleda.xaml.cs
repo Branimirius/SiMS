@@ -48,11 +48,25 @@ namespace BolnicaSims
 
             TerminController.Instance.izmeniTermin(tempTermin);
             //CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridProstorije.ItemsSource).Refresh();
-            CollectionViewSource.GetDefaultView(ListaTermina.Instance.dataGridTermini.ItemsSource).Refresh();
-            CollectionViewSource.GetDefaultView(ListaSopstvenihTermina.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();
-            CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridTermini.ItemsSource).Refresh();
+            switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
+            {
+                case "Pacijent":
+                    CollectionViewSource.GetDefaultView(ListaTermina.Instance.dataGridTermini.ItemsSource).Refresh();
+                    break;
+                case "Doktor":
+                    CollectionViewSource.GetDefaultView(ListaSopstvenihTermina.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();
+                    break;
+                case "Sekretar":
+                    CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridTermini.ItemsSource).Refresh();
+                    break;
+
+
+            }
+
             //ListaTermina.Instance.dataGridTermini.Items.Refresh();
-            
+            DoktoriStorage.Instance.Save();
+            PacijentiStorage.Instance.Save();
+            KorisniciStorage.Instance.Save();
             this.Close();
         }
 
