@@ -51,7 +51,7 @@ namespace BolnicaSims
             CollectionViewSource.GetDefaultView(ListaTermina.Instance.dataGridTermini.ItemsSource).Refresh();
             CollectionViewSource.GetDefaultView(ListaSopstvenihTermina.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();
             CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridTermini.ItemsSource).Refresh();
-            ListaTermina.Instance.dataGridTermini.Items.Refresh();
+            //ListaTermina.Instance.dataGridTermini.Items.Refresh();
             
             this.Close();
         }

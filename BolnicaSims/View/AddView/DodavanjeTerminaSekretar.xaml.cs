@@ -31,7 +31,7 @@ namespace BolnicaSims.View.AddView
 
             TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (String)comboBox2.SelectedItem);
 
-            ListaTermina.Instance.refreshListaTermina();
+            //ListaTermina.Instance.refreshListaTermina();
 
 
             this.Close();

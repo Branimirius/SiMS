@@ -53,7 +53,7 @@ namespace BolnicaSims
             //TerminStorage.Instance.Read().Add(tempTermin);
             //TerminStorage.Instance.Save();
 
-            ListaTermina.Instance.refreshListaTermina();
+            //ListaTermina.Instance.refreshListaTermina();
             
 
             this.Close();

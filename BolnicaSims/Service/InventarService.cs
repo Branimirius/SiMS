@@ -72,7 +72,16 @@ namespace BolnicaSims.Service
         }
         public String GenID()
         {
-            int a = int.Parse(InventarStorage.Instance.inventar[InventarStorage.Instance.inventar.Count - 1].IdInventara) + 1;
+            int a = 0;
+            if (InventarStorage.Instance.inventar.Count == 0)
+            {
+                a = 1;
+            }
+            else
+            {
+                a = int.Parse(InventarStorage.Instance.inventar[InventarStorage.Instance.inventar.Count - 1].IdInventara) + 1;
+
+            }
             return a.ToString();
         }
     }

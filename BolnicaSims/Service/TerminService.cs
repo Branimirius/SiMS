@@ -42,7 +42,11 @@ namespace BolnicaSims.Service
                     }
 
                 }
-                if(DoktorService.Instance.getDoktor(termin.doktor).termini[i].IdTermina == termin.IdTermina)
+                
+            }
+            for (int i = 0; i < termin.doktor.termini.Count; i++)
+            {
+                if (DoktorService.Instance.getDoktor(termin.doktor).termini[i].IdTermina == termin.IdTermina)
                 {
                     if (termin.IdTermina != "" && termin.IdTermina != " ")
                     {
@@ -58,6 +62,9 @@ namespace BolnicaSims.Service
                     }
 
                 }
+            }
+            for (int i = 0; i < termin.pacijent.termini.Count; i++)
+            {
                 if (PacijentService.Instance.getPacijent(termin.pacijent).termini[i].IdTermina == termin.IdTermina)
                 {
                     if (termin.IdTermina != "" && termin.IdTermina != " ")
@@ -74,8 +81,8 @@ namespace BolnicaSims.Service
                     }
 
                 }
- 
             }
+
             
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
@@ -219,7 +226,15 @@ namespace BolnicaSims.Service
 
         public String GenID()
         {
-            int a = int.Parse(TerminStorage.Instance.termini[TerminStorage.Instance.termini.Count - 1].IdTermina) + 1;
+            int a = 0;
+            if (TerminStorage.Instance.termini.Count == 0)
+            {
+                a = 1;
+            }
+            else 
+            { 
+                a = int.Parse(TerminStorage.Instance.termini[TerminStorage.Instance.termini.Count - 1].IdTermina) + 1;
+            }
             return a.ToString();
         }
     }

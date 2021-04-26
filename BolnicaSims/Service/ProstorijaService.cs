@@ -177,7 +177,16 @@ namespace BolnicaSims.Service
         }
         public String GenID()
         {
-            int a = int.Parse(ProstorijeStorage.Instance.prostorije[ProstorijeStorage.Instance.prostorije.Count - 1].IdProstorije) + 1;
+            int a = 0;
+            if (ProstorijeStorage.Instance.prostorije.Count == 0)
+            {
+                a = 1;
+            }
+            else
+            {
+                a = int.Parse(ProstorijeStorage.Instance.prostorije[ProstorijeStorage.Instance.prostorije.Count - 1].IdProstorije) + 1;
+               
+            }
             return a.ToString();
         }
     }

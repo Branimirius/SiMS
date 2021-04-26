@@ -101,13 +101,14 @@ namespace BolnicaSims.Service
         public void dodajPacijenta(Pacijent pacijent)
         {
             PacijentiStorage.Instance.Read().Add(pacijent);
+            PacijentiStorage.Instance.pacijentiImena.Add(pacijent.korisnik.Ime + " " + pacijent.korisnik.Prezime);
             PacijentiStorage.Instance.Save();
         }
         public Pacijent getUlogovaniPacijent(Korisnik ulogovaniKorisnik)
         {
             foreach(Pacijent p in PacijentiStorage.Instance.pacijenti)
             {
-                if(p.korisnik == ulogovaniKorisnik)
+                if(p.korisnik.Username+p.korisnik.Password == ulogovaniKorisnik.Username+ulogovaniKorisnik.Password)
                 {
                     return p;
                 }
@@ -119,7 +120,7 @@ namespace BolnicaSims.Service
         {
             foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
             {
-                if (p == pacijent)
+                if (p.korisnik.Username + p.korisnik.Password == pacijent.korisnik.Username + pacijent.korisnik.Password)
                 {
                     return p;
                 }
@@ -128,7 +129,16 @@ namespace BolnicaSims.Service
         }
         public String GenID()
         {
-            int a = int.Parse(PacijentiStorage.Instance.pacijenti[PacijentiStorage.Instance.pacijenti.Count - 1].zdravstveniKarton.BrojKartona) + 1;
+            int a = 0;
+            if (PacijentiStorage.Instance.pacijenti.Count == 0)
+            {
+                a = 1;
+            }
+            else
+            {
+                a = int.Parse(PacijentiStorage.Instance.pacijenti[PacijentiStorage.Instance.pacijenti.Count - 1].zdravstveniKarton.BrojKartona) + 1;
+
+            }
             return a.ToString();
         }
     }

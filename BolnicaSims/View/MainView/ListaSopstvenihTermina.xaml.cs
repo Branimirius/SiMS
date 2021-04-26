@@ -41,7 +41,7 @@ namespace BolnicaSims
         public ListaSopstvenihTermina()
         {
             InitializeComponent();
-
+            /*
             foreach(Termin t in termini)
             {
                 if (t.ImePrezimeDoktora == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
@@ -49,7 +49,7 @@ namespace BolnicaSims
                     DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini.Add(t);
                 }    
             }
-
+            */
             dataGridSopstveniTermini.ItemsSource = DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
         }
 
@@ -86,7 +86,7 @@ namespace BolnicaSims
             Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
             TerminStorage.Instance.Read().Remove(selektovan);
             TerminStorage.Instance.Save();
-            refreshListaSopstvenihTermina();
+            //refreshListaSopstvenihTermina();
         }
 
         private void button_karton_Click(object sender, RoutedEventArgs e)

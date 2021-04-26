@@ -41,7 +41,7 @@ namespace BolnicaSims
         {
             InitializeComponent();
             // this.DataContext = this;
-
+            /*
             foreach (Termin t in termini)
             {
                 if (t.ImePrezimePacijenta == KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime)
@@ -49,7 +49,7 @@ namespace BolnicaSims
                     PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini.Add(t);
                 }
             }
-
+            */
 
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini; 
            

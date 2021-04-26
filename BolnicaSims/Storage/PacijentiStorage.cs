@@ -5,6 +5,7 @@
  ***********************************************************************/
 
 using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,7 +41,19 @@ namespace Model
         public PacijentiStorage()
         {
 
-           pacijenti = this.Load();
+            pacijenti = this.Load();
+            /*
+            ZdravstveniKarton zk1 = new ZdravstveniKarton("Djani", "03020", "3023", "M", "", "");
+            ZdravstveniKarton zk2 = new ZdravstveniKarton("Zeki", "03021", "3024", "M", "", "");
+            Pacijent p1 = new Pacijent();
+            p1.zdravstveniKarton = zk1;
+            p1.korisnik = KorisniciStorage.Instance.korisnici[2];
+            Pacijent p2 = new Pacijent();
+            p2.zdravstveniKarton = zk2;
+            p2.korisnik = KorisniciStorage.Instance.korisnici[3];
+            pacijenti.Add(p1);
+            pacijenti.Add(p2);
+            */
             Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Pacijent p in pacijenti)
             {
@@ -48,6 +61,7 @@ namespace Model
                 p.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
                 p.korisnik.Notifikacije.Add(n1);
             }
+            //this.Save();
                       
 
         }

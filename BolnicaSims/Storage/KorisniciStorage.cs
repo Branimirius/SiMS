@@ -35,19 +35,10 @@ namespace BolnicaSims.Storage
         {
             korisnici = this.Load();
 
-            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
-            foreach(Korisnik k in korisnici)
-            {
-                k.Notifikacije = new ObservableCollection<Notifikacija>();
-                k.Notifikacije.Add(n1);
-                if(k.Zvanje != "Pacijent")
-                {
-                    zaposleni.Add(k);
-                }
-            }
+            
 
-
-            /*DateTime date1 = new DateTime(1985, 12, 25);
+            /*
+            DateTime date1 = new DateTime(1985, 12, 25);
             DateTime date2 = new DateTime(1974, 11, 25);
             Korisnik k1 = new Korisnik("nikola123", "petrovic123", "Nikola", "Petrovic", "Doktor", "1231237771231", date1, "Kosovska 5", "06352221", "nikola.petrovic@gmail.com");
             korisnici.Add(k1);
@@ -63,9 +54,19 @@ namespace BolnicaSims.Storage
             korisnici.Add(k5);
             Korisnik k6 = new Korisnik("gorana123", "ivanovic123", "Gorana", "Ivanovic", "Sekretar", "1231991231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
             korisnici.Add(k6);
+            */
+            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
+            foreach (Korisnik k in korisnici)
+            {
+                k.Notifikacije = new ObservableCollection<Notifikacija>();
+                k.Notifikacije.Add(n1);
+                if (k.Zvanje != "Pacijent")
+                {
+                    zaposleni.Add(k);
+                }
+            }
 
-
-            this.Save();*/
+            //this.Save();
         }
         public ObservableCollection<Korisnik> Read()
         {

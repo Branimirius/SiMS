@@ -25,7 +25,7 @@ namespace BolnicaSims.Service
         {
             foreach (Doktor d in DoktoriStorage.Instance.doktori)
             {
-                if (d.korisnik == ulogovaniKorisnik)
+                if (d.korisnik.Username+d.korisnik.Password == ulogovaniKorisnik.Username+ulogovaniKorisnik.Password)
                 {
                     return d;
                 }
@@ -37,7 +37,7 @@ namespace BolnicaSims.Service
         {
             foreach(Doktor d in DoktoriStorage.Instance.doktori)
             {
-                if(d == doktor)
+                if(d.korisnik.Username + d.korisnik.Password == doktor.korisnik.Username + doktor.korisnik.Password)
                 {
                     return d;
                 }
@@ -62,8 +62,8 @@ namespace BolnicaSims.Service
             DoktoriStorage.Instance.doktori.Add(tempDoktor);
             DoktoriStorage.Instance.doktoriImena.Add(ime + " " + prezime);
             KorisniciStorage.Instance.korisnici.Add(k);
-            DoktoriStorage.Instance.Save();
-            KorisniciStorage.Instance.Save();
+            //DoktoriStorage.Instance.Save();
+            //KorisniciStorage.Instance.Save();
         }
         public void ukloniDoktora(Korisnik selektovani)
         {
