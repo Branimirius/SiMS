@@ -51,7 +51,7 @@ namespace BolnicaSims
             switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
             {
                 case "Pacijent":
-                    CollectionViewSource.GetDefaultView(ListaTermina.Instance.dataGridTermini.ItemsSource).Refresh();
+                    CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridTermini.ItemsSource).Refresh();
                     break;
                 case "Doktor":
                     CollectionViewSource.GetDefaultView(ListaSopstvenihTermina.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();

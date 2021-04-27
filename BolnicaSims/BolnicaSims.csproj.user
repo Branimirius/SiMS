@@ -61,9 +61,6 @@
     <Compile Update="View\MainView\ListaSopstvenihTermina.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainView\ListaTermina.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\MainView\PacijentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -136,9 +133,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\ListaSopstvenihTermina.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\MainView\ListaTermina.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

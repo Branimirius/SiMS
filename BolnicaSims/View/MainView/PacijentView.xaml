@@ -6,16 +6,44 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="PacijentView" Height="450" Width="800">
-    <Grid>
-        <Canvas>
-            <Menu DockPanel.Dock ="Top" Height="434" Width="125" Background="#FF1FCCD4">
 
-                <MenuItem x:Name="dataGridTermini" Header="Zakazivanje Pregleda" Click="ManualColumns_Click" Width="269" Height="66" >  </MenuItem>
-                <MenuItem x:Name="dataGridRecepti" Header="Recepti" Click="ManualColumns_Click2" Width="269" Height="50"></MenuItem>
-             
-            </Menu>
-            <Grid DockPanel.Dock="Bottom" Height="24"/>
-        </Canvas>
-        <Button Content="Obavestenja" Click ="Button_Click" Margin="574,0,149,398"/>
+    <Grid Background="#FF278FBF" Height="450" Margin="0,0,10,0">
+        <TabControl TabStripPlacement="Left" Margin="0,103,0,65">
+            <TabItem Name="TerminiTab" Header="Termini">
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
+                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                  Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="706">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
+                            <DataGridTextColumn Header="Pocetak" Binding="{Binding VremeTermina}" Width="*" />
+                            <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
+                            <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="Pacijent" Binding="{Binding ImePrezimePacijenta}" Width="*" />
+                            <DataGridTextColumn Header="Prostorija" Binding="{Binding prostorija.Naziv}" Width="*" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    <Button Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
+                    <Button Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click" Background="#FFFFFDFD"/>
+                    <Button Content="Otkazi" HorizontalAlignment="Left" Height="35" Margin="136,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
+                    <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+
+
+                </Grid>
+            </TabItem>
+            <TabItem Name="ReceptiTab" Header="Recepti" Height="20" VerticalAlignment="Bottom">
+                <Grid Margin="0,0,10,0">
+                    <Label Content="RECEPTI&#xD;&#xA;" HorizontalAlignment ="Center" FontStyle="Normal" Margin="0,0,0,253"/>
+                    <ListBox x:Name="listRecepti" Margin="10,28,0,49">
+                       
+                            
+                    </ListBox>
+
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+        <Button Content="Obavestenja" Click="ButtonObavestenja_Click" Margin="540,10,154,412"/>
     </Grid>
 </Window>
