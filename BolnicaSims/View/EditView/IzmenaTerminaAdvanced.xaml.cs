@@ -1,5 +1,4 @@
 ﻿using BolnicaSims.Controller;
-using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -14,26 +13,39 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BolnicaSims
+namespace BolnicaSims.View.EditView
 {
     /// <summary>
-    /// Interaction logic for IzmenaPregleda.xaml
+    /// Interaction logic for IzmenaTerminaAdvanced.xaml
     /// </summary>
-    public partial class IzmenaPregleda : Window
+    public partial class IzmenaTerminaAdvanced : Window
     {
-        public IzmenaPregleda()
+        public IzmenaTerminaAdvanced()
         {
             InitializeComponent();
+            listOdrediste.ItemsSource = ProstorijeStorage.Instance.prostorije;
+            datePocetak.SelectedDate = TerminStorage.Instance.selektovanTermin.VremeTermina;
+            comboTip.ItemsSource = Enum.GetValues(typeof(TipTermina));
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            Termin tempTermin = new Termin();        
+            Termin tempTermin = new Termin();
 
             tempTermin = TerminStorage.Instance.selektovanTermin;
+            if (txtBox1.Text != String.Empty)
+            {
+                tempTermin.KrajTermina = tempTermin.VremeTermina.AddMinutes(int.Parse(txtBox1.Text));
+            }
+            if (listOdrediste.SelectedItem is Prostorija)
+            {
+                tempTermin.prostorija = (Prostorija)listOdrediste.SelectedItem;
+            }
+            tempTermin.TipTermina = (TipTermina)comboTip.SelectedItem;
+            
             DateTime stariTermin = tempTermin.VremeTermina;
-            DateTime noviTermin = tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
-            DateTime noviTermin2 = tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+            DateTime noviTermin = tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
+            DateTime noviTermin2 = tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
             noviTermin = noviTermin.AddDays(2);
             noviTermin2 = noviTermin2.AddDays(-2);
 
@@ -63,14 +75,12 @@ namespace BolnicaSims
 
             }
 
-            //ListaTermina.Instance.dataGridTermini.Items.Refresh();
-            //DoktoriStorage.Instance.Save();
-            //PacijentiStorage.Instance.Save();
-            //KorisniciStorage.Instance.Save();
             this.Close();
         }
 
-     
+        private void odustaniBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
-
 }

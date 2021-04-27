@@ -11,9 +11,12 @@
                   SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                   Height="352" Margin="0,72,0,0" VerticalAlignment="Top" Width="980">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}"  />
-                <DataGridTextColumn Header="Datum" Binding="{Binding VremeTermina}" />
+                <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30"  />
+                <DataGridTextColumn Header="Datum" Binding="{Binding VremeTermina}" Width="*" />
+                <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
+
                 <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora }" Width="*" />
+                <DataGridTextColumn Header="Prostorija" Binding="{Binding prostorija.Naziv }" Width="*" />
 
             </DataGrid.Columns>
 

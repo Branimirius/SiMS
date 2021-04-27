@@ -22,7 +22,8 @@ namespace Model
             set
             ;
         }
-
+        public DateTime KrajTermina { get; set; }
+        public int TrajanjeMin { get; set; }
         /*public Doktor[] get_doktor()
         ;
 
@@ -42,9 +43,9 @@ namespace Model
         ;*/
 
         
-        public Doktor doktor;
-        public Prostorija prostorija;
-        public Pacijent pacijent;
+        public Doktor doktor { get; set; }
+        public Prostorija prostorija { get; set; }
+        public Pacijent pacijent { get; set; }
         public String ImePrezimeDoktora
         {
             get;
@@ -85,7 +86,7 @@ namespace Model
    
    
       
-      private TipTermina TipTermina
+      public TipTermina TipTermina
       {
          get
          ;
@@ -128,9 +129,17 @@ namespace Model
                 VremeTermina = default;
             }
             ImePrezimeDoktora = doktor;
+            
+        }
+        public Termin(String idTermina, DateTime datum, String doktor, int trajanje)
+        {
+            IdTermina = idTermina;                                   
+            VremeTermina = datum;         
+            ImePrezimeDoktora = doktor;
+            KrajTermina = VremeTermina.AddMinutes(trajanje);
         }
 
-        public ObservableCollection<Termin> termini = new ObservableCollection<Termin>();
+        //public ObservableCollection<Termin> termini = new ObservableCollection<Termin>();
         public ObservableCollection<Doktor> doktori = new ObservableCollection<Doktor>();
 
 

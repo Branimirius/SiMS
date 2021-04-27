@@ -40,7 +40,13 @@ namespace BolnicaSims.Service
                     {
                         TerminStorage.Instance.termini[i].ImePrezimeDoktora = termin.ImePrezimeDoktora;
                     }
-
+                    TerminStorage.Instance.termini[i].ImePrezimePacijenta = termin.ImePrezimePacijenta;
+                    TerminStorage.Instance.termini[i].KrajTermina = termin.KrajTermina;
+                    TerminStorage.Instance.termini[i].prostorija = termin.prostorija;
+                    TerminStorage.Instance.termini[i].pacijent = termin.pacijent;
+                    TerminStorage.Instance.termini[i].doktor = termin.doktor;
+                    TerminStorage.Instance.termini[i].TipTermina = termin.TipTermina;
+                
                 }
                 
             }
@@ -60,6 +66,10 @@ namespace BolnicaSims.Service
                     {
                         DoktorService.Instance.getDoktor(termin.doktor).termini[i].ImePrezimeDoktora = termin.ImePrezimeDoktora;
                     }
+                    DoktorService.Instance.getDoktor(termin.doktor).termini[i].ImePrezimePacijenta = termin.ImePrezimePacijenta;
+                    DoktorService.Instance.getDoktor(termin.doktor).termini[i].KrajTermina = termin.KrajTermina;
+                    DoktorService.Instance.getDoktor(termin.doktor).termini[i].prostorija = termin.prostorija;
+                    DoktorService.Instance.getDoktor(termin.doktor).termini[i].pacijent = termin.pacijent;
 
                 }
             }
@@ -79,6 +89,10 @@ namespace BolnicaSims.Service
                     {
                         PacijentService.Instance.getPacijent(termin.pacijent).termini[i].ImePrezimeDoktora = termin.ImePrezimeDoktora;
                     }
+                    PacijentService.Instance.getPacijent(termin.pacijent).termini[i].ImePrezimePacijenta = termin.ImePrezimePacijenta;
+                    PacijentService.Instance.getPacijent(termin.pacijent).termini[i].KrajTermina = termin.KrajTermina;
+                    PacijentService.Instance.getPacijent(termin.pacijent).termini[i].prostorija = termin.prostorija;
+                    PacijentService.Instance.getPacijent(termin.pacijent).termini[i].pacijent = termin.pacijent;
 
                 }
             }
@@ -130,11 +144,14 @@ namespace BolnicaSims.Service
                 Termin tempTermin = new Termin();
                 tempTermin.IdTermina = GenID();
                 tempTermin.VremeTermina = DateTime.Parse(vreme);
+                tempTermin.KrajTermina = default;
 
                 foreach (Doktor d in DoktoriStorage.Instance.doktori)
                 {
+                    
                     if ((d.korisnik.Ime + " " + d.korisnik.Prezime) == (doktor))
                     {
+                       
                         d.termini.Add(tempTermin);
                         tempTermin.doktor = d;
                         tempTermin.doktori.Add(d);
@@ -143,8 +160,10 @@ namespace BolnicaSims.Service
                 }
                 foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
                 {
+                   
                     if ((p.korisnik.Ime + " " + p.korisnik.Prezime) == (pacijent))
                     {
+                        
                         p.termini.Add(tempTermin);
                         tempTermin.pacijent = p;
                         tempTermin.ImePrezimePacijenta = p.korisnik.Ime + " " + p.korisnik.Prezime;
@@ -165,7 +184,7 @@ namespace BolnicaSims.Service
                 }
                 else if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
                 {
-                    Notifikacija n1 = new Notifikacija("Zakazan termin", "Sekretar", "Pomeren je termin kod doktora:  " + doktor);
+                    Notifikacija n1 = new Notifikacija("Zakazan termin", "Sekretar", "Zakazan je termin kod doktora:  " + doktor);
 
                     foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
                     {
@@ -182,7 +201,7 @@ namespace BolnicaSims.Service
                 }
                 else
                 {
-                    Notifikacija n1 = new Notifikacija("Zakazan termin", "Sekretar", "Pomeren je termin kod doktora:  " + doktor);
+                    Notifikacija n1 = new Notifikacija("Zakazan termin", "Sekretar", "Zakazan je termin kod doktora:  " + doktor);
 
                     foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
                     {
@@ -196,8 +215,7 @@ namespace BolnicaSims.Service
                         }
                     }
                     
-                }
-                
+                }                
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
                 DoktoriStorage.Instance.Save();
@@ -207,6 +225,66 @@ namespace BolnicaSims.Service
 
         }
 
+        public void ukloniTermin(Termin t)
+        {
+            TerminStorage.Instance.termini.Remove(t);
+            t.doktor.termini.Remove(t);
+            t.pacijent.termini.Remove(t);
+            TerminStorage.Instance.Save();
+            DoktoriStorage.Instance.Save();
+            PacijentiStorage.Instance.Save();
+            if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
+            {
+                Notifikacija n1 = new Notifikacija("Otkazan termin", t.ImePrezimePacijenta, "Otkazan je termin kod doktora:  " + t.ImePrezimeDoktora);
+
+                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+                {
+                    if (k.Zvanje == "Sekretar")
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
+                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimeDoktora)
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
+                }
+            }
+            else if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
+            {
+                Notifikacija n1 = new Notifikacija("Otkazan termin", "Sekretar", "Otkazan je termin kod pacijenta:  " + t.ImePrezimePacijenta);
+                Notifikacija n2 = new Notifikacija("Otkazan termin", "Sekretar", "Otkazan je termin kod doktora:  " + t.ImePrezimeDoktora);
+
+                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+                {
+                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimePacijenta)
+                    {
+                        k.Notifikacije.Add(n2);
+                    }
+                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimeDoktora)
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
+                }
+
+            }
+            else
+            {
+                Notifikacija n1 = new Notifikacija("Otkazan termin", t.ImePrezimeDoktora, "Otkazan je termin kod pacijenta:  " + t.ImePrezimePacijenta);
+
+                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+                {
+                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimePacijenta)
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
+                    if (k.Zvanje == "Sekretar")
+                    {
+                        k.Notifikacije.Add(n1);
+                    }
+                }
+
+            }
+        }
         public Boolean slobodanTermin(String vreme,String doktor)
         {
             foreach(Termin t in TerminStorage.Instance.termini)
@@ -222,6 +300,7 @@ namespace BolnicaSims.Service
             }
             return true;
         }
+
 
 
         public String GenID()

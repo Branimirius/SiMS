@@ -1,7 +1,9 @@
 ﻿
 
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\MainWindow.xaml;;
+FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeDoktora.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeInventara.xaml;;
+FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeOsoblja.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjePacijenta.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjePregleda.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeProstorije.xaml;;
@@ -9,6 +11,7 @@ FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\Dodavanj
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeTerminaDoktor.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeTerminaSekretar.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\IzdajRecept.xaml;;
+FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\DeleteView\BrisanjeOsoblja.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\DeleteView\BrisanjeProstorija.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\EditView\IzmenaPacijenta.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\EditView\IzmenaPregleda.xaml;;
@@ -26,7 +29,5 @@ FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\NotificationsVie
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\NotificationsView\NotifikacijePacijent.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\NotificationsView\NotifikacijeSekretar.xaml;;
 FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\TransferView\TransferInventar.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeDoktora.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\AddView\DodavanjeOsoblja.xaml;;
-FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\DeleteView\BrisanjeOsoblja.xaml;;
+FC:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\View\EditView\IzmenaTerminaAdvanced.xaml;;
 

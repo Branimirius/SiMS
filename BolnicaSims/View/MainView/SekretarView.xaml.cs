@@ -17,6 +17,7 @@ using BolnicaSims.View.AddView;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.Storage;
 using BolnicaSims.Model;
+using BolnicaSims.View.EditView;
 
 namespace BolnicaSims
 {
@@ -97,18 +98,36 @@ namespace BolnicaSims
         }
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
-            Termin selektovan = (Termin)dataGridTermini.SelectedItem;
-            TerminStorage.Instance.Read().Remove(selektovan);
-            TerminStorage.Instance.Save();
+            if (dataGridTermini.SelectedItem is Termin)
+            {
+                Termin selektovan = (Termin)dataGridTermini.SelectedItem;
+                TerminController.Instance.ukloniTermin(selektovan);
+
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za brisanje");
+                return;
+            }
             //Notifikacija n1 = new Notifikacija("Otkazan termin", "Sekretar", "Otkazan je termin kod doktora:  " + selektovan.ImePrezimeDoktora);
 
             //selektovan.pacijent.korisnik.Notifikacije.Add(n1);
         }
         private void ButtonIzmeniTermin_Click(object sender, RoutedEventArgs e)
         {
-            TerminStorage.Instance.selektovanTermin = (Termin)dataGridTermini.SelectedItem;
-            var s = new IzmenaPregleda();
-            s.Show();
+            if (dataGridTermini.SelectedItem is Termin)
+            {
+                TerminStorage.Instance.selektovanTermin = (Termin)dataGridTermini.SelectedItem;
+                var s = new IzmenaTerminaAdvanced();
+                s.Show();
+               
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }
+            
             
         }
 

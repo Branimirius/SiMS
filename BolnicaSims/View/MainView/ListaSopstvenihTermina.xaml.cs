@@ -1,4 +1,6 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
+using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.MainView;
@@ -77,19 +79,39 @@ namespace BolnicaSims
 
         private void button_Copy_Click(object sender, RoutedEventArgs e)
         {
-            TerminStorage.Instance.selektovanTermin = (Termin)dataGridSopstveniTermini.SelectedItem;
-            var s = new IzmenaPregleda();
-            s.Show();
+            /*if ((Termin)dataGridSopstveniTermini.SelectedItem == null)
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }*/
+            if (dataGridSopstveniTermini.SelectedItem is Termin)
+            { 
+                TerminStorage.Instance.selektovanTermin = (Termin)dataGridSopstveniTermini.SelectedItem;
+                var s = new IzmenaPregleda();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }
         }
 
         private void button_Copy1_Click(object sender, RoutedEventArgs e)
         {
-            Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
-            TerminStorage.Instance.Read().Remove(selektovan);
-            TerminStorage.Instance.Save();
-            //refreshListaSopstvenihTermina();
-        }
+            if (dataGridSopstveniTermini.SelectedItem is Termin)
+            {
+                Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
+                TerminController.Instance.ukloniTermin(selektovan);
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }
 
+                //refreshListaSopstvenihTermina();           
+        }
         private void button_karton_Click(object sender, RoutedEventArgs e)
         {
             Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;

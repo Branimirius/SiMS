@@ -62,6 +62,7 @@ namespace BolnicaSims.Service
             DoktoriStorage.Instance.Read().Add(tempDoktor);
             DoktoriStorage.Instance.doktoriImena.Add(ime + " " + prezime);
             KorisniciStorage.Instance.Read().Add(k);
+            KorisniciStorage.Instance.zaposleni.Add(k);
             
             KorisniciStorage.Instance.Save();
             DoktoriStorage.Instance.Save();

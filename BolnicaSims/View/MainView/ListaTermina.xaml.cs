@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
@@ -72,26 +73,35 @@ namespace BolnicaSims
      
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-           
-            Termin selektovan = (Termin)dataGridTermini.SelectedItem;
-            TerminStorage.Instance.selektovanTermin = selektovan;
+            if (dataGridTermini.SelectedItem is Termin)
+            {
+                Termin selektovan = (Termin)dataGridTermini.SelectedItem;
+                TerminStorage.Instance.selektovanTermin = selektovan;
 
-            var s = new IzmenaPregleda();
-            s.Show();
+                var s = new IzmenaPregleda();
+                s.Show();
+                
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }
+            
         }
 
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
-            Termin selektovan = (Termin)dataGridTermini.SelectedItem;
-            TerminStorage.Instance.Read().Remove(selektovan);
-            TerminStorage.Instance.Save();
-            Notifikacija n = new Notifikacija("Otkazan termin", selektovan.ImePrezimePacijenta, "Otkazan je termin kod doktora " + selektovan.ImePrezimeDoktora);
-            foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+            if (dataGridTermini.SelectedItem is Termin)
             {
-                if (k.Zvanje == "Sekretar")
-                {
-                    k.Notifikacije.Add(n);
-                }
+                Termin selektovan = (Termin)dataGridTermini.SelectedItem;
+                TerminController.Instance.ukloniTermin(selektovan);               
+                
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
             }
         }
     }
