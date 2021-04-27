@@ -144,7 +144,7 @@ namespace BolnicaSims.Service
                 Termin tempTermin = new Termin();
                 tempTermin.IdTermina = GenID();
                 tempTermin.VremeTermina = DateTime.Parse(vreme);
-                tempTermin.KrajTermina = tempTermin.VremeTermina.AddHours(1);
+                tempTermin.KrajTermina = tempTermin.VremeTermina;
 
                 foreach (Doktor d in DoktoriStorage.Instance.doktori)
                 {

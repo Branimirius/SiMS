@@ -22,8 +22,7 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="56,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="74" FontSize="16"><Run Text="Prioritet"/><LineBreak/><Run/></TextBlock>
-        <RadioButton x:Name="radioDoktor" Content="Doktor&#xD;&#xA;" HorizontalAlignment="Left" Margin="195,61,0,0" VerticalAlignment="Top" Checked="RadioDoktor_Checked" Height="38" Width="63"/>
-        <RadioButton x:Name="radioDatum" Content="Datum&#xD;&#xA;" HorizontalAlignment="Left" Margin="318,62,0,0" VerticalAlignment="Top" Checked="RadioDatum_Checked" Height="31" Width="55"/>
+        <CheckBox x:Name="radioDatum" Content="Datum&#xD;&#xA;" HorizontalAlignment="Left" Margin="276,62,0,0" VerticalAlignment="Top" Checked="RadioDatum_Checked" Unchecked="radioDatum_Unchecked" Height="31" Width="56"/>
 
     </Grid>
 </Window>

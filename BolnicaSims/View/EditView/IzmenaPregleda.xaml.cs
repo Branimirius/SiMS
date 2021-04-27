@@ -32,17 +32,26 @@ namespace BolnicaSims
 
             tempTermin = TerminStorage.Instance.selektovanTermin;
             DateTime stariTermin = tempTermin.VremeTermina;
-            DateTime noviTermin = tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
-            DateTime noviTermin2 = tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
+            DateTime noviTermin =  DateTime.Parse(txtBox1.Text);
+            DateTime noviTermin2 = DateTime.Parse(txtBox1.Text);
+            DateTime noviTermin3=  stariTermin.AddDays(-1);
+            if (DateTime.Now > noviTermin3 )
+            {
+                MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
+                return;
+            }
+               
             noviTermin = noviTermin.AddDays(2);
             noviTermin2 = noviTermin2.AddDays(-2);
 
-            if (stariTermin > noviTermin || stariTermin < noviTermin2)
+            if (stariTermin > noviTermin)
             {
-                if (stariTermin > noviTermin)
-                    MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
-                if (stariTermin < noviTermin2)
-                    MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
+                return;
+            }
+            if (stariTermin < noviTermin2)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
                 return;
             }
 

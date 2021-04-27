@@ -28,6 +28,7 @@ namespace BolnicaSims
         {
             InitializeComponent();
             comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
+         
           
         }
 
@@ -69,14 +70,22 @@ namespace BolnicaSims
             this.Close();
         }
 
-        private void RadioDoktor_Checked(object sender, RoutedEventArgs e)
+       /* private void RadioDoktor_Checked(object sender, RoutedEventArgs e)
         {
             comboBox1.IsEnabled = true;
             txtBox1.IsEnabled = false;
-            txtBox1.Text = "02/02/2021 12:15:00AM";
-       
-        }
+            if (comboBox1.SelectedItem != null)
+            {
+                txtBox1.Text = DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini[DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count - 1].KrajTermina.AddMinutes(10).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Niste izabrali doktora");
+                radioDoktor.IsChecked = false;
 
+            }
+        }
+       */
         private void RadioDatum_Checked(object sender, RoutedEventArgs e)
         {
             comboBox1.IsEnabled = false;
@@ -90,7 +99,20 @@ namespace BolnicaSims
         }
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-           
+        
+            
+                txtBox1.Text = DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini[DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count - 1].KrajTermina.AddMinutes(10).ToString();
+            
+      
         }
+
+
+        private void radioDatum_Unchecked(object sender, RoutedEventArgs e)
+        {
+            txtBox1.Clear();
+            comboBox1.IsEnabled = true;
+        }
+
+  
     }
 }
