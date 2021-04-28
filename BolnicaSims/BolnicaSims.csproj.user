@@ -34,6 +34,9 @@
     <Compile Update="View\EditView\IzmenaTerminaAdvanced.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\EditView\RenoviranjeProstorije.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MainView\DoktorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -106,6 +109,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\EditView\IzmenaTerminaAdvanced.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditView\RenoviranjeProstorije.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\DoktorView.xaml">

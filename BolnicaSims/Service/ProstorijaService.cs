@@ -1,7 +1,9 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 
@@ -33,7 +35,7 @@ namespace BolnicaSims.Service
             foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
             {
 
-                p.Naziv = GenNaziv(p.TipProstorije, p.BrojProstorije, p.Sprat);
+                p.renoviranja = new ObservableCollection<Renoviranje>();
             }
             */
             InventarStorage.Instance.Save();
