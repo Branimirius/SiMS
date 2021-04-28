@@ -145,6 +145,8 @@ namespace BolnicaSims.Service
                 DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);                                            
                 PacijentService.Instance.getPacijent(pacijent).termini.Add(tempTermin);
 
+                NotificationService.Instance.handleNotifications(KorisniciStorage.Instance.ulogovaniKorisnik, tempTermin);
+                /*
                 switch(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
                 {
                     case "Pacijent":
@@ -157,6 +159,7 @@ namespace BolnicaSims.Service
                         NotificationService.Instance.sendAppointmentNotification("Zakazan termin", doktor, "Zakazan je termin kod pacijenta" + pacijent, tempTermin);
                         break;
                 }
+                */
                
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();

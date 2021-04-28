@@ -21,7 +21,21 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
-
+        public void handleNotifications(Korisnik korisnik, Termin tempTermin)
+        {
+            switch (korisnik.Zvanje)
+            {
+                case "Pacijent":
+                    sendAppointmentNotification("Zakazan termin", tempTermin.ImePrezimePacijenta, "Zakazan je termin kod doktora" + tempTermin.ImePrezimeDoktora, tempTermin);
+                    break;
+                case "Sekretar":
+                    sendAppointmentNotification("Zakazan termin", "Sekretar", "Zakazan je termin", tempTermin);
+                    break;
+                case "Doktor":
+                    sendAppointmentNotification("Zakazan termin", tempTermin.ImePrezimeDoktora, "Zakazan je termin kod pacijenta" + tempTermin.ImePrezimePacijenta, tempTermin);
+                    break;
+            }
+        }
         public void sendAppointmentNotification(String title, String sender, String text, Termin termin)
         {
             Notifikacija n1 = new Notifikacija(title, sender, text);

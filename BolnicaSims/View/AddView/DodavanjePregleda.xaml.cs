@@ -99,10 +99,15 @@ namespace BolnicaSims
         }
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-        
-            
+
+            if (DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count == 0)
+            {
+                txtBox1.Text = DateTime.Now.ToString();
+            }
+            else
+            {
                 txtBox1.Text = DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini[DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count - 1].KrajTermina.AddMinutes(10).ToString();
-            
+            }
       
         }
 
