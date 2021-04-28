@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
 BolnicaSims
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\App.xaml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\App.xaml
 29-307235900
 
-69-1974353604
+70311065602
 192-1533232326
 MainWindow.xaml;View\AddView\DodavanjeDoktora.xaml;View\AddView\DodavanjeInventara.xaml;View\AddView\DodavanjeOsoblja.xaml;View\AddView\DodavanjePacijenta.xaml;View\AddView\DodavanjePregleda.xaml;View\AddView\DodavanjeProstorije.xaml;View\AddView\DodavanjeProstorijePage.xaml;View\AddView\DodavanjeTerminaDoktor.xaml;View\AddView\DodavanjeTerminaSekretar.xaml;View\AddView\IzdajRecept.xaml;View\DeleteView\BrisanjeOsoblja.xaml;View\DeleteView\BrisanjeProstorija.xaml;View\EditView\IzmenaPacijenta.xaml;View\EditView\IzmenaPregleda.xaml;View\EditView\IzmenaProstorije.xaml;View\EditView\IzmenaTerminaAdvanced.xaml;View\MainView\DoktorView.xaml;View\MainView\ListaProstorija.xaml;View\MainView\ListaRecepata.xaml;View\MainView\ListaSopstvenihTermina.xaml;View\MainView\PacijentView.xaml;View\MainView\PregledKartona.xaml;View\MainView\SekretarView.xaml;View\MainView\UpravnikView.xaml;View\NotificationsView\NotifikacijeDoktor.xaml;View\NotificationsView\NotifikacijePacijent.xaml;View\NotificationsView\NotifikacijeSekretar.xaml;View\TransferView\TransferInventar.xaml;
 

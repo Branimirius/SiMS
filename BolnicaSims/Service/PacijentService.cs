@@ -127,6 +127,17 @@ namespace BolnicaSims.Service
             }
             return null;
         }
+        public Pacijent getPacijent(String pacijent)
+        {
+            foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
+            {
+                if (p.korisnik.Ime + " " + p.korisnik.Prezime == pacijent)
+                {
+                    return p;
+                }
+            }
+            return null;
+        }
         public String GenID()
         {
             int a = 0;

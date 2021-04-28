@@ -144,8 +144,8 @@ namespace BolnicaSims.Service
                 Termin tempTermin = new Termin();
                 tempTermin.IdTermina = GenID();
                 tempTermin.VremeTermina = DateTime.Parse(vreme);
-                tempTermin.KrajTermina = tempTermin.VremeTermina;
-
+                tempTermin.KrajTermina = default;
+                /*
                 foreach (Doktor d in DoktoriStorage.Instance.doktori)
                 {
                     
@@ -157,7 +157,13 @@ namespace BolnicaSims.Service
                         tempTermin.doktori.Add(d);
                         tempTermin.ImePrezimeDoktora = d.korisnik.Ime + " " + d.korisnik.Prezime;
                     }
-                }
+                }*/
+                
+                DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);
+                tempTermin.doktor = DoktorService.Instance.getDoktor(doktor);
+                tempTermin.doktori.Add(DoktorService.Instance.getDoktor(doktor));
+                tempTermin.ImePrezimeDoktora = doktor;
+                /*
                 foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
                 {
                    
@@ -169,7 +175,25 @@ namespace BolnicaSims.Service
                         tempTermin.ImePrezimePacijenta = p.korisnik.Ime + " " + p.korisnik.Prezime;
                     }
                 }
+                */
+                PacijentService.Instance.getPacijent(pacijent).termini.Add(tempTermin);
+                tempTermin.pacijent = PacijentService.Instance.getPacijent(pacijent);
+                tempTermin.ImePrezimePacijenta = pacijent;
 
+                switch(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
+                {
+                    case "Pacijent":
+                        NotificationService.Instance.sendAppointmentNotification("Zakazan termin", pacijent, "Zakazan je termin kod doktora" + doktor, tempTermin);
+                        break;
+                    case "Sekretar":
+                        NotificationService.Instance.sendAppointmentNotification("Zakazan termin", "Sekretar", "Zakazan je termin", tempTermin);
+                        break;
+                    case "Doktor":
+                        NotificationService.Instance.sendAppointmentNotification("Zakazan termin", doktor, "Zakazan je termin kod pacijenta" + pacijent, tempTermin);
+                        break;
+                }
+               // NotificationService.Instance.sendAppointmentNotification("Zakazan termin", KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime, ")
+                /*
                 if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
                 {
                     Notifikacija n1 = new Notifikacija("Zakazan termin", pacijent, "Zakazan je termin kod doktora:  " + doktor);
@@ -215,7 +239,8 @@ namespace BolnicaSims.Service
                         }
                     }
                     
-                }                
+                }  
+                */
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
                 DoktoriStorage.Instance.Save();

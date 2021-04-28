@@ -28,14 +28,7 @@ namespace BolnicaSims.Service
             tempInv.prostorija = ProstorijaService.Instance.getProstorija(1, 1);
             InventarStorage.Instance.inventar.Add(tempInv);
             ProstorijaService.Instance.getMagacin().inventar.Add(tempInv);
-            /*
-            foreach (Inventar i in InventarStorage.Instance.inventar)
-            {
-                i.prostorija = ProstorijaService.Instance.getMagacin();
-                ProstorijaService.Instance.getMagacin().inventar.Add(i);
-
-            }
-            */
+           
             InventarStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
         }
