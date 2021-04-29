@@ -36,5 +36,9 @@ namespace BolnicaSims.Controller
         {
             return ProstorijaService.Instance.getProstorija(sprat, broj);
         }
+        public Boolean prostorijaRadovi(DateTime pocetak, DateTime kraj, Prostorija prostorija)
+        {
+            return ProstorijaService.Instance.prostorijaRadovi(pocetak, kraj, prostorija);
+        }
     }
 }

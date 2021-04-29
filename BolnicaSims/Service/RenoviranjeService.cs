@@ -26,5 +26,6 @@ namespace BolnicaSims.Service
             prostorija.renoviranja.Add(new Renoviranje(pocetak, pocetak.AddDays(trajanjeDani), prostorija));
             ProstorijeStorage.Instance.Save();
         }
+
     }
 }

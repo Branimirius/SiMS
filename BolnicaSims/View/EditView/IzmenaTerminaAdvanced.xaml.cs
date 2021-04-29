@@ -33,6 +33,7 @@ namespace BolnicaSims.View.EditView
             Termin tempTermin = new Termin();
 
             tempTermin = TerminStorage.Instance.selektovanTermin;
+            tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
             if (txtBox1.Text != String.Empty)
             {
                 tempTermin.KrajTermina = tempTermin.VremeTermina.AddMinutes(int.Parse(txtBox1.Text));
@@ -41,20 +42,35 @@ namespace BolnicaSims.View.EditView
             {
                 tempTermin.prostorija = (Prostorija)listOdrediste.SelectedItem;
             }
-            tempTermin.TipTermina = (TipTermina)comboTip.SelectedItem;
+            if (comboTip.SelectedItem != null)
+            {
+                tempTermin.TipTermina = (TipTermina)comboTip.SelectedItem;
+            }
             
             DateTime stariTermin = tempTermin.VremeTermina;
-            DateTime noviTermin = tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
-            DateTime noviTermin2 = tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
-            noviTermin = noviTermin.AddDays(2);
-            noviTermin2 = noviTermin2.AddDays(-2);
-
-            if (stariTermin > noviTermin || stariTermin < noviTermin2)
+            DateTime noviTermin = tempTermin.VremeTermina.AddDays(2);
+            DateTime noviTermin2 = tempTermin.VremeTermina.AddDays(-2);
+            DateTime noviTermin3 = stariTermin.AddDays(-1);
+            if (DateTime.Now > noviTermin3)
             {
-                if (stariTermin > noviTermin)
-                    MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
-                if (stariTermin < noviTermin2)
-                    MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
+                return;
+            }           
+
+            if (stariTermin > noviTermin)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
+                return;
+            }
+            if (stariTermin < noviTermin2)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                return;
+            }
+
+            if(ProstorijaController.Instance.prostorijaRadovi(tempTermin.VremeTermina, tempTermin.KrajTermina, tempTermin.prostorija))
+            {
+                MessageBox.Show("Prostorija se renovira u izabranom terminu. ");
                 return;
             }
 

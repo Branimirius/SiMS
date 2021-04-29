@@ -93,7 +93,18 @@ namespace BolnicaSims.Service
             }
             return null;
         }
-    
+        public Boolean prostorijaRadovi(DateTime pocetak, DateTime kraj, Prostorija prostorija)
+        {
+            foreach (Renoviranje r in getProstorija(prostorija).renoviranja)
+            {
+                if ((pocetak >= r.Pocetak && kraj <= r.Kraj) || (pocetak <= r.Pocetak && kraj >= r.Pocetak) || (pocetak <= r.Kraj && kraj >= r.Kraj) || (pocetak <= r.Pocetak && kraj >= r.Kraj))
+                {
+                    return true;
+                }
+                
+            }
+            return false;
+        }
         public Prostorija getProstorija(int sprat, int broj)
         {
             foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)

@@ -21,7 +21,7 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
-        public void handleNotifications(Korisnik korisnik, Termin tempTermin)
+        public void handleNotificationsAddTermin(Korisnik korisnik, Termin tempTermin)
         {
             switch (korisnik.Zvanje)
             {
@@ -33,6 +33,36 @@ namespace BolnicaSims.Service
                     break;
                 case "Doktor":
                     sendAppointmentNotification("Zakazan termin", tempTermin.ImePrezimeDoktora, "Zakazan je termin kod pacijenta" + tempTermin.ImePrezimePacijenta, tempTermin);
+                    break;
+            }
+        }
+        public void handleNotificationsRemoveTermin(Korisnik korisnik, Termin tempTermin)
+        {
+            switch (korisnik.Zvanje)
+            {
+                case "Pacijent":
+                    sendAppointmentNotification("Otkazan termin", tempTermin.ImePrezimePacijenta, "Otkazan je termin kod doktora" + tempTermin.ImePrezimeDoktora, tempTermin);
+                    break;
+                case "Sekretar":
+                    sendAppointmentNotification("Otkazan termin", "Sekretar", "Otkazan je termin", tempTermin);
+                    break;
+                case "Doktor":
+                    sendAppointmentNotification("Otkazan termin", tempTermin.ImePrezimeDoktora, "Otkazan je termin kod pacijenta" + tempTermin.ImePrezimePacijenta, tempTermin);
+                    break;
+            }
+        }
+        public void handleNotificationsUpdateTermin(Korisnik korisnik, Termin tempTermin)
+        {
+            switch (korisnik.Zvanje)
+            {
+                case "Pacijent":
+                    sendAppointmentNotification("Izmenjen termin", tempTermin.ImePrezimePacijenta, "Izmenjen je termin kod doktora" + tempTermin.ImePrezimeDoktora, tempTermin);
+                    break;
+                case "Sekretar":
+                    sendAppointmentNotification("Izmenjen termin", "Sekretar", "Izmenjen je termin", tempTermin);
+                    break;
+                case "Doktor":
+                    sendAppointmentNotification("Izmenjen termin", tempTermin.ImePrezimeDoktora, "Izmenjen je termin kod pacijenta" + tempTermin.ImePrezimePacijenta, tempTermin);
                     break;
             }
         }
