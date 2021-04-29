@@ -21,10 +21,10 @@ namespace BolnicaSims.Service
             }
         }
 
-        public void dodajInventar(String naziv, String proizvodjac, String kolicina)
+        public void dodajInventar(String naziv, String proizvodjac, String kolicina, Boolean staticki)
         {
-
-            Inventar tempInv = new Inventar(GenID(), naziv, proizvodjac, kolicina);
+            
+            Inventar tempInv = new Inventar(GenID(), naziv, proizvodjac, kolicina, staticki);
             tempInv.prostorija = ProstorijaService.Instance.getProstorija(1, 1);
             InventarStorage.Instance.inventar.Add(tempInv);
             ProstorijaService.Instance.getMagacin().inventar.Add(tempInv);

@@ -138,7 +138,8 @@ namespace BolnicaSims
         //Lekovi
         private void DodajLekovi_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new DodavanjeLekova();
+            s.Show();
         }
         private void UkloniLekovi_Click(object sender, RoutedEventArgs e)
         {
@@ -200,6 +201,110 @@ namespace BolnicaSims
 
         private void txtPretragaLekovi_TextChanged(object sender, TextChangedEventArgs e)
         {
+
+        }
+
+        private void checkStaticka_Checked(object sender, RoutedEventArgs e)
+        {
+            filteredInventar.Clear();
+            if ((Boolean)checkDinamicka.IsChecked)
+            {
+                //filteredInventar = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+
+            //dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+
+        private void checkStaticka_Unchecked(object sender, RoutedEventArgs e)
+        {
+            filteredInventar.Clear();
+            if (!(Boolean)checkDinamicka.IsChecked)
+            {
+                //filteredInventar = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (!inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+
+            //dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+
+        private void checkDinamicka_Checked(object sender, RoutedEventArgs e)
+        {
+            filteredInventar.Clear();
+            if ((Boolean)checkStaticka.IsChecked)
+            {
+                //filteredInventar = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (!inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+
+            //dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+
+        private void checkDinamicka_Unchecked(object sender, RoutedEventArgs e)
+        {
+            filteredInventar.Clear();
+            if (!(Boolean)checkStaticka.IsChecked)
+            {
+                //filteredInventar = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+
+            //dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
 
         }
     }

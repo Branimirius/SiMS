@@ -31,7 +31,7 @@ namespace BolnicaSims.Storage
         public Inventar selektovaniInventar = new Inventar();
         public InventarStorage()
         {
-            Inventar l1 = new Inventar("20","Respirator","Tehnion","5");
+            //Inventar l1 = new Inventar("20","Respirator","Tehnion","5");
             /* l2 = new Inventar("21", "EKG aparat", "Jakobs", "3");
             Inventar l3 = new Inventar("22", "Dekontaminator", "Colt", "6");
             inventar.Add(l1);

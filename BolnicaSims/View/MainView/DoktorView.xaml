@@ -12,6 +12,7 @@
             </MenuItem>
         </Menu>
         <Button Content="Obavestenja" Click ="Button_Click" Margin="584,10,130,374"/>
+        <Button Name="validacijaBtn" Content="Validacija leka" Click ="validacijaBtn_Click" Margin="479,10,235,374"/>
 
     </Grid>
 </Window>

@@ -10,6 +10,9 @@
     <Compile Update="View\AddView\DodavanjeDoktora.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AddView\DodavanjeLekova.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddView\DodavanjeOsoblja.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\EditView\RenoviranjeProstorije.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\EditView\ValidacijaLekova.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\DoktorView.xaml.cs">
@@ -84,6 +90,9 @@
     <Page Update="View\AddView\DodavanjeDoktora.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AddView\DodavanjeLekova.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddView\DodavanjeOsoblja.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -109,6 +118,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\EditView\RenoviranjeProstorije.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\EditView\ValidacijaLekova.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\DoktorView.xaml">

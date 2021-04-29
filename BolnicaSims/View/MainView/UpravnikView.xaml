@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="UpravnikView" Height="573" Width="315" ResizeMode="NoResize">
+        Title="UpravnikView" Height="573" Width="315" ResizeMode="CanResize">
 
     <Grid>
         <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Margin="0,134,0,0">
@@ -13,7 +13,7 @@
                 <Grid Background="#FFE5E5E5" Height="395">
                     <DataGrid x:Name="dataGridProstorije" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
                       SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                      Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="290" FontSize="9">
+                      Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="290" FontSize="9">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Tip" Binding="{Binding TipProstorije }" Width="*" />
                             <DataGridTextColumn Header="Broj" Binding="{Binding BrojProstorije}" Width="30"/>
@@ -37,7 +37,7 @@
 
                     <DataGrid x:Name="dataGridOsoblje" ItemsSource="{Binding Korisnici}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                        Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Ime" Binding="{Binding Ime }" Width="50" />
                             <DataGridTextColumn Header="Prezime" Binding="{Binding Prezime}" Width="50"/>
@@ -61,7 +61,7 @@
 
                     <DataGrid x:Name="dataGridInventar" ItemsSource="{Binding Inventar}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                        Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Naziv" Binding="{Binding Naziv }" Width="70" />
                             <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="60"/>
@@ -76,8 +76,9 @@
                     <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Izvestaj" Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
-                    <TextBox Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="30" Width="150" Margin="149,0,10,364"/>
-                    
+                    <TextBox Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,375"/>
+                    <CheckBox Name="checkStaticka" Checked="checkStaticka_Checked" Unchecked="checkStaticka_Unchecked" Content="S" IsChecked="False" Margin="109,7,160,365" FontSize="9" />
+                    <CheckBox Name="checkDinamicka" Checked="checkDinamicka_Checked" Unchecked="checkDinamicka_Unchecked" Content="D" IsChecked="False" Margin="64,7,200,365" FontSize="9" />
                 </Grid>
             </TabItem>
             <TabItem Name="lekoviTab" Header="Lekovi">
@@ -85,11 +86,12 @@
 
                     <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                        Height="268" Margin="0,29,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*" />
                             <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
                             <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
+                            <DataGridTextColumn Header="Validan" Binding="{Binding StringValid}" Width="40" />
                             <DataGridTextColumn Header="ID" Binding="{Binding IdLeka}" Width="30" />
 
                         </DataGrid.Columns>

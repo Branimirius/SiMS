@@ -28,6 +28,7 @@ namespace BolnicaSims.Storage
         private String FilePath = "lekoviStorage.txt";
         public ObservableCollection<Lek> lekovi = new ObservableCollection<Lek>();
         public ObservableCollection<String> lekoviImena = new ObservableCollection<String>();
+        public ObservableCollection<Lek> neverifikovaniLekovi = new ObservableCollection<Lek>();
 
         public LekoviStorage()
         {
@@ -40,6 +41,10 @@ namespace BolnicaSims.Storage
             foreach(Lek l in lekovi)
             {
                 lekoviImena.Add(l.ImeLeka + " " + l.Doza);
+                if (!l.Verifikovan)
+                {
+                    neverifikovaniLekovi.Add(l);
+                }
             }
         }
 

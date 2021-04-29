@@ -14,18 +14,18 @@ using System.Windows.Shapes;
 namespace BolnicaSims.View.AddView
 {
     /// <summary>
-    /// Interaction logic for DodavanjeInventara.xaml
+    /// Interaction logic for DodavanjeLekova.xaml
     /// </summary>
-    public partial class DodavanjeInventara : Window
+    public partial class DodavanjeLekova : Window
     {
-        public DodavanjeInventara()
+        public DodavanjeLekova()
         {
             InitializeComponent();
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            InventarController.Instance.dodajInventar(txtBox1.Text, txtBox2.Text, txtBox3.Text, (Boolean)checkStaticki.IsChecked);
+            LekoviController.Instance.dodajLek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text);
             this.Close();
         }
 

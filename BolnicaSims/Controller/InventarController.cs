@@ -22,9 +22,9 @@ namespace BolnicaSims.Controller
         }
 
 
-        public void dodajInventar(String naziv, String proizvodjac, String kolicina)
+        public void dodajInventar(String naziv, String proizvodjac, String kolicina, Boolean staticki)
         {
-            InventarService.Instance.dodajInventar(naziv, proizvodjac, kolicina);
+            InventarService.Instance.dodajInventar(naziv, proizvodjac, kolicina, staticki);
         }
         public void transferujInventar(int kolicina, Prostorija odrediste)
         {

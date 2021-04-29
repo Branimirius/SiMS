@@ -19,21 +19,29 @@ namespace BolnicaSims.Model
 
         public String IdLeka { get; set; }
 
-        public Lek (String a, String b, String c, String aa, String d, String Id)
+        public Boolean Verifikovan { get; set; }
+
+        public String StringValid
         {
-            ImeLeka = a;
-            Proizvodjac = b;
-            Doza = c;
-            Alergija = aa;
-            if(d == "0" || d == "")
+            get { return Verifikovan ? "Da" : "Ne"; }
+        }
+
+        public Lek (String naziv, String proizvodjac, String doza, String alergija, String kolicina, String Id, Boolean verifikovan)
+        {
+            ImeLeka = naziv;
+            Proizvodjac = proizvodjac;
+            Doza = doza;
+            Alergija = alergija;
+            if(kolicina == "0" || kolicina == "")
             {
                 Kolicina = 0;
             }
             else
             {
-                Kolicina = int.Parse(d);
+                Kolicina = int.Parse(kolicina);
             }
             IdLeka = Id;
+            Verifikovan = false;
         }
 
     }

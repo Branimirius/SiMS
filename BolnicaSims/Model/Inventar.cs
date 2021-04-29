@@ -12,7 +12,7 @@ namespace Model
     [Serializable]
     public class Inventar
    {
-         public Inventar(String id, String naziv, String proizvodjac, String kolicina)
+         public Inventar(String id, String naziv, String proizvodjac, String kolicina, Boolean staticki)
          {
                IdInventara = id;
                Naziv = naziv;
@@ -25,7 +25,8 @@ namespace Model
                {
                    Kolicina = int.Parse(kolicina);
                }
-               prostorija = ProstorijaController.Instance.getProstorija(1, 1); 
+               prostorija = ProstorijaController.Instance.getProstorija(1, 1);
+               Staticki = staticki;
          }
         public Inventar() { }
 
@@ -36,6 +37,7 @@ namespace Model
             Proizvodjac = i.Proizvodjac;
             Kolicina = i.Kolicina;
             prostorija = i.prostorija;
+            Staticki = i.Staticki;
         }
           public String IdInventara
           {
@@ -69,6 +71,7 @@ namespace Model
            ;
         }
         public Prostorija prostorija { get; set; }
+        public Boolean Staticki { get; set; }
    
    }
 }

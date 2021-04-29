@@ -5,17 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
-        Title="DodavanjeInventara" Height="353" Width="304" ResizeMode="NoResize">
+        Title="DodavanjeInventara" Height="373" Width="304" ResizeMode="CanResize">
     <Grid Margin="0,0,0,0">
 
-        <Label Content="DODAVANJE INVENTARA" Margin="72,10,52,260" FontSize="13"/>
-        <TextBlock Text="Naziv" Margin="31,83,180,186" Height="25" Width="80" FontSize="13" />
-        <TextBlock Text="Kolicina" Margin="31,157,177,112" Height="25" Width="80" FontSize="13" />
-        <TextBlock Text="Proizvodjac" Margin="31,120,180,149" Height="25" Width="80" FontSize="13" />
-        <TextBox x:Name="txtBox1" Height="25" Width="80" Margin="152,83,28,191"/>
-        <TextBox x:Name="txtBox2" Height="25" Width="80" Margin="152,123,28,152"/>
-        <TextBox x:Name="txtBox3" Height="25" Width="80" Margin="152,160,28,115"/>
-        <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" Height="30" Width="60" Margin="38,225,185,42" />
-        <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Height="30" Width="60" Margin="171,225,52,42" />
+        <Label Content="DODAVANJE INVENTARA" Margin="72,10,52,315" FontSize="13"/>
+        <TextBlock Text="Naziv" Margin="39,77,185,235" Height="25" Width="80" FontSize="12" />
+        <TextBlock Text="Kolicina" Margin="39,156,185,156" Height="25" Width="80" FontSize="12" />
+        <TextBlock Text="Proizvodjac" Margin="38,116,186,196" Height="25" Width="80" FontSize="12" />
+        <TextBox x:Name="txtBox1" Height="25" Width="80" Margin="134,87,90,245"/>
+        <TextBox x:Name="txtBox2" Height="25" Width="80" Margin="134,126,90,206"/>
+        <TextBox x:Name="txtBox3" Height="25" Width="80" Margin="134,166,90,166"/>
+        <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" Height="30" Width="60" Margin="49,280,195,27" />
+        <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Height="30" Width="60" Margin="162,290,82,37" />
+        <CheckBox x:Name="checkStaticki" Content="Staticki" Height="20" Margin="136,208,90,129" RenderTransformOrigin="0.5,0.464"/>
     </Grid>
 </Window>
