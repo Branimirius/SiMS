@@ -1,8 +1,11 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -27,6 +30,8 @@ namespace BolnicaSims
 
         public void dodavanjePacijentaBtn_Click(object sender, RoutedEventArgs e)
         {
+       
+          
             Pacijent tempPacijent = new Pacijent();
             Korisnik tempKorisnik = new Korisnik(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, "Pacijent", "343434", new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
             ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, PacijentService.Instance.GenID(), "1243", "M", "",textBoxAlergija.Text);

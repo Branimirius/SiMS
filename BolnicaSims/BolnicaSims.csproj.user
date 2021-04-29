@@ -46,9 +46,6 @@
     <Compile Update="View\EditView\IzmenaProstorije.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainView\ListaRecepata.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\MainView\PregledKartona.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -118,9 +115,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\EditView\IzmenaProstorije.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\MainView\ListaRecepata.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\PregledKartona.xaml">

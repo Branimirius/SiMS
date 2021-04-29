@@ -33,12 +33,22 @@
                 </Grid>
             </TabItem>
             <TabItem Name="ReceptiTab" Header="Recepti" Height="20" VerticalAlignment="Bottom">
-                <Grid Margin="0,0,10,0">
-                    <Label Content="RECEPTI&#xD;&#xA;" HorizontalAlignment ="Center" FontStyle="Normal" Margin="0,0,0,253"/>
-                    <ListBox x:Name="listRecepti" Margin="10,28,0,49">
-                       
-                            
-                    </ListBox>
+                <Grid Background="#FFE5E5E5">
+                    <DataGrid x:Name="dataGridRecepti" ItemsSource="{Binding Recepti}" IsReadOnly="True"
+                  SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                  Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="706">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Doktor" Binding="{Binding Doktor.korisnik.ImePrezime}" Width="*" />
+                            <DataGridTextColumn Header="Lek" Binding="{Binding Lek}" Width="*" />
+                            <DataGridTextColumn Header="Kreni" Binding="{Binding Kreni}" Width="*" />
+                            <DataGridTextColumn Header="Na Sati" Binding="{Binding NaSati}" Width="*" />
+                            <DataGridTextColumn Header="Koliko dana " Binding="{Binding KolikoPuta}" Width="*" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                    
+                    <Label Content="Tabela recepata" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+
 
                 </Grid>
             </TabItem>

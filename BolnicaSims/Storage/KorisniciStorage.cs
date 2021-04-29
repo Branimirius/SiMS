@@ -29,6 +29,7 @@ namespace BolnicaSims.Storage
         private String FilePath = "korisniciStorage.txt";
         public ObservableCollection<Korisnik> korisnici = new ObservableCollection<Korisnik>();
         public ObservableCollection<Korisnik> zaposleni = new ObservableCollection<Korisnik>();
+        public ObservableCollection<Recept> recepti = new ObservableCollection<Recept>();
         public Korisnik ulogovaniKorisnik = new Korisnik();
         public Korisnik selektovaniKorisnik = new Korisnik();
         public KorisniciStorage()

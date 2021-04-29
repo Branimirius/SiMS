@@ -8,7 +8,7 @@
         Title="NotifikacijePacijent" Height="450" Width="362">
     <Grid Margin="0,0,10,0">
         <Label Content="NOTIFIKACIJE&#xD;&#xA;" HorizontalAlignment ="Center" FontStyle="Normal" Margin="0,10,0,310"/>
-        <ListBox x:Name="listBoxNotifikacije" Margin="10,40,10,49">
+        <ListBox x:Name="listBoxNotifikacije" Margin="10,40,10,49" SelectionChanged="listBoxNotifikacije_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>

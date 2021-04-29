@@ -30,7 +30,12 @@ namespace BolnicaSims.Storage
 
         public ReceptiStorage()
         {
-            //recepti = this.Load();
+              recepti = this.Load();
+            
+          /*  Recept r1 = new Recept(null, null, null,default , null, null);
+            recepti.Add(r1);
+            this.Save();
+          */
         }
 
         public ObservableCollection<Recept> Read()

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
@@ -8,9 +9,9 @@ namespace BolnicaSims.Model
     [Serializable]
     public class Recept
     {
-        public String Pacijent { get; set; }
+        public Pacijent Pacijent { get; set; }
 
-        public String Doktor { get; set; }
+        public Doktor Doktor { get; set; }
 
         public String Lek { get; set; }
 
@@ -22,7 +23,7 @@ namespace BolnicaSims.Model
 
 
 
-        public Recept(String pacijent, String doktor, String lek, DateTime kreni, String naSati, String kolikoPuta)
+        public Recept(Pacijent pacijent, Doktor doktor, String lek, DateTime kreni, String naSati, String kolikoPuta)
         {
             Pacijent = pacijent;
             Doktor = doktor;

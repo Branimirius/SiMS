@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using BolnicaSims.View.MainView;
@@ -39,11 +40,15 @@ namespace BolnicaSims
 
         public ObservableCollection<Termin> termini = TerminStorage.Instance.Read();
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
+        public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
+        public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
 
         public PacijentView()
         {
             InitializeComponent();
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
+            dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
+            
         }
 
         public void ObavestenjeRecept(String pacijent, String doktor, String lek, DateTime kreni, String naSati, String kolikoPut)

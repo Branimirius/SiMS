@@ -34,6 +34,8 @@ namespace Model
        
         public String Zvanje { get; set; }
 
+        public String ImePrezime { get; set; }
+
 
         public ObservableCollection<Notifikacija> Notifikacije { get; set; }
         
@@ -51,6 +53,7 @@ namespace Model
             DatumRodjenja = datumRodnjenja;
             Adresa = adresa;
             Email = email;
+            ImePrezime = ime + " " + prezime;
             Notifikacije = new ObservableCollection<Notifikacija>();
         }
 
