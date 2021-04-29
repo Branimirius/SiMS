@@ -21,6 +21,14 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
+
+        public void sendDrugsNotification(Korisnik korisnik,Recept recept)
+        {
+            Notifikacija n1 = new Notifikacija("Uzmite lek za 2 sata", recept.Doktor.korisnik.ImePrezime, "brufen");
+            PacijentService.Instance.getPacijent(recept.Pacijent).korisnik.Notifikacije.Add(n1);
+            korisnik.Notifikacije.Add(n1);
+   
+        }
         public void handleNotificationsAddTermin(Korisnik korisnik, Termin tempTermin)
         {
             switch (korisnik.Zvanje)

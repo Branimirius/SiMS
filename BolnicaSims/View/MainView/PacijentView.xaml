@@ -39,8 +39,8 @@
                             <DataGridTextColumn Header="Doktor" Binding="{Binding Doktor.korisnik.ImePrezime}" Width="*" />
                             <DataGridTextColumn Header="Lek" Binding="{Binding Lek}" Width="*" />
                             <DataGridTextColumn Header="Kreni" Binding="{Binding Kreni}" Width="*" />
-                            <DataGridTextColumn Header="Na Sati" Binding="{Binding NaSati}" Width="*" />
-                            <DataGridTextColumn Header="Koliko dana " Binding="{Binding KolikoPuta}" Width="*" />
+                            <DataGridTextColumn Header="Puta dnevno" Binding="{Binding PutaDnevno}" Width="*" />
+                            <DataGridTextColumn Header="Koliko dana " Binding="{Binding KolikoDana}" Width="*" />
                         </DataGrid.Columns>
 
                     </DataGrid>

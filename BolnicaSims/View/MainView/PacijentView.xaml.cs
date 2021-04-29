@@ -51,16 +51,7 @@ namespace BolnicaSims
             
         }
 
-        public void ObavestenjeRecept(String pacijent, String doktor, String lek, DateTime kreni, String naSati, String kolikoPut)
-        {
-            DateTime trenutnoSati = DateTime.Now;
-            DateTime vremeZaPodsetnik = trenutnoSati.AddHours(-2);
-
-            if (kreni == vremeZaPodsetnik)
-            {
-                MessageBox.Show("Za 2 sata treba da popijete lek");
-            }
-        }
+    
     
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -110,6 +101,11 @@ namespace BolnicaSims
 
         private void ButtonObavestenja_Click(object sender, RoutedEventArgs e)
         {
+         
+            foreach(Recept r in PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti)
+            {
+                ReceptService.Instance.notifikacijaLek(r);
+            }
             var s = new NotifikacijePacijent();
             s.Show();
         }

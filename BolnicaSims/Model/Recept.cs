@@ -17,9 +17,9 @@ namespace BolnicaSims.Model
 
         public DateTime Kreni { get; set; }
 
-        public String NaSati { get; set; }
+        public String PutaDnevno { get; set; }
 
-        public String KolikoPuta { get; set; }
+        public String KolikoDana { get; set; }
 
 
 
@@ -29,8 +29,8 @@ namespace BolnicaSims.Model
             Doktor = doktor;
             Lek = lek;
             Kreni = kreni;
-            NaSati = naSati;
-            KolikoPuta = kolikoPuta;
+            PutaDnevno = naSati;
+            KolikoDana = kolikoPuta;
         }
     }
 }
