@@ -28,10 +28,10 @@ namespace BolnicaSims.Service
             vreme.Add(vreme1);
             double sati = 24 / int.Parse(recept.PutaDnevno);
           
-            for(int i=0; i<int.Parse(recept.PutaDnevno);i++)
+            for(int i = 0; i < int.Parse(recept.PutaDnevno); i++)
             {
-                vreme1.AddHours(sati);
-                vreme.Add(vreme1);
+                DateTime vreme2 = vreme1.AddHours(sati);
+                vreme.Add(vreme2);
             }
             return vreme;
         }
@@ -42,7 +42,7 @@ namespace BolnicaSims.Service
             {
                 foreach(DateTime d in vremeUzimanja(recept))
                 {
-                    if(DateTime.Now >= d || DateTime.Now <= d.AddHours(2))
+                    if(DateTime.Now >= d && DateTime.Now <= d.AddHours(2))
                     {
                         NotificationService.Instance.sendDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, recept);
                     }

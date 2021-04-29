@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
 
@@ -116,6 +117,7 @@ namespace BolnicaSims.Service
             return null;
 
         }
+        
         public Pacijent getPacijent(Pacijent pacijent)
         {
             foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)

@@ -6,6 +6,7 @@ using BolnicaSims.View.TransferView;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -36,6 +37,7 @@ namespace BolnicaSims
             }
         }
         //UpravnikMainView
+        ObservableCollection<Inventar> filteredInventar = new ObservableCollection<Inventar>();
         public UpravnikView()
         {
             InitializeComponent();
@@ -118,6 +120,7 @@ namespace BolnicaSims
         private void TransferInventar_Click(object sender, RoutedEventArgs e)
         {
             InventarStorage.Instance.selektovaniInventar = (Inventar)dataGridInventar.SelectedItem;
+            
             if (InventarStorage.Instance.selektovaniInventar == null)
             {
                 MessageBox.Show("Nije izabran inventar za transfer");
@@ -158,6 +161,46 @@ namespace BolnicaSims
         private void ButtonOdjavi_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).
+            filteredInventar.Clear();
+            if (txtPretragaInventar.Equals(""))
+            {
+                filteredInventar = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Naziv.Contains(txtPretragaInventar.Text))
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+            }
+
+            dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+
+        private void txtPretragaProstorije_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtPretragaOsoblje_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void txtPretragaLekovi_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
 

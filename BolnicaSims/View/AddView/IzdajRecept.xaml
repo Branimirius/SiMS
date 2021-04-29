@@ -21,11 +21,11 @@
         <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="265,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.561"/>
         <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="487,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.601"/>
         <Label x:Name="label" Content="Kreni uzimanje: " HorizontalAlignment="Left" Margin="160,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,-0.55"/>
-        <Label x:Name="label1" Content="Na svakih sati:" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="Koliko puta dnevno:" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="148,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox2" HorizontalAlignment="Center" Margin="0,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="537,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label2" Content="Koliko puta:" HorizontalAlignment="Left" Margin="561,191,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="Koliko dana:" HorizontalAlignment="Left" Margin="561,191,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" Content="LEK:" HorizontalAlignment="Left" Margin="282,139,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
         <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="105,139,0,0" VerticalAlignment="Top"/>
