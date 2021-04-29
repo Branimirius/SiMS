@@ -100,7 +100,8 @@ namespace BolnicaSims.Service
             
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
-            //Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
+            NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);
+            /*Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
             if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
             {
                 Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
@@ -132,6 +133,7 @@ namespace BolnicaSims.Service
                     }
                 }
             }
+            */
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
             KorisniciStorage.Instance.Save();
@@ -145,6 +147,8 @@ namespace BolnicaSims.Service
                 DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);                                            
                 PacijentService.Instance.getPacijent(pacijent).termini.Add(tempTermin);
 
+                NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, tempTermin);
+                /*
                 switch(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
                 {
                     case "Pacijent":
@@ -157,11 +161,13 @@ namespace BolnicaSims.Service
                         NotificationService.Instance.sendAppointmentNotification("Zakazan termin", doktor, "Zakazan je termin kod pacijenta" + pacijent, tempTermin);
                         break;
                 }
+                */
                
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
                 DoktoriStorage.Instance.Save();
                 PacijentiStorage.Instance.Save();
+                KorisniciStorage.Instance.Save();
             }
             else MessageBox.Show("Termin je vec zauzet");
 
@@ -175,6 +181,9 @@ namespace BolnicaSims.Service
             TerminStorage.Instance.Save();
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
+            NotificationService.Instance.handleNotificationsRemoveTermin(KorisniciStorage.Instance.ulogovaniKorisnik, t);
+            KorisniciStorage.Instance.Save();
+            /*
             if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
             {
                 Notifikacija n1 = new Notifikacija("Otkazan termin", t.ImePrezimePacijenta, "Otkazan je termin kod doktora:  " + t.ImePrezimeDoktora);
@@ -226,6 +235,7 @@ namespace BolnicaSims.Service
                 }
 
             }
+            */
         }
         public Boolean slobodanTermin(String vreme,String doktor)
         {

@@ -50,6 +50,8 @@ namespace BolnicaSims.Service
                 ProstorijaService.Instance.dodajInventar(odrediste, tempInventar);
                 
             }
+            InventarStorage.Instance.Save();
+            ProstorijeStorage.Instance.Save();
         }
         public Inventar GetInventar(String id)
         {

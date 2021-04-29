@@ -68,36 +68,7 @@ namespace BolnicaSims.Service
             KorisniciStorage.Instance.Save();
     
         }
-        /*public void izmeniKorisnika(Korisnik korisnik)
-        {
-            for (int i = 0; i < KorisniciStorage.Instance.korisnici.Count; i++)
-            {
-                if ((korisnik.Jmbg) == (KorisniciStorage.Instance.korisnici[i].Jmbg))
-                {
-                    if (korisnik.Ime != "")
-                    {
-                        KorisniciStorage.Instance.korisnici[i].Ime = korisnik.Ime;
-                    }
-                    if (korisnik.Prezime != "")
-                    {
-                        KorisniciStorage.Instance.korisnici[i].Prezime = korisnik.Prezime;
-                    }
-                    if (korisnik.Username != "")
-                    {
-                        KorisniciStorage.Instance.korisnici[i].Username = korisnik.Username;
-                    }
-                    if (korisnik.Password != "")
-                    {
-                        KorisniciStorage.Instance.korisnici[i].Password = korisnik.Password;
-                    }
-                }
-
-            }
-            KorisniciStorage.Instance.Save();
-            SekretarView.Instance.refreshPacijenti();
-
-        }*/
-
+        
 
 
     }

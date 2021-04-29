@@ -1,6 +1,7 @@
 ﻿using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
+using BolnicaSims.View.EditView;
 using BolnicaSims.View.TransferView;
 using Model;
 using System;
@@ -64,6 +65,12 @@ namespace BolnicaSims
         {
             ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
             var s = new IzmenaProstorije();
+            s.Show();
+        }
+        private void RenoviranjeProstorija_Click(object sender, RoutedEventArgs e)
+        {
+            ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
+            var s = new RenoviranjeProstorije();
             s.Show();
         }
         private void IzvestajProstorija_Click(object sender, RoutedEventArgs e)

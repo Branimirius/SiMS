@@ -1,0 +1,38 @@
+﻿<Window x:Class="BolnicaSims.View.EditView.RenoviranjeProstorije"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.EditView"
+        mc:Ignorable="d"
+        Title="RenoviranjeProstorije" Height="401" Width="330" ResizeMode="CanResize">
+    <Grid>
+        <Label Content="ZAKAZIVANJE RENOVIRANJA" HorizontalAlignment="Center" Height="30" Margin="0,10,0,345"/>
+        <ScrollViewer>
+            <Grid>
+                <TextBlock Text="Izabrana prostorija: " TextAlignment="Right" Width="120" Height="30" FontSize="11" Margin="22,45,168,310"/>
+                <TextBlock x:Name="txtBlock1" Text=""  Width="100" Height="30" FontSize="11" Margin="177,45,33,310"/>
+                <TextBlock Text="Datum pocetka radova: " TextAlignment="Right" Width="120" Height="30" FontSize="11" Margin="22,90,168,265"/>
+                <DatePicker x:Name="datePocetak" Width="120" Height="30" FontSize="11" Margin="177,90,13,265"/>
+                <TextBlock Text="Trajanje (dana):" TextAlignment="Right" Width="120" Height="30" FontSize="11" Margin="22,135,168,220"/>
+                <TextBox x:Name= "txtTrajanje" Width="120" Height="30" FontSize="11" Margin="177,135,13,220"/>
+                <Button x:Name="btnPotvrdi" Content="Potvrdi" HorizontalAlignment="Left" Click="btnPotvrdi_Click" Width="60" Height="30" Margin="52,327,0,28"/>
+                <Button x:Name="btnOdustani" Content="Odustani" HorizontalAlignment="Left" Click="btnOdustani_Click" Width="60" Height="30" Margin="177,327,0,28"/>
+                <TextBlock Text="Renoviranja:" TextAlignment="Right" Width="60" Height="30" FontSize="11" Margin="22,193,231,162"/>
+                <Button x:Name="btnOtkazi" Content="X" HorizontalAlignment="Left" Click="btnOtkazi_Click" Width="20" Height="20" Margin="268,282,0,73"/>
+                <ListView x:Name="listRenoviranja" SelectionMode="Single" Height="90" Width="200" Margin="98,193,15,103">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Od: "/>
+                                <TextBlock Text="{Binding Pocetak}" FontWeight="Bold"/>
+                                <TextBlock Text="Do: "/>
+                                <TextBlock Text="{Binding Kraj}" FontWeight="Bold"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Window>

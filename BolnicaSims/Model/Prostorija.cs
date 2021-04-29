@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class Prostorija
  ***********************************************************************/
 
+using BolnicaSims.Model;
 using System;
 using System.Collections.ObjectModel;
 
@@ -11,27 +12,11 @@ namespace Model
 {
     [Serializable]
     public class Prostorija
-   {
+    {
 
         public Prostorija(TipProstorije tip, String sprat, String brojProstorije)
         {
-            /*switch (tip)
-            {
-                case "Soba":
-                    TipProstorije = TipProstorije.SOBA;
-                    break;
-                case "Ordinacija":
-                    TipProstorije = TipProstorije.ORDINACIJA;
-                    break;
-                case "Operaciona sala":
-                    TipProstorije = TipProstorije.OPERACIONA_SALA;
-                    break;
-                case "Magacin":
-                    TipProstorije = TipProstorije.MAGACIN;
-                    break;
-
-                
-            }*/
+            
             TipProstorije = tip;
 
             if (sprat != "")
@@ -50,52 +35,42 @@ namespace Model
             else
             {
                 BrojProstorije = 0;
-            }
-            if(IsReserved(this) == true)
-            {
-                Stanje = "Zauzeta";
-            }
-            else
-            {
-                Stanje = "Slobodna";
-            }
+            }          
+            Stanje = "Slobodna";          
             inventar = new ObservableCollection<Inventar>();
             termini = new ObservableCollection<Termin>();
+            renoviranja = new ObservableCollection<Renoviranje>();
         }
 
         public Prostorija() { }
         public void rezervisiProstoriju(Prostorija p)
-      {
-         // TODO: implement
-      }
-      
-      public void OslobodiProsotriju(Prostorija p)
-      {
-         // TODO: implement
-      }
-      
-      public Boolean IsReserved(Prostorija p)
-      {
-            return false;
-      }
-   
-      public ObservableCollection<Inventar> inventar { get; set; }     
-      public ObservableCollection<Termin> termini { get; set; }
+        {
+            // TODO: implement
+        }
+
+        public void OslobodiProsotriju(Prostorija p)
+        {
+            // TODO: implement
+        }
+       
+        public ObservableCollection<Inventar> inventar { get; set; }
+        public ObservableCollection<Termin> termini { get; set; }
+        public ObservableCollection<Renoviranje> renoviranja { get; set; }
         public int Sprat
-      {
+        {
          get
          ;
          set
          ;
-      }
+        }
 
         public int BrojProstorije
-      {
+        {
          get
          ;
          set
          ;
-      }       
+        }       
       
       public TipProstorije TipProstorije
       {
