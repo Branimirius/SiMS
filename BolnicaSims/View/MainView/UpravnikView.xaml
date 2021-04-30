@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="UpravnikView" Height="573" Width="315" ResizeMode="CanResize">
+        Title="UpravnikView" Height="585" Width="315" ResizeMode="CanResize">
 
     <Grid>
         <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Margin="0,134,0,0">

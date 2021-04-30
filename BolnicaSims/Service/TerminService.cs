@@ -97,7 +97,7 @@ namespace BolnicaSims.Service
                 }
             }
 
-            
+            ProstorijaService.Instance.getProstorija(termin.prostorija).termini.Add(termin);
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
             NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);
@@ -137,13 +137,15 @@ namespace BolnicaSims.Service
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
             KorisniciStorage.Instance.Save();
+            ProstorijeStorage.Instance.Save();
         }
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
         {
             if (slobodanTermin(vreme, doktor))
             {              
-                Termin tempTermin = new Termin(GenID(), DateTime.Parse(vreme), DateTime.Parse(vreme), DoktorService.Instance.getDoktor(doktor), PacijentService.Instance.getPacijent(pacijent), doktor, pacijent);                
+                Termin tempTermin = new Termin(GenID(), DateTime.Parse(vreme), DateTime.Parse(vreme), DoktorService.Instance.getDoktor(doktor), PacijentService.Instance.getPacijent(pacijent), doktor, pacijent);
+                
                 DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);                                            
                 PacijentService.Instance.getPacijent(pacijent).termini.Add(tempTermin);
 
@@ -171,6 +173,30 @@ namespace BolnicaSims.Service
             }
             else MessageBox.Show("Termin je vec zauzet");
 
+        }
+        public void dodajTerminAdvanced(DateTime vremeTermina, String trajanje, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
+        {
+            if (slobodanTermin(vremeTermina.ToString(), doktor.korisnik.ImePrezime))
+            {
+                DateTime kraj = vremeTermina.AddMinutes(int.Parse(trajanje));
+                Termin temp = new Termin(GenID(), vremeTermina, kraj, doktor, pacijent, doktor.korisnik.ImePrezime, pacijent.korisnik.ImePrezime);
+                temp.prostorija = prostorija;
+                temp.TipTermina = tip;
+                TerminStorage.Instance.termini.Add(temp);
+                DoktorService.Instance.getDoktor(doktor).termini.Add(temp);
+                PacijentService.Instance.getPacijent(pacijent).termini.Add(temp);
+                ProstorijaService.Instance.getProstorija(prostorija).termini.Add(temp);
+                NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, temp);
+                TerminStorage.Instance.Save();
+                DoktoriStorage.Instance.Save();
+                PacijentiStorage.Instance.Save();
+                KorisniciStorage.Instance.Save();
+                ProstorijeStorage.Instance.Save();
+            }
+            else
+            {
+                MessageBox.Show("Termin je zauzet.");
+            }
         }
 
         public void ukloniTermin(Termin t)

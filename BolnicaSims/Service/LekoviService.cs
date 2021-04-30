@@ -23,10 +23,7 @@ namespace BolnicaSims.Service
 
         public void dodajLek(String naziv, String proizvodjac, String doza, String alergen, String kolicina)
         {
-            foreach(Lek l in LekoviStorage.Instance.lekovi)
-            {
-                l.Verifikovan = true;
-            }
+            
             Lek tempLek = new Lek(naziv, proizvodjac, doza, alergen, kolicina, GenID(), false);
             LekoviStorage.Instance.lekovi.Add(tempLek);
             LekoviStorage.Instance.lekoviImena.Add(naziv + doza);

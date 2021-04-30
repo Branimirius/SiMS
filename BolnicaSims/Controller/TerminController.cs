@@ -33,5 +33,9 @@ namespace BolnicaSims.Controller
         {
             TerminService.Instance.ukloniTermin(t);
         }
+        public void dodajTerminAdvanced(DateTime vremeTermina, String trajanje, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
+        {
+            TerminService.Instance.dodajTerminAdvanced(vremeTermina, trajanje, doktor, pacijent, prostorija, tip);
+        }
     }
 }

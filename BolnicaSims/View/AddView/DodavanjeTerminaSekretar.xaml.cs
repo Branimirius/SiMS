@@ -22,14 +22,38 @@ namespace BolnicaSims.View.AddView
     {
         public DodavanjeTerminaSekretar()
         {
-            InitializeComponent(); comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
-            comboBox2.ItemsSource = PacijentiStorage.Instance.pacijentiImena;
+            InitializeComponent();
+            listDoktori.ItemsSource = DoktoriStorage.Instance.doktori;
+            listPacijenti.ItemsSource = PacijentiStorage.Instance.pacijenti;
+            listProstorija.ItemsSource = ProstorijeStorage.Instance.prostorije;
+            comboTipTermina.ItemsSource = Enum.GetValues(typeof(TipTermina));
+
         }
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (listProstorija.SelectedItem == null || listDoktori.SelectedItem == null || listPacijenti.SelectedItem == null)
+            {
+                MessageBox.Show("Nisu selektovani svi parametri.");
+                return;
+            }
+            if (dateTermin.SelectedDate == null || txtSati.Text == "" || txtMinuti.Text == "" || txtTrajanje.Text == "" || comboTipTermina.SelectedItem == null)
+            {
+                MessageBox.Show("Nisu upisani svi parametri.");
+                return;
+            }
+            TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
+            DateTime pocetak = (DateTime)dateTermin.SelectedDate + vreme;
+            DateTime kraj = pocetak.AddMinutes(int.Parse(txtTrajanje.Text));
 
-            TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (String)comboBox2.SelectedItem);
+            if (ProstorijaController.Instance.prostorijaRadovi(pocetak, kraj, (Prostorija)listProstorija.SelectedItem))
+            {
+                MessageBox.Show("Prostorija se renovira u izabranom terminu. ");
+                return;
+            }
+            
+            
+            TerminController.Instance.dodajTerminAdvanced(pocetak, txtTrajanje.Text, (Doktor)listDoktori.SelectedItem, (Pacijent)listPacijenti.SelectedItem, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTipTermina.SelectedItem);
 
             //ListaTermina.Instance.refreshListaTermina();
 

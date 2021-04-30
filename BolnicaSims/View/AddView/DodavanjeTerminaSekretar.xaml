@@ -6,19 +6,83 @@
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
         Title="DodavanjeTerminaSekretar" Height="450" Width="547">
-    <Grid Margin="0,0,21,-6">
-        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="56,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="118" FontSize="16" ><Run Text="Datum i vreme"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="txtBlock2" HorizontalAlignment="Left" Margin="56,167,0,0" Text="Doktor" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="16"  />
-        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="269,108,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="30"/>
-        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="115,291,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="26" Width="82" Background="White" Click="dodavanjeBtn_Click" FontSize="16"/>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="269,163,0,0" VerticalAlignment="Top" Width="156" Height="30" SelectionChanged="Doktori_SelectionChanged"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="269,217,0,0" VerticalAlignment="Top" Width="156" Height="30" SelectionChanged="Pacijenti_SelectionChanged"/>
-        <TextBlock x:Name="txtBlock3" HorizontalAlignment="Left" Margin="56,221,0,0" Text="Pacijent" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="16"  />
+    <Grid>
+        <Label Content="ZAKAZIVANJE TERMINA" FontSize="14" HorizontalAlignment="Center" Height="30" Width="170" Margin="0,10,0,400"/>
+        <ScrollViewer>
+            <StackPanel Margin="0,45,0,0" Height="537">
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="30" >
+                    <TextBlock Text="Tip termina:     " TextAlignment="Right" Height="30" Width="265"/>
+                    <ComboBox Name="comboTipTermina" Width="150" Height="30"/>
 
-        <Button Content="Odustani" HorizontalAlignment="Left" Margin="305,291,0,0" VerticalAlignment="Top" FontSize="16" Width="84" Height="26" Click="Button_Click">
-            <Button.Background>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
-            </Button.Background>
-        </Button>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="118" Width="429" >
+                    <TextBlock Text="Doktor: " HorizontalAlignment="Center" Width="50" Height="23" />
+                    <TextBlock Name ="textBlockDoktor"  Text="" HorizontalAlignment="Center" Width="128" Height="23" />
+                    <ListView x:Name="listDoktori" Width="251" Height="118" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="Ime: "/>
+                                    <TextBlock Text="{Binding korisnik.ImePrezime}" FontWeight="Bold"/>
+
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="118" Width="429" >
+                    <TextBlock Text="Pacijent: " HorizontalAlignment="Center" Width="50" Height="23" />
+                    <TextBlock Name ="textBlockPacijent"  Text="" HorizontalAlignment="Center" Width="128" Height="23" />
+                    <ListView x:Name="listPacijenti" Width="251" Height="118" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="Ime: "/>
+                                    <TextBlock Text="{Binding korisnik.ImePrezime}" FontWeight="Bold"/>
+
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="118" Width="429" >
+                    <TextBlock Text="Prostorija: " HorizontalAlignment="Center" Width="53" Height="22" />
+                    <TextBlock Name ="textBlockProstorija"  Text="" HorizontalAlignment="Center" Width="125" Height="22" />
+                    <ListView x:Name="listProstorija" Width="251" Height="118" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="Naziv: "/>
+                                    <TextBlock Text="{Binding Naziv}" FontWeight="Bold"/>
+
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="35">
+                    <TextBlock Text="Datum:  " Height="30" Width="91" TextAlignment="Right"/>
+                    <DatePicker x:Name="dateTermin" Width="150" Height="30"/>
+                    <TextBlock Text="Vreme:  " Height="30" Width="69" TextAlignment="Right"/>
+                    <TextBox x:Name="txtSati" Width="30"/>
+                    <TextBox x:Name="txtMinuti" Width="30"/>
+                    <TextBlock Text="Trajanje:  " Height="30" Width="61" TextAlignment="Right"/>
+                    <TextBox x:Name="txtTrajanje" Width="54"/>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="40" Width="272">
+                    <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="dodavanjeBtn_Click" Height="40" Width="56"/>
+                    <WrapPanel Width="150" />
+                    <Button x:Name="btnOdustani" Content="Odustani" Click ="Button_Click"  Height="40" Width="56" />
+                </WrapPanel>
+
+
+            </StackPanel>
+        </ScrollViewer>
     </Grid>
 </Window>
