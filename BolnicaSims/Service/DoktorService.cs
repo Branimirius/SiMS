@@ -37,7 +37,7 @@ namespace BolnicaSims.Service
         {
             foreach(Doktor d in DoktoriStorage.Instance.doktori)
             {
-                if(d.korisnik.Username + d.korisnik.Password == doktor.korisnik.Username + doktor.korisnik.Password)
+                if(d.korisnik.Jmbg == doktor.korisnik.Jmbg)
                 {
                     return d;
                 }

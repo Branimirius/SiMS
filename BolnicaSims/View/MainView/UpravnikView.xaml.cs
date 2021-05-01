@@ -60,20 +60,41 @@ namespace BolnicaSims
         private void UkloniProstorija_Click(object sender, RoutedEventArgs e)
         {
             ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
-            var s = new BrisanjeProstorija();
-            s.Show();
+            if (ProstorijeStorage.Instance.selektovanaProstorija != null)
+            {
+                var s = new BrisanjeProstorija();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nije izabrana prostorija.");
+            }
         }
         private void DetaljiProstorija_Click(object sender, RoutedEventArgs e)
         {
             ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
-            var s = new IzmenaProstorije();
+            if (ProstorijeStorage.Instance.selektovanaProstorija != null)
+            {
+                var s = new IzmenaProstorije();
             s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nije izabrana prostorija.");
+            }
         }
         private void RenoviranjeProstorija_Click(object sender, RoutedEventArgs e)
         {
             ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
-            var s = new RenoviranjeProstorije();
-            s.Show();
+            if (ProstorijeStorage.Instance.selektovanaProstorija != null)
+            {
+                var s = new RenoviranjeProstorije();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nije izabrana prostorija.");
+            }
         }
         private void IzvestajProstorija_Click(object sender, RoutedEventArgs e)
         {
@@ -88,8 +109,15 @@ namespace BolnicaSims
         private void UkloniOsoblje_Click(object sender, RoutedEventArgs e)
         {
             KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
-            var s = new BrisanjeOsoblja();
-            s.Show();
+            if (KorisniciStorage.Instance.selektovaniKorisnik != null)
+            {
+                var s = new BrisanjeOsoblja();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nije izabrana osoba.");
+            }
         }
         private void DetaljiOsoblje_Click(object sender, RoutedEventArgs e)
         {

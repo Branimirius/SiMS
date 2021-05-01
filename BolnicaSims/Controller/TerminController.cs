@@ -33,9 +33,25 @@ namespace BolnicaSims.Controller
         {
             TerminService.Instance.ukloniTermin(t);
         }
-        public void dodajTerminAdvanced(DateTime vremeTermina, String trajanje, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
+        public void dodajTerminAdvanced(DateTime vremeTermina, DateTime kraj, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
         {
-            TerminService.Instance.dodajTerminAdvanced(vremeTermina, trajanje, doktor, pacijent, prostorija, tip);
+            TerminService.Instance.dodajTerminAdvanced(vremeTermina, kraj, doktor, pacijent, prostorija, tip);
+        }
+        public Boolean slobodanDoktor(DateTime pocetak, DateTime kraj, Doktor doktor)
+        {
+           return TerminService.Instance.slobodanDoktor(pocetak, kraj, doktor);
+        }
+        public Boolean slobodanPacijent(DateTime pocetak, DateTime kraj, Pacijent pacijent)
+        {
+            return TerminService.Instance.slobodanPacijent(pocetak, kraj, pacijent);
+        }
+        public Boolean slobodnaProstorija(DateTime pocetak, DateTime kraj, Prostorija prostorija)
+        {
+            return TerminService.Instance.slobodnaProstorija(pocetak, kraj, prostorija);
+        }
+        public Boolean slobodanTerminAdvanced(DateTime pocetak, DateTime kraj, Pacijent pacijent, Doktor doktor, Prostorija prostorija)
+        {
+           return TerminService.Instance.slobodanTerminAdvanced(pocetak, kraj, pacijent, doktor, prostorija);
         }
     }
 }

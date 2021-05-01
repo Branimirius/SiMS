@@ -45,17 +45,34 @@ namespace BolnicaSims.View.AddView
             TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
             DateTime pocetak = (DateTime)dateTermin.SelectedDate + vreme;
             DateTime kraj = pocetak.AddMinutes(int.Parse(txtTrajanje.Text));
-
+            
             if (ProstorijaController.Instance.prostorijaRadovi(pocetak, kraj, (Prostorija)listProstorija.SelectedItem))
             {
                 MessageBox.Show("Prostorija se renovira u izabranom terminu. ");
                 return;
             }
-            
-            
-            TerminController.Instance.dodajTerminAdvanced(pocetak, txtTrajanje.Text, (Doktor)listDoktori.SelectedItem, (Pacijent)listPacijenti.SelectedItem, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTipTermina.SelectedItem);
-
-            //ListaTermina.Instance.refreshListaTermina();
+            if (!TerminController.Instance.slobodanDoktor(pocetak, kraj, (Doktor)listDoktori.SelectedItem)){
+                MessageBox.Show("Doktor je zauzet u izabranom terminu. ");
+                return;
+            }
+            if (!TerminController.Instance.slobodanPacijent(pocetak, kraj, (Pacijent)listPacijenti.SelectedItem)){
+                MessageBox.Show("Pacijent je zauzet u izabranom terminu. ");
+                return;
+            }
+            if (!TerminController.Instance.slobodnaProstorija(pocetak, kraj, (Prostorija)listProstorija.SelectedItem))
+            {
+                MessageBox.Show("Prostorija je zauzeta u izabranom terminu. ");
+                return;
+            }
+            /*
+            if(!TerminController.Instance.slobodanTerminAdvanced(pocetak, kraj, (Pacijent)listPacijenti.SelectedItem, (Doktor)listDoktori.SelectedItem, (Prostorija)listProstorija.SelectedItem))
+            {
+                MessageBox.Show("Izabrani termin nije dostupan. ");
+                return;
+            }
+            */
+            TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, (Doktor)listDoktori.SelectedItem, (Pacijent)listPacijenti.SelectedItem, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTipTermina.SelectedItem);
+           
 
 
             this.Close();

@@ -22,6 +22,7 @@ namespace BolnicaSims.View.EditView
         public RenoviranjeProstorije()
         {
             InitializeComponent();
+            
             listRenoviranja.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.renoviranja;
             txtBlock1.Text = ProstorijeStorage.Instance.selektovanaProstorija.Naziv;
         }

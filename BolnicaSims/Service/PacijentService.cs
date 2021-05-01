@@ -122,7 +122,7 @@ namespace BolnicaSims.Service
         {
             foreach (Pacijent p in PacijentiStorage.Instance.pacijenti)
             {
-                if (p.korisnik.Username + p.korisnik.Password == pacijent.korisnik.Username + pacijent.korisnik.Password)
+                if (p.zdravstveniKarton.BrojKartona == pacijent.zdravstveniKarton.BrojKartona)
                 {
                     return p;
                 }

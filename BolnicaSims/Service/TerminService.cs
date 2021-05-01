@@ -149,21 +149,7 @@ namespace BolnicaSims.Service
                 DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);                                            
                 PacijentService.Instance.getPacijent(pacijent).termini.Add(tempTermin);
 
-                NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, tempTermin);
-                /*
-                switch(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
-                {
-                    case "Pacijent":
-                        NotificationService.Instance.sendAppointmentNotification("Zakazan termin", pacijent, "Zakazan je termin kod doktora" + doktor, tempTermin);
-                        break;
-                    case "Sekretar":
-                        NotificationService.Instance.sendAppointmentNotification("Zakazan termin", "Sekretar", "Zakazan je termin", tempTermin);
-                        break;
-                    case "Doktor":
-                        NotificationService.Instance.sendAppointmentNotification("Zakazan termin", doktor, "Zakazan je termin kod pacijenta" + pacijent, tempTermin);
-                        break;
-                }
-                */
+                NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, tempTermin);               
                
                 TerminStorage.Instance.Read().Add(tempTermin);
                 TerminStorage.Instance.Save();
@@ -174,94 +160,41 @@ namespace BolnicaSims.Service
             else MessageBox.Show("Termin je vec zauzet");
 
         }
-        public void dodajTerminAdvanced(DateTime vremeTermina, String trajanje, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
+        public void dodajTerminAdvanced(DateTime vremeTermina, DateTime kraj, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
         {
-            if (slobodanTermin(vremeTermina.ToString(), doktor.korisnik.ImePrezime))
-            {
-                DateTime kraj = vremeTermina.AddMinutes(int.Parse(trajanje));
-                Termin temp = new Termin(GenID(), vremeTermina, kraj, doktor, pacijent, doktor.korisnik.ImePrezime, pacijent.korisnik.ImePrezime);
-                temp.prostorija = prostorija;
-                temp.TipTermina = tip;
-                TerminStorage.Instance.termini.Add(temp);
-                DoktorService.Instance.getDoktor(doktor).termini.Add(temp);
-                PacijentService.Instance.getPacijent(pacijent).termini.Add(temp);
-                ProstorijaService.Instance.getProstorija(prostorija).termini.Add(temp);
-                NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, temp);
-                TerminStorage.Instance.Save();
-                DoktoriStorage.Instance.Save();
-                PacijentiStorage.Instance.Save();
-                KorisniciStorage.Instance.Save();
-                ProstorijeStorage.Instance.Save();
-            }
-            else
-            {
-                MessageBox.Show("Termin je zauzet.");
-            }
+                      
+            Termin temp = new Termin(GenID(), vremeTermina, kraj, doktor, pacijent, doktor.korisnik.ImePrezime, pacijent.korisnik.ImePrezime);
+            temp.prostorija = prostorija;
+            temp.TipTermina = tip;
+            TerminStorage.Instance.termini.Add(temp);
+            DoktorService.Instance.getDoktor(doktor).termini.Add(temp);
+            PacijentService.Instance.getPacijent(pacijent).termini.Add(temp);
+            ProstorijaService.Instance.getProstorija(prostorija).termini.Add(temp);
+            NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, temp);
+            TerminStorage.Instance.Save();
+            DoktoriStorage.Instance.Save();
+            PacijentiStorage.Instance.Save();
+            KorisniciStorage.Instance.Save();
+            ProstorijeStorage.Instance.Save();
+           
         }
 
         public void ukloniTermin(Termin t)
         {
             TerminStorage.Instance.termini.Remove(t);
-            t.doktor.termini.Remove(t);
-            t.pacijent.termini.Remove(t);
+            DoktorService.Instance.getDoktor(t.doktor).termini.Remove(t);
+            PacijentService.Instance.getPacijent(t.pacijent).termini.Remove(t);
+            if (t.prostorija != null)
+            {
+                ProstorijaService.Instance.getProstorija(t.prostorija).termini.Remove(t);
+            }
             TerminStorage.Instance.Save();
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
+            ProstorijeStorage.Instance.Save();
             NotificationService.Instance.handleNotificationsRemoveTermin(KorisniciStorage.Instance.ulogovaniKorisnik, t);
             KorisniciStorage.Instance.Save();
-            /*
-            if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
-            {
-                Notifikacija n1 = new Notifikacija("Otkazan termin", t.ImePrezimePacijenta, "Otkazan je termin kod doktora:  " + t.ImePrezimeDoktora);
-
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if (k.Zvanje == "Sekretar")
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimeDoktora)
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-            }
-            else if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
-            {
-                Notifikacija n1 = new Notifikacija("Otkazan termin", "Sekretar", "Otkazan je termin kod pacijenta:  " + t.ImePrezimePacijenta);
-                Notifikacija n2 = new Notifikacija("Otkazan termin", "Sekretar", "Otkazan je termin kod doktora:  " + t.ImePrezimeDoktora);
-
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimePacijenta)
-                    {
-                        k.Notifikacije.Add(n2);
-                    }
-                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimeDoktora)
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-
-            }
-            else
-            {
-                Notifikacija n1 = new Notifikacija("Otkazan termin", t.ImePrezimeDoktora, "Otkazan je termin kod pacijenta:  " + t.ImePrezimePacijenta);
-
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if ((k.Ime + " " + k.Prezime) == t.ImePrezimePacijenta)
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                    if (k.Zvanje == "Sekretar")
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-
-            }
-            */
+            
         }
         public Boolean slobodanTermin(String vreme,String doktor)
         {
@@ -278,8 +211,65 @@ namespace BolnicaSims.Service
             }
             return true;
         }
-
-
+        public Boolean slobodanTerminAdvanced(DateTime pocetak, DateTime kraj,Pacijent pacijent, Doktor doktor, Prostorija prostorija)
+        {
+            foreach (Termin t in TerminStorage.Instance.termini)
+            {
+                if((doktor.korisnik.Jmbg == t.doktor.korisnik.Jmbg)||(pacijent.korisnik.Jmbg == t.pacijent.korisnik.Jmbg) || (prostorija.Naziv == t.prostorija.Naziv))
+                {
+                    if((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                    {
+                        return false;
+                    }
+                }
+               
+            }
+            
+                
+            return true;
+        }
+        public Boolean slobodanDoktor(DateTime pocetak, DateTime kraj, Doktor doktor)
+        {
+            foreach (Termin t in TerminStorage.Instance.termini)
+            {
+                if (doktor.korisnik.Jmbg == t.doktor.korisnik.Jmbg)
+                {
+                    if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public Boolean slobodanPacijent(DateTime pocetak, DateTime kraj, Pacijent pacijent)
+        {
+            foreach (Termin t in TerminStorage.Instance.termini)
+            {
+                if (pacijent.zdravstveniKarton.BrojKartona == t.pacijent.zdravstveniKarton.BrojKartona)
+                {
+                    if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        public Boolean slobodnaProstorija(DateTime pocetak, DateTime kraj, Prostorija prostorija)
+        {
+            foreach (Termin t in TerminStorage.Instance.termini)
+            {
+                if (prostorija.Naziv == t.prostorija.Naziv)
+                {
+                    if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
 
         public String GenID()
         {
