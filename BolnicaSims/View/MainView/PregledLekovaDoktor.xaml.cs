@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using BolnicaSims.View.EditView;
 using System;
 using System.Collections.Generic;
@@ -45,8 +46,17 @@ namespace BolnicaSims.View.MainView
 
         private void button_Izmeni_Click(object sender, RoutedEventArgs e)
         {
-            //ar s = new IzmenaLeka();
-            //s.Show();
+            if (dataGridLekovi.SelectedItem is Lek)
+            {
+                LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
+                var s = new IzmenaLeka();
+                s.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran lek za izmenu");
+                return;
+            }
         }
     }
 }

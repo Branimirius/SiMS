@@ -29,6 +29,7 @@ namespace BolnicaSims.Storage
         public ObservableCollection<Lek> lekovi = new ObservableCollection<Lek>();
         public ObservableCollection<String> lekoviImena = new ObservableCollection<String>();
         public ObservableCollection<Lek> neverifikovaniLekovi = new ObservableCollection<Lek>();
+        public Lek selektovanLek;
 
         public LekoviStorage()
         {
