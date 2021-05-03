@@ -21,6 +21,7 @@ namespace BolnicaSims.Controller
                 return instance;
             }
         }
+  
         public void izmeniTermin(Termin termin)
         {
             TerminService.Instance.izmeniTermin(termin);

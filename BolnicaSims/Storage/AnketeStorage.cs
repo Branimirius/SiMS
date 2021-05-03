@@ -32,7 +32,7 @@ namespace BolnicaSims.Storage
 
         public AnketeStorage()
         {
-
+         //   this.Save();
             ankete = this.Load();
 
 

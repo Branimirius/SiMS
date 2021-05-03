@@ -49,6 +49,7 @@ namespace BolnicaSims
             InitializeComponent();
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
             dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
+
             //pacRecepti = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
         }
 
@@ -115,6 +116,7 @@ namespace BolnicaSims
         {
             var s = new AnketaDoktor();
             s.Show();
+        
         }
     }
 }

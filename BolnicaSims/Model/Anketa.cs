@@ -10,7 +10,7 @@ namespace BolnicaSims.Model
     {
         public Pacijent Pacijent { get; set; }
 
-        public Doktor Doktor { get; set; }
+        public String Doktor { get; set; }
 
         public String Ocena { get; set; }
 
@@ -20,7 +20,7 @@ namespace BolnicaSims.Model
 
 
 
-        public Anketa(Pacijent pacijent, Doktor doktor, String ocena, String komentar)
+        public Anketa(String doktor, String ocena, String komentar,Pacijent pacijent)
         {
             Pacijent = pacijent;
             Doktor = doktor;

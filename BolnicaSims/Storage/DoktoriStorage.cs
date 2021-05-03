@@ -30,6 +30,7 @@ namespace BolnicaSims.Storage
 
         public ObservableCollection<Doktor> doktori = new ObservableCollection<Doktor>();
         public ObservableCollection<String> doktoriImena = new ObservableCollection<String>();
+        public ObservableCollection<String> doktoriAnketa = new ObservableCollection<String>();
 
         public DoktoriStorage()
         {
