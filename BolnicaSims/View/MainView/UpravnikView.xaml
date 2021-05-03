@@ -10,7 +10,7 @@
     <Grid>
         <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Margin="0,134,0,0">
             <TabItem Name="prostorijeTab" Header="Prostorije">
-                <Grid Background="#FFE5E5E5" Height="395">
+                <Grid Background="#FFE5E5E5" Height="400">
                     <DataGrid x:Name="dataGridProstorije" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
                       SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                       Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="290" FontSize="9">
@@ -28,12 +28,14 @@
                     <Button Content="Detalji" Click="DetaljiProstorija_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Radovi" Click="RenoviranjeProstorija_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Izvestaj" Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2"/>
-                    <TextBox Name="txtPretragaProstorije" TextChanged="txtPretragaProstorije_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="140,0,-1,365"/>
+                    <WrapPanel Margin="133,0,10,348">
+                        <TextBox x:Name="txtPretragaProstorije" TextChanged="txtPretragaProstorije_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
 
+                    </WrapPanel>
                 </Grid>
             </TabItem>
             <TabItem Name="osobljeTab" Header="Osoblje">
-                <Grid Background="#FFE5E5E5" Height="405">
+                <Grid Background="#FFE5E5E5" Height="400">
 
                     <DataGrid x:Name="dataGridOsoblje" ItemsSource="{Binding Korisnici}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -52,12 +54,14 @@
                     <Button Content="Detalji" Click="DetaljiOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Transfer" Click="TransferOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Izvestaj" Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
-                    <TextBox Name="txtPretragaOsoblje" TextChanged="txtPretragaOsoblje_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,375"/>
+                    <WrapPanel Margin="133,0,10,358">
+                        <TextBox Name="txtPretragaOsoblje" TextChanged="txtPretragaOsoblje_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
 
+                    </WrapPanel>
                 </Grid>
             </TabItem>
             <TabItem Name="InventarTab" Header="Inventar">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Height="400">
 
                     <DataGrid x:Name="dataGridInventar" ItemsSource="{Binding Inventar}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -76,13 +80,15 @@
                     <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Izvestaj" Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
-                    <TextBox Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,375"/>
-                    <CheckBox Name="checkStaticka" Checked="checkStaticka_Checked" Unchecked="checkStaticka_Unchecked" Content="S" IsChecked="False" Margin="109,7,160,365" FontSize="9" />
-                    <CheckBox Name="checkDinamicka" Checked="checkDinamicka_Checked" Unchecked="checkDinamicka_Unchecked" Content="D" IsChecked="False" Margin="64,7,200,365" FontSize="9" />
+                    <WrapPanel Margin="51,0,10,359">
+                        <CheckBox Name="checkDinamicka" Checked="checkDinamicka_Checked" Unchecked="checkDinamicka_Unchecked" Content="D" IsChecked="False" FontSize="9" Width="40" />
+                        <CheckBox Name="checkStaticka" Checked="checkStaticka_Checked" Unchecked="checkStaticka_Unchecked" Content="S" IsChecked="False" FontSize="9" Width="40" />
+                        <TextBox Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="30" Width="150"/>
+                    </WrapPanel>
                 </Grid>
             </TabItem>
             <TabItem Name="lekoviTab" Header="Lekovi">
-                <Grid Background="#FFE5E5E5">
+                <Grid Background="#FFE5E5E5" Height="400">
 
                     <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -102,13 +108,24 @@
                     <Button Content="Detalji" Click="DetaljiLekovi_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Transfer" Click="TransferLekovi_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
                     <Button Content="Izvestaj" Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
-                    <TextBox Name="txtPretragaLekovi" TextChanged="txtPretragaLekovi_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="150" Margin="139,0,0,364"/>
+                    <WrapPanel Margin="133,0,10,364">
+                        <TextBox Name="txtPretragaLekovi" TextChanged="txtPretragaLekovi_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166"/>
 
+                    </WrapPanel>
                 </Grid>
             </TabItem>
         </TabControl>
-        <Label Content="Ivan Ivanovic" FontSize="11" Margin="0,90,192,423"/>
-        <Button Content="Odjavi se" Click ="ButtonOdjavi_Click" FontSize="9" Margin="10,23,217,494"/>
+        <StackPanel Margin="0,0,0,440">
+            <WrapPanel Height="30">
+                <Button Content="Odjavi se" Click ="ButtonOdjavi_Click" FontSize="9"  Height="30" Width="50"/>
+            </WrapPanel>
+            <WrapPanel Height="70"/>
+            <WrapPanel Height="30">
+                <Label Content="Ivan Ivanovic" FontSize="11"/>
+            </WrapPanel>
+
+        </StackPanel>
+        
 
     </Grid>
 
