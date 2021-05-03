@@ -41,7 +41,7 @@ namespace BolnicaSims.Model
                 Kolicina = int.Parse(kolicina);
             }
             IdLeka = Id;
-            Verifikovan = false;
+            Verifikovan = verifikovan;
         }
 
     }
