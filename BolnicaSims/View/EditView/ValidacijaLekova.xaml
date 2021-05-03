@@ -28,14 +28,18 @@
                 </ListView>
             </WrapPanel>
             <WrapPanel Height="20"/>
-            <WrapPanel Width="233" >
+            <WrapPanel Width="250" >
                 <Button x:Name="verifikujBtn" Click="verifikujBtn_Click" Content="Odobri" Width="50" Height="40"  />
-                <TextBlock Text="" Width="102"/>
+                <TextBlock Text="" Width="20"/>
+                <Button x:Name="odbiVerifikacijuBtn" Content="Odbij" Width="50" Click="odbiVerifikacijuBtn_Click"/>
+                <TextBlock Text="" Width="80"/>
                 <Button x:Name="zavrsiBtn" Click="zavrsiBtn_Click" Content="Zavrsi" Width="50" Height="40"  />
+                
             </WrapPanel>
             <WrapPanel Width="162" >
                 
             </WrapPanel>
+            
         </StackPanel>
         
         <Label Content="VERIFIKACIJA LEKOVA" HorizontalAlignment ="Center" FontSize="15" Margin="0,0,0,382"/>

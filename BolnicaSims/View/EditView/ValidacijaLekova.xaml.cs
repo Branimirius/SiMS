@@ -42,5 +42,17 @@ namespace BolnicaSims.View.EditView
         {
             this.Close();
         }
+
+        private void odbiVerifikacijuBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (listViewVerifikacija.SelectedItem != null)
+            {
+                LekoviController.Instance.odbijanjeLeka((Lek)listViewVerifikacija.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran lek iz liste.");
+            }
+        }
     }
 }

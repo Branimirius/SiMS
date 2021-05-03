@@ -29,5 +29,9 @@ namespace BolnicaSims.Controller
         {
             LekoviService.Instance.validacijaLeka(lek);
         }
+        public void odbijanjeLeka(Lek lek)
+        {
+            LekoviService.Instance.odbijanjeLeka(lek);
+        }
     }
 }
