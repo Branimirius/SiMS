@@ -22,6 +22,14 @@
         <TextBox x:Name="txtKolicina" Height="25" Width="100" Margin="410,244,290,165" />
         <Button x:Name="btnPotvrdi" Click="btnPotvrdi_Click" Content="Potvrdi" Height="40" Width="50" Margin="300,349,450,45" />
         <Button x:Name="btnOdustani" Click="btnOdustani_Click" Content="Odustani" Height="40" Width="50" Margin="425,349,325,45" />
+        <StackPanel Margin="271,76,421,116">
+            <TextBlock Text="Naziv Leka:" Height="45" />
+            <TextBlock Text="Proizvodjac:" Height="38" />
+            <TextBlock Text="Doza" Height="41" />
+            <TextBlock Text="Alergen:" Height="39" />
+            <TextBlock Text="Kolicina" Height="45" />
+            <CheckBox Content="Verifikovan" Name ="CheckBox"/>
+        </StackPanel>
 
     </Grid>
 </Window>
