@@ -2,6 +2,7 @@
 using BolnicaSims.Model;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
+using BolnicaSims.View.AddView;
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
 using Model;
@@ -110,5 +111,10 @@ namespace BolnicaSims
             s.Show();
         }
 
+        private void Button_Click_Anketa(object sender, RoutedEventArgs e)
+        {
+            var s = new AnketaDoktor();
+            s.Show();
+        }
     }
 }

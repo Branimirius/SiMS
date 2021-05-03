@@ -160,6 +160,10 @@ namespace BolnicaSims.Service
             else MessageBox.Show("Termin je vec zauzet");
 
         }
+
+      
+
+
         public void dodajTerminAdvanced(DateTime vremeTermina, DateTime kraj, Doktor doktor, Pacijent pacijent, Prostorija prostorija, TipTermina tip)
         {
                       

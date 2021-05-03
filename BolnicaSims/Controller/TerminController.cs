@@ -29,6 +29,7 @@ namespace BolnicaSims.Controller
         {           
             TerminService.Instance.dodajTermin(vreme, doktor, pacijent);               
         }
+    
         public void ukloniTermin(Termin t)
         {
             TerminService.Instance.ukloniTermin(t);
