@@ -25,15 +25,18 @@ namespace BolnicaSims.View.EditView
             InitializeComponent();
             listOdrediste.ItemsSource = ProstorijeStorage.Instance.prostorije;
             datePocetak.SelectedDate = TerminStorage.Instance.selektovanTermin.VremeTermina;
+            txtSati.Text = TerminStorage.Instance.selektovanTermin.VremeTermina.Hour.ToString();
+            txtMinuti.Text = TerminStorage.Instance.selektovanTermin.VremeTermina.Minute.ToString();
             comboTip.ItemsSource = Enum.GetValues(typeof(TipTermina));
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
             Termin tempTermin = new Termin();
-
+            TimeSpan ts = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
             tempTermin = TerminStorage.Instance.selektovanTermin;
             tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
+            tempTermin.VremeTermina = tempTermin.VremeTermina.Add(ts);
             if (txtBox1.Text != String.Empty)
             {
                 tempTermin.KrajTermina = tempTermin.VremeTermina.AddMinutes(int.Parse(txtBox1.Text));
