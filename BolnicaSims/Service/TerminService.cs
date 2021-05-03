@@ -42,10 +42,15 @@ namespace BolnicaSims.Service
                     }
                     TerminStorage.Instance.termini[i].ImePrezimePacijenta = termin.ImePrezimePacijenta;
                     TerminStorage.Instance.termini[i].KrajTermina = termin.KrajTermina;
-                    TerminStorage.Instance.termini[i].prostorija = termin.prostorija;
+                    if(termin.prostorija != null)
+                    {
+                        TerminStorage.Instance.termini[i].prostorija = termin.prostorija;
+                        TerminStorage.Instance.termini[i].TipTermina = termin.TipTermina;
+                    }
+                    
                     TerminStorage.Instance.termini[i].pacijent = termin.pacijent;
                     TerminStorage.Instance.termini[i].doktor = termin.doktor;
-                    TerminStorage.Instance.termini[i].TipTermina = termin.TipTermina;
+                    
                 
                 }
                 
@@ -97,7 +102,10 @@ namespace BolnicaSims.Service
                 }
             }
 
-            ProstorijaService.Instance.getProstorija(termin.prostorija).termini.Add(termin);
+            if (termin.prostorija != null)
+            {
+                ProstorijaService.Instance.getProstorija(termin.prostorija).termini.Add(termin);
+            }
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
             NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);

@@ -8,7 +8,7 @@
         Title="TransferInventar" Height="420" Width="310">
     <Grid>
         <Label Content="TANSFER INVENTARA" HorizontalAlignment="Center" FontSize="13" Margin="0,0,0,373"/>
-        <ScrollViewer>
+        <ScrollViewer Margin="0,0,0,-83">
             <Grid Height="481">
                 <TextBlock Text="Trenutna Prostorija: " Height="20" Width="120" Margin="10,82,143,367" />
                 <TextBlock x:Name="txtProstorija" Text="Naziv" Height="20" Width="120" Margin="135,82,18,367" />
@@ -28,9 +28,15 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <TextBlock Text="Vreme:" Height="30" Width="40" FontSize="10" Margin="10,400,223,51" />
-                <TextBox x:Name="txtBoxVreme" Height="30" Width="60" FontSize="10" Margin="69,400,144,51"/>
-                <DatePicker Height="30" Width="120" FontSize="10" Margin="134,400,19,51"/>
+                <WrapPanel Margin="0,400,0,51">
+                    <TextBlock Text="Vreme:" Height="30" TextAlignment="Right" Width="69" FontSize="10"/>
+                    <TextBox x:Name="txtBoxVreme" Height="30" Width="26" FontSize="10" />
+                    <TextBox x:Name="txtBoxVremeMinuti" Height="30" Width="26" FontSize="10" />
+                    <DatePicker Name="datumInventar" Height="30" Width="140" FontSize="10" />
+                </WrapPanel>
+                
+                
+                
                 <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" Width="50" Height="30" FontSize="10" Margin="45,441,178,10"/>
                 <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Width="50" Height="30" FontSize="10" Margin="171,441,52,10"/>
             </Grid>

@@ -54,7 +54,7 @@ namespace BolnicaSims
                 MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
                 return;
             }
-
+            tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
             TerminController.Instance.izmeniTermin(tempTermin);
             //CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridProstorije.ItemsSource).Refresh();
             switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)

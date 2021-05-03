@@ -28,20 +28,54 @@ namespace BolnicaSims.View.TransferView
             txtInventar.Text = InventarStorage.Instance.selektovaniInventar.Naziv;
             txtProstorija.Text = InventarStorage.Instance.selektovaniInventar.prostorija.Naziv;
             txtKolicina.Text = InventarStorage.Instance.selektovaniInventar.Kolicina.ToString();
+            if (!InventarStorage.Instance.selektovaniInventar.Staticki)
+            {
+                txtBoxVreme.IsEnabled = false;
+                txtBoxVremeMinuti.IsEnabled = false;
+                datumInventar.IsEnabled = false;
+            }
+            else
+            {
+                txtBoxVreme.IsEnabled = true;
+                txtBoxVremeMinuti.IsEnabled = true;
+                datumInventar.IsEnabled = true;
+            }
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+            if(datumInventar.IsEnabled)
+            {
+                if(datumInventar.SelectedDate == null || txtBoxVreme.Text == String.Empty)
+                {
+                    MessageBox.Show("Nisu uneti datum i vreme.");
+                    return;
+                }
+                DateTime vreme = (DateTime)datumInventar.SelectedDate;
+                TimeSpan ts = new TimeSpan(int.Parse(txtBoxVreme.Text), int.Parse(txtBoxVremeMinuti.Text), 0);
+                DateTime vremeSati = vreme.Add(ts);
+                if (!TerminController.Instance.slobodnaProstorija(vremeSati, vremeSati, (Prostorija)listOdrediste.SelectedItem))
+                {
+                    MessageBox.Show("Prostorija nije slobodna u izabrano vreme.");
+                    return;
+                }
+                if (ProstorijaController.Instance.prostorijaRadovi(vremeSati, vremeSati, (Prostorija)listOdrediste.SelectedItem))
+                {
+                    MessageBox.Show("Prostorija se renovira u izabrano vreme.");
+                    return;
+                }
+            }         
+            
             if (int.Parse(txtBoxKolicina.Text) > InventarStorage.Instance.selektovaniInventar.Kolicina)
             {
                 MessageBox.Show("Izabrana kolicina je prevelika.");
+                return;
             }
-            else
-            {
-                InventarController.Instance.transferujInventar(int.Parse(txtBoxKolicina.Text), (Prostorija)listOdrediste.SelectedItem);
-                CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridInventar.ItemsSource).Refresh();
-                this.Close();
-            }
+            
+            InventarController.Instance.transferujInventar(int.Parse(txtBoxKolicina.Text), (Prostorija)listOdrediste.SelectedItem);
+            CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridInventar.ItemsSource).Refresh();
+            this.Close();
+            
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
