@@ -28,8 +28,15 @@ namespace BolnicaSims.View.EditView
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
-        {                     
-            RenoviranjeController.Instance.zakaziRenoviranje((DateTime)datePocetak.SelectedDate, int.Parse(txtTrajanje.Text), ProstorijeStorage.Instance.selektovanaProstorija);
+        {     
+            DateTime pocetak = (DateTime)datePocetak.SelectedDate;
+            DateTime krajRenoviranja = pocetak.AddDays(int.Parse(txtTrajanje.Text));
+            if(!TerminController.Instance.slobodnaProstorija(pocetak, krajRenoviranja, ProstorijeStorage.Instance.selektovanaProstorija))
+            {
+                MessageBox.Show("Prostorija je zauzeta u izabrano vreme.");
+                return;
+            }
+            RenoviranjeController.Instance.zakaziRenoviranje(pocetak, int.Parse(txtTrajanje.Text), ProstorijeStorage.Instance.selektovanaProstorija);
             this.Close();
         }
 
