@@ -121,5 +121,10 @@ namespace BolnicaSims
             var s = new PregledKartona();
             s.Show();
         }
+
+        private void dataGridSopstveniTermini_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

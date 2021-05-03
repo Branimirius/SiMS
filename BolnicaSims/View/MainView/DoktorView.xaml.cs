@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.View.EditView;
+using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,12 @@ namespace BolnicaSims
         private void validacijaBtn_Click(object sender, RoutedEventArgs e)
         {
             var s = new ValidacijaLekova();
+            s.Show();
+        }
+
+        private void ManualColumns_Click2(object sender, RoutedEventArgs e)
+        {
+            var s = new PregledLekovaDoktor();
             s.Show();
         }
     }

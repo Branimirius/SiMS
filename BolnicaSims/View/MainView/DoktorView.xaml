@@ -13,6 +13,7 @@
         </Menu>
         <Button Content="Obavestenja" Click ="Button_Click" Margin="584,10,130,374"/>
         <Button Name="validacijaBtn" Content="Validacija leka" Click ="validacijaBtn_Click" Margin="479,10,235,374"/>
+        <MenuItem x:Name="dataGridDoktor_Copy" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Margin="-25,63,556,305" />
 
     </Grid>
 </Window>
