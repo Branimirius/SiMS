@@ -19,6 +19,8 @@ namespace Model
 
         public ObservableCollection<Recept> recepti { get; set; }
 
+        public int brojOdradjenihPregleda { get; set; }
+
 
         public Pacijent(Korisnik korisnik, ZdravstveniKarton zdravstveniKarton)
       {
@@ -26,10 +28,12 @@ namespace Model
             this.zdravstveniKarton = zdravstveniKarton;
             termini =new ObservableCollection<Termin>();
             recepti = new ObservableCollection<Recept>();
+            brojOdradjenihPregleda = 0;
         }
 
       public Pacijent()
       {
+            brojOdradjenihPregleda = 0;
             korisnik = null;
             zdravstveniKarton = null;
             termini = new ObservableCollection<Termin>();

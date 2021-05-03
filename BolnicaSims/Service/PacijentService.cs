@@ -154,6 +154,18 @@ namespace BolnicaSims.Service
             }
             return a.ToString();
         }
+
+        public void zabeleziOdradjenePreglede()
+        {
+
+            foreach (Termin t in PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini)
+            {
+                if (TerminService.Instance.terminOdradjen(t) == true)
+                {
+                    PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda++;
+                }
+            }
+        }
         
     }
 }

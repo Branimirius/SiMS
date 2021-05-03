@@ -27,5 +27,12 @@ namespace BolnicaSims.Model
             Ocena = ocena;
             Komentar = komentar;
         }
+        public Anketa (String ocena, String komentar, Pacijent pacijent)
+        {
+            Pacijent = pacijent;
+            Doktor = null;
+            Ocena = ocena;
+            Komentar = komentar;
+        }
     }
 }

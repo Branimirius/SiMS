@@ -52,7 +52,8 @@
             </TabItem>
 
         </TabControl>
-        <Button Content="Obavestenja" Click="ButtonObavestenja_Click" Margin="540,10,154,412"/>
-        <Button Content="Anketa" HorizontalAlignment="Left" Margin="663,10,0,0" VerticalAlignment="Top" Width="96" Height="28" Click="Button_Click_Anketa"/>
+        <Button Content="Obavestenja" Click="ButtonObavestenja_Click" Margin="442,10,252,412"/>
+        <Button Content="Anketa doktor" HorizontalAlignment="Left" Margin="560,10,0,0" VerticalAlignment="Top" Width="96" Height="28" Click="Button_Click_AnketaDoktor"/>
+        <Button x:Name="btnAnketaBolnica" Content="Anketa bolnica" HorizontalAlignment="Left" Margin="673,10,0,0" VerticalAlignment="Top" Width="96" Height="28" Click="Button_Click_AnketaBolnica"/>
     </Grid>
 </Window>

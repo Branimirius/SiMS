@@ -42,7 +42,7 @@ namespace BolnicaSims.Service
             {
                 foreach(DateTime d in vremeUzimanja(recept))
                 {
-                    if(DateTime.Now >= d && DateTime.Now <= d.AddHours(2))
+                    if(DateTime.Now >= d || DateTime.Now <= d.AddHours(2))
                     {
                         NotificationService.Instance.sendDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, recept);
                     }

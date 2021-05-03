@@ -47,10 +47,22 @@ namespace BolnicaSims
         public PacijentView()
         {
             InitializeComponent();
+         
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
             dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
+            PacijentService.Instance.zabeleziOdradjenePreglede();
 
-            //pacRecepti = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
+
+
+            if (PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda  == 3)
+            {
+                btnAnketaBolnica.IsEnabled = true;
+            }
+            else
+            {
+                btnAnketaBolnica.IsEnabled = false;
+            }
+            
         }
 
     
@@ -112,11 +124,17 @@ namespace BolnicaSims
             s.Show();
         }
 
-        private void Button_Click_Anketa(object sender, RoutedEventArgs e)
+        private void Button_Click_AnketaDoktor(object sender, RoutedEventArgs e)
         {
             var s = new AnketaDoktor();
             s.Show();
         
+        }
+
+        private void Button_Click_AnketaBolnica(object sender, RoutedEventArgs e)
+        {
+           // var s = new AnketaBolnica();
+          //  s.Show();
         }
     }
 }

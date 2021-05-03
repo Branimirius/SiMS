@@ -25,11 +25,11 @@ namespace BolnicaSims.Service
         public void sendDrugsNotification(Korisnik korisnik,Recept recept)
         {
             Notifikacija n1 = new Notifikacija("Uzmite lek " + recept.Lek, recept.Doktor.korisnik.ImePrezime, "brufen");
-            //PacijentService.Instance.getPacijent(recept.Pacijent).korisnik.Notifikacije.Add(n1);
+           
             foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
             {
                 //k.Notifikacije.Clear();
-                if(k.Jmbg == korisnik.Jmbg)
+                if((k.Ime + " " + k.Prezime) == (korisnik.Ime + " " + korisnik.Prezime))
                 {
                     
                     k.Notifikacije.Add(n1);

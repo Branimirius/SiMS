@@ -158,6 +158,7 @@ namespace BolnicaSims.Service
                 
                 DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);                                            
                 PacijentService.Instance.getPacijent(pacijent).termini.Add(tempTermin);
+               
 
                 NotificationService.Instance.handleNotificationsAddTermin(KorisniciStorage.Instance.ulogovaniKorisnik, tempTermin);               
                
@@ -166,6 +167,8 @@ namespace BolnicaSims.Service
                 DoktoriStorage.Instance.Save();
                 PacijentiStorage.Instance.Save();
                 KorisniciStorage.Instance.Save();
+                PacijentService.Instance.zabeleziOdradjenePreglede();
+
             }
             else MessageBox.Show("Termin je vec zauzet");
 
@@ -297,6 +300,15 @@ namespace BolnicaSims.Service
                 a = int.Parse(TerminStorage.Instance.termini[TerminStorage.Instance.termini.Count - 1].IdTermina) + 1;
             }
             return a.ToString();
+        }
+
+        public Boolean terminOdradjen(Termin termin)
+        {
+            if(DateTime.Now > termin.KrajTermina)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
