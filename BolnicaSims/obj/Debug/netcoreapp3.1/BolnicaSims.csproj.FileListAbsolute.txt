@@ -114,7 +114,6 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\Iz
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\DoktorView.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaProstorija.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaSopstvenihTermina.g.cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTermina.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PacijentView.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\SekretarView.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\UpravnikView.g.cs
@@ -127,7 +126,6 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\Iz
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\DoktorView.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaProstorija.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaSopstvenihTermina.baml
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTermina.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PacijentView.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\SekretarView.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\UpravnikView.baml
@@ -264,3 +262,31 @@ C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\ValidacijaLekova.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\AnketaDoktor.g.cs
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\AnketaDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\AnketaDoktor.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeDoktora.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeInventara.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeLekova.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeOsoblja.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeProstorijePage.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeOsoblja.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeProstorija.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaTerminaAdvanced.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\RenoviranjeProstorije.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\ValidacijaLekova.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeDoktor.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijePacijent.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TransferView\TransferInventar.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\AnketaDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeDoktora.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeInventara.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeLekova.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeOsoblja.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeProstorijePage.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeOsoblja.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeProstorija.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaTerminaAdvanced.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\RenoviranjeProstorije.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\ValidacijaLekova.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijePacijent.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TransferView\TransferInventar.baml

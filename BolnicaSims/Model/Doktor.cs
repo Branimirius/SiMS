@@ -20,17 +20,20 @@ namespace Model
             this.korisnik = korisnik;
             this.termini = new ObservableCollection<Termin>();
         }
-      public Doktor(Korisnik k, Boolean specijalista, Boolean hirurg) 
+      public Doktor(Korisnik k, Boolean specijalista, Boolean hirurg, String specijalizacija) 
         {
             korisnik = k;
             Specijalista = specijalista;
             Hirurg = hirurg;
             termini = new ObservableCollection<Termin>();
+            Specijalizacija = specijalizacija;
         }
         
    
       public Boolean Specijalista { get; set; }
       public Boolean Hirurg { get; set; }
+      public String Specijalizacija { get; set; }
+        
       
         
       

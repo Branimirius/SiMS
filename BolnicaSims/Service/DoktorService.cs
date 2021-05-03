@@ -55,10 +55,10 @@ namespace BolnicaSims.Service
             }
             return null;
         }
-        public void dodajDoktora(String username, String password, String ime, String prezime, String jmbg, String adresa, String telefon, Boolean specijalista, Boolean hirurg, DateTime datumRodjenja, String email)
+        public void dodajDoktora(String username, String password, String ime, String prezime, String jmbg, String adresa, String telefon, Boolean specijalista, Boolean hirurg, DateTime datumRodjenja, String email, String specijalizacija)
         {
             Korisnik k = new Korisnik(username, password, ime, prezime, "Doktor", jmbg, datumRodjenja, adresa, telefon, email);
-            Doktor tempDoktor = new Doktor(k, specijalista, hirurg);
+            Doktor tempDoktor = new Doktor(k, specijalista, hirurg, specijalizacija);
             DoktoriStorage.Instance.Read().Add(tempDoktor);
             DoktoriStorage.Instance.doktoriImena.Add(ime + " " + prezime);
             KorisniciStorage.Instance.Read().Add(k);
