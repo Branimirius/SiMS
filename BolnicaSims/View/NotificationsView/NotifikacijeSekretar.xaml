@@ -14,7 +14,7 @@
                     <WrapPanel>
                         <TextBlock Text="Naslov: "/>
                         <TextBlock Text="{Binding Naslov}" FontWeight="Bold"/>
-                        <TextBlock Text="Posiljalac: "/>
+                        <TextBlock Text="   Posiljalac: "/>
                         <TextBlock Text="{Binding Posiljalac}" FontWeight="Bold"/>
                     </WrapPanel>
                 </DataTemplate>

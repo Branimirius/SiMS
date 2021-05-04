@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Data;
 
 namespace BolnicaSims.Service
 {
@@ -111,43 +112,12 @@ namespace BolnicaSims.Service
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
             NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);
-            /*Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-            if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
-            {
-                Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
 
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if (k.Zvanje == "Sekretar")
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-            }
-            else if(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
-            {
-                Notifikacija n1 = new Notifikacija("Pomeren termin", "Sekretar", "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-
-                termin.pacijent.korisnik.Notifikacije.Add(n1);
-            }
-            else
-            {
-                Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimeDoktora, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-
-                termin.pacijent.korisnik.Notifikacije.Add(n1);
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if (k.Zvanje == "Sekretar")
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-            }
-            */
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
             KorisniciStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
+       
         }
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
@@ -277,13 +247,17 @@ namespace BolnicaSims.Service
         {
             foreach (Termin t in TerminStorage.Instance.termini)
             {
-                if (prostorija.Naziv == t.prostorija.Naziv)
+                if(t.prostorija != null)
                 {
-                    if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                    if (prostorija.Naziv == t.prostorija.Naziv)
                     {
-                        return false;
+                        if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                        {
+                            return false;
+                        }
                     }
                 }
+                
             }
             return true;
         }
@@ -309,6 +283,36 @@ namespace BolnicaSims.Service
                 return true;
             }
             return false;
+        }
+
+        public Boolean proveraPomeranje(Termin termin,String vreme)
+        {
+            DateTime stariTermin = termin.VremeTermina;
+            DateTime noviTermin = DateTime.Parse(vreme);
+            DateTime noviTermin2 = DateTime.Parse(vreme);
+            DateTime noviTermin3 = stariTermin.AddDays(-1);
+            if (DateTime.Now > noviTermin3)
+            {
+                MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
+                return false ;
+            }
+
+            noviTermin = noviTermin.AddDays(2);
+            noviTermin2 = noviTermin2.AddDays(-2);
+
+            if (stariTermin > noviTermin)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
+                return false;
+            }
+            if (stariTermin < noviTermin2)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                return false;
+            }
+
+            return true;
+           
         }
     }
 }

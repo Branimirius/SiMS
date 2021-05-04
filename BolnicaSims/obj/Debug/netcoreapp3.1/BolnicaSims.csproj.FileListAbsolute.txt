@@ -294,5 +294,11 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\Pr
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledLekovaDoktor.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLeka.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLeka.baml
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaAdvanced.g.cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaAdvanced.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\AnketaDoktor.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLeka.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledLekovaDoktor.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\AnketaDoktor.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLeka.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledLekovaDoktor.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeUpravnik.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeUpravnik.baml
