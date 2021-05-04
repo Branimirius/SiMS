@@ -30,14 +30,25 @@ namespace Model
         }
 
         public ObservableCollection<Prostorija> prostorije = new ObservableCollection<Prostorija>();
+        public ObservableCollection<Prostorija> sale = new ObservableCollection<Prostorija>();
+        public ObservableCollection<Prostorija> ordinacije = new ObservableCollection<Prostorija>();
         private String fileLocation = "prostorijeStorage.txt";
         public Prostorija selektovanaProstorija;
         public ProstorijeStorage()
         {
             prostorije = this.Load();
-            /*Prostorija p1 = new Prostorija() { IdProstorije = "33C", Sprat = 3, BrojProstorije = 15 };
-            prostorije.Add(p1);
-            this.Save();*/
+
+            foreach(Prostorija p in prostorije)
+            {
+                if (p.Naziv.Contains("Operaciona Sala"))
+                {
+                    sale.Add(p);
+                }
+                else if (p.Naziv.Contains("Soba"))
+                {
+                    ordinacije.Add(p);
+                }
+            }    
         }
 
         public void Save()

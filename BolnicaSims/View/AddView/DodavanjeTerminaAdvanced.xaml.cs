@@ -23,7 +23,8 @@ namespace BolnicaSims.View.AddView
         {
             InitializeComponent();
             listDoktor.ItemsSource = DoktoriStorage.Instance.specijalisti;
-            listProstorija.ItemsSource = ProstorijeStorage.Instance.Read();
+            //listProstorija.ItemsSource = ProstorijeStorage.Instance.Read();
+            listProstorija.ItemsSource = ProstorijeStorage.Instance.sale;
             comboTip.ItemsSource = Enum.GetValues(typeof(TipTermina));
         }
 
