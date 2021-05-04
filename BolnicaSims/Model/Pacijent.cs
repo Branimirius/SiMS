@@ -21,6 +21,8 @@ namespace Model
 
         public int brojOdradjenihPregleda { get; set; }
 
+        public bool isBanned { get; set; }
+
 
         public Pacijent(Korisnik korisnik, ZdravstveniKarton zdravstveniKarton)
       {
@@ -33,6 +35,7 @@ namespace Model
 
       public Pacijent()
       {
+            isBanned = false;
             brojOdradjenihPregleda = 0;
             korisnik = null;
             zdravstveniKarton = null;

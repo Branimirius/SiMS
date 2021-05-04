@@ -55,5 +55,10 @@ namespace BolnicaSims.Controller
         {
            return TerminService.Instance.slobodanTerminAdvanced(pocetak, kraj, pacijent, doktor, prostorija);
         }
+        public Boolean proveraPomeranja(Termin termin,String vreme)
+        {
+          return  TerminService.Instance.proveraPomeranje(termin, vreme);
+            
+        }
     }
 }
