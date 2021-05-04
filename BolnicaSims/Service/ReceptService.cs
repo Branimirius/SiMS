@@ -26,12 +26,16 @@ namespace BolnicaSims.Service
             List<DateTime> vreme = new List<DateTime>();
             DateTime vreme1 = recept.Kreni.AddHours(-2);
             vreme.Add(vreme1);
-            double sati = 24 / int.Parse(recept.PutaDnevno);
-          
-            for(int i = 0; i < int.Parse(recept.PutaDnevno); i++)
+            double sati = (24 / int.Parse(recept.PutaDnevno));
+            for (int j = 1; j <= int.Parse(recept.KolikoDana); j++)
             {
-                DateTime vreme2 = vreme1.AddHours(sati);
-                vreme.Add(vreme2);
+                for (int i = 1; i < int.Parse(recept.PutaDnevno); i++)
+                {
+
+                    DateTime vremeTemp = vreme1.AddHours(sati * i);
+                    vreme.Add(vremeTemp);
+                }
+                vreme1 = vreme1.AddDays(1);
             }
             return vreme;
         }
@@ -42,7 +46,7 @@ namespace BolnicaSims.Service
             {
                 foreach(DateTime d in vremeUzimanja(recept))
                 {
-                    if(DateTime.Now >= d || DateTime.Now <= d.AddHours(2))
+                    if(DateTime.Now >= d && DateTime.Now <= d.AddHours(2))
                     {
                         NotificationService.Instance.sendDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, recept);
                     }
