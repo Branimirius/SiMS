@@ -46,6 +46,7 @@ namespace BolnicaSims
             //KorisnikController.Instance.izmeniKorisnika(tempKorisnik);
             CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridPacijenti.ItemsSource).Refresh();
             //SekretarView.Instance.dataGridPacijenti.Items.Refresh();
+            //0000
             this.Close();
 
         }
