@@ -123,7 +123,8 @@ namespace BolnicaSims.Service
         public void dodajTermin(String vreme, String doktor, String pacijent)
         {
             if (slobodanTermin(vreme, doktor))
-            {              
+            {  
+                
                 Termin tempTermin = new Termin(GenID(), DateTime.Parse(vreme), DateTime.Parse(vreme), DoktorService.Instance.getDoktor(doktor), PacijentService.Instance.getPacijent(pacijent), doktor, pacijent);
                 
                 DoktorService.Instance.getDoktor(doktor).termini.Add(tempTermin);                                            

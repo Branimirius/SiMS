@@ -30,6 +30,15 @@ namespace BolnicaSims.Controller
             PacijentService.Instance.dodajPacijenta(pacijent);
         }
 
+        public void banujPacijenta(DateTime vreme, Pacijent pacijent)
+        {
+            PacijentService.Instance.banujPacijenta(vreme, pacijent);
+        }
+        public Boolean proveriBan(DateTime trenutnoVreme, Pacijent pacijent)
+        {
+            return PacijentService.Instance.proveriBan(trenutnoVreme, pacijent);
+        }
+
         public Pacijent getUlogovaniPacijent()
         {
             return PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik);

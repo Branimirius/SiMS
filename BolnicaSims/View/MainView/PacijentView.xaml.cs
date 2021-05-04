@@ -43,23 +43,22 @@ namespace BolnicaSims
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
         public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
         public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
+        
 
         public PacijentView()
         {
             InitializeComponent();
-         
-         if(PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).isBanned)
+            
+
+            if(PacijentController.Instance.proveriBan(DateTime.Now, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik)))
             {
                 zakazi.IsEnabled = false;
                 izmeni.IsEnabled = false;
             }
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
-            dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
-            
+            dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;           
             
             PacijentService.Instance.zabeleziOdradjenePreglede();
-            
-
 
             if ((PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda)  % 3 == 0)
             {
@@ -69,7 +68,9 @@ namespace BolnicaSims
             {
                 btnAnketaBolnica.IsEnabled = false;
             }
-            
+
+            PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojZakazivanja = 0;
+
         }
 
     
@@ -81,8 +82,7 @@ namespace BolnicaSims
         }
 
         private void ButtonZakazi_Click(object sender, RoutedEventArgs e)
-        {
-          
+        {            
             var s = new DodavanjePregleda();
             s.Show();
         }

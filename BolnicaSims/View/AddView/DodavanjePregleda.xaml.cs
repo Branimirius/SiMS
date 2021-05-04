@@ -28,15 +28,28 @@ namespace BolnicaSims
         {
             InitializeComponent();
             comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
-         
-          
+            if (!PacijentController.Instance.proveriBan(DateTime.Now, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik)))
+            {
+                dodavanjeBtn.IsEnabled = true;
+                
+            }
+
         }
 
 
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
-           TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
+            PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojZakazivanja++;
+            if(PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojZakazivanja == 3)
+            {
+                MessageBox.Show("Pokusali ste da zakazete previse pregleda. Funkcija vam je onemogucena do sutra, pocevsi od sledeceg logovanja.");
+                PacijentController.Instance.banujPacijenta(DateTime.Now, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
+                dodavanjeBtn.IsEnabled = false;               
+                return;
+                
+            }
+            TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
             this.Close();  
           
         }

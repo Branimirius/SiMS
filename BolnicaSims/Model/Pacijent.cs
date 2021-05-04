@@ -23,6 +23,8 @@ namespace Model
 
         public bool isBanned { get; set; }
 
+        public int brojZakazivanja { get; set; }
+        public DateTime vremeBanovanja { get; set; }
 
         public Pacijent(Korisnik korisnik, ZdravstveniKarton zdravstveniKarton)
       {

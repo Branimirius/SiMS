@@ -105,6 +105,28 @@ namespace BolnicaSims.Service
             PacijentiStorage.Instance.pacijentiImena.Add(pacijent.korisnik.Ime + " " + pacijent.korisnik.Prezime);
             PacijentiStorage.Instance.Save();
         }
+        
+        public void banujPacijenta(DateTime vreme, Pacijent pacijent)
+        {
+            pacijent.isBanned = true;
+            pacijent.vremeBanovanja = vreme;
+            PacijentiStorage.Instance.Save();
+
+        }
+        public Boolean proveriBan(DateTime trenutnoVreme, Pacijent pacijent)
+        {
+            if(pacijent.vremeBanovanja == null)
+            {
+                return false;
+            }
+            if(trenutnoVreme > pacijent.vremeBanovanja.AddDays(1))
+            {
+                return false;
+            }
+            return true;
+        }
+
+
         public Pacijent getUlogovaniPacijent(Korisnik ulogovaniKorisnik)
         {
             foreach(Pacijent p in PacijentiStorage.Instance.pacijenti)
