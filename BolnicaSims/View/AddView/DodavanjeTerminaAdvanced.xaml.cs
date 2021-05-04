@@ -33,7 +33,7 @@ namespace BolnicaSims.View.AddView
             TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
             DateTime pocetak = (DateTime)datePocetak.SelectedDate + vreme;
             DateTime kraj = pocetak.AddMinutes(int.Parse(txtBox1.Text));
-            //TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, KorisniciStorage.Instance.ulogovaniKorisnik, PacijentiStorage.Instance.selektovanPacijent, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTip.SelectedItem);
+            TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, (Doktor)listDoktor.SelectedItem, PacijentiStorage.Instance.selektovanPacijent, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTip.SelectedItem);
             this.Close();
         }
 

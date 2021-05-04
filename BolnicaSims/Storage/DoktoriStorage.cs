@@ -33,6 +33,7 @@ namespace BolnicaSims.Storage
         public ObservableCollection<String> doktoriAnketa = new ObservableCollection<String>();
         public ObservableCollection<Doktor> specijalisti = new ObservableCollection<Doktor>();
 
+
         public DoktoriStorage()
         {
             doktori = this.Load();
