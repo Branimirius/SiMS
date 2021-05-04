@@ -2,6 +2,7 @@
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
 using BolnicaSims.View.EditView;
+using BolnicaSims.View.NotificationsView;
 using BolnicaSims.View.TransferView;
 using Model;
 using System;
@@ -334,6 +335,12 @@ namespace BolnicaSims
             //dataGridInventar.ItemsSource = filteredInventar;
             CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
 
+        }
+
+        private void obavestenjaBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new NotifikacijeUpravnik();
+            s.Show();
         }
     }
 

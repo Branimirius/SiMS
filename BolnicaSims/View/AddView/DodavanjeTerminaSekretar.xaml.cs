@@ -58,7 +58,7 @@ namespace BolnicaSims.View.AddView
             if (!TerminController.Instance.slobodanPacijent(pocetak, kraj, (Pacijent)listPacijenti.SelectedItem)){
                 MessageBox.Show("Pacijent je zauzet u izabranom terminu. ");
                 return;
-            }
+            }           
             if (!TerminController.Instance.slobodnaProstorija(pocetak, kraj, (Prostorija)listProstorija.SelectedItem))
             {
                 MessageBox.Show("Prostorija je zauzeta u izabranom terminu. ");

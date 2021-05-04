@@ -111,39 +111,7 @@ namespace BolnicaSims.Service
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
             NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);
-            /*Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-            if (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
-            {
-                Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimePacijenta, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if (k.Zvanje == "Sekretar")
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-            }
-            else if(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Sekretar")
-            {
-                Notifikacija n1 = new Notifikacija("Pomeren termin", "Sekretar", "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-
-                termin.pacijent.korisnik.Notifikacije.Add(n1);
-            }
-            else
-            {
-                Notifikacija n1 = new Notifikacija("Pomeren termin", termin.ImePrezimeDoktora, "Pomeren je termin kod doktora:  " + termin.ImePrezimeDoktora);
-
-                termin.pacijent.korisnik.Notifikacije.Add(n1);
-                foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
-                {
-                    if (k.Zvanje == "Sekretar")
-                    {
-                        k.Notifikacije.Add(n1);
-                    }
-                }
-            }
-            */
+            
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
             KorisniciStorage.Instance.Save();
@@ -277,13 +245,17 @@ namespace BolnicaSims.Service
         {
             foreach (Termin t in TerminStorage.Instance.termini)
             {
-                if (prostorija.Naziv == t.prostorija.Naziv)
+                if(t.prostorija != null)
                 {
-                    if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                    if (prostorija.Naziv == t.prostorija.Naziv)
                     {
-                        return false;
+                        if ((pocetak >= t.VremeTermina && kraj <= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.VremeTermina) || (pocetak <= t.KrajTermina && kraj >= t.KrajTermina) || (pocetak <= t.VremeTermina && kraj >= t.KrajTermina))
+                        {
+                            return false;
+                        }
                     }
                 }
+                
             }
             return true;
         }
