@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.View.AddView;
+using BolnicaSims.View.EditView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,6 @@ namespace BolnicaSims.View.MainView
             labelPrezime.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
             labelGod.Content = (DateTime.Today.Year - PacijentiStorage.Instance.selektovanPacijent.korisnik.DatumRodjenja.Year).ToString();
             labelPol.Content = "M";
-            //textBox.Text = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Anamneza;
             if (anam != "prazno") 
             {
                 textBox.Text = anam;
@@ -61,6 +61,12 @@ namespace BolnicaSims.View.MainView
         private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
         {
 
+        }
+
+        private void buttonUput_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new DodavanjeTerminaAdvanced();
+            s.Show();
         }
     }
 }

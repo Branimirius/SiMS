@@ -36,17 +36,9 @@ namespace BolnicaSims
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
-         
            TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
+            this.Close();  
           
-   
-
- 
-            
-
-            this.Close();
-            
-            
         }
 
       

@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows;
+using System.Windows.Data;
 
 namespace BolnicaSims.Service
 {
@@ -111,11 +112,12 @@ namespace BolnicaSims.Service
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
             NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);
-            
+
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
             KorisniciStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
+       
         }
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
@@ -281,6 +283,36 @@ namespace BolnicaSims.Service
                 return true;
             }
             return false;
+        }
+
+        public Boolean proveraPomeranje(Termin termin,String vreme)
+        {
+            DateTime stariTermin = termin.VremeTermina;
+            DateTime noviTermin = DateTime.Parse(vreme);
+            DateTime noviTermin2 = DateTime.Parse(vreme);
+            DateTime noviTermin3 = stariTermin.AddDays(-1);
+            if (DateTime.Now > noviTermin3)
+            {
+                MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
+                return false ;
+            }
+
+            noviTermin = noviTermin.AddDays(2);
+            noviTermin2 = noviTermin2.AddDays(-2);
+
+            if (stariTermin > noviTermin)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
+                return false;
+            }
+            if (stariTermin < noviTermin2)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                return false;
+            }
+
+            return true;
+           
         }
     }
 }
