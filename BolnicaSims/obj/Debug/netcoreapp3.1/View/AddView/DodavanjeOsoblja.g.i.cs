@@ -77,7 +77,7 @@ namespace BolnicaSims.View.AddView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/addview/dodavanjeosoblja.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/addview/dodavanjeosoblja.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\AddView\DodavanjeOsoblja.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

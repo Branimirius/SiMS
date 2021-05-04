@@ -125,7 +125,7 @@ namespace BolnicaSims {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/editview/izmenaprostorije.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/editview/izmenaprostorije.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\EditView\IzmenaProstorije.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
