@@ -38,12 +38,6 @@ namespace BolnicaSims.View.MainView
             dataGridLekovi.ItemsSource = LekoviStorage.Instance.Read();
         }
 
-        private void validacijaBtn_Click(object sender, RoutedEventArgs e)
-        {
-            var s = new ValidacijaLekova();
-            s.Show();
-        }
-
         private void button_Izmeni_Click(object sender, RoutedEventArgs e)
         {
             if (dataGridLekovi.SelectedItem is Lek)
