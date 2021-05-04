@@ -26,7 +26,8 @@ namespace BolnicaSims.View.MainView
             labelIme.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime;
             labelPrezime.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
             labelGod.Content = (DateTime.Today.Year - PacijentiStorage.Instance.selektovanPacijent.korisnik.DatumRodjenja.Year).ToString();
-            labelPol.Content = "M";
+            labelPol.Content = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.getPol();
+            textBoxAlergija.Text = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije;
             if (anam != "prazno") 
             {
                 textBox.Text = anam;

@@ -18,8 +18,8 @@
             </Button.RenderTransform>
         </Button>
         <Button x:Name="button1" Content="Odustani" HorizontalAlignment="Left" Margin="487,348,0,0" VerticalAlignment="Top" Click="button1_Click" Height="31" Width="100" RenderTransformOrigin="0.848,0.235"/>
-        <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="265,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.561"/>
-        <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="487,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.601"/>
+        <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="319,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.561"/>
+        <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="537,45,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.601"/>
         <Label x:Name="label" Content="Kreni uzimanje: " HorizontalAlignment="Left" Margin="160,191,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,-0.55"/>
         <Label x:Name="label1" Content="Koliko puta dnevno:" HorizontalAlignment="Center" Margin="0,191,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="148,222,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
@@ -29,6 +29,8 @@
         <Label x:Name="label3" Content="LEK:" HorizontalAlignment="Left" Margin="282,139,0,0" VerticalAlignment="Top"/>
         <ComboBox x:Name="comboBox" HorizontalAlignment="Center" Margin="0,141,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
         <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="105,139,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Pacijent:" HorizontalAlignment="Left" Margin="214,45,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Doktor:" HorizontalAlignment="Left" Margin="461,45,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

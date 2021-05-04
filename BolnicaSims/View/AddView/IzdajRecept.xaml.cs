@@ -24,7 +24,14 @@ namespace BolnicaSims.View.AddView
         public IzdajRecept()
         {
             InitializeComponent();
-            comboBox.ItemsSource = LekoviStorage.Instance.lekoviImena;
+            foreach(Lek l in LekoviStorage.Instance.lekovi)
+            {
+                if (l.Alergija == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije)
+                {
+                    LekoviStorage.Instance.lekoviAlergeni.Remove(l.ImeLeka + " " + l.Doza);
+                }
+            }    
+            comboBox.ItemsSource = LekoviStorage.Instance.lekoviAlergeni;
             labelDoktor.Content = KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime;
             labelPacijent.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime + ' ' + PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
         }
