@@ -36,6 +36,7 @@ namespace BolnicaSims.View.MainView
             {
                 textBox.Text = "Unesite anamnezu....";
             }
+            textBoxAlergija.Text = al;
         }
 
         private void button_recept_Click(object sender, RoutedEventArgs e)
@@ -45,9 +46,11 @@ namespace BolnicaSims.View.MainView
         }
 
         public static string anam = "prazno";
+        public static string al = "";
         private void button_sacuvaj_Click(object sender, RoutedEventArgs e)
         {
             anam = textBox.Text;
+            al = textBox.Text;
             foreach(Pacijent p in PacijentiStorage.Instance.Read()) 
             {
                 if (p == PacijentiStorage.Instance.selektovanPacijent)
