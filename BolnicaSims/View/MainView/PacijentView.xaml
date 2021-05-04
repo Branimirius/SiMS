@@ -22,8 +22,8 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
-                    <Button Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click" Background="#FFFFFDFD"/>
+                    <Button x:Name="zakazi" Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
+                    <Button x:Name="izmeni" Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click" Background="#FFFFFDFD"/>
                     <Button Content="Otkazi" HorizontalAlignment="Left" Height="35" Margin="136,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
                     <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
 

@@ -48,6 +48,11 @@ namespace BolnicaSims
         {
             InitializeComponent();
          
+         if(PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).isBanned)
+            {
+                zakazi.IsEnabled = false;
+                izmeni.IsEnabled = false;
+            }
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
             dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
             
@@ -77,6 +82,7 @@ namespace BolnicaSims
 
         private void ButtonZakazi_Click(object sender, RoutedEventArgs e)
         {
+          
             var s = new DodavanjePregleda();
             s.Show();
         }
