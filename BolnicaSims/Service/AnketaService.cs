@@ -23,11 +23,17 @@ namespace BolnicaSims.Service
         }
 
 
-        public void dodajAnketu(String doktor, String ocena, String komentar, String pacijent)
+        public void dodajAnketuDoktor(String doktor, String ocena, String komentar, String pacijent)
         {
             Anketa tempAnketa = new Anketa(doktor,ocena,komentar, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
 
 
+            AnketeStorage.Instance.Read().Add(tempAnketa);
+            AnketeStorage.Instance.Save();
+        }
+        public void dodajAnketuBolnica(String ocena,String komentar,String pacijent)
+        {
+            Anketa tempAnketa = new Anketa(ocena, komentar, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
             AnketeStorage.Instance.Read().Add(tempAnketa);
             AnketeStorage.Instance.Save();
         }

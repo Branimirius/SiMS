@@ -39,7 +39,7 @@ namespace BolnicaSims.View.AddView
 
         private void Button_Click_Potvrdi(object sender, RoutedEventArgs e)
         {
-            AnketaController.Instance.dodajAnketu((String)comboBoxDoktor.SelectedItem, txtBoxOcena.Text, txtBoxKomentar.Text, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
+            AnketaController.Instance.dodajAnketuDoktor((String)comboBoxDoktor.SelectedItem, txtBoxOcena.Text, txtBoxKomentar.Text, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
             MessageBox.Show("Uspesno ste popunili anketu.");
             this.Close();
         }

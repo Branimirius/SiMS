@@ -20,9 +20,13 @@ namespace BolnicaSims.Controller
                 return instance;
             }
         }
-        public void dodajAnketu(String doktor, String ocena, String komentar, String pacijent)
+        public void dodajAnketuDoktor(String doktor, String ocena, String komentar, String pacijent)
         {
-            AnketaService.Instance.dodajAnketu(doktor, ocena, komentar, pacijent);
+            AnketaService.Instance.dodajAnketuDoktor(doktor, ocena, komentar, pacijent);
+        }
+        public void dodajAnketuBolnica(String ocena,String komentar,String pacijent)
+        {
+            AnketaService.Instance.dodajAnketuBolnica(ocena, komentar, pacijent);
         }
     }
 }

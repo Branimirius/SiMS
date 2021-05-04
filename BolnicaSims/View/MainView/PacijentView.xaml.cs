@@ -135,8 +135,8 @@ namespace BolnicaSims
 
         private void Button_Click_AnketaBolnica(object sender, RoutedEventArgs e)
         {
-           // var s = new AnketaBolnica();
-          //  s.Show();
+            var s = new AnketaBolnica();
+            s.Show();
         }
     }
 }
