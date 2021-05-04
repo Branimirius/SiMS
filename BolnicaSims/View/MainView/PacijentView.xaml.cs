@@ -50,11 +50,13 @@ namespace BolnicaSims
          
             dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
             dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;
+            
+            
             PacijentService.Instance.zabeleziOdradjenePreglede();
+            
 
 
-
-            if (PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda  == 3)
+            if ((PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda)  % 3 == 0)
             {
                 btnAnketaBolnica.IsEnabled = true;
             }

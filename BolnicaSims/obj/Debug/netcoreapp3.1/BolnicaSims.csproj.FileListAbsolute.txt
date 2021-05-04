@@ -302,3 +302,5 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledLekovaDoktor.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeUpravnik.g.cs
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeUpravnik.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaAdvanced.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaAdvanced.baml
