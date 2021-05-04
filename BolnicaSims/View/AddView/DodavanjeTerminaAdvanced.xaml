@@ -1,0 +1,65 @@
+﻿<Window x:Class="BolnicaSims.View.AddView.DodavanjeTerminaAdvanced"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.AddView"
+        mc:Ignorable="d"
+        Title="DodavanjeTerminaAdvanced" Height="450" Width="800">
+    <Grid>
+        <Label Content="ZAKAZI TERMIN" Height=" 30" HorizontalAlignment="Center" FontSize="13" Margin="0,10,0,394"/>
+        <StackPanel Margin="0,45,0,-10">
+            <WrapPanel Height="30" >
+                <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" TextAlignment="Center" Text="Datum i vreme: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" />
+                <DatePicker x:Name="datePocetak" Height="30" Width="142" />
+                <TextBox x:Name="txtSati" Height="30" Width="40" />
+                <TextBox x:Name="txtMinuti" Height="30" Width="40" />
+
+            </WrapPanel>
+            <WrapPanel Height="15" />
+            <WrapPanel Height="170">
+                <TextBlock x:Name="txtBlock2" TextAlignment="Center"  Text="Specijalisti: " TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12" Height="150" Width="143" />
+                <ListView x:Name="listDoktor" SelectionMode="Single" Width="218" Height="170">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="{Binding Specijalizacija}" FontWeight="Bold"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                <TextBlock x:Name="txtBlock2_Copy" TextAlignment="Center"  Text="Prostorija: " TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12" Height="150" Width="143" />
+                <ListView x:Name="listProstorija" SelectionMode="Single" Width="218" Height="170">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Naziv: "/>
+                                <TextBlock Text="{Binding Naziv}" FontWeight="Bold"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </WrapPanel>
+            <WrapPanel Height="15"/>
+            <WrapPanel Height="30">
+                <TextBlock x:Name="txtBlock3" TextAlignment="Center" Text="Trajanje (min):" Height="30" Width="143" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12"/>
+                <TextBox x:Name ="txtBox1" Height="30" Width="120" />
+
+            </WrapPanel>
+            <WrapPanel Height="15"/>
+            <WrapPanel Height="30">
+                <TextBlock x:Name="txtBlock4" TextAlignment="Center" Text="Tip termina:" Height="30" Width="143" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12"/>
+                <ComboBox x:Name="comboTip" Height="30" Width="120" />
+
+            </WrapPanel>
+            <WrapPanel Height="30"/>
+            <WrapPanel Height="64" Width="292">
+                <Button x:Name="izmenaBtn" Content="Izmeni" HorizontalAlignment="Left"  VerticalAlignment="Top"  Height="25" Width="73" Background="White" Click="ButtonIzmeni_Click"/>
+                <TextBlock Width="130"/>
+                <Button x:Name="odustaniBtn" Content="Odustani" Click="odustaniBtn_Click" HorizontalAlignment="Left"  VerticalAlignment="Top"  Height="25" Width="73" Background="White" />
+
+            </WrapPanel>
+        </StackPanel>
+
+    </Grid>
+</Window>

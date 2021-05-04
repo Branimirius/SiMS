@@ -31,21 +31,12 @@ namespace BolnicaSims.Storage
         public ObservableCollection<Doktor> doktori = new ObservableCollection<Doktor>();
         public ObservableCollection<String> doktoriImena = new ObservableCollection<String>();
         public ObservableCollection<String> doktoriAnketa = new ObservableCollection<String>();
+        public ObservableCollection<Doktor> specijalisti = new ObservableCollection<Doktor>();
 
         public DoktoriStorage()
         {
             doktori = this.Load();
 
-           /*
-            Doktor d1 = new Doktor(KorisniciStorage.Instance.korisnici[0]);
-            doktori.Add(d1);
-            //doktoriImena.Add(k1.Ime + " " + k1.Prezime);
-
-            Doktor d2 = new Doktor(KorisniciStorage.Instance.korisnici[1]);
-            doktori.Add(d2);
-           
-            //doktoriImena.Add(k2.Ime + " " + k2.Prezime);
-           */
             Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Doktor d in doktori)
             {
@@ -54,8 +45,13 @@ namespace BolnicaSims.Storage
                 d.korisnik.Notifikacije.Add(n1);
             }
 
-            
-            //this.Save();
+            foreach(Doktor d in doktori)
+            {
+                if (d.Specijalista)
+                {
+                    specijalisti.Add(d);
+                }
+            }
 
         }
         public ObservableCollection<Doktor> Read()

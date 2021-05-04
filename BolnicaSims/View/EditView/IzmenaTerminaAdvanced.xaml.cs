@@ -101,5 +101,6 @@ namespace BolnicaSims.View.EditView
         {
             this.Close();
         }
+
     }
 }
