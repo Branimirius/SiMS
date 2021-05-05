@@ -38,5 +38,9 @@ namespace BolnicaSims.Controller
         {
             LekoviService.Instance.izmeniLek(lek);
         }
+        public void ukloniLek(Lek lek)
+        {
+            LekoviService.Instance.ukloniLek(lek);
+        }
     }
 }
