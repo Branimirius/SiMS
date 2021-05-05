@@ -1,0 +1,9 @@
+Dijagram sekvenci: Sekretar - Zakazivanje termina	
+	Trebalo bi poslati doktoru obavestenje da mu je zakazan temrin.
+	Trebalo bi objektu klase doktor poslati termin u listu termina. 
+Dijagram aktivnosti: Upravnik - malo detaljnije grananje validacije ostalo je dobro
+
+Clean code: Upravnik - previse vremenskih promenljivih u code behindu,grupisati u funkciju a na frontu ostaviti samo message boxove.
+
+
+Napisao: Marko
