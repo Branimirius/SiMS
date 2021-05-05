@@ -1,0 +1,32 @@
+KT3
+Marko - Activity (Pomeranje termina) - Pacijent
+#
+Dodati zahtev za izmenu pregleda.
+Zatvaranje zahteva za izmenu pregleda.
+#
+
+Filip - Activity (Izdavanje recepta) - Lekar
+#
+Detaljnije opisati "activity" korake.
+Treba opisati sta radi sistem a sta korisnik.
+#
+KT4
+Marko - Sequence (Anti Trol) - Pacijent
+#
+Trebalo bi detaljnije predstaviti anti trol funkciju, 
+segmentirati je malo u dijagramu.
+#
+      - Clean Code (pomeranje termina):
+funkcija za proveru unosa je trebalo da bude izdvojena na nacin da
+MessageBox-evi ostanu u code behind-u.
+#
+Filip - Sequence (Zakazivanje kod specijaliste) - Lekar
+#
+Trebalo bi malo detaljnije predstaviti korake kod provere unosa,
+ i trebalo bi uslozniti dijagram.
+      - Clean Code (Izdavanje recepta):
+#
+Konstrukciju objekata raditi u jednoj liniji, a ne atribut po atribut.
+#
+
+Recenziju uradio: Branimir
