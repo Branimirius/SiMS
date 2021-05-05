@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
 using BolnicaSims.View.EditView;
@@ -172,7 +173,9 @@ namespace BolnicaSims
         }
         private void UkloniLekovi_Click(object sender, RoutedEventArgs e)
         {
-
+            LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
+            var s = new BrisanjeLeka();
+            s.Show();
         }
         private void DetaljiLekovi_Click(object sender, RoutedEventArgs e)
         {

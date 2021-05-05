@@ -1,0 +1,16 @@
+﻿<Window x:Class="BolnicaSims.View.DeleteView.BrisanjeLeka"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.DeleteView"
+        mc:Ignorable="d"
+        Title="BrisanjeLeka" Height="290" Width="305">
+    <Grid>
+        <Label Content="BRISANJE LEKA" FontSize = "13" HorizontalAlignment="Center" Height="30" Width="130" Margin="0,10,0,244"/>
+        <TextBlock Text="Da li ste sigurni da zelite da uklonite lek?" FontSize="11" Height="40" Width="260" RenderTransformOrigin="0.493,0.53" Margin="10,89,5,155"/>
+        <Button x:Name="btnPotvrdi" Content="Da" Click="btnPotvrdi_Click" HorizontalAlignment="Left" Width=" 40" Height="30" Margin="59,170,0,74"/>
+        <Button x:Name="btnOdustani" Content="Ne" Click="btnOdustani_Click"  HorizontalAlignment="Left" Width=" 40" Height="30" Margin="210,170,0,74"/>
+
+    </Grid>
+</Window>

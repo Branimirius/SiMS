@@ -59,7 +59,12 @@ namespace BolnicaSims.Service
             }
             LekoviStorage.Instance.Save();
         }
-
+        public void ukloniLek(Lek lek)
+        {
+            LekoviStorage.Instance.lekovi.Remove(lek);
+            LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
+            LekoviStorage.Instance.Save();
+        }
         public Lek GetLek(Lek lek)
         {
             foreach (Lek l in LekoviStorage.Instance.lekovi)
