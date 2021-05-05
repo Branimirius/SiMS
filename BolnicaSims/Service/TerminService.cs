@@ -138,8 +138,10 @@ namespace BolnicaSims.Service
                 DoktoriStorage.Instance.Save();
                 PacijentiStorage.Instance.Save();
                 KorisniciStorage.Instance.Save();
-                PacijentService.Instance.zabeleziOdradjenePreglede();
-
+                if(KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje == "Pacijent")
+                {
+                    PacijentService.Instance.zabeleziOdradjenePreglede();
+                }                
             }
             else MessageBox.Show("Termin je vec zauzet");
 
@@ -176,6 +178,23 @@ namespace BolnicaSims.Service
             {
                 ProstorijaService.Instance.getProstorija(t.prostorija).termini.Remove(t);
             }
+            /* OVO SLUZI ZA CISCENJE SVIH TERMINA
+            TerminStorage.Instance.termini.Clear();
+            foreach(Pacijent p in PacijentiStorage.Instance.pacijenti)
+            {
+                p.termini.Clear();
+            }
+            foreach (Doktor d in DoktoriStorage.Instance.doktori)
+            {
+                d.termini.Clear();
+            }
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+                p.termini.Clear();
+            }
+            */
+
+
             TerminStorage.Instance.Save();
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();

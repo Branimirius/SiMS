@@ -179,14 +179,18 @@ namespace BolnicaSims.Service
 
         public void zabeleziOdradjenePreglede()
         {
+
             PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda = 0;
+            
             foreach (Termin t in PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini)
             {
                 if (TerminService.Instance.terminOdradjen(t))
                 {
-                    PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda++;
+                        PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda++;
                 }
             }
+            
+            
         }
         
     }
