@@ -32,6 +32,7 @@ namespace Model
         public ObservableCollection<Prostorija> prostorije = new ObservableCollection<Prostorija>();
         public ObservableCollection<Prostorija> sale = new ObservableCollection<Prostorija>();
         public ObservableCollection<Prostorija> ordinacije = new ObservableCollection<Prostorija>();
+        public ObservableCollection<String> nazivi = new ObservableCollection<String>();
         private String fileLocation = "prostorijeStorage.txt";
         public Prostorija selektovanaProstorija;
         public ProstorijeStorage()
@@ -48,6 +49,7 @@ namespace Model
                 {
                     ordinacije.Add(p);
                 }
+                nazivi.Add(p.Naziv);
             }    
         }
 
