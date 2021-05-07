@@ -239,6 +239,7 @@ namespace BolnicaSims
 
         private void checkStaticka_Checked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if ((Boolean)checkDinamicka.IsChecked)
             {
@@ -265,6 +266,7 @@ namespace BolnicaSims
 
         private void checkStaticka_Unchecked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if (!(Boolean)checkDinamicka.IsChecked)
             {
@@ -291,6 +293,7 @@ namespace BolnicaSims
 
         private void checkDinamicka_Checked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if ((Boolean)checkStaticka.IsChecked)
             {
@@ -317,6 +320,7 @@ namespace BolnicaSims
 
         private void checkDinamicka_Unchecked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if (!(Boolean)checkStaticka.IsChecked)
             {
@@ -424,9 +428,40 @@ namespace BolnicaSims
         private void comboFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             filteredInventar.Clear();
+            /*
+            if((Boolean)checkStaticka.IsChecked)
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                //dataGridInventar.ItemsSource = filteredInventar;
+            }
+            else if ((Boolean)checkDinamicka.IsChecked)
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (!inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                //dataGridInventar.ItemsSource = filteredInventar;
+            }
+            else
+            {
+                filteredInventar = InventarStorage.Instance.Read();
+            }
+            */
+            //filteredInventar.Clear();
             if (comboFilter.SelectedItem != null)
             {
-                
+
                 foreach (Inventar inventar in InventarStorage.Instance.Read())
                 {
 
@@ -435,6 +470,10 @@ namespace BolnicaSims
                         filteredInventar.Add(inventar);
                     }
                 }
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+            else
+            {
                 dataGridInventar.ItemsSource = filteredInventar;
             }
 
