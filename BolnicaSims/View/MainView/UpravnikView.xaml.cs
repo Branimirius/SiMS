@@ -38,6 +38,7 @@ namespace BolnicaSims
                 return instance;
             }
         }
+        public String[] parametri = { "naziv", "proizvodjac", "kolicina" };
         //UpravnikMainView
         ObservableCollection<Inventar> filteredInventar = new ObservableCollection<Inventar>();
         public UpravnikView()
@@ -48,6 +49,8 @@ namespace BolnicaSims
             dataGridOsoblje.ItemsSource = KorisniciStorage.Instance.zaposleni;
             dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
             dataGridLekovi.ItemsSource = LekoviStorage.Instance.Read();
+            comboFilter.ItemsSource = ProstorijeStorage.Instance.nazivi;
+            comboPretraga.ItemsSource = parametri;
         }
        
        
@@ -199,25 +202,23 @@ namespace BolnicaSims
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
             //CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).
-            filteredInventar.Clear();
-            if (txtPretragaInventar.Equals(""))
+            switch ((String)comboPretraga.SelectedItem)
             {
-                filteredInventar = InventarStorage.Instance.Read();
-            }
-            else
-            {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
-                {
+                case "naziv":
+                    PretragaNaziv();
+                    break;
+                case "proizvodjac":
+                    PretragaProizvodjac();
+                    break;
+                case "kolicina":
+                    PretragaKolicina();
+                    break;
+                default:
+                    PretragaNaziv();
+                    break;
 
-                    if (inventar.Naziv.Contains(txtPretragaInventar.Text))
-                    {
-                        filteredInventar.Add(inventar);
-                    }
-                }
             }
-
-            dataGridInventar.ItemsSource = filteredInventar;
-            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+            
 
         }
 
@@ -238,6 +239,7 @@ namespace BolnicaSims
 
         private void checkStaticka_Checked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if ((Boolean)checkDinamicka.IsChecked)
             {
@@ -264,6 +266,7 @@ namespace BolnicaSims
 
         private void checkStaticka_Unchecked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if (!(Boolean)checkDinamicka.IsChecked)
             {
@@ -290,6 +293,7 @@ namespace BolnicaSims
 
         private void checkDinamicka_Checked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if ((Boolean)checkStaticka.IsChecked)
             {
@@ -316,6 +320,7 @@ namespace BolnicaSims
 
         private void checkDinamicka_Unchecked(object sender, RoutedEventArgs e)
         {
+            
             filteredInventar.Clear();
             if (!(Boolean)checkStaticka.IsChecked)
             {
@@ -344,6 +349,155 @@ namespace BolnicaSims
         {
             var s = new NotifikacijeUpravnik();
             s.Show();
+        }
+        private void PretragaNaziv()
+        {
+            filteredInventar.Clear();
+            if (txtPretragaInventar.Equals(""))
+            {
+                filteredInventar = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Naziv.Contains(txtPretragaInventar.Text))
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+            }
+
+            dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+        private void PretragaProizvodjac()
+        {
+            filteredInventar.Clear();
+            if (txtPretragaInventar.Equals(""))
+            {
+                filteredInventar = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Proizvodjac.Contains(txtPretragaInventar.Text))
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+            }
+
+            dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+        private void PretragaKolicina()
+        {
+            filteredInventar.Clear();
+            int parsedValue;
+            if (txtPretragaInventar.Equals(""))
+            {
+                filteredInventar = InventarStorage.Instance.Read();
+            }
+            else
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+                    if(!int.TryParse(txtPretragaInventar.Text, out parsedValue))
+                    {
+                        MessageBox.Show("Dozvoljen je unos samo brojeva za kolicinu.");
+                        return;
+                    }
+                    if (inventar.Kolicina <= parsedValue)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+            }
+
+            dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+
+        private void comboFilter_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            filteredInventar.Clear();
+            /*
+            if((Boolean)checkStaticka.IsChecked)
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                //dataGridInventar.ItemsSource = filteredInventar;
+            }
+            else if ((Boolean)checkDinamicka.IsChecked)
+            {
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+
+                    if (!inventar.Staticki)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                //dataGridInventar.ItemsSource = filteredInventar;
+            }
+            else
+            {
+                filteredInventar = InventarStorage.Instance.Read();
+            }
+            */
+            //filteredInventar.Clear();
+            if (comboFilter.SelectedItem != null)
+            {
+                
+                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                {
+                    /* OVAJ KOD NE RADI NE ZNAM ZASTO, ALI NE KONTA PRVA DVA IF-A
+                    if((Boolean)checkDinamicka.IsChecked && (!(Boolean)checkStaticka.IsChecked) && (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem) && (!inventar.Staticki))
+                    {
+                        
+                        filteredInventar.Add(inventar);
+                        
+                    }
+                    else if ((!(Boolean)checkDinamicka.IsChecked) && (Boolean)checkStaticka.IsChecked && (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem) && (inventar.Staticki))
+                    {
+
+                        filteredInventar.Add(inventar);
+
+                    }*/
+                    if (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem)
+                    {
+                        filteredInventar.Add(inventar);
+                    }
+                }
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+            else
+            {
+                dataGridInventar.ItemsSource = filteredInventar;
+            }
+
+            //dataGridInventar.ItemsSource = filteredInventar;
+            CollectionViewSource.GetDefaultView(dataGridProstorije.ItemsSource).Refresh();
+
+        }
+
+        private void ponistiFilterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            comboFilter.SelectedItem = null;
+            
         }
     }
 
