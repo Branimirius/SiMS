@@ -410,7 +410,7 @@ namespace BolnicaSims
                 {
                     if(!int.TryParse(txtPretragaInventar.Text, out parsedValue))
                     {
-                        MessageBox.Show("Dozvoljen unos samo brojeva za kolicinu.");
+                        MessageBox.Show("Dozvoljen je unos samo brojeva za kolicinu.");
                         return;
                     }
                     if (inventar.Kolicina <= parsedValue)
@@ -461,10 +461,22 @@ namespace BolnicaSims
             //filteredInventar.Clear();
             if (comboFilter.SelectedItem != null)
             {
-
+                
                 foreach (Inventar inventar in InventarStorage.Instance.Read())
                 {
+                    /* OVAJ KOD NE RADI NE ZNAM ZASTO, ALI NE KONTA PRVA DVA IF-A
+                    if((Boolean)checkDinamicka.IsChecked && (!(Boolean)checkStaticka.IsChecked) && (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem) && (!inventar.Staticki))
+                    {
+                        
+                        filteredInventar.Add(inventar);
+                        
+                    }
+                    else if ((!(Boolean)checkDinamicka.IsChecked) && (Boolean)checkStaticka.IsChecked && (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem) && (inventar.Staticki))
+                    {
 
+                        filteredInventar.Add(inventar);
+
+                    }*/
                     if (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem)
                     {
                         filteredInventar.Add(inventar);
