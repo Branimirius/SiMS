@@ -1,0 +1,81 @@
+﻿<Window x:Class="BolnicaSims.View.EditView.IzmenaLekaUpravnik"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.View.EditView"
+        mc:Ignorable="d"
+        Title="IzmenaLekaUpravnik" Height="450" Width="310">
+    <Grid>
+        <ScrollViewer>
+            <StackPanel Height="474">
+                <WrapPanel Width="97">
+                    <Label Content="DETALJI LEKA" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Naziv:  " TextAlignment="Right" Height="25" Width="135" />
+                    <TextBox x:Name="txtNaziv" Height="25" Width="100" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Proizvodjac:  " TextAlignment="Right" Height="25" Width="135" />
+                    <TextBox x:Name="txtProizvodjac" Height="25" Width="100" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Doza:  " TextAlignment="Right" Height="25" Width="135" />
+                    <TextBox x:Name="txtDoza" Height="25" Width="100" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Alergen:  " TextAlignment="Right" Height="25" Width="135" />
+                    <TextBox x:Name="txtAlergen" Height="25" Width="100" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Kolicina:  " TextAlignment="Right" Height="25" Width="135" />
+                    <TextBox x:Name="txtKolicina" Height="25" Width="100" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Width="182">
+                    <TextBlock x:Name="verifikovanText" Text="" TextAlignment="Center" Height="25" Width="182" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text=" Alternativni lekovi: " TextAlignment="Center" Width="146"/>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="116">
+                <ListView x:Name="listAlternative" Height="116" Width="293">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <WrapPanel>
+                                <TextBlock Text="Naziv leka:  "/>
+                                <TextBlock Text="{Binding ImeLeka}" FontWeight="Bold"/>
+                                <TextBlock Text="{Binding Doza}" FontWeight="Bold"/>
+                            </WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Height="25" Width="131">
+                    <Button x:Name="dodajAltBtn" Content="+" Click="dodajAltBtn_Click" Width="25" Height="25"/>
+                    <TextBlock Text="    " Width="60"/>
+                    <Button x:Name="ukloniAltBtn" Content="-" Click="ukloniAltBtn_Click"  Width="25" Height="25"/>
+
+                </WrapPanel>
+                <WrapPanel Height="20"/>
+                <WrapPanel Height="30" Width="231">
+                    <Button x:Name="izmeniBtn" Content="Izmeni" Click="izmeniBtn_Click" Height="30"/>
+                    <TextBlock Text="    " Width="122"/>
+                    <Button x:Name="nazadBtn" Content="Nazad" Click="nazadBtn_Click" Height="30"/>
+
+                </WrapPanel>
+
+
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

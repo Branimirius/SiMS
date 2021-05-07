@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Model
@@ -26,6 +27,7 @@ namespace BolnicaSims.Model
             get { return Verifikovan ? "Da" : "Ne"; }
         }
 
+        public ObservableCollection<Lek> Alternative { get; set; }
         public Lek (String naziv, String proizvodjac, String doza, String alergija, String kolicina, String Id, Boolean verifikovan)
         {
             ImeLeka = naziv;
@@ -42,6 +44,7 @@ namespace BolnicaSims.Model
             }
             IdLeka = Id;
             Verifikovan = verifikovan;
+            Alternative = new ObservableCollection<Lek>();
         }
 
     }
