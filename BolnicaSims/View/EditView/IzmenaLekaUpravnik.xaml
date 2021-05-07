@@ -60,9 +60,10 @@
                 </ListView>
                 </WrapPanel>
                 <WrapPanel Height="10"/>
-                <WrapPanel Height="25" Width="131">
+                <WrapPanel Height="25" Width="224">
+                    <ComboBox Name="comboAlternative" IsTextSearchEnabled="True" Width="137" FontSize="10"/>
                     <Button x:Name="dodajAltBtn" Content="+" Click="dodajAltBtn_Click" Width="25" Height="25"/>
-                    <TextBlock Text="    " Width="60"/>
+                    <TextBlock Text="    " Width="18"/>
                     <Button x:Name="ukloniAltBtn" Content="-" Click="ukloniAltBtn_Click"  Width="25" Height="25"/>
 
                 </WrapPanel>

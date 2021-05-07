@@ -177,12 +177,29 @@ namespace BolnicaSims
         private void UkloniLekovi_Click(object sender, RoutedEventArgs e)
         {
             LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
-            var s = new BrisanjeLeka();
-            s.Show();
+            if (LekoviStorage.Instance.selektovanLek == null)
+            {
+                MessageBox.Show("Nije izabran lek.");
+            }
+            else
+            {
+
+                var s = new BrisanjeLeka();
+                s.Show();
+            }
         }
         private void DetaljiLekovi_Click(object sender, RoutedEventArgs e)
-        {
-
+        {            
+            LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
+            if (LekoviStorage.Instance.selektovanLek == null)
+            {
+                MessageBox.Show("Nije izabran lek.");
+            }
+            else
+            {
+                var s = new IzmenaLekaUpravnik();
+                s.Show();
+            }
         }
         private void TransferLekovi_Click(object sender, RoutedEventArgs e)
         {

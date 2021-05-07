@@ -324,3 +324,5 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Notificatio
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims_MarkupCompile.lref
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeLeka.g.cs
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeLeka.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLekaUpravnik.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLekaUpravnik.baml

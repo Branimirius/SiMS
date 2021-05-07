@@ -42,5 +42,13 @@ namespace BolnicaSims.Controller
         {
             LekoviService.Instance.ukloniLek(lek);
         }
+        public void dodajAlternativu(String alternativa)
+        {
+            LekoviService.Instance.dodajAlternativu(alternativa);
+        }
+        public void ukloniAlternativu(Lek alternativa)
+        {
+            LekoviService.Instance.ukloniAlternativu(alternativa);
+        }
     }
 }

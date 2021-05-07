@@ -42,7 +42,7 @@ namespace BolnicaSims.Storage
                 if (!l.Verifikovan)
                 {
                     neverifikovaniLekovi.Add(l);
-                }
+                }                
             }
         }
 
