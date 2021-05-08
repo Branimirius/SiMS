@@ -6,11 +6,130 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="UpravnikView" Height="585" Width="315" ResizeMode="CanResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+               
+            
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
 
-    <Grid>
-        <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Margin="0,134,0,0">
-            <TabItem Name="prostorijeTab" Header="Prostorije">
-                <Grid Background="#FFE5E5E5" Height="400">
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style TargetType="TabItem">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TabItem">
+                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0">
+                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
+                            </Trigger>
+                            <Trigger Property="IsSelected" Value="False">
+                                <Setter TargetName="Border" Property="Background" Value="#86a3ac" />
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="#cbd8db"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="#cbd8db"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        <Style TargetType="DataGridRowHeader">
+            <Setter Property="Background" Value="#cbd8bd"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="#a9bec4">
+        <TabControl x:Name="tabUpravmik"  TabStripPlacement="Top" FontSize="13" Background="#527c88" Margin="0,134,0,0">
+            <TabItem Name="prostorijeTab" Header="Prostorije" >
+                <Grid Height="400" Background="#527c88">
                     <DataGrid x:Name="dataGridProstorije" ItemsSource="{Binding Prostorije}" IsReadOnly="True"
                       SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                       Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="290" FontSize="9">
@@ -23,19 +142,29 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Content="Dodaj" Click="DodajProstorija_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Ukloni" Click="UkloniProstorija_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Detalji" Click="DetaljiProstorija_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Radovi" Click="RenoviranjeProstorija_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Izvestaj" Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2"/>
+                    <Button Click="DodajProstorija_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/addRoom.png"/>
+                    </Button>
+                    <Button Click="UkloniProstorija_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/deleteRoom.png"/>
+                    </Button>
+                    <Button Click="DetaljiProstorija_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/details.png"/>
+                    </Button>
+                    <Button Click="RenoviranjeProstorija_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/renovation.png"/>
+                    </Button>
+                    <Button Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2">
+                        <Image Source="../../Resources/report.png"/>
+                    </Button>
                     <WrapPanel Margin="133,0,10,348">
                         <TextBox x:Name="txtPretragaProstorije" TextChanged="txtPretragaProstorije_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
 
                     </WrapPanel>
                 </Grid>
             </TabItem>
-            <TabItem Name="osobljeTab" Header="Osoblje">
-                <Grid Background="#FFE5E5E5" Height="400">
+            <TabItem Name="osobljeTab" Header="Osoblje" Background="#527c88">
+                <Grid Background="#527c88" Height="400">
 
                     <DataGrid x:Name="dataGridOsoblje" ItemsSource="{Binding Korisnici}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -49,19 +178,29 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Content="Dodaj" Click="DodajOsoblje_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Ukloni" Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Detalji" Click="DetaljiOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Transfer" Click="TransferOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Izvestaj" Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
+                    <Button Click="DodajOsoblje_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11" RenderTransformOrigin="0.68,0.726">
+                        <Image Source="../../Resources/addPerson.png" Width="40" />
+                    </Button>
+                    <Button Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/removePerson.png"/>
+                    </Button>
+                    <Button Click="DetaljiOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/details.png"/>
+                    </Button>
+                    <Button Click="TransferOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/transfer.png"/>
+                    </Button>
+                    <Button Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
+                        <Image Source="../../Resources/report.png"/>
+                    </Button>
                     <WrapPanel Margin="133,0,10,358">
                         <TextBox Name="txtPretragaOsoblje" TextChanged="txtPretragaOsoblje_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
 
                     </WrapPanel>
                 </Grid>
             </TabItem>
-            <TabItem Name="InventarTab" Header="Inventar">
-                <Grid Background="#FFE5E5E5" Height="400">
+            <TabItem Name="InventarTab" Header="Inventar" Background="#527c88">
+                <Grid Background="#527c88" Height="400">
 
                     <DataGrid x:Name="dataGridInventar" ItemsSource="{Binding Inventar}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -75,11 +214,21 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Content="Dodaj" Click="DodajInventar_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Ukloni" Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Detalji" Click="DetaljiInventar_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Transfer" Click="TransferInventar_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Izvestaj" Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
+                    <Button Click="DodajInventar_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/addItem.png"/>
+                    </Button>
+                    <Button Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/removeItem.png"/>
+                    </Button>
+                    <Button Click="DetaljiInventar_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/details.png"/>
+                    </Button>
+                    <Button Click="TransferInventar_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/transfer.png"/>
+                    </Button>
+                    <Button Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
+                        <Image Source="../../Resources/report.png"/>
+                    </Button>
                     <WrapPanel  Margin="174,0,10,353">
                         <TextBox x:Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="25" Width="125"/>
                         <ComboBox Name="comboPretraga" Width="125" />
@@ -92,14 +241,14 @@
                     </WrapPanel>
                 </Grid>
             </TabItem>
-            <TabItem Name="lekoviTab" Header="Lekovi">
-                <Grid Background="#FFE5E5E5" Height="400">
+            <TabItem Name="lekoviTab" Header="Lekovi" Background="#527c88">
+                <Grid Background="#527c88" Height="400">
 
                     <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
                         SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                        Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="289" FontSize="9">
+                        Height="250" Margin="0,47,0,0" VerticalAlignment="Top" Width="289" FontSize="9" Background="#cbd8db">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*" />
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*"/>
                             <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
                             <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="40" />
                             <DataGridTextColumn Header="Validan" Binding="{Binding StringValid}" Width="40" />
@@ -108,11 +257,21 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Content="Dodaj" Click="DodajLekovi_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Ukloni" Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Detalji" Click="DetaljiLekovi_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Transfer" Click="TransferLekovi_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11"/>
-                    <Button Content="Izvestaj" Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46"/>
+                    <Button Click="DodajLekovi_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/addItem.png"/>
+                    </Button>
+                    <Button Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/removeItem.png"/>
+                    </Button>
+                    <Button Click="DetaljiLekovi_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/details.png"/>
+                    </Button>
+                    <Button Click="TransferLekovi_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                        <Image Source="../../Resources/transfer.png"/>
+                    </Button>
+                    <Button Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
+                        <Image Source="../../Resources/report.png"/>
+                    </Button>
                     <WrapPanel Margin="133,0,10,364">
                         <TextBox Name="txtPretragaLekovi" TextChanged="txtPretragaLekovi_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166"/>
 
@@ -121,21 +280,28 @@
             </TabItem>
         </TabControl>
         <StackPanel Margin="0,0,0,440">
-            <WrapPanel Height="30">
-                <Button Content="Odjavi se" Click ="ButtonOdjavi_Click" FontSize="9"  Height="30" Width="50"/>
-                <TextBlock x:Name="txtHeader" Text="" Width="150"/>
-                <Button x:Name="obavestenjaBtn" Width="30" Click="obavestenjaBtn_Click">
-                    <Button.ContentTemplate>
-                        <DataTemplate>
-                            <Image Source="../../Images/bell.png" Width="15" Height="15" HorizontalAlignment="Center" />
-                        </DataTemplate>
-                    </Button.ContentTemplate>
-
+            <WrapPanel Height="30" Background="#527c88">
+                <Button Click ="ButtonOdjavi_Click" FontSize="9"  Height="30" Width="45" >
+                    <Image Source="../../Resources/logout.png" Width="25" Height="30" />
                 </Button>
+                <TextBlock x:Name="txtHeader" Text="" Width="150"/>
+                <Button x:Name="obavestenjaBtn" Width="30" Click="obavestenjaBtn_Click" >
+                    <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
+                </Button>
+                <Button x:Name="podesavanjaBtn" Width="30" Click="podesavanjaBtn_Click" >
+                    <Image Source="../../Resources/settings.png" Width="25" Height="20"/>
+                </Button>
+                
+
             </WrapPanel>
-            <WrapPanel Height="70"/>
+            <WrapPanel Height="70">
+                <TextBlock Text="  " Width="216" />
+                <Image Source="../../Resources/firstAid.png"/>
+            </WrapPanel>
+                       
             <WrapPanel Height="30">
-                <Label Content="Ivan Ivanovic" FontSize="11"/>
+                <TextBlock x:Name="txtIme" Text="Ivan Ivanovic" FontSize="12" Height="30"/>
+                <TextBlock Text="Bolnica Zdravo" FontSize="12" FontWeight="Bold" Height="30" Width="220" TextAlignment="Right"/>
             </WrapPanel>
 
         </StackPanel>

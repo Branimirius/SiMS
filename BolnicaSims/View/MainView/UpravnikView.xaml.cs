@@ -516,6 +516,11 @@ namespace BolnicaSims
             comboFilter.SelectedItem = null;
             
         }
+
+        private void podesavanjaBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }

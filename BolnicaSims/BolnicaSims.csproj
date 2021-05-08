@@ -7,6 +7,40 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\addItem.png" />
+    <None Remove="Resources\addPerson.png" />
+    <None Remove="Resources\addRoom.png" />
+    <None Remove="Resources\bell.png" />
+    <None Remove="Resources\deleteRoom.png" />
+    <None Remove="Resources\details.png" />
+    <None Remove="Resources\firstAid.png" />
+    <None Remove="Resources\logout.png" />
+    <None Remove="Resources\removeItem.png" />
+    <None Remove="Resources\removePerson.png" />
+    <None Remove="Resources\renovation.png" />
+    <None Remove="Resources\report.png" />
+    <None Remove="Resources\settings.png" />
+    <None Remove="Resources\transfer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\addItem.png" />
+    <Resource Include="Resources\addPerson.png" />
+    <Resource Include="Resources\addRoom.png" />
+    <Resource Include="Resources\bell.png" />
+    <Resource Include="Resources\deleteRoom.png" />
+    <Resource Include="Resources\details.png" />
+    <Resource Include="Resources\firstAid.png" />
+    <Resource Include="Resources\logout.png" />
+    <Resource Include="Resources\removeItem.png" />
+    <Resource Include="Resources\removePerson.png" />
+    <Resource Include="Resources\renovation.png" />
+    <Resource Include="Resources\report.png" />
+    <Resource Include="Resources\settings.png" />
+    <Resource Include="Resources\transfer.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Compile Update="Storage\TerminStorage.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
