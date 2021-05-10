@@ -48,5 +48,12 @@ namespace BolnicaSims
             var s = new PregledLekovaDoktor();
             s.Show();
         }
+
+        private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new MainWindow();
+            s.Show();
+            Close();
+        }
     }
 }

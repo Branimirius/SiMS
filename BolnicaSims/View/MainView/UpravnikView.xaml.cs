@@ -213,7 +213,10 @@ namespace BolnicaSims
 
         private void ButtonOdjavi_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            var s = new MainWindow();
+            s.Show();
+            Close();
+
         }
 
         private void TextBox_TextChanged(object sender, TextChangedEventArgs e)

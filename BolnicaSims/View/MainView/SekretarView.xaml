@@ -57,5 +57,6 @@
             </TabItem>
         </TabControl>
         <Button Content="Obavestenja" Click="ButtonObavestenja_Click" Margin="540,10,176,412"/>
+        <Button Content="Odjavi se" HorizontalAlignment="Left" Margin="703,10,0,0" VerticalAlignment="Top" Height="29" Width="59" Click="Button_Click"/>
     </Grid>
 </Window>

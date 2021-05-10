@@ -55,5 +55,6 @@
         <Button Content="Obavestenja" Click="ButtonObavestenja_Click" Margin="442,10,252,412"/>
         <Button Content="Anketa doktor" HorizontalAlignment="Left" Margin="560,10,0,0" VerticalAlignment="Top" Width="96" Height="28" Click="Button_Click_AnketaDoktor"/>
         <Button x:Name="btnAnketaBolnica" Content="Anketa bolnica" HorizontalAlignment="Left" Margin="673,10,0,0" VerticalAlignment="Top" Width="96" Height="28" Click="Button_Click_AnketaBolnica"/>
+        <Button Content="Odjava" HorizontalAlignment="Left" Margin="10,14,0,0" VerticalAlignment="Top" Width="48" Click="Button_Click_1"/>
     </Grid>
 </Window>

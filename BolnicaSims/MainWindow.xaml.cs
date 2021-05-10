@@ -65,18 +65,22 @@ namespace BolnicaSims
                 case "Sekretar":
                     var s = new SekretarView();
                     s.Show();
+                    Close();
                     break;
                 case "Pacijent":
                     var p = new PacijentView();
                     p.Show();
+                    Close();
                     break;
                 case "Upravnik":
                     var d = new UpravnikView();
                     d.Show();
+                    Close();
                     break;
                 case "Doktor":
                     var r = new DoktorView();
                     r.Show();
+                    Close();
                     break;
 
                 default:
