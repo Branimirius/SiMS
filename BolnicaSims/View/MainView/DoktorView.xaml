@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="Azure">
-        <Menu x:Name="menu" Margin="0,0,689,0" Background="#FF1FCCD4">
+        <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
             <MenuItem x:Name="menuItem1" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Width="108" Height="66">
             </MenuItem>
             <MenuItem x:Name="menuItem2" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Height="66" Width="108">
