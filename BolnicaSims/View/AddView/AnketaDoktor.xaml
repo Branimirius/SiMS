@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
         Title="AnketaDoktor" Height="442" Width="545">
-    <Grid Height="426">
+    <Grid  Background="#FF69E2EE" Height="426">
         <ComboBox x:Name="comboBoxDoktor" HorizontalAlignment="Left" Margin="285,48,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="93,47,0,0" Text="Doktor:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
         <TextBlock HorizontalAlignment="Left" Margin="93,109,0,0" Text="Ocena(1-10):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>

@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
         Title="AnketaBolnica" Height="450" Width="545">
-    <Grid>
+    <Grid  Background="#FF69E2EE">
         <TextBlock HorizontalAlignment="Left" Margin="93,67,0,0" Text="Ocena(1-10):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
         <TextBox  x:Name="txtBoxOcena" HorizontalAlignment="Left" Margin="283,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
         <TextBlock HorizontalAlignment="Left" Margin="93,122,0,0" Text="Komentar:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
