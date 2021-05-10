@@ -5,25 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DoktorView" Height="450" Width="800">
+        Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Menu x:Name="menu" Margin="0,0,692,0" Background="#FF1FCCD4">
-            <MenuItem x:Name="dataGridDoktor" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Width="269" Height="66" >
+            <MenuItem x:Name="dataGridDoktor" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Width="108" Height="66">
+            </MenuItem>
+            <MenuItem x:Name="dataGridDoktor_Copy" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Height="66" Width="108">
             </MenuItem>
         </Menu>
-        <Button Content="Obavestenja" Click ="Button_Click" Margin="584,10,130,374"/>
-        <Button Name="validacijaBtn" Content="Validacija leka" Click ="validacijaBtn_Click" Margin="479,10,235,374"/>
-        <MenuItem x:Name="dataGridDoktor_Copy" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Margin="-28,63,692,305" RenderTransformOrigin="0.5,0.5" Width="269" Height="66">
-            <MenuItem.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleY="0"/>
-                    <RotateTransform/>
-                    <TranslateTransform Y="0"/>
-                </TransformGroup>
-            </MenuItem.RenderTransform>
-        </MenuItem>
-        <Button Name="ButtonLogOut" Content="Odjavi se" HorizontalAlignment="Left" Margin="140,382,0,0" VerticalAlignment="Top" Click="ButtonLogOut_Click"/>
+        <Frame x:Name="frame" Margin="108,0,0,65"/>
+        <StackPanel Margin="108,369,0,0" Orientation="Horizontal">
+            <TextBlock x:Name="textBlock" TextWrapping="Wrap" Width="510"/>
+            <Button x:Name="validacijaBtn" Content="Validacija leka" Click ="validacijaBtn_Click" Height="31" Width="89"/>
+            <Button x:Name="obavestenjaBtn" Click="Button_Click" Height="30" Width="32" >
+                <Image Source="/Resources/bell.png" Width="25" Height="20"/>
+            </Button>
+            <Button Click ="ButtonLogOut_Click" FontSize="9"  Height="30" Width="45" >
+                <Image Source="/Resources/logout.png" Width="25" Height="30" />
+            </Button>
+        </StackPanel>
 
     </Grid>
 </Window>

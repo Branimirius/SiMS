@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\Korisnik\\.nuget\\packages\\": {}
+    "C:\\Users\\markovenom\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+      "projectUniqueName": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
       "projectName": "BolnicaSims",
-      "projectPath": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
-      "packagesPath": "C:\\Users\\Korisnik\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Korisnik\\Desktop\\SiMS\\BolnicaSims\\obj\\",
+      "projectPath": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+      "packagesPath": "C:\\Users\\markovenom\\.nuget\\packages\\",
+      "outputPath": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Korisnik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\markovenom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -63,7 +63,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }
