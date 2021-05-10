@@ -279,6 +279,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        
         <StackPanel Margin="0,0,0,440">
             <WrapPanel Height="30" Background="#527c88">
                 <Button Click ="ButtonOdjavi_Click" FontSize="9"  Height="30" Width="45" >

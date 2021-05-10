@@ -422,3 +422,7 @@ C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Bolnica
 C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.dll
 C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.pdb
 C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.genruntimeconfig.cache
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeLeka.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLekaUpravnik.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeLeka.baml
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLekaUpravnik.baml
