@@ -1,0 +1,15 @@
+Login: Username/Password
+Doktor: marko123/markovic123
+Pacijent: bogdan123/mahua123
+Upravnik: ivan123/ivanovic123
+
+***
+NAPOMENA:
+Branimir je prvobitno bio prijavljen za ulogu sekretara, ali mu je 
+uloga promenjena od strane asistentkinje sa SIMS-a, i sada radi iskljucivo
+upravnika. A sekretara radimo zajedno, ukoliko stignemo, posto smo troclani 
+tim. Hvala na razumevanju. 
+***
+(Sekretar: gorana123/ivanovic123)
+ako vam je potrebno iz nekog razloga.
+***
