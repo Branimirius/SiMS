@@ -203,8 +203,6 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\Va
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijeDoktor.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\NotifikacijePacijent.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TransferView\TransferInventar.baml
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledLekovaDoktor.g.cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\PregledLekovaDoktor.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLeka.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLeka.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeTerminaAdvanced.g.cs
@@ -424,3 +422,5 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaLekaUpravnik.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTerminaDoktor.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTerminaDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaLekovaDoktor.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaLekovaDoktor.baml

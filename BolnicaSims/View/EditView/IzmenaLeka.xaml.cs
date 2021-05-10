@@ -29,14 +29,14 @@ namespace BolnicaSims.View.EditView
             txtDoza.Text = LekoviStorage.Instance.selektovanLek.Doza;
             txtAlergen.Text = LekoviStorage.Instance.selektovanLek.Alergija;
             txtKolicina.Text = LekoviStorage.Instance.selektovanLek.Kolicina.ToString();
-            CheckBox.IsChecked = LekoviStorage.Instance.selektovanLek.Verifikovan;
+            checkBox.IsChecked = LekoviStorage.Instance.selektovanLek.Verifikovan;
    
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            LekoviController.Instance.izmeniLek(new Lek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text, LekoviStorage.Instance.selektovanLek.IdLeka, (bool)CheckBox.IsChecked));
-            CollectionViewSource.GetDefaultView(PregledLekovaDoktor.Instance.dataGridLekovi.ItemsSource).Refresh();
+            LekoviController.Instance.izmeniLek(new Lek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text, LekoviStorage.Instance.selektovanLek.IdLeka, (bool)checkBox.IsChecked));
+            CollectionViewSource.GetDefaultView(ListaLekovaDoktor.Instance.dataGridLekovi.ItemsSource).Refresh();
             this.Close();
         }
 

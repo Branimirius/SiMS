@@ -21,6 +21,7 @@ namespace BolnicaSims
     public partial class DoktorView : Window
     {
         Page p1 = new ListaTerminaDoktor();
+        Page p2 = new ListaLekovaDoktor();
 
         public DoktorView()
         {
@@ -31,8 +32,10 @@ namespace BolnicaSims
 
         private void ManualColumns_Click(object sender, RoutedEventArgs e)
         {
+            p1.ShowsNavigationUI = false;
             frame.Content = p1;
-            menuItem1.Background = Brushes.Blue;
+            menuItem1.Background = Brushes.DarkCyan;
+            menuItem2.Background = null;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,8 +52,10 @@ namespace BolnicaSims
 
         private void ManualColumns_Click2(object sender, RoutedEventArgs e)
         {
-            var s = new PregledLekovaDoktor();
-            s.Show();
+            p2.ShowsNavigationUI = false;
+            frame.Content = p2;
+            menuItem1.Background = null;
+            menuItem2.Background = Brushes.DarkCyan;
         }
 
         private void ButtonLogOut_Click(object sender, RoutedEventArgs e)

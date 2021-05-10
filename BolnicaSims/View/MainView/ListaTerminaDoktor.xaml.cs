@@ -42,6 +42,7 @@ namespace BolnicaSims.View.MainView
         {
             InitializeComponent();
             dataGridSopstveniTermini.ItemsSource = DoktorService.Instance.getUlogovaniDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
+            ShowsNavigationUI = false;
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {

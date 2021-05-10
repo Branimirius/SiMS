@@ -7,29 +7,46 @@
         mc:Ignorable="d"
         Title="IzmenaLeka" Height="450" Width="800">
     <Grid Background="AliceBlue">
-        <Label Content="IZMENA LEKA&#xD;&#xA;" HorizontalAlignment="Center" Height="30" Width="150" FontSize="13" Margin="0,10,0,394"/>
-        <StackPanel Margin="271,76,421,116">
-            <TextBlock Text="Naziv Leka:" Height="45" />
-            <TextBlock Text="Proizvodjac:" Height="38" />
-            <TextBlock Text="Doza" Height="41" />
-            <TextBlock Text="Alergen:" Height="39" />
-            <TextBlock Text="Kolicina" Height="45" />
+        <StackPanel Margin="0,10,0,384" Orientation="Horizontal">
+            <TextBlock x:Name="textBlock"  TextWrapping="Wrap" Width="325"/>
+            <Label Content="IZMENA LEKA&#xA;" Height="30" Width="150" FontSize="13"/>
         </StackPanel>
-        <TextBox x:Name="txtNaziv" Height="25" Width="100" Margin="410,76,290,333"/>
-        <TextBox x:Name="txtProizvodjac" Height="25" Width="100" Margin="410,119,290,290" />
-        <TextBox x:Name="txtDoza" Height="25" Width="100" Margin="410,159,290,250"/>
-        <TextBox x:Name="txtAlergen" Height="25" Width="100" Margin="410,202,290,207" />
-        <TextBox x:Name="txtKolicina" Height="25" Width="100" Margin="410,244,290,165" />
-        <Button x:Name="btnPotvrdi" Click="btnPotvrdi_Click" Content="Potvrdi" Height="40" Width="50" Margin="300,349,450,45" />
-        <Button x:Name="btnOdustani" Click="btnOdustani_Click" Content="Odustani" Height="40" Width="50" Margin="425,349,325,45" />
-        <StackPanel Margin="271,76,421,116">
-            <TextBlock Text="Naziv Leka:" Height="45" />
-            <TextBlock Text="Proizvodjac:" Height="38" />
-            <TextBlock Text="Doza" Height="41" />
-            <TextBlock Text="Alergen:" Height="39" />
-            <TextBlock Text="Kolicina" Height="45" />
-            <CheckBox Content="Verifikovan" Name ="CheckBox"/>
+        <StackPanel Margin="211,69,259,321" Orientation="Horizontal">
+            <TextBlock Text="Naziv Leka:" Height="20" Width="75" />
+            <TextBlock Width="150"/>
+            <TextBox x:Name="txtNaziv" Height="25" Width="100"/>
         </StackPanel>
+        <StackPanel Margin="211,108,259,281" Orientation="Horizontal">
+            <TextBlock Text="Proizvodjac:" Height="20" Width="75" />
+            <TextBlock Width="150"/>
+            <TextBox x:Name="txtProizvodjac" Height="25" Width="100" />
+        </StackPanel>
+        <StackPanel Margin="211,151,259,238" Orientation="Horizontal">
+            <TextBlock Text="Doza:" Height="20" Width="75" />
+            <TextBlock Width="150"/>
+            <TextBox x:Name="txtDoza" Height="25" Width="100"/>
+        </StackPanel>
+        <StackPanel Margin="211,193,259,196" Orientation="Horizontal">
+            <TextBlock Text="Alergen:" Height="20" Width="75" />
+            <TextBlock Width="150"/>
+            <TextBox x:Name="txtAlergen" Height="25" Width="100" />
+        </StackPanel>
+        <StackPanel Margin="211,238,259,152" Orientation="Horizontal">
+            <TextBlock Text="Kolicina:" Height="20" Width="75" />
+            <TextBlock Width="150"/>
+            <TextBox x:Name="txtKolicina" Height="25" Width="100" />
+        </StackPanel>
+        <StackPanel Margin="235,365,235,25" Orientation="Horizontal">
+            <Button x:Name="btnPotvrdi"  Background = "White " Click="btnPotvrdi_Click" Content="Potvrdi" Height="40" Width="56" />
+            <TextBlock Width="150"/>
+            <Button x:Name="btnOdustani" Background = "WHite" Click="btnOdustani_Click" Content="Odustani" Height="40" Width="58" />
+        </StackPanel>
+        <StackPanel Margin="211,287,259,103" Orientation="Horizontal">
+            <TextBlock Text="Odobren:" Height="20" Width="75" />
+            <TextBlock Width="150"/>
+            <CheckBox x:Name="checkBox"  Height="17"/>
+        </StackPanel>
+
 
     </Grid>
 </Window>

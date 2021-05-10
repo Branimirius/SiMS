@@ -8,6 +8,7 @@
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaTerminaDoktor">
 
+    
     <Grid Margin="-6,0,0,0">
         <DataGrid x:Name="dataGridSopstveniTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
             SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"

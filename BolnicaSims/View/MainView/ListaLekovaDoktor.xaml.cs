@@ -11,31 +11,34 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BolnicaSims.View.MainView
 {
     /// <summary>
-    /// Interaction logic for PregledLekovaDoktor.xaml
+    /// Interaction logic for ListaLekovaDoktor.xaml
     /// </summary>
-    public partial class PregledLekovaDoktor : Window
+    public partial class ListaLekovaDoktor : Page
     {
-        private static PregledLekovaDoktor instance = null;
-        public static PregledLekovaDoktor Instance
+        private static ListaLekovaDoktor instance = null;
+        public static ListaLekovaDoktor Instance
         {
             get
             {
                 if (instance == null)
                 {
-                    instance = new PregledLekovaDoktor();
+                    instance = new ListaLekovaDoktor();
                 }
                 return instance;
             }
         }
-        public PregledLekovaDoktor()
+
+        public ListaLekovaDoktor()
         {
             InitializeComponent();
             dataGridLekovi.ItemsSource = LekoviStorage.Instance.Read();
+            ShowsNavigationUI = false;
         }
 
         private void button_Izmeni_Click(object sender, RoutedEventArgs e)
