@@ -5,17 +5,104 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DodavanjeProstorije" Height="296" Width="321" ResizeMode="CanResize">
-    <Grid Margin="0,0,0,2" RenderTransformOrigin="0.493,0.497">
-        <Label Content="DODAVANJE PROSTORIJE" Margin="51,0,51,223"/>
-        <TextBlock x:Name="textBlockSprat"  HorizontalAlignment="Left" Margin="8,89,0,0" Text="Sprat" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="0.484,0.572" Height="20"/>
-        <TextBlock x:Name="textBlockBroj" HorizontalAlignment="Left" Text="Tip Prostorije" TextWrapping="Wrap" VerticalAlignment="Center" Margin="10,0,0,0" Height="20"/>
-        <TextBlock x:Name="textBlockTip" HorizontalAlignment="Left" Text="Broj Prostorije" TextWrapping="Wrap" VerticalAlignment="Top" Margin="8,53,0,0" Height="17"/>
-        <TextBox x:Name="txtBox2"  Margin="142,89,79,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="20"/>
-        <TextBox x:Name="txtBox1"  Margin="142,53,79,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Height="20"/>
-        <ComboBox Name="comboTip"  Margin="142,0,79,0" VerticalAlignment="Center" Width="100" Height="20"/>
-        <Button x:Name="buttonPotvrdi" Background="White" Content="Potvrdi" HorizontalAlignment="Left" Margin="22,212,0,0" VerticalAlignment="Top" Width="73" Height="40" Click="buttonPotvrdi_Click"/>
-        <Button x:Name="buttonOdustani" Background="White" Content="Odustani" HorizontalAlignment="Left" Margin="169,212,0,0" VerticalAlignment="Top" Width="73" Height="40" Click="buttonOdustani_Click"/>
+        Title="DodavanjeProstorije" Height="300" Width="300" ResizeMode="CanResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
+        <StackPanel>
+            <WrapPanel Height="50" Background="#527c88">
+                <TextBlock Text=" " Width="44"/>
+                <Label Content="DODAVANJE PROSTORIJE" Width="158" FontWeight="Bold"/>
+                <Image Source="../../Resources/firstAid.png" Width="75" Height="50"/>
+            </WrapPanel>
+            <WrapPanel Height="20"/>
+            <WrapPanel>
+                <TextBlock  TextAlignment="Right" HorizontalAlignment="Left" Text="Broj Prostorije:  " TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="120"/>
+                <TextBox x:Name="txtBox1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>
+
+            </WrapPanel>
+            <WrapPanel Height="20"/>
+            <WrapPanel>
+                <TextBlock  TextAlignment="Right" HorizontalAlignment="Left" Text="Sprat:  " TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="120"/>
+                <TextBox x:Name="txtBox2" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>
+
+            </WrapPanel>
+            <WrapPanel Height="20"/>
+            <WrapPanel>
+                <TextBlock  TextAlignment="Right" HorizontalAlignment="Left" Text="Tip prostorije:  " TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="120"/>
+                <ComboBox Name="comboTip"   VerticalAlignment="Center" Width="120" Height="20"/>
+
+            </WrapPanel>
+            <WrapPanel Height="30"/>
+            <WrapPanel Width="253">
+                <Button x:Name="buttonPotvrdi" Background="White" Content="Potvrdi" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Height="40" Click="buttonPotvrdi_Click"/>
+                <TextBlock  TextAlignment="Right" HorizontalAlignment="Center" Text="  " TextWrapping="Wrap" VerticalAlignment="Center" Height="40" Width="70"/>
+                <Button x:Name="buttonOdustani" Background="White" Content="Odustani" HorizontalAlignment="Left" VerticalAlignment="Top" Width="73" Height="40" Click="buttonOdustani_Click"/>
+
+            </WrapPanel>
+        </StackPanel>
+
 
     </Grid>
 </Window>
