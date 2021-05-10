@@ -6,11 +6,98 @@
         xmlns:local="clr-namespace:BolnicaSims.View.EditView"
         mc:Ignorable="d"
         Title="IzmenaLekaUpravnik" Height="450" Width="310">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="#cbd8db"/>
+        </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
         <ScrollViewer>
-            <StackPanel Height="474">
-                <WrapPanel Width="97">
-                    <Label Content="DETALJI LEKA" />
+            <StackPanel Height="515">
+                <WrapPanel Width="297" Height="50" Background="#527c88">
+                    <TextBlock Text=" " Width="84"/>
+                    <Label Content="DETALJI LEKA" FontWeight="Bold" Width="89" />
+                    <Image Source="../../Resources/firstAid.png" Width="75" Height="50"/>
+                    
                 </WrapPanel>
                 <WrapPanel Height="10"/>
                 <WrapPanel>

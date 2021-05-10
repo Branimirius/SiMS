@@ -6,13 +6,99 @@
         xmlns:local="clr-namespace:BolnicaSims.View.NotificationsView"
         mc:Ignorable="d"
         Title="NotifikacijeUpravnik" Height="300" Width="300">
-    <Grid>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="#cbd8db"/>
+        </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
         <StackPanel>
-            <WrapPanel Height="5"/>
-            <WrapPanel Height="25" Width="103">
-                <Label Content="NOTIFIKACIJE" HorizontalAlignment="Center" Width="101"/>
+
+            <WrapPanel Height="40" Width="296" Background="#527c88">
+                <TextBlock Text=" " Width="100"/>
+                <Label Content="NOTIFIKACIJE" HorizontalAlignment="Center" Width="100" FontWeight="Bold"/>
+                <Image Source="../../Resources/firstAid.png" Width="50" Height="40"/>
             </WrapPanel>
-            <WrapPanel Height="10"/>
+            
             <WrapPanel Height="196">
                 <ListView x:Name="listNotifikacijeUpravnik" Height="190" Width="300" >
                     <ListView.ItemTemplate>

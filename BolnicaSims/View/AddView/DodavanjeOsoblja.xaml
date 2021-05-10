@@ -5,12 +5,92 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
-        Title="DodavanjeOsoblja" Height="310" Width="310">
-    <Grid>
-        <Label Content="DODAVANJE ZAPOSLENOG" FontSize ="13" HorizontalAlignment="Center" Width="170" Height="30" Margin="0,0,0,261" />
-        <TextBlock Text="Izaberite tip zaposlenog za dodavanje u sistem" FontSize="11" HorizontalAlignment="Center" Width="237" Margin="0,78,0,185"/>
-        <Button x:Name="btnLekar" Content="Lekar" Click="btnLekar_Click" Height="30" Width="80" Margin="46,132,184,132"/>
-        <Button x:Name="btnSekretar" Content="Sekretar" Click="btnSekretar_Click" Height="30" Width ="80" Margin="182,132,48,132"/>
-        <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Height="30" Width="60" Margin="125,231,125,33" />
+        Title="DodavanjeOsoblja" Height="280" Width="300">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
+        <StackPanel>
+            <WrapPanel Height="50" Background="#527c88" Width="298">
+                <TextBlock Text=" " Width="24"/>
+                <Label Content="DODAVANJE ZAPOSLENOG" FontSize ="13" FontWeight="Bold" HorizontalAlignment="Center" Width="185" Height="30" />
+                <Image Source="../../Resources/firstAid.png" Width="50" Height="50"/>
+            </WrapPanel>
+            <WrapPanel Height="20"/>
+            <WrapPanel Width="242">
+                <TextBlock Text="Izaberite tip zaposlenog za dodavanje u sistem." FontSize="11" HorizontalAlignment="Center" Width="240"/>
+            </WrapPanel>
+            <WrapPanel Height="40"/>
+            <WrapPanel Width="230">
+                <Button x:Name="btnLekar" Content="Lekar" Click="btnLekar_Click" Height="30" Width="80"/>
+                <TextBlock Text=" " Width="49"/>
+                <Button x:Name="btnSekretar" Content="Sekretar" Click="btnSekretar_Click" Height="30" Width ="80"/>
+            </WrapPanel>
+            <WrapPanel Height="40"/>
+            <WrapPanel Width="80">
+                <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Height="30" Width="60"/>
+
+            </WrapPanel>
+        </StackPanel>
     </Grid>
 </Window>

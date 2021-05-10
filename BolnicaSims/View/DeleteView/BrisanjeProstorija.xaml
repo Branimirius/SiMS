@@ -5,9 +5,77 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.DeleteView"
         mc:Ignorable="d"
-        Title="BrisanjeProstorija" Height="234" Width="268" ResizeMode="NoResize">
-    <Grid Margin="0,0,0,5">
-        <Label Content="UKLANJANJE PROSTORIJE" Margin="52,0,53,186"/>
+        Title="BrisanjeProstorija" Height="240" Width="270" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
+        <WrapPanel Background="#527c88" Margin="0,0,0,166" >
+            <TextBlock Text=" " Width="28"/>
+            <Label Content="UKLANJANJE PROSTORIJE" FontSize = "11" Width="145" FontWeight="Bold"/>
+            <Image Source="../../Resources/firstAid.png" Width="57" Height="50"/>
+        </WrapPanel>
+        
         <TextBlock x:Name="textBlock" Text="" Margin="0,59,0,71"/>
         <Button x:Name="btnDa" Content="Da" Click="btnDa_Click" Margin="52,160,166,10"/>
         <Button x:Name="btnNe" Content="Ne" Click="btnNe_Click" Margin="166,160,52,10"/>

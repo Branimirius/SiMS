@@ -6,36 +6,141 @@
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
         Title="DodavanjeDoktora" Height="420" Width="310">
-    <Grid>
-        <Label Content="DODAVANJE LEKARA" HorizontalAlignment="Center" FontSize="13" Height="30" Width="150" Margin="0,0,0,361"/>
-        <ScrollViewer Margin="0,88,0,0">
-            <Grid Height="471">
-                <TextBlock Text="Ime: " FontSize="11" Height="20" Width="50" Margin="21,-48,222,499"/>
-                <TextBlock Text="Prezime: " FontSize="11" Height="20" Width="50" Margin="21,-14,222,465"/>
-                <TextBlock Text="JMBG: " FontSize="11" Height="20" Width="50" Margin="21,22,222,429"/>
-                <TextBlock Text="Adresa: " FontSize="11" Height="20" Width="50" Margin="21,57,222,394"/>
-                <TextBlock Text="Telefon: " FontSize="11" Height="20" Width="50" Margin="21,102,222,349"/>
-                <TextBlock Text="Username: " FontSize="11" Height="20" Width="50" Margin="17,143,226,308"/>
-                <TextBlock Text="Password: " FontSize="11" Height="20" Width="50" Margin="17,180,226,271"/>
-                <TextBlock Text="Email: " FontSize="11" Height="20" Width="50" Margin="14,215,229,236"/>
-                <TextBlock Text="Datum rodjenja: " FontSize="11" Height="30" Margin="14,365,193,76"/>
-                <TextBox x:Name="txtName" FontSize="11" Height="20" Width ="80" Margin="93,-48,120,499"/>
-                <TextBox x:Name="txtPrezime" FontSize="11" Height="20" Width ="80" Margin="93,-14,120,465"/>
-                <TextBox x:Name="txtJmbg" FontSize="11" Height="20" Width ="80" Margin="93,22,120,429"/>
-                <TextBox x:Name="txtAdresa" FontSize="11" Height="20" Width ="80" Margin="93,57,120,394"/>
-                <TextBox x:Name="txtTelefon" FontSize="11" Height="20" Width ="80" Margin="93,102,120,349"/>
-                <TextBox x:Name="txtUsername" FontSize="11" Height="20" Width ="100" Margin="93,143,100,308"/>
-                <TextBox x:Name="txtPassword" FontSize="11" Height="20" Width ="100" Margin="93,180,100,271"/>
-                <TextBox x:Name="txtEmail" FontSize="11" Height="20" Width ="100" Margin="93,215,100,236"/>
-                <Label x:Name="label" Content="Specijalizacija&#xD;&#xA;" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>
-                <TextBox x:Name="textBoxSpec" HorizontalAlignment="Left" Margin="97,252,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="96" />
-                <CheckBox x:Name="checkSpec" Content="Specijalista" Checked="checkSpec_Checked" Unchecked="checkSpec_Unchecked" Height="20" Width="100" Margin="109,306,84,145"/>
-                <CheckBox x:Name="checkHirurg" Content="Hirurg" Checked="checkSpec_Checked" Unchecked="checkSpec_Unchecked" Height="20" Width="100" Margin="109,331,84,120"/>
-                <DatePicker Name="dateDoktor" Width="150" Height="30" FontSize="11" Margin="126,365,17,76"/>
-                <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" HorizontalAlignment="Left" Width="40" Margin="60,416,0,23" />
-                <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" HorizontalAlignment="Right" Width="40" Margin="0,416,72,23" />
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
 
-            </Grid>
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
+        <ScrollViewer>
+            <StackPanel Height="500">
+                <WrapPanel Height="50" Width="290" Background="#527c88">
+                    <TextBlock Text=" " Width="50"/>
+                    <Label Content=" DODAVANJE LEKARA    " FontWeight="Bold" HorizontalAlignment="Center" FontSize="13" Height="30" Width="145"/>
+                    <Image Source="../../Resources/firstAid.png" Width="60" Height="50"/>
+                </WrapPanel>
+                <WrapPanel Height="30"/>
+                <WrapPanel>
+                    <TextBlock Text="Ime: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtName" FontSize="11" Height="20" Width ="120"/>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Prezime: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtPrezime" FontSize="11" Height="20" Width ="120"/>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="JMBG: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtJmbg" FontSize="11" Height="20" Width ="120" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Adresa: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtAdresa" FontSize="11" Height="20" Width ="120" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Telefon: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtTelefon" FontSize="11" Height="20" Width ="120" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Username: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtUsername" FontSize="11" Height="20" Width ="120" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Password: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtPassword" FontSize="11" Height="20" Width ="120" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Email: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="txtEmail" FontSize="11" Height="20" Width ="120" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Datum rodjenja: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <DatePicker Name="dateDoktor" Width="120" Height="30" FontSize="11" />
+
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Specijalizacija: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
+                    <TextBox x:Name="textBoxSpec" FontSize="11" Height="20"  Width="120" />
+
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <CheckBox x:Name="checkSpec" Content="Specijalista" Checked="checkSpec_Checked" Unchecked="checkSpec_Unchecked" Height="20" Width="100" />
+                <WrapPanel Height="10"/>
+                <CheckBox x:Name="checkHirurg" Content="Hirurg" Checked="checkSpec_Checked" Unchecked="checkSpec_Unchecked" Height="20" Width="100" />
+                <WrapPanel Height="10"/>
+                <WrapPanel Width="200" Height="34">
+                    <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" HorizontalAlignment="Center" Width="40" Height="30"  />
+                    <TextBlock Text=" " Width="104"/>
+                    <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" HorizontalAlignment="Right" Width="40"  />
+                </WrapPanel>
+
+            </StackPanel>
         </ScrollViewer>
 
     </Grid>

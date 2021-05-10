@@ -6,40 +6,132 @@
         xmlns:local="clr-namespace:BolnicaSims.View.TransferView"
         mc:Ignorable="d"
         Title="TransferInventar" Height="420" Width="310">
-    <Grid>
-        <Label Content="TANSFER INVENTARA" HorizontalAlignment="Center" FontSize="13" Margin="0,0,0,373"/>
-        <ScrollViewer Margin="0,0,0,-83">
-            <Grid Height="481">
-                <TextBlock Text="Trenutna Prostorija: " Height="20" Width="120" Margin="10,82,143,367" />
-                <TextBlock x:Name="txtProstorija" Text="Naziv" Height="20" Width="120" Margin="135,82,18,367" />
-                <TextBlock Text="Inventar: " Height="20" Width="120" Margin="10,46,143,403" />
-                <TextBlock x:Name="txtInventar" Text="Naziv" Height="20" Width="120" Margin="136,46,17,403" />
-                <TextBlock Text="Odrediste: " Width="120" Height="20" Margin="10,157,143,292" />
-                <TextBlock Text="Kolicina: " Height="20" Width="120" Margin="10,119,143,330" />
-                <TextBlock x:Name="txtKolicina" Text="/100" Height="20" Width="40" Margin="176,119,57,330" />
-                <TextBox x:Name="txtBoxKolicina" Height="20" Width="30" Margin="134,119,109,330"/>
-                <ListView x:Name="listOdrediste" SelectionMode="Single" Margin="10,201,10,95">
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <WrapPanel>
-                                <TextBlock Text="Naziv: "/>
-                                <TextBlock Text="{Binding Naziv}" FontWeight="Bold"/>
-                            </WrapPanel>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-                <WrapPanel Margin="0,400,0,51">
-                    <TextBlock Text="Vreme:" Height="30" TextAlignment="Right" Width="69" FontSize="10"/>
-                    <TextBox x:Name="txtBoxVreme" Height="30" Width="26" FontSize="10" />
-                    <TextBox x:Name="txtBoxVremeMinuti" Height="30" Width="26" FontSize="10" />
-                    <DatePicker Name="datumInventar" Height="30" Width="140" FontSize="10" />
-                </WrapPanel>
-                
-                
-                
-                <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" Width="50" Height="30" FontSize="10" Margin="45,441,178,10"/>
-                <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Width="50" Height="30" FontSize="10" Margin="171,441,52,10"/>
-            </Grid>
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="#7596a0" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="./#Segoe UI" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+
+
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <Grid>
+                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+
+            <Setter Property="Background" Value="#86a3ac" />
+            <Setter Property="Foreground" Value="Black" />
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="SnapsToDevicePixels" Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#a9bec3" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Foreground" Value="Black" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+        <Style TargetType="ListView">
+            <Setter Property="Background" Value="#cbd8db"/>
+        </Style>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#a9bec4">
+        <ScrollViewer>
+            <StackPanel Height="490">
+                <Grid Height="488" Background="#a9bec4">
+                    <WrapPanel Margin="0,0,0,434" Background="#527c88">
+                        <TextBlock Text=" " Height="19" Width="45"/>
+                        <Label Content="TANSFER INVENTARA" HorizontalAlignment="Center" FontSize="13"  FontWeight="Bold"/>
+                        <Image Source="../../Resources/firstAid.png" Width="54" Height="37"/>
+                    </WrapPanel>
+                    
+                    <TextBlock Text="Trenutna Prostorija: " Height="20" Width="120" Margin="10,82,143,367" />
+                    <TextBlock x:Name="txtProstorija" Text="Naziv" Height="20" Width="120" Margin="135,82,18,367" />
+                    <TextBlock Text="Inventar: " Height="20" Width="120" Margin="10,46,143,403" />
+                    <TextBlock x:Name="txtInventar" Text="Naziv" Height="20" Width="120" Margin="136,46,17,403" />
+                    <TextBlock Text="Odrediste: " Width="120" Height="20" Margin="10,157,143,292" />
+                    <TextBlock Text="Kolicina: " Height="20" Width="120" Margin="10,119,143,330" />
+                    <TextBlock x:Name="txtKolicina" Text="/100" Height="20" Width="40" Margin="176,119,57,330" />
+                    <TextBox x:Name="txtBoxKolicina" Height="20" Width="30" Margin="134,119,109,330"/>
+                    <ListView x:Name="listOdrediste" SelectionMode="Single" Margin="10,201,10,95">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="Naziv: "/>
+                                    <TextBlock Text="{Binding Naziv}" FontWeight="Bold"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                    <WrapPanel Margin="0,400,0,51">
+                        <TextBlock Text="Vreme:" Height="30" TextAlignment="Right" Width="69" FontSize="10"/>
+                        <TextBox x:Name="txtBoxVreme" Height="30" Width="26" FontSize="10" />
+                        <TextBox x:Name="txtBoxVremeMinuti" Height="30" Width="26" FontSize="10" />
+                        <DatePicker Name="datumInventar" Height="30" Width="140" FontSize="10" />
+                    </WrapPanel>
+
+
+
+                    <Button x:Name="btnPotvrdi" Content="Potvrdi" Click="btnPotvrdi_Click" Width="50" Height="30" FontSize="10" Margin="45,441,178,10"/>
+                    <Button x:Name="btnOdustani" Content="Odustani" Click="btnOdustani_Click" Width="50" Height="30" FontSize="10" Margin="171,441,52,10"/>
+
+                </Grid>
+            </StackPanel>
         </ScrollViewer>
     </Grid>
 </Window>
