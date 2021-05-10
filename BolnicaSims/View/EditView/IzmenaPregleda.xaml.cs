@@ -1,6 +1,7 @@
 ﻿using BolnicaSims.Controller;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
+using BolnicaSims.View.MainView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -46,7 +47,7 @@ namespace BolnicaSims
                     CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridTermini.ItemsSource).Refresh();
                     break;
                 case "Doktor":
-                    CollectionViewSource.GetDefaultView(ListaSopstvenihTermina.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();
+                    CollectionViewSource.GetDefaultView(ListaTerminaDoktor.Instance.dataGridSopstveniTermini.ItemsSource).Refresh();
                     break;
                 case "Sekretar":
                     CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridTermini.ItemsSource).Refresh();

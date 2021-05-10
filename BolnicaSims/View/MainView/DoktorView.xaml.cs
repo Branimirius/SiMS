@@ -20,15 +20,19 @@ namespace BolnicaSims
     /// </summary>
     public partial class DoktorView : Window
     {
+        Page p1 = new ListaTerminaDoktor();
+
         public DoktorView()
         {
             InitializeComponent();
+            frame.Content = p1;
+            menuItem1.Background = Brushes.DarkCyan;
         }
 
         private void ManualColumns_Click(object sender, RoutedEventArgs e)
         {
-            var s = new ListaSopstvenihTermina();
-            s.Show();
+            frame.Content = p1;
+            menuItem1.Background = Brushes.Blue;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

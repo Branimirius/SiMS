@@ -73,6 +73,9 @@
     <Compile Update="View\EditView\IzmenaProstorije.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\MainView\ListaTerminaDoktor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MainView\PregledKartona.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -83,9 +86,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\ListaProstorija.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Update="View\MainView\ListaSopstvenihTermina.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\PacijentView.xaml.cs">
@@ -177,6 +177,9 @@
     <Page Update="View\EditView\IzmenaProstorije.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\MainView\ListaTerminaDoktor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\MainView\PregledKartona.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -187,9 +190,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\ListaProstorija.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="View\MainView\ListaSopstvenihTermina.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">
