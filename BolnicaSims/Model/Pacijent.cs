@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class Model.Pacijent
  ***********************************************************************/
 
+using BolnicaSims.DTO;
 using BolnicaSims.Model;
 using System;
 using System.Collections.ObjectModel;
@@ -27,7 +28,7 @@ namespace Model
         public DateTime vremeBanovanja { get; set; }
 
         public Pacijent(Korisnik korisnik, ZdravstveniKarton zdravstveniKarton)
-      {
+        {
             this.korisnik = korisnik;
             this.zdravstveniKarton = zdravstveniKarton;
             termini =new ObservableCollection<Termin>();
@@ -44,5 +45,15 @@ namespace Model
             termini = new ObservableCollection<Termin>();
             recepti = new ObservableCollection<Recept>();
       }
+        public Pacijent(PacijentDTO pacijent)
+        {
+            isBanned = false;
+            brojOdradjenihPregleda = 0;
+            termini = new ObservableCollection<Termin>();
+            recepti = new ObservableCollection<Recept>();
+            this.korisnik = new Korisnik(pacijent.korisnik);
+            this.zdravstveniKarton = new ZdravstveniKarton(pacijent.ImeRoditelja, pacijent.BrojKartona, pacijent.BrojZdravstveneKnjizice, pacijent.PolString, pacijent.Anamneza, pacijent.Alergije);
+        }
+    
     }
 }

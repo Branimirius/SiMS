@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BolnicaSims.DTO;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
@@ -29,7 +30,10 @@ namespace BolnicaSims.Controller
         {
             PacijentService.Instance.dodajPacijenta(pacijent);
         }
-
+        public void dodajPacijenta(PacijentDTO pacijent)
+        {
+            PacijentService.Instance.dodajPacijenta(pacijent);
+        }
         public void banujPacijenta(DateTime vreme, Pacijent pacijent)
         {
             PacijentService.Instance.banujPacijenta(vreme, pacijent);

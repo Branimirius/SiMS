@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BolnicaSims.DTO;
 using BolnicaSims.Service;
 using Model;
 
@@ -30,6 +31,10 @@ namespace BolnicaSims.Controller
             return KorisnikService.Instance.Login2(username, password);
         }
         public void registrujKorisnika(Korisnik korisnik)
+        {
+            KorisnikService.Instance.registrujKorisnika(korisnik);
+        }
+        public void registrujKorisnika(KorisnikDTO korisnik)
         {
             KorisnikService.Instance.registrujKorisnika(korisnik);
         }

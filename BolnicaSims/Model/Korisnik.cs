@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class Class6
  ***********************************************************************/
 
+using BolnicaSims.DTO;
 using BolnicaSims.Model;
 using System;
 using System.Collections.Generic;
@@ -60,7 +61,20 @@ namespace Model
         public Korisnik()
         {
         }
-
+        public Korisnik(KorisnikDTO korisnik)
+        {
+            Username = korisnik.Username;
+            Password = korisnik.Password;
+            Ime = korisnik.Ime;
+            Prezime = korisnik.Prezime;
+            Zvanje = korisnik.Zvanje;
+            Jmbg = korisnik.Jmbg;
+            DatumRodjenja = korisnik.DatumRodjenja;
+            Adresa = korisnik.Adresa;
+            Email = korisnik.Email;
+            ImePrezime = korisnik.Ime + " " + korisnik.Prezime;
+            Notifikacije = new ObservableCollection<Notifikacija>();
+        }
     }
 
 }

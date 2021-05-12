@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
@@ -105,7 +106,14 @@ namespace BolnicaSims.Service
             PacijentiStorage.Instance.pacijentiImena.Add(pacijent.korisnik.Ime + " " + pacijent.korisnik.Prezime);
             PacijentiStorage.Instance.Save();
         }
-        
+        public void dodajPacijenta(PacijentDTO pacijent)
+        {
+            pacijent.BrojKartona = GenID();
+            PacijentiStorage.Instance.Read().Add(new Pacijent(pacijent));
+            PacijentiStorage.Instance.pacijentiImena.Add(pacijent.korisnik.Ime + " " + pacijent.korisnik.Prezime);
+            PacijentiStorage.Instance.Save();
+        }
+
         public void banujPacijenta(DateTime vreme, Pacijent pacijent)
         {
             pacijent.isBanned = true;

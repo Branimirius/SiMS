@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using BolnicaSims.DTO;
 using BolnicaSims.Storage;
 using Model;
 
@@ -58,6 +59,12 @@ namespace BolnicaSims.Service
 
 
             KorisniciStorage.Instance.Read().Add(korisnik);
+            KorisniciStorage.Instance.Save();
+        }
+        public void registrujKorisnika(KorisnikDTO korisnik)
+        {
+
+            KorisniciStorage.Instance.Read().Add(new Korisnik(korisnik));
             KorisniciStorage.Instance.Save();
         }
         public void ukloniZaposlenog(Korisnik selektovani)
