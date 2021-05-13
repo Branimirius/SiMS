@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
@@ -126,7 +127,17 @@ namespace BolnicaSims
         }
         private void DetaljiOsoblje_Click(object sender, RoutedEventArgs e)
         {
-
+            KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
+            if(KorisniciStorage.Instance.selektovaniKorisnik.Zvanje == "Doktor")
+            {
+                DoktoriStorage.Instance.selektovaniDoktor = DoktorController.Instance.GetDoktor(KorisniciStorage.Instance.selektovaniKorisnik);
+                var s = new IzmenaDoktora();
+                s.Show();
+            }
+            else
+            {
+                return;
+            }
         }
         private void TransferOsoblje_Click(object sender, RoutedEventArgs e)
         {

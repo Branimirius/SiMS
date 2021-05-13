@@ -28,7 +28,7 @@ namespace Model
             termini = new ObservableCollection<Termin>();
             Specijalizacija = specijalizacija;
         }
-        
+      public Doktor() { }
    
       public Boolean Specijalista { get; set; }
       public Boolean Hirurg { get; set; }

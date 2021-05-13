@@ -21,11 +21,11 @@ namespace BolnicaSims.Service
             }
         }
 
-        public Doktor getUlogovaniDoktor(Korisnik ulogovaniKorisnik)
+        public Doktor getKorisnikDoktor(Korisnik korisnik)
         {
             foreach (Doktor d in DoktoriStorage.Instance.doktori)
             {
-                if (d.korisnik.Username+d.korisnik.Password == ulogovaniKorisnik.Username+ulogovaniKorisnik.Password)
+                if (d.korisnik.Jmbg == korisnik.Jmbg)
                 {
                     return d;
                 }
@@ -33,6 +33,7 @@ namespace BolnicaSims.Service
             return null;
 
         }
+
         public Doktor getDoktor(Doktor doktor)
         {
             foreach(Doktor d in DoktoriStorage.Instance.doktori)
