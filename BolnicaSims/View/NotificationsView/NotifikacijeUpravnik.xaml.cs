@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,6 +28,17 @@ namespace BolnicaSims.View.NotificationsView
         private void okBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void HandleDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var notifikacija = ((ListViewItem)sender).Content as Notifikacija; //Casting back to the binded 
+            MessageBox.Show(notifikacija.Tekst);
+        }
+
+        private void listNotifikacijeUpravnik_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var notifikacija = (Notifikacija)listNotifikacijeUpravnik.SelectedItem;
+            MessageBox.Show(notifikacija.Tekst);
         }
     }
 }

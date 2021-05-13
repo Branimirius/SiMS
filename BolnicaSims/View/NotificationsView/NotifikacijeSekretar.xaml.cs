@@ -27,5 +27,16 @@ namespace BolnicaSims.View.NotificationsView
            
             listBoxNotifikacije.ItemsSource = KorisniciStorage.Instance.ulogovaniKorisnik.Notifikacije;
         }
+        private void HandleDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var notifikacija = ((ListViewItem)sender).Content as Notifikacija; //Casting back to the binded 
+            MessageBox.Show(notifikacija.Tekst);
+        }
+
+        private void listBoxNotifikacije_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var notifikacija = (Notifikacija)listBoxNotifikacije.SelectedItem;
+            MessageBox.Show(notifikacija.Tekst);
+        }
     }
 }

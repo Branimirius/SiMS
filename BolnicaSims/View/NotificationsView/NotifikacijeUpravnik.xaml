@@ -75,6 +75,7 @@
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Height" Value="25"/>
             <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <EventSetter Event="MouseDoubleClick" Handler="HandleDoubleClick" />
             <Style.Triggers>
                 <Trigger Property="IsSelected" Value="True">
                     <Setter Property="Background" Value="#cbd8db"/>
@@ -100,7 +101,7 @@
             </WrapPanel>
             
             <WrapPanel Height="196">
-                <ListView x:Name="listNotifikacijeUpravnik" Height="190" Width="300" >
+                <ListView x:Name="listNotifikacijeUpravnik" SelectionChanged="listNotifikacijeUpravnik_SelectionChanged" Height="190" Width="300" >
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <WrapPanel>

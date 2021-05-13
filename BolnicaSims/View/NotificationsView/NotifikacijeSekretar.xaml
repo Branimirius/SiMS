@@ -6,9 +6,30 @@
         xmlns:local="clr-namespace:BolnicaSims.View.NotificationsView"
         mc:Ignorable="d"
         Title="NotificationsSekretar" Height="359" Width="297">
+    <Window.Resources>
+        <Style TargetType="ListViewItem">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <EventSetter Event="MouseDoubleClick" Handler="HandleDoubleClick" />
+            <Style.Triggers>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="#cbd8db"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     <Grid Margin="0,0,10,0">
         <Label Content="NOTIFIKACIJE&#xD;&#xA;" HorizontalAlignment ="Center" FontStyle="Normal" Margin="0,0,0,320"/>
-        <ListBox x:Name="listBoxNotifikacije" Margin="10,28,0,49">
+        <ListBox x:Name="listBoxNotifikacije" SelectionChanged="listBoxNotifikacije_SelectionChanged" Margin="10,28,0,49">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
