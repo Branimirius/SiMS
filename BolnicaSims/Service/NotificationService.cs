@@ -37,9 +37,9 @@ namespace BolnicaSims.Service
             }
         }
 
-        public void rejectedDrugsNotification(Korisnik korisnik, Lek lek)
+        public void rejectedDrugsNotification(Korisnik korisnik, Lek lek, String komentar)
         {
-            Notifikacija n1 = new Notifikacija("Odbijen lek " + lek.ImeLeka, korisnik.ImePrezime, "Lek je odbijen");
+            Notifikacija n1 = new Notifikacija("Odbijen lek " + lek.ImeLeka, korisnik.ImePrezime, komentar);
 
             foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
             {

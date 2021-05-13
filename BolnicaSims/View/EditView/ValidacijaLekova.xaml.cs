@@ -1,6 +1,7 @@
 ﻿using BolnicaSims.Controller;
 using BolnicaSims.Model;
 using BolnicaSims.Storage;
+using BolnicaSims.View.NotificationsView;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -45,9 +46,13 @@ namespace BolnicaSims.View.EditView
 
         private void odbiVerifikacijuBtn_Click(object sender, RoutedEventArgs e)
         {
+            
             if (listViewVerifikacija.SelectedItem != null)
             {
-                LekoviController.Instance.odbijanjeLeka((Lek)listViewVerifikacija.SelectedItem);
+                LekoviStorage.Instance.selektovanLek = (Lek)listViewVerifikacija.SelectedItem;
+                //LekoviController.Instance.odbijanjeLeka((Lek)listViewVerifikacija.SelectedItem);
+                var s = new OdbijanjeLekaKomentar();
+                s.Show();
             }
             else
             {

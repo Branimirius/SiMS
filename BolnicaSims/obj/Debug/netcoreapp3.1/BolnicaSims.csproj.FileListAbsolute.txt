@@ -424,3 +424,5 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTerminaDoktor.g.cs
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaLekovaDoktor.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTerminaDoktor.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\OdbijanjeLekaKomentar.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\OdbijanjeLekaKomentar.baml

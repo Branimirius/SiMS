@@ -37,9 +37,9 @@ namespace BolnicaSims.Service
             LekoviStorage.Instance.Save();
         }
 
-        public void odbijanjeLeka(Lek lek)
+        public void odbijanjeLeka(Lek lek, String komentar)
         {
-            NotificationService.Instance.rejectedDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, lek);
+            NotificationService.Instance.rejectedDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, lek, komentar);
             LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
             LekoviStorage.Instance.Save();
         }
