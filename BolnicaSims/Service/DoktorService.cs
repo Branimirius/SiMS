@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.DTO;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,18 @@ namespace BolnicaSims.Service
             foreach (Doktor d in DoktoriStorage.Instance.doktori)
             {
                 if (d.korisnik.Jmbg == korisnik.Jmbg)
+                {
+                    return d;
+                }
+            }
+            return null;
+
+        }
+        public Doktor getDoktorJmbg(String jmbg)
+        {
+            foreach (Doktor d in DoktoriStorage.Instance.doktori)
+            {
+                if (d.korisnik.Jmbg == jmbg)
                 {
                     return d;
                 }
@@ -66,6 +79,24 @@ namespace BolnicaSims.Service
             KorisniciStorage.Instance.zaposleni.Add(k);
             
             KorisniciStorage.Instance.Save();
+            DoktoriStorage.Instance.Save();
+        }
+        public void izmeniDoktora(DoktorDTO doktor)
+        {
+            for(int i = 0; i < DoktoriStorage.Instance.doktori.Count; i++)            
+            {
+                if(DoktoriStorage.Instance.doktori[i].korisnik.Jmbg == doktor.korisnik.Jmbg)
+                {
+                    DoktoriStorage.Instance.doktori[i].korisnik.Ime = doktor.korisnik.Ime;
+                    DoktoriStorage.Instance.doktori[i].korisnik.Prezime = doktor.korisnik.Prezime;                    
+                    DoktoriStorage.Instance.doktori[i].korisnik.Adresa = doktor.korisnik.Adresa;
+                    DoktoriStorage.Instance.doktori[i].korisnik.KontaktTelefon = doktor.korisnik.KontaktTelefon;
+                    DoktoriStorage.Instance.doktori[i].korisnik.Email = doktor.korisnik.Email;
+                    DoktoriStorage.Instance.doktori[i].korisnik.Username = doktor.korisnik.Username;
+                    DoktoriStorage.Instance.doktori[i].korisnik.Password = doktor.korisnik.Password;
+                    DoktoriStorage.Instance.doktori[i].Specijalizacija = doktor.Specijalizacija;
+                }
+            }
             DoktoriStorage.Instance.Save();
         }
         public void ukloniDoktora(Korisnik selektovani)

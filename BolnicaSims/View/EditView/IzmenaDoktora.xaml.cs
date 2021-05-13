@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Storage;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,11 @@ namespace BolnicaSims.View.EditView
         public IzmenaDoktora()
         {
             InitializeComponent();
-            txtAdresa.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Adresa;
+            if(DoktoriStorage.Instance.selektovaniDoktor.korisnik.Adresa != null)
+            {
+                txtAdresa.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Adresa;
+            }
+            
             txtEmail.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Email;
             txtJmbg.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Jmbg;
             txtName.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Ime;
@@ -37,7 +42,8 @@ namespace BolnicaSims.View.EditView
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             //TODO
-           // DoktorController.Instance.izmeniDoktora
+            KorisnikDTO tempKorisnik = new KorisnikDTO(txtUsername.Text, txtPassword.Text, txtName.Text, txtPrezime.Text, txtJmbg.Text, txtAdresa.Text, txtTelefon.Text, txtEmail.Text);
+            DoktorController.Instance.izmeniDoktora(new DoktorDTO(tempKorisnik, textBoxSpec.Text));
             this.Close();
         }
 

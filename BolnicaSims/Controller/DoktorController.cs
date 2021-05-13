@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.DTO;
+using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,10 @@ namespace BolnicaSims.Controller
         public void dodajDoktora(String username, String password, String ime, String prezime, String jmbg, String adresa, String telefon, Boolean specijalista, Boolean hirurg, DateTime datumRodjenja, String email, String specijalizacija)
         {
             DoktorService.Instance.dodajDoktora(username, password, ime, prezime, jmbg, adresa, telefon, specijalista, hirurg, datumRodjenja, email, specijalizacija);
+        }
+        public void izmeniDoktora(DoktorDTO doktor)
+        {
+            DoktorService.Instance.izmeniDoktora(doktor);
         }
         public Doktor GetDoktor(Korisnik korisnik)
         {

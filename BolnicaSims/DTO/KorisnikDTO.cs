@@ -40,5 +40,16 @@ namespace BolnicaSims.DTO
             Zvanje = zvanje;
         }
 
+        public KorisnikDTO(string username, string password, string ime, string prezime, string jmbg, string adresa, string kontaktTelefon, string email)
+        {
+            Username = username;
+            Password = password;
+            Ime = ime;
+            Prezime = prezime;
+            Jmbg = jmbg;
+            Adresa = adresa;
+            KontaktTelefon = kontaktTelefon;
+            Email = email;
+        }
     }
 }
