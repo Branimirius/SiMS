@@ -6,7 +6,7 @@ using System.Text;
 namespace BolnicaSims.Model
 {
     [Serializable]
-    class Lek
+   public class Lek
     {
         public String ImeLeka { get; set; }
         

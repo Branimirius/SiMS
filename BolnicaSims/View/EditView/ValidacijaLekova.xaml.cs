@@ -24,7 +24,8 @@ namespace BolnicaSims.View.EditView
         public ValidacijaLekova()
         {
             InitializeComponent();
-            listViewVerifikacija.ItemsSource = LekoviStorage.Instance.neverifikovaniLekovi;
+            //listViewVerifikacija.ItemsSource = LekoviStorage.Instance.neverifikovaniLekovi;
+            listViewVerifikacija.ItemsSource = DoktorController.Instance.GetDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).lekoviValidacija;
         }
 
         private void verifikujBtn_Click(object sender, RoutedEventArgs e)

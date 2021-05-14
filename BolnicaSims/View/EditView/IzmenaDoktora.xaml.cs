@@ -41,7 +41,7 @@ namespace BolnicaSims.View.EditView
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            //TODO
+            
             KorisnikDTO tempKorisnik = new KorisnikDTO(txtUsername.Text, txtPassword.Text, txtName.Text, txtPrezime.Text, txtJmbg.Text, txtAdresa.Text, txtTelefon.Text, txtEmail.Text);
             DoktorController.Instance.izmeniDoktora(new DoktorDTO(tempKorisnik, textBoxSpec.Text));
             this.Close();

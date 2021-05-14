@@ -1,8 +1,10 @@
 ﻿using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Service
@@ -102,8 +104,8 @@ namespace BolnicaSims.Service
         public void ukloniDoktora(Korisnik selektovani)
         {
             foreach(Doktor d in DoktoriStorage.Instance.doktori)
-            {
-                if(selektovani == d.korisnik)
+            {               
+                if(selektovani.Jmbg == d.korisnik.Jmbg)
                 {
                     DoktoriStorage.Instance.doktori.Remove(d);
                     DoktoriStorage.Instance.doktoriImena.Remove(d.korisnik.Ime + " " + d.korisnik.Prezime);
@@ -111,11 +113,7 @@ namespace BolnicaSims.Service
                 }
             }
         }
-        public void ukloniDoktora(Doktor selektovani)
-        {
-            DoktoriStorage.Instance.doktori.Remove(selektovani);
-            DoktoriStorage.Instance.Save();
-        }
+        
 
     }
 }

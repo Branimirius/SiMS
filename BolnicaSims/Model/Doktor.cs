@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class Model.Doktor
  ***********************************************************************/
 
+using BolnicaSims.Model;
 using System;
 using System.Collections.ObjectModel;
 
@@ -14,19 +15,21 @@ namespace Model
    {
       public Korisnik korisnik { get; set; }
       public ObservableCollection<Termin> termini { get; set; }
+        public ObservableCollection<Lek> lekoviValidacija { get; set; }
 
-      public Doktor(Korisnik korisnik)
+        public Doktor(Korisnik korisnik)
         {
             this.korisnik = korisnik;
             this.termini = new ObservableCollection<Termin>();
         }
-      public Doktor(Korisnik k, Boolean specijalista, Boolean hirurg, String specijalizacija) 
+        public Doktor(Korisnik k, Boolean specijalista, Boolean hirurg, String specijalizacija) 
         {
             korisnik = k;
             Specijalista = specijalista;
             Hirurg = hirurg;
             termini = new ObservableCollection<Termin>();
             Specijalizacija = specijalizacija;
+            lekoviValidacija = new ObservableCollection<Lek>();
         }
       public Doktor() { }
    
