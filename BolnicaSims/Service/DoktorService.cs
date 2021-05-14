@@ -103,15 +103,10 @@ namespace BolnicaSims.Service
         }
         public void ukloniDoktora(Korisnik selektovani)
         {
-            foreach(Doktor d in DoktoriStorage.Instance.doktori)
-            {               
-                if(selektovani.Jmbg == d.korisnik.Jmbg)
-                {
-                    DoktoriStorage.Instance.doktori.Remove(d);
-                    DoktoriStorage.Instance.doktoriImena.Remove(d.korisnik.Ime + " " + d.korisnik.Prezime);
-                    DoktoriStorage.Instance.Save();
-                }
-            }
+            DoktoriStorage.Instance.doktori.Remove(getKorisnikDoktor(selektovani));
+            DoktoriStorage.Instance.doktoriImena.Remove(selektovani.Ime + " " + selektovani.Prezime);
+            DoktoriStorage.Instance.Save();
+            
         }
         public void dodajNevalidanLek(Lek lek, ObservableCollection<Doktor> doktori)
         {
