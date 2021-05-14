@@ -55,12 +55,12 @@ namespace Model
             pacijenti.Add(p1);
             pacijenti.Add(p2);
             */
-            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
+            //Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Pacijent p in pacijenti)
             {
                 pacijentiImena.Add(p.korisnik.Ime + " " + p.korisnik.Prezime);
-                p.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
-                p.korisnik.Notifikacije.Add(n1);
+                //p.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
+                //p.korisnik.Notifikacije.Add(n1);
             }
             //this.Save();
                       

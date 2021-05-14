@@ -38,12 +38,12 @@ namespace BolnicaSims.Storage
         {
             doktori = this.Load();
 
-            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
+            //Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Doktor d in doktori)
             {
                 doktoriImena.Add(d.korisnik.Ime + " " + d.korisnik.Prezime);
-                d.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
-                d.korisnik.Notifikacije.Add(n1);
+                //d.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
+                //d.korisnik.Notifikacije.Add(n1);
             }
 
             foreach(Doktor d in doktori)

@@ -56,11 +56,11 @@ namespace BolnicaSims.Storage
             Korisnik k6 = new Korisnik("gorana123", "ivanovic123", "Gorana", "Ivanovic", "Sekretar", "1231991231232", date2, "Resavska 5", "06432221", "marko.markovic@gmail.com");
             korisnici.Add(k6);
             */
-            Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
+            //Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Korisnik k in korisnici)
             {
-                k.Notifikacije = new ObservableCollection<Notifikacija>();
-                k.Notifikacije.Add(n1);
+                //k.Notifikacije = new ObservableCollection<Notifikacija>();
+                //k.Notifikacije.Add(n1);
                 if (k.Zvanje != "Pacijent")
                 {
                     zaposleni.Add(k);
