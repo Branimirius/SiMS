@@ -31,12 +31,15 @@ namespace BolnicaSims.View.AddView
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            LekoviController.Instance.dodajLek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text);
+            LekoviController.Instance.dodajLek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text, izabraniDoktori);
+            izabraniDoktori.Clear();
             this.Close();
+            
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
+            izabraniDoktori.Clear();
             this.Close();
         }      
 

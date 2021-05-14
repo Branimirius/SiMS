@@ -1,8 +1,10 @@
 ﻿using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -34,5 +36,9 @@ namespace BolnicaSims.Controller
         {
             return DoktorService.Instance.getKorisnikDoktor(korisnik);
         }
-    }
+        public void dodajLekValidacija(Lek lek, ObservableCollection<Doktor> doktori)
+        {
+            DoktorService.Instance.dodajNevalidanLek(lek, doktori);
+        }
+    }    
 }

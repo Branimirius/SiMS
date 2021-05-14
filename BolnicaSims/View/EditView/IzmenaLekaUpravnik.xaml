@@ -92,7 +92,7 @@
     </Window.Resources>
     <Grid Background="#a9bec4">
         <ScrollViewer>
-            <StackPanel Height="515">
+            <StackPanel Height="750">
                 <WrapPanel Width="297" Height="50" Background="#527c88">
                     <TextBlock Text=" " Width="84"/>
                     <Label Content="DETALJI LEKA" FontWeight="Bold" Width="89" />
@@ -153,6 +153,39 @@
                     <TextBlock Text="    " Width="18"/>
                     <Button x:Name="ukloniAltBtn" Content="-" Click="ukloniAltBtn_Click"  Width="25" Height="25"/>
 
+                </WrapPanel>
+                <WrapPanel>
+                    <TextBlock Text="Doktori:  " Height="25" TextAlignment="Right" Width="61" />
+                </WrapPanel>
+                <WrapPanel Width="250">
+                    <ListView x:Name="listSviDoktori" SelectionChanged="listSviDoktori_Selected" Height="100" Width="240">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="{Binding korisnik.ImePrezime}"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding Specijalizacija}"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </WrapPanel>
+                <WrapPanel Height="20" Width="250">
+                    <TextBlock Text="Izabrani doktori za validaciju: " Height="20"/>
+
+                </WrapPanel>
+                <WrapPanel Height="100" Width="250">
+                    <ListView x:Name="listIzabraniDoktori" SelectionChanged="listIzabraniDoktori_Selected" Height="100" Width="240">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <WrapPanel>
+                                    <TextBlock Text="{Binding korisnik.ImePrezime}"/>
+                                    <TextBlock Text=" "/>
+                                    <TextBlock Text="{Binding Specijalizacija}"/>
+                                </WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
                 </WrapPanel>
                 <WrapPanel Height="20"/>
                 <WrapPanel Height="30" Width="231">

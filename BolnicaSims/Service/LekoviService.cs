@@ -1,7 +1,9 @@
 ﻿using BolnicaSims.Model;
 using BolnicaSims.Storage;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Service
@@ -21,10 +23,11 @@ namespace BolnicaSims.Service
             }
         }
 
-        public void dodajLek(String naziv, String proizvodjac, String doza, String alergen, String kolicina)
+        public void dodajLek(String naziv, String proizvodjac, String doza, String alergen, String kolicina, ObservableCollection<Doktor> doktori)
         {
             
             Lek tempLek = new Lek(naziv, proizvodjac, doza, alergen, kolicina, GenID(), false);
+            DoktorService.Instance.dodajNevalidanLek(tempLek, doktori);
             LekoviStorage.Instance.lekovi.Add(tempLek);
             LekoviStorage.Instance.lekoviImena.Add(naziv + doza);
             LekoviStorage.Instance.neverifikovaniLekovi.Add(tempLek);
@@ -34,6 +37,7 @@ namespace BolnicaSims.Service
         {
             GetLek(lek).Verifikovan = true;
             LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
+            DoktorService.Instance.ukloniNevalidanLek(lek);
             LekoviStorage.Instance.Save();
         }
 
@@ -41,6 +45,7 @@ namespace BolnicaSims.Service
         {
             NotificationService.Instance.rejectedDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, lek, komentar);
             LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
+            DoktorService.Instance.ukloniNevalidanLek(lek);
             LekoviStorage.Instance.Save();
         }
         public void izmeniLek(Lek lek)
@@ -63,6 +68,7 @@ namespace BolnicaSims.Service
         {
             LekoviStorage.Instance.lekovi.Remove(lek);
             LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
+            DoktorService.Instance.ukloniNevalidanLek(lek);
             LekoviStorage.Instance.Save();
         }
         public void dodajAlternativu(String alternativa)

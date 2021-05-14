@@ -113,7 +113,27 @@ namespace BolnicaSims.Service
                 }
             }
         }
-        
+        public void dodajNevalidanLek(Lek lek, ObservableCollection<Doktor> doktori)
+        {
+            foreach(Doktor d in doktori)
+            {
+                getDoktorJmbg(d.korisnik.Jmbg).lekoviValidacija.Add(lek);
+            }
+            DoktoriStorage.Instance.Save();
+        }
+        public void ukloniNevalidanLek(Lek lek)
+        {
+            foreach (Doktor d in DoktoriStorage.Instance.doktori)
+            {
+                if (d.lekoviValidacija.Contains(lek))
+                {
+                    getDoktorJmbg(d.korisnik.Jmbg).lekoviValidacija.Remove(lek);
+                }
+                
+            }
+            DoktoriStorage.Instance.Save();
+        }
+
 
     }
 }

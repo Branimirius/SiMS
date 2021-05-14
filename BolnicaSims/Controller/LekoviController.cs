@@ -1,7 +1,9 @@
 ﻿using BolnicaSims.Model;
 using BolnicaSims.Service;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -21,9 +23,9 @@ namespace BolnicaSims.Controller
             }
         }
 
-        public void dodajLek(String naziv, String proizvodjac, String doza, String alergen, String kolicina)
+        public void dodajLek(String naziv, String proizvodjac, String doza, String alergen, String kolicina, ObservableCollection<Doktor> izabraniDoktori)
         {
-            LekoviService.Instance.dodajLek(naziv, proizvodjac, doza, alergen, kolicina);
+            LekoviService.Instance.dodajLek(naziv, proizvodjac, doza, alergen, kolicina, izabraniDoktori);
         }
         public void validacijaLeka(Lek lek)
         {

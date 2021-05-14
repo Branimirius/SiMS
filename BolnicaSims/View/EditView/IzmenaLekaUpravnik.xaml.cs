@@ -1,8 +1,10 @@
 ﻿using BolnicaSims.Controller;
 using BolnicaSims.Model;
 using BolnicaSims.Storage;
+using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -20,6 +22,7 @@ namespace BolnicaSims.View.EditView
     /// </summary>
     public partial class IzmenaLekaUpravnik : Window
     {
+        public ObservableCollection<Doktor> izabraniDoktori = new ObservableCollection<Doktor>();
         public IzmenaLekaUpravnik()
         {
             InitializeComponent();
@@ -30,6 +33,8 @@ namespace BolnicaSims.View.EditView
             txtAlergen.Text = LekoviStorage.Instance.selektovanLek.Alergija;
             txtKolicina.Text = LekoviStorage.Instance.selektovanLek.Kolicina.ToString();
             comboAlternative.ItemsSource = LekoviStorage.Instance.lekoviImena;
+            listSviDoktori.ItemsSource = DoktoriStorage.Instance.doktori;
+            listIzabraniDoktori.ItemsSource = izabraniDoktori;
         }
 
         private void dodajAltBtn_Click(object sender, RoutedEventArgs e)
@@ -45,12 +50,23 @@ namespace BolnicaSims.View.EditView
 
         private void izmeniBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            LekoviController.Instance.izmeniLek(LekoviStorage.Instance.selektovanLek);
+            DoktorController.Instance.dodajLekValidacija(LekoviStorage.Instance.selektovanLek, izabraniDoktori);
+            this.Close();
         }
 
         private void nazadBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void listSviDoktori_Selected(object sender, RoutedEventArgs e)
+        {
+            izabraniDoktori.Add((Doktor)listSviDoktori.SelectedItem);
+        }
+
+        private void listIzabraniDoktori_Selected(object sender, RoutedEventArgs e)
+        {
+            izabraniDoktori.Remove((Doktor)listIzabraniDoktori.SelectedItem);
         }
     }
 }
