@@ -19,12 +19,14 @@ namespace BolnicaSims.View.EditView
     /// </summary>
     public partial class RenoviranjeProstorije : Window
     {
+
         public RenoviranjeProstorije()
         {
             InitializeComponent();
             
             listRenoviranja.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.renoviranja;
             txtBlock1.Text = ProstorijeStorage.Instance.selektovanaProstorija.Naziv;
+            comboProstorija.ItemsSource = ProstorijaController.Instance.getSusedneProstorijeNazivi(ProstorijeStorage.Instance.selektovanaProstorija);
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
@@ -37,6 +39,7 @@ namespace BolnicaSims.View.EditView
                 return;
             }
             RenoviranjeController.Instance.zakaziRenoviranje(pocetak, int.Parse(txtTrajanje.Text), ProstorijeStorage.Instance.selektovanaProstorija);
+            
             this.Close();
         }
 
@@ -47,6 +50,35 @@ namespace BolnicaSims.View.EditView
 
         private void btnOtkazi_Click(object sender, RoutedEventArgs e)
         {
+
+        }
+
+        private void checkSpajanje_Checked(object sender, RoutedEventArgs e)
+        {
+            comboProstorija.IsEnabled = true;
+            checkDeljenje.IsChecked = false;
+            checkDeljenje.IsEnabled = false;
+        }
+
+        private void checkSpajanje_Unchecked(object sender, RoutedEventArgs e)
+        {
+            comboProstorija.IsEnabled = false;
+            comboProstorija.SelectedItem = null;
+            checkDeljenje.IsEnabled = true;
+        }
+
+        private void checkDeljenje_Checked(object sender, RoutedEventArgs e)
+        {
+            comboProstorija.SelectedItem = null;
+            comboProstorija.IsEnabled = false;           
+            checkSpajanje.IsChecked = false;
+            checkSpajanje.IsEnabled = false;
+        }
+
+        private void checkDeljenje_Unchecked(object sender, RoutedEventArgs e)
+        {
+            checkSpajanje.IsEnabled = true;
+            checkSpajanje.IsChecked = false;
 
         }
     }

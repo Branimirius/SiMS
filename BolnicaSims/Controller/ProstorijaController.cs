@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -39,6 +40,18 @@ namespace BolnicaSims.Controller
         public Boolean prostorijaRadovi(DateTime pocetak, DateTime kraj, Prostorija prostorija)
         {
             return ProstorijaService.Instance.prostorijaRadovi(pocetak, kraj, prostorija);
+        }
+        public ObservableCollection<Prostorija> getSusedneProstorije(Prostorija prostorija)
+        {
+            return ProstorijaService.Instance.getSusedneProstorije(prostorija);
+        }
+        public ObservableCollection<String> getSusedneProstorijeNazivi(Prostorija prostorija)
+        {
+            return ProstorijaService.Instance.getSusedneProstorijeNazivi(prostorija);
+        }
+        public Prostorija getProstorijaByNaziv(String naziv)
+        {
+            return ProstorijaService.Instance.getProstorijaByNaziv(naziv);
         }
     }
 }

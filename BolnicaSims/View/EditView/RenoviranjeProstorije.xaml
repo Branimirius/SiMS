@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.EditView"
         mc:Ignorable="d"
-        Title="RenoviranjeProstorije" Height="401" Width="330" ResizeMode="CanResize">
+        Title="RenoviranjeProstorije" Height="401" Width="310" ResizeMode="CanResize">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
@@ -91,8 +91,8 @@
         </Style>
     </Window.Resources>
     <Grid Background="#a9bec4">
-        
-        
+
+
         <ScrollViewer>
             <StackPanel>
                 <WrapPanel Background="#527c88">
@@ -101,28 +101,63 @@
                     <Image Source="../../Resources/firstAid.png" Width="50" Height="40"/>
                 </WrapPanel>
                 <Grid>
-                    <TextBlock Text="Izabrana prostorija: " TextAlignment="Right" Width="120" Height="30" FontSize="11" Margin="22,45,168,310"/>
-                    <TextBlock x:Name="txtBlock1" Text=""  Width="100" Height="30" FontSize="11" Margin="177,45,33,310"/>
-                    <TextBlock Text="Datum pocetka radova: " TextAlignment="Right" Width="120" Height="30" FontSize="11" Margin="22,90,168,265"/>
-                    <DatePicker x:Name="datePocetak" Width="120" Height="30" FontSize="11" Margin="177,90,13,265"/>
-                    <TextBlock Text="Trajanje (dana):" TextAlignment="Right" Width="120" Height="30" FontSize="11" Margin="22,135,168,220"/>
-                    <TextBox x:Name= "txtTrajanje" Width="120" Height="30" FontSize="11" Margin="177,135,13,220"/>
-                    <Button x:Name="btnPotvrdi" Content="Potvrdi" HorizontalAlignment="Left" Click="btnPotvrdi_Click" Width="60" Height="30" Margin="52,327,0,28"/>
-                    <Button x:Name="btnOdustani" Content="Odustani" HorizontalAlignment="Left" Click="btnOdustani_Click" Width="60" Height="30" Margin="177,327,0,28"/>
-                    <TextBlock Text="Renoviranja:" TextAlignment="Right" Width="60" Height="30" FontSize="11" Margin="22,193,231,162"/>
-                    <Button x:Name="btnOtkazi" Content="X" HorizontalAlignment="Left" Click="btnOtkazi_Click" Width="20" Height="20" Margin="268,282,0,73"/>
-                    <ListView x:Name="listRenoviranja" SelectionMode="Single" Height="90" Width="200" Margin="98,193,15,103">
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <WrapPanel>
-                                    <TextBlock Text="Od: "/>
-                                    <TextBlock Text="{Binding Pocetak}" FontWeight="Bold"/>
-                                    <TextBlock Text="Do: "/>
-                                    <TextBlock Text="{Binding Kraj}" FontWeight="Bold"/>
-                                </WrapPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                    <StackPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel>
+                            <TextBlock Text="Izabrana prostorija: " TextAlignment="Right" Height="30" FontSize="10"/>
+                            <TextBlock x:Name="txtBlock1" Text=""  Width="100" Height="30" FontSize="10"/>
+
+                        </WrapPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel>
+                            <TextBlock Text="Vreme pocetka radova: " TextAlignment="Right" Width="120" Height="30" FontSize="10" />
+                            <DatePicker x:Name="datePocetak" Height="30" FontSize="10" Width="100" />
+                            <TextBox x:Name="txtSati" FontSize="10" Width="28" />
+                            <TextBox x:Name="txtMinuti" FontSize="10" Width="28" />
+                        </WrapPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel>
+                            <TextBlock Text="Trajanje (dana): " TextAlignment="Right" Width="120" Height="30" FontSize="10" />
+                            <TextBox x:Name= "txtTrajanje" Width="120" Height="30" FontSize="10" />
+                        </WrapPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel Width="225">
+                            <CheckBox Content="Spajanje sobe" x:Name="checkSpajanje" Checked="checkSpajanje_Checked" Unchecked="checkSpajanje_Unchecked" Width="112" />
+                            <CheckBox Content="Deljenje sobe" x:Name="checkDeljenje" Checked="checkDeljenje_Checked" Unchecked="checkDeljenje_Unchecked"/>
+                        </WrapPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel Width="250">
+                            <TextBlock Text="Izaberite sobu: " FontSize="10"/>
+                            <ComboBox Name="comboProstorija" FontSize="10" Width="150" IsEnabled="False" />
+                        </WrapPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel Width="278">
+                            <TextBlock Text="Renoviranja: " TextAlignment="Right" Width="60" Height="90" FontSize="10"/>
+                            <ListView x:Name="listRenoviranja" SelectionMode="Single" Height="90" Width="200">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <WrapPanel>
+                                            <TextBlock Text="Od: "/>
+                                            <TextBlock Text="{Binding Pocetak}" FontWeight="Bold"/>
+                                            <TextBlock Text="Do: "/>
+                                            <TextBlock Text="{Binding Kraj}" FontWeight="Bold"/>
+                                        </WrapPanel>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </WrapPanel>
+                        <WrapPanel Width="250">
+                            <TextBlock Text=" " Width="200"/>
+                            <Button x:Name="btnOtkazi" Content="X" HorizontalAlignment="Left" Click="btnOtkazi_Click" Width="20" Height="20"/>
+                        </WrapPanel>
+                        <WrapPanel Height="10"/>
+                        <WrapPanel Width="240">
+                            <Button x:Name="btnPotvrdi" Content="Potvrdi" HorizontalAlignment="Left" Click="btnPotvrdi_Click" Width="60" Height="30"/>
+                            <TextBlock Text=" " TextAlignment="Right" Width="100" Height="30" FontSize="10" />
+                            <Button x:Name="btnOdustani" Content="Odustani" HorizontalAlignment="Left" Click="btnOdustani_Click" Width="60" Height="30"/>
+                        </WrapPanel>
+                    </StackPanel>
+                    
                 </Grid>
             </StackPanel>
         </ScrollViewer>

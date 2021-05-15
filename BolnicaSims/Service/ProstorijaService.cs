@@ -132,6 +132,18 @@ namespace BolnicaSims.Service
             }
             return null;
         }
+        public Prostorija getProstorijaByNaziv(String prostorija)
+        {
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+                if (p.Naziv == prostorija)
+                {
+                    return p;
+                }
+
+            }
+            return null;
+        }
         public String GenNaziv(TipProstorije tip, String broj, String sprat)
         {
             String naziv = "";
@@ -187,6 +199,32 @@ namespace BolnicaSims.Service
                 }
             }
             return null;
+        }
+        public ObservableCollection<Prostorija> getSusedneProstorije(Prostorija prostorija)
+        {
+            ObservableCollection<Prostorija> ret = new ObservableCollection<Prostorija>();            
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            { 
+                if((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
+                {
+                    ret.Add(p);
+                }
+            }
+
+            return ret;
+        }
+        public ObservableCollection<String> getSusedneProstorijeNazivi(Prostorija prostorija)
+        {
+            ObservableCollection<String> ret = new ObservableCollection<String>();
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+                if ((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
+                {
+                    ret.Add(p.Naziv);
+                }
+            }
+
+            return ret;
         }
         public String GenID()
         {
