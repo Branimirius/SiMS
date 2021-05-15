@@ -44,6 +44,7 @@ namespace BolnicaSims.Service
         public void ukloniProstoriju(Prostorija p)
         {         
             ProstorijeStorage.Instance.prostorije.Remove(p);
+            ProstorijeStorage.Instance.nazivi.Remove(p.Naziv);
             ProstorijeStorage.Instance.Save();
         }
         public void izmeniProstoriju(TipProstorije tip, String sprat, String broj)
@@ -71,6 +72,7 @@ namespace BolnicaSims.Service
                     {
                         p.TipProstorije = tip;
                     }
+                    p.Naziv = GenNaziv(tip, broj, sprat);
 
                 }
             }
