@@ -32,6 +32,7 @@ namespace BolnicaSims.Service
             InventarStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
         }
+        
         public void transferujInventar(int kolicina, Prostorija odrediste)
         {
             if(kolicina == InventarStorage.Instance.selektovaniInventar.Kolicina)

@@ -24,6 +24,7 @@ namespace BolnicaSims.Service
         }
         private static Prostorija selektovanaProstorija;
         private static Prostorija spojProstorija;
+        static Timer timer;
         public void zakaziRenoviranje(DateTime pocetak, int trajanjeDani, Prostorija prostorija)
         {           
             prostorija.renoviranja.Add(new Renoviranje(pocetak, pocetak.AddDays(trajanjeDani), prostorija));
@@ -39,14 +40,15 @@ namespace BolnicaSims.Service
         }
         static void spajanjeProstorija()
         {
-            
+            ProstorijaService.Instance.prebaciInventar(spojProstorija, selektovanaProstorija);
+            ProstorijaService.Instance.prebaciTermine(spojProstorija, selektovanaProstorija);
             selektovanaProstorija.BrojProstorije = Math.Min(selektovanaProstorija.BrojProstorije, spojProstorija.BrojProstorije);
             ProstorijaService.Instance.ukloniProstoriju(spojProstorija);
             ProstorijaService.Instance.izmeniProstoriju(selektovanaProstorija.TipProstorije, selektovanaProstorija.Sprat.ToString(), selektovanaProstorija.BrojProstorije.ToString());
             CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).Refresh();
         }
 
-        static Timer timer;
+        
         static void schedule_Timer(DateTime scheduledTime)
         {
             

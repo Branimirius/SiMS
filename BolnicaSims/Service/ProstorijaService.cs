@@ -42,33 +42,33 @@ namespace BolnicaSims.Service
             ProstorijeStorage.Instance.Save();
         }
         public void ukloniProstoriju(Prostorija p)
-        {         
+        {
             ProstorijeStorage.Instance.prostorije.Remove(p);
             ProstorijeStorage.Instance.nazivi.Remove(p.Naziv);
             ProstorijeStorage.Instance.Save();
         }
         public void izmeniProstoriju(TipProstorije tip, String sprat, String broj)
         {
-            
-            foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
-            {  
-                
-                if(ProstorijeStorage.Instance.selektovanaProstorija.IdProstorije == p.IdProstorije)
+
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+
+                if (ProstorijeStorage.Instance.selektovanaProstorija.IdProstorije == p.IdProstorije)
                 {
                     if (p.TipProstorije == TipProstorije.MAGACIN && tip == TipProstorije.MAGACIN)
                     {
                         MessageBox.Show("Magacin se ne moze menjati");
                         break;
                     }
-                    if(sprat != "" && sprat != "sprat")
+                    if (sprat != "" && sprat != "sprat")
                     {
                         p.Sprat = int.Parse(sprat);
                     }
-                    if(broj != "" && broj != "broj")
+                    if (broj != "" && broj != "broj")
                     {
                         p.BrojProstorije = int.Parse(broj);
                     }
-                    if(p.TipProstorije != tip)
+                    if (p.TipProstorije != tip)
                     {
                         p.TipProstorije = tip;
                     }
@@ -76,9 +76,9 @@ namespace BolnicaSims.Service
 
                 }
             }
-            
+
             ProstorijeStorage.Instance.Save();
-            
+
         }
         public Prostorija getMagacin()
         {
@@ -103,15 +103,15 @@ namespace BolnicaSims.Service
                 {
                     return true;
                 }
-                
+
             }
             return false;
         }
         public Prostorija getProstorija(int sprat, int broj)
         {
-            foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
             {
-                if(p.BrojProstorije == broj && p.Sprat == sprat)
+                if (p.BrojProstorije == broj && p.Sprat == sprat)
                 {
                     return p;
                 }
@@ -130,7 +130,7 @@ namespace BolnicaSims.Service
                 {
                     return p;
                 }
-               
+
             }
             return null;
         }
@@ -167,7 +167,7 @@ namespace BolnicaSims.Service
             return naziv;
         }
 
-        
+
         public void dodajInventar(Prostorija p, Inventar inventar)
         {
             if (getProstorija(p).inventar.Count != 0)
@@ -189,13 +189,13 @@ namespace BolnicaSims.Service
                 p.inventar.Add(inventar);
                 InventarStorage.Instance.inventar.Add(inventar);
             }
-            
+
         }
         public Inventar GetInventarKomad(Prostorija p, String idInventara)
         {
-            foreach(Inventar i in p.inventar)
+            foreach (Inventar i in p.inventar)
             {
-                if(i.IdInventara == idInventara)
+                if (i.IdInventara == idInventara)
                 {
                     return i;
                 }
@@ -204,10 +204,10 @@ namespace BolnicaSims.Service
         }
         public ObservableCollection<Prostorija> getSusedneProstorije(Prostorija prostorija)
         {
-            ObservableCollection<Prostorija> ret = new ObservableCollection<Prostorija>();            
+            ObservableCollection<Prostorija> ret = new ObservableCollection<Prostorija>();
             foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
-            { 
-                if((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
+            {
+                if ((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
                 {
                     ret.Add(p);
                 }
@@ -227,6 +227,36 @@ namespace BolnicaSims.Service
             }
 
             return ret;
+        }
+        public void prebaciInventar(Prostorija spojProstorija, Prostorija prostorija)
+        {
+            foreach(Inventar i in getProstorija(spojProstorija).inventar)
+            {
+                
+                getProstorija(prostorija).inventar.Add(i);
+            }
+            foreach(Inventar i in InventarStorage.Instance.inventar)
+            {
+                if(i.prostorija.Naziv == spojProstorija.Naziv)
+                {
+                    getProstorija(spojProstorija).inventar.Remove(i);
+                    i.prostorija = getProstorija(prostorija);
+                }
+            }
+        }
+        public void prebaciTermine(Prostorija spojProstorija, Prostorija prostorija)
+        {
+            foreach (Termin t in getProstorija(spojProstorija).termini)
+            {
+                getProstorija(prostorija).termini.Add(t);
+            }
+            foreach (Termin t in TerminStorage.Instance.termini)
+            {
+                if (t.prostorija.Naziv == spojProstorija.Naziv)
+                {
+                    t.prostorija = getProstorija(prostorija);
+                }
+            }
         }
         public String GenID()
         {
