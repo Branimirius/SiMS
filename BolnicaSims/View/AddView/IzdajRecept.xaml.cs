@@ -44,13 +44,22 @@ namespace BolnicaSims.View.AddView
                     MessageBox.Show("Izaberite lek");
                     return;
                 }
-                Recept tempRecept = new Recept(PacijentiStorage.Instance.selektovanPacijent, DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text); ;
-                ReceptiStorage.Instance.Read().Add(tempRecept);
-                PacijentService.Instance.getPacijent(PacijentiStorage.Instance.selektovanPacijent).recepti.Add(tempRecept);
-                ReceptiStorage.Instance.Save();
-                PacijentiStorage.Instance.Save();
-                this.Close();
-                MessageBox.Show("Recept je izdat");
+                else
+                {   if (((Lek)comboBox.SelectedItem).Alergija == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije)
+                    {
+                        MessageBox.Show("Pacijent je alegican na izabrani lek");
+                    }
+                    else
+                    {
+                        Recept tempRecept = new Recept(PacijentiStorage.Instance.selektovanPacijent, DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text); ;
+                        ReceptiStorage.Instance.Read().Add(tempRecept);
+                        PacijentService.Instance.getPacijent(PacijentiStorage.Instance.selektovanPacijent).recepti.Add(tempRecept);
+                        ReceptiStorage.Instance.Save();
+                        PacijentiStorage.Instance.Save();
+                        this.Close();
+                        MessageBox.Show("Recept je izdat");
+                    }
+                }
             }
         }
 
