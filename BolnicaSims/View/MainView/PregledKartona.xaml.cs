@@ -62,11 +62,6 @@ namespace BolnicaSims.View.MainView
             MessageBox.Show("Anamneza je sacuvana");
         }
 
-        private void textBox1_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void buttonUput_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeTerminaAdvanced();

@@ -29,13 +29,11 @@ namespace BolnicaSims.Storage
         public ObservableCollection<Lek> lekovi = new ObservableCollection<Lek>();
         public ObservableCollection<String> lekoviImena = new ObservableCollection<String>();
         public ObservableCollection<Lek> neverifikovaniLekovi = new ObservableCollection<Lek>();
-        public ObservableCollection<String> lekoviAlergeni = new ObservableCollection<String>();
         public Lek selektovanLek;
 
         public LekoviStorage()
         {
             this.Load();
-            lekoviAlergeni = lekoviImena;
             foreach(Lek l in lekovi)
             {
                 lekoviImena.Add(l.ImeLeka + " " + l.Doza);

@@ -4,6 +4,7 @@ using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,14 +25,8 @@ namespace BolnicaSims.View.AddView
         public IzdajRecept()
         {
             InitializeComponent();
-            foreach(Lek l in LekoviStorage.Instance.lekovi)
-            {
-                if (l.Alergija == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije)
-                {
-                    LekoviStorage.Instance.lekoviAlergeni.Remove(l.ImeLeka + " " + l.Doza);
-                }
-            }    
-            comboBox.ItemsSource = LekoviStorage.Instance.lekoviAlergeni;
+            comboBox.ItemsSource = LekoviStorage.Instance.lekovi;
+            comboBox.DisplayMemberPath = "ImeLeka";
             labelDoktor.Content = KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime;
             labelPacijent.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime + ' ' + PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
         }
@@ -44,12 +39,12 @@ namespace BolnicaSims.View.AddView
             }
             else
             {
-                if(comboBox.SelectedItem == null)
+                if (comboBox.SelectedItem == null)
                 {
                     MessageBox.Show("Izaberite lek");
                     return;
                 }
-                Recept tempRecept = new Recept(PacijentiStorage.Instance.selektovanPacijent,DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text);
+                Recept tempRecept = new Recept(PacijentiStorage.Instance.selektovanPacijent, DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text); ;
                 ReceptiStorage.Instance.Read().Add(tempRecept);
                 PacijentService.Instance.getPacijent(PacijentiStorage.Instance.selektovanPacijent).recepti.Add(tempRecept);
                 ReceptiStorage.Instance.Save();
