@@ -28,15 +28,13 @@ namespace BolnicaSims.View.MainView
             labelGod.Content = (DateTime.Today.Year - PacijentiStorage.Instance.selektovanPacijent.korisnik.DatumRodjenja.Year).ToString();
             labelPol.Content = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.getPol();
             textBoxAlergija.Text = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije;
-            if (anam != "prazno") 
-            {
-                textBox.Text = anam;
-            }
-            else
+            textBox.Text = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Anamneza;
+            if (textBox.Text == String.Empty) 
             {
                 textBox.Text = "Unesite anamnezu....";
             }
-            textBoxAlergija.Text = al;
+            
+            //textBoxAlergija.Text = al;
         }
 
         private void button_recept_Click(object sender, RoutedEventArgs e)
@@ -45,21 +43,21 @@ namespace BolnicaSims.View.MainView
             s.Show();
         }
 
-        public static string anam = "prazno";
-        public static string al = "";
         private void button_sacuvaj_Click(object sender, RoutedEventArgs e)
         {
-            anam = textBox.Text;
-            al = textBox.Text;
+            //v----TODO: Staviti ovo u Controller i Service--------------v
             foreach(Pacijent p in PacijentiStorage.Instance.Read()) 
             {
-                if (p == PacijentiStorage.Instance.selektovanPacijent)
+                if (p.zdravstveniKarton.BrojKartona == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.BrojKartona)
                 {
                     p.zdravstveniKarton.Anamneza = textBox.Text;
                     p.zdravstveniKarton.Alergije = textBoxAlergija.Text;
                 }
             }
+            PacijentiStorage.Instance.Save();
+            //^---------------------------------------------------------------^
             MessageBox.Show("Anamneza je sacuvana");
+
         }
 
         private void buttonUput_Click(object sender, RoutedEventArgs e)

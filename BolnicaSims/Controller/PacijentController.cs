@@ -47,6 +47,10 @@ namespace BolnicaSims.Controller
         {
             return PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik);
         }
+        public Pacijent getPacijent(Pacijent pacijent)
+        {
+            return PacijentService.Instance.getPacijent(pacijent);
+        }
            
     }
 }

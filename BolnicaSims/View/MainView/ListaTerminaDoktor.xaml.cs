@@ -82,8 +82,14 @@ namespace BolnicaSims.View.MainView
         }
         private void button_karton_Click(object sender, RoutedEventArgs e)
         {
+            
             Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
-            Pacijent selektovanPacijent = selektovan.pacijent;
+            if(selektovan == null)
+            {
+                MessageBox.Show("niste izabrali termin (pacijenta).");
+                return;
+            }
+            Pacijent selektovanPacijent = PacijentController.Instance.getPacijent(selektovan.pacijent);
             PacijentiStorage.Instance.selektovanPacijent = selektovanPacijent;
 
             var s = new PregledKartona();
