@@ -48,8 +48,10 @@ namespace BolnicaSims.View.EditView
                     return;
                 }
                 RenoviranjeController.Instance.zakaziSpajanje(pocetak, int.Parse(txtTrajanje.Text),(String)comboProstorija.SelectedItem, ProstorijeStorage.Instance.selektovanaProstorija);
-
-
+            }
+            if (checkDeljenje.IsChecked == true)
+            {               
+                RenoviranjeController.Instance.zakaziDeljenje(pocetak, int.Parse(txtTrajanje.Text), ProstorijeStorage.Instance.selektovanaProstorija);
             }
             RenoviranjeController.Instance.zakaziRenoviranje(pocetak, int.Parse(txtTrajanje.Text), ProstorijeStorage.Instance.selektovanaProstorija);
             

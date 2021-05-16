@@ -35,8 +35,14 @@ namespace BolnicaSims.Service
             selektovanaProstorija = prostorija;
             spojProstorija = ProstorijaService.Instance.getProstorijaByNaziv(prostorijaSpoj);
             DateTime kraj = pocetak.AddDays(trajanjeDani);
-            schedule_Timer(kraj);
+            schedule_TimerSpajanje(kraj);
 
+        }
+        public void zakaziDeljenje(DateTime pocetak, int trajanjeDani, Prostorija prostorija)
+        {
+            selektovanaProstorija = prostorija;
+            DateTime kraj = pocetak.AddDays(trajanjeDani);
+            schedule_TimerDeljenje(kraj);
         }
         static void spajanjeProstorija()
         {
@@ -47,9 +53,13 @@ namespace BolnicaSims.Service
             ProstorijaService.Instance.izmeniProstoriju(selektovanaProstorija.TipProstorije, selektovanaProstorija.Sprat.ToString(), selektovanaProstorija.BrojProstorije.ToString());
             CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).Refresh();
         }
+        static void deljenjeProstorija()
+        {
+            ProstorijaService.Instance.dodajProstoriju(selektovanaProstorija.TipProstorije, selektovanaProstorija.Sprat.ToString(), ProstorijaService.Instance.genBrojProstorijeDeljenje(selektovanaProstorija));
+            CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).Refresh();
+        }
 
-        
-        static void schedule_Timer(DateTime scheduledTime)
+        static void schedule_TimerSpajanje(DateTime scheduledTime)
         {
             
             //Console.WriteLine("### Timer Started ###");
@@ -63,10 +73,19 @@ namespace BolnicaSims.Service
 
             double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
             timer = new Timer(tickTime);
-            timer.Elapsed += new ElapsedEventHandler(timer_Elapsed);
+            timer.Elapsed += new ElapsedEventHandler(timer_ElapsedSpajanje);
             timer.Start();
         }
-        static void timer_Elapsed(object sender, ElapsedEventArgs e)
+        static void schedule_TimerDeljenje(DateTime scheduledTime)
+        {
+
+            
+            double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
+            timer = new Timer(tickTime);
+            timer.Elapsed += new ElapsedEventHandler(timer_ElapsedDeljenje);
+            timer.Start();
+        }
+        static void timer_ElapsedSpajanje(object sender, ElapsedEventArgs e)
         {          
             timer.Stop();
             App.Current.Dispatcher.Invoke((Action)delegate // <--- HERE
@@ -74,6 +93,15 @@ namespace BolnicaSims.Service
                 spajanjeProstorija();
             });
             
+        }
+        static void timer_ElapsedDeljenje(object sender, ElapsedEventArgs e)
+        {
+            timer.Stop();
+            App.Current.Dispatcher.Invoke((Action)delegate // <--- HERE
+            {
+                deljenjeProstorija();
+            });
+
         }
     }
 }

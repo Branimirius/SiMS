@@ -258,6 +258,24 @@ namespace BolnicaSims.Service
                 }
             }
         }
+
+        public String genBrojProstorijeDeljenje(Prostorija deljenaProstorija)
+        {
+            int broj = deljenaProstorija.BrojProstorije;
+           
+            if (getProstorija(deljenaProstorija.Sprat, broj + 1) == null)
+            {
+                return (broj + 1).ToString();
+            }
+            if ((getProstorija(deljenaProstorija.Sprat, broj - 1) == null) && ((broj - 1) > 0))
+            {
+                return (broj - 1).ToString();
+            }
+            return (broj.ToString() + '1');
+            
+                       
+            
+        }
         public String GenID()
         {
             int a = 0;
