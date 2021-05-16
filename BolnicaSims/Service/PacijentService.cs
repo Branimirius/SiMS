@@ -25,7 +25,6 @@ namespace BolnicaSims.Service
         }
         public void izmeniPacijenta(Pacijent pacijent, Pacijent selected)
         {
-            Pacijent temp;
             for (int i = 0; i < PacijentiStorage.Instance.pacijenti.Count; i++)
             {
 
