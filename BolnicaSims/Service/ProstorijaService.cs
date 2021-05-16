@@ -28,8 +28,8 @@ namespace BolnicaSims.Service
             Prostorija tempProstorija = new Prostorija(tip, sprat, broj);
             //tempProstorija.IdProstorije = "1";
             tempProstorija.IdProstorije = GenID();
-            tempProstorija.Naziv = GenNaziv(tip, sprat, broj);
-
+            tempProstorija.Naziv = GenNaziv(tip, broj, sprat);
+            tempProstorija.susedneProstorije = getSusedneProstorijeNazivi(tempProstorija);
             ProstorijeStorage.Instance.prostorije.Add(tempProstorija);
             /*
             foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
@@ -38,6 +38,7 @@ namespace BolnicaSims.Service
                 p.renoviranja = new ObservableCollection<Renoviranje>();
             }
             */
+            
             InventarStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
         }
@@ -45,6 +46,13 @@ namespace BolnicaSims.Service
         {
             ProstorijeStorage.Instance.prostorije.Remove(p);
             ProstorijeStorage.Instance.nazivi.Remove(p.Naziv);
+            foreach(Prostorija prostorija in ProstorijeStorage.Instance.prostorije)
+            {
+                if (prostorija.susedneProstorije.Contains(p.Naziv))
+                {
+                    prostorija.susedneProstorije.Remove(p.Naziv);
+                }
+            }
             ProstorijeStorage.Instance.Save();
         }
         public void izmeniProstoriju(TipProstorije tip, String sprat, String broj)

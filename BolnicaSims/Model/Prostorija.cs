@@ -40,6 +40,7 @@ namespace Model
             inventar = new ObservableCollection<Inventar>();
             termini = new ObservableCollection<Termin>();
             renoviranja = new ObservableCollection<Renoviranje>();
+            susedneProstorije = new ObservableCollection<String>();
         }
 
         public Prostorija() { }
@@ -56,6 +57,7 @@ namespace Model
         public ObservableCollection<Inventar> inventar { get; set; }
         public ObservableCollection<Termin> termini { get; set; }
         public ObservableCollection<Renoviranje> renoviranja { get; set; }
+        public ObservableCollection<String> susedneProstorije { get; set; }
         public int Sprat
         {
          get
