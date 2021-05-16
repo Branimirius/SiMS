@@ -95,10 +95,19 @@ namespace BolnicaSims.Service
 
             PacijentiStorage.Instance.Save();
 
-            SekretarView.Instance.refreshPacijenti();
-
-            
-            
+            SekretarView.Instance.refreshPacijenti();            
+        }
+        public void izmeniAnamnezu(String anamneza, String alergija)
+        {
+            foreach (Pacijent p in PacijentiStorage.Instance.Read())
+            {
+                if (p.zdravstveniKarton.BrojKartona == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.BrojKartona)
+                {
+                    p.zdravstveniKarton.Anamneza = anamneza;
+                    p.zdravstveniKarton.Alergije = alergija;
+                }
+            }
+            PacijentiStorage.Instance.Save();
         }
         public void dodajPacijenta(Pacijent pacijent)
         {

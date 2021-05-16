@@ -26,6 +26,10 @@ namespace BolnicaSims.Controller
         {
             PacijentService.Instance.izmeniPacijenta(pacijent, selected);
         }
+        public void izmeniAnamnezu(String anamneza, String alergija)
+        {
+            PacijentService.Instance.izmeniAnamnezu(anamneza, alergija);
+        }
         public void dodajPacijenta(Pacijent pacijent)
         {
             PacijentService.Instance.dodajPacijenta(pacijent);

@@ -1,4 +1,5 @@
-﻿using BolnicaSims.View.AddView;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.View.AddView;
 using BolnicaSims.View.EditView;
 using Model;
 using System;
@@ -45,17 +46,7 @@ namespace BolnicaSims.View.MainView
 
         private void button_sacuvaj_Click(object sender, RoutedEventArgs e)
         {
-            //v----TODO: Staviti ovo u Controller i Service--------------v
-            foreach(Pacijent p in PacijentiStorage.Instance.Read()) 
-            {
-                if (p.zdravstveniKarton.BrojKartona == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.BrojKartona)
-                {
-                    p.zdravstveniKarton.Anamneza = textBox.Text;
-                    p.zdravstveniKarton.Alergije = textBoxAlergija.Text;
-                }
-            }
-            PacijentiStorage.Instance.Save();
-            //^---------------------------------------------------------------^
+            PacijentController.Instance.izmeniAnamnezu(textBox.Text, textBoxAlergija.Text);
             MessageBox.Show("Anamneza je sacuvana");
 
         }
