@@ -48,6 +48,7 @@ namespace BolnicaSims.Service
         {
             ProstorijaService.Instance.prebaciInventar(spojProstorija, selektovanaProstorija);
             ProstorijaService.Instance.prebaciTermine(spojProstorija, selektovanaProstorija);
+            ProstorijaService.Instance.handleSusedneSpajanje(selektovanaProstorija, spojProstorija);
             selektovanaProstorija.BrojProstorije = Math.Min(selektovanaProstorija.BrojProstorije, spojProstorija.BrojProstorije);
             ProstorijaService.Instance.ukloniProstoriju(spojProstorija);
             ProstorijaService.Instance.izmeniProstoriju(selektovanaProstorija.TipProstorije, selektovanaProstorija.Sprat.ToString(), selektovanaProstorija.BrojProstorije.ToString());
@@ -55,7 +56,9 @@ namespace BolnicaSims.Service
         }
         static void deljenjeProstorija()
         {
-            ProstorijaService.Instance.dodajProstoriju(selektovanaProstorija.TipProstorije, selektovanaProstorija.Sprat.ToString(), ProstorijaService.Instance.genBrojProstorijeDeljenje(selektovanaProstorija));
+            String brojNove = ProstorijaService.Instance.genBrojProstorijeDeljenje(selektovanaProstorija);          
+            ProstorijaService.Instance.dodajProstoriju(selektovanaProstorija.TipProstorije, selektovanaProstorija.Sprat.ToString(), brojNove);
+            ProstorijaService.Instance.handleSusedneDeljenje(brojNove, selektovanaProstorija.Sprat.ToString());
             CollectionViewSource.GetDefaultView(UpravnikView.Instance.dataGridProstorije.ItemsSource).Refresh();
         }
 

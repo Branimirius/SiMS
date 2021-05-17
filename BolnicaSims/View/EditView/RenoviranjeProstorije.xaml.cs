@@ -26,7 +26,7 @@ namespace BolnicaSims.View.EditView
             
             listRenoviranja.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.renoviranja;
             txtBlock1.Text = ProstorijeStorage.Instance.selektovanaProstorija.Naziv;
-            ProstorijaController.Instance.getProstorijaByNaziv(ProstorijeStorage.Instance.selektovanaProstorija.Naziv).susedneProstorije = ProstorijaController.Instance.getSusedneProstorijeNazivi(ProstorijeStorage.Instance.selektovanaProstorija);
+            //ProstorijaController.Instance.getProstorijaByNaziv(ProstorijeStorage.Instance.selektovanaProstorija.Naziv).susedneProstorije = ProstorijaController.Instance.getSusedneProstorijeNazivi(ProstorijeStorage.Instance.selektovanaProstorija);
             comboProstorija.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.susedneProstorije; 
         }
 

@@ -123,10 +123,7 @@ namespace BolnicaSims.Service
                 {
                     return p;
                 }
-                else
-                {
-                    return null;
-                }
+                
             }
             return null;
         }
@@ -226,15 +223,53 @@ namespace BolnicaSims.Service
         public ObservableCollection<String> getSusedneProstorijeNazivi(Prostorija prostorija)
         {
             ObservableCollection<String> ret = new ObservableCollection<String>();
+            ret.Add(String.Empty);
+            ret.Add(String.Empty);
             foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
             {
                 if ((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
                 {
-                    ret.Add(p.Naziv);
+                    if(p.BrojProstorije < prostorija.BrojProstorije)
+                    {
+                        ret[0] = p.Naziv;
+                    }
+                    else
+                    {
+                        ret[1] = p.Naziv;
+                    }
                 }
             }
 
             return ret;
+        }
+        public void handleSusedneSpajanje(Prostorija selektovana, Prostorija spoj)
+        {
+            if(selektovana.BrojProstorije < spoj.BrojProstorije)
+            {
+                getProstorija(selektovana).susedneProstorije[1] = getProstorija(spoj).susedneProstorije[1];
+            }
+            else
+            {
+                getProstorija(selektovana).susedneProstorije[0] = getProstorija(spoj).susedneProstorije[0];
+            }
+        }
+        public void handleSusedneDeljenje(String broj, String sprat)
+        {
+            //getProstorija(int.Parse(sprat), int.Parse(broj)).susedneProstorije = getSusedneProstorijeNazivi(getProstorija(int.Parse(sprat), int.Parse(broj)));
+            foreach(Prostorija p in getSusedneProstorije(getProstorija(int.Parse(sprat), int.Parse(broj))))
+            {
+                if(p != null)
+                {
+                    if(p.BrojProstorije < int.Parse(broj))
+                    {
+                        getProstorija(p).susedneProstorije[1] = getProstorija(int.Parse(sprat), int.Parse(broj)).Naziv;
+                    }
+                    else
+                    {
+                        getProstorija(p).susedneProstorije[0] = getProstorija(int.Parse(sprat), int.Parse(broj)).Naziv;
+                    }
+                }
+            }
         }
         public void prebaciInventar(Prostorija spojProstorija, Prostorija prostorija)
         {
@@ -260,7 +295,7 @@ namespace BolnicaSims.Service
             }
             foreach (Termin t in TerminStorage.Instance.termini)
             {
-                if (t.prostorija.Naziv == spojProstorija.Naziv)
+                if (t.prostorija != null && t.prostorija.Naziv == spojProstorija.Naziv)
                 {
                     t.prostorija = getProstorija(prostorija);
                 }
@@ -270,15 +305,18 @@ namespace BolnicaSims.Service
         public String genBrojProstorijeDeljenje(Prostorija deljenaProstorija)
         {
             int broj = deljenaProstorija.BrojProstorije;
-           
-            if (getProstorija(deljenaProstorija.Sprat, broj + 1) == null)
+            for(int i = 1; i < ProstorijeStorage.Instance.prostorije.Count; i++)
             {
-                return (broj + 1).ToString();
+                if (getProstorija(deljenaProstorija.Sprat, (broj + i)) == null)
+                {
+                    return (broj + i).ToString();
+                }
+                if ((getProstorija(deljenaProstorija.Sprat, (broj - i)) == null) && ((broj - i) > 0))
+                {
+                    return (broj - i).ToString();
+                }
             }
-            if ((getProstorija(deljenaProstorija.Sprat, broj - 1) == null) && ((broj - 1) > 0))
-            {
-                return (broj - 1).ToString();
-            }
+            
             return (broj.ToString() + '1');
             
                        
