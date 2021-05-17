@@ -28,8 +28,8 @@ namespace BolnicaSims.Service
             Prostorija tempProstorija = new Prostorija(tip, sprat, broj);
             //tempProstorija.IdProstorije = "1";
             tempProstorija.IdProstorije = GenID();
-            tempProstorija.Naziv = GenNaziv(tip, sprat, broj);
-
+            tempProstorija.Naziv = GenNaziv(tip, broj, sprat);
+            tempProstorija.susedneProstorije = getSusedneProstorijeNazivi(tempProstorija);
             ProstorijeStorage.Instance.prostorije.Add(tempProstorija);
             /*
             foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
@@ -38,45 +38,55 @@ namespace BolnicaSims.Service
                 p.renoviranja = new ObservableCollection<Renoviranje>();
             }
             */
+            
             InventarStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
         }
         public void ukloniProstoriju(Prostorija p)
-        {         
+        {
             ProstorijeStorage.Instance.prostorije.Remove(p);
+            ProstorijeStorage.Instance.nazivi.Remove(p.Naziv);
+            foreach(Prostorija prostorija in ProstorijeStorage.Instance.prostorije)
+            {
+                if (prostorija.susedneProstorije.Contains(p.Naziv))
+                {
+                    prostorija.susedneProstorije.Remove(p.Naziv);
+                }
+            }
             ProstorijeStorage.Instance.Save();
         }
         public void izmeniProstoriju(TipProstorije tip, String sprat, String broj)
         {
-            
-            foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
-            {  
-                
-                if(ProstorijeStorage.Instance.selektovanaProstorija.IdProstorije == p.IdProstorije)
+
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+
+                if (ProstorijeStorage.Instance.selektovanaProstorija.IdProstorije == p.IdProstorije)
                 {
                     if (p.TipProstorije == TipProstorije.MAGACIN && tip == TipProstorije.MAGACIN)
                     {
                         MessageBox.Show("Magacin se ne moze menjati");
                         break;
                     }
-                    if(sprat != "" && sprat != "sprat")
+                    if (sprat != "" && sprat != "sprat")
                     {
                         p.Sprat = int.Parse(sprat);
                     }
-                    if(broj != "" && broj != "broj")
+                    if (broj != "" && broj != "broj")
                     {
                         p.BrojProstorije = int.Parse(broj);
                     }
-                    if(p.TipProstorije != tip)
+                    if (p.TipProstorije != tip)
                     {
                         p.TipProstorije = tip;
                     }
+                    p.Naziv = GenNaziv(tip, broj, sprat);
 
                 }
             }
-            
+
             ProstorijeStorage.Instance.Save();
-            
+
         }
         public Prostorija getMagacin()
         {
@@ -101,22 +111,19 @@ namespace BolnicaSims.Service
                 {
                     return true;
                 }
-                
+
             }
             return false;
         }
         public Prostorija getProstorija(int sprat, int broj)
         {
-            foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
             {
-                if(p.BrojProstorije == broj && p.Sprat == sprat)
+                if (p.BrojProstorije == broj && p.Sprat == sprat)
                 {
                     return p;
                 }
-                else
-                {
-                    return null;
-                }
+                
             }
             return null;
         }
@@ -128,7 +135,19 @@ namespace BolnicaSims.Service
                 {
                     return p;
                 }
-               
+
+            }
+            return null;
+        }
+        public Prostorija getProstorijaByNaziv(String prostorija)
+        {
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+                if (p.Naziv == prostorija)
+                {
+                    return p;
+                }
+
             }
             return null;
         }
@@ -153,7 +172,7 @@ namespace BolnicaSims.Service
             return naziv;
         }
 
-        
+
         public void dodajInventar(Prostorija p, Inventar inventar)
         {
             if (getProstorija(p).inventar.Count != 0)
@@ -175,18 +194,133 @@ namespace BolnicaSims.Service
                 p.inventar.Add(inventar);
                 InventarStorage.Instance.inventar.Add(inventar);
             }
-            
+
         }
         public Inventar GetInventarKomad(Prostorija p, String idInventara)
         {
-            foreach(Inventar i in p.inventar)
+            foreach (Inventar i in p.inventar)
             {
-                if(i.IdInventara == idInventara)
+                if (i.IdInventara == idInventara)
                 {
                     return i;
                 }
             }
             return null;
+        }
+        public ObservableCollection<Prostorija> getSusedneProstorije(Prostorija prostorija)
+        {
+            ObservableCollection<Prostorija> ret = new ObservableCollection<Prostorija>();
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+                if ((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
+                {
+                    ret.Add(p);
+                }
+            }
+
+            return ret;
+        }
+        public ObservableCollection<String> getSusedneProstorijeNazivi(Prostorija prostorija)
+        {
+            ObservableCollection<String> ret = new ObservableCollection<String>();
+            ret.Add(String.Empty);
+            ret.Add(String.Empty);
+            foreach (Prostorija p in ProstorijeStorage.Instance.prostorije)
+            {
+                if ((p.Sprat == prostorija.Sprat) && (Math.Abs(p.BrojProstorije - prostorija.BrojProstorije) == 1))
+                {
+                    if(p.BrojProstorije < prostorija.BrojProstorije)
+                    {
+                        ret[0] = p.Naziv;
+                    }
+                    else
+                    {
+                        ret[1] = p.Naziv;
+                    }
+                }
+            }
+
+            return ret;
+        }
+        public void handleSusedneSpajanje(Prostorija selektovana, Prostorija spoj)
+        {
+            if(selektovana.BrojProstorije < spoj.BrojProstorije)
+            {
+                getProstorija(selektovana).susedneProstorije[1] = getProstorija(spoj).susedneProstorije[1];
+            }
+            else
+            {
+                getProstorija(selektovana).susedneProstorije[0] = getProstorija(spoj).susedneProstorije[0];
+            }
+        }
+        public void handleSusedneDeljenje(String broj, String sprat)
+        {
+            //getProstorija(int.Parse(sprat), int.Parse(broj)).susedneProstorije = getSusedneProstorijeNazivi(getProstorija(int.Parse(sprat), int.Parse(broj)));
+            foreach(Prostorija p in getSusedneProstorije(getProstorija(int.Parse(sprat), int.Parse(broj))))
+            {
+                if(p != null)
+                {
+                    if(p.BrojProstorije < int.Parse(broj))
+                    {
+                        getProstorija(p).susedneProstorije[1] = getProstorija(int.Parse(sprat), int.Parse(broj)).Naziv;
+                    }
+                    else
+                    {
+                        getProstorija(p).susedneProstorije[0] = getProstorija(int.Parse(sprat), int.Parse(broj)).Naziv;
+                    }
+                }
+            }
+        }
+        public void prebaciInventar(Prostorija spojProstorija, Prostorija prostorija)
+        {
+            foreach(Inventar i in getProstorija(spojProstorija).inventar)
+            {
+                
+                getProstorija(prostorija).inventar.Add(i);
+            }
+            foreach(Inventar i in InventarStorage.Instance.inventar)
+            {
+                if(i.prostorija.Naziv == spojProstorija.Naziv)
+                {
+                    getProstorija(spojProstorija).inventar.Remove(i);
+                    i.prostorija = getProstorija(prostorija);
+                }
+            }
+        }
+        public void prebaciTermine(Prostorija spojProstorija, Prostorija prostorija)
+        {
+            foreach (Termin t in getProstorija(spojProstorija).termini)
+            {
+                getProstorija(prostorija).termini.Add(t);
+            }
+            foreach (Termin t in TerminStorage.Instance.termini)
+            {
+                if (t.prostorija != null && t.prostorija.Naziv == spojProstorija.Naziv)
+                {
+                    t.prostorija = getProstorija(prostorija);
+                }
+            }
+        }
+
+        public String genBrojProstorijeDeljenje(Prostorija deljenaProstorija)
+        {
+            int broj = deljenaProstorija.BrojProstorije;
+            for(int i = 1; i < ProstorijeStorage.Instance.prostorije.Count; i++)
+            {
+                if (getProstorija(deljenaProstorija.Sprat, (broj + i)) == null)
+                {
+                    return (broj + i).ToString();
+                }
+                if ((getProstorija(deljenaProstorija.Sprat, (broj - i)) == null) && ((broj - i) > 0))
+                {
+                    return (broj - i).ToString();
+                }
+            }
+            
+            return (broj.ToString() + '1');
+            
+                       
+            
         }
         public String GenID()
         {
