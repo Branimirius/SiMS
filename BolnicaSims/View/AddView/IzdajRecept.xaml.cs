@@ -26,7 +26,7 @@ namespace BolnicaSims.View.AddView
         {
             InitializeComponent();
             comboBox.ItemsSource = LekoviStorage.Instance.lekovi;
-            comboBox.DisplayMemberPath = "ImeLeka";
+            //comboBox.DisplayMemberPath = "ImeLeka";
             labelDoktor.Content = KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime;
             labelPacijent.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime + ' ' + PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
         }
@@ -47,7 +47,7 @@ namespace BolnicaSims.View.AddView
                 else
                 {   if (((Lek)comboBox.SelectedItem).Alergija == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije)
                     {
-                        MessageBox.Show("Pacijent je alegican na izabrani lek");
+                        MessageBox.Show("Pacijent je alegican na izabrani lek, alternative: " + ((Lek)comboBox.SelectedItem).Alternative[0].ToString());
                     }
                     else
                     {

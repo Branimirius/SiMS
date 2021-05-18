@@ -47,5 +47,10 @@ namespace BolnicaSims.Model
             Alternative = new ObservableCollection<Lek>();
         }
 
+        public override string ToString()
+        {
+            return ImeLeka + " " + Doza;
+        }
+
     }
 }
