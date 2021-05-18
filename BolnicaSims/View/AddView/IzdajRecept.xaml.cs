@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
@@ -47,7 +48,7 @@ namespace BolnicaSims.View.AddView
                 else
                 {   if (((Lek)comboBox.SelectedItem).Alergija == PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije)
                     {
-                        MessageBox.Show("Pacijent je alegican na izabrani lek, alternative: " + ((Lek)comboBox.SelectedItem).Alternative[0].ToString());
+                        MessageBox.Show(" Pacijent je alegican na izabrani lek. \n Alternative: " + LekoviController.Instance.getAlternative((Lek)comboBox.SelectedItem));
                     }
                     else
                     {
