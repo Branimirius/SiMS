@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
 BolnicaSims
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\App.xaml
+D:\OISISI - github rep\SiMS\BolnicaSims\App.xaml
 40-620966708
 
 95-772828169
 192-1533232326
 MainWindow.xaml;View\AddView\AnketaBolnica.xaml;View\AddView\AnketaDoktor.xaml;View\AddView\DodavanjeDoktora.xaml;View\AddView\DodavanjeInventara.xaml;View\AddView\DodavanjeLekova.xaml;View\AddView\DodavanjeOsoblja.xaml;View\AddView\DodavanjePacijenta.xaml;View\AddView\DodavanjePregleda.xaml;View\AddView\DodavanjeProstorije.xaml;View\AddView\DodavanjeTerminaAdvanced.xaml;View\AddView\DodavanjeTerminaDoktor.xaml;View\AddView\DodavanjeTerminaSekretar.xaml;View\AddView\IzdajRecept.xaml;View\DeleteView\BrisanjeLeka.xaml;View\DeleteView\BrisanjeOsoblja.xaml;View\DeleteView\BrisanjeProstorija.xaml;View\EditView\IzmenaDoktora.xaml;View\EditView\IzmenaLeka.xaml;View\EditView\IzmenaLekaUpravnik.xaml;View\EditView\IzmenaPacijenta.xaml;View\EditView\IzmenaPregleda.xaml;View\EditView\IzmenaProstorije.xaml;View\EditView\IzmenaTerminaAdvanced.xaml;View\EditView\RenoviranjeProstorije.xaml;View\EditView\ValidacijaLekova.xaml;View\MainView\DoktorView.xaml;View\MainView\ListaLekovaDoktor.xaml;View\MainView\ListaProstorija.xaml;View\MainView\ListaTerminaDoktor.xaml;View\MainView\PacijentView.xaml;View\MainView\PregledKartona.xaml;View\MainView\SekretarView.xaml;View\MainView\UpravnikView.xaml;View\NotificationsView\NotifikacijeDoktor.xaml;View\NotificationsView\NotifikacijePacijent.xaml;View\NotificationsView\NotifikacijeSekretar.xaml;View\NotificationsView\NotifikacijeUpravnik.xaml;View\NotificationsView\OdbijanjeLekaKomentar.xaml;View\TransferView\TransferInventar.xaml;
 
-True
+False
 

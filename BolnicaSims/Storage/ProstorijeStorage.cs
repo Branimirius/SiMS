@@ -34,6 +34,7 @@ namespace Model
         public ObservableCollection<Prostorija> ordinacije = new ObservableCollection<Prostorija>();
         public ObservableCollection<String> nazivi = new ObservableCollection<String>();
         private String fileLocation = "prostorijeStorage.txt";
+
         public Prostorija selektovanaProstorija;
         public ProstorijeStorage()
         {
@@ -54,7 +55,7 @@ namespace Model
         }
 
         public void Save()
-      {
+        {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(fileLocation, FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, prostorije);

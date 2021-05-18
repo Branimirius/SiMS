@@ -430,3 +430,7 @@ C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Ed
 C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaLekovaDoktor.baml
 C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\MainView\ListaTerminaDoktor.baml
 C:\Users\filip\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\OdbijanjeLekaKomentar.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaDoktora.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\OdbijanjeLekaKomentar.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaDoktora.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\NotificationsView\OdbijanjeLekaKomentar.baml
