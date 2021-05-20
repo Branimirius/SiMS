@@ -7,7 +7,7 @@
     },
     "additionalProbingPaths": [
       "C:\\Users\\markovenom\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\markovenom\\.nuget\\packages"
+      "C:\\Users\\filip\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
