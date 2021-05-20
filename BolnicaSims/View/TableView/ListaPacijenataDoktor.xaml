@@ -10,8 +10,8 @@
 
     <Grid>
         <DataGrid x:Name="dataGridPacijenti" ItemsSource="{Binding Pacijenti}" IsReadOnly="True"
-            SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Left"
-            Height="340" VerticalAlignment="Top" Width="697">
+            SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+            Height="340" VerticalAlignment="Top" Width="704">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime" Binding="{Binding korisnik.Ime}" Width="*" />
                 <DataGridTextColumn Header="Prezime" Binding="{Binding korisnik.Prezime}" Width="*" />
