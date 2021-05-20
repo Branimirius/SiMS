@@ -1,6 +1,7 @@
 ﻿using BolnicaSims.View.EditView;
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
+using BolnicaSims.View.TableView;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -22,20 +23,13 @@ namespace BolnicaSims
     {
         Page p1 = new ListaTerminaDoktor();
         Page p2 = new ListaLekovaDoktor();
+        Page p3 = new ListaPacijenataDoktor();
 
         public DoktorView()
         {
             InitializeComponent();
             frame.Content = p1;
             menuItem1.Background = Brushes.DarkCyan;
-        }
-
-        private void ManualColumns_Click(object sender, RoutedEventArgs e)
-        {
-            p1.ShowsNavigationUI = false;
-            frame.Content = p1;
-            menuItem1.Background = Brushes.DarkCyan;
-            menuItem2.Background = null;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -50,19 +44,43 @@ namespace BolnicaSims
             s.Show();
         }
 
+        private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new MainWindow();
+            s.Show();
+            Close();
+        }
+
+        private void ManualColumns_Click(object sender, RoutedEventArgs e)
+        {
+            p1.ShowsNavigationUI = false;
+            frame.Content = p1;
+            menuItem1.Background = Brushes.DarkCyan;
+            menuItem2.Background = null;
+            menuItem3.Background = null;
+        }
+
         private void ManualColumns_Click2(object sender, RoutedEventArgs e)
         {
             p2.ShowsNavigationUI = false;
             frame.Content = p2;
             menuItem1.Background = null;
             menuItem2.Background = Brushes.DarkCyan;
+            menuItem3.Background = null;
         }
 
-        private void ButtonLogOut_Click(object sender, RoutedEventArgs e)
+        private void ManualColumns_Click3(object sender, RoutedEventArgs e)
         {
-            var s = new MainWindow();
-            s.Show();
-            Close();
+            p3.ShowsNavigationUI = false;
+            frame.Content = p3;
+            menuItem1.Background = null;
+            menuItem2.Background = null;
+            menuItem3.Background = Brushes.DarkCyan;
+        }
+
+        private void ManualColumns_Click4(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
