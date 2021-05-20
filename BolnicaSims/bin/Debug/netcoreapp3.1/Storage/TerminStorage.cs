@@ -42,9 +42,6 @@ namespace Model
 
         }
 
-
-       
-
         public void Save()
       {
             // TODO: implement
