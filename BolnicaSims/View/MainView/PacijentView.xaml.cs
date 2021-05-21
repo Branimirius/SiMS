@@ -5,6 +5,7 @@ using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
+using BolnicaSims.View.TableView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -150,6 +151,12 @@ namespace BolnicaSims
             var s = new MainWindow();
             s.Show();
             Close();
+        }
+
+        private void karton_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new PacijentKarton();
+            s.Show();
         }
     }
 }

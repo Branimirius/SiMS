@@ -85,6 +85,9 @@
     <Compile Update="View\TableView\ListaTerminaDoktor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\TableView\PacijentKarton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\TableView\PregledKartona.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -196,6 +199,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\TableView\ListaTerminaDoktor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TableView\PacijentKarton.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\TableView\PregledKartona.xaml">
