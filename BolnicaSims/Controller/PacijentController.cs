@@ -55,6 +55,11 @@ namespace BolnicaSims.Controller
         {
             return PacijentService.Instance.getPacijent(pacijent);
         }
+
+        public void sacuvajBelesku(DateTime vreme,String beleska)
+        {
+            PacijentService.Instance.sacuvajBelesku(vreme, beleska);
+        }
            
     }
 }

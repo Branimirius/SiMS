@@ -1,5 +1,6 @@
 ﻿using BolnicaSims.Service;
 using BolnicaSims.Storage;
+using BolnicaSims.View.AddView;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -31,6 +32,12 @@ namespace BolnicaSims.View.TableView
             labelAnamneza.Content = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).zdravstveniKarton.Anamneza;
         
 
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new Beleska();
+            s.Show();
         }
     }
 }

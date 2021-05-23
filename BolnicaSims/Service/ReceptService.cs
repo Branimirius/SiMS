@@ -42,6 +42,7 @@ namespace BolnicaSims.Service
 
        public void notifikacijaLek(Recept recept)
         {
+         
             if (DateTime.Now >= recept.Kreni && DateTime.Now <= recept.Kreni.AddDays(int.Parse(recept.KolikoDana)))
             {
                 foreach(DateTime d in vremeUzimanja(recept))

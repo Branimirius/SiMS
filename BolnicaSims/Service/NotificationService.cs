@@ -36,6 +36,17 @@ namespace BolnicaSims.Service
                 }
             }
         }
+        public void beleskaNotification(Korisnik korisnik,String beleska)
+        {
+            Notifikacija n1 = new Notifikacija("Beleska", korisnik.Ime, beleska);
+            foreach (Korisnik k in KorisniciStorage.Instance.korisnici)
+            {
+                if(k.ImePrezime == korisnik.ImePrezime)
+                {
+                    k.Notifikacije.Add(n1);
+                }
+            }
+        }
 
         public void rejectedDrugsNotification(Korisnik korisnik, Lek lek, String komentar)
         {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
+using System.Timers;
 using BolnicaSims.Controller;
 using BolnicaSims.DTO;
 using BolnicaSims.Model;
@@ -23,6 +25,12 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
+
+        private static String beleska;
+        private static Korisnik korisnik; 
+        static System.Timers.Timer timer;
+       
+
         public void izmeniPacijenta(Pacijent pacijent, Pacijent selected)
         {
             for (int i = 0; i < PacijentiStorage.Instance.pacijenti.Count; i++)
@@ -208,6 +216,39 @@ namespace BolnicaSims.Service
             
             
         }
-        
+
+        public void sacuvajBelesku(DateTime vreme,String b)
+        {
+            korisnik = KorisniciStorage.Instance.ulogovaniKorisnik;
+            beleska = b;
+            schedule_TimerBeleska(vreme);
+
+        }
+
+        static void schedule_TimerBeleska(DateTime scheduledTime)
+        {
+
+
+            double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
+            timer = new System.Timers.Timer(tickTime);
+            timer.Elapsed += new ElapsedEventHandler(timer_ElapsedBeleska);
+            timer.Start();
+        }
+
+        static void timer_ElapsedBeleska(object sender, ElapsedEventArgs e)
+        {
+            timer.Stop();
+            App.Current.Dispatcher.Invoke((Action)delegate // <--- HERE
+            {
+                posaljiBelesku();
+            });
+
+        }
+
+        static void posaljiBelesku()
+        {
+            NotificationService.Instance.beleskaNotification(korisnik,beleska);
+        }
+
     }
 }

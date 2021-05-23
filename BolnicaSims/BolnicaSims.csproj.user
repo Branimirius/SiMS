@@ -13,6 +13,9 @@
     <Compile Update="View\AddView\AnketaDoktor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AddView\Beleska.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddView\DodavanjeDoktora.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -127,6 +130,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AddView\AnketaDoktor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AddView\Beleska.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AddView\DodavanjeDoktora.xaml">

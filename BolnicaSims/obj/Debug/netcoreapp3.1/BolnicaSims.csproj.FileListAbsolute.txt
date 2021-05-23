@@ -444,3 +444,5 @@ C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableVie
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PregledKartona.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PacijentKarton.g.cs
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PacijentKarton.baml
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Beleska.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Beleska.baml
