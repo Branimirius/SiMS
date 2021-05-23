@@ -77,7 +77,7 @@ namespace BolnicaSims.View.DeleteView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/deleteview/brisanjeprostorija.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/deleteview/brisanjeprostorija.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\DeleteView\BrisanjeProstorija.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -61,7 +61,7 @@ namespace BolnicaSims.View.NotificationsView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/notificationsview/notifikacijedoktor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/notificationsview/notifikacijedoktor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\NotificationsView\NotifikacijeDoktor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

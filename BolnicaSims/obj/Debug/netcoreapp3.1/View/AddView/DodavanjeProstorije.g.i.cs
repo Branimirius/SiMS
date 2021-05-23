@@ -93,7 +93,7 @@ namespace BolnicaSims {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/addview/dodavanjeprostorije.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/addview/dodavanjeprostorije.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\AddView\DodavanjeProstorije.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
