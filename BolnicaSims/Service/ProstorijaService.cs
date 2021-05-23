@@ -23,6 +23,12 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
+
+        public Prostorija getSelektovanaProstorija()
+        {
+            return ProstorijeStorage.Instance.selektovanaProstorija;
+        }
+
         public void dodajProstoriju(TipProstorije tip, String sprat, String broj)
         {
             Prostorija tempProstorija = new Prostorija(tip, sprat, broj);

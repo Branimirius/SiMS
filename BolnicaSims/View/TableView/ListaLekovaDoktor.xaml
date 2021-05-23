@@ -11,7 +11,7 @@
     <Grid>
         <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
             SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-            Height="340" VerticalAlignment="Top" Width="698">
+            Height="340" VerticalAlignment="Top" Width="703">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="200" />
                 <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="200"/>
@@ -23,7 +23,7 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        
+
         <StackPanel Margin="16,340,4,10" Orientation="Horizontal">
             <Button x:Name="button_Copy" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Izmeni_Click"/>
         </StackPanel>

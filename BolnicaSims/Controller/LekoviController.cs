@@ -35,7 +35,11 @@ namespace BolnicaSims.Controller
         {
             LekoviService.Instance.odbijanjeLeka(lek, komentar);
         }
-        
+        public string getAlternative(Lek lek)
+        {
+            return LekoviService.Instance.getAlternative(lek);
+        }
+
         public void izmeniLek(Lek lek)
         {
             LekoviService.Instance.izmeniLek(lek);

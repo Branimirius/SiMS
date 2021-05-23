@@ -76,19 +76,25 @@
     <Compile Update="View\EditView\IzmenaProstorije.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainView\ListaLekovaDoktor.xaml.cs">
+    <Compile Update="View\TableView\ListaLekovaDoktor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainView\ListaTerminaDoktor.xaml.cs">
+    <Compile Update="View\TableView\ListaPacijenataDoktor.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainView\PregledKartona.xaml.cs">
+    <Compile Update="View\TableView\ListaTerminaDoktor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TableView\PacijentKarton.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\TableView\PregledKartona.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\SekretarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\MainView\ListaProstorija.xaml.cs">
+    <Compile Update="View\TableView\ListaProstorija.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\PacijentView.xaml.cs">
@@ -186,19 +192,25 @@
     <Page Update="View\EditView\IzmenaProstorije.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\MainView\ListaLekovaDoktor.xaml">
+    <Page Update="View\TableView\ListaLekovaDoktor.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\MainView\ListaTerminaDoktor.xaml">
+    <Page Update="View\TableView\ListaPacijenataDoktor.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\MainView\PregledKartona.xaml">
+    <Page Update="View\TableView\ListaTerminaDoktor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TableView\PacijentKarton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\TableView\PregledKartona.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\SekretarView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\MainView\ListaProstorija.xaml">
+    <Page Update="View\TableView\ListaProstorija.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainWindow.xaml">

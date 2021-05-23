@@ -24,10 +24,10 @@ namespace BolnicaSims.View.EditView
         {
             InitializeComponent();
             
-            listRenoviranja.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.renoviranja;
-            txtBlock1.Text = ProstorijeStorage.Instance.selektovanaProstorija.Naziv;
+            listRenoviranja.ItemsSource = ProstorijaController.Instance.getSelektovanaProstorija().renoviranja;
+            txtBlock1.Text = ProstorijaController.Instance.getSelektovanaProstorija().Naziv;
             //ProstorijaController.Instance.getProstorijaByNaziv(ProstorijeStorage.Instance.selektovanaProstorija.Naziv).susedneProstorije = ProstorijaController.Instance.getSusedneProstorijeNazivi(ProstorijeStorage.Instance.selektovanaProstorija);
-            comboProstorija.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.susedneProstorije; 
+            comboProstorija.ItemsSource = ProstorijaController.Instance.getSelektovanaProstorija().susedneProstorije; 
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)

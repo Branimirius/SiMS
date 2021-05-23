@@ -81,6 +81,26 @@ namespace BolnicaSims.Service
             GetLek(LekoviStorage.Instance.selektovanLek).Alternative.Remove(GetLek(alternativa));
             LekoviStorage.Instance.Save();
         }
+        public string getAlternative(Lek lek)
+        {
+            string alt = "";
+            foreach (Lek l in lek.Alternative)
+            {
+                if (alt == "")
+                {
+                    alt += l.ToString();
+                }
+                else
+                {
+                   alt += ", " + l.ToString();
+                }
+            }
+            if (alt == "")
+            {
+                alt = "Nema alternativa :(";
+            }
+            return alt;
+        }
 
         public Lek GetLek(Lek lek)
         {
