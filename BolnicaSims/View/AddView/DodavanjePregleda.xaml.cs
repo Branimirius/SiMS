@@ -49,7 +49,16 @@ namespace BolnicaSims
                 return;
                 
             }
-            TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
+            if(TerminController.Instance.slobodanTermin(txtBox1.Text, (String)comboBox1.SelectedItem))
+            {
+                TerminController.Instance.dodajTermin(txtBox1.Text, (String)comboBox1.SelectedItem, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
+
+            }
+            else
+            {
+                MessageBox.Show("Termin je vec zauzet");
+                return;
+            }
             this.Close();  
           
         }

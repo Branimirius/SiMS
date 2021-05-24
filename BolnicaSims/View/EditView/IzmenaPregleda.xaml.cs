@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using BolnicaSims.View.MainView;
@@ -29,17 +30,12 @@ namespace BolnicaSims
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            Termin tempTermin = new Termin();
-
-            tempTermin = TerminStorage.Instance.selektovanTermin;
-
-           
-            if (TerminController.Instance.proveraPomeranja(tempTermin, txtBox1.Text))
+            TerminDTO tempTermin = new TerminDTO(TerminController.Instance.getSelektovaniTermin());                     
+            if (proveraPomeranje(tempTermin, txtBox1.Text))
             {
                 tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
                 TerminController.Instance.izmeniTermin(tempTermin);
-            }
-     
+            }     
  
             switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
             {
@@ -57,8 +53,36 @@ namespace BolnicaSims
 
             this.Close();
         }
+        public Boolean proveraPomeranje(TerminDTO termin, String vreme)
+        {
+            DateTime stariTermin = termin.VremeTermina;
+            DateTime noviTermin = DateTime.Parse(vreme);
+            DateTime noviTermin2 = DateTime.Parse(vreme);
+            DateTime noviTermin3 = stariTermin.AddDays(-1);
+            if (DateTime.Now > noviTermin3)
+            {
+                MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
+                return false;
+            }
 
-     
+            noviTermin = noviTermin.AddDays(2);
+            noviTermin2 = noviTermin2.AddDays(-2);
+
+            if (stariTermin > noviTermin)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
+                return false;
+            }
+            if (stariTermin < noviTermin2)
+            {
+                MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
+                return false;
+            }
+
+            return true;
+
+        }
+
     }
 
 }

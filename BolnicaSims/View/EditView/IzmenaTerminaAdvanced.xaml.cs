@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Storage;
 using BolnicaSims.View.MainView;
 using Model;
@@ -33,9 +34,9 @@ namespace BolnicaSims.View.EditView
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            Termin tempTermin = new Termin();
+            TerminDTO tempTermin = new TerminDTO(TerminController.Instance.getSelektovaniTermin());
             TimeSpan ts = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
-            tempTermin = TerminStorage.Instance.selektovanTermin;
+            
             tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
             tempTermin.VremeTermina = tempTermin.VremeTermina.Add(ts);
             if (txtBox1.Text != String.Empty)
