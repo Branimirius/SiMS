@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -29,6 +30,22 @@ namespace BolnicaSims.Controller
         public void transferujInventar(int kolicina, Prostorija odrediste)
         {
             InventarService.Instance.transferujInventar(kolicina, odrediste);
+        }
+        public ObservableCollection<Inventar> getInventar()
+        {
+            return InventarService.Instance.getInventar();
+        }
+        public ObservableCollection<String> getInventarImena()
+        {
+            return InventarService.Instance.getInventarImena();
+        }
+        public Inventar getSelektovaniInventar()
+        {
+            return InventarService.Instance.getSelektovaniInventar();
+        }
+        public void setSelektovaniInventar(Inventar inventar)
+        {
+            InventarService.Instance.setSelektovaniInventar(inventar);
         }
     }
 }

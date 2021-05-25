@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ namespace BolnicaSims.View.NotificationsView
         public NotifikacijePacijent()
         {
             InitializeComponent();
-            listBoxNotifikacije.ItemsSource = KorisniciStorage.Instance.ulogovaniKorisnik.Notifikacije;
+            listBoxNotifikacije.ItemsSource = KorisnikController.Instance.getUlogovaniKorisnik().Notifikacije;
         }
 
         private void listBoxNotifikacije_SelectionChanged(object sender, SelectionChangedEventArgs e)

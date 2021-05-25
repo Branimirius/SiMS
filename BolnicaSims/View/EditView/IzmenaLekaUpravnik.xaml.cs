@@ -26,14 +26,14 @@ namespace BolnicaSims.View.EditView
         public IzmenaLekaUpravnik()
         {
             InitializeComponent();
-            listAlternative.ItemsSource = LekoviStorage.Instance.selektovanLek.Alternative;
-            txtNaziv.Text = LekoviStorage.Instance.selektovanLek.ImeLeka;
-            txtProizvodjac.Text = LekoviStorage.Instance.selektovanLek.Proizvodjac;
-            txtDoza.Text = LekoviStorage.Instance.selektovanLek.Doza;
-            txtAlergen.Text = LekoviStorage.Instance.selektovanLek.Alergija;
-            txtKolicina.Text = LekoviStorage.Instance.selektovanLek.Kolicina.ToString();
-            comboAlternative.ItemsSource = LekoviStorage.Instance.lekoviImena;
-            listSviDoktori.ItemsSource = DoktoriStorage.Instance.doktori;
+            listAlternative.ItemsSource = LekoviController.Instance.getSelektovanLek().Alternative;
+            txtNaziv.Text = LekoviController.Instance.getSelektovanLek().ImeLeka;
+            txtProizvodjac.Text = LekoviController.Instance.getSelektovanLek().Proizvodjac;
+            txtDoza.Text = LekoviController.Instance.getSelektovanLek().Doza;
+            txtAlergen.Text = LekoviController.Instance.getSelektovanLek().Alergija;
+            txtKolicina.Text = LekoviController.Instance.getSelektovanLek().Kolicina.ToString();
+            comboAlternative.ItemsSource = LekoviController.Instance.getLekoviImena();
+            listSviDoktori.ItemsSource = DoktorController.Instance.getDoktori();
             listIzabraniDoktori.ItemsSource = izabraniDoktori;
         }
 
@@ -50,8 +50,8 @@ namespace BolnicaSims.View.EditView
 
         private void izmeniBtn_Click(object sender, RoutedEventArgs e)
         {
-            LekoviController.Instance.izmeniLek(LekoviStorage.Instance.selektovanLek);
-            DoktorController.Instance.dodajLekValidacija(LekoviStorage.Instance.selektovanLek, izabraniDoktori);
+            LekoviController.Instance.izmeniLek(LekoviController.Instance.getSelektovanLek());
+            DoktorController.Instance.dodajLekValidacija(LekoviController.Instance.getSelektovanLek(), izabraniDoktori);
             this.Close();
         }
 

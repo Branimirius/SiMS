@@ -36,7 +36,9 @@ namespace BolnicaSims.Service
             tempProstorija.IdProstorije = GenID();
             tempProstorija.Naziv = GenNaziv(tip, broj, sprat);
             tempProstorija.susedneProstorije = getSusedneProstorijeNazivi(tempProstorija);
+
             ProstorijeStorage.Instance.prostorije.Add(tempProstorija);
+            handleSusedneDodavanje(tempProstorija);
             /*
             foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
             {
@@ -248,6 +250,33 @@ namespace BolnicaSims.Service
 
             return ret;
         }
+        public void handleSusedneDodavanje(Prostorija prostorija)
+        {
+            foreach(String p in prostorija.susedneProstorije)
+            {
+                Prostorija temp = getProstorijaByNaziv(p);
+                if (temp != null && temp.BrojProstorije > prostorija.BrojProstorije)
+                {
+                    if(temp.susedneProstorije.Count >= 1)
+                    {
+                        getProstorijaByNaziv(p).susedneProstorije[0] = prostorija.Naziv;
+                    }
+                    
+                }
+                if(temp != null && temp.BrojProstorije < prostorija.BrojProstorije)
+                {
+                    if (temp.susedneProstorije.Count == 2)
+                    {
+                        getProstorijaByNaziv(p).susedneProstorije[1] = prostorija.Naziv;
+                    }
+                    else
+                    {
+                        getProstorijaByNaziv(p).susedneProstorije.Add(prostorija.Naziv);
+                    }
+                }
+                
+            }
+        }
         public void handleSusedneSpajanje(Prostorija selektovana, Prostorija spoj)
         {
             if(selektovana.BrojProstorije < spoj.BrojProstorije)
@@ -341,6 +370,26 @@ namespace BolnicaSims.Service
                
             }
             return a.ToString();
+        }
+        public ObservableCollection<Prostorija> getProstorije()
+        {
+            return ProstorijeStorage.Instance.prostorije;
+        }
+        public ObservableCollection<Prostorija> getSale()
+        {
+            return ProstorijeStorage.Instance.sale;
+        }
+        public ObservableCollection<Prostorija> getOrdinacije() 
+        {
+            return ProstorijeStorage.Instance.ordinacije;                
+        }
+        public ObservableCollection<String> getNazivi()
+        {
+            return ProstorijeStorage.Instance.nazivi;
+        }
+        public void setSelektovanaProstorija(Prostorija prostorija)
+        {
+            ProstorijeStorage.Instance.selektovanaProstorija = prostorija;
         }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
@@ -25,6 +27,11 @@ namespace BolnicaSims.Controller
         public void izmeniPacijenta(Pacijent pacijent, Pacijent selected)
         {
             PacijentService.Instance.izmeniPacijenta(pacijent, selected);
+        }
+        public void izmeniPacijenta(PacijentDTO pacijent, Pacijent selected)
+        {
+            Pacijent temp = new Pacijent(pacijent);           
+            PacijentService.Instance.izmeniPacijenta(temp, selected);
         }
         public void izmeniAnamnezu(String anamneza, String alergija)
         {
@@ -56,10 +63,36 @@ namespace BolnicaSims.Controller
             return PacijentService.Instance.getPacijent(pacijent);
         }
 
+
         public void sacuvajBelesku(DateTime vreme,String beleska)
         {
             PacijentService.Instance.sacuvajBelesku(vreme, beleska);
         }
            
+
+        public ObservableCollection<Pacijent> getPacijenti()
+        {
+            return PacijentService.Instance.getPacijenti();
+        }
+        public ObservableCollection<String> getPacijentiImena()
+        {
+            return PacijentService.Instance.getPacijentiImena();
+        }
+        public Pacijent getSelektovanPacijent()
+        {
+            return PacijentService.Instance.getSelektovanPacijent();
+        }
+        public ObservableCollection<Recept> getRecepti()
+        {
+            return PacijentService.Instance.getRecepti();
+        }
+
+        public void zabeleziOdradjenePreglede()
+        {
+            PacijentService.Instance.zabeleziOdradjenePreglede();
+        }
+
+     
+
     }
 }

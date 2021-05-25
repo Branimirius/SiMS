@@ -2,6 +2,7 @@
 using BolnicaSims.Storage;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Service
@@ -66,6 +67,10 @@ namespace BolnicaSims.Service
                
             }
             return null;
+        }
+        public ObservableCollection<Recept> getRecepti()
+        {
+            return ReceptiStorage.Instance.recepti;
         }
 
     }

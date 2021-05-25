@@ -103,6 +103,23 @@ namespace BolnicaSims
                 Termin selektovan = (Termin)dataGridTermini.SelectedItem;
                 TerminController.Instance.ukloniTermin(selektovan);
 
+                //wipe - OTKOMENTARISI KAD ZELIS DA RESTARTUJES TERMINE
+                /*
+                TerminStorage.Instance.termini.Clear();
+                foreach(Prostorija p in ProstorijeStorage.Instance.prostorije)
+                {
+                    p.termini.Clear();
+                }
+                foreach(Doktor d in DoktoriStorage.Instance.doktori)
+                {
+                    d.termini.Clear();
+                }
+                foreach(Pacijent p in PacijentiStorage.Instance.pacijenti)
+                {
+                    p.termini.Clear();
+                }
+                */
+
             }
             else
             {

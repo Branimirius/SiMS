@@ -51,17 +51,17 @@ namespace BolnicaSims
             InitializeComponent();
             
 
-            if(PacijentController.Instance.proveriBan(DateTime.Now, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik)))
+            if(PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
             {
                 zakazi.IsEnabled = false;
                 izmeni.IsEnabled = false;
             }
-            dataGridTermini.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini;
-            dataGridRecepti.ItemsSource = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti;           
+            dataGridTermini.ItemsSource = PacijentController.Instance.getUlogovaniPacijent().termini;
+            dataGridRecepti.ItemsSource = PacijentController.Instance.getUlogovaniPacijent().recepti;           
             
-            PacijentService.Instance.zabeleziOdradjenePreglede();
+            PacijentController.Instance.zabeleziOdradjenePreglede();
 
-            if ((PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojOdradjenihPregleda)  % 3 == 0)
+            if ((PacijentController.Instance.getUlogovaniPacijent().brojOdradjenihPregleda)  % 3 == 0)
             {
                 btnAnketaBolnica.IsEnabled = true;
             }
@@ -70,7 +70,7 @@ namespace BolnicaSims
                 btnAnketaBolnica.IsEnabled = false;
             }
 
-            PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojZakazivanja = 0;
+            PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja = 0;
 
         }
 
@@ -111,8 +111,8 @@ namespace BolnicaSims
         {
             if (dataGridTermini.SelectedItem is Termin)
             {
-                Termin selektovan = (Termin)dataGridTermini.SelectedItem;
-                TerminController.Instance.ukloniTermin(selektovan);
+                
+                TerminController.Instance.ukloniTermin((Termin)dataGridTermini.SelectedItem);
 
             }
             else
@@ -125,9 +125,9 @@ namespace BolnicaSims
         private void ButtonObavestenja_Click(object sender, RoutedEventArgs e)
         {
          
-            foreach(Recept r in PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti)
+            foreach(Recept r in PacijentController.Instance.getUlogovaniPacijent().recepti)
             {
-                ReceptService.Instance.notifikacijaLek(r);
+                ReceptController.Instance.notifikacijaLek(r);
             }
             var s = new NotifikacijePacijent();
             s.Show();

@@ -4,6 +4,7 @@
  * Purpose: Definition of the Class Model.Termin
  ***********************************************************************/
 
+using BolnicaSims.DTO;
 using System;
 using System.Collections.ObjectModel;
 
@@ -118,5 +119,17 @@ namespace Model
 
         public Termin() { }
 
+        public Termin(TerminDTO termin)
+        {
+            VremeTermina = termin.VremeTermina;
+            KrajTermina = termin.KrajTermina;
+            this.doktor = termin.doktor;
+            this.prostorija = termin.prostorija;
+            this.pacijent = termin.pacijent;
+            ImePrezimeDoktora = termin.ImePrezimeDoktora;
+            ImePrezimePacijenta = termin.ImePrezimePacijenta;
+            TipTermina = termin.TipTermina;
+            IdTermina = termin.IdTermina;
+        }
     }
 }

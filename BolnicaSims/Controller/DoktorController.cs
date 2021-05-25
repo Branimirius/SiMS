@@ -40,5 +40,29 @@ namespace BolnicaSims.Controller
         {
             DoktorService.Instance.dodajNevalidanLek(lek, doktori);
         }
+        public ObservableCollection<Doktor> getDoktori()
+        {
+            return DoktorService.Instance.getDoktori();
+        }
+        public ObservableCollection<String> getDoktoriImena()
+        {
+            return DoktorService.Instance.getDoktoriImena();
+        }
+        public ObservableCollection<String> getDoktoriAnketa()
+        {
+            return DoktorService.Instance.getDoktoriAnketa();
+        }
+        public ObservableCollection<Doktor> getSpecijalisti()
+        {
+            return DoktorService.Instance.getSpecijalisti();
+        }
+        public Doktor getSelektovaniDoktor()
+        {
+            return DoktorService.Instance.getSelektovaniDoktor();
+        }
+        public void setSelektovaniDoktor(Doktor doktor)
+        {
+            DoktorService.Instance.setSelektovaniDoktor(doktor);
+        }
     }    
 }

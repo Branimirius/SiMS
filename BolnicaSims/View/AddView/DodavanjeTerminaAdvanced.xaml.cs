@@ -23,8 +23,8 @@ namespace BolnicaSims.View.AddView
         public DodavanjeTerminaAdvanced()
         {
             InitializeComponent();
-            listDoktor.ItemsSource = DoktoriStorage.Instance.specijalisti;
-            listProstorija.ItemsSource = ProstorijeStorage.Instance.Read();
+            listDoktor.ItemsSource = DoktorController.Instance.getSpecijalisti();
+            listProstorija.ItemsSource = ProstorijaController.Instance.getProstorije();
             comboTip.ItemsSource = Enum.GetValues(typeof(TipTermina));
         }
 
@@ -47,12 +47,12 @@ namespace BolnicaSims.View.AddView
             if(comboTip.Text == "OPERACIJA")
             {
                 listProstorija.ItemsSource = null;
-                listProstorija.ItemsSource = ProstorijeStorage.Instance.ordinacije;
+                listProstorija.ItemsSource = ProstorijaController.Instance.getOrdinacije();
             }
             else if(comboTip.Text == "PREGLED")
             {
                 listProstorija.ItemsSource = null;
-                listProstorija.ItemsSource = ProstorijeStorage.Instance.sale;
+                listProstorija.ItemsSource = ProstorijaController.Instance.getSale();
             }    
         }
     }

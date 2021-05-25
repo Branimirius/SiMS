@@ -25,7 +25,7 @@ namespace BolnicaSims.View.AddView
         public DodavanjeLekova()
         {
             InitializeComponent();
-            listSviDoktori.ItemsSource = DoktoriStorage.Instance.doktori;
+            listSviDoktori.ItemsSource = DoktorController.Instance.getDoktori();
             listIzabraniDoktori.ItemsSource = izabraniDoktori;
         }
 

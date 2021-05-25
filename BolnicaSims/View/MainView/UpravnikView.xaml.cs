@@ -46,11 +46,11 @@ namespace BolnicaSims
         {
             InitializeComponent();
            
-            dataGridProstorije.ItemsSource = ProstorijeStorage.Instance.Read();
-            dataGridOsoblje.ItemsSource = KorisniciStorage.Instance.zaposleni;
-            dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
-            dataGridLekovi.ItemsSource = LekoviStorage.Instance.Read();
-            comboFilter.ItemsSource = ProstorijeStorage.Instance.nazivi;
+            dataGridProstorije.ItemsSource = ProstorijaController.Instance.getProstorije();
+            dataGridOsoblje.ItemsSource = KorisnikController.Instance.getZaposleni();
+            dataGridInventar.ItemsSource = InventarController.Instance.getInventar();
+            dataGridLekovi.ItemsSource = LekoviController.Instance.getLekovi();
+            comboFilter.ItemsSource = ProstorijaController.Instance.getNazivi();
             comboPretraga.ItemsSource = parametri;
         }
        
@@ -65,8 +65,9 @@ namespace BolnicaSims
 
         private void UkloniProstorija_Click(object sender, RoutedEventArgs e)
         {
-            ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
-            if (ProstorijeStorage.Instance.selektovanaProstorija != null)
+            //ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
+            ProstorijaController.Instance.setSelektovanaProstorija((Prostorija)dataGridProstorije.SelectedItem);
+            if (ProstorijaController.Instance.getSelektovanaProstorija() != null)
             {
                 var s = new BrisanjeProstorija();
                 s.Show();
@@ -78,8 +79,9 @@ namespace BolnicaSims
         }
         private void DetaljiProstorija_Click(object sender, RoutedEventArgs e)
         {
-            ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
-            if (ProstorijeStorage.Instance.selektovanaProstorija != null)
+            //ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
+            ProstorijaController.Instance.setSelektovanaProstorija((Prostorija)dataGridProstorije.SelectedItem);
+            if (ProstorijaController.Instance.getSelektovanaProstorija() != null)
             {
                 var s = new IzmenaProstorije();
             s.Show();
@@ -91,8 +93,9 @@ namespace BolnicaSims
         }
         private void RenoviranjeProstorija_Click(object sender, RoutedEventArgs e)
         {
-            ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
-            if (ProstorijeStorage.Instance.selektovanaProstorija != null)
+            //ProstorijeStorage.Instance.selektovanaProstorija = (Prostorija)dataGridProstorije.SelectedItem;
+            ProstorijaController.Instance.setSelektovanaProstorija((Prostorija)dataGridProstorije.SelectedItem);
+            if (ProstorijaController.Instance.getSelektovanaProstorija() != null)
             {
                 var s = new RenoviranjeProstorije();
                 s.Show();
@@ -114,8 +117,9 @@ namespace BolnicaSims
         }
         private void UkloniOsoblje_Click(object sender, RoutedEventArgs e)
         {
-            KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
-            if (KorisniciStorage.Instance.selektovaniKorisnik != null)
+            //KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
+            KorisnikController.Instance.setSelektovaniKorisnik((Korisnik)dataGridOsoblje.SelectedItem);
+            if (KorisnikController.Instance.getSelektovaniKorisnik() != null)
             {
                 var s = new BrisanjeOsoblja();
                 s.Show();
@@ -127,10 +131,12 @@ namespace BolnicaSims
         }
         private void DetaljiOsoblje_Click(object sender, RoutedEventArgs e)
         {
-            KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
-            if(KorisniciStorage.Instance.selektovaniKorisnik.Zvanje == "Doktor")
+            //KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
+            KorisnikController.Instance.setSelektovaniKorisnik((Korisnik)dataGridOsoblje.SelectedItem);
+            if (KorisnikController.Instance.getSelektovaniKorisnik().Zvanje == "Doktor")
             {
                 DoktoriStorage.Instance.selektovaniDoktor = DoktorController.Instance.GetDoktor(KorisniciStorage.Instance.selektovaniKorisnik);
+                DoktorController.Instance.setSelektovaniDoktor(DoktorController.Instance.GetDoktor(KorisniciStorage.Instance.selektovaniKorisnik));
                 var s = new IzmenaDoktora();
                 s.Show();
             }
@@ -163,9 +169,10 @@ namespace BolnicaSims
         }
         private void TransferInventar_Click(object sender, RoutedEventArgs e)
         {
-            InventarStorage.Instance.selektovaniInventar = (Inventar)dataGridInventar.SelectedItem;
+            //InventarStorage.Instance.selektovaniInventar = (Inventar)dataGridInventar.SelectedItem;
+            InventarController.Instance.setSelektovaniInventar((Inventar)dataGridInventar.SelectedItem);
             
-            if (InventarStorage.Instance.selektovaniInventar == null)
+            if (InventarController.Instance.getSelektovaniInventar() == null)
             {
                 MessageBox.Show("Nije izabran inventar za transfer");
             }
@@ -187,8 +194,9 @@ namespace BolnicaSims
         }
         private void UkloniLekovi_Click(object sender, RoutedEventArgs e)
         {
-            LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
-            if (LekoviStorage.Instance.selektovanLek == null)
+            //LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
+            LekoviController.Instance.setSelektovanLek((Lek)dataGridLekovi.SelectedItem);
+            if (LekoviController.Instance.getSelektovanLek() == null)
             {
                 MessageBox.Show("Nije izabran lek.");
             }
@@ -201,8 +209,9 @@ namespace BolnicaSims
         }
         private void DetaljiLekovi_Click(object sender, RoutedEventArgs e)
         {            
-            LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
-            if (LekoviStorage.Instance.selektovanLek == null)
+            //LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
+            LekoviController.Instance.setSelektovanLek((Lek)dataGridLekovi.SelectedItem);
+            if (LekoviController.Instance.getSelektovanLek() == null)
             {
                 MessageBox.Show("Nije izabran lek.");
             }
@@ -275,11 +284,11 @@ namespace BolnicaSims
             if ((Boolean)checkDinamicka.IsChecked)
             {
                 //filteredInventar = InventarStorage.Instance.Read();
-                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
 
                     if (inventar.Staticki)
@@ -302,11 +311,11 @@ namespace BolnicaSims
             if (!(Boolean)checkDinamicka.IsChecked)
             {
                 //filteredInventar = InventarStorage.Instance.Read();
-                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
 
                     if (!inventar.Staticki)
@@ -329,11 +338,11 @@ namespace BolnicaSims
             if ((Boolean)checkStaticka.IsChecked)
             {
                 //filteredInventar = InventarStorage.Instance.Read();
-                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
 
                     if (!inventar.Staticki)
@@ -356,11 +365,11 @@ namespace BolnicaSims
             if (!(Boolean)checkStaticka.IsChecked)
             {
                 //filteredInventar = InventarStorage.Instance.Read();
-                dataGridInventar.ItemsSource = InventarStorage.Instance.Read();
+                dataGridInventar.ItemsSource = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
 
                     if (inventar.Staticki)
@@ -386,11 +395,11 @@ namespace BolnicaSims
             filteredInventar.Clear();
             if (txtPretragaInventar.Equals(""))
             {
-                filteredInventar = InventarStorage.Instance.Read();
+                filteredInventar = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
 
                     if (inventar.Naziv.Contains(txtPretragaInventar.Text))
@@ -409,11 +418,11 @@ namespace BolnicaSims
             filteredInventar.Clear();
             if (txtPretragaInventar.Equals(""))
             {
-                filteredInventar = InventarStorage.Instance.Read();
+                filteredInventar = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
 
                     if (inventar.Proizvodjac.Contains(txtPretragaInventar.Text))
@@ -433,11 +442,11 @@ namespace BolnicaSims
             int parsedValue;
             if (txtPretragaInventar.Equals(""))
             {
-                filteredInventar = InventarStorage.Instance.Read();
+                filteredInventar = InventarController.Instance.getInventar();
             }
             else
             {
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
                     if(!int.TryParse(txtPretragaInventar.Text, out parsedValue))
                     {
@@ -493,7 +502,7 @@ namespace BolnicaSims
             if (comboFilter.SelectedItem != null)
             {
                 
-                foreach (Inventar inventar in InventarStorage.Instance.Read())
+                foreach (Inventar inventar in InventarController.Instance.getInventar())
                 {
                     /* OVAJ KOD NE RADI NE ZNAM ZASTO, ALI NE KONTA PRVA DVA IF-A
                     if((Boolean)checkDinamicka.IsChecked && (!(Boolean)checkStaticka.IsChecked) && (inventar.prostorija.Naziv == (String)comboFilter.SelectedItem) && (!inventar.Staticki))

@@ -1,8 +1,10 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Data;
@@ -24,7 +26,10 @@ namespace BolnicaSims.Service
             }
         }
 
-        public void izmeniTermin(Termin termin)
+
+
+        public void izmeniTermin(TerminDTO termin)
+
         {
             for (int i = 0; i < TerminStorage.Instance.termini.Count; i++)
             {
@@ -103,14 +108,14 @@ namespace BolnicaSims.Service
 
                 }
             }
-
+            Termin terminModel = new Termin(termin);
             if (termin.prostorija != null)
             {
-                ProstorijaService.Instance.getProstorija(termin.prostorija).termini.Add(termin);
+                ProstorijaService.Instance.getProstorija(termin.prostorija).termini.Add(terminModel);
             }
             TerminStorage.Instance.Save();
             SekretarView.Instance.refreshTermini();
-            NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, termin);
+            NotificationService.Instance.handleNotificationsUpdateTermin(KorisniciStorage.Instance.ulogovaniKorisnik, terminModel);
 
             DoktoriStorage.Instance.Save();
             PacijentiStorage.Instance.Save();
@@ -121,8 +126,7 @@ namespace BolnicaSims.Service
 
         public void dodajTermin(String vreme, String doktor, String pacijent)
         {
-            if (slobodanTermin(vreme, doktor))
-            {  
+            
                 
                 Termin tempTermin = new Termin(GenID(), DateTime.Parse(vreme), DateTime.Parse(vreme), DoktorService.Instance.getDoktor(doktor), PacijentService.Instance.getPacijent(pacijent), doktor, pacijent);
                 
@@ -141,8 +145,8 @@ namespace BolnicaSims.Service
                 {
                     PacijentService.Instance.zabeleziOdradjenePreglede();
                 }                
-            }
-            else MessageBox.Show("Termin je vec zauzet");
+            
+             
 
         }
 
@@ -304,7 +308,7 @@ namespace BolnicaSims.Service
             return false;
         }
 
-        public Boolean proveraPomeranje(Termin termin,String vreme)
+        public Boolean proveraPomeranje(TerminDTO termin,String vreme)
         {
             DateTime stariTermin = termin.VremeTermina;
             DateTime noviTermin = DateTime.Parse(vreme);
@@ -332,6 +336,14 @@ namespace BolnicaSims.Service
 
             return true;
            
+        }
+        public Termin getSelektovaniTermin()
+        {
+            return TerminStorage.Instance.selektovanTermin;
+        }
+        public ObservableCollection<Termin> getTermini()
+        {
+            return TerminStorage.Instance.termini;
         }
     }
 }

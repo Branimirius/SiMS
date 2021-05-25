@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Storage;
 using BolnicaSims.View.MainView;
 using Model;
@@ -24,18 +25,18 @@ namespace BolnicaSims.View.EditView
         public IzmenaTerminaAdvanced()
         {
             InitializeComponent();
-            listOdrediste.ItemsSource = ProstorijeStorage.Instance.prostorije;
-            datePocetak.SelectedDate = TerminStorage.Instance.selektovanTermin.VremeTermina;
-            txtSati.Text = TerminStorage.Instance.selektovanTermin.VremeTermina.Hour.ToString();
-            txtMinuti.Text = TerminStorage.Instance.selektovanTermin.VremeTermina.Minute.ToString();
+            listOdrediste.ItemsSource = ProstorijaController.Instance.getProstorije();
+            datePocetak.SelectedDate = TerminController.Instance.getSelektovaniTermin().VremeTermina;
+            txtSati.Text = TerminController.Instance.getSelektovaniTermin().VremeTermina.Hour.ToString();
+            txtMinuti.Text = TerminController.Instance.getSelektovaniTermin().VremeTermina.Minute.ToString();
             comboTip.ItemsSource = Enum.GetValues(typeof(TipTermina));
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            Termin tempTermin = new Termin();
+            TerminDTO tempTermin = new TerminDTO(TerminController.Instance.getSelektovaniTermin());
             TimeSpan ts = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
-            tempTermin = TerminStorage.Instance.selektovanTermin;
+            
             tempTermin.VremeTermina = (DateTime)datePocetak.SelectedDate;
             tempTermin.VremeTermina = tempTermin.VremeTermina.Add(ts);
             if (txtBox1.Text != String.Empty)
@@ -80,7 +81,7 @@ namespace BolnicaSims.View.EditView
 
             TerminController.Instance.izmeniTermin(tempTermin);
             //CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridProstorije.ItemsSource).Refresh();
-            switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
+            switch (KorisnikController.Instance.getUlogovaniKorisnik().Zvanje)
             {
                 case "Pacijent":
                     CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridTermini.ItemsSource).Refresh();

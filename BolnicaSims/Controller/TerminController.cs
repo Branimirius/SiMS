@@ -1,8 +1,10 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.DTO;
+using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -22,7 +24,7 @@ namespace BolnicaSims.Controller
             }
         }
   
-        public void izmeniTermin(Termin termin)
+        public void izmeniTermin(TerminDTO termin)
         {
             TerminService.Instance.izmeniTermin(termin);
         }
@@ -61,10 +63,26 @@ namespace BolnicaSims.Controller
            return TerminService.Instance.slobodanTerminAdvanced(pocetak, kraj, pacijent, doktor, prostorija);
         }
 
-        public Boolean proveraPomeranja(Termin termin,String vreme)
+
+        
+
+        public Boolean proveraPomeranja(TerminDTO termin,String vreme)
+
         {
           return  TerminService.Instance.proveraPomeranje(termin, vreme);
             
+        }
+        public Termin getSelektovaniTermin()
+        {
+            return TerminService.Instance.getSelektovaniTermin();
+        }
+        public Boolean slobodanTermin(String vreme, String doktor)
+        {
+            return TerminService.Instance.slobodanTermin(vreme, doktor);
+        }
+        public ObservableCollection<Termin> getTermini()
+        {
+            return TerminService.Instance.getTermini();
         }
     }
 }

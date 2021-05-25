@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
 
@@ -75,7 +77,30 @@ namespace BolnicaSims.Service
             KorisniciStorage.Instance.Save();
     
         }
-        
+        public ObservableCollection<Korisnik> getKorisnici()
+        {
+            return KorisniciStorage.Instance.korisnici;
+        }
+        public ObservableCollection<Korisnik> getZaposleni()
+        {
+            return KorisniciStorage.Instance.zaposleni;
+        }
+        public ObservableCollection<Recept> getRecepti()
+        {
+            return KorisniciStorage.Instance.recepti;
+        }
+        public Korisnik getUlogovaniKorisnik()
+        {
+            return KorisniciStorage.Instance.ulogovaniKorisnik;
+        }
+        public Korisnik getSelektovaniKorisnik()
+        {
+            return KorisniciStorage.Instance.selektovaniKorisnik;
+        }
+        public void setSelektovaniKorisnik(Korisnik korisnik)
+        {
+            KorisniciStorage.Instance.selektovaniKorisnik = korisnik;
+        }
 
 
     }

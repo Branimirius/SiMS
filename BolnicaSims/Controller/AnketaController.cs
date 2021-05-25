@@ -1,7 +1,9 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.Model;
+using BolnicaSims.Service;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -27,6 +29,10 @@ namespace BolnicaSims.Controller
         public void dodajAnketuBolnica(String ocena,String komentar,String pacijent)
         {
             AnketaService.Instance.dodajAnketuBolnica(ocena, komentar, pacijent);
+        }
+        public ObservableCollection<Anketa> getAnkete()
+        {
+            return AnketaService.Instance.getAnkete();
         }
     }
 }

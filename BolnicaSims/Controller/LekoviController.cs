@@ -56,5 +56,25 @@ namespace BolnicaSims.Controller
         {
             LekoviService.Instance.ukloniAlternativu(alternativa);
         }
+        public ObservableCollection<Lek> getLekovi()
+        {
+            return LekoviService.Instance.getLekovi();
+        }
+        public ObservableCollection<String> getLekoviImena()
+        {
+            return LekoviService.Instance.getLekoviImena();
+        }
+        public ObservableCollection<Lek> getNeverifikovaniLekovi()
+        {
+            return LekoviService.Instance.getNeverifikovaniLekovi();
+        }
+        public Lek getSelektovanLek()
+        {
+            return LekoviService.Instance.getSelektovanLek();
+        }
+        public void setSelektovanLek(Lek lek)
+        {
+            LekoviService.Instance.setSelektovanLek(lek);
+        }
     }
 }

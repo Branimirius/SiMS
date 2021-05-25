@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Threading;
 using System.Timers;
@@ -217,6 +218,7 @@ namespace BolnicaSims.Service
             
         }
 
+
         public void sacuvajBelesku(DateTime vreme,String b)
         {
             korisnik = KorisniciStorage.Instance.ulogovaniKorisnik;
@@ -248,6 +250,24 @@ namespace BolnicaSims.Service
         static void posaljiBelesku()
         {
             NotificationService.Instance.beleskaNotification(korisnik,beleska);
+		}
+
+        public ObservableCollection<Pacijent> getPacijenti()
+        {
+            return PacijentiStorage.Instance.pacijenti;
+        }
+        public ObservableCollection<String> getPacijentiImena()
+        {
+            return PacijentiStorage.Instance.pacijentiImena;
+        }
+        public Pacijent getSelektovanPacijent()
+        {
+            return PacijentiStorage.Instance.selektovanPacijent;
+        }
+        public ObservableCollection<Recept> getRecepti()
+        {
+            return PacijentiStorage.Instance.recepti;
+
         }
 
     }
