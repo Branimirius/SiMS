@@ -72,5 +72,9 @@ namespace BolnicaSims.Controller
         {
             return LekoviService.Instance.getSelektovanLek();
         }
+        public void setSelektovanLek(Lek lek)
+        {
+            LekoviService.Instance.setSelektovanLek(lek);
+        }
     }
 }

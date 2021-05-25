@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Service;
 using Model;
 using System;
@@ -23,30 +24,27 @@ namespace BolnicaSims
         public IzmenaPacijenta()
         {
             InitializeComponent();
-            labelGod.Content = (DateTime.Today.Year - PacijentiStorage.Instance.selektovanPacijent.korisnik.DatumRodjenja.Year).ToString();
-            labelPol.Content = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.getPol();
-            txtBox1.Text = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime;
-            txtBox2.Text = PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
-            textBoxAlergija.Text = PacijentiStorage.Instance.selektovanPacijent.zdravstveniKarton.Alergije;
+            labelGod.Content = (DateTime.Today.Year - PacijentController.Instance.getSelektovanPacijent().korisnik.DatumRodjenja.Year).ToString();
+            labelPol.Content = PacijentController.Instance.getSelektovanPacijent().zdravstveniKarton.getPol();
+            txtBox1.Text = PacijentController.Instance.getSelektovanPacijent().korisnik.Ime;
+            txtBox2.Text = PacijentController.Instance.getSelektovanPacijent().korisnik.Prezime;
+            textBoxAlergija.Text = PacijentController.Instance.getSelektovanPacijent().zdravstveniKarton.Alergije;
 
         }
         private void izmenaPacijentaBtn_Click(object sender, RoutedEventArgs e)
         {
-            // Termin selected = (Termin)ListaTermina.Instance.dataGridTermini.SelectedItem;
-            //txtBox1.Text = selected.VremeTermina.ToString();
-
-            Pacijent selected = PacijentiStorage.Instance.selektovanPacijent;
+            KorisnikDTO dtoKorisnik = new KorisnikDTO(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, PacijentController.Instance.getSelektovanPacijent().korisnik.Jmbg, new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu", "Pacijent");
+            PacijentDTO dtoPacijent = new PacijentDTO(dtoKorisnik, txtBox3.Text, PacijentController.Instance.getSelektovanPacijent().zdravstveniKarton.BrojZdravstveneKnjizice, PacijentController.Instance.getSelektovanPacijent().zdravstveniKarton.Anamneza, textBoxAlergija.Text, PacijentController.Instance.getSelektovanPacijent().zdravstveniKarton.Pol);           
             Pacijent tempPacijent = new Pacijent();
-            Korisnik tempKorisnik = new Korisnik(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, "Pacijent", selected.korisnik.Jmbg, new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
-            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, selected.zdravstveniKarton.BrojKartona, "1243", "M","", textBoxAlergija.Text);
+            Korisnik tempKorisnik = new Korisnik(txtBox4.Text, txtBox5.Text, txtBox1.Text, txtBox2.Text, "Pacijent", PacijentController.Instance.getSelektovanPacijent().korisnik.Jmbg, new DateTime(2008, 04, 14), "afwfaw", "0983833", "vukureiu");
+            ZdravstveniKarton tempKarton = new ZdravstveniKarton(txtBox3.Text, PacijentController.Instance.getSelektovanPacijent().zdravstveniKarton.BrojKartona, "1243", "M","", textBoxAlergija.Text);
             tempPacijent.korisnik = tempKorisnik;
             tempPacijent.zdravstveniKarton = tempKarton;
-            // ListaPacijenata.Instance.izmeniPacijenta(tempPacijent);
-            PacijentController.Instance.izmeniPacijenta(tempPacijent, selected);
-            //KorisnikController.Instance.izmeniKorisnika(tempKorisnik);
+            
+            PacijentController.Instance.izmeniPacijenta(dtoPacijent, PacijentController.Instance.getSelektovanPacijent());
+            
             CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridPacijenti.ItemsSource).Refresh();
-            //SekretarView.Instance.dataGridPacijenti.Items.Refresh();
-            //0000
+            
             this.Close();
 
         }

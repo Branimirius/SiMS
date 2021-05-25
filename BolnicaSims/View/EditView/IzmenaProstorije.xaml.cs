@@ -23,7 +23,7 @@ namespace BolnicaSims
         public IzmenaProstorije()
         {
             InitializeComponent();
-            prostorijaInventarDataGrid.ItemsSource = ProstorijeStorage.Instance.selektovanaProstorija.inventar;
+            prostorijaInventarDataGrid.ItemsSource = ProstorijaController.Instance.getSelektovanaProstorija().inventar;
             comboTip.ItemsSource = Enum.GetValues(typeof(TipProstorije));
 
         }

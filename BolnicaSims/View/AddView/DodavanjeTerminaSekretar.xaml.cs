@@ -23,9 +23,9 @@ namespace BolnicaSims.View.AddView
         public DodavanjeTerminaSekretar()
         {
             InitializeComponent();
-            listDoktori.ItemsSource = DoktoriStorage.Instance.doktori;
-            listPacijenti.ItemsSource = PacijentiStorage.Instance.pacijenti;
-            listProstorija.ItemsSource = ProstorijeStorage.Instance.prostorije;
+            listDoktori.ItemsSource = DoktorController.Instance.getDoktori();
+            listPacijenti.ItemsSource = PacijentController.Instance.getPacijenti();
+            listProstorija.ItemsSource = ProstorijaController.Instance.getProstorije();
             comboTipTermina.ItemsSource = Enum.GetValues(typeof(TipTermina));
 
         }

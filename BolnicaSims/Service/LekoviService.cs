@@ -154,5 +154,9 @@ namespace BolnicaSims.Service
         {
             return LekoviStorage.Instance.selektovanLek;
         }
+        public void setSelektovanLek(Lek lek)
+        {
+            LekoviStorage.Instance.selektovanLek = lek;
+        }
     }
 }

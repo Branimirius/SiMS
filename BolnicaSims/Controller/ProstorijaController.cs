@@ -74,5 +74,9 @@ namespace BolnicaSims.Controller
         {
             return ProstorijaService.Instance.getNazivi();
         }
+        public void setSelektovanaProstorija(Prostorija prostorija)
+        {
+            ProstorijaService.Instance.setSelektovanaProstorija(prostorija);
+        }
     }
 }

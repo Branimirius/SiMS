@@ -387,5 +387,9 @@ namespace BolnicaSims.Service
         {
             return ProstorijeStorage.Instance.nazivi;
         }
+        public void setSelektovanaProstorija(Prostorija prostorija)
+        {
+            ProstorijeStorage.Instance.selektovanaProstorija = prostorija;
+        }
     }
 }

@@ -148,6 +148,10 @@ namespace BolnicaSims.Service
         {
             return DoktoriStorage.Instance.selektovaniDoktor;
         }
+        public void setSelektovaniDoktor(Doktor doktor)
+        {
+            DoktoriStorage.Instance.selektovaniDoktor = doktor;
+        }
 
     }
 }

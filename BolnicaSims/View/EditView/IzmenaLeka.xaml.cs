@@ -24,12 +24,12 @@ namespace BolnicaSims.View.EditView
         public IzmenaLeka()
         {
             InitializeComponent();
-            txtNaziv.Text = LekoviStorage.Instance.selektovanLek.ImeLeka;
-            txtProizvodjac.Text = LekoviStorage.Instance.selektovanLek.Proizvodjac;
-            txtDoza.Text = LekoviStorage.Instance.selektovanLek.Doza;
-            txtAlergen.Text = LekoviStorage.Instance.selektovanLek.Alergija;
-            txtKolicina.Text = LekoviStorage.Instance.selektovanLek.Kolicina.ToString();
-            checkBox.IsChecked = LekoviStorage.Instance.selektovanLek.Verifikovan;
+            txtNaziv.Text = LekoviController.Instance.getSelektovanLek().ImeLeka;
+            txtProizvodjac.Text = LekoviController.Instance.getSelektovanLek().Proizvodjac;
+            txtDoza.Text = LekoviController.Instance.getSelektovanLek().Doza;
+            txtAlergen.Text = LekoviController.Instance.getSelektovanLek().Alergija;
+            txtKolicina.Text = LekoviController.Instance.getSelektovanLek().Kolicina.ToString();
+            checkBox.IsChecked = LekoviController.Instance.getSelektovanLek().Verifikovan;
    
         }
 

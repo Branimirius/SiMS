@@ -25,17 +25,17 @@ namespace BolnicaSims.View.EditView
             InitializeComponent();
             if(DoktoriStorage.Instance.selektovaniDoktor.korisnik.Adresa != null)
             {
-                txtAdresa.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Adresa;
+                txtAdresa.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Adresa;
             }
             
-            txtEmail.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Email;
-            txtJmbg.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Jmbg;
-            txtName.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Ime;
-            txtPassword.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Password;
-            txtPrezime.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Prezime;
-            txtTelefon.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.KontaktTelefon;
-            txtUsername.Text = DoktoriStorage.Instance.selektovaniDoktor.korisnik.Username;
-            textBoxSpec.Text = DoktoriStorage.Instance.selektovaniDoktor.Specijalizacija;
+            txtEmail.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Email;
+            txtJmbg.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Jmbg;
+            txtName.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Ime;
+            txtPassword.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Password;
+            txtPrezime.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Prezime;
+            txtTelefon.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.KontaktTelefon;
+            txtUsername.Text = DoktorController.Instance.getSelektovaniDoktor().korisnik.Username;
+            textBoxSpec.Text = DoktorController.Instance.getSelektovaniDoktor().Specijalizacija;
             
         }
 

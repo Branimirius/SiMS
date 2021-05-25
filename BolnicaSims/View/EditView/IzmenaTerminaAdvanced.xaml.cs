@@ -25,10 +25,10 @@ namespace BolnicaSims.View.EditView
         public IzmenaTerminaAdvanced()
         {
             InitializeComponent();
-            listOdrediste.ItemsSource = ProstorijeStorage.Instance.prostorije;
-            datePocetak.SelectedDate = TerminStorage.Instance.selektovanTermin.VremeTermina;
-            txtSati.Text = TerminStorage.Instance.selektovanTermin.VremeTermina.Hour.ToString();
-            txtMinuti.Text = TerminStorage.Instance.selektovanTermin.VremeTermina.Minute.ToString();
+            listOdrediste.ItemsSource = ProstorijaController.Instance.getProstorije();
+            datePocetak.SelectedDate = TerminController.Instance.getSelektovaniTermin().VremeTermina;
+            txtSati.Text = TerminController.Instance.getSelektovaniTermin().VremeTermina.Hour.ToString();
+            txtMinuti.Text = TerminController.Instance.getSelektovaniTermin().VremeTermina.Minute.ToString();
             comboTip.ItemsSource = Enum.GetValues(typeof(TipTermina));
         }
 
@@ -81,7 +81,7 @@ namespace BolnicaSims.View.EditView
 
             TerminController.Instance.izmeniTermin(tempTermin);
             //CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridProstorije.ItemsSource).Refresh();
-            switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
+            switch (KorisnikController.Instance.getUlogovaniKorisnik().Zvanje)
             {
                 case "Pacijent":
                     CollectionViewSource.GetDefaultView(PacijentView.Instance.dataGridTermini.ItemsSource).Refresh();

@@ -60,5 +60,9 @@ namespace BolnicaSims.Controller
         {
             return DoktorService.Instance.getSelektovaniDoktor();
         }
+        public void setSelektovaniDoktor(Doktor doktor)
+        {
+            DoktorService.Instance.setSelektovaniDoktor(doktor);
+        }
     }    
 }

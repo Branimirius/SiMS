@@ -93,5 +93,9 @@ namespace BolnicaSims.Service
         {
             return InventarStorage.Instance.selektovaniInventar;
         }
+        public void setSelektovaniInventar(Inventar inventar)
+        {
+            InventarStorage.Instance.selektovaniInventar = inventar;
+        }
     }
 }

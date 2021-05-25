@@ -26,10 +26,10 @@ namespace BolnicaSims.View.AddView
         public IzdajRecept()
         {
             InitializeComponent();
-            comboBox.ItemsSource = LekoviStorage.Instance.lekovi;
+            comboBox.ItemsSource = LekoviController.Instance.getLekovi();
             //comboBox.DisplayMemberPath = "ImeLeka";
-            labelDoktor.Content = KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime;
-            labelPacijent.Content = PacijentiStorage.Instance.selektovanPacijent.korisnik.Ime + ' ' + PacijentiStorage.Instance.selektovanPacijent.korisnik.Prezime;
+            labelDoktor.Content = KorisnikController.Instance.getUlogovaniKorisnik().Ime + ' ' + KorisnikController.Instance.getUlogovaniKorisnik().Prezime;
+            labelPacijent.Content = PacijentController.Instance.getSelektovanPacijent().korisnik.Ime + ' ' + PacijentController.Instance.getSelektovanPacijent().korisnik.Prezime;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

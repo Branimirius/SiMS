@@ -21,7 +21,7 @@ namespace Model
 
       public String Alergije { get; set; }
 
-      private TipPola Pol { get; set; }
+      public TipPola Pol { get; set; }
 
       public ZdravstveniKarton(String imeRoditelja, String brojKartona, String brojknjizice, String pol, String anamneza, String alergije)
       {

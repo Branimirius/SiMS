@@ -24,12 +24,12 @@ namespace BolnicaSims.View.AddView
         public DodavanjeTerminaDoktor()
         {
             InitializeComponent();
-            comboBox2.ItemsSource = PacijentiStorage.Instance.pacijentiImena;
+            comboBox2.ItemsSource = PacijentController.Instance.getPacijentiImena();
         }
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
-            TerminController.Instance.dodajTermin(txtBox1.Text, KorisniciStorage.Instance.ulogovaniKorisnik.Ime + ' ' + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime, (string)comboBox2.SelectedItem);
+            TerminController.Instance.dodajTermin(txtBox1.Text, KorisnikController.Instance.getUlogovaniKorisnik().Ime + ' ' + KorisnikController.Instance.getUlogovaniKorisnik().Prezime, (string)comboBox2.SelectedItem);
             //ListaSopstvenihTermina.Instance.refreshListaSopstvenihTermina();
             this.Close();
         }

@@ -66,5 +66,9 @@ namespace BolnicaSims.Controller
         {
             return KorisnikService.Instance.getSelektovaniKorisnik();
         }
+        public void setSelektovaniKorisnik(Korisnik korisnik)
+        {
+            KorisnikService.Instance.setSelektovaniKorisnik(korisnik);
+        }
     }
 }

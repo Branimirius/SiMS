@@ -43,5 +43,9 @@ namespace BolnicaSims.Controller
         {
             return InventarService.Instance.getSelektovaniInventar();
         }
+        public void setSelektovaniInventar(Inventar inventar)
+        {
+            InventarService.Instance.setSelektovaniInventar(inventar);
+        }
     }
 }

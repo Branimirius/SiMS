@@ -97,6 +97,10 @@ namespace BolnicaSims.Service
         {
             return KorisniciStorage.Instance.selektovaniKorisnik;
         }
+        public void setSelektovaniKorisnik(Korisnik korisnik)
+        {
+            KorisniciStorage.Instance.selektovaniKorisnik = korisnik;
+        }
 
 
     }
