@@ -63,6 +63,10 @@ namespace BolnicaSims.Controller
            return TerminService.Instance.slobodanTerminAdvanced(pocetak, kraj, pacijent, doktor, prostorija);
         }
 
+        public void dodajHitanTermin(Pacijent pacijent, String tip)
+        {
+            TerminService.Instance.dodajHitanTermin(pacijent, tip);
+        }
 
         public Termin getSelektovaniTermin()
         {

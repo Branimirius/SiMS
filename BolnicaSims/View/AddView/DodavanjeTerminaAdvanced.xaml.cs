@@ -30,10 +30,17 @@ namespace BolnicaSims.View.AddView
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
-            DateTime pocetak = (DateTime)datePocetak.SelectedDate + vreme;
-            DateTime kraj = pocetak.AddMinutes(int.Parse(txtBox1.Text));
-            TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, (Doktor)listDoktor.SelectedItem, PacijentiStorage.Instance.selektovanPacijent, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTip.SelectedItem);
+            if ((bool)checkBox.IsChecked)
+            {
+                TerminController.Instance.dodajHitanTermin(PacijentiStorage.Instance.selektovanPacijent, comboTip.Text);
+            }
+            else
+            {
+                TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
+                DateTime pocetak = (DateTime)datePocetak.SelectedDate + vreme;
+                DateTime kraj = pocetak.AddMinutes(int.Parse(txtBox1.Text));
+                TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, (Doktor)listDoktor.SelectedItem, PacijentiStorage.Instance.selektovanPacijent, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTip.SelectedItem);
+            }
             this.Close();
         }
 
@@ -54,6 +61,11 @@ namespace BolnicaSims.View.AddView
                 listProstorija.ItemsSource = null;
                 listProstorija.ItemsSource = ProstorijaController.Instance.getSale();
             }    
+        }
+
+        private void checkBox_Checked(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

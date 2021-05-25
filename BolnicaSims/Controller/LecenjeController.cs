@@ -30,9 +30,9 @@ namespace BolnicaSims.Controller
             LecenjeService.Instance.izmeniLecenje(p, l);
         }
 
-        public void dodajLecenje(Pacijent p, Prostorija pr, DateTime pocetak, DateTime kraj)
+        public string dodajLecenje(Pacijent p, Prostorija pr, DateTime pocetak, DateTime kraj)
         {
-            LecenjeService.Instance.dodajLecenje(p, pr, pocetak, kraj);
+            return LecenjeService.Instance.dodajLecenje(p, pr, pocetak, kraj);
         }
     }
 }

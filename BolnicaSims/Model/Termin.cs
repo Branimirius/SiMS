@@ -113,7 +113,14 @@ namespace Model
             this.ImePrezimeDoktora = imeDoktora;
             this.ImePrezimePacijenta = imePacijenta;
         }
-       
+        public Termin(String idTermina, DateTime vremeTermina, int trajanje, Pacijent pacijent)
+        {
+            this.IdTermina = idTermina;
+            this.VremeTermina = vremeTermina;
+            this.TrajanjeMin = trajanje;
+            this.pacijent = pacijent;
+        }
+
         public ObservableCollection<Doktor> doktori = new ObservableCollection<Doktor>();
 
 

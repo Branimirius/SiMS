@@ -93,7 +93,7 @@ namespace Model
 
         public override string ToString()
         {
-            return Naziv + " " + BrojProstorije;
+            return Naziv ;
         }
 
 

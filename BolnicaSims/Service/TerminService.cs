@@ -285,6 +285,32 @@ namespace BolnicaSims.Service
             return true;
         }
 
+        public void dodajHitanTermin(Pacijent pacijent, String tip)
+        {
+            if(tip == "OPERACIJA")
+            {
+                foreach(Prostorija p in ProstorijeStorage.Instance.sale)
+                {
+                    foreach(Termin t in p.termini)
+                    {
+                        if(t.VremeTermina == DateTime.Now)
+                        {
+                        }
+
+                    }    
+                }
+            }
+            else
+            {
+                foreach(Prostorija p in ProstorijeStorage.Instance.ordinacije)
+                {
+                    p.termini.Add(new Termin(TerminService.Instance.GenID(), DateTime.Now, 30, pacijent));
+                    break;
+                }    
+            }
+            
+        }
+
         public String GenID()
         {
             int a = 0;

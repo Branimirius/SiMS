@@ -33,7 +33,7 @@ namespace BolnicaSims.View.AddView
 
         private void button_dodaj_Click(object sender, RoutedEventArgs e)
         {
-            LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate);
+            MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));            
             this.Close();
         }
     }
