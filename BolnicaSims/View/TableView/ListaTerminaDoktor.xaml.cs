@@ -70,8 +70,8 @@ namespace BolnicaSims.View.MainView
         {
             if (dataGridSopstveniTermini.SelectedItem is Termin)
             {
-                Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
-                TerminController.Instance.ukloniTermin(selektovan);
+
+                TerminController.Instance.ukloniTermin((Termin)dataGridSopstveniTermini.SelectedItem);
             }
             else
             {
