@@ -25,6 +25,18 @@ namespace BolnicaSims.View.TableView
     /// </summary>
     public partial class ListaBolnickihLecenja : Page
     {
+        private static ListaBolnickihLecenja instance = null;
+        public static ListaBolnickihLecenja Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new ListaBolnickihLecenja();
+                }
+                return instance;
+            }
+        }
         public ListaBolnickihLecenja()
         {
             InitializeComponent();
