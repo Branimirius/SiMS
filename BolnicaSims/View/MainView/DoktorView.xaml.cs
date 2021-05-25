@@ -24,6 +24,7 @@ namespace BolnicaSims
         Page p1 = new ListaTerminaDoktor();
         Page p2 = new ListaLekovaDoktor();
         Page p3 = new ListaPacijenataDoktor();
+        Page p4 = new ListaBolnickihLecenja();
 
         public DoktorView()
         {
@@ -58,6 +59,7 @@ namespace BolnicaSims
             menuItem1.Background = Brushes.DarkCyan;
             menuItem2.Background = null;
             menuItem3.Background = null;
+            menuItem4.Background = null;
         }
 
         private void ManualColumns_Click2(object sender, RoutedEventArgs e)
@@ -67,6 +69,7 @@ namespace BolnicaSims
             menuItem1.Background = null;
             menuItem2.Background = Brushes.DarkCyan;
             menuItem3.Background = null;
+            menuItem4.Background = null;
         }
 
         private void ManualColumns_Click3(object sender, RoutedEventArgs e)
@@ -76,11 +79,17 @@ namespace BolnicaSims
             menuItem1.Background = null;
             menuItem2.Background = null;
             menuItem3.Background = Brushes.DarkCyan;
+            menuItem4.Background = null;
         }
 
         private void ManualColumns_Click4(object sender, RoutedEventArgs e)
         {
-
+            p4.ShowsNavigationUI = false;
+            frame.Content = p4;
+            menuItem1.Background = null;
+            menuItem2.Background = null;
+            menuItem3.Background = null;
+            menuItem4.Background = Brushes.DarkCyan;
         }
     }
 }

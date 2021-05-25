@@ -24,7 +24,6 @@ namespace BolnicaSims.Service
             }
         }
 
-
         public void izmeniTermin(Termin termin)
         {
             for (int i = 0; i < TerminStorage.Instance.termini.Count; i++)
