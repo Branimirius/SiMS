@@ -1,5 +1,7 @@
 ﻿using BolnicaSims.Model;
 using BolnicaSims.Storage;
+using BolnicaSims.View.AddView;
+using BolnicaSims.View.EditView;
 using BolnicaSims.View.MainView;
 using Model;
 using System;
@@ -28,22 +30,36 @@ namespace BolnicaSims.View.TableView
             dataGridLecenja.ItemsSource = LecenjaStorage.Instance.Read();
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void button_karton_Click(object sender, RoutedEventArgs e)
         {
             Lecenje selektovan = (Lecenje)dataGridLecenja.SelectedItem;
             if (selektovan == null)
             {
-                MessageBox.Show("niste izabrali termin (pacijenta).");
+                MessageBox.Show("niste izabrali lecenje (pacijenta).");
                 return;
             }
             PacijentiStorage.Instance.selektovanPacijent = selektovan.Pacijent;
 
             var s = new PregledKartona();
+            s.Show();
+        }
+
+        private void button_dodaj_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new DodavanjeBolnickogLecenja();
+            s.Show();
+        }
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Lecenje selektovan = (Lecenje)dataGridLecenja.SelectedItem;
+            if (selektovan == null)
+            {
+                MessageBox.Show("niste izabrali lecenje (pacijenta).");
+                return;
+            }
+            PacijentiStorage.Instance.selektovanPacijent = selektovan.Pacijent;
+
+            var s = new IzmenaBolnickogLecenja();
             s.Show();
         }
     }

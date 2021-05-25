@@ -91,6 +91,10 @@ namespace Model
       public String IdProstorije { get; set; }
       public String Naziv { get; set; }
 
+        public override string ToString()
+        {
+            return Naziv + " " + BrojProstorije;
+        }
 
 
     }

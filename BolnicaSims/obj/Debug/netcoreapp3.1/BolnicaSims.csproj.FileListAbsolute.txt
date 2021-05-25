@@ -456,3 +456,13 @@ C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\ListaBolnickihLecenja.g.cs
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Beleska.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\ListaBolnickihLecenja.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Beleska.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeBolnickogLecenja.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\ListaBolnickihLecenja.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PacijentKarton.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Beleska.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeBolnickogLecenja.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\ListaBolnickihLecenja.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PacijentKarton.baml

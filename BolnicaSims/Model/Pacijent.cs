@@ -54,6 +54,11 @@ namespace Model
             this.korisnik = new Korisnik(pacijent.korisnik);
             this.zdravstveniKarton = new ZdravstveniKarton(pacijent.ImeRoditelja, pacijent.BrojKartona, pacijent.BrojZdravstveneKnjizice, pacijent.PolString, pacijent.Anamneza, pacijent.Alergije);
         }
-    
+
+        public override string ToString()
+        {
+            return korisnik.Ime + " " + korisnik.Prezime;
+        }
+
     }
 }
