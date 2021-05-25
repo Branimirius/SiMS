@@ -138,5 +138,21 @@ namespace BolnicaSims.Service
             }
             return a.ToString();
         }
+        public ObservableCollection<Lek> getLekovi()
+        {
+            return LekoviStorage.Instance.lekovi;
+        }
+        public ObservableCollection<String> getLekoviImena()
+        {
+            return LekoviStorage.Instance.lekoviImena;
+        }
+        public ObservableCollection<Lek> getNeverifikovaniLekovi()
+        {
+            return LekoviStorage.Instance.neverifikovaniLekovi;
+        }
+        public Lek getSelektovanLek()
+        {
+            return LekoviStorage.Instance.selektovanLek;
+        }
     }
 }

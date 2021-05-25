@@ -128,7 +128,26 @@ namespace BolnicaSims.Service
             }
             DoktoriStorage.Instance.Save();
         }
-
+        public ObservableCollection<Doktor> getDoktori()
+        {
+            return DoktoriStorage.Instance.doktori;
+        }
+        public ObservableCollection<String> getDoktoriImena()
+        {
+            return DoktoriStorage.Instance.doktoriImena;
+        }
+        public ObservableCollection<String> getDoktoriAnketa()
+        {
+            return DoktoriStorage.Instance.doktoriAnketa;
+        }
+        public ObservableCollection<Doktor> getSpecijalisti()
+        {
+            return DoktoriStorage.Instance.specijalisti;
+        }
+        public Doktor getSelektovaniDoktor()
+        {
+            return DoktoriStorage.Instance.selektovaniDoktor;
+        }
 
     }
 }

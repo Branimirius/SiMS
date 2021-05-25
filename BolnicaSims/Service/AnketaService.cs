@@ -3,6 +3,7 @@ using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Service
@@ -36,6 +37,10 @@ namespace BolnicaSims.Service
             Anketa tempAnketa = new Anketa(ocena, komentar, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
             AnketeStorage.Instance.Read().Add(tempAnketa);
             AnketeStorage.Instance.Save();
+        }
+        public ObservableCollection<Anketa> getAnkete()
+        {
+            return AnketeStorage.Instance.ankete;
         }
     }
 }

@@ -58,5 +58,21 @@ namespace BolnicaSims.Controller
         {
             return ProstorijaService.Instance.getProstorijaByNaziv(naziv);
         }
+        public ObservableCollection<Prostorija> getProstorije()
+        {
+            return ProstorijaService.Instance.getProstorije();
+        }
+        public ObservableCollection<Prostorija> getSale()
+        {
+            return ProstorijaService.Instance.getSale();
+        }
+        public ObservableCollection<Prostorija> getOrdinacije()
+        {
+            return ProstorijaService.Instance.getOrdinacije();
+        }
+        public ObservableCollection<String> getNazivi()
+        {
+            return ProstorijaService.Instance.getNazivi();
+        }
     }
 }

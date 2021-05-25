@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using BolnicaSims.Controller;
 using BolnicaSims.DTO;
@@ -208,6 +209,22 @@ namespace BolnicaSims.Service
             
             
         }
-        
+        public ObservableCollection<Pacijent> getPacijenti()
+        {
+            return PacijentiStorage.Instance.pacijenti;
+        }
+        public ObservableCollection<String> getPacijentiImena()
+        {
+            return PacijentiStorage.Instance.pacijentiImena;
+        }
+        public Pacijent getSelektovanPacijent()
+        {
+            return PacijentiStorage.Instance.selektovanPacijent;
+        }
+        public ObservableCollection<Recept> getRecepti()
+        {
+            return PacijentiStorage.Instance.recepti;
+        }
+
     }
 }

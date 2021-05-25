@@ -371,5 +371,21 @@ namespace BolnicaSims.Service
             }
             return a.ToString();
         }
+        public ObservableCollection<Prostorija> getProstorije()
+        {
+            return ProstorijeStorage.Instance.prostorije;
+        }
+        public ObservableCollection<Prostorija> getSale()
+        {
+            return ProstorijeStorage.Instance.sale;
+        }
+        public ObservableCollection<Prostorija> getOrdinacije() 
+        {
+            return ProstorijeStorage.Instance.ordinacije;                
+        }
+        public ObservableCollection<String> getNazivi()
+        {
+            return ProstorijeStorage.Instance.nazivi;
+        }
     }
 }

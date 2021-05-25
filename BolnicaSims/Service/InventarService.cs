@@ -2,6 +2,7 @@
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Service
@@ -79,6 +80,18 @@ namespace BolnicaSims.Service
 
             }
             return a.ToString();
+        }
+        public ObservableCollection<Inventar> getInventar()
+        {
+            return InventarStorage.Instance.inventar;
+        }
+        public ObservableCollection<String> getInventarImena()
+        {
+            return InventarStorage.Instance.inventarImena;
+        }
+        public Inventar getSelektovaniInventar()
+        {
+            return InventarStorage.Instance.selektovaniInventar;
         }
     }
 }

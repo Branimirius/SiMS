@@ -4,6 +4,7 @@ using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Data;
@@ -337,6 +338,10 @@ namespace BolnicaSims.Service
         public Termin getSelektovaniTermin()
         {
             return TerminStorage.Instance.selektovanTermin;
+        }
+        public ObservableCollection<Termin> getTermini()
+        {
+            return TerminStorage.Instance.termini;
         }
     }
 }

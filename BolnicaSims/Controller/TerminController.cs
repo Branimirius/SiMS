@@ -4,6 +4,7 @@ using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -68,6 +69,10 @@ namespace BolnicaSims.Controller
         public Boolean slobodanTermin(String vreme, String doktor)
         {
             return TerminService.Instance.slobodanTermin(vreme, doktor);
+        }
+        public ObservableCollection<Termin> getTermini()
+        {
+            return TerminService.Instance.getTermini();
         }
     }
 }
