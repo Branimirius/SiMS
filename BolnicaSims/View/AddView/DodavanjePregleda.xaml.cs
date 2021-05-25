@@ -28,7 +28,7 @@ namespace BolnicaSims
         {
             InitializeComponent();
             comboBox1.ItemsSource = DoktoriStorage.Instance.doktoriImena;
-            if (!PacijentController.Instance.proveriBan(DateTime.Now, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik)))
+            if (!PacijentController.Instance.proveriBan(DateTime.Now, PacijentController.Instance.getUlogovaniPacijent()))
             {
                 dodavanjeBtn.IsEnabled = true;
                 
@@ -40,11 +40,11 @@ namespace BolnicaSims
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
-            PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojZakazivanja++;
-            if(PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).brojZakazivanja == 3)
+            PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja++;
+            if(PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja == 3)
             {
                 MessageBox.Show("Pokusali ste da zakazete previse pregleda. Funkcija vam je onemogucena do sutra, pocevsi od sledeceg logovanja.");
-                PacijentController.Instance.banujPacijenta(DateTime.Now, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
+                PacijentController.Instance.banujPacijenta(DateTime.Now, PacijentController.Instance.getUlogovaniPacijent());
                 dodavanjeBtn.IsEnabled = false;               
                 return;
                 
@@ -71,22 +71,7 @@ namespace BolnicaSims
             this.Close();
         }
 
-       /* private void RadioDoktor_Checked(object sender, RoutedEventArgs e)
-        {
-            comboBox1.IsEnabled = true;
-            txtBox1.IsEnabled = false;
-            if (comboBox1.SelectedItem != null)
-            {
-                txtBox1.Text = DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini[DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count - 1].KrajTermina.AddMinutes(10).ToString();
-            }
-            else
-            {
-                MessageBox.Show("Niste izabrali doktora");
-                radioDoktor.IsChecked = false;
-
-            }
-        }
-       */
+  
         private void RadioDatum_Checked(object sender, RoutedEventArgs e)
         {
             comboBox1.IsEnabled = false;

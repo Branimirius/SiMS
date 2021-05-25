@@ -73,5 +73,12 @@ namespace BolnicaSims.Controller
         {
             return PacijentService.Instance.getRecepti();
         }
+
+        public void zabeleziOdradjenePreglede()
+        {
+            PacijentService.Instance.zabeleziOdradjenePreglede();
+        }
+
+     
     }
 }
