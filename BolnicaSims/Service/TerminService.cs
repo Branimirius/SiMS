@@ -308,35 +308,6 @@ namespace BolnicaSims.Service
             return false;
         }
 
-        public Boolean proveraPomeranje(TerminDTO termin,String vreme)
-        {
-            DateTime stariTermin = termin.VremeTermina;
-            DateTime noviTermin = DateTime.Parse(vreme);
-            DateTime noviTermin2 = DateTime.Parse(vreme);
-            DateTime noviTermin3 = stariTermin.AddDays(-1);
-            if (DateTime.Now > noviTermin3)
-            {
-                MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
-                return false ;
-            }
-
-            noviTermin = noviTermin.AddDays(2);
-            noviTermin2 = noviTermin2.AddDays(-2);
-
-            if (stariTermin > noviTermin)
-            {
-                MessageBox.Show("Datum ne sme biti pomeren vise od 2 dana unazad");
-                return false;
-            }
-            if (stariTermin < noviTermin2)
-            {
-                MessageBox.Show("Datum ne sme biti pomeren za vise od 2 dana");
-                return false;
-            }
-
-            return true;
-           
-        }
         public Termin getSelektovaniTermin()
         {
             return TerminStorage.Instance.selektovanTermin;

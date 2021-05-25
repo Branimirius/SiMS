@@ -64,14 +64,6 @@ namespace BolnicaSims.Controller
         }
 
 
-        
-
-        public Boolean proveraPomeranja(TerminDTO termin,String vreme)
-
-        {
-          return  TerminService.Instance.proveraPomeranje(termin, vreme);
-            
-        }
         public Termin getSelektovaniTermin()
         {
             return TerminService.Instance.getSelektovaniTermin();

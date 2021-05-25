@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -26,7 +27,7 @@ namespace BolnicaSims.Service
 
         public void dodajAnketuDoktor(String doktor, String ocena, String komentar, String pacijent)
         {
-            Anketa tempAnketa = new Anketa(doktor,ocena,komentar, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
+            Anketa tempAnketa = new Anketa(doktor,ocena,komentar, PacijentController.Instance.getUlogovaniPacijent());
 
 
             AnketeStorage.Instance.Read().Add(tempAnketa);
@@ -34,7 +35,7 @@ namespace BolnicaSims.Service
         }
         public void dodajAnketuBolnica(String ocena,String komentar,String pacijent)
         {
-            Anketa tempAnketa = new Anketa(ocena, komentar, PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik));
+            Anketa tempAnketa = new Anketa(ocena, komentar, PacijentController.Instance.getUlogovaniPacijent());
             AnketeStorage.Instance.Read().Add(tempAnketa);
             AnketeStorage.Instance.Save();
         }
