@@ -109,6 +109,9 @@ namespace BolnicaSims
 
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
+            //wipe
+            //PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).recepti.Clear();
+
             if (dataGridTermini.SelectedItem is Termin)
             {
                 
@@ -120,6 +123,8 @@ namespace BolnicaSims
                 MessageBox.Show("Nije izabran termin za izmenu");
                 return;
             }
+
+            
         }
 
         private void ButtonObavestenja_Click(object sender, RoutedEventArgs e)
