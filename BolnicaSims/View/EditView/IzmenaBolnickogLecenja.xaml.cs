@@ -1,4 +1,6 @@
-﻿using Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -21,14 +23,22 @@ namespace BolnicaSims.View.EditView
         public IzmenaBolnickogLecenja()
         {
             InitializeComponent();
-            comboBoxPacijenti.ItemsSource = PacijentiStorage.Instance.Read();
-            comboBoxPacijenti.SelectedItem = PacijentiStorage.Instance.selektovanPacijent;
+            textBlock.Text = PacijentiStorage.Instance.selektovanPacijent.korisnik.ImePrezime;
             comboBoxSobe.ItemsSource = ProstorijeStorage.Instance.ordinacije;
-            comboBoxSobe.SelectedItem = ProstorijeStorage.Instance.selektovanaProstorija;
+            comboBoxSobe.SelectedItem = LecenjeController.Instance.selektovanoLecenje.Prostorija;
+            datePocetak.SelectedDate = LecenjeController.Instance.selektovanoLecenje.Pocetak;
+            dateKraj.SelectedDate = LecenjeController.Instance.selektovanoLecenje.Kraj;
         }
 
         private void button_odustani_Click(object sender, RoutedEventArgs e)
         {
+            this.Close();
+        }
+
+        private void button_izmeni_Click(object sender, RoutedEventArgs e)
+        {
+            LecenjeDTO l = new LecenjeDTO((Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate);
+            LecenjeController.Instance.izmeniLecenje(PacijentiStorage.Instance.selektovanPacijent, l);
             this.Close();
         }
     }

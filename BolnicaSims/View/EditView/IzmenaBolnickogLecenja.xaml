@@ -7,17 +7,17 @@
         mc:Ignorable="d"
         Title="IzmenaBolnickogLecenja" Height="450" Width="800">
     <Grid>
-        <ComboBox x:Name="comboBoxPacijenti" HorizontalAlignment="Left" Margin="422,115,0,0" VerticalAlignment="Top" Width="120"/>
         <ComboBox x:Name="comboBoxSobe" HorizontalAlignment="Left" Margin="422,167,0,0" VerticalAlignment="Top" Width="120"/>
         <Label x:Name="label" Content="Pacijent: " HorizontalAlignment="Left" Margin="281,111,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label1" Content="Soba: " HorizontalAlignment="Left" Margin="283,163,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button_dodaj" Content="Dodaj" HorizontalAlignment="Left" Margin="305,349,0,0" VerticalAlignment="Top" Width="40"/>
+        <Button x:Name="button_izmeni" Content="izmeni" HorizontalAlignment="Left" Margin="305,349,0,0" VerticalAlignment="Top" Width="52" Click="button_izmeni_Click"/>
         <Button x:Name="button_odustani" Content="Odustani" HorizontalAlignment="Left" Margin="459,349,0,0" VerticalAlignment="Top" Click="button_odustani_Click"/>
         <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" TextAlignment="Center" Text="Pocetak lecenja: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" Margin="258,222,0,0" />
         <DatePicker x:Name="datePocetak" Margin="400,222,258,182" />
         <TextBlock x:Name="txtBlock1_Copy" HorizontalAlignment="Left" TextAlignment="Center" Text="Kraj Lecenja: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" Margin="258,277,0,0" />
-        <DatePicker x:Name="datePocetak_Copy" Margin="400,277,258,127" />
+        <DatePicker x:Name="dateKraj" Margin="400,277,258,127" />
         <Label x:Name="label2" Content="Izmena Bolnickog lecenja" HorizontalAlignment="Left" Margin="281,30,0,0" VerticalAlignment="Top" Height="43" Width="268" FontSize=" 20"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="436,116,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

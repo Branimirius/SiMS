@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -27,16 +28,32 @@ namespace BolnicaSims.Service
         {
             foreach (Lecenje l in LecenjaStorage.Instance.Read())
             {
-                if( l.Pacijent == pacijent)
+                if (l.Pacijent.korisnik.Jmbg == pacijent.korisnik.Jmbg)
                 {
                     MessageBox.Show("Izabrani pacijent je vec na bolnickom lecenju");
                 }
                 else
                 {
-                    LecenjaStorage.Instance.lecenja.Add(new Model.Lecenje(pacijent, pocetak, kraj, prostorija));
+                    LecenjaStorage.Instance.lecenja.Add(new Lecenje(pacijent, pocetak, kraj, prostorija));
                     LecenjaStorage.Instance.Save();
+                    break;
                 }
             }
+        }
+
+        public void izmeniLecenje(Pacijent pacijent, LecenjeDTO lecenje)
+        {
+            foreach (Lecenje l in LecenjaStorage.Instance.Read())
+            {
+                if (l.Pacijent.korisnik.Jmbg == pacijent.korisnik.Jmbg)
+                {
+                    l.Prostorija = lecenje.prostorija;
+                    l.Pocetak = lecenje.pocetak;
+                    l.Kraj = lecenje.kraj;
+                    
+                }
+            }
+            LecenjaStorage.Instance.Save();
         }
     }
 }

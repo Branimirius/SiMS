@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.EditView;
@@ -58,6 +59,7 @@ namespace BolnicaSims.View.TableView
                 return;
             }
             PacijentiStorage.Instance.selektovanPacijent = selektovan.Pacijent;
+            LecenjeController.Instance.selektovanoLecenje = selektovan;
 
             var s = new IzmenaBolnickogLecenja();
             s.Show();

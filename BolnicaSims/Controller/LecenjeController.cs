@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.DTO;
+using BolnicaSims.Model;
 using BolnicaSims.Service;
 using Model;
 using System;
@@ -22,9 +23,11 @@ namespace BolnicaSims.Controller
             }
         }
 
-        public void izmeniLecenje(Pacijent p, Lecenje l)
+        public Lecenje selektovanoLecenje;
+
+        public void izmeniLecenje(Pacijent p, LecenjeDTO l)
         {
-            //LecenjeService.Instance.izmeniLecenje(p, l);
+            LecenjeService.Instance.izmeniLecenje(p, l);
         }
 
         public void dodajLecenje(Pacijent p, Prostorija pr, DateTime pocetak, DateTime kraj)
