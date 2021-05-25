@@ -27,7 +27,7 @@ namespace BolnicaSims.View.AddView
             InitializeComponent();
             comboBoxDoktor.ItemsSource = DoktoriStorage.Instance.doktoriAnketa;
             DoktoriStorage.Instance.doktoriAnketa.Clear();
-            foreach (Termin t in PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).termini)
+            foreach (Termin t in PacijentController.Instance.getUlogovaniPacijent().termini)
             {
                 if (DateTime.Now > t.VremeTermina)
                 {

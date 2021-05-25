@@ -26,5 +26,10 @@ namespace BolnicaSims.Controller
         {
             return ReceptService.Instance.getRecepti();
         }
+
+        public void notifikacijaLek(Recept recept)
+        {
+            ReceptService.Instance.notifikacijaLek(recept);
+        }
     }
 }

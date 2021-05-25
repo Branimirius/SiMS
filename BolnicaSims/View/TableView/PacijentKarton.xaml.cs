@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Service;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -23,12 +24,12 @@ namespace BolnicaSims.View.TableView
         public PacijentKarton()
         {
             InitializeComponent();
-            labelIme.Content = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).korisnik.Ime;
-            labelPrezime.Content = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).korisnik.Prezime;
-            labelGod.Content = (DateTime.Today.Year - PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).korisnik.DatumRodjenja.Year).ToString();
-            labelPol.Content = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).zdravstveniKarton.getPol();
-            labelAlergija.Content = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).zdravstveniKarton.Alergije;
-            labelAnamneza.Content = PacijentService.Instance.getUlogovaniPacijent(KorisniciStorage.Instance.ulogovaniKorisnik).zdravstveniKarton.Anamneza;
+            labelIme.Content = PacijentController.Instance.getUlogovaniPacijent().korisnik.Ime;
+            labelPrezime.Content = PacijentController.Instance.getUlogovaniPacijent().korisnik.Prezime;
+            labelGod.Content = (DateTime.Today.Year - PacijentController.Instance.getUlogovaniPacijent().korisnik.DatumRodjenja.Year).ToString();
+            labelPol.Content = PacijentController.Instance.getUlogovaniPacijent().zdravstveniKarton.getPol();
+            labelAlergija.Content = PacijentController.Instance.getUlogovaniPacijent().zdravstveniKarton.Alergije;
+            labelAnamneza.Content = PacijentController.Instance.getUlogovaniPacijent().zdravstveniKarton.Anamneza;
         
 
         }
