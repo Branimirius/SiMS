@@ -13,11 +13,12 @@ namespace BolnicaSims.DTO
         
         public DateTime kraj { get; set; }
 
-        public LecenjeDTO(Prostorija pr, DateTime poc, DateTime k)
+        public LecenjeDTO(Pacijent pac, DateTime poc, DateTime k, Prostorija pr)
         {
             prostorija = pr;
             pocetak = poc;
             kraj = k;
+            pacijent = pac;
 
         }
     }

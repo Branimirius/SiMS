@@ -25,7 +25,7 @@ namespace BolnicaSims.Controller
 
         public Lecenje selektovanoLecenje;
 
-        public void izmeniLecenje(Pacijent p, Lecenje l)
+        public void izmeniLecenje(Pacijent p, LecenjeDTO l)
         {
             LecenjeService.Instance.izmeniLecenje(p, l);
         }

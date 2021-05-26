@@ -39,7 +39,7 @@ namespace BolnicaSims.View.EditView
 
         private void button_izmeni_Click(object sender, RoutedEventArgs e)
         {
-            Lecenje l = new Lecenje(PacijentiStorage.Instance.selektovanPacijent, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate, (Prostorija)comboBoxSobe.SelectedItem);
+            LecenjeDTO l = new LecenjeDTO(PacijentiStorage.Instance.selektovanPacijent, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate, (Prostorija)comboBoxSobe.SelectedItem);
             LecenjeController.Instance.izmeniLecenje(PacijentiStorage.Instance.selektovanPacijent, l);
             CollectionViewSource.GetDefaultView(ListaBolnickihLecenja.Instance.dataGridLecenja.ItemsSource).Refresh();
             this.Close();

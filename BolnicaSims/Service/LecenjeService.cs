@@ -69,15 +69,15 @@ namespace BolnicaSims.Service
             return poruka; 
         }
 
-        public void izmeniLecenje(Pacijent pacijent, Lecenje lecenje)
+        public void izmeniLecenje(Pacijent pacijent, LecenjeDTO lecenje)
         {
             foreach (Lecenje l in LecenjaStorage.Instance.Read())
             {
-                if (l.Pacijent.korisnik.ImePrezime == lecenje.Pacijent.korisnik.ImePrezime)
+                if (l.Pacijent.korisnik.ImePrezime == lecenje.pacijent.korisnik.ImePrezime)
                 {
-                    l.Prostorija = lecenje.Prostorija;
-                    l.Pocetak = lecenje.Pocetak;
-                    l.Kraj = lecenje.Kraj;
+                    l.Prostorija = lecenje.prostorija;
+                    l.Pocetak = lecenje.pocetak;
+                    l.Kraj = lecenje.kraj;
                     LecenjaStorage.Instance.Save();
 
                 }
