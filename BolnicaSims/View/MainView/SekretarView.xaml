@@ -40,7 +40,7 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
                             <DataGridTextColumn Header="Pocetak" Binding="{Binding VremeTermina}" Width="*" />
-                            <DataGridTextColumn Header="Trajanje" Binding="{Binding TrajanjeMin}" Width="*" />
+                            <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
                             <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
                             <DataGridTextColumn Header="Pacijent" Binding="{Binding ImePrezimePacijenta}" Width="*" />
                             <DataGridTextColumn Header="Prostorija" Binding="{Binding prostorija.Naziv}" Width="*" />

@@ -1,4 +1,5 @@
-﻿using BolnicaSims.DTO;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.DTO;
 using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using Model;
@@ -287,9 +288,38 @@ namespace BolnicaSims.Service
 
         public void dodajHitanTermin(Pacijent pacijent, String tip)
         {
+            DateTime pocetak = DateTime.Now;
+            DateTime kraj = DateTime.Now;
+            kraj.AddMinutes(30);
+            Doktor slobodan = new Doktor();
 
-             TerminStorage.Instance.termini.Add(new Termin(TerminService.Instance.GenID(), DateTime.Now, 30, pacijent, DoktorService.Instance.getSlobodanDoktor(), ProstorijaService.Instance.getSlobodnaProstorija(tip)));
-             TerminStorage.Instance.Save(); 
+            foreach(Doktor d in DoktoriStorage.Instance.Read())
+            {
+                if(slobodanDoktor(pocetak, kraj, d))
+                {
+                    slobodan.korisnik = d.korisnik;
+                    break;
+                }
+            }
+            if(tip == "OPERACIJA")
+            {
+                foreach (Prostorija p in ProstorijeStorage.Instance.sale)
+                {
+                    if(slobodnaProstorija(pocetak,kraj, p))
+                    {
+                        TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, slobodan ,pacijent, p, TipTermina.OPERACIJA);
+                        break; 
+                    }
+                }
+            }
+            else
+            {
+                foreach(Prostorija p in ProstorijeStorage.Instance.ordinacije)
+                {
+                    TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, slobodan, pacijent, p, TipTermina.OPERACIJA);
+                    break;
+                }
+            };    
         }
 
         public String GenID()

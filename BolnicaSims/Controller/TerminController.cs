@@ -66,6 +66,7 @@ namespace BolnicaSims.Controller
         public void dodajHitanTermin(Pacijent pacijent, String tip)
         {
             TerminService.Instance.dodajHitanTermin(pacijent, tip);
+
         }
 
         public Termin getSelektovaniTermin()
