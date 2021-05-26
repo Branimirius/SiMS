@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
 using BolnicaSims.Storage;
 using BolnicaSims.View.EditView;
 using System;
@@ -45,7 +46,7 @@ namespace BolnicaSims.View.MainView
         {
             if (dataGridLekovi.SelectedItem is Lek)
             {
-                LekoviStorage.Instance.selektovanLek = (Lek)dataGridLekovi.SelectedItem;
+                LekoviController.Instance.setSelektovanLek((Lek)dataGridLekovi.SelectedItem);
                 var s = new IzmenaLeka();
                 s.Show();
             }

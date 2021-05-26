@@ -1,5 +1,6 @@
 ﻿using BolnicaSims.Model;
 using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,6 @@ namespace BolnicaSims.Controller
         {
             return LekoviService.Instance.getAlternative(lek);
         }
-
         public void izmeniLek(Lek lek)
         {
             LekoviService.Instance.izmeniLek(lek);

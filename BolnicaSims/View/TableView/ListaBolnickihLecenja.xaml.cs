@@ -45,13 +45,13 @@ namespace BolnicaSims.View.TableView
 
         private void button_karton_Click(object sender, RoutedEventArgs e)
         {
-            Lecenje selektovan = (Lecenje)dataGridLecenja.SelectedItem;
-            if (selektovan == null)
+
+            if ((Lecenje)dataGridLecenja.SelectedItem == null)
             {
                 MessageBox.Show("niste izabrali lecenje (pacijenta).");
                 return;
             }
-            PacijentiStorage.Instance.selektovanPacijent = selektovan.Pacijent;
+            PacijentController.Instance.setSelectovaniPacijent((Lecenje)dataGridLecenja.SelectedItem);
 
             var s = new PregledKartona();
             s.Show();
@@ -64,14 +64,14 @@ namespace BolnicaSims.View.TableView
         }
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            Lecenje selektovan = (Lecenje)dataGridLecenja.SelectedItem;
-            if (selektovan == null)
+            if ((Lecenje)dataGridLecenja.SelectedItem == null)
             {
                 MessageBox.Show("niste izabrali lecenje (pacijenta).");
                 return;
             }
-            PacijentiStorage.Instance.selektovanPacijent = selektovan.Pacijent;
-            LecenjeController.Instance.selektovanoLecenje = selektovan;
+
+            PacijentController.Instance.setSelectovaniPacijent((Lecenje)dataGridLecenja.SelectedItem);
+            LecenjeController.Instance.selektovanoLecenje = (Lecenje)dataGridLecenja.SelectedItem; 
 
             var s = new IzmenaBolnickogLecenja();
             s.Show();

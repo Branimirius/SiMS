@@ -84,7 +84,7 @@ namespace BolnicaSims.View.MainView
         {
             
             Termin selektovan = (Termin)dataGridSopstveniTermini.SelectedItem;
-            if(selektovan == null)
+            if((Termin)dataGridSopstveniTermini.SelectedItem == null)
             {
                 MessageBox.Show("niste izabrali termin (pacijenta).");
                 return;

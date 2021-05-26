@@ -187,6 +187,12 @@ namespace BolnicaSims.Service
             }
             return null;
         }
+
+        public void setSelectovaniPacijent(Lecenje lecenje)
+        {
+            PacijentiStorage.Instance.selektovanPacijent = lecenje.Pacijent;
+        }
+
         public String GenID()
         {
             int a = 0;
