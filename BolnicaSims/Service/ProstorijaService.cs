@@ -391,5 +391,33 @@ namespace BolnicaSims.Service
         {
             ProstorijeStorage.Instance.selektovanaProstorija = prostorija;
         }
+
+        public Prostorija getSlobodnaProstorija(String tip)
+        {
+            Prostorija prostorija = new Prostorija();
+            if (tip == "OPERACIJA")
+            {
+                foreach (Prostorija p in ProstorijeStorage.Instance.sale)
+                {
+                    if(p.termini.Count == 0)
+                    {
+                        prostorija = ProstorijeStorage.Instance.sale[2];
+                        break;
+                    }
+                }
+            }
+            else 
+            {
+                foreach (Prostorija p in ProstorijeStorage.Instance.ordinacije)
+                {
+                    if (p.termini.Count == 0)
+                    {
+                        prostorija = ProstorijeStorage.Instance.ordinacije[3];
+                        break;
+                    }
+                }
+            }
+            return prostorija ;
+        }
     }
 }

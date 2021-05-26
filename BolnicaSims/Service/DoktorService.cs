@@ -152,6 +152,20 @@ namespace BolnicaSims.Service
         {
             DoktoriStorage.Instance.selektovaniDoktor = doktor;
         }
+        public Doktor getSlobodanDoktor()
+        {
+            Doktor doca = new Doktor();
+            foreach (Doktor d in DoktoriStorage.Instance.Read())
+            {
+                if (d.termini.Count == 0)
+                {
+                    doca = d;
+                    break;
+                }
+            }
+
+                return doca = DoktoriStorage.Instance.doktori[3];
+        }
 
     }
 }
