@@ -316,10 +316,13 @@ namespace BolnicaSims.Service
             {
                 foreach(Prostorija p in ProstorijeStorage.Instance.ordinacije)
                 {
-                    TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, slobodan, pacijent, p, TipTermina.OPERACIJA);
-                    break;
+                    if (slobodnaProstorija(pocetak, kraj, p))
+                    {
+                        TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, slobodan, pacijent, p, TipTermina.OPERACIJA);
+                        break;
+                    }
                 }
-            };    
+            } 
         }
 
         public String GenID()
