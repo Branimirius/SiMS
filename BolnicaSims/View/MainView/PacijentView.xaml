@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="PacijentView" Height="450" Width="799">
+        Title="PacijentView" Height="450" Width="799" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#FF00C4FF" />
@@ -144,7 +144,7 @@
                     <Button x:Name="zakazi" Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
                     <Button x:Name="izmeni" Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click" Background="#FFFFFDFD"/>
                     <Button Content="Otkazi" HorizontalAlignment="Left" Height="35" Margin="136,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
-                    <Button x:Name="karton" HorizontalAlignment="Left" Margin="199,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"  Background="#FFFFFDFD" Click="karton_Click">
+                    <Button x:Name="karton" HorizontalAlignment="Left" Margin="199,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"  Background="#FFFFFDFD" Click="karton_Click" ToolTip="Pregled kartona">
                         <Image Source="/Resources/report.png"/>
                     </Button>
                     <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
@@ -178,10 +178,10 @@
 
         <StackPanel Margin="0,0,0,313">
             <WrapPanel Width="793">
-                <Button  HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1" Height="34" >
+                <Button  HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1" Height="34" ToolTip="Logout" >
                     <Image Source="../../Resources/logout.png" Width="25" Height="30" />
                 </Button>
-                <Button Click="ButtonObavestenja_Click" Margin="159,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="28" RenderTransformOrigin="1,0" >
+                <Button Click="ButtonObavestenja_Click" Margin="159,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije">
                     <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
                 </Button>
                 <Button Content="Anketa doktor"  Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Height="28"/>
