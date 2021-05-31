@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\Views\IzvestajUpravnikView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddView\AnketaBolnica.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -135,6 +138,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="MVVM\Views\IzvestajUpravnikView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddView\AnketaBolnica.xaml">
       <SubType>Designer</SubType>
     </Page>

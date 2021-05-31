@@ -1,5 +1,6 @@
 ﻿using BolnicaSims.Controller;
 using BolnicaSims.Model;
+using BolnicaSims.MVVM.Views;
 using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
@@ -227,7 +228,8 @@ namespace BolnicaSims
         }
         private void IzvestajLekovi_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new IzvestajUpravnikView();
+            s.ShowDialog();
         }
         
 

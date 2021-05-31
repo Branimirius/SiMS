@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "m3m78tpA7YzO+yboIaqYDkvq/yPbApRdvUwiMkVo6Y7wTRnHrxGc1AUOHtXZZc0Xwgwnrx2bs83/qO8VlRkU1g==",
+  "dgSpecHash": "jpmfnAKGeC5lAVF8l0kJOQBbIOJuFTvIEvdYPfdlc1mD+wHq3hS5Lny2LiniA6CT22Ne98cP6h3pPd9+v33ouA==",
   "success": true,
-  "projectFilePath": "D:\\OISISI - github rep\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\brani\\OneDrive\\Documents\\GitHub\\SiMS\\BolnicaSims\\BolnicaSims.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\brani\\.nuget\\packages\\syncfusion.compression.base\\19.1.0.65\\syncfusion.compression.base.19.1.0.65.nupkg.sha512",
+    "C:\\Users\\brani\\.nuget\\packages\\syncfusion.docio.wpf\\19.1.0.65\\syncfusion.docio.wpf.19.1.0.65.nupkg.sha512",
+    "C:\\Users\\brani\\.nuget\\packages\\syncfusion.doctopdfconverter.wpf\\19.1.0.65\\syncfusion.doctopdfconverter.wpf.19.1.0.65.nupkg.sha512",
+    "C:\\Users\\brani\\.nuget\\packages\\syncfusion.licensing\\19.1.0.65\\syncfusion.licensing.19.1.0.65.nupkg.sha512",
+    "C:\\Users\\brani\\.nuget\\packages\\syncfusion.officechart.base\\19.1.0.65\\syncfusion.officechart.base.19.1.0.65.nupkg.sha512",
+    "C:\\Users\\brani\\.nuget\\packages\\syncfusion.pdf.wpf\\19.1.0.65\\syncfusion.pdf.wpf.19.1.0.65.nupkg.sha512"
+  ],
   "logs": []
 }

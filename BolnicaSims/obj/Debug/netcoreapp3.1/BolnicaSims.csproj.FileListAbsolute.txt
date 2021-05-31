@@ -466,3 +466,16 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Dod
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\ListaBolnickihLecenja.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PacijentKarton.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeBolnickogLecenja.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeBolnickogLecenja.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajUpravnikView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Base.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Syncfusion.DocIO.Base.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Syncfusion.DocToPdfConverter.Base.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Syncfusion.Licensing.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Syncfusion.OfficeChart.Base.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Base.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajUpravnikView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
