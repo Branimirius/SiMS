@@ -8,6 +8,12 @@
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaTerminaDoktor">
 
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value ="White" />
+
+        </Style>
+    </Page.Resources>
     
     <Grid Margin="-6,0,0,0">
         <DataGrid x:Name="dataGridSopstveniTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
@@ -24,11 +30,11 @@
 
         </DataGrid>
         <StackPanel  Orientation="Horizontal" Margin="20,340,4,10">
-            <Button x:Name="button" Content="Dodaj" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Click"/>
-            <Button x:Name="button_Copy" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Copy_Click"/>
-            <Button x:Name="button_Copy1" Content="Ukloni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Copy1_Click"/>
+            <Button x:Name="button" Content="Dodaj" Width="100" Height="30" Click="button_Click"/>
+            <Button x:Name="button_Copy" Content="Izmeni" Width="100" Height="30" Click="button_Copy_Click"/>
+            <Button x:Name="button_Copy1" Content="Ukloni" Width="100" Height="30" Click="button_Copy1_Click"/>
             <TextBlock Width="35"></TextBlock>
-            <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46">
+            <Button Click="button_karton_Click" Height="30" Width="46">
                 <Image Source="/Resources/report.png"/>
             </Button>
             <TextBlock Width="75"></TextBlock>

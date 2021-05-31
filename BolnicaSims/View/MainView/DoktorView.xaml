@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value ="White" />
+        
+        </Style>
+    </Window.Resources>
+
     <Grid Background="Azure">
         <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
             <MenuItem x:Name="menuItem1" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Height="66" Width="108">
@@ -19,13 +26,13 @@
         </Menu>
         <Frame x:Name="frame" Margin="96,0,0,0" Height="434" NavigationUIVisibility="Hidden"/>
         <StackPanel Margin="591,359,0,10" Orientation="Horizontal">
-            <Button x:Name="validacijaBtn" Content="Validacija leka"  Background ="White" Click ="validacijaBtn_Click" Height="31" Width="89" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Button x:Name="validacijaBtn" Content="Validacija leka" Click ="validacijaBtn_Click" Height="31" Width="89" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             <TextBlock x:Name="text2" TextWrapping="Wrap" Width="10"/>
-            <Button x:Name="obavestenjaBtn" Click="Button_Click" Background ="White" Height="30" Width="32" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="obavestenjaBtn" Click="Button_Click" Height="30" Width="32" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="/Resources/bell.png" Width="25" Height="20"/>
             </Button>
             <TextBlock x:Name="text3" TextWrapping="Wrap" Width="10"/>
-            <Button Click ="ButtonLogOut_Click" Background ="White" FontSize="9"  Height="30" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Click ="ButtonLogOut_Click" FontSize="9"  Height="30" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="/Resources/logout.png" Width="25" Height="30" />
             </Button>
             <TextBlock x:Name="text3_Copy" TextWrapping="Wrap" Width="10"/>

@@ -8,6 +8,13 @@
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaPacijenataDoktor">
 
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value ="White" />
+
+        </Style>
+    </Page.Resources>
+
     <Grid>
         <DataGrid x:Name="dataGridPacijenti" ItemsSource="{Binding Pacijenti}" IsReadOnly="True"
             SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -22,7 +29,7 @@
 
         </DataGrid>
         <StackPanel  Orientation="Horizontal" Margin="20,340,-2,10">
-            <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46">
+            <Button Click="button_karton_Click" Height="30" Width="46">
                 <Image Source="/Resources/report.png"/>
             </Button>
             <TextBlock Width="75"/>

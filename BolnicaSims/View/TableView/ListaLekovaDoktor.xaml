@@ -7,6 +7,12 @@
       mc:Ignorable="d" 
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaLekovaDoktor">
+    <Page.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value ="White" />
+
+        </Style>
+    </Page.Resources>
 
     <Grid>
         <DataGrid x:Name="dataGridLekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
@@ -25,7 +31,7 @@
         </DataGrid>
 
         <StackPanel Margin="16,340,4,10" Orientation="Horizontal">
-            <Button x:Name="button_Copy" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Izmeni_Click"/>
+            <Button x:Name="button_Copy" Content="Izmeni" Width="100" Height="30" Click="button_Izmeni_Click"/>
         </StackPanel>
 
     </Grid>
