@@ -504,7 +504,10 @@ C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Dictionaries\BaseRD.baml
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Dictionaries\ThemeDark.baml
-C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Dictionaries\ThemeLight.baml
 C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Properties.Resources.resources
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Properties.Resources.sr-LATN.resources
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.GenerateResource.cache
+C:\Users\Korisnik\Desktop\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll

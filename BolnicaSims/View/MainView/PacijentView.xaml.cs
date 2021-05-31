@@ -51,16 +51,17 @@ namespace BolnicaSims
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
         public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
         public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
-        public bool is_dark;
-        
+        private string currentLanguage;
+
 
         public PacijentView()
         {
             InitializeComponent();
-            is_dark = true;
-            
 
-            if(PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
+            this.CurrentLanguage = "sr-LATN";
+
+
+            if (PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
             {
                 zakazi.IsEnabled = false;
                 izmeni.IsEnabled = false;
@@ -183,6 +184,34 @@ namespace BolnicaSims
         {
             Properties.Settings.Default.ColorMode = "Light";
             Properties.Settings.Default.Save();
+        }
+
+        public string CurrentLanguage
+        {
+            get { return currentLanguage; }
+            set
+            {
+                currentLanguage = value;
+            }
+        }
+
+        private void Execute_SwitchLanguageCommand()
+        {
+            var app = (App)Application.Current;
+            if (CurrentLanguage.Equals("en-US"))
+            {
+                CurrentLanguage = "sr-LATN";
+            }
+            else
+            {
+                CurrentLanguage = "en-US";
+            }
+            app.ChangeLanguage(CurrentLanguage);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Execute_SwitchLanguageCommand();
         }
     }
 }

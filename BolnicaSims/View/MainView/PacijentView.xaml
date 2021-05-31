@@ -4,68 +4,64 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
+      
         mc:Ignorable="d"
         Title="PacijentView" Height="450" Width="799" WindowStartupLocation="CenterScreen">
 
 
     <Grid  Margin="0,0,0,1">
         <TabControl TabStripPlacement="Left" Margin="0,123,0,0">
-            <TabItem Name="TerminiTab" Header="Termini">
+            <TabItem Name="TerminiTab" Header="{local:Loc TerminiTab}">
                 <Grid  Margin="0,0,0,-24" Width="699">
                     <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="674">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
-                            <DataGridTextColumn Header="Pocetak" Binding="{Binding VremeTermina}" Width="*" />
-                            <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
-                            <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
-                            <DataGridTextColumn Header="Pacijent" Binding="{Binding ImePrezimePacijenta}" Width="*" />
-                            <DataGridTextColumn Header="Prostorija" Binding="{Binding prostorija.Naziv}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc IdTermina}" Binding="{Binding IdTermina}" Width="30" />
+                            <DataGridTextColumn Header="{local:Loc VremeTermina}" Binding="{Binding VremeTermina}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc KrajTermina}" Binding="{Binding KrajTermina}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Doktor}" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc ImePrezimePacijenta}" Binding="{Binding ImePrezimePacijenta}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Prostorija}" Binding="{Binding prostorija.Naziv}" Width="*" />
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="zakazi" Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click"/>
-                    <Button x:Name="izmeni" Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click"/>
-                    <Button Content="Otkazi" HorizontalAlignment="Left" Height="35" Margin="136,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonOtkazi_Click" />
-                    <Button x:Name="karton" HorizontalAlignment="Left" Margin="199,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="karton_Click" ToolTip="Pregled kartona">
+                    <Button x:Name="zakazi" Content="{local:Loc Zakazi}" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click"/>
+                    <Button x:Name="izmeni" Content="{local:Loc Izmeni}" HorizontalAlignment="Left" Height="35" Margin="160,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonIzmeniTermin_Click"/>
+                    <Button Content="{local:Loc Otkazi}" HorizontalAlignment="Left" Height="35" Margin="310,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonOtkazi_Click" />
+                    <Button x:Name="karton" HorizontalAlignment="Left" Margin="500,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="karton_Click" ToolTip="Pregled kartona">
                         <Image Source="/Resources/report.png"/>
                     </Button>
-                    <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+                    
 
 
 
                 </Grid>
             </TabItem>
-            <TabItem Name="ReceptiTab" Header="Recepti">
+            <TabItem Name="ReceptiTab" Header="{local:Loc ReceptiTab}" Height="21" VerticalAlignment="Bottom" Margin="-1,0,1,0">
                 <Grid >
                     <DataGrid x:Name="dataGridRecepti" ItemsSource="{Binding Recepti}" IsReadOnly="True" 
                   SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                   Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="670">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Doktor" Binding="{Binding Doktor.korisnik.ImePrezime}" Width="*" />
-                            <DataGridTextColumn Header="Lek" Binding="{Binding Lek}" Width="*" />
-                            <DataGridTextColumn Header="Kreni" Binding="{Binding Kreni}" Width="*" />
-                            <DataGridTextColumn Header="Puta dnevno" Binding="{Binding PutaDnevno}" Width="*" />
-                            <DataGridTextColumn Header="Koliko dana " Binding="{Binding KolikoDana}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Doktor}" Binding="{Binding Doktor.korisnik.ImePrezime}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Lek}" Binding="{Binding Lek}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Kreni}" Binding="{Binding Kreni}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc PutaDnevno}" Binding="{Binding PutaDnevno}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc KolikoDana}" Binding="{Binding KolikoDana}" Width="*" />
                         </DataGrid.Columns>
 
                     </DataGrid>
 
-                    <Label Content="Tabela recepata" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+                    <Label Content="{local:Loc TabelaRecepata}" HorizontalAlignment="Left" Margin="240,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
 
 
                 </Grid>
             </TabItem>
 
-            <TabItem Name="Tema" Header="Tema">
+            <TabItem Name="Tema" Header="{local:Loc Tema}">
                 <Grid >
-
-
-                    <Label Content="Izaberite temu" HorizontalAlignment="Left" Margin="250,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
-                    <RadioButton x:Name="DarkMode" Content="Dark mode" HorizontalAlignment="Left" Margin="56,57,0,0" VerticalAlignment="Top"  GroupName="modesSelection" Checked="DarkMode_Checked"/>
-                    <RadioButton x:Name="LightMode" Content="Light mode" HorizontalAlignment="Left" Margin="56,85,0,0" VerticalAlignment="Top" GroupName="modesSelection" Checked="LightMode_Checked" IsChecked="True"/>
-
-
-
+                    <Label  Content="{local:Loc IzaberiteTemu}" HorizontalAlignment="Left" Margin="250,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+                    <RadioButton x:Name="DarkMode"  Content="{local:Loc DarkMode}" HorizontalAlignment="Left" Margin="56,57,0,0" VerticalAlignment="Top"  GroupName="modesSelection" Checked="DarkMode_Checked"/>
+                    <RadioButton x:Name="LightMode" Content="{local:Loc LightMode}" HorizontalAlignment="Left" Margin="56,85,0,0" VerticalAlignment="Top" GroupName="modesSelection" Checked="LightMode_Checked" IsChecked="True"/>
                 </Grid>
             </TabItem>
 
@@ -76,16 +72,17 @@
                 <Button  HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1" Height="34" ToolTip="Logout" >
                     <Image Source="../../Resources/logout.png" Width="25" Height="30" />
                 </Button>
-                <Button Click="ButtonObavestenja_Click" Margin="270,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije" Foreground="White">
+                <Button Click="ButtonObavestenja_Click" Margin="180,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije" Foreground="White">
                     <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
                 </Button>
-                <Button Content="Anketa doktor"  Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28"/>
-                <Button x:Name="btnAnketaBolnica" Content="Anketa bolnica" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_AnketaBolnica" Background="#FFCBD8DB"/>
+                <Button  Content="{local:Loc Jezik}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_2" />
+                <Button  Content="{local:Loc AnketaDoktor}"  Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28"/>
+                <Button x:Name="btnAnketaBolnica"  Content="{local:Loc AnketaBolnica}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_AnketaBolnica" Background="#FFCBD8DB"/>
 
-                <Image Source="/Resources/firstAid.png" Margin="650,-50,50,0" Width="89"/>
+                <Image Source="/Resources/firstAid.png" Margin="670,-50,50,0" Width="89"/>
             </WrapPanel>
             <WrapPanel Height="42" Width="160" HorizontalAlignment="Right">
-                <TextBlock Text="Bolnica Zdravo" FontSize="16" FontWeight="Bold" Height="21" Width="131" TextAlignment="Right" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="{local:Loc BolnicaZdravo}" FontSize="16" FontWeight="Bold" Height="21" Width="131" TextAlignment="Right" HorizontalAlignment="Stretch"/>
             </WrapPanel>
         </StackPanel>
     </Grid>

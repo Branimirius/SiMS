@@ -12,6 +12,11 @@
         },
         "runtime": {
           "BolnicaSims.dll": {}
+        },
+        "resources": {
+          "sr-LATN/BolnicaSims.resources.dll": {
+            "locale": "sr-LATN"
+          }
         }
       },
       "Haley.Extensions/2.0.1": {
