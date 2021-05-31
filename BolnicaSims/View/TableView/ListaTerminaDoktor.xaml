@@ -18,7 +18,7 @@
     <Grid Margin="-6,0,0,0">
         <DataGrid x:Name="dataGridSopstveniTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
             SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-            Height="340" VerticalAlignment="Top" Width="698">
+            Height="340" VerticalAlignment="Top" Width="698" BorderThickness="2" BorderBrush="AliceBlue">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
                 <DataGridTextColumn Header="Pocetak" Binding="{Binding VremeTermina}" Width="*" />
