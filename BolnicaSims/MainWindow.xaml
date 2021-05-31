@@ -7,11 +7,11 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
     <Canvas Background ="Azure" RenderTransformOrigin="0.486,0.576">
-        <TextBox x:Name="txtKorisnickoIme" TextWrapping="Wrap" Width="120" Canvas.Left="130" Canvas.Top="213" Height="27"/>
-        <PasswordBox x:Name="txtLozinka" Width="120" Canvas.Left="130" Canvas.Top="267" Height="27"/>
+        <TextBox x:Name="txtKorisnickoIme" TextWrapping="Wrap" Width="120" Canvas.Left="130" Canvas.Top="213" Height="27" Foreground="Black" Background ="White" />
+        <PasswordBox x:Name="txtLozinka" Width="120" Canvas.Left="130" Canvas.Top="267" Height="27" />
         <Label Content="Korisnicko ime:" Canvas.Left="130" Canvas.Top="187" Width="120"/>
         <Label Content="Lozinka:" Canvas.Left="130" Canvas.Top="242" Width="120"/>
-        <Button Content="Logovanje" Background ="White" Canvas.Left="156" Width="68" Height="22" Canvas.Top="318" Click="Button_ClickLogin"/>
+        <Button Content="Logovanje" Foreground="Black" Background ="White" Canvas.Left="156" Width="68" Height="22" Canvas.Top="318" Click="Button_ClickLogin"/>
         <Image Source="/Resources/firstAid.png" Canvas.Left="43" Height="70" Canvas.Top="75" Width="292"/>
 
 

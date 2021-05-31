@@ -135,6 +135,15 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Dictionaries\BaseRD.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\ThemeDark.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Dictionaries\ThemeLight.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddView\AnketaBolnica.xaml">
       <SubType>Designer</SubType>
     </Page>

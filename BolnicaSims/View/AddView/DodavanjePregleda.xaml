@@ -6,142 +6,23 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="DodavanjePregleda" Height="345" Width="446" WindowStartupLocation="CenterScreen">
-    <Window.Resources>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#FF00C4FF" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontFamily" Value="./#Segoe UI" />
-            <Setter Property="SnapsToDevicePixels" Value="True" />
-
-
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                            <Grid>
-                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
-                            </Grid>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="{x:Type TextBox}">
-
-            <Setter Property="Background" Value="#FF00C4FF" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="FontSize" Value="11" />
-            <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                            <ScrollViewer x:Name="PART_ContentHost"/>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#a9bec3" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-        </Style>
-        <Style TargetType="TabItem">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TabItem">
-                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0" Background="#FF00C4FF">
-                            <ContentPresenter x:Name="ContentSite"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center"
-                                        ContentSource="Header"
-                                        Margin="10,2"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
-                            </Trigger>
-                            <Trigger Property="IsSelected" Value="False">
-                                <Setter TargetName="Border" Property="Background" Value="#86a3ac" />
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style TargetType="{x:Type DataGridRow}">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="#cbd8db"/>
-                </Trigger>
-
-                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                    <Setter Property="Background" Value="#cbd8db"/>
-                </Trigger>
-
-                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                    <Setter Property="Background" Value="#cbd8db"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="DataGrid">
-            <Setter Property="Background" Value="#cbd8db"/>
-        </Style>
-        <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="#cbd8db"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="DataGridRowHeader">
-            <Setter Property="Background" Value="#cbd8bd"/>
-        </Style>
-    </Window.Resources>
-    <Grid Background="#FF278FBF" Margin="0,0,0,-1">
-        <Grid.ColumnDefinitions>
+   
+    <Grid  Margin="0,0,0,-1">
+       
+            <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
+        <StackPanel/>
         <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="56,108,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="118" FontSize="16" ><Run Text="Datum i vreme"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="txtBlock2" HorizontalAlignment="Left" Margin="56,167,0,0" Text="Doktor" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="16"  />
         <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="269,108,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="138" Height="33" TextChanged="txtBox1_TextChanged" ToolTip="Unesite novi datum i vreme pregleda tipa: 5/24/2021 12:45"/>
-        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="115,264,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="26" Width="82" Background="White" Click="dodavanjeBtn_Click" FontSize="16"/>
+        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="115,264,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="26" Width="82"  Click="dodavanjeBtn_Click" FontSize="16"/>
         <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Margin="269,160,0,0" VerticalAlignment="Top" Width="138" Height="33" SelectionChanged="ComboBox1_SelectionChanged"/>
         <Button Content="Odustani" HorizontalAlignment="Left" Margin="262,264,0,0" VerticalAlignment="Top" FontSize="16" Width="84" Height="26" Click="Button_Click">
-            <Button.Background>
-                <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
-            </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Margin="56,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="74" FontSize="16"><Run Text="Prioritet"/><LineBreak/><Run/></TextBlock>
         <CheckBox x:Name="radioDatum" Content="Datum&#xD;&#xA;" HorizontalAlignment="Left" Margin="276,62,0,0" VerticalAlignment="Top" Checked="RadioDatum_Checked" Unchecked="radioDatum_Unchecked" Height="31" Width="56"/>
-
+       
     </Grid>
 </Window>

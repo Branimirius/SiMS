@@ -6,6 +6,12 @@ using BolnicaSims.View.AddView;
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.View.TableView;
+using Haley.Models;
+using Haley.Utils;
+using Haley.MVVM;
+using Haley.Abstractions;
+using Haley.Enums;
+using Haley.Utils;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,6 +25,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace BolnicaSims
 {
@@ -44,11 +51,13 @@ namespace BolnicaSims
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
         public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
         public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
+        public bool is_dark;
         
 
         public PacijentView()
         {
             InitializeComponent();
+            is_dark = true;
             
 
             if(PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
@@ -162,6 +171,18 @@ namespace BolnicaSims
         {
             var s = new PacijentKarton();
             s.Show();
+        }
+
+        private void DarkMode_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Dark";
+            Properties.Settings.Default.Save();
+        }
+
+        private void LightMode_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Light";
+            Properties.Settings.Default.Save();
         }
     }
 }
