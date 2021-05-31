@@ -4,14 +4,15 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
+         xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="IzmenaPregleda" Height="260" Width="405" WindowStartupLocation="CenterScreen">
     
     <Grid >
         <StackPanel/>
-        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="41,89,0,0" Text="Datum i vreme" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
+        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="41,89,0,0" Text="{ns:Loc DatumVreme}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
         <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="221,89,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="21" ToolTip="Unesite novi datum i vreme pregleda tipa: 5/24/2021 12:45"/>
-        <Button x:Name="izmenaBtn" Content="Izmeni" HorizontalAlignment="Left" Margin="149,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="25" Width="73"  Click="ButtonIzmeni_Click"/>
+        <Button x:Name="izmenaBtn" Content="{ns:Loc Potvrdi}" HorizontalAlignment="Left" Margin="149,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="25" Width="73"  Click="ButtonIzmeni_Click"/>
 
     </Grid>
 </Window>

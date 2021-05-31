@@ -117,11 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="Alergije" xml:space="preserve">
+    <value>Alergije</value>
+  </data>
+  <data name="Anamneza" xml:space="preserve">
+    <value>Anamneza</value>
+  </data>
   <data name="AnketaBolnica" xml:space="preserve">
     <value>Anketa bolnica</value>
   </data>
   <data name="AnketaDoktor" xml:space="preserve">
     <value>Anketa doktor</value>
+  </data>
+  <data name="Beleska" xml:space="preserve">
+    <value>Beleska</value>
   </data>
   <data name="BolnicaZdravo" xml:space="preserve">
     <value>Bolnica zdravo</value>
@@ -129,11 +138,23 @@
   <data name="DarkMode" xml:space="preserve">
     <value>Tamna tema</value>
   </data>
+  <data name="Datum" xml:space="preserve">
+    <value>Datum</value>
+  </data>
+  <data name="DatumVreme" xml:space="preserve">
+    <value>Datum i vreme</value>
+  </data>
   <data name="Doktor" xml:space="preserve">
     <value>Doktor</value>
   </data>
+  <data name="Godine" xml:space="preserve">
+    <value>Godine</value>
+  </data>
   <data name="IdTermina" xml:space="preserve">
     <value>Id</value>
+  </data>
+  <data name="Ime" xml:space="preserve">
+    <value>Ime</value>
   </data>
   <data name="ImePrezimePacijenta" xml:space="preserve">
     <value>Pacijent</value>
@@ -150,6 +171,9 @@
   <data name="KolikoDana" xml:space="preserve">
     <value>Koliko dana</value>
   </data>
+  <data name="Komentar" xml:space="preserve">
+    <value>Komentar</value>
+  </data>
   <data name="KrajTermina" xml:space="preserve">
     <value>Kraj</value>
   </data>
@@ -162,8 +186,35 @@
   <data name="LightMode" xml:space="preserve">
     <value>Svetla tema</value>
   </data>
+  <data name="Naslov" xml:space="preserve">
+    <value>Naslov:</value>
+  </data>
+  <data name="Notifikacije" xml:space="preserve">
+    <value>NOTIFIKACIJE</value>
+  </data>
+  <data name="Ocena" xml:space="preserve">
+    <value>Ocena(1-10)</value>
+  </data>
   <data name="Otkazi" xml:space="preserve">
     <value>Otkazi</value>
+  </data>
+  <data name="Pol" xml:space="preserve">
+    <value>Pol</value>
+  </data>
+  <data name="Ponisti" xml:space="preserve">
+    <value>Ponisti</value>
+  </data>
+  <data name="Posiljalac" xml:space="preserve">
+    <value>Posiljalac:</value>
+  </data>
+  <data name="Potvrdi" xml:space="preserve">
+    <value>Potvrdi</value>
+  </data>
+  <data name="Prezime" xml:space="preserve">
+    <value>Prezime</value>
+  </data>
+  <data name="Prioritet" xml:space="preserve">
+    <value>Prioritet</value>
   </data>
   <data name="Prostorija" xml:space="preserve">
     <value>Prostorija</value>

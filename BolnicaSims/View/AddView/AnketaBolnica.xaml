@@ -4,16 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
+        xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="AnketaBolnica" Height="450" Width="545" WindowStartupLocation="CenterScreen">
     
     <Grid>
         <StackPanel/>
-        <TextBlock HorizontalAlignment="Left" Margin="93,67,0,0" Text="Ocena(1-10):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,67,0,0" Text="{ns:Loc Ocena}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
         <TextBox  x:Name="txtBoxOcena" HorizontalAlignment="Left" Margin="283,67,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21" ToolTip="Unesite broj od 1 do 10" />
-        <TextBlock HorizontalAlignment="Left" Margin="93,122,0,0" Text="Komentar:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,122,0,0" Text="{ns:Loc Komentar}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
         <TextBox x:Name="txtBoxKomentar" HorizontalAlignment="Left" Margin="93,163,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408" Height="134" ToolTip="Ostavite svoj utisak o bolnici"/>
-        <Button Content="Potvrdi" HorizontalAlignment="Left" Margin="175,355,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Potvrdi" RenderTransformOrigin="0.517,-0.055"/>
-        <Button Content="Ponisti" HorizontalAlignment="Left" Margin="322,355,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Ponisti"/>
+        <Button Content="{ns:Loc Potvrdi}" HorizontalAlignment="Left" Margin="175,355,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Potvrdi" RenderTransformOrigin="0.517,-0.055"/>
+        <Button Content="{ns:Loc Ponisti}" HorizontalAlignment="Left" Margin="322,355,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Ponisti"/>
     </Grid>
 </Window>
