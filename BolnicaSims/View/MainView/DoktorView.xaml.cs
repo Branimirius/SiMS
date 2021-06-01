@@ -28,19 +28,6 @@ namespace BolnicaSims
         Page p4 = new ListaBolnickihLecenja();
         Page p5 = new StatistikaDoktor();
 
-        private static DoktorView instance = null;
-        public static DoktorView Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new DoktorView();
-                }
-                return instance;
-            }
-        }
-
         public DoktorView()
         {
             InitializeComponent();
@@ -120,12 +107,6 @@ namespace BolnicaSims
             menuItem3.Background = null;
             menuItem4.Background = null;
             menuItem5.Background = Brushes.DarkCyan;
-        }
-
-        public void stavi_Karton()
-        {
-            var p = new PregledKartona();
-            frame.Content = p;
         }
 
     }

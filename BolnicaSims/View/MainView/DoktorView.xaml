@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
         Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type MenuItem}">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    
     <Grid Background="Azure">
         <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
             <MenuItem x:Name="menuItem1" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Height="68" Width="108">

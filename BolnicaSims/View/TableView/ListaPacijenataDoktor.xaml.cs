@@ -39,7 +39,7 @@ namespace BolnicaSims.View.TableView
             PacijentiStorage.Instance.selektovanPacijent = selektovan;
 
             var s = new PregledKartona();
-            DoktorView.Instance.frame.Content = s;
+            s.Show();
         }
     }
 }

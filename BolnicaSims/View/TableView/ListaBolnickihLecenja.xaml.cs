@@ -53,7 +53,8 @@ namespace BolnicaSims.View.TableView
             }
             PacijentController.Instance.setSelectovaniPacijent((Lecenje)dataGridLecenja.SelectedItem);
 
-            DoktorView.Instance.stavi_Karton();
+            var s = new PregledKartona();
+            s.Show();
         }
 
         private void button_dodaj_Click(object sender, RoutedEventArgs e)

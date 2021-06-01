@@ -19,7 +19,7 @@ namespace BolnicaSims.View.MainView
     /// <summary>
     /// Interaction logic for PregledKartona.xaml
     /// </summary>
-    public partial class PregledKartona : Page
+    public partial class PregledKartona : Window
     {
         public PregledKartona()
         {
@@ -48,12 +48,19 @@ namespace BolnicaSims.View.MainView
         {
             PacijentController.Instance.izmeniAnamnezu(textBox.Text, textBoxAlergija.Text);
             MessageBox.Show("Anamneza je sacuvana");
+            this.Close();
 
         }
 
         private void buttonUput_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeTerminaAdvanced();
+            s.Show();
+        }
+
+        private void buttonLecenje_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new DodavanjeBolnickogLecenja();
             s.Show();
         }
     }

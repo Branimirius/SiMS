@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
-        Title="DodavanjeTerminaDoktor" Height="450" Width="800">
-    <Grid Background ="Aquamarine">
-        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="192,105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="118" FontSize="16" ><Run Text="Datum i vreme"/><LineBreak/><Run/></TextBlock>
-        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="405,105,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="30"/>
-        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="251,288,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="26" Width="82" Background="White" Click="dodavanjeBtn_Click" FontSize="16"/>
-        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="405,214,0,0" VerticalAlignment="Top" Width="156" Height="30" SelectionChanged="Pacijenti_SelectionChanged"/>
-        <TextBlock x:Name="txtBlock3" HorizontalAlignment="Left" Margin="192,218,0,0" Text="Pacijent" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="16"  />
+        Title="DodavanjeTerminaDoktor" Height="350" Width="500">
+    <Grid Background ="Azure">
+        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="83,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="118" FontSize="16" ><Run Text="Datum i vreme"/><LineBreak/><Run/></TextBlock>
+        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="268,77,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="156" Height="30"/>
+        <Button x:Name="dodavanjeBtn" Content="Dodaj" HorizontalAlignment="Left" Margin="122,260,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="26" Width="82" Background="White" Click="dodavanjeBtn_Click" FontSize="16"/>
+        <ComboBox x:Name="comboBox2" HorizontalAlignment="Left" Margin="268,0,0,0" VerticalAlignment="Center" Width="156" Height="30" SelectionChanged="Pacijenti_SelectionChanged"/>
+        <TextBlock x:Name="txtBlock3" HorizontalAlignment="Left" Margin="126,156,0,0" Text="Pacijent" TextWrapping="Wrap" VerticalAlignment="Top" Height="20" Width="75" FontSize="16"  />
 
-        <Button Content="Odustani" HorizontalAlignment="Left" Margin="441,288,0,0" VerticalAlignment="Top" FontSize="16" Width="84" Height="26" Click="Button_Click">
+        <Button Content="Odustani" HorizontalAlignment="Left" Margin="304,260,0,0" VerticalAlignment="Top" FontSize="16" Width="84" Height="26" Click="Button_Click">
             <Button.Background>
                 <SolidColorBrush Color="{DynamicResource {x:Static SystemColors.ControlLightLightColorKey}}"/>
             </Button.Background>

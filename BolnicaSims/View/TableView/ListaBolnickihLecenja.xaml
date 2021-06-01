@@ -21,8 +21,6 @@
 
         </DataGrid>
         <StackPanel  Orientation="Horizontal" Margin="20,340,-2,10">
-            <Button x:Name="button_dodaj" Content="Dodaj" Height="30" Background="White" Width="100" Click="button_dodaj_Click"/>
-            <TextBlock Width="35"/>
             <Button x:Name="button" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Click"/>
             <TextBlock Width="35"/>
             <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46">
