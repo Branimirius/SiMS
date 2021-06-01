@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="UpravnikView" Height="600" Width="315" ResizeMode="CanResize">
     <Window.Resources>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
