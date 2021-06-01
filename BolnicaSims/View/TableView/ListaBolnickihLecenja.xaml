@@ -7,11 +7,35 @@
       mc:Ignorable="d" 
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaBolnickihLecenja">
+    
+    <Page.Resources>
+        <Style TargetType="{x:Type DataGridRow}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
 
+        </Style>
+
+        <Style TargetType="DataGrid">
+            <Setter Property="Background" Value="White"/>
+            
+        </Style>
+
+        <Style TargetType="DataGridColumnHeader">
+
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+
+        <Style TargetType="DataGridRowHeader">
+
+        </Style>
+    </Page.Resources>
+    
     <Grid>
         <DataGrid x:Name="dataGridLecenja" ItemsSource="{Binding Lecenja}" IsReadOnly="True"
-            SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-            Height="340" VerticalAlignment="Top" Width="703">
+            SelectionMode="Single" AutoGenerateColumns="False" Height="340" VerticalAlignment="Top" Width="703">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime" Binding="{Binding Pacijent.korisnik.Ime}" Width="*" />
                 <DataGridTextColumn Header="Pocetak" Binding="{Binding Pocetak}" Width="*" />
