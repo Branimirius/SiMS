@@ -25,7 +25,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using BolnicaSims.MVVM.Views;
 
 namespace BolnicaSims
 {
@@ -212,6 +212,12 @@ namespace BolnicaSims
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             Execute_SwitchLanguageCommand();
+        }
+
+        private void izvestaj_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new IzvestajPacijentView();
+            s.Show();
         }
     }
 }

@@ -30,6 +30,9 @@
                     <Button x:Name="karton" HorizontalAlignment="Left" Margin="500,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="karton_Click" ToolTip="Pregled kartona">
                         <Image Source="/Resources/report.png"/>
                     </Button>
+                    <Button x:Name="izvestaj" HorizontalAlignment="Left" Margin="590,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="izvestaj_Click" ToolTip="Izvestaj o terminima">
+                        <Image Source="/Resources/details.png"/>
+                    </Button>
                     
 
 

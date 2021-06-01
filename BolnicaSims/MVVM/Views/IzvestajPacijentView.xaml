@@ -1,0 +1,51 @@
+﻿<Window x:Class="BolnicaSims.MVVM.Views.IzvestajPacijentView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BolnicaSims.MVVM.Views"
+        mc:Ignorable="d"
+        Title="IzvestajPacijentView" Height="450" Width="450">
+    <Grid>
+        <StackPanel>
+            <StackPanel x:Name="print">
+                <WrapPanel Width="290">
+                <TextBlock Text="Izvestaj o zakazanim terminima" FontSize="16" FontWeight="Bold"/>
+
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="" FontSize="14"/>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Width="430">
+                    <TextBlock Text="Period:   " Width="57"/>
+                    <TextBlock Text="Od: " Width="32"/>
+                    <DatePicker Name="datumOd" />
+                    <TextBlock Text="Do: " Width="34"/>
+                    <DatePicker Name="datumDo"/>
+
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <DataGrid x:Name="Termini" ItemsSource="{Binding TerminModel}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="290"  VerticalAlignment="Top" Width="450">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
+                            <DataGridTextColumn Header="Vreme" Binding="{Binding VremeTermina}" Width="*" />
+                            <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
+                            <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+                </WrapPanel>
+            </StackPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel Width="200">
+                    <Button x:Name="stampajBtn" Content="Stampaj" Click="stampajBtn_Click" Height="30" Width="60"/>
+                    <TextBlock Text=" " Width="41"/>
+                    <Button x:Name="nazadBtn" Content="Nazad" Click="nazadBtn_Click" Height="30" Width="60"/>
+            </WrapPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>
