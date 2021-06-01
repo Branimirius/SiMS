@@ -8,7 +8,9 @@
         
         mc:Ignorable="d"
         Title="UpravnikView" Height="600" Width="315" ResizeMode="CanResize">
+    
     <Window.Resources>
+        
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -144,19 +146,19 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Click="DodajProstorija_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DodajProstorija_Click" HorizontalAlignment="Left" ToolTip="Dodaj prostoriju." Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/addRoom.png"/>
                     </Button>
-                    <Button Click="UkloniProstorija_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="UkloniProstorija_Click" HorizontalAlignment="Left" ToolTip="Ukloni prostoriju." Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/deleteRoom.png"/>
                     </Button>
-                    <Button Click="DetaljiProstorija_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DetaljiProstorija_Click" HorizontalAlignment="Right" ToolTip="Detalji i izmena prostorije." Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/details.png"/>
                     </Button>
-                    <Button Click="RenoviranjeProstorija_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="RenoviranjeProstorija_Click" HorizontalAlignment="Right" ToolTip="Renoviranje prostorije." Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/renovation.png"/>
                     </Button>
-                    <Button Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2">
+                    <Button Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" ToolTip="Izvestaj o prostorijama." VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
                     <WrapPanel Margin="133,0,10,348">
@@ -180,19 +182,19 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Click="DodajOsoblje_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11" RenderTransformOrigin="0.68,0.726">
+                    <Button Click="DodajOsoblje_Click" HorizontalAlignment="Left" ToolTip="Dodaj zaposlenog." Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11" RenderTransformOrigin="0.68,0.726">
                         <Image Source="../../Resources/addPerson.png" Width="40" />
                     </Button>
-                    <Button Click="UkloniOsoblje_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="UkloniOsoblje_Click" HorizontalAlignment="Left" ToolTip="Ukloni zaposlenog." Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/removePerson.png"/>
                     </Button>
-                    <Button Click="DetaljiOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DetaljiOsoblje_Click" HorizontalAlignment="Right" ToolTip="Detalji i izmena zaposlenog." Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/details.png"/>
                     </Button>
-                    <Button Click="TransferOsoblje_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="TransferOsoblje_Click" HorizontalAlignment="Right" ToolTip="Transfer zaposlenog." Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/transfer.png"/>
                     </Button>
-                    <Button Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
+                    <Button Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" ToolTip="Izvestaj zaposlenih." VerticalAlignment="Top" Height="29" Width="46">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
                     <WrapPanel Margin="133,0,10,358">
@@ -216,30 +218,30 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Click="DodajInventar_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DodajInventar_Click" HorizontalAlignment="Left" ToolTip="Dodaj inventar." Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/addItem.png"/>
                     </Button>
-                    <Button Click="UkloniInventar_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="UkloniInventar_Click" HorizontalAlignment="Left" ToolTip="Ukloni inventar." Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/removeItem.png"/>
                     </Button>
-                    <Button Click="DetaljiInventar_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DetaljiInventar_Click" HorizontalAlignment="Right" ToolTip="Detalji i izmena inventara." Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/details.png"/>
                     </Button>
-                    <Button Click="TransferInventar_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="TransferInventar_Click" HorizontalAlignment="Right" ToolTip="Transfer inventara." Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/transfer.png"/>
                     </Button>
-                    <Button Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
+                    <Button Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" ToolTip="Izvestaj inventara." VerticalAlignment="Top" Height="29" Width="46">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
                     <WrapPanel  Margin="174,0,10,353">
-                        <TextBox x:Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="25" Width="125"/>
-                        <ComboBox Name="comboPretraga" Width="125" />
+                        <TextBox x:Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" ToolTip="Pretrazi inventar." TextWrapping="Wrap" Height="25" Width="125"/>
+                        <ComboBox Name="comboPretraga" Width="125" ToolTip="Parametri pretrage."/>
                     </WrapPanel>
                     <WrapPanel Margin="46,0,135,353">
-                        <CheckBox x:Name="checkDinamicka" Checked="checkDinamicka_Checked" Unchecked="checkDinamicka_Unchecked" Content="D" IsChecked="False" FontSize="9" Width="40" />
-                        <CheckBox x:Name="checkStaticka" Checked="checkStaticka_Checked" Unchecked="checkStaticka_Unchecked" Content="S" IsChecked="False" FontSize="9" Width="40" />
-                        <ComboBox Name="comboFilter" SelectionChanged="comboFilter_SelectionChanged" FontSize="9" Width="100" Height="20"/>
-                        <Button x:Name="ponistiFilterBtn" Content="X" Click="ponistiFilterBtn_Click" />
+                        <CheckBox x:Name="checkDinamicka" Checked="checkDinamicka_Checked" Unchecked="checkDinamicka_Unchecked" Content="D" IsChecked="False" ToolTip="Filter dinamicki inventar." FontSize="9" Width="40" />
+                        <CheckBox x:Name="checkStaticka" Checked="checkStaticka_Checked" Unchecked="checkStaticka_Unchecked" Content="S" IsChecked="False" ToolTip="Filter staticki inventar." FontSize="9" Width="40" />
+                        <ComboBox Name="comboFilter" SelectionChanged="comboFilter_SelectionChanged" ToolTip="Filter prostorija." FontSize="9" Width="100" Height="20"/>
+                        <Button x:Name="ponistiFilterBtn" Content="X" ToolTip="Ponisti filter prostorija." Click="ponistiFilterBtn_Click" />
                     </WrapPanel>
                 </Grid>
             </TabItem>
@@ -259,19 +261,19 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button Click="DodajLekovi_Click" HorizontalAlignment="Left" Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DodajLekovi_Click" HorizontalAlignment="Left" ToolTip="Dodaj lek u evidenciju." Margin="10,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/addItem.png"/>
                     </Button>
-                    <Button Click="UkloniLekovi_Click" HorizontalAlignment="Left" Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="UkloniLekovi_Click" HorizontalAlignment="Left" ToolTip="Ukloni lek." Margin="85,302,0,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/removeItem.png"/>
                     </Button>
-                    <Button Click="DetaljiLekovi_Click" HorizontalAlignment="Right" Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="DetaljiLekovi_Click" HorizontalAlignment="Right" ToolTip="Detalji i izmena leka." Margin="0,302,85,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/details.png"/>
                     </Button>
-                    <Button Click="TransferLekovi_Click" HorizontalAlignment="Right" Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
+                    <Button Click="TransferLekovi_Click" HorizontalAlignment="Right" ToolTip="Transfer leka." Margin="0,302,10,0" VerticalAlignment="Top" Width="50" Height="26" FontSize="11">
                         <Image Source="../../Resources/transfer.png"/>
                     </Button>
-                    <Button Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
+                    <Button Click="IzvestajLekovi_Click" FontSize="11" ToolTip="Izvestaj o stanju lekova." HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
                     <WrapPanel Margin="133,0,10,364">
@@ -284,14 +286,14 @@
         
         <StackPanel Margin="0,0,0,440">
             <WrapPanel Height="30" Background="#527c88">
-                <Button Click ="ButtonOdjavi_Click" FontSize="9"  Height="30" Width="45" >
+                <Button Click ="ButtonOdjavi_Click" FontSize="9" ToolTip="Odjavi se." Height="30" Width="45" >
                     <Image Source="../../Resources/logout.png" Width="25" Height="30" />
                 </Button>
                 <TextBlock x:Name="txtHeader" Text="" Width="150"/>
-                <Button x:Name="obavestenjaBtn" Width="30" Click="obavestenjaBtn_Click" >
+                <Button x:Name="obavestenjaBtn" Width="30" Click="obavestenjaBtn_Click" ToolTip="Obavestenja." >
                     <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
                 </Button>
-                <Button x:Name="podesavanjaBtn" Width="30" Click="podesavanjaBtn_Click" >
+                <Button x:Name="podesavanjaBtn" Width="30" Click="podesavanjaBtn_Click" ToolTip="Podesavanja.">
                     <Image Source="../../Resources/settings.png" Width="25" Height="20"/>
                 </Button>
                 

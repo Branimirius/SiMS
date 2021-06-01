@@ -6,6 +6,7 @@ using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
 using BolnicaSims.View.EditView;
 using BolnicaSims.View.NotificationsView;
+using BolnicaSims.View.SettingsView;
 using BolnicaSims.View.TransferView;
 using Model;
 using System;
@@ -544,7 +545,8 @@ namespace BolnicaSims
 
         private void podesavanjaBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new PodesavanjaUpravnik();
+            s.ShowDialog();
         }
     }
 

@@ -71,51 +71,49 @@
     </Window.Resources>
 
     <Grid Background="#a9bec4">
+        <StackPanel>
+            <StackPanel x:Name="print" Height="420">
+                <WrapPanel Height="50" Width="303" Background="#527c88">
+                    <TextBlock Text=" " Width="28"/>
+                    <Label Content=" IZVESTAJ O LEKOVIMA    " FontWeight="Bold" HorizontalAlignment="Center" FontSize="13" Height="30" Width="180"/>
+                    <Image Source="../../Resources/firstAid.png" Width="60" Height="50"/>
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel>
+                    <TextBlock Text="Izvestaj upravnika o trenutnoj kolicini lekova" FontSize="14" Height="30" />
+                </WrapPanel>
+                <WrapPanel Width="286">
+                    <TextBlock Text="Datum i vreme:  " FontSize="14" Height="30" />
+                    <TextBlock x:Name="txtDatumVreme" Text="" FontSize="14" Height="30" Width="147" />
+                </WrapPanel>
+                <WrapPanel Height="10"/>
+                <WrapPanel Width="286">
+                    <TextBlock Text="Stanje lekova:  " FontSize="14" Height="30" />
 
-        <StackPanel Margin="0,0,0,40" x:Name="print">
-            <WrapPanel Height="50" Width="303" Background="#527c88">
-                <TextBlock Text=" " Width="28"/>
-                <Label Content=" IZVESTAJ O LEKOVIMA    " FontWeight="Bold" HorizontalAlignment="Center" FontSize="13" Height="30" Width="180"/>
-                <Image Source="../../Resources/firstAid.png" Width="60" Height="50"/>
-            </WrapPanel>
-            <WrapPanel Height="10"/>
-            <WrapPanel>
-                <TextBlock Text="Izvestaj upravnika o trenutnoj kolicini lekova" FontSize="14" Height="30" />
-            </WrapPanel>
-            <WrapPanel Width="286">
-                <TextBlock Text="Datum i vreme:  " FontSize="14" Height="30" />
-                <TextBlock x:Name="txtDatumVreme" Text="" FontSize="14" Height="30" Width="16" />
-            </WrapPanel>
-            <WrapPanel Height="10"/>
-            <WrapPanel Width="286">
-                <TextBlock Text="Stanje lekova:  " FontSize="14" Height="30" />
+                </WrapPanel>
+                <WrapPanel>
+                    <DataGrid x:Name="Lekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
+                                SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
+                                Height="256" VerticalAlignment="Center" Width="310" FontSize="9" Background="#cbd8db">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*"/>
+                            <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
+                            <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="45" />
+                            <DataGridTextColumn Header="Validan" Binding="{Binding StringValid}" Width="40" />
+                            <DataGridTextColumn Header="ID" Binding="{Binding IdLeka}" Width="30" />
 
-            </WrapPanel>
-            <WrapPanel>
-                <DataGrid x:Name="Lekovi" ItemsSource="{Binding Lekovi}" IsReadOnly="True"
-                        SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-                        Height="276" VerticalAlignment="Center" Width="311" FontSize="9" Background="#cbd8db">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="*"/>
-                        <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="*"/>
-                        <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="45" />
-                        <DataGridTextColumn Header="Validan" Binding="{Binding StringValid}" Width="40" />
-                        <DataGridTextColumn Header="ID" Binding="{Binding IdLeka}" Width="30" />
+                        </DataGrid.Columns>
 
-                    </DataGrid.Columns>
+                    </DataGrid>
+                </WrapPanel>
+                <WrapPanel Height="22"/>
 
-                </DataGrid>
+            </StackPanel>
+            <WrapPanel Width="210" Height="26" >
+                <Button x:Name="stampajBtn" ToolTip="Dugme za stampanje ili cuvanje u pdf formatu." Content="Stampaj" Click="stampajBtn_Click" Height="30" Width="60"/>
+                <TextBlock Text=" " Width="60"/>
+                <Button x:Name="nazadBtn" Content="Nazad" Click="nazadBtn_Click" Height="30" Width="60"/>
             </WrapPanel>
-            <WrapPanel Height=" 8"/>
-            
         </StackPanel>
-        <WrapPanel Width="210" Margin="50,446,50,0">
-            <Button x:Name="stampajBtn" Content="Stampaj" Click="stampajBtn_Click" Height="30" Width="60"/>
-            <TextBlock Text=" " Width="60"/>
-            <Button x:Name="nazadBtn" Content="Nazad" Click="nazadBtn_Click" Height="30" Width="60"/>
-        </WrapPanel>
-
-
-
     </Grid>
 </Window>
