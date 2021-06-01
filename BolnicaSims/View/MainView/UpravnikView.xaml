@@ -164,7 +164,7 @@
                     <Button Click="IzvestajProstorija_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46" Grid.RowSpan="2">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
-                    <WrapPanel Margin="133,0,10,348">
+                    <WrapPanel Margin="133,0,10,353" Background="#527c88">
                         <TextBox x:Name="txtPretragaProstorije" TextChanged="txtPretragaProstorije_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
 
                     </WrapPanel>
@@ -200,7 +200,7 @@
                     <Button Click="IzvestajOsoblje_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
-                    <WrapPanel Margin="133,0,10,358">
+                    <WrapPanel Margin="133,0,10,358" Background="#527c88">
                         <TextBox Name="txtPretragaOsoblje" TextChanged="txtPretragaOsoblje_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
 
                     </WrapPanel>
@@ -236,11 +236,11 @@
                     <Button Click="IzvestajInventar_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
-                    <WrapPanel  Margin="174,0,10,353">
+                    <WrapPanel  Margin="174,0,10,353" Background="#527c88">
                         <TextBox x:Name="txtPretragaInventar" FontSize="10" TextAlignment="Left" TextChanged="TextBox_TextChanged" TextWrapping="Wrap" Height="25" Width="125"/>
                         <ComboBox Name="comboPretraga" Width="125" />
                     </WrapPanel>
-                    <WrapPanel Margin="46,0,135,353">
+                    <WrapPanel Margin="46,0,135,353" Background="#527c88">
                         <CheckBox x:Name="checkDinamicka" Checked="checkDinamicka_Checked" Unchecked="checkDinamicka_Unchecked" Content="D" IsChecked="False" FontSize="9" Width="40" />
                         <CheckBox x:Name="checkStaticka" Checked="checkStaticka_Checked" Unchecked="checkStaticka_Unchecked" Content="S" IsChecked="False" FontSize="9" Width="40" />
                         <ComboBox Name="comboFilter" SelectionChanged="comboFilter_SelectionChanged" FontSize="9" Width="100" Height="20"/>
@@ -279,7 +279,7 @@
                     <Button Click="IzvestajLekovi_Click" FontSize="11" HorizontalAlignment="Left" VerticalAlignment="Top" Height="29" Width="46">
                         <Image Source="../../Resources/report.png"/>
                     </Button>
-                    <WrapPanel Margin="133,0,10,364">
+                    <WrapPanel Margin="133,0,10,364" Background="#527c88">
                         <TextBox Name="txtPretragaLekovi" TextChanged="txtPretragaLekovi_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166"/>
 
                     </WrapPanel>
@@ -287,7 +287,7 @@
             </TabItem>
         </TabControl>
         
-        <StackPanel Margin="0,0,0,440">
+        <StackPanel Margin="0,0,0,450">
             <WrapPanel Height="30" Background="#527c88">
                 <Button Click ="ButtonOdjavi_Click" FontSize="9"  Height="30" Width="45" >
                     <Image Source="../../Resources/logout.png" Width="25" Height="30" />
@@ -298,6 +298,9 @@
                 </Button>
                 <Button x:Name="podesavanjaBtn" Width="30" Click="podesavanjaBtn_Click" >
                     <Image Source="../../Resources/settings.png" Width="25" Height="20"/>
+                </Button>
+                <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" >
+                    <Image Source="../../Resources/help.png" Width="25" Height="20"/>
                 </Button>
                 
 

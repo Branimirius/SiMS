@@ -546,6 +546,11 @@ namespace BolnicaSims
         {
 
         }
+
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }
