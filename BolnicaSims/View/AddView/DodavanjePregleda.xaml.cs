@@ -41,13 +41,18 @@ namespace BolnicaSims
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
             PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja++;
-            if(PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja == 3)
+            if(PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja == 10)
             {
                 MessageBox.Show("Pokusali ste da zakazete previse pregleda. Funkcija vam je onemogucena do sutra, pocevsi od sledeceg logovanja.");
                 PacijentController.Instance.banujPacijenta(DateTime.Now, PacijentController.Instance.getUlogovaniPacijent());
                 dodavanjeBtn.IsEnabled = false;               
                 return;
                 
+            }
+            if(DateTime.Parse(txtBox1.Text) < DateTime.Now)
+            {
+                MessageBox.Show("Ne moze se zakazati termin u proslosti");
+                return;
             }
             if(TerminController.Instance.slobodanTermin(txtBox1.Text, (String)comboBox1.SelectedItem))
             {

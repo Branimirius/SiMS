@@ -6,6 +6,12 @@ using BolnicaSims.View.AddView;
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.View.TableView;
+using Haley.Models;
+using Haley.Utils;
+using Haley.MVVM;
+using Haley.Abstractions;
+using Haley.Enums;
+using Haley.Utils;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -19,6 +25,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+
 
 namespace BolnicaSims
 {
@@ -44,14 +51,17 @@ namespace BolnicaSims
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
         public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
         public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
-        
+        private string currentLanguage;
+
 
         public PacijentView()
         {
             InitializeComponent();
-            
 
-            if(PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
+            this.CurrentLanguage = "sr-LATN";
+
+
+            if (PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
             {
                 zakazi.IsEnabled = false;
                 izmeni.IsEnabled = false;
@@ -162,6 +172,46 @@ namespace BolnicaSims
         {
             var s = new PacijentKarton();
             s.Show();
+        }
+
+        private void DarkMode_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Dark";
+            Properties.Settings.Default.Save();
+        }
+
+        private void LightMode_Checked(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.ColorMode = "Light";
+            Properties.Settings.Default.Save();
+        }
+
+        public string CurrentLanguage
+        {
+            get { return currentLanguage; }
+            set
+            {
+                currentLanguage = value;
+            }
+        }
+
+        private void Execute_SwitchLanguageCommand()
+        {
+            var app = (App)Application.Current;
+            if (CurrentLanguage.Equals("en-US"))
+            {
+                CurrentLanguage = "sr-LATN";
+            }
+            else
+            {
+                CurrentLanguage = "en-US";
+            }
+            app.ChangeLanguage(CurrentLanguage);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            Execute_SwitchLanguageCommand();
         }
     }
 }

@@ -59,6 +59,11 @@ namespace BolnicaSims
             DateTime noviTermin = DateTime.Parse(vreme);
             DateTime noviTermin2 = DateTime.Parse(vreme);
             DateTime noviTermin3 = stariTermin.AddDays(-1);
+            if(DateTime.Now > stariTermin)
+            {
+                MessageBox.Show("Termin ne moze da se pomera u proslost");
+                return false;
+            }
             if (DateTime.Now > noviTermin3)
             {
                 MessageBox.Show("Termin ne moze da se pomera 24h pre termina");

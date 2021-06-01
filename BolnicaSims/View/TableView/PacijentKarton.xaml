@@ -4,22 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.TableView"
+         xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="PacijentKarton" Height="450" Width="500">
-    <Grid Margin="0,0,0,-6">
-        <Label x:Name="label" Content="ANAMNEZA:" HorizontalAlignment="Left" Margin="96,270,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Ime:" HorizontalAlignment="Left" Margin="96,50,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="label2" Content="Prezime:" HorizontalAlignment="Left" Margin="96,91,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="label3" Content="God:" HorizontalAlignment="Left" Margin="96,136,0,0" VerticalAlignment="Top" Width="100"/>
-        <Label x:Name="label4" Content="Pol:" HorizontalAlignment="Left" Margin="96,182,0,0" VerticalAlignment="Top" Width="100"/>
+        Title="PacijentKarton" Height="450" Width="500" WindowStartupLocation="CenterScreen">
+   
+    <Grid Margin="0,0,0,-6"  >
+        <StackPanel/>
+        <Label x:Name="label" Content="{ns:Loc Anamneza}" HorizontalAlignment="Left" Margin="96,270,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="{ns:Loc Ime}" HorizontalAlignment="Left" Margin="96,50,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label2" Content="{ns:Loc Prezime}" HorizontalAlignment="Left" Margin="96,91,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label3" Content="{ns:Loc Godine}" HorizontalAlignment="Left" Margin="96,136,0,0" VerticalAlignment="Top" Width="100"/>
+        <Label x:Name="label4" Content="{ns:Loc Pol}" HorizontalAlignment="Left" Margin="96,182,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="labelIme" Content="Label" HorizontalAlignment="Left" Margin="284,50,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.051,0.673"/>
         <Label x:Name="labelPrezime" Content="Label" HorizontalAlignment="Left" Margin="284,91,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelGod" Content="Label" HorizontalAlignment="Left" Margin="284,136,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelPol" Content="Label" HorizontalAlignment="Left" Margin="284,182,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelAnamneza" Content="Anamneza" HorizontalAlignment="Left" Margin="96,309,0,0"  VerticalAlignment="Top" Width="422" Height="103"/>
-        <Label x:Name="label5" Content="Alergije:" HorizontalAlignment="Left" Margin="93,225,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="{ns:Loc Alergije}" HorizontalAlignment="Left" Margin="93,225,0,0" VerticalAlignment="Top"/>
         <Label x:Name="labelAlergija" Content= "Label" HorizontalAlignment="Left" Margin="284,225,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button Content="Beleska&#xD;&#xA;" HorizontalAlignment="Left" Margin="414,10,0,0" VerticalAlignment="Top" Click="Button_Click" Height="28" Width="63"/>
+        <Button Content="{ns:Loc Beleska}" HorizontalAlignment="Left" Margin="414,10,0,0" VerticalAlignment="Top" Click="Button_Click" Height="28" Width="63" ToolTip="Kreirajte belesku"/>
 
 
     </Grid>

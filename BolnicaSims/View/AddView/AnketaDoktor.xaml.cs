@@ -4,6 +4,7 @@ using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -19,12 +20,13 @@ namespace BolnicaSims.View.AddView
     /// <summary>
     /// Interaction logic for AnketaDoktor.xaml
     /// </summary>
-    public partial class AnketaDoktor : Window
+    public partial class AnketaDoktor : Window, INotifyPropertyChanged
     {
         public AnketaDoktor()
         {
 
             InitializeComponent();
+      
             comboBoxDoktor.ItemsSource = DoktoriStorage.Instance.doktoriAnketa;
             DoktoriStorage.Instance.doktoriAnketa.Clear();
             foreach (Termin t in PacijentController.Instance.getUlogovaniPacijent().termini)
@@ -36,6 +38,8 @@ namespace BolnicaSims.View.AddView
             }
             comboBoxDoktor.ItemsSource = DoktoriStorage.Instance.doktoriAnketa;
         }
+
+        public event PropertyChangedEventHandler PropertyChanged;
 
         private void Button_Click_Potvrdi(object sender, RoutedEventArgs e)
         {

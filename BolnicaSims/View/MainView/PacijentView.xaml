@@ -4,193 +4,85 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
+      
         mc:Ignorable="d"
-        Title="PacijentView" Height="450" Width="799">
-    <Window.Resources>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#FF00C4FF" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="FontSize" Value="15" />
-            <Setter Property="FontFamily" Value="./#Segoe UI" />
-            <Setter Property="SnapsToDevicePixels" Value="True" />
+        Title="PacijentView" Height="450" Width="799" WindowStartupLocation="CenterScreen">
 
 
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                            <Grid>
-                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
-                            </Grid>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-
-        <Style TargetType="{x:Type TextBox}">
-
-            <Setter Property="Background" Value="#FF00C4FF" />
-            <Setter Property="Foreground" Value="Black" />
-            <Setter Property="FontSize" Value="11" />
-            <Setter Property="SnapsToDevicePixels" Value="True" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type TextBox}">
-                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                            <ScrollViewer x:Name="PART_ContentHost"/>
-                        </Border>
-
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#a9bec3" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-                            <Trigger Property="IsFocused" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
-                                <Setter Property="Foreground" Value="Black" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-
-        </Style>
-        <Style TargetType="TabItem">
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TabItem">
-                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0" Background="#FF00C4FF">
-                            <ContentPresenter x:Name="ContentSite"
-                                        VerticalAlignment="Center"
-                                        HorizontalAlignment="Center"
-                                        ContentSource="Header"
-                                        Margin="10,2"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsSelected" Value="True">
-                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
-                            </Trigger>
-                            <Trigger Property="IsSelected" Value="False">
-                                <Setter TargetName="Border" Property="Background" Value="#86a3ac" />
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <Style TargetType="{x:Type DataGridRow}">
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="Height" Value="25"/>
-            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
-
-            <Style.Triggers>
-                <Trigger Property="IsSelected" Value="True">
-                    <Setter Property="Background" Value="#cbd8db"/>
-                </Trigger>
-
-                <Trigger Property="ItemsControl.AlternationIndex" Value="0">
-                    <Setter Property="Background" Value="#cbd8db"/>
-                </Trigger>
-
-                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
-                    <Setter Property="Background" Value="#cbd8db"/>
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        <Style TargetType="DataGrid">
-            <Setter Property="Background" Value="#cbd8db"/>
-        </Style>
-        <Style TargetType="DataGridColumnHeader">
-            <Setter Property="Background" Value="#cbd8db"/>
-            <Setter Property="Foreground" Value="Black"/>
-            <Setter Property="FontWeight" Value="Bold"/>
-        </Style>
-        <Style TargetType="DataGridRowHeader">
-            <Setter Property="Background" Value="#cbd8bd"/>
-        </Style>
-    </Window.Resources>
-
-    <Grid Background="#FF278FBF"  Margin="0,0,0,1">
-        <TabControl TabStripPlacement="Left" Margin="0,123,10,20">
-            <TabItem Name="TerminiTab" Header="Termini">
-                <Grid Background="#FFE5E5E5" Margin="0,0,0,-10">
-                    <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="674" Background="#FF2699BB">
+    <Grid  Margin="0,0,0,1">
+        <TabControl TabStripPlacement="Left" Margin="0,123,0,0">
+            <TabItem Name="TerminiTab" Header="{local:Loc TerminiTab}">
+                <Grid  Margin="0,0,0,-24" Width="699">
+                    <DataGrid x:Name="dataGridTermini" ItemsSource="{Binding Termini}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="674">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
-                            <DataGridTextColumn Header="Pocetak" Binding="{Binding VremeTermina}" Width="*" />
-                            <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
-                            <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
-                            <DataGridTextColumn Header="Pacijent" Binding="{Binding ImePrezimePacijenta}" Width="*" />
-                            <DataGridTextColumn Header="Prostorija" Binding="{Binding prostorija.Naziv}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc IdTermina}" Binding="{Binding IdTermina}" Width="30" />
+                            <DataGridTextColumn Header="{local:Loc VremeTermina}" Binding="{Binding VremeTermina}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc KrajTermina}" Binding="{Binding KrajTermina}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Doktor}" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc ImePrezimePacijenta}" Binding="{Binding ImePrezimePacijenta}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Prostorija}" Binding="{Binding prostorija.Naziv}" Width="*" />
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="zakazi" Content="Zakazi" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click" Background="White"/>
-                    <Button x:Name="izmeni" Content="Izmeni" HorizontalAlignment="Left" Height="35" Margin="73,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonIzmeniTermin_Click" Background="#FFFFFDFD"/>
-                    <Button Content="Otkazi" HorizontalAlignment="Left" Height="35" Margin="136,4,0,0" VerticalAlignment="Top" Width="58" Click="ButtonOtkazi_Click" Background="#FFFFFDFD"/>
-                    <Button x:Name="karton" HorizontalAlignment="Left" Margin="199,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"  Background="#FFFFFDFD" Click="karton_Click">
+                    <Button x:Name="zakazi" Content="{local:Loc Zakazi}" ToolTip="Zakazivanje pregleda" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click"/>
+                    <Button x:Name="izmeni" Content="{local:Loc Izmeni}" ToolTip="Izmena pregleda" HorizontalAlignment="Left" Height="35" Margin="160,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonIzmeniTermin_Click"/>
+                    <Button Content="{local:Loc Otkazi}" HorizontalAlignment="Left" Height="35" Margin="310,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonOtkazi_Click" />
+                    <Button x:Name="karton" HorizontalAlignment="Left" Margin="500,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="karton_Click" ToolTip="Pregled kartona">
                         <Image Source="/Resources/report.png"/>
                     </Button>
-                    <Label Content="Tabela termina" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+                    
 
 
 
                 </Grid>
             </TabItem>
-            <TabItem Name="ReceptiTab" Header="Recepti">
-                <Grid Background="#FFE5E5E5">
-                    <DataGrid x:Name="dataGridRecepti" ItemsSource="{Binding Recepti}" IsReadOnly="True" Background="#FF2699BB"
+            <TabItem Name="ReceptiTab" Header="{local:Loc ReceptiTab}" Height="21" VerticalAlignment="Bottom" Margin="-1,0,1,0">
+                <Grid >
+                    <DataGrid x:Name="dataGridRecepti" ItemsSource="{Binding Recepti}" IsReadOnly="True" 
                   SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
                   Height="193" Margin="0,47,0,0" VerticalAlignment="Top" Width="670">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Doktor" Binding="{Binding Doktor.korisnik.ImePrezime}" Width="*" />
-                            <DataGridTextColumn Header="Lek" Binding="{Binding Lek}" Width="*" />
-                            <DataGridTextColumn Header="Kreni" Binding="{Binding Kreni}" Width="*" />
-                            <DataGridTextColumn Header="Puta dnevno" Binding="{Binding PutaDnevno}" Width="*" />
-                            <DataGridTextColumn Header="Koliko dana " Binding="{Binding KolikoDana}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Doktor}" Binding="{Binding Doktor.korisnik.ImePrezime}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Lek}" Binding="{Binding Lek}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc Kreni}" Binding="{Binding Kreni}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc PutaDnevno}" Binding="{Binding PutaDnevno}" Width="*" />
+                            <DataGridTextColumn Header="{local:Loc KolikoDana}" Binding="{Binding KolikoDana}" Width="*" />
                         </DataGrid.Columns>
 
                     </DataGrid>
 
-                    <Label Content="Tabela recepata" HorizontalAlignment="Left" Margin="498,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+                    <Label Content="{local:Loc TabelaRecepata}" HorizontalAlignment="Left" Margin="240,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
 
 
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="Tema" Header="{local:Loc Tema}">
+                <Grid >
+                    <Label  Content="{local:Loc IzaberiteTemu}" HorizontalAlignment="Left" Margin="250,-4,0,0" VerticalAlignment="Top" Width="228" Height="51" FontSize="24" FontWeight="Bold"/>
+                    <RadioButton x:Name="DarkMode"  Content="{local:Loc DarkMode}" HorizontalAlignment="Left" Margin="56,57,0,0" VerticalAlignment="Top"  GroupName="modesSelection" Checked="DarkMode_Checked"/>
+                    <RadioButton x:Name="LightMode" Content="{local:Loc LightMode}" HorizontalAlignment="Left" Margin="56,85,0,0" VerticalAlignment="Top" GroupName="modesSelection" Checked="LightMode_Checked" IsChecked="True"/>
                 </Grid>
             </TabItem>
 
         </TabControl>
 
-        <StackPanel Margin="0,0,0,313">
-            <WrapPanel Width="793">
-                <Button  HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1" Height="34" >
+        <StackPanel Margin="0,0,0,310">
+            <WrapPanel Width="803" Height="71">
+                <Button  HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1" Height="34" ToolTip="Logout" >
                     <Image Source="../../Resources/logout.png" Width="25" Height="30" />
                 </Button>
-                <Button Click="ButtonObavestenja_Click" Margin="159,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="119" Height="28" RenderTransformOrigin="1,0" >
+                <Button Click="ButtonObavestenja_Click" Margin="180,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije" Foreground="White">
                     <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
                 </Button>
-                <Button Content="Anketa doktor"  Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Height="28"/>
-                <Button x:Name="btnAnketaBolnica" Content="Anketa bolnica" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="112" Height="28" Click="Button_Click_AnketaBolnica"/>
+                <Button  Content="{local:Loc Jezik}" ToolTip="Menjanje jezika aplikacije" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_2" />
+                <Button  Content="{local:Loc AnketaDoktor}" ToolTip="Popunite anketu za doktora" Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28"/>
+                <Button x:Name="btnAnketaBolnica"  Content="{local:Loc AnketaBolnica}" ToolTip="Popunite anketu za bolnicu nakon 3 odradjena pregleda" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_AnketaBolnica" Background="#FFCBD8DB"/>
 
-                <Image Source="/Resources/firstAid.png" Margin="650,-50,50,0" Width="89"/>
+                <Image Source="/Resources/firstAid.png" Margin="670,-50,50,0" Width="89"/>
             </WrapPanel>
             <WrapPanel Height="42" Width="160" HorizontalAlignment="Right">
-                <TextBlock Text="Bolnica Zdravo" FontSize="16" FontWeight="Bold" Height="21" Width="131" TextAlignment="Right" HorizontalAlignment="Stretch"/>
+                <TextBlock Text="{local:Loc BolnicaZdravo}" FontSize="16" FontWeight="Bold" Height="21" Width="131" TextAlignment="Right" HorizontalAlignment="Stretch"/>
             </WrapPanel>
         </StackPanel>
     </Grid>
