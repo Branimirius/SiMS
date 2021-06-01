@@ -1,4 +1,4 @@
-﻿<Window x:Class="BolnicaSims.View.MainView.PregledKartona"
+﻿<Page x:Class="BolnicaSims.View.MainView.PregledKartona"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -24,4 +24,4 @@
         <Button x:Name="buttonUput" Content="Uput" HorizontalAlignment="Left" Margin="609,0,0,0" VerticalAlignment="Center" Height="44" Width="89" Click="buttonUput_Click"/>
 
     </Grid>
-</Window>
+</Page>

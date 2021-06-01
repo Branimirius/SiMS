@@ -19,7 +19,7 @@ namespace BolnicaSims.View.MainView
     /// <summary>
     /// Interaction logic for PregledKartona.xaml
     /// </summary>
-    public partial class PregledKartona : Window
+    public partial class PregledKartona : Page
     {
         public PregledKartona()
         {

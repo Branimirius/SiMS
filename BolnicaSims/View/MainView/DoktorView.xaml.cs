@@ -2,6 +2,7 @@
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.View.TableView;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,6 +26,20 @@ namespace BolnicaSims
         Page p2 = new ListaLekovaDoktor();
         Page p3 = new ListaPacijenataDoktor();
         Page p4 = new ListaBolnickihLecenja();
+        Page p5 = new StatistikaDoktor();
+
+        private static DoktorView instance = null;
+        public static DoktorView Instance
+        {
+            get
+            {
+                if (instance == null)
+                {
+                    instance = new DoktorView();
+                }
+                return instance;
+            }
+        }
 
         public DoktorView()
         {
@@ -60,6 +75,7 @@ namespace BolnicaSims
             menuItem2.Background = null;
             menuItem3.Background = null;
             menuItem4.Background = null;
+            menuItem5.Background = null;
         }
 
         private void ManualColumns_Click2(object sender, RoutedEventArgs e)
@@ -70,6 +86,7 @@ namespace BolnicaSims
             menuItem2.Background = Brushes.DarkCyan;
             menuItem3.Background = null;
             menuItem4.Background = null;
+            menuItem5.Background = null;
         }
 
         private void ManualColumns_Click3(object sender, RoutedEventArgs e)
@@ -80,6 +97,7 @@ namespace BolnicaSims
             menuItem2.Background = null;
             menuItem3.Background = Brushes.DarkCyan;
             menuItem4.Background = null;
+            menuItem5.Background = null;
         }
 
         private void ManualColumns_Click4(object sender, RoutedEventArgs e)
@@ -90,6 +108,25 @@ namespace BolnicaSims
             menuItem2.Background = null;
             menuItem3.Background = null;
             menuItem4.Background = Brushes.DarkCyan;
+            menuItem5.Background = null;
         }
+
+        private void ManualColumns_Click5(object sender, RoutedEventArgs e)
+        {
+            p4.ShowsNavigationUI = false;
+            frame.Content = p5;
+            menuItem1.Background = null;
+            menuItem2.Background = null;
+            menuItem3.Background = null;
+            menuItem4.Background = null;
+            menuItem5.Background = Brushes.DarkCyan;
+        }
+
+        public void stavi_Karton()
+        {
+            var p = new PregledKartona();
+            frame.Content = p;
+        }
+
     }
 }

@@ -8,13 +8,15 @@
         Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
     <Grid Background="Azure">
         <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
-            <MenuItem x:Name="menuItem1" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Height="66" Width="108">
+            <MenuItem x:Name="menuItem1" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Height="68" Width="108">
             </MenuItem>
-            <MenuItem x:Name="menuItem2" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Height="66" Width="108">
+            <MenuItem x:Name="menuItem2" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Height="68" Width="108">
             </MenuItem>
-            <MenuItem x:Name="menuItem3" Header="Pregled &#xA;Pacijenata" Click="ManualColumns_Click3" Height="66" Width="108">
+            <MenuItem x:Name="menuItem3" Header="Pregled &#xA;Pacijenata" Click="ManualColumns_Click3" Height="68" Width="108">
             </MenuItem>
-            <MenuItem x:Name="menuItem4" Header="Bolnicka &#xA;Lecenja" Click="ManualColumns_Click4" Height="66" Width="108">
+            <MenuItem x:Name="menuItem4" Header="Bolnicka &#xA;Lecenja" Click="ManualColumns_Click4" Height="68" Width="108">
+            </MenuItem>
+            <MenuItem x:Name="menuItem5" Header="Statistika" Click="ManualColumns_Click5" Height="68" Width="108">
             </MenuItem>
         </Menu>
         <Frame x:Name="frame" Margin="96,0,0,0" Height="434" NavigationUIVisibility="Hidden"/>

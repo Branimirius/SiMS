@@ -92,8 +92,9 @@ namespace BolnicaSims.View.MainView
             Pacijent selektovanPacijent = PacijentController.Instance.getPacijent(selektovan.pacijent);
             PacijentiStorage.Instance.selektovanPacijent = selektovanPacijent;
 
-            var s = new PregledKartona();
-            s.Show();
+            DoktorView.Instance.stavi_Karton();
+
+
         }
 
         private void dataGridSopstveniTermini_SelectionChanged(object sender, SelectionChangedEventArgs e)
