@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="DodavanjeOsoblja" Height="280" Width="300">
     <Window.Resources>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -76,7 +83,12 @@
                 <Label Content="DODAVANJE ZAPOSLENOG" FontSize ="13" FontWeight="Bold" HorizontalAlignment="Center" Width="185" Height="30" />
                 <Image Source="../../Resources/firstAid.png" Width="50" Height="50"/>
             </WrapPanel>
-            <WrapPanel Height="20"/>
+            <WrapPanel Height="20">
+                <TextBlock Text=" " Width="250"/>
+                <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" ToolTip="Pomoc." >
+                    <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                </Button>
+            </WrapPanel>
             <WrapPanel Width="242">
                 <TextBlock Text="Izaberite tip zaposlenog za dodavanje u sistem." FontSize="11" HorizontalAlignment="Center" Width="240"/>
             </WrapPanel>

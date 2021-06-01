@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="BolnicaSims.HelpView.PomocMainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:BolnicaSims.HelpView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="300">
+    <Grid>
+        <StackPanel>
+            <WrapPanel Width="256">
+                <TextBlock Text="POMOC NA GLAVNOM PROZORU" FontSize="15" FontWeight="Bold"/>
+            </WrapPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel Width="110">
+                <Button x:Name="okBtn" Content="Ok" Click="okBtn_Click" Height="30" Width="50"/>
+            </WrapPanel>
+        </StackPanel> 
+    </Grid>
+</UserControl>

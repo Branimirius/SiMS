@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.HelpView;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,6 +33,12 @@ namespace BolnicaSims.View.AddView
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
         }
     }
 }

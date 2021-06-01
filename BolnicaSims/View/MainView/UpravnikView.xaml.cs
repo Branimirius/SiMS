@@ -1,11 +1,14 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.HelpView;
 using BolnicaSims.Model;
+using BolnicaSims.MVVM.HelpView;
 using BolnicaSims.MVVM.Views;
 using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
 using BolnicaSims.View.EditView;
 using BolnicaSims.View.NotificationsView;
+using BolnicaSims.View.SettingsView;
 using BolnicaSims.View.TransferView;
 using Model;
 using System;
@@ -544,12 +547,15 @@ namespace BolnicaSims
 
         private void podesavanjaBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new PodesavanjaUpravnik();
+            s.ShowDialog();
         }
 
         private void helpBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
         }
     }
 

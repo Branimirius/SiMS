@@ -7,6 +7,18 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\HelpView\PomocMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\PomocMainViewWin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\UpravnikWizardView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardFirstPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\Views\IzvestajPacijentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -138,6 +150,18 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="MVVM\HelpView\PomocMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\PomocMainViewWin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\UpravnikWizardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardFirstPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="MVVM\Views\IzvestajPacijentView.xaml">
       <SubType>Designer</SubType>
     </Page>

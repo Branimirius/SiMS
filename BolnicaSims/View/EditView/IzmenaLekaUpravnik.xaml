@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="IzmenaLekaUpravnik" Height="450" Width="310">
     <Window.Resources>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value ="#cbd8db"  />
+            
+        </Style>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -95,6 +106,7 @@
             <StackPanel Height="750">
                 <WrapPanel Width="297" Height="50" Background="#527c88">
                     <TextBlock Text=" " Width="84"/>
+                    
                     <Label Content="DETALJI LEKA" FontWeight="Bold" Width="89" />
                     <Image Source="../../Resources/firstAid.png" Width="75" Height="50"/>
                     
@@ -103,6 +115,11 @@
                 <WrapPanel>
                     <TextBlock Text="Naziv:  " TextAlignment="Right" Height="25" Width="135" />
                     <TextBox x:Name="txtNaziv" Height="25" Width="100" />
+                    <TextBlock Text=" " Width="15"/>
+                    <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" ToolTip="Pomoc." >
+                        <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                    </Button>
+                    
                 </WrapPanel>
                 <WrapPanel Height="10"/>
                 <WrapPanel>
@@ -137,7 +154,7 @@
                 <ListView x:Name="listAlternative" Height="116" Width="293">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <WrapPanel>
+                            <WrapPanel Background="#cbd8db">
                                 <TextBlock Text="Naziv leka:  "/>
                                 <TextBlock Text="{Binding ImeLeka}" FontWeight="Bold"/>
                                 <TextBlock Text="{Binding Doza}" FontWeight="Bold"/>
@@ -161,7 +178,7 @@
                     <ListView x:Name="listSviDoktori" SelectionChanged="listSviDoktori_Selected" Height="100" Width="240">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <WrapPanel>
+                                <WrapPanel Background="#cbd8db">
                                     <TextBlock Text="{Binding korisnik.ImePrezime}"/>
                                     <TextBlock Text=" "/>
                                     <TextBlock Text="{Binding Specijalizacija}"/>
@@ -178,7 +195,7 @@
                     <ListView x:Name="listIzabraniDoktori" SelectionChanged="listIzabraniDoktori_Selected" Height="100" Width="240">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <WrapPanel>
+                                <WrapPanel Background="#cbd8db">
                                     <TextBlock Text="{Binding korisnik.ImePrezime}"/>
                                     <TextBlock Text=" "/>
                                     <TextBlock Text="{Binding Specijalizacija}"/>

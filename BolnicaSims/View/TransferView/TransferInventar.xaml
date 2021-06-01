@@ -7,6 +7,17 @@
         mc:Ignorable="d"
         Title="TransferInventar" Height="420" Width="310">
     <Window.Resources>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value ="#cbd8db"  />
+
+        </Style>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -95,11 +106,15 @@
             <StackPanel Height="490">
                 <Grid Height="488" Background="#a9bec4">
                     <WrapPanel Margin="0,0,0,434" Background="#527c88">
-                        <TextBlock Text=" " Height="19" Width="45"/>
+                        <TextBlock Text=" " Height="19" Width="40"/>
                         <Label Content="TANSFER INVENTARA" HorizontalAlignment="Center" FontSize="13"  FontWeight="Bold"/>
-                        <Image Source="../../Resources/firstAid.png" Width="54" Height="37"/>
+                        <Image Source="../../Resources/firstAid.png" Width="41" Height="37"/>
+                        <TextBlock Text=" " Width="15"/>
+                        <Button x:Name="helpBtn" Click="helpBtn_Click" ToolTip="Pomoc." VerticalAlignment="Bottom" >
+                            <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                        </Button>
                     </WrapPanel>
-                    
+
                     <TextBlock Text="Trenutna Prostorija: " Height="20" Width="120" Margin="10,82,143,367" />
                     <TextBlock x:Name="txtProstorija" Text="Naziv" Height="20" Width="120" Margin="135,82,18,367" />
                     <TextBlock Text="Inventar: " Height="20" Width="120" Margin="10,46,143,403" />
@@ -111,7 +126,7 @@
                     <ListView x:Name="listOdrediste" SelectionMode="Single" Margin="10,201,10,95">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <WrapPanel>
+                                <WrapPanel Background="#cbd8db">
                                     <TextBlock Text="Naziv: "/>
                                     <TextBlock Text="{Binding Naziv}" FontWeight="Bold"/>
                                 </WrapPanel>

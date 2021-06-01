@@ -1,5 +1,6 @@
 ﻿using BolnicaSims.Controller;
 using BolnicaSims.Model;
+using BolnicaSims.MVVM.HelpView;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -67,6 +68,12 @@ namespace BolnicaSims.View.EditView
         private void listIzabraniDoktori_Selected(object sender, RoutedEventArgs e)
         {
             izabraniDoktori.Remove((Doktor)listIzabraniDoktori.SelectedItem);
+        }
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
         }
     }
 }

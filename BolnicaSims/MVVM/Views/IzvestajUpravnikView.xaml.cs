@@ -1,4 +1,5 @@
-﻿using BolnicaSims.MVVM.ViewModel;
+﻿using BolnicaSims.MVVM.HelpView;
+using BolnicaSims.MVVM.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -46,6 +47,12 @@ namespace BolnicaSims.MVVM.Views
         private void nazadBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
         }
     }
 }

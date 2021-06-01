@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Model;
+using BolnicaSims.MVVM.HelpView;
 using BolnicaSims.Storage;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,12 @@ namespace BolnicaSims.View.NotificationsView
         {
             var notifikacija = (Notifikacija)listNotifikacijeUpravnik.SelectedItem;
             MessageBox.Show(notifikacija.Tekst);
+        }
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
         }
     }
 }
