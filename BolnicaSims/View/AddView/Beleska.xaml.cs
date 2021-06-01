@@ -27,8 +27,9 @@ namespace BolnicaSims.View.AddView
         {
             TimeSpan ts = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
             DateTime vreme = (DateTime)datum.SelectedDate;
-             vreme =  vreme.Add(ts);
-            PacijentController.Instance.sacuvajBelesku(vreme,txtBeleska.Text);
+            vreme = vreme.Add(ts);
+            PacijentController.Instance.sacuvajBelesku(vreme, txtBeleska.Text);
+
             this.Close();
         }
 

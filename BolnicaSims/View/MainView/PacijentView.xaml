@@ -24,8 +24,8 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="zakazi" Content="{local:Loc Zakazi}" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click"/>
-                    <Button x:Name="izmeni" Content="{local:Loc Izmeni}" HorizontalAlignment="Left" Height="35" Margin="160,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonIzmeniTermin_Click"/>
+                    <Button x:Name="zakazi" Content="{local:Loc Zakazi}" ToolTip="Zakazivanje pregleda" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.512,0.679" Click="ButtonZakazi_Click"/>
+                    <Button x:Name="izmeni" Content="{local:Loc Izmeni}" ToolTip="Izmena pregleda" HorizontalAlignment="Left" Height="35" Margin="160,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonIzmeniTermin_Click"/>
                     <Button Content="{local:Loc Otkazi}" HorizontalAlignment="Left" Height="35" Margin="310,4,0,0" VerticalAlignment="Top" Width="140" Click="ButtonOtkazi_Click" />
                     <Button x:Name="karton" HorizontalAlignment="Left" Margin="500,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="karton_Click" ToolTip="Pregled kartona">
                         <Image Source="/Resources/report.png"/>
@@ -75,9 +75,9 @@
                 <Button Click="ButtonObavestenja_Click" Margin="180,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije" Foreground="White">
                     <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
                 </Button>
-                <Button  Content="{local:Loc Jezik}" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_2" />
-                <Button  Content="{local:Loc AnketaDoktor}"  Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28"/>
-                <Button x:Name="btnAnketaBolnica"  Content="{local:Loc AnketaBolnica}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_AnketaBolnica" Background="#FFCBD8DB"/>
+                <Button  Content="{local:Loc Jezik}" ToolTip="Menjanje jezika aplikacije" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_2" />
+                <Button  Content="{local:Loc AnketaDoktor}" ToolTip="Popunite anketu za doktora" Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28"/>
+                <Button x:Name="btnAnketaBolnica"  Content="{local:Loc AnketaBolnica}" ToolTip="Popunite anketu za bolnicu nakon 3 odradjena pregleda" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_AnketaBolnica" Background="#FFCBD8DB"/>
 
                 <Image Source="/Resources/firstAid.png" Margin="670,-50,50,0" Width="89"/>
             </WrapPanel>
