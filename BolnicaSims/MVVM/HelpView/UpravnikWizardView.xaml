@@ -102,16 +102,23 @@
         </Style>
     </Window.Resources>
     <Grid>
-        <WrapPanel Width="160" Margin="78,0,77,556">
-            <TextBlock Text="Uputstva za koriscenje" FontSize="15" FontWeight="Bold"/>
-        </WrapPanel>
-        <Frame x:Name="frame"   NavigationUIVisibility="Hidden" Height="507" Width="315" Margin="0,28,0,49"/>
-        <WrapPanel Margin="0,535,0,0">
-            <TextBlock Text=" " Width="80"/>
-            <Button x:Name="prevBtn" Content="Nazad"  Click="prevBtn_Click" Height="30"/>
-            <TextBlock Text=" " Width="50"/>
-            <Button x:Name="nextBtn" Content="Dalje" Click="nextBtn_Click" Width="50" />
-        </WrapPanel>
+        <StackPanel>
+            <WrapPanel Background="Gray" Height="48" Width="309" >
+                <TextBlock Text="Uputstva za koriscenje" FontSize="15" FontWeight="Bold" Width="182"/>
+                <Image Source="../../Resources/firstAid.png"/>
+                <TextBlock Text="Wizard" FontSize="12" FontWeight="Bold" TextAlignment="Right" HorizontalAlignment="Left" Width="40"/>
+
+            </WrapPanel>
+            <Frame x:Name="frame"   NavigationUIVisibility="Hidden"  Height="490" Width="315" />
+            <WrapPanel>
+                <TextBlock Text=" " Width="40"/>
+                <Button x:Name="prevBtn" Content="Nazad"  Click="prevBtn_Click" Height="30"/>
+                <TextBlock Text=" " Width="50"/>
+                <Button x:Name="nextBtn" Content="Dalje" Click="nextBtn_Click" Width="50" />
+                <TextBlock Text=" " Width="50"/>
+                <Button x:Name="finishBtn" Content="Kraj" Click="finishBtn_Click" Width="50" />
+            </WrapPanel>
+        </StackPanel>
 
     </Grid>
 </Window>

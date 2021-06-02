@@ -19,6 +19,15 @@
     <Compile Update="MVVM\HelpView\WizardFirstPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\HelpView\WizardLastPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardSecondPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardThirdPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\Views\IzvestajPacijentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -160,6 +169,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\HelpView\WizardFirstPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardLastPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardSecondPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardThirdPage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\IzvestajPacijentView.xaml">

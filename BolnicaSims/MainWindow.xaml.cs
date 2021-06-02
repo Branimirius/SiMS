@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.HelpView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -73,8 +74,17 @@ namespace BolnicaSims
                     Close();
                     break;
                 case "Upravnik":
-                    var d = new UpravnikView();
-                    d.Show();
+                    if ((bool)checkWizard.IsChecked)
+                    {
+                        var d = new UpravnikWizardView();
+                        d.Show();
+                    }
+                    else
+                    {
+                        var d = new UpravnikView();
+                        d.Show();
+                    }
+                    
                     Close();
                     break;
                 case "Doktor":

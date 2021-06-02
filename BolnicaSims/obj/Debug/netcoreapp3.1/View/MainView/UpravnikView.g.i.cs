@@ -245,7 +245,7 @@ namespace BolnicaSims {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/mainview/upravnikview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/mainview/upravnikview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\MainView\UpravnikView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

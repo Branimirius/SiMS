@@ -20,16 +20,73 @@ namespace BolnicaSims.MVVM.HelpView
         public UpravnikWizardView()
         {
             InitializeComponent();
+            frame.Content = new WizardFirstPage();
+            FrameContentChanged();
         }
 
         private void prevBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            if (frame.Content is WizardSecondPage)
+            {
+                frame.Content = new WizardFirstPage();
+            }
+            else if(frame.Content is WizardThirdPage)
+            {
+                frame.Content = new WizardSecondPage();
+            }
+            else if(frame.Content is WizardLastPage)
+            {
+                frame.Content = new WizardThirdPage();
+            }
+            FrameContentChanged();
         }
 
         private void nextBtn_Click(object sender, RoutedEventArgs e)
         {
+            if(frame.Content is WizardFirstPage)
+            {
+                frame.Content = new WizardSecondPage();
+            }
+            else if (frame.Content is WizardSecondPage)
+            {
+                frame.Content = new WizardThirdPage();
+            }
+            else if (frame.Content is WizardThirdPage)
+            {
+                frame.Content = new WizardLastPage();
+            }          
+            FrameContentChanged();
+        }
+        private void FrameContentChanged()
+        {
+            if(frame.Content is WizardFirstPage)
+            {
+                prevBtn.IsEnabled = false;
+                
+            }
+            else
+            {
+                prevBtn.IsEnabled = true;
+            }
 
+            if (frame.Content is WizardLastPage)
+            {
+                nextBtn.IsEnabled = false;
+                finishBtn.IsEnabled = true;
+            }
+            else
+            {
+                nextBtn.IsEnabled = true;
+                finishBtn.IsEnabled = false;
+            }
+        }
+
+        private void finishBtn_Click(object sender, RoutedEventArgs e)
+        {
+            var d = new UpravnikView();
+            d.Show();
+            this.Close();
         }
     }
 }
