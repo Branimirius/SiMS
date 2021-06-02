@@ -144,6 +144,9 @@
   <data name="DatumVreme" xml:space="preserve">
     <value>Datum i vreme</value>
   </data>
+  <data name="Do" xml:space="preserve">
+    <value>Do</value>
+  </data>
   <data name="Doktor" xml:space="preserve">
     <value>Doktor</value>
   </data>
@@ -164,6 +167,9 @@
   </data>
   <data name="Izmeni" xml:space="preserve">
     <value>Izmeni</value>
+  </data>
+  <data name="Izvestaj" xml:space="preserve">
+    <value>Izvestaj o zakazanim terminima</value>
   </data>
   <data name="Jezik" xml:space="preserve">
     <value>Jezik</value>
@@ -195,6 +201,9 @@
   <data name="Ocena" xml:space="preserve">
     <value>Ocena(1-10)</value>
   </data>
+  <data name="Od" xml:space="preserve">
+    <value>Od</value>
+  </data>
   <data name="Otkazi" xml:space="preserve">
     <value>Otkazi</value>
   </data>
@@ -224,6 +233,9 @@
   </data>
   <data name="ReceptiTab" xml:space="preserve">
     <value>Recepti</value>
+  </data>
+  <data name="Stampaj" xml:space="preserve">
+    <value>Stampaj</value>
   </data>
   <data name="TabelaRecepata" xml:space="preserve">
     <value>Tabela recepata</value>

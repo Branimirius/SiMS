@@ -4,13 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.MVVM.Views"
+         xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="IzvestajPacijentView" Height="450" Width="450">
+        Title="IzvestajPacijentView" Height="450" Width="450" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
     <Grid>
         <StackPanel>
             <StackPanel x:Name="print">
                 <WrapPanel Width="290">
-                <TextBlock Text="Izvestaj o zakazanim terminima" FontSize="16" FontWeight="Bold"/>
+                <TextBlock Text="{ns:Loc Izvestaj}" FontSize="16" FontWeight="Bold"/>
 
                 </WrapPanel>
                 <WrapPanel Height="10"/>
@@ -20,9 +21,9 @@
                 <WrapPanel Height="10"/>
                 <WrapPanel Width="430">
                     <TextBlock Text="Period:   " Width="57"/>
-                    <TextBlock Text="Od: " Width="32"/>
+                    <TextBlock Text="{ns:Loc Od}" Width="32"/>
                     <DatePicker Name="datumOd" />
-                    <TextBlock Text="Do: " Width="34"/>
+                    <TextBlock Text="{ns:Loc Do}" Width="34"/>
                     <DatePicker Name="datumDo"/>
 
                 </WrapPanel>
@@ -30,10 +31,10 @@
                 <WrapPanel>
                     <DataGrid x:Name="Termini" ItemsSource="{Binding TerminModel}" IsReadOnly="True" SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center" Height="290"  VerticalAlignment="Top" Width="450">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Header="Id" Binding="{Binding IdTermina}" Width="30" />
-                            <DataGridTextColumn Header="Vreme" Binding="{Binding VremeTermina}" Width="*" />
-                            <DataGridTextColumn Header="Kraj" Binding="{Binding KrajTermina}" Width="*" />
-                            <DataGridTextColumn Header="Doktor" Binding="{Binding ImePrezimeDoktora}" Width="*" />
+                            <DataGridTextColumn Header="{ns:Loc IdTermina}" Binding="{Binding IdTermina}" Width="30" />
+                            <DataGridTextColumn Header="{ns:Loc VremeTermina}" Binding="{Binding VremeTermina}" Width="*" />
+                            <DataGridTextColumn Header="{ns:Loc KrajTermina}" Binding="{Binding KrajTermina}" Width="*" />
+                            <DataGridTextColumn Header="{ns:Loc Doktor}" Binding="{Binding ImePrezimeDoktora}" Width="*" />
                         </DataGrid.Columns>
 
                     </DataGrid>
@@ -41,9 +42,9 @@
             </StackPanel>
             <WrapPanel Height="10"/>
             <WrapPanel Width="200">
-                    <Button x:Name="stampajBtn" Content="Stampaj" Click="stampajBtn_Click" Height="30" Width="60"/>
+                    <Button x:Name="stampajBtn" Content="{ns:Loc Stampaj}" Click="stampajBtn_Click" Height="30" Width="60"/>
                     <TextBlock Text=" " Width="41"/>
-                    <Button x:Name="nazadBtn" Content="Nazad" Click="nazadBtn_Click" Height="30" Width="60"/>
+                    <Button x:Name="nazadBtn" Content="{ns:Loc Ponisti}" Click="nazadBtn_Click" Height="30" Width="60"/>
             </WrapPanel>
             
         </StackPanel>

@@ -142,6 +142,15 @@ namespace BolnicaSims.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To.
+        /// </summary>
+        internal static string Do {
+            get {
+                return ResourceManager.GetString("Do", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doctor.
         /// </summary>
         internal static string Doktor {
@@ -201,6 +210,15 @@ namespace BolnicaSims.Properties {
         internal static string Izmeni {
             get {
                 return ResourceManager.GetString("Izmeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Report on scheduled appointments.
+        /// </summary>
+        internal static string Izvestaj {
+            get {
+                return ResourceManager.GetString("Izvestaj", resourceCulture);
             }
         }
         
@@ -295,6 +313,15 @@ namespace BolnicaSims.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to From.
+        /// </summary>
+        internal static string Od {
+            get {
+                return ResourceManager.GetString("Od", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Cancel appointment.
         /// </summary>
         internal static string Otkazi {
@@ -381,6 +408,15 @@ namespace BolnicaSims.Properties {
         internal static string ReceptiTab {
             get {
                 return ResourceManager.GetString("ReceptiTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Print.
+        /// </summary>
+        internal static string Stampaj {
+            get {
+                return ResourceManager.GetString("Stampaj", resourceCulture);
             }
         }
         
