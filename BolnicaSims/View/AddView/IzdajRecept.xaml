@@ -31,7 +31,7 @@
         <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="105,139,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Pacijent:" HorizontalAlignment="Left" Margin="320,108,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label6" Content="Doktor:" HorizontalAlignment="Left" Margin="320,164,0,0" VerticalAlignment="Top"/>
-        <Label Content="IZDAVANJE RECEPTA" Height=" 30" HorizontalAlignment="Center" FontSize="13" Margin="0,16,0,388"/>
+        <Label Content="IZDAVANJE RECEPTA" Height=" 30" HorizontalAlignment="Center" FontSize="13" Margin="0,43,0,361"/>
 
     </Grid>
 </Window>
