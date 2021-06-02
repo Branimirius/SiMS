@@ -92,13 +92,13 @@ namespace BolnicaSims
             s.Show();
         }
 
-        private void ButtonZakazi_Click(object sender, RoutedEventArgs e)
+      /* private void ButtonZakazi_Click(object sender, RoutedEventArgs e)
         {            
             var s = new DodavanjePregleda();
             s.Show();
         }
-
-        private void ButtonIzmeniTermin_Click(object sender, RoutedEventArgs e)
+      
+       private void ButtonIzmeniTermin_Click(object sender, RoutedEventArgs e)
         {
             if (dataGridTermini.SelectedItem is Termin)
             {
@@ -116,6 +116,7 @@ namespace BolnicaSims
             }
 
         }
+        
 
         private void ButtonOtkazi_Click(object sender, RoutedEventArgs e)
         {
@@ -136,6 +137,7 @@ namespace BolnicaSims
 
             
         }
+      */
 
         private void ButtonObavestenja_Click(object sender, RoutedEventArgs e)
         {
@@ -219,5 +221,51 @@ namespace BolnicaSims
             var s = new IzvestajPacijentView();
             s.Show();
         }
+
+
+
+        public void Zakazi(Object sender, ExecutedRoutedEventArgs e)
+        {
+            var s = new DodavanjePregleda();
+            s.Show();
+        }
+
+        public void Izmeni(Object sender, ExecutedRoutedEventArgs e)
+        {
+            if (dataGridTermini.SelectedItem is Termin)
+            {
+                Termin selektovan = (Termin)dataGridTermini.SelectedItem;
+                TerminStorage.Instance.selektovanTermin = selektovan;
+
+                var s = new IzmenaPregleda();
+                s.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }
+        }
+
+        public void Otkazi(Object sender, ExecutedRoutedEventArgs e)
+        {
+            if (dataGridTermini.SelectedItem is Termin)
+            {
+
+                TerminController.Instance.ukloniTermin((Termin)dataGridTermini.SelectedItem);
+
+            }
+            else
+            {
+                MessageBox.Show("Nije izabran termin za izmenu");
+                return;
+            }
+
+
+        }
     }
+
+
+    
 }
