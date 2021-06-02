@@ -16,8 +16,8 @@
         <TextBlock HorizontalAlignment="Left" Margin="48,141,0,0" Text="{ns:Loc Beleska}" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <TextBox x:Name="txtBeleska" HorizontalAlignment="Left" Margin="48,186,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="385" Height="88" ToolTip="Unesite sadrzaj notifikacije"/>
         <DatePicker Name="datum" HorizontalAlignment="Left" Margin="240,74,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="txtSati" HorizontalAlignment="Left" Margin="357,80,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="44" ToolTip="Unesite u koliko sati hocete notifikaciju"/>
-        <TextBox x:Name="txtMinuti" HorizontalAlignment="Left" Margin="417,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" ToolTip="Unesite u koliko minuta hocete notifikaciju"/>
+        <TextBox x:Name="txtSati" HorizontalAlignment="Left" Margin="357,80,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="44" ToolTip="Unesite u koliko sati hocete notifikaciju (npr: 21)"/>
+        <TextBox x:Name="txtMinuti" HorizontalAlignment="Left" Margin="417,80,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="40" ToolTip="Unesite u koliko minuta hocete notifikaciju (npr: 45)"/>
 
     </Grid>
 </Window>

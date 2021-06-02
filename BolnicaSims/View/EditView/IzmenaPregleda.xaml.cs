@@ -6,6 +6,7 @@ using BolnicaSims.View.MainView;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -30,13 +31,17 @@ namespace BolnicaSims
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
         {
-            TerminDTO tempTermin = new TerminDTO(TerminController.Instance.getSelektovaniTermin());                     
+            TerminDTO tempTermin = new TerminDTO(TerminController.Instance.getSelektovaniTermin());
+            if (!valid())
+            {
+                return;
+            }
             if (proveraPomeranje(tempTermin, txtBox1.Text))
             {
                 tempTermin.VremeTermina = DateTime.Parse(txtBox1.Text);
                 TerminController.Instance.izmeniTermin(tempTermin);
-            }     
- 
+            }
+
             switch (KorisniciStorage.Instance.ulogovaniKorisnik.Zvanje)
             {
                 case "Pacijent":
@@ -49,7 +54,7 @@ namespace BolnicaSims
                     CollectionViewSource.GetDefaultView(SekretarView.Instance.dataGridTermini.ItemsSource).Refresh();
                     break;
             }
-            
+
 
             this.Close();
         }
@@ -59,7 +64,7 @@ namespace BolnicaSims
             DateTime noviTermin = DateTime.Parse(vreme);
             DateTime noviTermin2 = DateTime.Parse(vreme);
             DateTime noviTermin3 = stariTermin.AddDays(-1);
-            if(DateTime.Now > stariTermin)
+            if (DateTime.Now > stariTermin)
             {
                 MessageBox.Show("Termin ne moze da se pomera u proslost");
                 return false;
@@ -85,9 +90,22 @@ namespace BolnicaSims
             }
 
             return true;
-
         }
 
+        private bool valid()
+        {
+            CultureInfo enUS = new CultureInfo("en-US");
+            string dateString = txtBox1.Text;
+            DateTime dateValue;
+            if (!DateTime.TryParseExact(dateString, "M/dd/yyyy hh:mm", enUS,
+                               DateTimeStyles.None, out dateValue))
+            {
+                MessageBox.Show("Nije unesen dobar format za datum M/dd/yyyy hours:minutes (5/09/2021 9:30)");
+                return false;
+            }
+            return true;
+
+        }
     }
 
 }

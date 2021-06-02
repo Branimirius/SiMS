@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -43,6 +44,11 @@ namespace BolnicaSims.View.AddView
 
         private void Button_Click_Potvrdi(object sender, RoutedEventArgs e)
         {
+            if(!valid())
+            {
+                return;
+            }
+
             AnketaController.Instance.dodajAnketuDoktor((String)comboBoxDoktor.SelectedItem, txtBoxOcena.Text, txtBoxKomentar.Text, (KorisniciStorage.Instance.ulogovaniKorisnik.Ime + " " + KorisniciStorage.Instance.ulogovaniKorisnik.Prezime));
             MessageBox.Show("Uspesno ste popunili anketu.");
             this.Close();
@@ -51,6 +57,28 @@ namespace BolnicaSims.View.AddView
         private void Button_Click_Ponisti(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private bool valid()
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            int parsedValue;
+            if(comboBoxDoktor.SelectedItem == null)
+            {
+                MessageBox.Show("Niste izabrali doktora");
+                return false;
+            }
+            if(!int.TryParse(txtBoxOcena.Text,out parsedValue))
+            {
+                MessageBox.Show("U polju za unos ocene su dozvoljene samo cifre");
+                return false;
+            }
+            else if(int.Parse(txtBoxOcena.Text) > 10 || int.Parse(txtBoxOcena.Text) == 0)
+            {
+                MessageBox.Show("Mogu se uneti cifre samo od 1 do 10 za ocenu");
+                return false;
+            }
+            return true;
         }
     }
 }
