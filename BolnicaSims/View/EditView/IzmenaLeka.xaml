@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:BolnicaSims.View.EditView"
         mc:Ignorable="d"
         Title="IzmenaLeka" Height="450" Width="800" MinHeight="450" MinWidth="800">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Background" Value="White"/>
+        </Style>
+
+    </Window.Resources>
     <Grid x:Name="gridMain" Background="AliceBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>

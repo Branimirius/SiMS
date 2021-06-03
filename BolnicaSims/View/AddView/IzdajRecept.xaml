@@ -7,16 +7,7 @@
         mc:Ignorable="d"
         Title="IzdajRecept" Height="450" Width="600" ResizeMode="NoResize">
     <Grid Background='Azure'>
-        <Button x:Name="button" Content="Izdaj" HorizontalAlignment="Left" Margin="155,349,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="100" Height="33" Click="button_Click">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-359.986"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
+        <Button x:Name="button" Content="Izdaj" HorizontalAlignment="Left" Margin="155,349,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="100" Height="33" Click="button_Click"/>
         <Button x:Name="button1" Content="Odustani" HorizontalAlignment="Left" Margin="344,349,0,0" VerticalAlignment="Top" Click="button1_Click" Height="31" Width="100" RenderTransformOrigin="0.848,0.235"/>
         <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="385,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.561"/>
         <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="391,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.601"/>

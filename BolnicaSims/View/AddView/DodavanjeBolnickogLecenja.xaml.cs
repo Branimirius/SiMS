@@ -36,5 +36,10 @@ namespace BolnicaSims.View.AddView
             MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));            
             this.Close();
         }
+
+        private void comboBoxSobe_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
