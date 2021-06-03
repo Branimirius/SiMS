@@ -61,7 +61,7 @@ namespace BolnicaSims.View.AddView
 
         private bool valid()
         {
-            Regex regex = new Regex("^[a-zA-Z]+$");
+         
             int parsedValue;
             if(comboBoxDoktor.SelectedItem == null)
             {

@@ -25,6 +25,14 @@ namespace BolnicaSims.View.AddView
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (!valid())
+            {
+                return;
+            }
+            if (!valid2())
+            {
+                return;
+            }
             isDateInThePast();
             this.Close();
         }
@@ -36,8 +44,8 @@ namespace BolnicaSims.View.AddView
         private void isDateInThePast()
         {
             int selectedDate = DateTime.Compare((DateTime)datum.SelectedDate, DateTime.UtcNow.Date);
-          
-            if(selectedDate < 0)
+
+            if (selectedDate < 0)
             {
                 MessageBox.Show("Ne moze se izabrati datum u proslosti!");
             }   
@@ -61,6 +69,41 @@ namespace BolnicaSims.View.AddView
                 PacijentController.Instance.sacuvajBelesku(vreme, txtBeleska.Text);
             }
          
+        }
+
+        private bool valid()
+        {
+       
+            int parsedValue;
+  
+            if (!int.TryParse(txtSati.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za unos ocene su dozvoljene samo cifre od 1 do 24");
+                return false;
+            }
+            else if (int.Parse(txtSati.Text) > 24 || int.Parse(txtSati.Text) == 0)
+            {
+                MessageBox.Show("Mogu se uneti cifre samo od 1 do 24 za sate");
+                return false;
+            }
+            return true;
+        }
+        private bool valid2()
+        {
+
+            int parsedValue;
+
+            if (!int.TryParse(txtMinuti.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za unos ocene su dozvoljene samo cifre od 1 do 60");
+                return false;
+            }
+            else if (int.Parse(txtSati.Text) > 60 || int.Parse(txtSati.Text) == 0)
+            {
+                MessageBox.Show("Mogu se uneti cifre samo od 1 do 60 za minute");
+                return false;
+            }
+            return true;
         }
     }
 }
