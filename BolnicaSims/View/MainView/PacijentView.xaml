@@ -45,9 +45,9 @@
                         </DataGrid.Columns>
 
                     </DataGrid>
-                    <Button x:Name="zakazi" Command="{StaticResource MyCommand1}" Content="{local:Loc Zakazi}" ToolTip="Zakazivanje pregleda" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.512,0.679" />
-                    <Button x:Name="izmeni" Command="{StaticResource MyCommand2}" Content="{local:Loc Izmeni}" ToolTip="Izmena pregleda" HorizontalAlignment="Left" Height="35" Margin="160,4,0,0" VerticalAlignment="Top" Width="140" />
-                    <Button  Command="{StaticResource MyCommand3}" Content="{local:Loc Otkazi}" HorizontalAlignment="Left" Height="35" Margin="310,4,0,0" VerticalAlignment="Top" Width="140" />
+                    <Button x:Name="zakazi" Command="{StaticResource MyCommand1}" Content="{local:Loc Zakazi}" ToolTip="Zakazivanje pregleda(Ctrl+A)" HorizontalAlignment="Left" Height="35" Margin="10,4,0,0" VerticalAlignment="Top" Width="140" RenderTransformOrigin="0.512,0.679" />
+                    <Button x:Name="izmeni" Command="{StaticResource MyCommand2}" Content="{local:Loc Izmeni}" ToolTip="Izmena pregleda(Ctrl+B)" HorizontalAlignment="Left" Height="35" Margin="160,4,0,0" VerticalAlignment="Top" Width="140" />
+                    <Button  Command="{StaticResource MyCommand3}" Content="{local:Loc Otkazi}" HorizontalAlignment="Left" Height="35" Margin="310,4,0,0" VerticalAlignment="Top" Width="140" ToolTip="Izmena pregleda(Ctrl+D)"/>
                     <Button x:Name="karton" HorizontalAlignment="Left" Margin="500,4,0,0" VerticalAlignment="Top"  Height="35" Width="58"   Click="karton_Click" ToolTip="Pregled kartona">
                         <Image Source="/Resources/report.png"/>
                     </Button>
