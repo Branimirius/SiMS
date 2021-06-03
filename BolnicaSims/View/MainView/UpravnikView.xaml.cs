@@ -171,7 +171,9 @@ namespace BolnicaSims
         }
         private void UkloniInventar_Click(object sender, RoutedEventArgs e)
         {
-
+            InventarController.Instance.setSelektovaniInventar((Inventar)dataGridInventar.SelectedItem);
+            var s = new BrisanjeInventara();
+            s.ShowDialog();
         }
         private void DetaljiInventar_Click(object sender, RoutedEventArgs e)
         {

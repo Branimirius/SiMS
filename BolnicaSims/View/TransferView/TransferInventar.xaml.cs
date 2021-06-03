@@ -57,6 +57,10 @@ namespace BolnicaSims.View.TransferView
                     MessageBox.Show("Nisu uneti datum i vreme.");
                     return;
                 }
+                if (!validDate())
+                {
+                    return;
+                }
                 
                 DateTime vreme = (DateTime)datumInventar.SelectedDate;
                 TimeSpan ts = new TimeSpan(int.Parse(txtBoxVreme.Text), int.Parse(txtBoxVremeMinuti.Text), 0);
@@ -100,18 +104,26 @@ namespace BolnicaSims.View.TransferView
         }
         private bool valid()
         {
-            DateTime datum = (DateTime)datumInventar.SelectedDate;
-            DateTime juce = DateTime.Now.AddDays(-1);
-            if (datum < juce)
-            {
-                MessageBox.Show("Ne sme se uneti datum iz proslosti");
-                return false;
-            }
+            
 
             int parsedValue;
             if (!int.TryParse(txtBoxKolicina.Text, out parsedValue))
             {
                 MessageBox.Show("U polju za kolicinu su dozvoljene samo cifre");
+                return false;
+            }
+            
+
+            return true;
+        }
+        private bool validDate()
+        {
+            int parsedValue;
+            DateTime datum = (DateTime)datumInventar.SelectedDate;
+            DateTime juce = DateTime.Now.AddDays(-1);
+            if (datum < juce)
+            {
+                MessageBox.Show("Ne sme se uneti datum iz proslosti");
                 return false;
             }
             if (!int.TryParse(txtBoxVreme.Text, out parsedValue))
@@ -124,7 +136,6 @@ namespace BolnicaSims.View.TransferView
                 MessageBox.Show("U polju za minute su dozvoljene samo cifre");
                 return false;
             }
-
             return true;
         }
     }

@@ -57,6 +57,14 @@ namespace BolnicaSims.Service
             InventarStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();
         }
+        public void ukloniInventar(Inventar inventar)
+        {
+            InventarStorage.Instance.inventar.Remove(inventar);
+            InventarStorage.Instance.inventarImena.Remove(inventar.Naziv);
+            ProstorijaService.Instance.getProstorijaByNaziv(inventar.prostorija.Naziv).inventar.Remove(inventar);
+            InventarStorage.Instance.Save();
+            ProstorijeStorage.Instance.Save();
+        }
         public Inventar GetInventar(String id)
         {
             foreach(Inventar i in InventarStorage.Instance.inventar)
