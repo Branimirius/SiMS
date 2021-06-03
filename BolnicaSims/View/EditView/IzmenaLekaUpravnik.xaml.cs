@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -51,6 +52,10 @@ namespace BolnicaSims.View.EditView
 
         private void izmeniBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!valid())
+            {
+                return;
+            }
             LekoviController.Instance.izmeniLek(LekoviController.Instance.getSelektovanLek());
             DoktorController.Instance.dodajLekValidacija(LekoviController.Instance.getSelektovanLek(), izabraniDoktori);
             this.Close();
@@ -74,6 +79,29 @@ namespace BolnicaSims.View.EditView
             //ContentArea.Content = new PomocMainView();
             var s = new PomocMainViewWin();
             s.ShowDialog();
+        }
+        private bool valid()
+        {
+            Regex regex = new Regex("^[a-zA-Z]+$");
+            if (!regex.IsMatch(txtNaziv.Text))
+            {
+                MessageBox.Show("U polju za naziv su dozvoljena samo slova");
+                return false;
+            }
+            if (!regex.IsMatch(txtAlergen.Text))
+            {
+                MessageBox.Show("U polju za alergen su dozvoljena samo slova");
+                return false;
+            }
+
+            int parsedValue;
+            if (!int.TryParse(txtKolicina.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za kolicinu su dozvoljene samo cifre");
+                return false;
+            }
+
+            return true;
         }
     }
 }

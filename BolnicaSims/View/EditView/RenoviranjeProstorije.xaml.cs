@@ -4,6 +4,7 @@ using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -32,7 +33,17 @@ namespace BolnicaSims.View.EditView
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
-        {     
+        {
+            if (datePocetak.SelectedDate == null)
+            {
+                MessageBox.Show("Datum nije izabran.");
+                return;
+            }
+            if (!valid())
+            {
+                return;
+            }
+            
             DateTime pocetak = (DateTime)datePocetak.SelectedDate;
             TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
             pocetak = pocetak.Add(vreme);
@@ -103,6 +114,35 @@ namespace BolnicaSims.View.EditView
             //ContentArea.Content = new PomocMainView();
             var s = new PomocMainViewWin();
             s.ShowDialog();
+        }
+        private bool valid()
+        {
+            DateTime datum = (DateTime)datePocetak.SelectedDate;
+            DateTime juce = DateTime.Now.AddDays(-1);
+            if(datum < juce)
+            {
+                MessageBox.Show("Ne sme se uneti datum iz proslosti");
+                return false;
+            }
+            
+            int parsedValue;
+            if (!int.TryParse(txtTrajanje.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za trajanje(dani) su dozvoljene samo cifre");
+                return false;
+            }
+            if (!int.TryParse(txtSati.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za sate su dozvoljene samo cifre");
+                return false;
+            }
+            if (!int.TryParse(txtMinuti.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za minute su dozvoljene samo cifre");
+                return false;
+            }
+
+            return true;
         }
     }
 }

@@ -131,10 +131,16 @@ namespace BolnicaSims
             else
             {
                 MessageBox.Show("Nije izabrana osoba.");
+                return;
             }
         }
         private void DetaljiOsoblje_Click(object sender, RoutedEventArgs e)
         {
+            if(dataGridOsoblje.SelectedItem == null)
+            {
+                MessageBox.Show("Nije izabrana osoba.");
+                return;
+            }
             //KorisniciStorage.Instance.selektovaniKorisnik = (Korisnik)dataGridOsoblje.SelectedItem;
             KorisnikController.Instance.setSelektovaniKorisnik((Korisnik)dataGridOsoblje.SelectedItem);
             if (KorisnikController.Instance.getSelektovaniKorisnik().Zvanje == "Doktor")

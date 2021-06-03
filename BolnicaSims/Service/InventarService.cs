@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows;
 
 namespace BolnicaSims.Service
 {
@@ -28,7 +29,8 @@ namespace BolnicaSims.Service
             Inventar tempInv = new Inventar(GenID(), naziv, proizvodjac, kolicina, staticki);
             tempInv.prostorija = ProstorijaService.Instance.getProstorija(1, 1);
             InventarStorage.Instance.inventar.Add(tempInv);
-            ProstorijaService.Instance.getMagacin().inventar.Add(tempInv);
+            
+            ProstorijaService.Instance.getProstorija(1,1).inventar.Add(tempInv);
            
             InventarStorage.Instance.Save();
             ProstorijeStorage.Instance.Save();

@@ -10,7 +10,10 @@
         <Style TargetType="WrapPanel" >
             <Setter Property="Background" Value="#a9bec4" />
         </Style>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value ="#cbd8db"  />
 
+        </Style>
         <Style TargetType="StackPanel" >
             <Setter Property="Background" Value="#a9bec4"  />
         </Style>
@@ -120,10 +123,12 @@
                         </WrapPanel>
                         <WrapPanel Height="10"/>
                         <WrapPanel>
-                            <TextBlock Text="Vreme pocetka radova: " TextAlignment="Right" Width="120" Height="30" FontSize="10" />
+                            <TextBlock Text="Vreme pocetka radova: " TextAlignment="Right" Width="110" Height="30" FontSize="10" />
                             <DatePicker x:Name="datePocetak" Height="30" FontSize="10" Width="100" />
-                            <TextBox x:Name="txtSati" FontSize="10" Width="28" />
-                            <TextBox x:Name="txtMinuti" FontSize="10" Width="28" />
+                            <TextBox x:Name="txtSati" FontSize="10" Width="20" />
+                            <TextBlock Text="h "/>
+                            <TextBox x:Name="txtMinuti" FontSize="10" Width="20" />
+                            <TextBlock Text="min"/>
                         </WrapPanel>
                         <WrapPanel Height="10"/>
                         <WrapPanel>
@@ -146,7 +151,7 @@
                             <ListView x:Name="listRenoviranja" SelectionMode="Single" Height="90" Width="200">
                                 <ListView.ItemTemplate>
                                     <DataTemplate>
-                                        <WrapPanel>
+                                        <WrapPanel Background="#cbd8db">
                                             <TextBlock Text="Od: "/>
                                             <TextBlock Text="{Binding Pocetak}" FontWeight="Bold"/>
                                             <TextBlock Text="Do: "/>

@@ -10,7 +10,10 @@
         <Style TargetType="WrapPanel" >
             <Setter Property="Background" Value="#a9bec4" />
         </Style>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value ="#cbd8db"  />
 
+        </Style>
         <Style TargetType="StackPanel" >
             <Setter Property="Background" Value="#a9bec4"  />
         </Style>
