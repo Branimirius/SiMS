@@ -64,7 +64,7 @@ namespace BolnicaSims
             DateTime noviTermin = DateTime.Parse(vreme);
             DateTime noviTermin2 = DateTime.Parse(vreme);
             DateTime noviTermin3 = stariTermin.AddDays(-1);
-            if (DateTime.Now > stariTermin)
+            if (DateTime.UtcNow > noviTermin)
             {
                 MessageBox.Show("Termin ne moze da se pomera u proslost");
                 return false;
@@ -97,10 +97,10 @@ namespace BolnicaSims
             CultureInfo enUS = new CultureInfo("en-US");
             string dateString = txtBox1.Text;
             DateTime dateValue;
-            if (!DateTime.TryParseExact(dateString, "M/dd/yyyy hh:mm", enUS,
+            if (!DateTime.TryParseExact(dateString, "M/dd/yyyy hh:mm tt", enUS,
                                DateTimeStyles.None, out dateValue))
             {
-                MessageBox.Show("Nije unesen dobar format za datum M/dd/yyyy hours:minutes (5/09/2021 9:30)");
+                MessageBox.Show("Nije unesen dobar format za datum M/dd/yyyy hours:minutes PM (5/09/2021 09:30 AM)");
                 return false;
             }
             return true;

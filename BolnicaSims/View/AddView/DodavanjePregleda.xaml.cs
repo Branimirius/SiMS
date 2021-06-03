@@ -4,6 +4,7 @@ using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -34,12 +35,17 @@ namespace BolnicaSims
                 
             }
 
+
         }
 
 
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if (!valid())
+            {
+                return;
+            }
             PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja++;
             if(PacijentController.Instance.getUlogovaniPacijent().brojZakazivanja == 10)
             {
@@ -90,7 +96,7 @@ namespace BolnicaSims
         }
         private void ComboBox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            /*
             if (DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count == 0)
             {
                 txtBox1.Text = DateTime.Now.ToString();
@@ -99,7 +105,7 @@ namespace BolnicaSims
             {
                 txtBox1.Text = DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini[DoktorService.Instance.getDoktor((String)comboBox1.SelectedItem).termini.Count - 1].KrajTermina.AddMinutes(10).ToString();
             }
-      
+        */
         }
 
 
@@ -109,6 +115,26 @@ namespace BolnicaSims
             comboBox1.IsEnabled = true;
         }
 
-  
+        private bool valid()
+        {
+            CultureInfo enUS = new CultureInfo("en-US");
+            string dateString = txtBox1.Text;
+            DateTime dateValue;
+            if (!DateTime.TryParseExact(dateString, "M/dd/yyyy hh:mm tt", enUS,
+                               DateTimeStyles.None, out dateValue))
+            {
+                MessageBox.Show("Nije unesen dobar format za datum M/dd/yyyy hours:minutes PM (5/09/2021 09:30 AM)");
+                return false;
+            }
+            if (comboBox1.SelectedItem == null)
+            {
+                MessageBox.Show("Niste izabrali doktora");
+                return false;
+            }
+            return true;
+
+        }
+
+
     }
 }

@@ -11,7 +11,7 @@
     <Grid >
         <StackPanel/>
         <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" Margin="41,89,0,0" Text="{ns:Loc DatumVreme}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16" />
-        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="221,89,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="21" ToolTip="Unesite novi datum i vreme pregleda tipa: 5/24/2021 12:45"/>
+        <TextBox x:Name="txtBox1" HorizontalAlignment="Left" Margin="221,89,0,0"  TextWrapping="Wrap" VerticalAlignment="Top" Width="134" Height="21" ToolTip="format za datum M/dd/yyyy hours:minutes AM (5/09/2021 9:30 AM)"/>
         <Button x:Name="izmenaBtn" Content="{ns:Loc Potvrdi}" HorizontalAlignment="Left" Margin="149,176,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.412,-2.953" Height="25" Width="73"  Click="ButtonIzmeni_Click"/>
 
     </Grid>
