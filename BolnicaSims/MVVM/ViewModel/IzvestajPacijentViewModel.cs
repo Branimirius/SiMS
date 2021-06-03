@@ -8,7 +8,7 @@ using System.Text;
 
 namespace BolnicaSims.MVVM.ViewModel
 {
-    class IzvestajPacijentViewModel
+    public class IzvestajPacijentViewModel
     {
         public ObservableCollection<TerminModel> Termini;
 
@@ -33,6 +33,21 @@ namespace BolnicaSims.MVVM.ViewModel
 
             
         }
-        
+        public ObservableCollection<TerminModel> getTermini(DateTime datumOd, DateTime datumDo)
+        {
+            ObservableCollection<TerminModel> retTermini = new ObservableCollection<TerminModel>();
+            foreach (TerminModel tm in Termini)
+            {
+                if(tm.VremeTermina >= datumOd && tm.VremeTermina <= datumDo)
+                {
+                    retTermini.Add(tm);
+                }
+            }
+            return retTermini;
+
+            
+        }
+
+
     }
 }

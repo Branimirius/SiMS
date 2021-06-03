@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BolnicaSims.MVVM.Models
 {
-    class TerminModel
+    public class TerminModel
     {
         public DateTime VremeTermina
         {

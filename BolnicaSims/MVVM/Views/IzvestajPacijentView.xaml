@@ -22,9 +22,9 @@
                 <WrapPanel Width="430">
                     <TextBlock Text="Period:   " Width="57"/>
                     <TextBlock Text="{ns:Loc Od}" Width="32"/>
-                    <DatePicker Name="datumOd" />
+                    <DatePicker Name="datumOd" SelectedDateChanged="datumOd_SelectedDateChanged"/>
                     <TextBlock Text="{ns:Loc Do}" Width="34"/>
-                    <DatePicker Name="datumDo"/>
+                    <DatePicker Name="datumDo" SelectedDateChanged="datumDo_SelectedDateChanged"/>
 
                 </WrapPanel>
                 <WrapPanel Height="10"/>
