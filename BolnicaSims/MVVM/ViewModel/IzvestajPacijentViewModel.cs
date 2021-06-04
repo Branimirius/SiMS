@@ -25,7 +25,7 @@ namespace BolnicaSims.MVVM.ViewModel
             {
                 TerminModel temp = new TerminModel(t.IdTermina, t.VremeTermina, t.KrajTermina, t.doktor);
                 termini.Add(temp);
-                //TODO: da upadaju samo oni iz vremenskog intervala
+    
             }
 
             Termini = termini;

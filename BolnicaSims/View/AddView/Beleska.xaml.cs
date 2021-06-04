@@ -86,6 +86,11 @@ namespace BolnicaSims.View.AddView
                 MessageBox.Show("Mogu se uneti cifre samo od 1 do 24 za sate");
                 return false;
             }
+            else if(datum.SelectedDate == null)
+            {
+                MessageBox.Show("Nije izabran datum");
+                return false;
+            }
             return true;
         }
         private bool valid2()

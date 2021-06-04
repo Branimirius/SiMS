@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BolnicaSims.MVVM.Views"
          xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="IzvestajPacijentView" Height="450" Width="450" ResizeMode="NoResize" SizeToContent="WidthAndHeight">
+        Title="IzvestajPacijentView" Height="450" Width="450" ResizeMode="NoResize" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel>
             <StackPanel x:Name="print">
