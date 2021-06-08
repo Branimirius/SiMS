@@ -11,10 +11,8 @@
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
-
-
     </Window.Resources>
-
+    
     <Grid Background="Azure">
         <Image Margin="5,5,5,5" Name="imgPicture" Stretch="Uniform" />
         <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
