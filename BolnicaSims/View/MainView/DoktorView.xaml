@@ -30,7 +30,7 @@
             </MenuItem>
         </Menu>
         <Frame x:Name="frame" Margin="96,0,0,0" Height="434" NavigationUIVisibility="Hidden"/>
-        <StackPanel Margin="610,360,5,15" Orientation="Horizontal">
+        <StackPanel Margin="605,361,10,14" Orientation="Horizontal">
             <Button x:Name="validacijaBtn" Content="Validacija leka"  Background ="White" Click ="validacijaBtn_Click" Height="31" Width="80"/>
             <TextBlock x:Name="text2" TextWrapping="Wrap" Width="10"/>
             <Button x:Name="obavestenjaBtn" Click="Button_Click" Background ="White" Height="30" Width="32" HorizontalAlignment="Center" VerticalAlignment="Center">

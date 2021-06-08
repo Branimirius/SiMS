@@ -64,10 +64,5 @@ namespace BolnicaSims.Controller
         {
             DoktorService.Instance.setSelektovaniDoktor(doktor);
         }
-
-        public void searchTermini(DateTime vreme)
-        {
-            DoktorService.Instance.searchTermini(vreme);
-        }
     }    
 }

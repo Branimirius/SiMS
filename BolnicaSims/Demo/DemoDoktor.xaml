@@ -9,6 +9,6 @@
       Title="DemoDoktor" Loaded="Window_Loaded">
 
     <Grid>
-        <Image Name="imgPicture" Stretch="Uniform" />
+        <Image Name="imgPicture" Stretch="Uniform"/>
     </Grid>
 </Page>
