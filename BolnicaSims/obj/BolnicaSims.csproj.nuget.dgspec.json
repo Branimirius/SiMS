@@ -43,6 +43,10 @@
             "Haley.WPF": {
               "target": "Package",
               "version": "[4.0.8.1, )"
+            },
+            "LiveCharts.Wpf": {
+              "target": "Package",
+              "version": "[0.9.7, )"
             }
           },
           "imports": [
