@@ -105,10 +105,15 @@
     </Page.Resources>
     <Grid>
         <StackPanel>
-
-            <WrapPanel>
-                <TextBlock Text="Nesto 3."/>
+            <WrapPanel Height="85">
+                <TextBlock Text="Sistem za pomoc:" FontSize="13"/>
+                <TextBlock Text="   U gornjem desnom cosku svih prozora nalazi se dugme za pomoc koje prikazuje pomoc za snalazenje u otvorenom prozoru." TextWrapping="WrapWithOverflow" Height="56"/>
             </WrapPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel>
+                <Image Source="../../Resources/help.png"/>
+            </WrapPanel>
+
         </StackPanel>
     </Grid>
 </Page>

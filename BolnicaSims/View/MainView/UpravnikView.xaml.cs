@@ -64,6 +64,8 @@ namespace BolnicaSims
         private void DodajProstorija_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeProstorije();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.Show();
         }
 
@@ -74,6 +76,8 @@ namespace BolnicaSims
             if (ProstorijaController.Instance.getSelektovanaProstorija() != null)
             {
                 var s = new BrisanjeProstorija();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
             else
@@ -88,7 +92,9 @@ namespace BolnicaSims
             if (ProstorijaController.Instance.getSelektovanaProstorija() != null)
             {
                 var s = new IzmenaProstorije();
-            s.Show();
+                s.Top = this.Top;
+                s.Left = this.Left;
+                s.Show();
             }
             else
             {
@@ -102,6 +108,8 @@ namespace BolnicaSims
             if (ProstorijaController.Instance.getSelektovanaProstorija() != null)
             {
                 var s = new RenoviranjeProstorije();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
             else
@@ -117,6 +125,8 @@ namespace BolnicaSims
         private void DodajOsoblje_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeOsoblja();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.Show();
         }
         private void UkloniOsoblje_Click(object sender, RoutedEventArgs e)
@@ -126,6 +136,8 @@ namespace BolnicaSims
             if (KorisnikController.Instance.getSelektovaniKorisnik() != null)
             {
                 var s = new BrisanjeOsoblja();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
             else
@@ -148,6 +160,8 @@ namespace BolnicaSims
                 DoktoriStorage.Instance.selektovaniDoktor = DoktorController.Instance.GetDoktor(KorisniciStorage.Instance.selektovaniKorisnik);
                 DoktorController.Instance.setSelektovaniDoktor(DoktorController.Instance.GetDoktor(KorisniciStorage.Instance.selektovaniKorisnik));
                 var s = new IzmenaDoktora();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
             else
@@ -167,12 +181,16 @@ namespace BolnicaSims
         private void DodajInventar_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeInventara();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.Show();
         }
         private void UkloniInventar_Click(object sender, RoutedEventArgs e)
         {
             InventarController.Instance.setSelektovaniInventar((Inventar)dataGridInventar.SelectedItem);
             var s = new BrisanjeInventara();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.ShowDialog();
         }
         private void DetaljiInventar_Click(object sender, RoutedEventArgs e)
@@ -191,6 +209,8 @@ namespace BolnicaSims
             else
             {                
                 var s = new TransferInventar();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
         }
@@ -202,6 +222,8 @@ namespace BolnicaSims
         private void DodajLekovi_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeLekova();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.Show();
         }
         private void UkloniLekovi_Click(object sender, RoutedEventArgs e)
@@ -216,6 +238,8 @@ namespace BolnicaSims
             {
 
                 var s = new BrisanjeLeka();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
         }
@@ -230,6 +254,8 @@ namespace BolnicaSims
             else
             {
                 var s = new IzmenaLekaUpravnik();
+                s.Top = this.Top;
+                s.Left = this.Left;
                 s.Show();
             }
         }
@@ -240,6 +266,8 @@ namespace BolnicaSims
         private void IzvestajLekovi_Click(object sender, RoutedEventArgs e)
         {
             var s = new IzvestajUpravnikView();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.ShowDialog();
         }
         
@@ -247,6 +275,8 @@ namespace BolnicaSims
         private void ButtonOdjavi_Click(object sender, RoutedEventArgs e)
         {
             var s = new MainWindow();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.Show();
             Close();
 
@@ -401,6 +431,8 @@ namespace BolnicaSims
         private void obavestenjaBtn_Click(object sender, RoutedEventArgs e)
         {
             var s = new NotifikacijeUpravnik();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.Show();
         }
         private void PretragaNaziv()
@@ -556,6 +588,8 @@ namespace BolnicaSims
         private void podesavanjaBtn_Click(object sender, RoutedEventArgs e)
         {
             var s = new PodesavanjaUpravnik();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.ShowDialog();
         }
 
@@ -563,6 +597,8 @@ namespace BolnicaSims
         {
             //ContentArea.Content = new PomocMainView();
             var s = new PomocMainViewWin();
+            s.Top = this.Top;
+            s.Left = this.Left;
             s.ShowDialog();
         }
     }

@@ -106,8 +106,16 @@
     <Grid>
         <StackPanel>
 
+            <WrapPanel Height="68">
+                <TextBlock Text="Uzivajte" FontSize="13" Width="243"/>
+                <TextBlock Text="   Pritisnite dugme 'dalje' da bi vam se otkljucalo dugme 'kraj'. Zatim sacekajte da se ucita aplikacija." TextWrapping="WrapWithOverflow" Height="36"/>
+            </WrapPanel>
+            <WrapPanel Height="10"/>
             <WrapPanel>
-                <TextBlock Text="Kraj."/>
+                <Image Source="../../Resources/firstAid.png"/>
+            </WrapPanel>
+            <WrapPanel Height="68" Width="141">
+                <TextBlock Text="Bolnica Zdravo" FontSize="16" Width="243" FontWeight="Bold"/>
             </WrapPanel>
         </StackPanel>
     </Grid>
