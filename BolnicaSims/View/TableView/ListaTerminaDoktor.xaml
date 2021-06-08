@@ -8,7 +8,7 @@
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaTerminaDoktor">
 
-    
+
     <Grid Margin="-6,0,0,0">
         <DataGrid x:Name="dataGridSopstveniTermini" ItemsSource="{Binding Termini}" IsReadOnly="True"
             SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
@@ -23,14 +23,20 @@
             </DataGrid.Columns>
 
         </DataGrid>
-        <StackPanel  Orientation="Horizontal" Margin="20,340,4,10">
-            <Button x:Name="button" Content="Dodaj" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Click"/>
-            <Button x:Name="button_Copy" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Copy_Click"/>
-            <Button x:Name="button_Copy1" Content="Ukloni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Copy1_Click"/>
-            <TextBlock Width="35"></TextBlock>
+        <StackPanel  Orientation="Horizontal" Margin="20,340,4,18">
+            <Button x:Name="button" Content="Dodaj" Background="#FFFFFDFD" Width="75" Height="30" Click="button_Click"/>
+            <Button x:Name="button_Copy" Content="Izmeni" Background="#FFFFFDFD" Width="75" Height="30" Click="button_Copy_Click"/>
+            <Button x:Name="button_Copy1" Content="Ukloni" Background="#FFFFFDFD" Width="76" Height="30" Click="button_Copy1_Click"/>
+            <TextBlock Width="10"></TextBlock>
             <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46">
                 <Image Source="/Resources/report.png"/>
             </Button>
+            <TextBlock Width="15"></TextBlock>
+            <TextBox x:Name="searchbox" Text="09/06/2021" TextWrapping="Wrap" Width="72" Height="21" TextAlignment="Center" TextChanged="searchbox_TextChanged">
+                <TextBox.InputBindings>
+                    <KeyBinding Command="{Binding Path=CmdSomething}" Key="Enter" />
+                </TextBox.InputBindings>
+            </TextBox>
             <TextBlock Width="75"></TextBlock>
         </StackPanel>
 

@@ -37,8 +37,8 @@
             <WrapPanel Height="30">
                 <TextBlock x:Name="txtBlock1" HorizontalAlignment="Center" TextAlignment="Center" Text="Datum i vreme: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" />
                 <DatePicker x:Name="datePocetak" Height="30" Width="142" />
-                <TextBox x:Name="txtSati" Height="30" Width="40" />
-                <TextBox x:Name="txtMinuti" Height="30" Width="40" />
+                <TextBox x:Name="txtSati" Text="h" Height="30" Width="40" />
+                <TextBox x:Name="txtMinuti" Text ="Min" Height="30" Width="40" />
                 <TextBlock x:Name="txtBlock3" TextAlignment="Center" Text="Trajanje (min):" Height="30" Width="143" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12"/>
                 <TextBox x:Name ="txtBox1" Height="30" Width="120" />
 

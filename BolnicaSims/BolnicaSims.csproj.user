@@ -7,6 +7,9 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Demo\DemoDoktor.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddView\AnketaBolnica.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -138,6 +141,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Demo\DemoDoktor.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddView\AnketaBolnica.xaml">
       <SubType>Designer</SubType>
     </Page>

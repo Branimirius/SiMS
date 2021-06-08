@@ -471,3 +471,13 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\S
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_3.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_4.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_5.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_6.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_7.png
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims_Content.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_1.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_2.png

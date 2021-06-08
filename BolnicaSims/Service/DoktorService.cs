@@ -167,5 +167,16 @@ namespace BolnicaSims.Service
                 return doca = DoktoriStorage.Instance.doktori[3];
         }
 
+        public void searchTermini(DateTime vreme)
+        {
+            foreach(Termin t in this.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini)
+            {
+                if(DateTime.Compare(vreme.Date, t.VremeTermina.Date) == 0)
+                {
+                    this.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini.Remove(t);
+                }
+            }
+        }
+
     }
 }

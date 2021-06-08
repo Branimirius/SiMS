@@ -102,5 +102,11 @@ namespace BolnicaSims.View.MainView
         {
 
         }
+
+        private void searchbox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            DateTime date = DateTime.Parse(searchbox.Text);
+            DoktorController.Instance.searchTermini(date);
+        }
     }
 }

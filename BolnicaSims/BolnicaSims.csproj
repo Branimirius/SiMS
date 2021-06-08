@@ -12,6 +12,13 @@
     <None Remove="Resources\addRoom.png" />
     <None Remove="Resources\bell.png" />
     <None Remove="Resources\deleteRoom.png" />
+    <None Remove="Resources\DemoImg\Screenshot_1.png" />
+    <None Remove="Resources\DemoImg\Screenshot_2.png" />
+    <None Remove="Resources\DemoImg\Screenshot_3.png" />
+    <None Remove="Resources\DemoImg\Screenshot_4.png" />
+    <None Remove="Resources\DemoImg\Screenshot_5.png" />
+    <None Remove="Resources\DemoImg\Screenshot_6.png" />
+    <None Remove="Resources\DemoImg\Screenshot_7.png" />
     <None Remove="Resources\details.png" />
     <None Remove="Resources\firstAid.png" />
     <None Remove="Resources\logout.png" />
@@ -33,6 +40,27 @@
     <Resource Include="Resources\addRoom.png" />
     <Resource Include="Resources\bell.png" />
     <Resource Include="Resources\deleteRoom.png" />
+    <Content Include="Resources\DemoImg\Screenshot_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DemoImg\Screenshot_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DemoImg\Screenshot_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DemoImg\Screenshot_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DemoImg\Screenshot_5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DemoImg\Screenshot_6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DemoImg\Screenshot_7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Resource Include="Resources\details.png" />
     <Resource Include="Resources\firstAid.png" />
     <Resource Include="Resources\logout.png" />

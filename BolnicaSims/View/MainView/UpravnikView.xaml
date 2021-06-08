@@ -158,7 +158,7 @@
                         <Image Source="../../Resources/report.png"/>
                     </Button>
                     <WrapPanel Margin="133,0,10,348">
-                        <TextBox x:Name="txtPretragaProstorije" TextChanged="txtPretragaProstorije_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" />
+                        <TextBox x:Name="txtPretragaProstorije" TextChanged="txtPretragaProstorije_TextChanged" FontSize="10" TextAlignment="Left" TextWrapping="Wrap" Height="30" Width="166" Text="" />
 
                     </WrapPanel>
                 </Grid>
