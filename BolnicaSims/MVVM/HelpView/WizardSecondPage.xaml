@@ -104,8 +104,13 @@
     </Page.Resources>
     <Grid>
         <StackPanel>
-            <WrapPanel Height="50">
-                <TextBlock Text="Ovako"/>
+            <WrapPanel Height="68">
+                <TextBlock Text="Ukoliko se nalazite u nekom od dijaloga:" FontSize="13"/>
+                <TextBlock Text="   Popunite sva potrebna polja zeljenim podacima i zatim pritisnite dugme za potvrdu." TextWrapping="WrapWithOverflow" Height="36"/>
+            </WrapPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel>
+                <Image Source="../../Resources/wizard2.png"/>
             </WrapPanel>
         </StackPanel>
 

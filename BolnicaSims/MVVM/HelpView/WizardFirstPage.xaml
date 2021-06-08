@@ -112,7 +112,15 @@
         <StackPanel>
             
             <WrapPanel>
-                <TextBlock Text="Dobrodosli u aplikaciju."/>
+                <TextBlock Text="Dobrodosli u aplikaciju." FontSize="13"/>
+            </WrapPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel Height="68">
+                <TextBlock Text="Ukoliko se nalazite na pocetnom ekranu:" FontSize="13"/>
+                <TextBlock Text="   Krecite se kroz tabove sa tabelama i baratajte sa podacima pomocu dugmica ispod tabele." TextWrapping="WrapWithOverflow" Height="36"/>
+            </WrapPanel>
+            <WrapPanel Height="386">
+                <Image Source="../../Resources/wizard1.png" Height="333"/>
             </WrapPanel>
         </StackPanel>
     </Grid>

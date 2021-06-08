@@ -29,6 +29,8 @@
     <None Remove="Resources\report.png" />
     <None Remove="Resources\settings.png" />
     <None Remove="Resources\transfer.png" />
+    <None Remove="Resources\wizard1.png" />
+    <None Remove="Resources\wizard2.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -73,6 +75,8 @@
     <Resource Include="Resources\report.png" />
     <Resource Include="Resources\settings.png" />
     <Resource Include="Resources\transfer.png" />
+    <Resource Include="Resources\wizard1.png" />
+    <Resource Include="Resources\wizard2.png" />
   </ItemGroup>
 
   <ItemGroup>

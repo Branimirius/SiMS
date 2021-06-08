@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.MVVM.HelpView"
         mc:Ignorable="d"
-        Title="PomocMainViewWin" Height="450" Width="300">
+        Title="PomocMainViewWin" Height="280" Width="300">
     <Window.Resources>
         <Style TargetType="{x:Type ComboBoxItem}">
             <Setter Property="Background" Value ="#cbd8db"  />
@@ -138,10 +138,19 @@
     </Window.Resources>
     <Grid>
         <StackPanel>
-            <WrapPanel Width="256">
-                <TextBlock Text="POMOC NA GLAVNOM PROZORU" FontSize="15" FontWeight="Bold"/>
+            <WrapPanel Width="125">
+                <TextBlock Text="POMOC " FontSize="15" FontWeight="Bold"/>
             </WrapPanel>
             <WrapPanel Height="10"/>
+            <WrapPanel Height="68">
+                <TextBlock Text="Ukoliko se nalazite na pocetnom ekranu:" FontSize="13"/>
+                <TextBlock Text="   Krecite se kroz tabove sa tabelama i baratajte sa podacima pomocu dugmica ispod tabele." TextWrapping="WrapWithOverflow" Height="36"/>
+            </WrapPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel Height="95">
+                <TextBlock Text="Ukoliko se nalazite na nekom dijalogu:" FontSize="13"/>
+                <TextBlock Text="   Popunite polja za unos zeljenim podacima i pritisnite dugme za potvrdu." TextWrapping="WrapWithOverflow" Height="36"/>
+            </WrapPanel>
             <WrapPanel Width="110">
                 <Button x:Name="okBtn" Content="Ok" Click="okBtn_Click" Height="30" Width="50"/>
             </WrapPanel>
