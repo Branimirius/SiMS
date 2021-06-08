@@ -11,8 +11,31 @@
             <Setter Property="FontSize" Value="13"/>
             <Setter Property="HorizontalContentAlignment" Value="Center"/>
         </Style>
+        <RoutedUICommand x:Key="MyCommand1" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand2" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand3" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand4" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand5" Text="Text" />
     </Window.Resources>
-    
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" Executed="ManualColumns_Click" />
+        <CommandBinding Command="{StaticResource MyCommand2}" Executed="ManualColumns_Click2" />
+        <CommandBinding Command="{StaticResource MyCommand3}" Executed="ManualColumns_Click3" />
+        <CommandBinding Command="{StaticResource MyCommand4}" Executed="ManualColumns_Click4" />
+        <CommandBinding Command="{StaticResource MyCommand5}" Executed="ManualColumns_Click5" />
+
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Key="Q" Modifiers="Ctrl" Command="{StaticResource MyCommand1}" />
+        <KeyBinding Key="W" Modifiers="Ctrl" Command="{StaticResource MyCommand2}" />
+        <KeyBinding Key="E" Modifiers="Ctrl" Command="{StaticResource MyCommand3}" />
+        <KeyBinding Key="R" Modifiers="Ctrl" Command="{StaticResource MyCommand4}" />
+        <KeyBinding Key="T" Modifiers="Ctrl" Command="{StaticResource MyCommand5}" />
+
+
+    </Window.InputBindings>
     <Grid Background="Azure">
         <Image Margin="5,5,5,5" Name="imgPicture" Stretch="Uniform" />
         <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
