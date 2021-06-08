@@ -24,8 +24,8 @@
             <Setter Property="FontSize" Value="15" />
             <Setter Property="FontFamily" Value="./#Segoe UI" />
             <Setter Property="SnapsToDevicePixels" Value="True" />
-               
-            
+
+
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type Button}">
@@ -290,7 +290,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
-        
+
         <StackPanel Margin="0,0,0,450">
             <WrapPanel Height="30" Background="#527c88">
                 <Button Click ="ButtonOdjavi_Click" FontSize="9" ToolTip="Odjavi se."  Height="30" Width="45" >
@@ -306,14 +306,16 @@
                 <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" ToolTip="Pomoc." >
                     <Image Source="../../Resources/help.png" Width="25" Height="20"/>
                 </Button>
-                
+
 
             </WrapPanel>
             <WrapPanel Height="70">
                 <TextBlock Text="  " Width="216" />
-                <Image Source="../../Resources/firstAid.png"/>
+                <Button Background="#a9bec4" x:Name="feedbackBtn" Width="70" Click="feedbackBtn_Click" ToolTip="Prijavite gresku, ostavite feedback." Height="70" >
+                    <Image Source="../../Resources/firstAid.png"/>
+                </Button>
             </WrapPanel>
-                       
+
             <WrapPanel Height="30">
                 <TextBlock x:Name="txtIme" Text="Ivan Ivanovic" FontSize="12" Height="30"/>
                 <TextBlock Text="Bolnica Zdravo" FontSize="12" FontWeight="Bold" Height="30" Width="220" TextAlignment="Right"/>

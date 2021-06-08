@@ -565,6 +565,11 @@ namespace BolnicaSims
             var s = new PomocMainViewWin();
             s.ShowDialog();
         }
+
+        private void feedbackBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
 }

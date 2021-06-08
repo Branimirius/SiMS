@@ -4,9 +4,15 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:BolnicaSims.MVVM.HelpView"
+      xmlns:viewmodels="clr-namespace:BolnicaSims.MVVM.ViewModel"
       mc:Ignorable="d" 
       d:DesignHeight="490" d:DesignWidth="315"
       Title="WizardFirstPage">
+    <!--<ContentControl Content="{Binding CurrentViewModel}">
+        <ContentControl.Resources>
+            <DataTemplate DataType="{x:Type viewmodels:WizardFirstViewModel}"/>
+        </ContentControl.Resources>
+    </ContentControl>-->
     <Page.Resources>
         <Style TargetType="{x:Type ComboBoxItem}">
             <Setter Property="Background" Value ="#cbd8db"  />

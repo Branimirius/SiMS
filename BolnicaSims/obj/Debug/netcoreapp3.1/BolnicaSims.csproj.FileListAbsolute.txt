@@ -600,3 +600,7 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Prop
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.GenerateResource.cache
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.baml
