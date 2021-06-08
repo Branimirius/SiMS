@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:BolnicaSims"
              xmlns:properties="clr-namespace:BolnicaSims.Properties"
              StartupUri="MainWindow.xaml">
-    <Application.Resources>
+    <!--<Application.Resources>
         <Style TargetType="WrapPanel" >
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
@@ -307,5 +307,5 @@
 
 
 
-    </Application.Resources>
+    </Application.Resources>-->
 </Application>

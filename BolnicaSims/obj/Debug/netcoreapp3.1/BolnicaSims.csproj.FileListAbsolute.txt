@@ -581,7 +581,6 @@ D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix\li
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.g.cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\App.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainView.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainViewWin.baml
