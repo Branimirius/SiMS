@@ -15,6 +15,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BolnicaSims.Controller;
 
 namespace BolnicaSims
 {
@@ -33,7 +34,15 @@ namespace BolnicaSims
         public DoktorView()
         {
             InitializeComponent();
-            frame.Content = p6;
+            if (DoktorController.Instance.wantsDemo)
+            {
+                frame.Content = p6;
+            }
+            else
+            {
+                frame.Content = p1;
+                menuItem1.Background = Brushes.DarkCyan;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

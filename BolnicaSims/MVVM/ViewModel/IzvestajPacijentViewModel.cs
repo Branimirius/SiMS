@@ -10,7 +10,7 @@ namespace BolnicaSims.MVVM.ViewModel
 {
     class IzvestajPacijentViewModel
     {
-        public ObservableCollection<TerminModel> Termini;
+        public System.Collections.ObjectModel.ObservableCollection<TerminModel> Termini;
 
         public IzvestajPacijentViewModel()
         {
@@ -19,8 +19,8 @@ namespace BolnicaSims.MVVM.ViewModel
         }
         public void LoadTermini()
         {
-            ObservableCollection<TerminModel> termini =
-                new ObservableCollection<TerminModel>();
+            System.Collections.ObjectModel.ObservableCollection<TerminModel> termini =
+                new System.Collections.ObjectModel.ObservableCollection<TerminModel>();
             foreach (Termin t in PacijentController.Instance.getUlogovaniPacijent().termini)
             {
                 TerminModel temp = new TerminModel(t.IdTermina, t.VremeTermina, t.KrajTermina, t.doktor);

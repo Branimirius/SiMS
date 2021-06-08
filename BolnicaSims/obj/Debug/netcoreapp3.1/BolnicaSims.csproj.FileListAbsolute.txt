@@ -581,7 +581,6 @@ D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix\li
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.g.cs
-D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\App.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainView.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainViewWin.baml
@@ -600,7 +599,15 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Prop
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.GenerateResource.cache
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.g.cs
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.g.cs
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_1.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_2.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_3.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_4.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_5.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_7.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_6.png
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims_Content.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.baml

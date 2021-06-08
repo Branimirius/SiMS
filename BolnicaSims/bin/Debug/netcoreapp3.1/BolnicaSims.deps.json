@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v3.1": {
       "BolnicaSims/1.0.0": {
         "dependencies": {
-          "Haley.WPF": "4.0.8.1"
+          "Haley.WPF": "4.0.8.1",
+          "LiveCharts.Wpf": "0.9.7"
         },
         "runtime": {
           "BolnicaSims.dll": {}
@@ -83,6 +84,25 @@
           "lib/netcoreapp3.1/Haley.WPF.dll": {
             "assemblyVersion": "3.0.0.0",
             "fileVersion": "3.0.0.0"
+          }
+        }
+      },
+      "LiveCharts/0.9.7": {
+        "runtime": {
+          "lib/net45/LiveCharts.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
+          }
+        }
+      },
+      "LiveCharts.Wpf/0.9.7": {
+        "dependencies": {
+          "LiveCharts": "0.9.7"
+        },
+        "runtime": {
+          "lib/net45/LiveCharts.Wpf.dll": {
+            "assemblyVersion": "0.9.7.0",
+            "fileVersion": "0.9.7.0"
           }
         }
       },
@@ -391,6 +411,20 @@
       "sha512": "sha512-5VRa0dPuJRtb9wJoUwiy/e4W55DOTL3qhkfMV2Do4T3+Rz1vZWtu+UdrTPWXsTB4Ti7jIsLIoWq/ie1fnjP7jg==",
       "path": "haley.wpf/4.0.8.1",
       "hashPath": "haley.wpf.4.0.8.1.nupkg.sha512"
+    },
+    "LiveCharts/0.9.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-p4xyBrUaNNfkWZSNsIle0r51cyVyFg0Yi0uBRZM5GQtdFiA/7guZHlffFyNUILIdux10Ch2hUaJpcZENVU9aaQ==",
+      "path": "livecharts/0.9.7",
+      "hashPath": "livecharts.0.9.7.nupkg.sha512"
+    },
+    "LiveCharts.Wpf/0.9.7": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lv6YZoK0B4yWykMq5b9grZXtIbTj+OWu4sVN9GDpdgV6zffu64m4d5CW8KSjfSl9rB8VU649x1NZvhoU67hCDg==",
+      "path": "livecharts.wpf/0.9.7",
+      "hashPath": "livecharts.wpf.0.9.7.nupkg.sha512"
     },
     "Microsoft.CSharp/4.7.0": {
       "type": "package",

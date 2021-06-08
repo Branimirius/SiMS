@@ -13,7 +13,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/demoimg/screenshot_3.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/demoimg/screenshot_4.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/demoimg/screenshot_5.png")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/demoimg/screenshot_6.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/demoimg/screenshot_7.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/demoimg/screenshot_6.png")]
 
 
