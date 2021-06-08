@@ -7,17 +7,10 @@
       mc:Ignorable="d" 
       d:DesignHeight="434" d:DesignWidth="690"
       Title="ListaBolnickihLecenja">
-    <Page.Resources>
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value ="White" />
-
-        </Style>
-    </Page.Resources>
 
     <Grid>
         <DataGrid x:Name="dataGridLecenja" ItemsSource="{Binding Lecenja}" IsReadOnly="True"
-            SelectionMode="Single" AutoGenerateColumns="False" HorizontalAlignment="Center"
-            Height="340" VerticalAlignment="Top" Width="703">
+            SelectionMode="Single" AutoGenerateColumns="False" Height="340" VerticalAlignment="Top" Width="703" HorizontalAlignment="Center">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Ime" Binding="{Binding Pacijent.korisnik.Ime}" Width="*" />
                 <DataGridTextColumn Header="Pocetak" Binding="{Binding Pocetak}" Width="*" />
@@ -28,10 +21,9 @@
 
         </DataGrid>
         <StackPanel  Orientation="Horizontal" Margin="20,340,-2,10">
-            <Button x:Name="button_dodaj" Content="Dodaj" Height="30" Width="100" Click="button_dodaj_Click"/>
-            <Button x:Name="button" Content="Izmeni"  Width="100" Height="30" Click="button_Click"/>
+            <Button x:Name="button" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Click"/>
             <TextBlock Width="35"/>
-            <Button Click="button_karton_Click" Height="30" Width="46">
+            <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46">
                 <Image Source="/Resources/report.png"/>
             </Button>
             <TextBlock Width="75"/>

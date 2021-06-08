@@ -11,15 +11,15 @@
             <EventSetter Event="MouseDoubleClick" Handler="HandleDoubleClick" />
         </Style>
     </Window.Resources>
-    <Grid Margin="0,0,10,0">
+    <Grid Background="PaleTurquoise">
         <Label Content="NOTIFIKACIJE&#xD;&#xA;" HorizontalAlignment ="Center"  FontStyle="Normal" Margin="0,10,0,310"/>
-        <ListBox x:Name="listBoxNotifikacije" SelectionChanged="listBoxNotifikacije_SelectionChanged" Margin="10,40,10,49">
+        <ListBox x:Name="listBoxNotifikacije" SelectionChanged="listBoxNotifikacije_SelectionChanged" Margin="10,40,10,49" Background="Azure">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel>
                         <TextBlock Text="Naslov: "/>
                         <TextBlock Text="{Binding Naslov}" FontWeight="Bold"/>
-                        <TextBlock Text="Posiljalac: "/>
+                        <TextBlock Text="   Posiljalac: "/>
                         <TextBlock Text="{Binding Posiljalac}" FontWeight="Bold"/>
                     </WrapPanel>
                 </DataTemplate>

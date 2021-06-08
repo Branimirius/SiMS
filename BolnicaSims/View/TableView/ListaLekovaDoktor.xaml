@@ -22,8 +22,8 @@
                 <DataGridTextColumn Header="Naziv" Binding="{Binding ImeLeka}" Width="200" />
                 <DataGridTextColumn Header="Proizvodjac" Binding="{Binding Proizvodjac}" Width="200"/>
                 <DataGridTextColumn Header="Doza" Binding="{Binding Doza}" Width="80"/>
-                <DataGridTextColumn Header="Kolicina" Binding="{Binding Kolicina}" Width="*" />
-                <DataGridTextColumn Header="Validan" Binding="{Binding StringValid}" Width="*" />
+                <DataGridTextColumn Header="Kol" Binding="{Binding Kolicina}" Width="*" />
+                <DataGridTextColumn Header="Val" Binding="{Binding StringValid}" Width="*" />
                 <DataGridTextColumn Header="Alergeni" Binding="{Binding Alergija}" Width="150" />
 
             </DataGrid.Columns>

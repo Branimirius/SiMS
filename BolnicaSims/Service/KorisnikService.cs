@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Windows;
 using BolnicaSims.DTO;
 using BolnicaSims.Model;
 using BolnicaSims.Storage;
@@ -53,6 +54,7 @@ namespace BolnicaSims.Service
                 }
             }
 
+            if (tempKorisnik.Ime == "") { MessageBox.Show("Pogresna sifra/korisnicko ime"); }
             KorisniciStorage.Instance.ulogovaniKorisnik = tempKorisnik;
             return tempKorisnik;
         }

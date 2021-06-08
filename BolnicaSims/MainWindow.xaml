@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="400">
+        Title="MainWindow" Height="450" Width="400" WindowStartupLocation="CenterScreen">
     <Canvas Background ="Azure" RenderTransformOrigin="0.486,0.576">
         <TextBox x:Name="txtKorisnickoIme" TextWrapping="Wrap" Width="120" Canvas.Left="130" Canvas.Top="213" Height="27" Foreground="Black" Background ="White" />
         <PasswordBox x:Name="txtLozinka" Width="120" Canvas.Left="130" Canvas.Top="267" Height="27" />
