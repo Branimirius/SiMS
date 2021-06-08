@@ -7,6 +7,7 @@ using BolnicaSims.Storage;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.DeleteView;
 using BolnicaSims.View.EditView;
+using BolnicaSims.View.Feedback;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.View.SettingsView;
 using BolnicaSims.View.TransferView;
@@ -604,7 +605,10 @@ namespace BolnicaSims
 
         private void feedbackBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new UpravnikFeedback();
+            s.Top = this.Top;
+            s.Left = this.Left;
+            s.ShowDialog();
         }
     }
 

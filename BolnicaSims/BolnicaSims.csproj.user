@@ -103,6 +103,9 @@
     <Compile Update="View\EditView\ValidacijaLekova.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Feedback\UpravnikFeedback.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\MainView\DoktorView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -259,6 +262,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\EditView\ValidacijaLekova.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Feedback\UpravnikFeedback.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\DoktorView.xaml">
