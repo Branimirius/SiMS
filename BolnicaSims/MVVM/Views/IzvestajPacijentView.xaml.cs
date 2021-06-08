@@ -131,8 +131,11 @@ namespace BolnicaSims.MVVM.Views
             if((DateTime)datumOd.SelectedDate >= (DateTime)datumDo.SelectedDate)
             {
                 MessageBox.Show("Datum od mora biti manji od datuma do");
+                stampajBtn.IsEnabled = false;
                 return false;
+
             }
+            stampajBtn.IsEnabled = true;
             return true;
         }
     }
