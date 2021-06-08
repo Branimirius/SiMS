@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.Views;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.EditView;
 using Model;
@@ -61,6 +62,12 @@ namespace BolnicaSims.View.MainView
         private void buttonLecenje_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeBolnickogLecenja();
+            s.Show();
+        }
+
+        private void button_karton_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new IzvestajDoktorView();
             s.Show();
         }
     }

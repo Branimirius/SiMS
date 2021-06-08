@@ -11,7 +11,7 @@ namespace BolnicaSims.MVVM.ViewModel
 {
     public class IzvestajUpravnikViewModel : BindableBase
     {
-        public ObservableCollection<LekModel> Lekovi;
+        public System.Collections.ObjectModel.ObservableCollection<LekModel> Lekovi;
         
         public IzvestajUpravnikViewModel()
         {
@@ -20,8 +20,8 @@ namespace BolnicaSims.MVVM.ViewModel
         }
         public void LoadLekovi()
         {
-            ObservableCollection<LekModel> lekovi =
-                new ObservableCollection<LekModel>();
+            System.Collections.ObjectModel.ObservableCollection<LekModel> lekovi =
+                new System.Collections.ObjectModel.ObservableCollection<LekModel>();
             foreach (Lek l in LekoviStorage.Instance.lekovi)
             {
                 LekModel temp = new LekModel(l.ImeLeka, l.Proizvodjac, l.Doza, l.Kolicina.ToString(), l.IdLeka, l.Verifikovan);
@@ -35,7 +35,7 @@ namespace BolnicaSims.MVVM.ViewModel
 
             Lekovi = lekovi;
         }
-        public void AddKolicinaLekovi(LekModel lek, ObservableCollection<LekModel> lekovi)
+        public void AddKolicinaLekovi(LekModel lek, System.Collections.ObjectModel.ObservableCollection<LekModel> lekovi)
         {
             foreach (LekModel l in lekovi)
             {

@@ -28,6 +28,9 @@
     <Compile Update="MVVM\HelpView\WizardThirdPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="MVVM\Views\IzvestajDoktorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MVVM\Views\IzvestajPacijentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -181,6 +184,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\HelpView\WizardThirdPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\IzvestajDoktorView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MVVM\Views\IzvestajPacijentView.xaml">

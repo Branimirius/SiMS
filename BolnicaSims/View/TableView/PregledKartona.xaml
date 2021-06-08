@@ -63,8 +63,14 @@
             <TextBox x:Name="textBoxAlergija" TextWrapping="Wrap" Grid.Row="3" Grid.Column="2" Margin="0,51,87,25" Grid.RowSpan="2"/>
 
             <Label x:Name="label" Content="ANAMNEZA:" HorizontalAlignment="Left" Grid.Row="4" Margin="0,26,0,-26"/>
+
+            <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46" Grid.Row="4" Grid.Column="3">
+                <Image Source="/Resources/report.png"/>
+            </Button>
         </Grid>
 
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Text="Unesite anamnezu..." TextWrapping="Wrap" VerticalAlignment="Top" Grid.Row="2" Height="108" Width="680" Margin="14,14,0,0"/>
+        <Grid Grid.Row="2">
+            <TextBox x:Name="textBox" HorizontalAlignment="Center" Text="Unesite anamnezu..." TextWrapping="Wrap" VerticalAlignment="Center" Height="142" Width="720" />
+        </Grid>
     </Grid>
 </Window>

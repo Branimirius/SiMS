@@ -609,3 +609,5 @@ D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoIm
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims_Content.g.cs
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.dll
 D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.baml

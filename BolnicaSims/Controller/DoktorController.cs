@@ -11,6 +11,8 @@ namespace BolnicaSims.Controller
 {
     class DoktorController
     {
+        public bool wantsDemo = false; 
+
         private static DoktorController instance = null;
         public static DoktorController Instance
         {

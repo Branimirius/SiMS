@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
+        Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="{x:Type MenuItem}">
             <Setter Property="FontSize" Value="13"/>

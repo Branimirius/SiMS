@@ -49,20 +49,12 @@ namespace BolnicaSims
             var s = new UpravnikView();
             s.Show();
         }
-        private void login()
-        {
-
-        }
-
-        private void checkUser(string username, string password)
-        {
-
-        }
 
         private void Button_ClickLogin(object sender, RoutedEventArgs e)
         {
+            if((bool)checkWizard.IsChecked) { DoktorController.Instance.wantsDemo = true;  };
             switch (KorisnikController.Instance.Login2(txtKorisnickoIme.Text, txtLozinka.Password).Zvanje)
-            {
+            { 
                 case "Sekretar":
                     var s = new SekretarView();
                     s.Show();
