@@ -30,6 +30,7 @@ namespace BolnicaSims.View.AddView
             //comboBox.DisplayMemberPath = "ImeLeka";
             labelDoktor.Content = KorisnikController.Instance.getUlogovaniKorisnik().Ime + ' ' + KorisnikController.Instance.getUlogovaniKorisnik().Prezime;
             labelPacijent.Content = PacijentController.Instance.getSelektovanPacijent().korisnik.Ime + ' ' + PacijentController.Instance.getSelektovanPacijent().korisnik.Prezime;
+            textBox1.Text = DateTime.Now.AddDays(1).Date.ToString("dd/MM/yyyy");
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

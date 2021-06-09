@@ -35,7 +35,7 @@ namespace BolnicaSims.View.EditView
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if (txtAlergen.Text == "" || txtDoza.Text == "" || txtKolicina.Text == "" || txtNaziv.Text == "" || txtProizvodjac.Text == "")
+            if (txtDoza.Text == "" || txtKolicina.Text == "" || txtNaziv.Text == "" || txtProizvodjac.Text == "")
             {
                 MessageBox.Show("Unesite sve potrebne parametre");
             }

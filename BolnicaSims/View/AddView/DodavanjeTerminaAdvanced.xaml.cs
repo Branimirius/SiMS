@@ -36,7 +36,11 @@ namespace BolnicaSims.View.AddView
             }
             else
             {
-                if (txtSati.Text == "h" || txtMinuti.Text == "Min")
+                if(Int32.Parse(txtSati.Text) > 23 || Int32.Parse(txtMinuti.Text) >60)
+                {
+                    MessageBox.Show("Unesite validnu satnicu");
+                }
+                else if (txtSati.Text == "h" || txtMinuti.Text == "Min")
                 {
                     MessageBox.Show("Unesite vreme pocetka termina");
                 }
