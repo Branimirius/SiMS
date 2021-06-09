@@ -20,9 +20,9 @@ namespace BolnicaSims.Service
                 return instance;
             }
         }
-        public void dodajFeedback(String primedbe, String bagovi)
+        public void dodajFeedback(String primedbe, String bagovi, String ocena)
         {
-            FeedbackStorage.Instance.feedbacks.Add(new Feedback(primedbe, bagovi));
+            FeedbackStorage.Instance.feedbacks.Add(new Feedback(primedbe, bagovi, int.Parse(ocena)));
             FeedbackStorage.Instance.Save();
         }
     }

@@ -25,7 +25,13 @@ namespace BolnicaSims.View.Feedback
 
         private void btnPosalji_Click(object sender, RoutedEventArgs e)
         {
-            FeedbackController.Instance.dodajFeedback(txtPrimedbe.Text, txtBagovi.Text);
+            int parsedValue;
+            if (!int.TryParse(txtOcena.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za ocene su dozvoljene samo cifre");
+                return;
+            }
+            FeedbackController.Instance.dodajFeedback(txtPrimedbe.Text, txtBagovi.Text, txtOcena.Text);
             this.Close();
         }
 

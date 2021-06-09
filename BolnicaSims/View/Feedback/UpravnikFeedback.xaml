@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.Feedback"
         mc:Ignorable="d"
-        Title="UpravnikFeedback" Height="300" Width="300">
+        Title="UpravnikFeedback" Height="380" Width="300">
     <Window.Resources>
         <Style TargetType="WrapPanel" >
             <Setter Property="Background" Value="#a9bec4" />
@@ -85,13 +85,19 @@
             </WrapPanel>
             <WrapPanel Height="10"/>
             <WrapPanel Height="80">
-                <TextBlock Text="Primedbe: " />
-                <TextBox x:Name="txtPrimedbe" Text="" Width="233" Height="80" TextWrapping="WrapWithOverflow" />
+                <TextBlock Text="  Primedbe: " />
+                <TextBox x:Name="txtPrimedbe" Text="" Width="201" Height="80" TextWrapping="WrapWithOverflow" />
             </WrapPanel>
             <WrapPanel Height="10"/>
             <WrapPanel Height="50">
-                <TextBlock Text="Prijavite bagove: " />
+                <TextBlock Text="  Prijavite bagove: " />
                 <TextBox x:Name="txtBagovi" Text="" Width="160" Height="50" TextWrapping="WrapWithOverflow" />
+
+            </WrapPanel>
+            <WrapPanel Height="10"/>
+            <WrapPanel Height="20" Width="221">
+                <TextBlock Text="Ocenite aplikaciju (od 5 do 10): " />
+                <TextBox x:Name="txtOcena" Text="" Width="20" Height="20" TextWrapping="WrapWithOverflow" />
 
             </WrapPanel>
             <WrapPanel Height="20"/>

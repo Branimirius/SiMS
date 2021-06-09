@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Model;
+using BolnicaSims.Model.LekStates;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -40,6 +41,7 @@ namespace BolnicaSims.Storage
                 if (!l.Verifikovan)
                 {
                     neverifikovaniLekovi.Add(l);
+                    l.stanjeLeka = new NevalidanState();
                 }                
             }
         }

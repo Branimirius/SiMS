@@ -5,8 +5,11 @@ using System.Text;
 
 namespace BolnicaSims.Model
 {
-    interface ILek
+    
+    public interface ILek
     {
-        public void setContext(StanjaLeka context) { }
+        public void setContext(StanjaLeka context);
+        public bool isValid();
+        public String stringValid();
     }
 }

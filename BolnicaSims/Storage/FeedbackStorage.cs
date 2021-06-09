@@ -31,9 +31,7 @@ namespace BolnicaSims.Storage
         public FeedbackStorage()
         {
             feedbacks = this.Load();
-            //Feedback f1 = new Feedback("null", "null");
-            //feedbacks.Add(f1);
-            //this.Save();
+            
         }
         public ObservableCollection<Feedback> Read()
         {

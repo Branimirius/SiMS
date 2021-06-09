@@ -26,6 +26,8 @@ namespace BolnicaSims.Model
         {
             get { return Verifikovan ? "Da" : "Ne"; }
         }
+        public ILek stanjeLeka { get; set; }
+        
 
         public ObservableCollection<Lek> Alternative { get; set; }
         public Lek (String naziv, String proizvodjac, String doza, String alergija, String kolicina, String Id, Boolean verifikovan)

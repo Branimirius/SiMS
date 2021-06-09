@@ -19,9 +19,9 @@ namespace BolnicaSims.Controller
                 return instance;
             }
         }
-        public void dodajFeedback(String primedbe, String bagovi)
+        public void dodajFeedback(String primedbe, String bagovi, String ocena)
         {
-            FeedbackService.Instance.dodajFeedback(primedbe, bagovi);
+            FeedbackService.Instance.dodajFeedback(primedbe, bagovi, ocena);
         }
     }
 }

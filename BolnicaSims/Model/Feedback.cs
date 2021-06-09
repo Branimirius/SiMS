@@ -10,10 +10,13 @@ namespace BolnicaSims.Model
         public String Primedbe { get; set; }
         public String Bagovi { get; set; }
 
-        public Feedback(string primedbe, string bagovi)
+        public int Ocena { get; set; }
+
+        public Feedback(string primedbe, string bagovi, int ocena)
         {
             Primedbe = primedbe;
             Bagovi = bagovi;
+            Ocena = ocena;
         }
     }
 }
