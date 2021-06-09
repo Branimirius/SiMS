@@ -26,6 +26,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using BolnicaSims.MVVM.Views;
+using BolnicaSims.Model.ButtonFactories;
+using BolnicaSims.View.Feedback;
 
 namespace BolnicaSims
 {
@@ -34,32 +36,34 @@ namespace BolnicaSims
     /// </summary>
     public partial class PacijentView : Window
     { 
-     private static PacijentView instance = null;
-    public static PacijentView Instance
-    {
-        get
+        private static PacijentView instance = null;
+        
+        public static PacijentView Instance
         {
-            if (instance == null)
+            get
             {
-                instance = new PacijentView();
+                if (instance == null)
+                {
+                    instance = new PacijentView();
+                }
+                return instance;
             }
-            return instance;
         }
-    }
 
         public ObservableCollection<Termin> termini = TerminStorage.Instance.Read();
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
         public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
         public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
         private string currentLanguage;
-
+        public ButtonFactory btnFactory;
 
         public PacijentView()
         {
             InitializeComponent();
 
             this.CurrentLanguage = "sr-LATN";
-
+            this.btnFactory = new LightButtonFactory();
+            createAButton();
 
             if (PacijentController.Instance.proveriBan(DateTime.Now,PacijentController.Instance.getUlogovaniPacijent()))
             {
@@ -176,12 +180,16 @@ namespace BolnicaSims
 
         private void DarkMode_Checked(object sender, RoutedEventArgs e)
         {
+            this.btnFactory = new DarkButtonFactory();
+            createAButton();
             Properties.Settings.Default.ColorMode = "Dark";
             Properties.Settings.Default.Save();
         }
 
         private void LightMode_Checked(object sender, RoutedEventArgs e)
         {
+            this.btnFactory = new LightButtonFactory();
+            createAButton();
             Properties.Settings.Default.ColorMode = "Light";
             Properties.Settings.Default.Save();
         }
@@ -218,6 +226,24 @@ namespace BolnicaSims
         {
             var s = new IzvestajPacijentView();
             s.Show();
+        }
+        private void createAButton()
+        {
+            Button btn = this.btnFactory.createButton();
+            btn.Click += this.ButtonObavestenja_Click;
+            btn.Height = 28;
+            btn.Width = 60;
+            Thickness margin = btn.Margin;
+            margin.Left = 180;
+            margin.Top = -360;
+            btn.Margin = margin;
+            Daddy.Children.Add(btn);
+        }
+
+        private void btnFeedback_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new PacijentFeedback();
+            s.ShowDialog();
         }
     }
 }

@@ -165,7 +165,7 @@ namespace BolnicaSims.MVVM.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/mvvm/views/izvestajdoktorview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/mvvm/views/izvestajdoktorview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\Views\IzvestajDoktorView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

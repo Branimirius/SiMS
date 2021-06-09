@@ -93,7 +93,7 @@ namespace BolnicaSims.View.Feedback {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/feedback/upravnikfeedback.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/feedback/upravnikfeedback.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\Feedback\UpravnikFeedback.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
