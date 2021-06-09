@@ -70,7 +70,7 @@
         </Grid>
 
         <Grid Grid.Row="2">
-            <TextBox x:Name="textBox" HorizontalAlignment="Center" Text="Unesite anamnezu..." TextWrapping="Wrap" VerticalAlignment="Center" Height="142" Width="720" />
+            <TextBox x:Name="textBox" HorizontalAlignment="Center" Text="Unesite anamnezu..." TextWrapping="Wrap" VerticalAlignment="Center" Height="142" Width="700" />
         </Grid>
     </Grid>
 </Window>

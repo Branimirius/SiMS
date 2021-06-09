@@ -19,7 +19,7 @@
             <RowDefinition />
             <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="label2" Content="Dodavanje Bolnickog lecenja" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Height="43" Width="268" FontSize=" 20"/>
+        <Label x:Name="label2" Content="Dodavanje Bolnickog lecenja" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Height="43" Width="268" FontSize="20" FontWeight="DemiBold"/>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -43,7 +43,7 @@
             <TextBlock x:Name="txtBlock1" HorizontalAlignment="Center" Text="Pocetak lecenja: " TextWrapping="Wrap" FontSize="12" Height="32" Width="150" Grid.Row="2" Grid.Column="1" Margin="0,17,0,11" />
             <DatePicker x:Name="datePocetak" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"  />
             <TextBlock x:Name="txtBlock1_Copy" HorizontalAlignment="Left" Text="Kraj Lecenja: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" Grid.Row="3" Grid.Column="1" Margin="0,17,0,0"  />
-            <DatePicker x:Name="dateKraj" Grid.Row="3" Grid.Column="2" Margin="0,17,0,19" />
+            <DatePicker x:Name="dateKraj" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" />
         </Grid>
 
         <Grid Grid.Row="2">

@@ -7,22 +7,23 @@
         mc:Ignorable="d"
         Title="IzdajRecept" Height="450" Width="600" ResizeMode="NoResize">
     <Grid Background='Azure'>
-        <Button x:Name="button" Content="Izdaj" HorizontalAlignment="Left" Margin="155,349,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Width="100" Height="33" Click="button_Click"/>
-        <Button x:Name="button1" Content="Odustani" HorizontalAlignment="Left" Margin="344,349,0,0" VerticalAlignment="Top" Click="button1_Click" Height="31" Width="100" RenderTransformOrigin="0.848,0.235"/>
-        <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="385,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.461,0.561"/>
-        <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="391,164,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.509,0.601"/>
-        <Label x:Name="label" Content="Kreni uzimanje: " HorizontalAlignment="Left" Margin="54,108,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.574,-0.55"/>
-        <Label x:Name="label1" Content="Koliko puta dnevno:" HorizontalAlignment="Left" Margin="32,172,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="166,112,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="166,172,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="166,230,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label2" Content="Koliko dana:" HorizontalAlignment="Left" Margin="73,224,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Izdaj" Background ="White" HorizontalAlignment="Left" Margin="155,349,0,0" VerticalAlignment="Top"  Width="100" Height="33" Click="button_Click"/>
+        <Button x:Name="button1" Content="Odustani" Background="White" HorizontalAlignment="Left" Margin="344,349,0,0" VerticalAlignment="Top" Click="button1_Click" Height="31" Width="100" />
+        <Label x:Name="labelPacijent" Content="pacijent" HorizontalAlignment="Left" Margin="391,108,0,0" VerticalAlignment="Top" />
+        <Label x:Name="labelDoktor" Content="doktor" HorizontalAlignment="Left" Margin="391,164,0,0" VerticalAlignment="Top" />
+        <Label x:Name="label" Content="Kreni uzimanje: " HorizontalAlignment="Left" Margin="54,113,0,0" VerticalAlignment="Top" />
+        <Label x:Name="label1" Content="Koliko puta dnevno:" HorizontalAlignment="Left" Margin="32,170,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="166,112,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="166,168,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27" />
+        <TextBox x:Name="textBox3" HorizontalAlignment="Left" Margin="166,223,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="27"/>
+        <Label x:Name="label2" Content="Koliko dana:" HorizontalAlignment="Left" Margin="64,226,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" Content="LEK:" HorizontalAlignment="Left" Margin="320,224,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="365,228,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="comboBox_SelectionChanged"/>
+        <ComboBox x:Name="comboBox" Background="White"
+                  HorizontalAlignment="Left" Margin="365,228,0,0" VerticalAlignment="Top" Width="120" />
         <Label x:Name="label4" Content="" HorizontalAlignment="Left" Margin="105,139,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Pacijent:" HorizontalAlignment="Left" Margin="320,108,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label6" Content="Doktor:" HorizontalAlignment="Left" Margin="320,164,0,0" VerticalAlignment="Top"/>
-        <Label Content="IZDAVANJE RECEPTA" Height=" 30" HorizontalAlignment="Center" FontSize="13" Margin="0,43,0,361"/>
+        <Label Content="IZDAVANJE RECEPTA" Height=" 30" HorizontalAlignment="Center"  Margin="0,43,0,361" FontSize="14" FontWeight="DemiBold"/>
 
     </Grid>
 </Window>

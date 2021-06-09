@@ -73,10 +73,5 @@ namespace BolnicaSims.View.AddView
         {
 
         }
-
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

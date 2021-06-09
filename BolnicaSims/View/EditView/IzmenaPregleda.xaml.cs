@@ -26,6 +26,7 @@ namespace BolnicaSims
         public IzmenaPregleda()
         {
             InitializeComponent();
+            txtBox1.Text = DateTime.Now.AddMinutes(30).ToString();
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
@@ -88,6 +89,10 @@ namespace BolnicaSims
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }
