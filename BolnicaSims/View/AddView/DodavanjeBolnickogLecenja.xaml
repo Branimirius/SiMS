@@ -35,8 +35,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <ComboBox x:Name="comboBoxPacijenti" HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" Width="120" />
-            <ComboBox x:Name="comboBoxSobe" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Width="120" SelectionChanged="comboBoxSobe_SelectionChanged" BorderBrush="White"/>
+            <ComboBox x:Name="comboBoxPacijenti" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center" Width="150" Height="26" />
+            <ComboBox x:Name="comboBoxSobe" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Width="150" SelectionChanged="comboBoxSobe_SelectionChanged" Height="30"/>
             <Label x:Name="label" Content="Pacijent: " HorizontalAlignment="Left"  Grid.Column="1" VerticalAlignment="Center"/>
             <Label x:Name="label1" Content="Soba: " HorizontalAlignment="Left" Grid.Row="1"  Grid.Column="1" VerticalAlignment="Top" Margin="0,15,0,0"/>
 

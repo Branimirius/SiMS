@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.EditView"
         mc:Ignorable="d"
-        Title="IzmenaLeka" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="IzmenaLeka" Height="450" Width="800" MinHeight="450" MinWidth="800" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="13"/>
@@ -21,7 +21,7 @@
         </Grid.RowDefinitions>
 
         <Grid x:Name="gridIner1" Grid.Row="0">
-            <Label Content="IZMENA LEKA&#xA;" Height="30" Width="150" FontSize="13"/>
+            <Label Content="IZMENA LEKA&#xA;" Height="30" Width="150" FontSize="16" FontWeight="DemiBold"/>
         </Grid>
 
         <Grid x:Name="gridIner2" Grid.Row="1">
@@ -58,8 +58,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="btnPotvrdi"  Background = "White " Click="btnPotvrdi_Click" Content="Potvrdi" Grid.Column="0" Margin="18"/>
-            <Button x:Name="btnOdustani" Background = "WHite" Click="btnOdustani_Click" Content="Odustani" Grid.Column="1" Margin="18"/>
+            <Button x:Name="btnPotvrdi"  Background = "White " Click="btnPotvrdi_Click" Content="Potvrdi" Grid.Column="0" Margin="140,18,78,18"/>
+            <Button x:Name="btnOdustani" Background = "WHite" Click="btnOdustani_Click" Content="Odustani" Grid.Column="1" Margin="69,18,149,18"/>
         </Grid>
 
 

@@ -34,9 +34,9 @@ namespace BolnicaSims.View.AddView
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text=="")
             {
-                MessageBox.Show("Datum nije unet");
+                MessageBox.Show("Unesite sve potrebne parametre");
             }
             else
             {

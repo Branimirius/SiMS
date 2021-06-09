@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.MainView"
         mc:Ignorable="d"
-        Title="PregledKartona" Height="500" Width="720" MinHeight="500" MinWidth="720">
+        Title="PregledKartona" Height="500" Width="720" MinHeight="500" MinWidth="720" WindowStartupLocation="CenterScreen">
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="FontSize" Value="13"/>

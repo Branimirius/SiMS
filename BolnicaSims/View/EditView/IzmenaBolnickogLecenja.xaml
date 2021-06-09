@@ -5,19 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.EditView"
         mc:Ignorable="d"
-        Title="IzmenaBolnickogLecenja" Height="450" Width="800">
-    <Grid>
-        <ComboBox x:Name="comboBoxSobe" HorizontalAlignment="Left" Margin="422,167,0,0" VerticalAlignment="Top" Width="120"/>
-        <Label x:Name="label" Content="Pacijent: " HorizontalAlignment="Left" Margin="281,111,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label1" Content="Soba: " HorizontalAlignment="Left" Margin="283,163,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="button_izmeni" Content="izmeni" HorizontalAlignment="Left" Margin="305,349,0,0" VerticalAlignment="Top" Width="52" Click="button_izmeni_Click"/>
-        <Button x:Name="button_odustani" Content="Odustani" HorizontalAlignment="Left" Margin="459,349,0,0" VerticalAlignment="Top" Click="button_odustani_Click"/>
-        <TextBlock x:Name="txtBlock1" HorizontalAlignment="Left" TextAlignment="Center" Text="Pocetak lecenja: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" Margin="258,222,0,0" />
-        <DatePicker x:Name="datePocetak" Margin="400,222,258,182" />
-        <TextBlock x:Name="txtBlock1_Copy" HorizontalAlignment="Left" TextAlignment="Center" Text="Kraj Lecenja: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" Margin="258,277,0,0" />
-        <DatePicker x:Name="dateKraj" Margin="400,277,258,127" />
-        <Label x:Name="label2" Content="Izmena Bolnickog lecenja" HorizontalAlignment="Left" Margin="281,30,0,0" VerticalAlignment="Top" Height="43" Width="268" FontSize=" 20"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="436,116,0,0" Text="TextBlock" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        Title="IzmenaBolnickogLecenja" Height="450" Width="600" WindowStartupLocation="CenterScreen">
+    <Grid Background="Azure">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition />
+            <RowDefinition Height="0.4*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label2" Content="Izmena Bolnickog lecenja" Grid.Row="0" FontSize=" 20"  FontWeight="DemiBold" HorizontalAlignment="Center" Margin="0,24,0,24" />
 
+        <Grid Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <ComboBox x:Name="comboBoxSobe" Grid.Column="2" Margin="10,18,10,10" Grid.Row="1"  />
+            <Label x:Name="label" Content="Pacijent: " Grid.Column="1" Margin="31,20,49,10" />
+            <Label x:Name="label1" Content="Soba: " Grid.Column="1" Grid.Row="1" Margin="31,21,50,13" />
+
+            <TextBlock x:Name="txtBlock1"  Text="Pocetak lecenja: "  VerticalAlignment="Center" FontSize="12" Grid.Column="1" Margin="32,0,28,0" Grid.Row="2" Height="27" />
+            <DatePicker x:Name="datePocetak" Grid.Column="2" Margin="10,18,10,10" Grid.Row="2" />
+            <TextBlock x:Name="txtBlock1_Copy" Text="Kraj Lecenja: " TextWrapping="Wrap" FontSize="12" Grid.Column="1" Grid.Row="3" Margin="32,20,34,10"  />
+            <DatePicker x:Name="dateKraj" Grid.Column="2" Grid.Row="3" Margin="10,18,10,10" RenderTransformOrigin="0.649,0.521"  />
+
+            <TextBlock x:Name="textBlock" Grid.Column="2" Margin="19,20,10,10" >
+            </TextBlock>
+        </Grid>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="button_izmeni" Background ="White" Content="izmeni" Click="button_izmeni_Click" Grid.Column="1" Margin="36,38,36,24"/>
+            <Button x:Name="button_odustani" Background="White" Content="Odustani" Click="button_odustani_Click" Grid.Column="2" Margin="36,38,36,24"/>
+        </Grid>
     </Grid>
 </Window>
