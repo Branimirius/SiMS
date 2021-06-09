@@ -4,7 +4,7 @@
              xmlns:local="clr-namespace:BolnicaSims"
              xmlns:properties="clr-namespace:BolnicaSims.Properties"
              StartupUri="MainWindow.xaml">
-    <!--<Application.Resources>
+    <Application.Resources>
         <Style TargetType="WrapPanel" >
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
@@ -53,72 +53,72 @@
 
 
                     <Setter Property="Background" Value="#cbd8db" />
-                            <Setter Property="Foreground" Value="Black" />
-                            <Setter Property="FontSize" Value="15" />
-                            <Setter Property="FontFamily" Value="./#Segoe UI" />
-                            <Setter Property="SnapsToDevicePixels" Value="True" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="FontFamily" Value="./#Segoe UI" />
+                    <Setter Property="SnapsToDevicePixels" Value="True" />
 
 
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                                            <Grid>
-                                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
-                                            </Grid>
-                                        </Border>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                                    <Grid>
+                                        <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                                    </Grid>
+                                </Border>
 
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#FF66E0C4" />
-                                                <Setter Property="Foreground" Value="Black" />
-                                            </Trigger>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF66E0C4" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
 
-                                            <Trigger Property="IsPressed" Value="True">
-                                                <Setter Property="Background" Value="#FF66E0C4" />
-                                                <Setter Property="Foreground" Value="Black" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter Property="Background" Value="#FF66E0C4" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </DataTrigger>
-                
+
 
 
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
-                  
-                    
-                            <Setter Property="Background" Value="#363C49" />
-                            <Setter Property="Foreground" Value="White" />
-                            <Setter Property="FontSize" Value="15" />
-                            <Setter Property="FontFamily" Value="./#Segoe UI" />
-                            <Setter Property="SnapsToDevicePixels" Value="True" />
 
 
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                                            <Grid>
-                                                <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
-                                            </Grid>
-                                        </Border>
+                    <Setter Property="Background" Value="#363C49" />
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="FontFamily" Value="./#Segoe UI" />
+                    <Setter Property="SnapsToDevicePixels" Value="True" />
 
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="#FF363333"  />
-                                                <Setter Property="Foreground" Value="Black" />
-                                            </Trigger>
 
-                                            <Trigger Property="IsPressed" Value="True">
-                                                <Setter Property="Background" Value="#FF363333" />
-                                                <Setter Property="Foreground" Value="Black" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                                    <Grid>
+                                        <ContentPresenter x:Name="MyContentPresenter" Content="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,0" />
+                                    </Grid>
+                                </Border>
+
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF363333"  />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+
+                                    <Trigger Property="IsPressed" Value="True">
+                                        <Setter Property="Background" Value="#FF363333" />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </DataTrigger>
             </Style.Triggers>
         </Style>
@@ -128,30 +128,30 @@
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
 
                     <Setter Property="Background" Value="#cbd8db" />
-                            <Setter Property="Foreground" Value="Black" />
-                            <Setter Property="FontSize" Value="11" />
-                            <Setter Property="SnapsToDevicePixels" Value="True" />
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type TextBox}">
-                                        <Border CornerRadius="4" Background="{TemplateBinding Background}">
-                                            <ScrollViewer x:Name="PART_ContentHost"/>
-                                        </Border>
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="FontSize" Value="11" />
+                    <Setter Property="SnapsToDevicePixels" Value="True" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type TextBox}">
+                                <Border CornerRadius="4" Background="{TemplateBinding Background}">
+                                    <ScrollViewer x:Name="PART_ContentHost"/>
+                                </Border>
 
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background"  Value="#FF66E0C4"  />
-                                                <Setter Property="Foreground" Value="Black" />
-                                            </Trigger>
-                                            <Trigger Property="IsFocused" Value="True">
-                                                <Setter Property="Background"  Value="#FF66E0C4"  />
-                                                <Setter Property="Foreground" Value="Black" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                 </DataTrigger>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background"  Value="#FF66E0C4"  />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                    <Trigger Property="IsFocused" Value="True">
+                                        <Setter Property="Background"  Value="#FF66E0C4"  />
+                                        <Setter Property="Foreground" Value="Black" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </DataTrigger>
 
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
 
@@ -183,35 +183,35 @@
 
             </Style.Triggers>
         </Style>
-           
-           <Style TargetType="TabItem">
-              <Style.Triggers>
+
+        <Style TargetType="TabItem">
+            <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
-                    
+
                     <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="TabItem">
-                                        <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0" Background="#FF00C4FF">
-                                            <ContentPresenter x:Name="ContentSite"
+                        <Setter.Value>
+                            <ControlTemplate TargetType="TabItem">
+                                <Border Name="Border" BorderThickness="1,1,1,0" BorderBrush="Gainsboro" CornerRadius="4,4,0,0" Margin="2,0" Background="#FF00C4FF">
+                                    <ContentPresenter x:Name="ContentSite"
                                         VerticalAlignment="Center"
                                         HorizontalAlignment="Center"
                                         ContentSource="Header"
                                         Margin="10,2"/>
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsSelected" Value="True">
-                                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
-                                            </Trigger>
-                                            <Trigger Property="IsSelected" Value="False">
-                                                <Setter TargetName="Border" Property="Background" Value="#86a3ac" />
-                                            </Trigger>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
+                                </Border>
+                                <ControlTemplate.Triggers>
+                                    <Trigger Property="IsSelected" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
+                                    </Trigger>
+                                    <Trigger Property="IsSelected" Value="False">
+                                        <Setter TargetName="Border" Property="Background" Value="#86a3ac" />
+                                    </Trigger>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter TargetName="Border" Property="Background" Value="#cbd8db" />
+                                    </Trigger>
+                                </ControlTemplate.Triggers>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
                 </DataTrigger>
 
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
@@ -241,15 +241,15 @@
                         </Setter.Value>
                     </Setter>
                 </DataTrigger>
-                
+
             </Style.Triggers>
         </Style>
-        
-              <Style TargetType="{x:Type DataGridRow}">
-                <Style.Triggers>
+
+        <Style TargetType="{x:Type DataGridRow}">
+            <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
                     <Setter Property="Foreground" Value="Black"/>
-                            <Setter Property="Height" Value="25"/>
+                    <Setter Property="Height" Value="25"/>
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 </DataTrigger>
 
@@ -259,27 +259,27 @@
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
                 </DataTrigger>
             </Style.Triggers>
-               </Style>
+        </Style>
 
-            <Style TargetType="DataGrid">
-              <Style.Triggers>
+        <Style TargetType="DataGrid">
+            <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
-                     <Setter Property="Background" Value="#cbd8db"/>
+                    <Setter Property="Background" Value="#cbd8db"/>
                 </DataTrigger>
-                  
+
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
                     <Setter Property="Background" Value="#363C49"/>
                 </DataTrigger>
 
             </Style.Triggers>
         </Style>
-                  
-                        <Style TargetType="DataGridColumnHeader">
+
+        <Style TargetType="DataGridColumnHeader">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
                     <Setter Property="Background" Value="#cbd8db"/>
-                            <Setter Property="Foreground" Value="Black"/>
-                            <Setter Property="FontWeight" Value="Bold"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="FontWeight" Value="Bold"/>
                 </DataTrigger>
 
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Dark">
@@ -289,8 +289,8 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-                  
-                        <Style TargetType="DataGridRowHeader">
+
+        <Style TargetType="DataGridRowHeader">
             <Style.Triggers>
                 <DataTrigger Binding="{Binding Source={x:Static properties:Settings.Default},Path=ColorMode}" Value="Light">
                     <Setter Property="Background" Value="#cbd8bd"/>
@@ -301,11 +301,11 @@
                 </DataTrigger>
             </Style.Triggers>
         </Style>
-                  
-            
-       
 
 
 
-    </Application.Resources>-->
+
+
+
+    </Application.Resources>
 </Application>
