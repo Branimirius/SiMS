@@ -75,7 +75,7 @@ namespace BolnicaSims.Service
         {
             Korisnik k = new Korisnik(username, password, ime, prezime, "Doktor", jmbg, datumRodjenja, adresa, telefon, email);
             Doktor tempDoktor = new Doktor(k, specijalista, hirurg, specijalizacija);
-            DoktoriStorage.Instance.Read().Add(tempDoktor);
+            DoktoriStorage.Instance.doktori.Add(tempDoktor);
             DoktoriStorage.Instance.doktoriImena.Add(ime + " " + prezime);
             KorisniciStorage.Instance.Read().Add(k);
             KorisniciStorage.Instance.zaposleni.Add(k);
@@ -155,7 +155,7 @@ namespace BolnicaSims.Service
         public Doktor getSlobodanDoktor()
         {
             Doktor doca = new Doktor();
-            foreach (Doktor d in DoktoriStorage.Instance.Read())
+            foreach (Doktor d in DoktoriStorage.Instance.doktori)
             {
                 if (d.termini.Count == 0)
                 {

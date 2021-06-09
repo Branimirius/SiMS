@@ -29,43 +29,40 @@ namespace BolnicaSims.Service
             int brKreveta = 0;
             int brLecenja = 0;
             string poruka = "";
+
             foreach (Lecenje l in LecenjaStorage.Instance.Read())
             {
                 if (l.Pacijent.korisnik.ImePrezime == pacijent.korisnik.ImePrezime)
                 {
                     poruka = "Izabrani pacijent je vec na bolnickom lecenju";
-                }
-                else
+                    break;
+
+                } else if (l.Prostorija.IdProstorije == prostorija.IdProstorije)
                 {
-                    foreach(Inventar i in prostorija.inventar)
-                    {
-                        if (i.Naziv == "Krevet")
-                        {
-                            brKreveta = i.Kolicina;
-                        }
-                    }
-
-                    foreach (Lecenje le in LecenjaStorage.Instance.Read())
-                    {
-                        if (le.Prostorija.IdProstorije == prostorija.IdProstorije)
-                        {
-                            brLecenja++;
-                        }
-                    }
-
-                    if (brKreveta > brLecenja)
-                    {
-                        LecenjaStorage.Instance.lecenja.Add(new Lecenje(pacijent, pocetak, kraj, prostorija));
-                        LecenjaStorage.Instance.Save();
-                        poruka = "Uspesno dodato lecenje";
-                        break;
-                    }
-                    else
-                    {
-                        poruka = "Nema dovoljno kreveta u izabranoj prostoriji";
-                    }
+                    brLecenja++;
                 }
             }
+
+            foreach(Inventar i in prostorija.inventar)
+            {
+                if (i.Naziv == "Krevet")
+                {
+                    brKreveta = i.Kolicina;
+                }
+            }
+
+            if (brKreveta <= brLecenja)
+            {
+                poruka = "Nema dovoljno kreveta u izabranoj prostoriji";
+                
+            }
+            else
+            {
+                LecenjaStorage.Instance.lecenja.Add(new Lecenje(pacijent, pocetak, kraj, prostorija));
+                LecenjaStorage.Instance.Save();
+                poruka = "Uspesno dodato lecenje";
+            }
+
             return poruka; 
         }
 

@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Interface;
+using BolnicaSims.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ using System.Text;
 namespace BolnicaSims.Storage
 {
     [Serializable]
-    public class ReceptiStorage
+    public class ReceptiStorage: IReadable, IStorage
     {
         private static ReceptiStorage instance = null;
         public static ReceptiStorage Instance
@@ -30,35 +31,28 @@ namespace BolnicaSims.Storage
 
         public ReceptiStorage()
         {
-              recepti = this.Load();
-            
-          /*  Recept r1 = new Recept(null, null, null,default , null, null);
-            recepti.Add(r1);
-            this.Save();
-          */
+            Load();
         }
 
-        public ObservableCollection<Recept> Read()
+        public ObservableCollection<object> Read()
         {
-            return recepti;
+            return new ObservableCollection<object> {recepti};
         }
+
+        public void Load()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
+            recepti = (ObservableCollection<Recept>)formatter.Deserialize(stream);
+            stream.Close();
+        }
+
         public void Save()
         {
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, recepti);
             stream.Close();
-        }
-
-        public ObservableCollection<Recept> Load()
-        {
-            // TODO: implement
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
-            recepti = (ObservableCollection<Recept>)formatter.Deserialize(stream);
-            stream.Close();
-            return recepti;
-
         }
     }
 }

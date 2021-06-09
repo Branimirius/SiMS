@@ -39,6 +39,7 @@ namespace BolnicaSims.Storage
             //DateTime date1 = new DateTime(2021, 11, 25);
             //DateTime date2 = new DateTime(2022, 12, 25);
             //Lecenje l = new Lecenje(p, date1, date2, prostorija);
+            //lecenja.Clear();
             //lecenja.Add(l);
             //this.Save();
             

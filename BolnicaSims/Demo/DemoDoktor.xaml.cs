@@ -32,16 +32,6 @@ namespace BolnicaSims.Demo
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            //DirectoryInfo dir_info = new DirectoryInfo(Environment.CurrentDirectory);
-            //foreach (FileInfo file_info in dir_info.GetFiles())
-            //{
-            //    if ((file_info.Extension.ToLower() == ".jpg") ||
-            //        (file_info.Extension.ToLower() == ".png"))
-            //    {
-            //        Images.Add(new BitmapImage(new Uri(file_info.FullName, UriKind.Absolute)));
-            //    }
-            //}
-
             Images.Add(new BitmapImage(new Uri("../Resources/DemoImg/Screenshot_1.png", UriKind.Relative)));
             Images.Add(new BitmapImage(new Uri("../Resources/DemoImg/Screenshot_2.png", UriKind.Relative)));
             Images.Add(new BitmapImage(new Uri("../Resources/DemoImg/Screenshot_3.png", UriKind.Relative)));

@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Interface;
+using BolnicaSims.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ using System.Text;
 namespace BolnicaSims.Storage
 {
     [Serializable]
-    class FeedbackStorage
+    class FeedbackStorage : IStorage
     {
         private static FeedbackStorage instance = null;
         public static FeedbackStorage Instance
@@ -30,12 +31,15 @@ namespace BolnicaSims.Storage
 
         public FeedbackStorage()
         {
-            feedbacks = this.Load();
-            
+            Load();
         }
-        public ObservableCollection<Feedback> Read()
+
+        public void Load()
         {
-            return feedbacks;
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
+            feedbacks = (ObservableCollection<Feedback>)formatter.Deserialize(stream);
+            stream.Close();
         }
 
         public void Save()
@@ -46,16 +50,5 @@ namespace BolnicaSims.Storage
             stream.Close();
         }
 
-        public ObservableCollection<Feedback> Load()
-        {
-            // TODO: implement
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
-            feedbacks = (ObservableCollection<Feedback>)formatter.Deserialize(stream);
-            stream.Close();
-            return feedbacks;
-
-
-        }
     }
 }

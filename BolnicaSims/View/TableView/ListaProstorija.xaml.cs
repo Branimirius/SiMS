@@ -32,7 +32,7 @@ namespace BolnicaSims
             }
         }
 
-        public ObservableCollection<Prostorija> prostorije = ProstorijeStorage.Instance.Read();
+        public ObservableCollection<Prostorija> prostorije = ProstorijeStorage.Instance.prostorije;
 
         public ListaProstorija()
         {

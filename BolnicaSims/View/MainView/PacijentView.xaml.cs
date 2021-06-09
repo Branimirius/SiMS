@@ -49,7 +49,7 @@ namespace BolnicaSims
 
         public ObservableCollection<Termin> termini = TerminStorage.Instance.Read();
         public ObservableCollection<Termin> pacTermini = new ObservableCollection<Termin>();
-        public ObservableCollection<Recept> recepti = ReceptiStorage.Instance.Read();
+        public ObservableCollection<object> recepti = ReceptiStorage.Instance.Read();
         public ObservableCollection<Recept> pacRecepti = new ObservableCollection<Recept>();
         private string currentLanguage;
 

@@ -54,7 +54,7 @@ namespace BolnicaSims.View.AddView
                     else
                     {
                         Recept tempRecept = new Recept(PacijentiStorage.Instance.selektovanPacijent, DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text); ;
-                        ReceptiStorage.Instance.Read().Add(tempRecept);
+                        ReceptiStorage.Instance.recepti.Add(tempRecept);
                         PacijentService.Instance.getPacijent(PacijentiStorage.Instance.selektovanPacijent).recepti.Add(tempRecept);
                         ReceptiStorage.Instance.Save();
                         PacijentiStorage.Instance.Save();
