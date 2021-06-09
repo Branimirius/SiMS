@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\
 BolnicaSims
 none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_1;
-C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\App.xaml
+D:\OISISI - github rep\SiMS\BolnicaSims\App.xaml
 61593903020
 7-1883431165
 14699312779
-205479516523
+205195459997
 Demo\DemoDoktor.xaml;MainWindow.xaml;MVVM\HelpView\PomocMainView.xaml;MVVM\HelpView\PomocMainViewWin.xaml;MVVM\HelpView\UpravnikWizardView.xaml;MVVM\HelpView\WizardFirstPage.xaml;MVVM\HelpView\WizardLastPage.xaml;MVVM\HelpView\WizardSecondPage.xaml;MVVM\HelpView\WizardThirdPage.xaml;MVVM\Views\IzvestajDoktorView.xaml;MVVM\Views\IzvestajPacijentView.xaml;MVVM\Views\IzvestajUpravnikView.xaml;View\AddView\AnketaBolnica.xaml;View\AddView\AnketaDoktor.xaml;View\AddView\Beleska.xaml;View\AddView\DodavanjeBolnickogLecenja.xaml;View\AddView\DodavanjeDoktora.xaml;View\AddView\DodavanjeInventara.xaml;View\AddView\DodavanjeLekova.xaml;View\AddView\DodavanjeOsoblja.xaml;View\AddView\DodavanjePacijenta.xaml;View\AddView\DodavanjePregleda.xaml;View\AddView\DodavanjeProstorije.xaml;View\AddView\DodavanjeTerminaAdvanced.xaml;View\AddView\DodavanjeTerminaDoktor.xaml;View\AddView\DodavanjeTerminaSekretar.xaml;View\AddView\IzdajRecept.xaml;View\DeleteView\BrisanjeInventara.xaml;View\DeleteView\BrisanjeLeka.xaml;View\DeleteView\BrisanjeOsoblja.xaml;View\DeleteView\BrisanjeProstorija.xaml;View\EditView\IzmenaBolnickogLecenja.xaml;View\EditView\IzmenaDoktora.xaml;View\EditView\IzmenaLeka.xaml;View\EditView\IzmenaLekaUpravnik.xaml;View\EditView\IzmenaPacijenta.xaml;View\EditView\IzmenaPregleda.xaml;View\EditView\IzmenaProstorije.xaml;View\EditView\IzmenaTerminaAdvanced.xaml;View\EditView\RenoviranjeProstorije.xaml;View\EditView\ValidacijaLekova.xaml;View\Feedback\UpravnikFeedback.xaml;View\MainView\DoktorView.xaml;View\MainView\PacijentView.xaml;View\MainView\SekretarView.xaml;View\MainView\UpravnikView.xaml;View\NotificationsView\NotifikacijeDoktor.xaml;View\NotificationsView\NotifikacijePacijent.xaml;View\NotificationsView\NotifikacijeSekretar.xaml;View\NotificationsView\NotifikacijeUpravnik.xaml;View\NotificationsView\OdbijanjeLekaKomentar.xaml;View\SettingsView\PodesavanjaUpravnik.xaml;View\TableView\ListaBolnickihLecenja.xaml;View\TableView\ListaLekovaDoktor.xaml;View\TableView\ListaPacijenataDoktor.xaml;View\TableView\ListaProstorija.xaml;View\TableView\ListaTerminaDoktor.xaml;View\TableView\PacijentKarton.xaml;View\TableView\PregledKartona.xaml;View\TableView\StatistikaDoktor.xaml;View\TransferView\TransferInventar.xaml;
 
 False
