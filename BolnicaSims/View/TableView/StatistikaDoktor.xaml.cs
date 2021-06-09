@@ -1,5 +1,7 @@
-﻿using LiveCharts;
+﻿using BolnicaSims.Storage;
+using LiveCharts;
 using LiveCharts.Wpf;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -23,7 +25,7 @@ namespace BolnicaSims.View.TableView
 
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
-        public Func<double, string> YFormatter { get; set; }
+        public Func<double, string> Formatter { get; set; }
 
         public StatistikaDoktor()
         {
@@ -31,43 +33,28 @@ namespace BolnicaSims.View.TableView
 
             SeriesCollection = new SeriesCollection
             {
-                new LineSeries
+                new ColumnSeries
                 {
-                    Title = "Series 1",
-                    Values = new ChartValues<double> { 4, 6, 5, 2 ,4 }
-                },
-                new LineSeries
-                {
-                    Title = "Series 2",
-                    Values = new ChartValues<double> { 6, 7, 3, 4 ,6 },
-                    PointGeometry = null
-                },
-                new LineSeries
-                {
-                    Title = "Series 3",
-                    Values = new ChartValues<double> { 4,2,7,2,7 },
-                    PointGeometry = DefaultGeometries.Square,
-                    PointGeometrySize = 15
+                    Title = DateTime.Now.AddMonths(-1).Month.ToString() + "/" + DateTime.Now.Year.ToString(),
+                    Values = new ChartValues<double> { a-2, b+6, c+8}
                 }
             };
 
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
-            YFormatter = value => value.ToString("C");
-
-            SeriesCollection.Add(new LineSeries
+            //adding series will update and animate the chart automatically
+            SeriesCollection.Add(new ColumnSeries
             {
-                Title = "Series 4",
-                Values = new ChartValues<double> { 5, 3, 2, 4 },
-                LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-                PointGeometry = Geometry.Parse("m 25 70.36218 20 -28 -20 22 -8 -6 z"),
-                PointGeometrySize = 50,
-                PointForeground = Brushes.Gray
+                Title = DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(),
+                Values = new ChartValues<double> { a, b, c}
             });
 
-            //modifying any series values will also animate and update the chart
-            SeriesCollection[3].Values.Add(5d);
+            Labels = new[] { "Izdati recepti", "Izdati uputi", "Bolnicka lecenja"};
+            Formatter = value => value.ToString("N");
 
             DataContext = this;
         }
+
+        private double a = ReceptiStorage.Instance.recepti.Count;
+        private double b = TerminStorage.Instance.termini.Count;
+        private double c = LecenjaStorage.Instance.lecenja.Count;
     }
 }

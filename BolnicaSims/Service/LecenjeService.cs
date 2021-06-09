@@ -31,7 +31,7 @@ namespace BolnicaSims.Service
             string poruka = "";
             foreach (Lecenje l in LecenjaStorage.Instance.Read())
             {
-                if (l.Pacijent.zdravstveniKarton.BrojKartona == pacijent.zdravstveniKarton.BrojKartona)
+                if (l.Pacijent.korisnik.ImePrezime == pacijent.korisnik.ImePrezime)
                 {
                     poruka = "Izabrani pacijent je vec na bolnickom lecenju";
                 }
