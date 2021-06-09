@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.AddView"
         mc:Ignorable="d"
-        Title="DodavanjeTerminaAdvanced" Height="450" Width="800" ResizeMode="NoResize">
+        Title="DodavanjeTerminaAdvanced" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid Background="Azure">
-        <Label Content="ZAKAZI TERMIN" Height=" 30" HorizontalAlignment="Center" FontSize="13" Margin="0,10,0,394"/>
+        <Label Content="IZDAJ UPUT" Height=" 30" HorizontalAlignment="Center" Margin="0,10,0,394" FontSize="14" FontWeight="DemiBold"/>
         <StackPanel Margin="0,45,0,-10">
             <WrapPanel Height="15" />
             <WrapPanel Height="170">

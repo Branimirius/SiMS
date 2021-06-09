@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims.View.EditView"
         mc:Ignorable="d"
-        Title="ValidacijaLekova" Height="450" Width="450">
+        Title="ValidacijaLekova" Height="450" Width="450" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <Style TargetType="{x:Type Button}">

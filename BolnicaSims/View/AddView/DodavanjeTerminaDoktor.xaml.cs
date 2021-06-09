@@ -25,13 +25,20 @@ namespace BolnicaSims.View.AddView
         {
             InitializeComponent();
             comboBox2.ItemsSource = PacijentController.Instance.getPacijentiImena();
+            txtBox1.Text = DateTime.Now.AddMinutes(30).ToString();
         }
 
         private void dodavanjeBtn_Click(object sender, RoutedEventArgs e)
         {
+            if(comboBox2.SelectedItem == null)
+            {
+                MessageBox.Show("Izaberite pacijenta");
+            }
+            else { 
             TerminController.Instance.dodajTermin(txtBox1.Text, KorisnikController.Instance.getUlogovaniKorisnik().Ime + ' ' + KorisnikController.Instance.getUlogovaniKorisnik().Prezime, (string)comboBox2.SelectedItem);
             //ListaSopstvenihTermina.Instance.refreshListaSopstvenihTermina();
             this.Close();
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

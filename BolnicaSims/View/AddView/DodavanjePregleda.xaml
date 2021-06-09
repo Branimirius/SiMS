@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:BolnicaSims"
           xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DodavanjePregleda" Height="345" Width="446" WindowStartupLocation="CenterScreen">
+        Title="DodavanjePregleda" Height="345" Width="446" WindowStartupLocation="CenterScreen" >
    
     <Grid  Margin="0,0,0,-1">
        

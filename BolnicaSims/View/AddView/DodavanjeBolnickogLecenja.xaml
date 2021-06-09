@@ -19,7 +19,7 @@
             <RowDefinition />
             <RowDefinition Height="0.4*"/>
         </Grid.RowDefinitions>
-        <Label x:Name="label2" Content="Dodavanje Bolnickog lecenja" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Height="43" Width="268" FontSize=" 20"/>
+        <Label x:Name="label2" Content="Dodavanje Bolnickog lecenja" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Height="43" Width="268" FontSize="20" FontWeight="DemiBold"/>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
@@ -35,15 +35,15 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <ComboBox x:Name="comboBoxPacijenti" HorizontalAlignment="Left" Grid.Column="2" VerticalAlignment="Center" Width="120" />
-            <ComboBox x:Name="comboBoxSobe" HorizontalAlignment="Left" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Width="120" SelectionChanged="comboBoxSobe_SelectionChanged" BorderBrush="White"/>
+            <ComboBox x:Name="comboBoxPacijenti" HorizontalAlignment="Center" Grid.Column="2" VerticalAlignment="Center" Width="150" Height="26" />
+            <ComboBox x:Name="comboBoxSobe" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" Width="150" SelectionChanged="comboBoxSobe_SelectionChanged" Height="30"/>
             <Label x:Name="label" Content="Pacijent: " HorizontalAlignment="Left"  Grid.Column="1" VerticalAlignment="Center"/>
             <Label x:Name="label1" Content="Soba: " HorizontalAlignment="Left" Grid.Row="1"  Grid.Column="1" VerticalAlignment="Top" Margin="0,15,0,0"/>
 
             <TextBlock x:Name="txtBlock1" HorizontalAlignment="Center" Text="Pocetak lecenja: " TextWrapping="Wrap" FontSize="12" Height="32" Width="150" Grid.Row="2" Grid.Column="1" Margin="0,17,0,11" />
             <DatePicker x:Name="datePocetak" Grid.Row="2" Grid.Column="2" VerticalAlignment="Center"  />
             <TextBlock x:Name="txtBlock1_Copy" HorizontalAlignment="Left" Text="Kraj Lecenja: " TextWrapping="Wrap" VerticalAlignment="Top" FontSize="12" Height="32" Width="142" Grid.Row="3" Grid.Column="1" Margin="0,17,0,0"  />
-            <DatePicker x:Name="dateKraj" Grid.Row="3" Grid.Column="2" Margin="0,17,0,19" />
+            <DatePicker x:Name="dateKraj" Grid.Row="3" Grid.Column="2" VerticalAlignment="Center" />
         </Grid>
 
         <Grid Grid.Row="2">

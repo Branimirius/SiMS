@@ -22,7 +22,7 @@
         </DataGrid>
         <StackPanel  Orientation="Horizontal" Margin="20,340,-2,10">
             <Button x:Name="button" Content="Izmeni" Background="#FFFFFDFD" Width="100" Height="30" Click="button_Click"/>
-            <TextBlock Width="35"/>
+            <TextBlock Width="15"/>
             <Button Click="button_karton_Click" Background="#FFFFFDFD" Height="30" Width="46">
                 <Image Source="/Resources/report.png"/>
             </Button>

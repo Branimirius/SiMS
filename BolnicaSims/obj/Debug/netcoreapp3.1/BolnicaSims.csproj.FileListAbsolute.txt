@@ -628,3 +628,5 @@ C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.baml
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.g.cs
 C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.baml
