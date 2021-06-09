@@ -136,6 +136,16 @@ namespace BolnicaSims.View.TransferView
                 MessageBox.Show("U polju za minute su dozvoljene samo cifre");
                 return false;
             }
+            if (int.Parse(txtBoxVreme.Text) > 24 || int.Parse(txtBoxVreme.Text) < 0)
+            {
+                MessageBox.Show("U polju za sate unos nije ispravan.");
+                return false;
+            }
+            if (int.Parse(txtBoxVremeMinuti.Text) > 59 || int.Parse(txtBoxVremeMinuti.Text) < 0)
+            {
+                MessageBox.Show("U polju za minute unos nije ispravan.");
+                return false;
+            }
             return true;
         }
     }

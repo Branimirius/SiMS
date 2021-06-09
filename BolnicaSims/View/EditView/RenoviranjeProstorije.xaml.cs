@@ -141,6 +141,16 @@ namespace BolnicaSims.View.EditView
                 MessageBox.Show("U polju za minute su dozvoljene samo cifre");
                 return false;
             }
+            if(int.Parse(txtSati.Text) > 24 || int.Parse(txtSati.Text) < 0)
+            {
+                MessageBox.Show("U polju za sate unos nije ispravan.");
+                return false;
+            }
+            if (int.Parse(txtMinuti.Text) > 59 || int.Parse(txtMinuti.Text) < 0)
+            {
+                MessageBox.Show("U polju za minute unos nije ispravan.");
+                return false;
+            }
 
             return true;
         }
