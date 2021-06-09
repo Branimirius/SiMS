@@ -65,10 +65,11 @@ namespace BolnicaSims.View.AddView
         private bool valid()
         {
             Regex regex = new Regex("^[a-zA-Z]+$");
+            Regex regexEmpty = new Regex("^[a-zA-Z]*$");
             Regex regexNum = new Regex("^[0-9]+$");
-            if (!regex.IsMatch(txtUsername.Text))
+            if (txtUsername.Text.Equals(String.Empty))
             {
-                MessageBox.Show("U polju za username su dozvoljena samo slova");
+                MessageBox.Show("Popunite polje za username.");
                 return false;
             }
             if (!regex.IsMatch(txtPrezime.Text))
@@ -81,14 +82,15 @@ namespace BolnicaSims.View.AddView
                 MessageBox.Show("U polju za ime su dozvoljena samo slova");
                 return false;
             }
-            if (!regex.IsMatch(textBoxSpec.Text))
-            {
-                MessageBox.Show("U polju za specijalizaciju su dozvoljena samo slova");
-                return false;
-            }
+            
             if (!regexNum.IsMatch(txtJmbg.Text))
             {
                 MessageBox.Show("U polju za jmbg su dozvoljeni samo brojevi");
+                return false;
+            }
+            if (!regexEmpty.IsMatch(textBoxSpec.Text))
+            {
+                MessageBox.Show("U polju za specijalizaciju su dozvoljena samo slova.");
                 return false;
             }
 
