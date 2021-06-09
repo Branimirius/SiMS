@@ -24,7 +24,7 @@ namespace BolnicaSims.Model
 
         public String StringValid
         {
-            get { return Verifikovan ? "Da" : "Ne"; }
+            get { return this.stanjeLeka.stringValid(); }
         }
         public ILek stanjeLeka { get; set; }
         

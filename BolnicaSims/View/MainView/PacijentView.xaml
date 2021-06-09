@@ -9,7 +9,7 @@
         Title="PacijentView" Height="450" Width="799" WindowStartupLocation="CenterScreen">
 
 
-    <Grid  Margin="0,0,0,1">
+    <Grid Margin="0,0,0,1" x:Name="Daddy" >
         <TabControl TabStripPlacement="Left" Margin="0,123,0,0">
             <TabItem Name="TerminiTab" Header="{local:Loc TerminiTab}">
                 <Grid  Margin="0,0,0,-24" Width="699">
@@ -70,19 +70,21 @@
 
         </TabControl>
 
-        <StackPanel Margin="0,0,0,310">
-            <WrapPanel Width="803" Height="71">
+        <StackPanel x:Name="stack" Margin="0,0,0,310">
+            <WrapPanel x:Name="wrap" Width="803" Height="71">
                 <Button  HorizontalAlignment="Left" Margin="10,4,0,0" VerticalAlignment="Top" Width="58" Click="Button_Click_1" Height="34" ToolTip="Logout" >
                     <Image Source="../../Resources/logout.png" Width="25" Height="30" />
                 </Button>
-                <Button Click="ButtonObavestenja_Click" Margin="180,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije" Foreground="White">
+                <!--<Button Click="ButtonObavestenja_Click" Margin="180,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="60" Height="28" RenderTransformOrigin="1,0" ToolTip="Notifikacije" Foreground="White">
                     <Image Source="../../Resources/bell.png" Width="25" Height="20"/>
-                </Button>
+                </Button>-->
                 <Button  Content="{local:Loc Jezik}" ToolTip="Menjanje jezika aplikacije" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_2" />
                 <Button  Content="{local:Loc AnketaDoktor}" ToolTip="Popunite anketu za doktora" Click="Button_Click_AnketaDoktor" Margin="10,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="105" Height="28"/>
                 <Button x:Name="btnAnketaBolnica"  Content="{local:Loc AnketaBolnica}" ToolTip="Popunite anketu za bolnicu nakon 3 odradjena pregleda" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="105" Height="28" Click="Button_Click_AnketaBolnica" Background="#FFCBD8DB"/>
-
-                <Image Source="/Resources/firstAid.png" Margin="670,-50,50,0" Width="89"/>
+                <Button x:Name="btnFeedback" Click="btnFeedback_Click" ToolTip="Ostavite feedback. Ocenite aplikaciju." Margin="670,-40,50,0" Width="70" Height="70">
+                    <Image Source="/Resources/firstAid.png" Width="70" Height="70" />
+                </Button>
+                
             </WrapPanel>
             <WrapPanel Height="42" Width="160" HorizontalAlignment="Right">
                 <TextBlock Text="{local:Loc BolnicaZdravo}" FontSize="16" FontWeight="Bold" Height="21" Width="131" TextAlignment="Right" HorizontalAlignment="Stretch"/>
