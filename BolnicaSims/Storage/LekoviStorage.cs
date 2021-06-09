@@ -41,8 +41,9 @@ namespace BolnicaSims.Storage
                 if (!l.Verifikovan)
                 {
                     neverifikovaniLekovi.Add(l);
-                    l.stanjeLeka = new NevalidanState();
-                }                
+                    //l.stanjeLeka = new NevalidanState();
+                }
+                
             }
         }
 
