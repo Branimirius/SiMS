@@ -119,11 +119,13 @@ namespace BolnicaSims.View.EditView
         {
             DateTime datum = (DateTime)datePocetak.SelectedDate;
             DateTime juce = DateTime.Now.AddDays(-1);
+            /*
             if(datum < juce)
             {
                 MessageBox.Show("Ne sme se uneti datum iz proslosti");
                 return false;
             }
+            */
             
             int parsedValue;
             if (!int.TryParse(txtTrajanje.Text, out parsedValue))
