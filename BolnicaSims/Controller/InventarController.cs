@@ -27,6 +27,10 @@ namespace BolnicaSims.Controller
         {
             InventarService.Instance.dodajInventar(naziv, proizvodjac, kolicina, staticki);
         }
+        public void ukloniInventar(Inventar inventar)
+        {
+            InventarService.Instance.ukloniInventar(inventar);
+        }
         public void transferujInventar(int kolicina, Prostorija odrediste)
         {
             InventarService.Instance.transferujInventar(kolicina, odrediste);

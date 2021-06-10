@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Model;
+using BolnicaSims.Model.LekStates;
 using BolnicaSims.Storage;
 using Model;
 using System;
@@ -27,6 +28,7 @@ namespace BolnicaSims.Service
         {
             
             Lek tempLek = new Lek(naziv, proizvodjac, doza, alergen, kolicina, GenID(), false);
+            tempLek.stanjeLeka = new CekanjeState();
             DoktorService.Instance.dodajNevalidanLek(tempLek, doktori);
             LekoviStorage.Instance.lekovi.Add(tempLek);
             LekoviStorage.Instance.lekoviImena.Add(naziv + doza);
@@ -36,6 +38,7 @@ namespace BolnicaSims.Service
         public void validacijaLeka(Lek lek)
         {
             GetLek(lek).Verifikovan = true;
+            GetLek(lek).stanjeLeka = new ValidanState();
             LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
             DoktorService.Instance.ukloniNevalidanLek(lek);
             LekoviStorage.Instance.Save();
@@ -44,6 +47,7 @@ namespace BolnicaSims.Service
         public void odbijanjeLeka(Lek lek, String komentar)
         {
             NotificationService.Instance.rejectedDrugsNotification(KorisniciStorage.Instance.ulogovaniKorisnik, lek, komentar);
+            GetLek(lek).stanjeLeka = new NevalidanState();
             LekoviStorage.Instance.neverifikovaniLekovi.Remove(lek);
             DoktorService.Instance.ukloniNevalidanLek(lek);
             LekoviStorage.Instance.Save();
@@ -60,6 +64,7 @@ namespace BolnicaSims.Service
                     l.Alergija = lek.Alergija;
                     l.Doza = lek.Doza;
                     l.Verifikovan = lek.Verifikovan;
+                    l.stanjeLeka = new CekanjeState();
                 }    
             }
             LekoviStorage.Instance.Save();

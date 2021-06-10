@@ -5,32 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize">
+        Title="DoktorView" Height="450" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Style TargetType="{x:Type MenuItem}">
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+        <RoutedUICommand x:Key="MyCommand1" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand2" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand3" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand4" Text="Text" />
+        <RoutedUICommand x:Key="MyCommand5" Text="Text" />
+    </Window.Resources>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="{StaticResource MyCommand1}" Executed="ManualColumns_Click" />
+        <CommandBinding Command="{StaticResource MyCommand2}" Executed="ManualColumns_Click2" />
+        <CommandBinding Command="{StaticResource MyCommand3}" Executed="ManualColumns_Click3" />
+        <CommandBinding Command="{StaticResource MyCommand4}" Executed="ManualColumns_Click4" />
+        <CommandBinding Command="{StaticResource MyCommand5}" Executed="ManualColumns_Click5" />
+
+    </Window.CommandBindings>
+
+    <Window.InputBindings>
+        <KeyBinding Key="Q" Modifiers="Ctrl" Command="{StaticResource MyCommand1}" />
+        <KeyBinding Key="W" Modifiers="Ctrl" Command="{StaticResource MyCommand2}" />
+        <KeyBinding Key="E" Modifiers="Ctrl" Command="{StaticResource MyCommand3}" />
+        <KeyBinding Key="R" Modifiers="Ctrl" Command="{StaticResource MyCommand4}" />
+        <KeyBinding Key="T" Modifiers="Ctrl" Command="{StaticResource MyCommand5}" />
+
+
+    </Window.InputBindings>
     <Grid Background="Azure">
+        <Image Margin="5,5,5,5" Name="imgPicture" Stretch="Uniform" />
         <Menu x:Name="menu" Margin="0,0,689,0" Background ="PaleTurquoise">
-            <MenuItem x:Name="menuItem1" Header="Zakazani &#xD;&#xA;Pregledi" Click="ManualColumns_Click" Height="66" Width="108">
+            <MenuItem x:Name="menuItem1" Header="Pregled&#xD;&#xA;Termina" Click="ManualColumns_Click" Height="68" Width="108">
             </MenuItem>
-            <MenuItem x:Name="menuItem2" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Height="66" Width="108">
+            <MenuItem x:Name="menuItem2" Header="Pregled &#xA;Lekova" Click="ManualColumns_Click2" Height="68" Width="108">
             </MenuItem>
-            <MenuItem x:Name="menuItem3" Header="Pregled &#xA;Pacijenata" Click="ManualColumns_Click3" Height="66" Width="108">
+            <MenuItem x:Name="menuItem3" Header="Pregled &#xA;Pacijenata" Click="ManualColumns_Click3" Height="68" Width="108">
             </MenuItem>
-            <MenuItem x:Name="menuItem4" Header="Bolnicka &#xA;Lecenja" Click="ManualColumns_Click4" Height="66" Width="108">
+            <MenuItem x:Name="menuItem4" Header="Bolnicka &#xA;Lecenja" Click="ManualColumns_Click4" Height="68" Width="108">
+            </MenuItem>
+            <MenuItem x:Name="menuItem5" Header="Statistika" Click="ManualColumns_Click5" Height="68" Width="108">
             </MenuItem>
         </Menu>
         <Frame x:Name="frame" Margin="96,0,0,0" Height="434" NavigationUIVisibility="Hidden"/>
-        <StackPanel Margin="591,359,0,10" Orientation="Horizontal">
-            <Button x:Name="validacijaBtn" Content="Validacija leka"  Background ="White" Click ="validacijaBtn_Click" Height="31" Width="89" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <StackPanel Margin="605,361,10,14" Orientation="Horizontal">
+            <Button x:Name="validacijaBtn" Content="Validacija leka"  Background ="White" Click ="validacijaBtn_Click" Height="31" Width="80"/>
             <TextBlock x:Name="text2" TextWrapping="Wrap" Width="10"/>
             <Button x:Name="obavestenjaBtn" Click="Button_Click" Background ="White" Height="30" Width="32" HorizontalAlignment="Center" VerticalAlignment="Center">
                 <Image Source="/Resources/bell.png" Width="25" Height="20"/>
             </Button>
-            <TextBlock x:Name="text3" TextWrapping="Wrap" Width="10"/>
-            <Button Click ="ButtonLogOut_Click" Background ="White" FontSize="9"  Height="30" Width="45" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock x:Name="text3_Copy" TextWrapping="Wrap" Width="10"/>
+            <Button Click ="ButtonLogOut_Click" Background ="White" FontSize="9"  Height="30" Width="36" VerticalAlignment="Center">
                 <Image Source="/Resources/logout.png" Width="25" Height="30" />
             </Button>
-            <TextBlock x:Name="text3_Copy" TextWrapping="Wrap" Width="10"/>
         </StackPanel>
-        <Image Source="/Resources/firstAid.png" Margin="-7,347,688,0"/>
+        <Button Margin="0,341,689,0" Background="#FF4BB8AE" Click="Button_Click_2" ToolTip="FEEDBACK">
+            <Image Source="/Resources/firstAid.png" />
+        </Button>
 
     </Grid>
 </Window>

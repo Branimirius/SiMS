@@ -466,3 +466,175 @@ D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\Dod
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\ListaBolnickihLecenja.baml
 D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\PacijentKarton.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeBolnickogLecenja.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\AddView\DodavanjeBolnickogLecenja.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\EditView\IzmenaBolnickogLecenja.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajUpravnikView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajUpravnikView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.Extensions.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.Helpers.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.IOC.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.MVVM.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.WPF.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\protobuf-net.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\protobuf-net.Core.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Management.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Xml.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Properties.Resources.resources
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Properties.Resources.sr-LATN.resources
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.GenerateResource.cache
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajPacijentView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajPacijentView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\SettingsView\PodesavanjaUpravnik.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\SettingsView\PodesavanjaUpravnik.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainViewWin.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainViewWin.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\UpravnikWizardView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardFirstPage.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\UpravnikWizardView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardFirstPage.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardSecondPage.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardSecondPage.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardLastPage.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardThirdPage.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardLastPage.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardThirdPage.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeInventara.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeInventara.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainViewWin.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\UpravnikWizardView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardFirstPage.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardLastPage.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardSecondPage.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardThirdPage.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajPacijentView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajUpravnikView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeInventara.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\SettingsView\PodesavanjaUpravnik.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\GeneratedInternalTypeHelper.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.Extensions.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.Helpers.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.IOC.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.MVVM.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Haley.WPF.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Microsoft.Win32.Registry.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Microsoft.Xaml.Behaviors.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\protobuf-net.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\protobuf-net.Core.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Formats.Asn1.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Management.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.AccessControl.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Cng.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Pkcs.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Xml.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Security.Principal.Windows.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\System.Windows.Extensions.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\Microsoft.Win32.Registry.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Management.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Security.AccessControl.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Cng.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Security.Cryptography.Pkcs.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Principal.Windows.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\PomocMainViewWin.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\UpravnikWizardView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardFirstPage.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardLastPage.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardSecondPage.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\HelpView\WizardThirdPage.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajPacijentView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajUpravnikView.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\DeleteView\BrisanjeInventara.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\SettingsView\PodesavanjaUpravnik.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Properties.Resources.resources
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.Properties.Resources.sr-LATN.resources
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.GenerateResource.cache
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\sr-LATN\BolnicaSims.resources.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims.csproj.CopyComplete
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_1.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_2.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_3.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_4.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_5.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_7.png
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_6.png
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims_Content.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_1.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_2.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_3.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_4.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_5.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_7.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\Resources\DemoImg\Screenshot_6.png
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\bin\Debug\netcoreapp3.1\LiveCharts.Wpf.dll
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\BolnicaSims_Content.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\Demo\DemoDoktor.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\MVVM\Views\IzvestajDoktorView.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\TableView\StatistikaDoktor.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\UpravnikFeedback.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\App.baml
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\PacijentFeedback.g.cs
+C:\Users\brani\OneDrive\Documents\GitHub\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\PacijentFeedback.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\PacijentFeedback.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\App.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\PacijentFeedback.baml
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\DoktorFeedback.g.cs
+D:\OISISI - github rep\SiMS\BolnicaSims\obj\Debug\netcoreapp3.1\View\Feedback\DoktorFeedback.baml

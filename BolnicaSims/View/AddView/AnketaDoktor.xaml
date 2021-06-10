@@ -3,18 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BolnicaSims.View.AddView"
+        xmlns:local="clr-namespace:BolnicaSims.View.AddView" 
+        xmlns:ns="clr-namespace:BolnicaSims"
         mc:Ignorable="d"
-        Title="AnketaDoktor" Height="442" Width="545">
-    <Grid  Background="#FF69E2EE" Height="426">
-        <ComboBox x:Name="comboBoxDoktor" HorizontalAlignment="Left" Margin="285,48,0,0" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="93,47,0,0" Text="Doktor:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="93,109,0,0" Text="Ocena(1-10):" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBlock HorizontalAlignment="Left" Margin="93,167,0,0" Text="Komentar:" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
-        <TextBox x:Name="txtBoxKomentar" HorizontalAlignment="Left" Margin="93,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408" Height="134"/>
-        <Button Content="Potvrdi" HorizontalAlignment="Left" Margin="187,372,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Potvrdi"/>
-        <Button Content="Ponisti" HorizontalAlignment="Left" Margin="324,372,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Ponisti"/>
-        <TextBox  x:Name="txtBoxOcena" HorizontalAlignment="Left" Margin="285,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21"/>
+        Title="AnketaDoktor" Height="442" Width="545" WindowStartupLocation="CenterScreen">
+    
+    <Grid  Height="426">
+        <StackPanel />
+        <ComboBox x:Name="comboBoxDoktor" HorizontalAlignment="Left" Margin="285,48,0,0" VerticalAlignment="Top" Width="120" ToolTip="Izaberite doktora kod kog ste imali pregled "/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,47,0,0" Text="{ns:Loc Doktor}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,109,0,0" Text="{ns:Loc Ocena}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <TextBlock HorizontalAlignment="Left" Margin="93,167,0,0" Text="{ns:Loc Komentar}" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="16"/>
+        <TextBox x:Name="txtBoxKomentar" HorizontalAlignment="Left" Margin="93,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="408" Height="134" ToolTip="Unesite komentar za izabranog doktora" />
+        <Button Content="{ns:Loc Potvrdi}" HorizontalAlignment="Left" Margin="187,372,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Potvrdi"/>
+        <Button Content="{ns:Loc Ponisti}" HorizontalAlignment="Left" Margin="324,372,0,0" VerticalAlignment="Top" Height="31" Width="68" Click="Button_Click_Ponisti"/>
+        <TextBox  x:Name="txtBoxOcena" HorizontalAlignment="Left" Margin="285,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="21" ToolTip="Unesite ocenu od 1 do 10" >
+        </TextBox>
 
     </Grid>
 </Window>

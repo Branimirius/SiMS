@@ -26,6 +26,7 @@ namespace BolnicaSims
         public IzmenaPregleda()
         {
             InitializeComponent();
+            txtBox1.Text = DateTime.Now.AddMinutes(30).ToString();
         }
 
         private void ButtonIzmeni_Click(object sender, RoutedEventArgs e)
@@ -59,6 +60,11 @@ namespace BolnicaSims
             DateTime noviTermin = DateTime.Parse(vreme);
             DateTime noviTermin2 = DateTime.Parse(vreme);
             DateTime noviTermin3 = stariTermin.AddDays(-1);
+            if(DateTime.Now > stariTermin)
+            {
+                MessageBox.Show("Termin ne moze da se pomera u proslost");
+                return false;
+            }
             if (DateTime.Now > noviTermin3)
             {
                 MessageBox.Show("Termin ne moze da se pomera 24h pre termina");
@@ -83,6 +89,10 @@ namespace BolnicaSims
 
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 
 }

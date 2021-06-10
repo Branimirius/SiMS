@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.HelpView;
 using BolnicaSims.Service;
 using Model;
 using System;
@@ -30,10 +31,11 @@ namespace BolnicaSims
 
         private void buttonIzmena_Click(object sender, RoutedEventArgs e)
         {
-            /*
-            Prostorija tempProstorija = new Prostorija(TerminService.Instance.GenID(), txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
-            ListaProstorija.Instance.izmeniProstoriju(tempProstorija, txtBox2.Text, txtBox3.Text, txtBox4.Text, txtBox5.Text);
-            */
+           
+            if (!valid())
+            {
+                return;
+            }
             if (comboTip.SelectedItem == null)
             {
                 MessageBox.Show("nije izabran tip");
@@ -70,6 +72,29 @@ namespace BolnicaSims
             txtBox1.IsEnabled = false;
             txtBox2.IsEnabled = false;
             btnIzmeni.IsEnabled = false;
+        }
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
+        }
+        private bool valid()
+        {
+
+            
+            int parsedValue;
+            if (!int.TryParse(txtBox1.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za broj su dozvoljene samo cifre");
+                return false;
+            }
+            if (!int.TryParse(txtBox2.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za sprat su dozvoljene samo cifre");
+                return false;
+            }
+            return true;
         }
     }
 }

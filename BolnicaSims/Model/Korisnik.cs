@@ -60,6 +60,7 @@ namespace Model
 
         public Korisnik()
         {
+            Ime = "";
         }
         public Korisnik(KorisnikDTO korisnik)
         {

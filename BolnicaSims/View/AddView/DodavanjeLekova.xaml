@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="DodavanjeLekova" Height="350" Width="300">
     <Window.Resources>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -79,8 +86,13 @@
                 </WrapPanel>
                 <WrapPanel Height="10"/>
                 <WrapPanel>
+                    
                     <TextBlock Text="Naziv Leka:  " Height="25" TextAlignment="Right" Width="120" />
                     <TextBox x:Name="txtNaziv" Height="25" Width="120" />
+                    <TextBlock Text=" " Width="10"/>
+                    <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" ToolTip="Pomoc." >
+                        <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                    </Button>
                 </WrapPanel>
                 <WrapPanel Height="10"/>
                 <WrapPanel>
@@ -110,7 +122,7 @@
                     <ListView x:Name="listSviDoktori" SelectionChanged="listSviDoktori_Selected" Height="100" Width="240">
                         <ListView.ItemTemplate>
                             <DataTemplate>
-                                <WrapPanel>
+                                <WrapPanel Background="#a9bec4">
                                     <TextBlock Text="{Binding korisnik.ImePrezime}"/>
                                     <TextBlock Text=" "/>
                                     <TextBlock Text="{Binding Specijalizacija}"/>

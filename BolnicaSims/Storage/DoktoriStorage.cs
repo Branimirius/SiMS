@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Interface;
+using BolnicaSims.Model;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using System.Text;
 namespace BolnicaSims.Storage
 {
     [Serializable]
-    class DoktoriStorage
+    class DoktoriStorage : IStorage
     {
         private static DoktoriStorage instance = null;
         public static DoktoriStorage Instance
@@ -36,14 +37,11 @@ namespace BolnicaSims.Storage
 
         public DoktoriStorage()
         {
-            doktori = this.Load();
+            this.Load();
 
-            //Notifikacija n1 = new Notifikacija("Dobrodosli", "Dev Team 28", "Zelimo vam dobrodoslicu u sistem");
             foreach (Doktor d in doktori)
             {
                 doktoriImena.Add(d.korisnik.Ime + " " + d.korisnik.Prezime);
-                //d.korisnik.Notifikacije = new ObservableCollection<Notifikacija>();
-                //d.korisnik.Notifikacije.Add(n1);
             }
 
             foreach(Doktor d in doktori)
@@ -55,9 +53,13 @@ namespace BolnicaSims.Storage
             }
 
         }
-        public ObservableCollection<Doktor> Read()
+
+        public void Load()
         {
-            return doktori;
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
+            doktori = (ObservableCollection<Doktor>)formatter.Deserialize(stream);
+            stream.Close();
         }
 
         public void Save()
@@ -66,18 +68,6 @@ namespace BolnicaSims.Storage
             Stream stream = new FileStream(FilePath, FileMode.Create, FileAccess.Write);
             formatter.Serialize(stream, doktori);
             stream.Close();
-        }
-
-        public ObservableCollection<Doktor> Load()
-        {
-            // TODO: implement
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(FilePath, FileMode.Open, FileAccess.Read);
-            doktori = (ObservableCollection<Doktor>)formatter.Deserialize(stream);
-            stream.Close();
-            return doktori;
-            
-
         }
     }
 }

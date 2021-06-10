@@ -30,13 +30,14 @@ namespace BolnicaSims.View.AddView
             //comboBox.DisplayMemberPath = "ImeLeka";
             labelDoktor.Content = KorisnikController.Instance.getUlogovaniKorisnik().Ime + ' ' + KorisnikController.Instance.getUlogovaniKorisnik().Prezime;
             labelPacijent.Content = PacijentController.Instance.getSelektovanPacijent().korisnik.Ime + ' ' + PacijentController.Instance.getSelektovanPacijent().korisnik.Prezime;
+            textBox1.Text = DateTime.Now.AddDays(1).Date.ToString("dd/MM/yyyy");
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            if (textBox1.Text == "")
+            if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text=="")
             {
-                MessageBox.Show("Datum nije unet");
+                MessageBox.Show("Unesite sve potrebne parametre");
             }
             else
             {
@@ -53,7 +54,7 @@ namespace BolnicaSims.View.AddView
                     else
                     {
                         Recept tempRecept = new Recept(PacijentiStorage.Instance.selektovanPacijent, DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik), comboBox.SelectedItem.ToString(), DateTime.Parse(textBox1.Text), textBox2.Text, textBox3.Text); ;
-                        ReceptiStorage.Instance.Read().Add(tempRecept);
+                        ReceptiStorage.Instance.recepti.Add(tempRecept);
                         PacijentService.Instance.getPacijent(PacijentiStorage.Instance.selektovanPacijent).recepti.Add(tempRecept);
                         ReceptiStorage.Instance.Save();
                         PacijentiStorage.Instance.Save();
@@ -70,11 +71,6 @@ namespace BolnicaSims.View.AddView
         }
 
         private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

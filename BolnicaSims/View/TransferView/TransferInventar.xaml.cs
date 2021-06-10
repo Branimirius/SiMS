@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.HelpView;
 using BolnicaSims.Service;
 using BolnicaSims.Storage;
 using Model;
@@ -44,13 +45,23 @@ namespace BolnicaSims.View.TransferView
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if(datumInventar.IsEnabled)
+            if(listOdrediste.SelectedItem == null)
+            {
+                MessageBox.Show("Nije izabrana prostorija.");
+                return;
+            }
+            if (datumInventar.IsEnabled)
             {
                 if(datumInventar.SelectedDate == null || txtBoxVreme.Text == String.Empty)
                 {
                     MessageBox.Show("Nisu uneti datum i vreme.");
                     return;
                 }
+                if (!validDate())
+                {
+                    return;
+                }
+                
                 DateTime vreme = (DateTime)datumInventar.SelectedDate;
                 TimeSpan ts = new TimeSpan(int.Parse(txtBoxVreme.Text), int.Parse(txtBoxVremeMinuti.Text), 0);
                 DateTime vremeSati = vreme.Add(ts);
@@ -64,8 +75,11 @@ namespace BolnicaSims.View.TransferView
                     MessageBox.Show("Prostorija se renovira u izabrano vreme.");
                     return;
                 }
-            }         
-            
+            }
+            if (!valid())
+            {
+                return;
+            }
             if (int.Parse(txtBoxKolicina.Text) > InventarStorage.Instance.selektovaniInventar.Kolicina)
             {
                 MessageBox.Show("Izabrana kolicina je prevelika.");
@@ -81,6 +95,58 @@ namespace BolnicaSims.View.TransferView
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        private void helpBtn_Click(object sender, RoutedEventArgs e)
+        {
+            //ContentArea.Content = new PomocMainView();
+            var s = new PomocMainViewWin();
+            s.ShowDialog();
+        }
+        private bool valid()
+        {
+            
+
+            int parsedValue;
+            if (!int.TryParse(txtBoxKolicina.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za kolicinu su dozvoljene samo cifre");
+                return false;
+            }
+            
+
+            return true;
+        }
+        private bool validDate()
+        {
+            int parsedValue;
+            DateTime datum = (DateTime)datumInventar.SelectedDate;
+            DateTime juce = DateTime.Now.AddDays(-1);
+            if (datum < juce)
+            {
+                MessageBox.Show("Ne sme se uneti datum iz proslosti");
+                return false;
+            }
+            if (!int.TryParse(txtBoxVreme.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za sate su dozvoljene samo cifre");
+                return false;
+            }
+            if (!int.TryParse(txtBoxVremeMinuti.Text, out parsedValue))
+            {
+                MessageBox.Show("U polju za minute su dozvoljene samo cifre");
+                return false;
+            }
+            if (int.Parse(txtBoxVreme.Text) > 24 || int.Parse(txtBoxVreme.Text) < 0)
+            {
+                MessageBox.Show("U polju za sate unos nije ispravan.");
+                return false;
+            }
+            if (int.Parse(txtBoxVremeMinuti.Text) > 59 || int.Parse(txtBoxVremeMinuti.Text) < 0)
+            {
+                MessageBox.Show("U polju za minute unos nije ispravan.");
+                return false;
+            }
+            return true;
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -94,11 +95,28 @@ namespace BolnicaSims.View.MainView
 
             var s = new PregledKartona();
             s.Show();
+
+
         }
 
         private void dataGridSopstveniTermini_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void datePicker_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ObservableCollection<Termin> azuriranaLista = new ObservableCollection<Termin>();
+            DateTime date = (DateTime)datePicker.SelectedDate;
+            foreach (Termin t in DoktorService.Instance.getKorisnikDoktor(KorisniciStorage.Instance.ulogovaniKorisnik).termini)
+            {
+                if (t.VremeTermina.Date == date.Date)
+                {
+                    azuriranaLista.Add(t);
+                }
+            }
+            dataGridSopstveniTermini.ItemsSource = azuriranaLista;
+            CollectionViewSource.GetDefaultView(dataGridSopstveniTermini.ItemsSource).Refresh();
         }
     }
 }

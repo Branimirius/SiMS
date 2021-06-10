@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.HelpView;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,20 +49,12 @@ namespace BolnicaSims
             var s = new UpravnikView();
             s.Show();
         }
-        private void login()
-        {
-
-        }
-
-        private void checkUser(string username, string password)
-        {
-
-        }
 
         private void Button_ClickLogin(object sender, RoutedEventArgs e)
         {
+            if((bool)checkWizard.IsChecked) { DoktorController.Instance.wantsDemo = true;  };
             switch (KorisnikController.Instance.Login2(txtKorisnickoIme.Text, txtLozinka.Password).Zvanje)
-            {
+            { 
                 case "Sekretar":
                     var s = new SekretarView();
                     s.Show();
@@ -73,8 +66,17 @@ namespace BolnicaSims
                     Close();
                     break;
                 case "Upravnik":
-                    var d = new UpravnikView();
-                    d.Show();
+                    if ((bool)checkWizard.IsChecked)
+                    {
+                        var d = new UpravnikWizardView();
+                        d.Show();
+                    }
+                    else
+                    {
+                        var d = new UpravnikView();
+                        d.Show();
+                    }
+                    
                     Close();
                     break;
                 case "Doktor":

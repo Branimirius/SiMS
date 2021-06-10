@@ -36,12 +36,32 @@ namespace BolnicaSims.View.AddView
             }
             else
             {
-                TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
-                DateTime pocetak = (DateTime)datePocetak.SelectedDate + vreme;
-                DateTime kraj = pocetak.AddMinutes(int.Parse(txtBox1.Text));
-                TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, (Doktor)listDoktor.SelectedItem, PacijentiStorage.Instance.selektovanPacijent, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTip.SelectedItem);
+                if (txtSati.Text == "h" || txtMinuti.Text == "Min")
+                {
+                    MessageBox.Show("Unesite vreme pocetka termina");
+                }
+                else if(Int32.Parse(txtSati.Text) > 23 || Int32.Parse(txtMinuti.Text) > 60)
+                {
+                     MessageBox.Show("Unesite validnu satnicu");
+                }
+                else if (datePocetak.SelectedDate == null)
+                {
+                    MessageBox.Show("Izaberite datum termina");
+                }
+                else if (listDoktor.SelectedItem == null || listProstorija.SelectedItem == null)
+                {
+                    MessageBox.Show("Morate da izaberete doktora i prostoriju");
+                }
+                else
+                {
+                    TimeSpan vreme = new TimeSpan(int.Parse(txtSati.Text), int.Parse(txtMinuti.Text), 0);
+                    DateTime pocetak = (DateTime)datePocetak.SelectedDate + vreme;
+                    DateTime kraj = pocetak.AddMinutes(int.Parse(txtBox1.Text));
+                    TerminController.Instance.dodajTerminAdvanced(pocetak, kraj, (Doktor)listDoktor.SelectedItem, PacijentiStorage.Instance.selektovanPacijent, (Prostorija)listProstorija.SelectedItem, (TipTermina)comboTip.SelectedItem);
+                    this.Close();
+                }
             }
-            this.Close();
+            
         }
 
         private void odustaniBtn_Click(object sender, RoutedEventArgs e)

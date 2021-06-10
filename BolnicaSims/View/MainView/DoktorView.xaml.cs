@@ -2,6 +2,8 @@
 using BolnicaSims.View.MainView;
 using BolnicaSims.View.NotificationsView;
 using BolnicaSims.View.TableView;
+using BolnicaSims.Demo;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,6 +15,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BolnicaSims.Controller;
+using BolnicaSims.View.Feedback;
 
 namespace BolnicaSims
 {
@@ -25,12 +29,21 @@ namespace BolnicaSims
         Page p2 = new ListaLekovaDoktor();
         Page p3 = new ListaPacijenataDoktor();
         Page p4 = new ListaBolnickihLecenja();
+        Page p5 = new StatistikaDoktor();
+        Page p6 = new DemoDoktor();
 
         public DoktorView()
         {
             InitializeComponent();
-            frame.Content = p1;
-            menuItem1.Background = Brushes.DarkCyan;
+            if (DoktorController.Instance.wantsDemo)
+            {
+                frame.Content = p6;
+            }
+            else
+            {
+                frame.Content = p1;
+                menuItem1.Background = Brushes.DarkCyan;
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -60,6 +73,7 @@ namespace BolnicaSims
             menuItem2.Background = null;
             menuItem3.Background = null;
             menuItem4.Background = null;
+            menuItem5.Background = null;
         }
 
         private void ManualColumns_Click2(object sender, RoutedEventArgs e)
@@ -70,6 +84,7 @@ namespace BolnicaSims
             menuItem2.Background = Brushes.DarkCyan;
             menuItem3.Background = null;
             menuItem4.Background = null;
+            menuItem5.Background = null;
         }
 
         private void ManualColumns_Click3(object sender, RoutedEventArgs e)
@@ -80,6 +95,7 @@ namespace BolnicaSims
             menuItem2.Background = null;
             menuItem3.Background = Brushes.DarkCyan;
             menuItem4.Background = null;
+            menuItem5.Background = null;
         }
 
         private void ManualColumns_Click4(object sender, RoutedEventArgs e)
@@ -90,6 +106,24 @@ namespace BolnicaSims
             menuItem2.Background = null;
             menuItem3.Background = null;
             menuItem4.Background = Brushes.DarkCyan;
+            menuItem5.Background = null;
+        }
+
+        private void ManualColumns_Click5(object sender, RoutedEventArgs e)
+        {
+            p4.ShowsNavigationUI = false;
+            frame.Content = p5;
+            menuItem1.Background = null;
+            menuItem2.Background = null;
+            menuItem3.Background = null;
+            menuItem4.Background = null;
+            menuItem5.Background = Brushes.DarkCyan;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var s = new DoktorFeedback();
+            s.Show();
         }
     }
 }

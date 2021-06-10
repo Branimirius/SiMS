@@ -7,6 +7,33 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MVVM\HelpView\PomocMainView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\PomocMainViewWin.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\UpravnikWizardView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardFirstPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardLastPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardSecondPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\HelpView\WizardThirdPage.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\IzvestajDoktorView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\Views\IzvestajPacijentView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AddView\AnketaBolnica.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -46,6 +73,9 @@
     <Compile Update="View\AddView\IzdajRecept.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\DeleteView\BrisanjeInventara.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\DeleteView\BrisanjeLeka.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -71,6 +101,15 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\EditView\ValidacijaLekova.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Feedback\DoktorFeedback.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Feedback\PacijentFeedback.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Feedback\UpravnikFeedback.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\MainView\DoktorView.xaml.cs">
@@ -135,6 +174,33 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="MVVM\HelpView\PomocMainView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\PomocMainViewWin.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\UpravnikWizardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardFirstPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardLastPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardSecondPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\HelpView\WizardThirdPage.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\IzvestajDoktorView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\Views\IzvestajPacijentView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AddView\AnketaBolnica.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -174,6 +240,9 @@
     <Page Update="View\AddView\IzdajRecept.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\DeleteView\BrisanjeInventara.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\DeleteView\BrisanjeLeka.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -199,6 +268,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\EditView\ValidacijaLekova.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Feedback\DoktorFeedback.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Feedback\PacijentFeedback.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Feedback\UpravnikFeedback.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\MainView\DoktorView.xaml">

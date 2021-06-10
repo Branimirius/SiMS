@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="DodavanjeProstorije" Height="300" Width="300" ResizeMode="CanResize">
     <Window.Resources>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -26,12 +33,12 @@
 
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Background" Value="#7596a0" />
                                 <Setter Property="Foreground" Value="Black" />
                             </Trigger>
 
                             <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="Background" Value="#cbd8db" />
+                                <Setter Property="Background" Value="#7596a0" />
                                 <Setter Property="Foreground" Value="Black" />
                             </Trigger>
                         </ControlTemplate.Triggers>
@@ -76,7 +83,12 @@
                 <Label Content="DODAVANJE PROSTORIJE" Width="158" FontWeight="Bold"/>
                 <Image Source="../../Resources/firstAid.png" Width="75" Height="50"/>
             </WrapPanel>
-            <WrapPanel Height="20"/>
+            <WrapPanel Height="20">
+                <TextBlock Text=" " Width="250"/>
+                <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" ToolTip="Pomoc." >
+                    <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                </Button>
+            </WrapPanel>
             <WrapPanel>
                 <TextBlock  TextAlignment="Right" HorizontalAlignment="Left" Text="Broj Prostorije:  " TextWrapping="Wrap" VerticalAlignment="Top" Height="17" Width="120"/>
                 <TextBox x:Name="txtBox1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Height="20"/>

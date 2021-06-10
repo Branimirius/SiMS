@@ -1,4 +1,6 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -22,7 +24,7 @@ namespace BolnicaSims.View.AddView
         public DodavanjeBolnickogLecenja()
         {
             InitializeComponent();
-            comboBoxPacijenti.ItemsSource = PacijentiStorage.Instance.Read();
+            comboBoxPacijenti.ItemsSource = PacijentiStorage.Instance.pacijenti;
             comboBoxSobe.ItemsSource = ProstorijeStorage.Instance.ordinacije;
         }
 
@@ -33,8 +35,29 @@ namespace BolnicaSims.View.AddView
 
         private void button_dodaj_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));            
-            this.Close();
+            if (dateKraj.SelectedDate == null || datePocetak.SelectedDate == null)
+            {
+                MessageBox.Show("Unesite potrebne datume");
+            }
+            else if (comboBoxPacijenti.SelectedItem == null)
+            {
+                MessageBox.Show("Izaberite pacijenta");
+            }
+            else if (comboBoxSobe.SelectedItem == null)
+            {
+                MessageBox.Show("Izaberite prostoriju");
+            }
+            else
+            {
+                MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));
+                this.Close();
+            }
+
+        }
+
+        private void comboBoxSobe_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

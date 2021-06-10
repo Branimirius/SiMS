@@ -293,7 +293,7 @@ namespace BolnicaSims.Service
             kraj.AddMinutes(30);
             Doktor slobodan = new Doktor();
 
-            foreach(Doktor d in DoktoriStorage.Instance.Read())
+            foreach(Doktor d in DoktoriStorage.Instance.doktori)
             {
                 if(slobodanDoktor(pocetak, kraj, d))
                 {

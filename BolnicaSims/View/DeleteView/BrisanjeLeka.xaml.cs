@@ -27,6 +27,7 @@ namespace BolnicaSims.View.DeleteView
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
             LekoviController.Instance.ukloniLek(LekoviStorage.Instance.selektovanLek);
+            this.Close();
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

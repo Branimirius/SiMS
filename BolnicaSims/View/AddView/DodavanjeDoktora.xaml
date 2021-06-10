@@ -7,6 +7,13 @@
         mc:Ignorable="d"
         Title="DodavanjeDoktora" Height="420" Width="310">
     <Window.Resources>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -77,7 +84,12 @@
                     <Label Content=" DODAVANJE LEKARA    " FontWeight="Bold" HorizontalAlignment="Center" FontSize="13" Height="30" Width="145"/>
                     <Image Source="../../Resources/firstAid.png" Width="60" Height="50"/>
                 </WrapPanel>
-                <WrapPanel Height="30"/>
+                <WrapPanel Height="30">
+                    <TextBlock Text=" " Width="240"/>
+                    <Button x:Name="helpBtn" Width="30" Click="helpBtn_Click" ToolTip="Pomoc." >
+                        <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                    </Button>
+                </WrapPanel>
                 <WrapPanel>
                     <TextBlock Text="Ime: " FontSize="11" Height="20" Width="120" TextAlignment="Right"/>
                     <TextBox x:Name="txtName" FontSize="11" Height="20" Width ="120"/>

@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.MVVM.Views;
 using BolnicaSims.View.AddView;
 using BolnicaSims.View.EditView;
 using Model;
@@ -48,12 +49,25 @@ namespace BolnicaSims.View.MainView
         {
             PacijentController.Instance.izmeniAnamnezu(textBox.Text, textBoxAlergija.Text);
             MessageBox.Show("Anamneza je sacuvana");
+            this.Close();
 
         }
 
         private void buttonUput_Click(object sender, RoutedEventArgs e)
         {
             var s = new DodavanjeTerminaAdvanced();
+            s.Show();
+        }
+
+        private void buttonLecenje_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new DodavanjeBolnickogLecenja();
+            s.Show();
+        }
+
+        private void button_karton_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new IzvestajDoktorView();
             s.Show();
         }
     }

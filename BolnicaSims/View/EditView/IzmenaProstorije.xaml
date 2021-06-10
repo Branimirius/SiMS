@@ -7,6 +7,16 @@
         mc:Ignorable="d"
         Title="IzmenaProstorije" Height="311" Width="285" ResizeMode="NoResize">
     <Window.Resources>
+        <Style TargetType="WrapPanel" >
+            <Setter Property="Background" Value="#a9bec4" />
+        </Style>
+        <Style TargetType="{x:Type ComboBoxItem}">
+            <Setter Property="Background" Value ="#cbd8db"  />
+
+        </Style>
+        <Style TargetType="StackPanel" >
+            <Setter Property="Background" Value="#a9bec4"  />
+        </Style>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#7596a0" />
             <Setter Property="Foreground" Value="Black" />
@@ -108,9 +118,13 @@
         <ScrollViewer VerticalScrollBarVisibility="Visible">
             <StackPanel Height="293">
                 <WrapPanel Background="#527c88" Height="30">
-                    <TextBlock Text=" " Width="54"/>
+                    <TextBlock Text=" " Width="50"/>
                     <Label Content="DETALJI PROSTORIJE" FontWeight="Bold"/>
                     <Image Source="../../Resources/firstAid.png" Width="40" Height="25"/>
+                    <TextBlock Text=" " Width="5"/>
+                    <Button x:Name="helpBtn" Width="25" Height="20" Click="helpBtn_Click" ToolTip="Pomoc." >
+                        <Image Source="../../Resources/help.png" Width="25" Height="20"/>
+                    </Button>
                 </WrapPanel>
                 <Grid Height="63">
                     <TextBlock x:Name="textBlock1" Text="Broj Prostorije" HorizontalAlignment="Left" TextWrapping="Wrap" Width="88" Height="20" Margin="12,0,0,42"/>

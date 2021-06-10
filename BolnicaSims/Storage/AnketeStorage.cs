@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Model;
+﻿using BolnicaSims.Interface;
+using BolnicaSims.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -10,7 +11,7 @@ using System.Text;
 namespace BolnicaSims.Storage
 {
     [Serializable]
-    class AnketeStorage
+    class AnketeStorage : IStorage
     {
         private static AnketeStorage instance = null;
         public static AnketeStorage Instance
@@ -32,24 +33,7 @@ namespace BolnicaSims.Storage
 
         public AnketeStorage()
         {
-         //   this.Save();
-            ankete = this.Load();
-
-
-        }
-
-
-
-
-        public void Save()
-        {
-            // TODO: implement
-            IFormatter formatter = new BinaryFormatter();
-            Stream stream = new FileStream(fileLocation, FileMode.Create, FileAccess.Write);
-            formatter.Serialize(stream, ankete);
-            stream.Close();
-
-
+            this.Load();
         }
 
         public ObservableCollection<Anketa> Read()
@@ -57,23 +41,22 @@ namespace BolnicaSims.Storage
             return ankete;
         }
 
-
-
- 
-
-
-        public ObservableCollection<Anketa> Load()
+        public void Load()
         {
-            // TODO: implement
             IFormatter formatter = new BinaryFormatter();
             Stream stream = new FileStream(fileLocation, FileMode.Open, FileAccess.Read);
-           ankete = (ObservableCollection<Anketa>)formatter.Deserialize(stream);
+            ankete = (ObservableCollection<Anketa>)formatter.Deserialize(stream);
             stream.Close();
-            return ankete;
 
         }
 
-  
+        public void Save()
+        {
+            IFormatter formatter = new BinaryFormatter();
+            Stream stream = new FileStream(fileLocation, FileMode.Create, FileAccess.Write);
+            formatter.Serialize(stream, ankete);
+            stream.Close();
+        }
 
     }
 }

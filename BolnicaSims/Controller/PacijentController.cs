@@ -47,11 +47,11 @@ namespace BolnicaSims.Controller
         }
         public void banujPacijenta(DateTime vreme, Pacijent pacijent)
         {
-            PacijentService.Instance.banujPacijenta(vreme, pacijent);
+            BanovanjeService.Instance.banujPacijenta(vreme, pacijent);
         }
         public Boolean proveriBan(DateTime trenutnoVreme, Pacijent pacijent)
         {
-            return PacijentService.Instance.proveriBan(trenutnoVreme, pacijent);
+            return BanovanjeService.Instance.proveriBan(trenutnoVreme, pacijent);
         }
 
         public Pacijent getUlogovaniPacijent()

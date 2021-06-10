@@ -35,9 +35,15 @@ namespace BolnicaSims.View.EditView
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            LekoviController.Instance.izmeniLek(new Lek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text, LekoviStorage.Instance.selektovanLek.IdLeka, (bool)checkBox.IsChecked));
-            CollectionViewSource.GetDefaultView(ListaLekovaDoktor.Instance.dataGridLekovi.ItemsSource).Refresh();
-            this.Close();
+            if (txtDoza.Text == "" || txtKolicina.Text == "" || txtNaziv.Text == "" || txtProizvodjac.Text == "")
+            {
+                MessageBox.Show("Unesite sve potrebne parametre");
+            }
+            else {
+                LekoviController.Instance.izmeniLek(new Lek(txtNaziv.Text, txtProizvodjac.Text, txtDoza.Text, txtAlergen.Text, txtKolicina.Text, LekoviStorage.Instance.selektovanLek.IdLeka, (bool)checkBox.IsChecked));
+                CollectionViewSource.GetDefaultView(ListaLekovaDoktor.Instance.dataGridLekovi.ItemsSource).Refresh();
+                this.Close();
+            }
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
