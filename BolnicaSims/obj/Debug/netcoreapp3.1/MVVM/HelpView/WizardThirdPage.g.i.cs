@@ -53,7 +53,7 @@ namespace BolnicaSims.MVVM.HelpView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/mvvm/helpview/wizardthirdpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/mvvm/helpview/wizardthirdpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\HelpView\WizardThirdPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

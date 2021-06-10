@@ -93,7 +93,7 @@ namespace BolnicaSims.View.MainView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/view/tableview/listaterminadoktor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/view/tableview/listaterminadoktor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\View\TableView\ListaTerminaDoktor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

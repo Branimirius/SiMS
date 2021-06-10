@@ -61,7 +61,7 @@ namespace BolnicaSims.Demo {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/demo/demodoktor.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/demo/demodoktor.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Demo\DemoDoktor.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -54,7 +54,7 @@ namespace BolnicaSims.MVVM.HelpView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/mvvm/helpview/wizardfirstpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/mvvm/helpview/wizardfirstpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\HelpView\WizardFirstPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

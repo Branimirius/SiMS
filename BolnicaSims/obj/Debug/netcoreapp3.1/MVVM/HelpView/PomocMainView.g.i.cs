@@ -61,7 +61,7 @@ namespace BolnicaSims.HelpView {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/BolnicaSims;component/mvvm/helpview/pomocmainview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/BolnicaSims;V1.0.0.0;component/mvvm/helpview/pomocmainview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\MVVM\HelpView\PomocMainView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
