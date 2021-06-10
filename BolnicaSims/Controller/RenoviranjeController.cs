@@ -26,11 +26,16 @@ namespace BolnicaSims.Controller
         }
         public void zakaziSpajanje(DateTime pocetak, int trajanjeDani,String prostorijaSpoj, Prostorija prostorija)
         {
-            RenoviranjeService.Instance.zakaziSpajanje(pocetak, trajanjeDani, prostorijaSpoj, prostorija);
+            //RenoviranjeService.Instance.zakaziSpajanje(pocetak, trajanjeDani, prostorijaSpoj, prostorija);
+            ZidanjeService spajanje = new ZidanjeService();
+            spajanje.zakaziSpajanje(pocetak, trajanjeDani, prostorijaSpoj, prostorija);
+
         }
         public void zakaziDeljenje(DateTime pocetak, int trajanjeDani, Prostorija prostorija)
         {
-            RenoviranjeService.Instance.zakaziDeljenje(pocetak, trajanjeDani, prostorija);
+            //RenoviranjeService.Instance.zakaziDeljenje(pocetak, trajanjeDani, prostorija);
+            ZidanjeService deljenje = new ZidanjeService();
+            deljenje.zakaziDeljenje(pocetak, trajanjeDani, prostorija);
         }
 
     }

@@ -64,25 +64,13 @@ namespace BolnicaSims.Service
 
         static void schedule_TimerSpajanje(DateTime scheduledTime)
         {
-            
-            //Console.WriteLine("### Timer Started ###");
-
-            //DateTime nowTime = DateTime.Now;
-            //DateTime scheduledTime = new DateTime(nowTime.Year, nowTime.Month, nowTime.Day, 8, 42, 0, 0); //Specify your scheduled time HH,MM,SS [8am and 42 minutes]
-            /*if (nowTime > scheduledTime)
-            {
-                scheduledTime = scheduledTime.AddDays(1);
-            }*/
-
             double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
             timer = new Timer(tickTime);
             timer.Elapsed += new ElapsedEventHandler(timer_ElapsedSpajanje);
             timer.Start();
         }
         static void schedule_TimerDeljenje(DateTime scheduledTime)
-        {
-
-            
+        {           
             double tickTime = (double)(scheduledTime - DateTime.Now).TotalMilliseconds;
             timer = new Timer(tickTime);
             timer.Elapsed += new ElapsedEventHandler(timer_ElapsedDeljenje);
