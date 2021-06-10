@@ -1,4 +1,5 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Interface;
 using BolnicaSims.Storage;
 using LiveCharts;
 using LiveCharts.Wpf;
@@ -21,7 +22,7 @@ namespace BolnicaSims.View.TableView
     /// <summary>
     /// Interaction logic for StatistikaDoktor.xaml
     /// </summary>
-    public partial class StatistikaDoktor : Page
+    public partial class StatistikaDoktor : Page, IObserver
     {
 
         public SeriesCollection SeriesCollection { get; set; }
@@ -31,7 +32,15 @@ namespace BolnicaSims.View.TableView
         public StatistikaDoktor()
         {
             InitializeComponent();
+            this.Graf();
+        }
 
+        private double a = ReceptController.Instance.getRecepti().Count;
+        private double b = TerminController.Instance.getTermini().Count;
+        private double c = LecenjeController.Instance.getLecenja().Count;
+
+        public void Graf()
+        {
             SeriesCollection = new SeriesCollection
             {
                 new ColumnSeries
@@ -45,17 +54,13 @@ namespace BolnicaSims.View.TableView
             SeriesCollection.Add(new ColumnSeries
             {
                 Title = DateTime.Now.Month.ToString() + "/" + DateTime.Now.Year.ToString(),
-                Values = new ChartValues<double> { a, b, c}
+                Values = new ChartValues<double> { a, b, c }
             });
 
-            Labels = new[] { "Izdati recepti", "Izdati uputi", "Bolnicka lecenja"};
+            Labels = new[] { "Izdati recepti", "Izdati uputi", "Bolnicka lecenja" };
             Formatter = value => value.ToString("N");
 
             DataContext = this;
         }
-
-        private double a = ReceptController.Instance.getRecepti().Count;
-        private double b = TerminController.Instance.getTermini().Count;
-        private double c = LecenjeController.Instance.getLecenja().Count;
     }
 }
