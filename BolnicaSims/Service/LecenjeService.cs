@@ -35,7 +35,8 @@ namespace BolnicaSims.Service
                 if (l.Pacijent.korisnik.ImePrezime == pacijent.korisnik.ImePrezime)
                 {
                     poruka = "Izabrani pacijent je vec na bolnickom lecenju";
-                    break;
+                    return poruka;
+
                 } 
                 
             }

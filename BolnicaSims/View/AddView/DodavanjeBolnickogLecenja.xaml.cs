@@ -35,38 +35,24 @@ namespace BolnicaSims.View.AddView
 
         private void button_dodaj_Click(object sender, RoutedEventArgs e)
         {
-            Pacijent pac = (Pacijent)comboBoxPacijenti.SelectedItem;
-            bool da = true;
-            foreach (Lecenje l in LecenjaStorage.Instance.Read())
+            if (dateKraj.SelectedDate == null || datePocetak.SelectedDate == null)
             {
-                if (l.Pacijent.korisnik.ImePrezime == pac.korisnik.ImePrezime)
-                {
-                    MessageBox.Show("Izabrani pacijent je vec na bolnickom lecenju");
-                    da = false;
-                    break;
+                MessageBox.Show("Unesite potrebne datume");
+            }
+            else if (comboBoxPacijenti.SelectedItem == null)
+            {
+                MessageBox.Show("Izaberite pacijenta");
+            }
+            else if (comboBoxSobe.SelectedItem == null)
+            {
+                MessageBox.Show("Izaberite prostoriju");
+            }
+            else
+            {
+                MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));
+                this.Close();
+            }
 
-                }
-            }
-            if (da)
-            {
-                if (dateKraj.SelectedDate == null || datePocetak.SelectedDate == null)
-                {
-                    MessageBox.Show("Unesite potrebne datume");
-                }
-                else if (comboBoxPacijenti.SelectedItem == null)
-                {
-                    MessageBox.Show("Izaberite pacijenta");
-                }
-                else if (comboBoxSobe.SelectedItem == null)
-                {
-                    MessageBox.Show("Izaberite prostoriju");
-                }
-                else
-                {
-                    MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));
-                    this.Close();
-                }
-            }
         }
 
         private void comboBoxSobe_SelectionChanged(object sender, SelectionChangedEventArgs e)

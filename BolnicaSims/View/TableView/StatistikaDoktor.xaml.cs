@@ -1,4 +1,5 @@
-﻿using BolnicaSims.Storage;
+﻿using BolnicaSims.Controller;
+using BolnicaSims.Storage;
 using LiveCharts;
 using LiveCharts.Wpf;
 using Model;
@@ -53,8 +54,8 @@ namespace BolnicaSims.View.TableView
             DataContext = this;
         }
 
-        private double a = ReceptiStorage.Instance.recepti.Count;
-        private double b = TerminStorage.Instance.termini.Count;
-        private double c = LecenjaStorage.Instance.lecenja.Count;
+        private double a = ReceptController.Instance.getRecepti().Count;
+        private double b = TerminController.Instance.getTermini().Count;
+        private double c = LecenjeController.Instance.getLecenja().Count;
     }
 }

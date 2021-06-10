@@ -62,7 +62,9 @@
                 <Image Source="/Resources/logout.png" Width="25" Height="30" />
             </Button>
         </StackPanel>
-        <Image Source="/Resources/firstAid.png" Margin="-7,347,688,0"/>
+        <Button Margin="0,341,689,0" Background="#FF4BB8AE" Click="Button_Click_2" ToolTip="FEEDBACK">
+            <Image Source="/Resources/firstAid.png" />
+        </Button>
 
     </Grid>
 </Window>

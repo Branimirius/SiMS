@@ -1,9 +1,11 @@
 ﻿using BolnicaSims.DTO;
 using BolnicaSims.Model;
 using BolnicaSims.Service;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace BolnicaSims.Controller
@@ -33,6 +35,11 @@ namespace BolnicaSims.Controller
         public string dodajLecenje(Pacijent p, Prostorija pr, DateTime pocetak, DateTime kraj)
         {
             return LecenjeService.Instance.dodajLecenje(p, pr, pocetak, kraj);
+        }
+
+        public ObservableCollection<Lecenje> getLecenja()
+        {
+            return LecenjaStorage.Instance.lecenja;
         }
     }
 }
