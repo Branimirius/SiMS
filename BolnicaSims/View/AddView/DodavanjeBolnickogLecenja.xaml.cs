@@ -1,4 +1,6 @@
 ﻿using BolnicaSims.Controller;
+using BolnicaSims.Model;
+using BolnicaSims.Storage;
 using Model;
 using System;
 using System.Collections.Generic;
@@ -22,7 +24,7 @@ namespace BolnicaSims.View.AddView
         public DodavanjeBolnickogLecenja()
         {
             InitializeComponent();
-            comboBoxPacijenti.ItemsSource = PacijentiStorage.Instance.Read();
+            comboBoxPacijenti.ItemsSource = PacijentiStorage.Instance.pacijenti;
             comboBoxSobe.ItemsSource = ProstorijeStorage.Instance.ordinacije;
         }
 
@@ -33,22 +35,37 @@ namespace BolnicaSims.View.AddView
 
         private void button_dodaj_Click(object sender, RoutedEventArgs e)
         {
-            if (dateKraj.SelectedDate == null || datePocetak.SelectedDate == null)
+            Pacijent pac = (Pacijent)comboBoxPacijenti.SelectedItem;
+            bool da = true;
+            foreach (Lecenje l in LecenjaStorage.Instance.Read())
             {
-                MessageBox.Show("Unesite potrebne datume");
+                if (l.Pacijent.korisnik.ImePrezime == pac.korisnik.ImePrezime)
+                {
+                    MessageBox.Show("Izabrani pacijent je vec na bolnickom lecenju");
+                    da = false;
+                    break;
+
+                }
             }
-            else if (comboBoxPacijenti.SelectedItem == null)
+            if (da)
             {
-                MessageBox.Show("Izaberite pacijenta");
-            }
-            else if (comboBoxSobe.SelectedItem == null)
-            {
-                MessageBox.Show("Izaberite prostoriju");
-            }
-            else
-            {
-                MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));
-                this.Close();
+                if (dateKraj.SelectedDate == null || datePocetak.SelectedDate == null)
+                {
+                    MessageBox.Show("Unesite potrebne datume");
+                }
+                else if (comboBoxPacijenti.SelectedItem == null)
+                {
+                    MessageBox.Show("Izaberite pacijenta");
+                }
+                else if (comboBoxSobe.SelectedItem == null)
+                {
+                    MessageBox.Show("Izaberite prostoriju");
+                }
+                else
+                {
+                    MessageBox.Show(LecenjeController.Instance.dodajLecenje((Pacijent)comboBoxPacijenti.SelectedItem, (Prostorija)comboBoxSobe.SelectedItem, (DateTime)datePocetak.SelectedDate, (DateTime)dateKraj.SelectedDate));
+                    this.Close();
+                }
             }
         }
 

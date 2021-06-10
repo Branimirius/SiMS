@@ -36,11 +36,8 @@ namespace BolnicaSims.Service
                 {
                     poruka = "Izabrani pacijent je vec na bolnickom lecenju";
                     break;
-
-                } else if (l.Prostorija.IdProstorije == prostorija.IdProstorije)
-                {
-                    brLecenja++;
-                }
+                } 
+                
             }
 
             foreach(Inventar i in prostorija.inventar)
